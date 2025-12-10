@@ -1,0 +1,173 @@
+<!-- Menu de Navegación -->
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="https://mantenimientodeextintores.mx/">
+          <img src="img/img-index/venta-y-mantenimiento-de-extintores.webp" alt="MANEXT - Mantenimiento de Extintores" class="logo-img">
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu-overlay" id="menuOverlay"></div>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="dropdown">
+          <a href="servicios.html" class="nav-link dropdown-toggle">Servicios <span class="arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="venta-de-extintores.html">Venta de Extintores</a></li>
+            <li><a href="mantenimiento-preventivo.html">Mantenimiento Preventivo</a></li>
+            <li><a href="recarga-de-extintores.html">Recarga de Extintores</a></li>
+            <li><a href="prueba-hidrostatica.html">Prueba Hidrostática</a></li>
+            <li><a href="capacitacion-brigadas.html">Capacitación y Brigadas</a></li>
+            <li><a href="senalizacion.html">Señalización</a></li>
+          </ul>
+        </li>
+        <li><a href="extintores.html" class="nav-link">Extintores</a></li>
+        <li class="dropdown">
+          <a href="catalogo.html" class="nav-link dropdown-toggle">Catálogo <span class="arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="catalogo.html"><strong>Ver Catálogo Completo</strong></a></li>
+            <li><a href="polvo-quimico-seco.html">Polvo Químico Seco (PQS)</a></li>
+            <li><a href="co2.html">Dióxido de Carbono (CO2)</a></li>
+            <li><a href="agua-presion.html">Agua a Presión</a></li>
+            <li><a href="tipo-k.html">Agente Húmedo (Tipo K)</a></li>
+            <li><a href="espuma-afff.html">Espuma (AFFF)</a></li>
+            <li><a href="agentes-limpios.html">Agentes Limpios</a></li>
+          </ul>
+        </li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <li><a href="tel:5539689272" class="nav-link nav-phone">55 3968 9272</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+(function() {
+  'use strict';
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const body = document.body;
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  if (!menuToggle || !navMenu || !menuOverlay) return;
+
+  // Función para abrir el menú
+  function openMenu() {
+    navMenu.classList.add('active');
+    menuToggle.classList.add('active');
+    menuOverlay.classList.add('active');
+    body.classList.add('menu-open');
+  }
+
+  // Función para cerrar el menú
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    body.classList.remove('menu-open');
+
+    // Cerrar todos los dropdowns
+    dropdowns.forEach(function(dropdown) {
+      dropdown.classList.remove('active');
+    });
+  }
+
+  // Toggle del menú al hacer clic en el botón hamburguesa
+  menuToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (navMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Cerrar menú al hacer clic en el overlay
+  menuOverlay.addEventListener('click', function() {
+    closeMenu();
+  });
+
+  // Manejo de dropdowns
+  dropdowns.forEach(function(dropdown) {
+    const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+
+    if (dropdownToggle) {
+      dropdownToggle.addEventListener('click', function(e) {
+        // En móvil, evitar navegación y toggle dropdown
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isActive = dropdown.classList.contains('active');
+
+          // Cerrar todos los otros dropdowns
+          dropdowns.forEach(function(otherDropdown) {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+            }
+          });
+
+          // Toggle el dropdown actual
+          if (isActive) {
+            dropdown.classList.remove('active');
+          } else {
+            dropdown.classList.add('active');
+          }
+        }
+      });
+    }
+  });
+
+  // Cerrar menú al hacer clic en enlaces (excepto dropdown toggles)
+  const navLinks = navMenu.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+
+  // Cerrar dropdowns al hacer clic en sus enlaces
+  const dropdownLinks = navMenu.querySelectorAll('.dropdown-menu a');
+  dropdownLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+
+  // Prevenir cierre al hacer clic dentro del menú
+  navMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+
+  // Cerrar menú con tecla Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Cerrar menú al cambiar de tamaño de ventana (de móvil a desktop)
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    }, 250);
+  });
+})();
+</script>

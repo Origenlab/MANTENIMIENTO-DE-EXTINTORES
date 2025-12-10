@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo de Extintores Certificados NOM 2025 | Precios y Modelos - MANEXT</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="description"
+      content="Catálogo completo de extintores certificados NOM-154-SCFI. 30 modelos disponibles: PQS, CO2, Agua, Tipo K, Espuma y Agentes Limpios. Precios desde $550. Entrega inmediata CDMX."
+    />
+
+    <meta property="og:title" content="Catálogo de Extintores Certificados - MANEXT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mantenimientodeextintores.mx/catalogo.html" />
+    <meta property="og:image" content="img/og-image.jpg" />
+    <meta property="og:image:alt" content="MANEXT Catálogo de Extintores" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#d32f2f" />
+
+    <!-- Schema.org para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProductCatalog",
+      "name": "Catálogo de Extintores MANEXT",
+      "description": "Catálogo completo de extintores certificados NOM-154-SCFI con 30 modelos disponibles",
+      "provider": {
+        "@type": "Organization",
+        "name": "MANEXT",
+        "url": "https://mantenimientodeextintores.mx"
+      }
+    }
+    </script>
+
+    <style>
+      /* Estilos específicos para el catálogo */
+      .catalog-hero {
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+        padding: 80px 0 60px;
+        color: white;
+        text-align: center;
+      }
+
+      .catalog-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .catalog-hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      /* Filtros */
+      .catalog-filters {
+        background: white;
+        padding: 2rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .filter-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .filter-label {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .filter-select {
+        padding: 0.5rem 1rem;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        
+      }
+
+      .filter-select:hover,
+      .filter-select:focus {
+        border-color: #d32f2f;
+        outline: none;
+      }
+
+      /* Tabs */
+      .catalog-tabs {
+        background: #f5f5f5;
+        padding: 1rem 0;
+        position: sticky;
+        top: 120px;
+        z-index: 99;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .tabs-container {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        scrollbar-width: thin;
+      }
+
+      .tabs-container::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .tabs-container::-webkit-scrollbar-thumb {
+        background: #d32f2f;
+        border-radius: 3px;
+      }
+
+      .tab-button {
+        padding: 1rem 2rem;
+        background: white;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        white-space: nowrap;
+        color: #333;
+      }
+
+      .tab-button:hover {
+        border-color: #d32f2f;
+        color: #d32f2f;
+        transform: translateY(-2px);
+      }
+
+      .tab-button.active {
+        background: #d32f2f;
+        border-color: #d32f2f;
+        color: white;
+        box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+      }
+
+      /* Contenido de tabs */
+      .tab-content {
+        display: none;
+        padding: 3rem 0;
+      }
+
+      .tab-content.active {
+        display: block;
+        
+      }
+
+
+      /* Header de categoría */
+      .category-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .category-header h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .category-header p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .category-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #d32f2f;
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      /* Grid de productos */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      /* Card de producto */
+      .product-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      }
+
+      .product-image-wrapper {
+        position: relative;
+        background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        padding: 2rem;
+        text-align: center;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-image-wrapper img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: #4caf50;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .product-badge.nom {
+        background: #2196f3;
+      }
+
+      .product-info {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-title {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .product-capacity {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .product-classes {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .class-badge {
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .class-a {
+        background: #4caf50;
+        color: white;
+      }
+
+      .class-b {
+        background: #ff9800;
+        color: white;
+      }
+
+      .class-c {
+        background: #2196f3;
+        color: white;
+      }
+
+      .class-k {
+        background: #9c27b0;
+        color: white;
+      }
+
+      .class-d {
+        background: #607d8b;
+        color: white;
+      }
+
+      .product-features {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        flex: 1;
+      }
+
+      .product-features li {
+        padding: 0.4rem 0;
+        color: #555;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: start;
+      }
+
+      .product-features li:before {
+        content: "✓";
+        color: #4caf50;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .product-price {
+        font-size: 1.8rem;
+        color: #d32f2f;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+
+      .product-price small {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 400;
+      }
+
+      .product-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+
+      .btn-cotizar {
+        flex: 1;
+        padding: 0.8rem 1.5rem;
+        background: #d32f2f;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .btn-cotizar:hover {
+        background: #b71c1c;
+        transform: scale(1.02);
+      }
+
+      .btn-detalles {
+        padding: 0.8rem 1rem;
+        background: white;
+        color: #d32f2f;
+        border: 2px solid #d32f2f;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+      }
+
+      .btn-detalles:hover {
+        background: #d32f2f;
+        color: white;
+      }
+
+      /* CTA Section */
+      .catalog-cta {
+        background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+        padding: 4rem 0;
+        text-align: center;
+        color: white;
+        margin-top: 4rem;
+      }
+
+      .catalog-cta h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .catalog-cta p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-cta-primary {
+        padding: 1rem 2rem;
+        background: white;
+        color: #1976d2;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-cta-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+
+      .btn-cta-secondary {
+        padding: 1rem 2rem;
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-cta-secondary:hover {
+        background: white;
+        color: #1976d2;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .catalog-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .catalog-hero p {
+          font-size: 1rem;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .tab-button {
+          padding: 0.8rem 1.2rem;
+          font-size: 0.9rem;
+        }
+
+        .catalog-tabs {
+          top: 100px;
+        }
+
+        .filter-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .filter-select {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MENU (se cargará dinámicamente) -->
+    <div id="menu-container"></div>
+
+    <!-- HERO SECTION -->
+    <section class="catalog-hero">
+      <div class="container">
+        <h1>Catálogo de Extintores Certificados NOM</h1>
+        <p>30 modelos disponibles • Precios desde $550 • Entrega inmediata CDMX</p>
+        <p><strong>80+ años de experiencia • Certificación NOM-154-SCFI • Garantía de fábrica</strong></p>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="catalog-filters">
+      <div class="container">
+        <div class="filter-group">
+          <span class="filter-label">Filtrar por:</span>
+          <select class="filter-select" id="filterClase">
+            <option value="all">Todas las clases de fuego</option>
+            <option value="A">Clase A - Materiales sólidos</option>
+            <option value="B">Clase B - Líquidos inflamables</option>
+            <option value="C">Clase C - Equipos eléctricos</option>
+            <option value="K">Clase K - Aceites de cocina</option>
+          </select>
+          <select class="filter-select" id="filterCapacidad">
+            <option value="all">Todas las capacidades</option>
+            <option value="pequeno">Pequeño (0.75-2.5 kg)</option>
+            <option value="mediano">Mediano (4.5-6 kg)</option>
+            <option value="grande">Grande (9-13 kg)</option>
+          </select>
+          <select class="filter-select" id="filterPrecio">
+            <option value="all">Todos los precios</option>
+            <option value="bajo">Hasta $1,000</option>
+            <option value="medio">$1,000 - $2,500</option>
+            <option value="alto">Más de $2,500</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABS DE CATEGORÍAS -->
+    <section class="catalog-tabs">
+      <div class="container">
+        <div class="tabs-container">
+          <button class="tab-button active" data-tab="pqs">
+            Polvo Químico Seco (PQS)
+          </button>
+          <button class="tab-button" data-tab="co2">
+            Dióxido de Carbono (CO2)
+          </button>
+          <button class="tab-button" data-tab="agua">
+            Agua a Presión
+          </button>
+          <button class="tab-button" data-tab="tipo-k">
+            Agente Húmedo (Tipo K)
+          </button>
+          <button class="tab-button" data-tab="espuma">
+            Espuma (AFFF)
+          </button>
+          <button class="tab-button" data-tab="agentes-limpios">
+            Agentes Limpios
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO DEL CATÁLOGO -->
+    <section class="catalog-content">
+      <div class="container">
+
+        <!-- TAB 1: POLVO QUÍMICO SECO (PQS) -->
+        <div class="tab-content active" id="tab-pqs">
+          <div class="category-header">
+            <h2>Extintores de Polvo Químico Seco (PQS)</h2>
+            <p>Los más versátiles del mercado. Ideales para todo tipo de negocios y oficinas. Combaten fuegos Clase A, B y C.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="pequeno" data-precio="650">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor PQS 1 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor PQS 1 kg</h3>
+                <p class="product-capacity">Capacidad: 1 kg | Alcance: 1-2 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para vehículos y espacios reducidos</li>
+                  <li>Certificado NOM-154-SCFI vigente</li>
+                  <li>Incluye soporte vehicular</li>
+                  <li>Garantía de fábrica 1 año</li>
+                </ul>
+                <div class="product-price">
+                  $650 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20PQS%201%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="pequeno" data-precio="850">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor PQS 2.5 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor PQS 2.5 kg</h3>
+                <p class="product-capacity">Capacidad: 2.5 kg | Alcance: 2-3 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Perfecto para oficinas pequeñas</li>
+                  <li>Fácil de usar y transportar</li>
+                  <li>Incluye base de pared</li>
+                  <li>Mantenimiento cada 12 meses</li>
+                </ul>
+                <div class="product-price">
+                  $850 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20PQS%202.5%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="mediano" data-precio="1200">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Más vendido</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor PQS 4.5 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor PQS 4.5 kg</h3>
+                <p class="product-capacity">Capacidad: 4.5 kg | Alcance: 3-5 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>El más vendido para comercios</li>
+                  <li>Cumple requisitos de Protección Civil</li>
+                  <li>Instalación profesional incluida</li>
+                  <li>Señalización fotoluminiscente incluida</li>
+                </ul>
+                <div class="product-price">
+                  $1,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20PQS%204.5%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="mediano" data-precio="1600">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor PQS 6 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor PQS 6 kg</h3>
+                <p class="product-capacity">Capacidad: 6 kg | Alcance: 5-7 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para naves industriales</li>
+                  <li>Mayor capacidad de extinción</li>
+                  <li>Válvula de bronce reforzada</li>
+                  <li>Recarga disponible en 24 horas</li>
+                </ul>
+                <div class="product-price">
+                  $1,600 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20PQS%206%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="grande" data-precio="2400">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor PQS 13 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor PQS 13 kg</h3>
+                <p class="product-capacity">Capacidad: 13 kg | Alcance: 8-10 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Máxima capacidad para áreas grandes</li>
+                  <li>Con ruedas para fácil movilidad</li>
+                  <li>Ideal para bodegas y almacenes</li>
+                  <li>Certificación industrial</li>
+                </ul>
+                <div class="product-price">
+                  $2,400 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20PQS%2013%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CO2 -->
+        <div class="tab-content" id="tab-co2">
+          <div class="category-header">
+            <h2>Extintores de Dióxido de Carbono (CO2)</h2>
+            <p>Especializados para equipos electrónicos y eléctricos. No dejan residuos. Perfectos para data centers, servidores y equipos delicados.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="B C" data-capacidad="pequeno" data-precio="1200">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor CO2 2.27 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor CO2 2.27 kg (5 lbs)</h3>
+                <p class="product-capacity">Capacidad: 2.27 kg | Alcance: 1-2 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para racks de servidores</li>
+                  <li>No conduce electricidad</li>
+                  <li>Cero residuos post-descarga</li>
+                  <li>Manómetro de alta presión</li>
+                </ul>
+                <div class="product-price">
+                  $1,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20CO2%202.27%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="B C" data-capacidad="mediano" data-precio="1650">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Más vendido</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor CO2 4.54 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor CO2 4.54 kg (10 lbs)</h3>
+                <p class="product-capacity">Capacidad: 4.54 kg | Alcance: 2-3 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Perfecto para cuartos eléctricos</li>
+                  <li>Aprobado para laboratorios</li>
+                  <li>Cilindro de acero de alta resistencia</li>
+                  <li>Incluye corneta de descarga</li>
+                </ul>
+                <div class="product-price">
+                  $1,650 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20CO2%204.54%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="B C" data-capacidad="mediano" data-precio="2100">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor CO2 6.81 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor CO2 6.81 kg (15 lbs)</h3>
+                <p class="product-capacity">Capacidad: 6.81 kg | Alcance: 3-4 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para data centers medianos</li>
+                  <li>Válvula tipo gatillo ergonómica</li>
+                  <li>Sin daño a equipos sensibles</li>
+                  <li>Recarga por pesaje preciso</li>
+                </ul>
+                <div class="product-price">
+                  $2,100 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20CO2%206.81%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="B C" data-capacidad="grande" data-precio="2800">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor CO2 9.08 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor CO2 9.08 kg (20 lbs)</h3>
+                <p class="product-capacity">Capacidad: 9.08 kg | Alcance: 4-5 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Gran capacidad para áreas críticas</li>
+                  <li>Certificado para salas de cómputo</li>
+                  <li>Manguera reforzada de 1 metro</li>
+                  <li>Base rodante opcional</li>
+                </ul>
+                <div class="product-price">
+                  $2,800 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20CO2%209.08%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="B C" data-capacidad="grande" data-precio="4200">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor CO2 13.62 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor CO2 13.62 kg (30 lbs)</h3>
+                <p class="product-capacity">Capacidad: 13.62 kg | Alcance: 5-6 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Máxima capacidad para instalaciones grandes</li>
+                  <li>Con carrito de ruedas incluido</li>
+                  <li>Manguera de 2 metros</li>
+                  <li>Ideal para plantas industriales</li>
+                </ul>
+                <div class="product-price">
+                  $4,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20CO2%2013.62%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: AGUA A PRESIÓN -->
+        <div class="tab-content" id="tab-agua">
+          <div class="category-header">
+            <h2>Extintores de Agua a Presión</h2>
+            <p>Diseñados específicamente para fuegos de materiales sólidos (Clase A). Económicos y efectivos para bodegas, almacenes y áreas de empaque.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="A" data-capacidad="pequeno" data-precio="550">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agua 2.5 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agua 2.5 Litros</h3>
+                <p class="product-capacity">Capacidad: 2.5 L | Alcance: 3-5 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                </div>
+                <ul class="product-features">
+                  <li>Económico y efectivo</li>
+                  <li>Ideal para papel, madera y telas</li>
+                  <li>Alto poder de enfriamiento</li>
+                  <li>Presurizado con nitrógeno</li>
+                </ul>
+                <div class="product-price">
+                  $550 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agua%202.5%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="A" data-capacidad="mediano" data-precio="750">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Más vendido</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agua 6 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agua 6 Litros</h3>
+                <p class="product-capacity">Capacidad: 6 L | Alcance: 5-7 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                </div>
+                <ul class="product-features">
+                  <li>Perfecto para almacenes</li>
+                  <li>Manguera flexible de descarga</li>
+                  <li>Fácil recarga y mantenimiento</li>
+                  <li>Indicador de presión visible</li>
+                </ul>
+                <div class="product-price">
+                  $750 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agua%206%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="A" data-capacidad="mediano" data-precio="950">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agua 9 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agua 9 Litros</h3>
+                <p class="product-capacity">Capacidad: 9 L | Alcance: 7-10 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                </div>
+                <ul class="product-features">
+                  <li>Mayor capacidad de enfriamiento</li>
+                  <li>Ideal para bodegas grandes</li>
+                  <li>Válvula de bronce reforzada</li>
+                  <li>Base antiderrapante incluida</li>
+                </ul>
+                <div class="product-price">
+                  $950 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agua%209%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="A" data-capacidad="grande" data-precio="1150">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agua 12 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agua 12 Litros</h3>
+                <p class="product-capacity">Capacidad: 12 L | Alcance: 10-12 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                </div>
+                <ul class="product-features">
+                  <li>Alta capacidad para áreas extensas</li>
+                  <li>Manguera de 1 metro incluida</li>
+                  <li>Cilindro reforzado</li>
+                  <li>Certificado para uso industrial</li>
+                </ul>
+                <div class="product-price">
+                  $1,150 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agua%2012%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="A" data-capacidad="grande" data-precio="1850">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agua 50 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agua 50 Litros</h3>
+                <p class="product-capacity">Capacidad: 50 L | Alcance: 15-20 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                </div>
+                <ul class="product-features">
+                  <li>Tipo carretilla con ruedas</li>
+                  <li>Máxima capacidad de extinción</li>
+                  <li>Manguera de 3 metros</li>
+                  <li>Ideal para naves industriales</li>
+                </ul>
+                <div class="product-price">
+                  $1,850 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agua%2050%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: TIPO K -->
+        <div class="tab-content" id="tab-tipo-k">
+          <div class="category-header">
+            <h2>Extintores de Agente Húmedo (Tipo K)</h2>
+            <p>Obligatorios en cocinas comerciales. Diseñados específicamente para aceites y grasas vegetales. Tecnología de saponificación.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="K" data-capacidad="mediano" data-precio="1800">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Tipo K 2.5 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Tipo K 2.5 Litros</h3>
+                <p class="product-capacity">Capacidad: 2.5 L | Alcance: 2-3 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-k">Clase K</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para cocinas pequeñas</li>
+                  <li>Cumple NOM-002-STPS obligatoria</li>
+                  <li>Agente de acetato de potasio</li>
+                  <li>Boquilla de aspersión especial</li>
+                </ul>
+                <div class="product-price">
+                  $1,800 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Tipo%20K%202.5%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="K" data-capacidad="mediano" data-precio="2200">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Más vendido</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Tipo K 6 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Tipo K 6 Litros</h3>
+                <p class="product-capacity">Capacidad: 6 L | Alcance: 3-5 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-k">Clase K</span>
+                </div>
+                <ul class="product-features">
+                  <li>Perfecto para restaurantes</li>
+                  <li>Obligatorio en cocinas comerciales</li>
+                  <li>No re-ignición del fuego</li>
+                  <li>Certificación ANSI/UL</li>
+                </ul>
+                <div class="product-price">
+                  $2,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Tipo%20K%206%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="K" data-capacidad="mediano" data-precio="2800">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Tipo K 9 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Tipo K 9 Litros</h3>
+                <p class="product-capacity">Capacidad: 9 L | Alcance: 5-7 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-k">Clase K</span>
+                </div>
+                <ul class="product-features">
+                  <li>Para cocinas industriales medianas</li>
+                  <li>Manguera de aplicación incluida</li>
+                  <li>Reduce temperatura rápidamente</li>
+                  <li>Recarga anual recomendada</li>
+                </ul>
+                <div class="product-price">
+                  $2,800 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Tipo%20K%209%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="K" data-capacidad="grande" data-precio="3500">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Tipo K 12 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Tipo K 12 Litros</h3>
+                <p class="product-capacity">Capacidad: 12 L | Alcance: 7-10 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-k">Clase K</span>
+                </div>
+                <ul class="product-features">
+                  <li>Cocinas industriales grandes</li>
+                  <li>Alta capacidad de saponificación</li>
+                  <li>Válvula de latón cromado</li>
+                  <li>Instalación cerca de freidoras</li>
+                </ul>
+                <div class="product-price">
+                  $3,500 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Tipo%20K%2012%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="K" data-capacidad="grande" data-precio="4800">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Tipo K 18 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Tipo K 18 Litros</h3>
+                <p class="product-capacity">Capacidad: 18 L | Alcance: 10-12 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-k">Clase K</span>
+                </div>
+                <ul class="product-features">
+                  <li>Máxima capacidad para hoteles</li>
+                  <li>Protección para múltiples freidoras</li>
+                  <li>Con ruedas para movilidad</li>
+                  <li>Certificación UL 300</li>
+                </ul>
+                <div class="product-price">
+                  $4,800 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Tipo%20K%2018%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: ESPUMA -->
+        <div class="tab-content" id="tab-espuma">
+          <div class="category-header">
+            <h2>Extintores de Espuma (AFFF)</h2>
+            <p>Especializados en líquidos inflamables e hidrocarburos. Forman película acuosa que sella el combustible. Ideales para talleres y gasolineras.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="A B" data-capacidad="pequeno" data-precio="1400">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Espuma 2.5 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Espuma AFFF 2.5 Litros</h3>
+                <p class="product-capacity">Capacidad: 2.5 L | Alcance: 3-5 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para talleres pequeños</li>
+                  <li>Forma película sobre líquidos</li>
+                  <li>Agente AFFF concentrado al 3%</li>
+                  <li>Enfría y sella simultáneamente</li>
+                </ul>
+                <div class="product-price">
+                  $1,400 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Espuma%202.5%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="A B" data-capacidad="mediano" data-precio="1900">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Más vendido</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Espuma 6 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Espuma AFFF 6 Litros</h3>
+                <p class="product-capacity">Capacidad: 6 L | Alcance: 5-7 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                </div>
+                <ul class="product-features">
+                  <li>Perfecto para talleres mecánicos</li>
+                  <li>Efectivo en gasolina y diésel</li>
+                  <li>Biodegradable y no tóxico</li>
+                  <li>Rápida supresión de llamas</li>
+                </ul>
+                <div class="product-price">
+                  $1,900 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Espuma%206%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="A B" data-capacidad="mediano" data-precio="2400">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Espuma 9 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Espuma AFFF 9 Litros</h3>
+                <p class="product-capacity">Capacidad: 9 L | Alcance: 7-10 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para áreas de almacenamiento</li>
+                  <li>Previene re-ignición efectivamente</li>
+                  <li>Manguera de aplicación flexible</li>
+                  <li>Resistente a congelamiento</li>
+                </ul>
+                <div class="product-price">
+                  $2,400 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Espuma%209%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="A B" data-capacidad="grande" data-precio="3200">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Espuma 12 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Espuma AFFF 12 Litros</h3>
+                <p class="product-capacity">Capacidad: 12 L | Alcance: 10-12 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                </div>
+                <ul class="product-features">
+                  <li>Gran capacidad para industrias</li>
+                  <li>Certificado para hidrocarburos</li>
+                  <li>Válvula de descarga regulable</li>
+                  <li>Base reforzada antivuelco</li>
+                </ul>
+                <div class="product-price">
+                  $3,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Espuma%2012%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="A B" data-capacidad="grande" data-precio="5400">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Espuma 50 L" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Espuma AFFF 50 Litros</h3>
+                <p class="product-capacity">Capacidad: 50 L | Alcance: 15-20 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                </div>
+                <ul class="product-features">
+                  <li>Tipo carretilla con ruedas</li>
+                  <li>Máxima protección para hangares</li>
+                  <li>Manguera de 3 metros</li>
+                  <li>Ideal para aeropuertos y puertos</li>
+                </ul>
+                <div class="product-price">
+                  $5,400 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Espuma%2050%20L" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: AGENTES LIMPIOS -->
+        <div class="tab-content" id="tab-agentes-limpios">
+          <div class="category-header">
+            <h2>Extintores de Agentes Limpios</h2>
+            <p>Tecnología premium para áreas críticas. Cero residuos, no afecta la capa de ozono. Perfectos para museos, archivos y equipos de alta precisión.</p>
+            <span class="category-badge">5 Modelos Disponibles</span>
+          </div>
+
+          <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="pequeno" data-precio="4500">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agente Limpio 2.5 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agente Limpio 2.5 kg</h3>
+                <p class="product-capacity">Capacidad: 2.5 kg | Alcance: 2-4 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Tecnología Novec 1230</li>
+                  <li>Cero residuos post-descarga</li>
+                  <li>No daña equipos delicados</li>
+                  <li>Amigable con medio ambiente</li>
+                </ul>
+                <div class="product-price">
+                  $4,500 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%202.5%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="mediano" data-precio="6200">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Premium</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agente Limpio 4.5 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agente Limpio 4.5 kg</h3>
+                <p class="product-capacity">Capacidad: 4.5 kg | Alcance: 4-6 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Ideal para salas de control</li>
+                  <li>Agente FM-200 de última generación</li>
+                  <li>Dieléctrico no conductor</li>
+                  <li>Certificación EPA/SNAP</li>
+                </ul>
+                <div class="product-price">
+                  $6,200 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%204.5%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="mediano" data-precio="8500">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agente Limpio 6 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agente Limpio 6 kg</h3>
+                <p class="product-capacity">Capacidad: 6 kg | Alcance: 6-8 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Protección para museos y archivos</li>
+                  <li>No deja residuos corrosivos</li>
+                  <li>Potencial cero de agotamiento ozono</li>
+                  <li>Descarga limpia y rápida</li>
+                </ul>
+                <div class="product-price">
+                  $8,500 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%206%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="grande" data-precio="11800">
+              <div class="product-image-wrapper">
+                <span class="product-badge nom">NOM-154-SCFI</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agente Limpio 9 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agente Limpio 9 kg</h3>
+                <p class="product-capacity">Capacidad: 9 kg | Alcance: 8-10 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Gran capacidad para áreas críticas</li>
+                  <li>Tecnología Halotron I</li>
+                  <li>Válvula de latón cromado premium</li>
+                  <li>Ideal para centros de cómputo</li>
+                </ul>
+                <div class="product-price">
+                  $11,800 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%209%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card" data-clase="A B C" data-capacidad="grande" data-precio="16500">
+              <div class="product-image-wrapper">
+                <span class="product-badge">Premium</span>
+                <img src="img/img-index/tecnologia-monitoreo.webp" alt="Extintor Agente Limpio 13 kg" loading="lazy" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Extintor Agente Limpio 13 kg</h3>
+                <p class="product-capacity">Capacidad: 13 kg | Alcance: 10-15 metros</p>
+                <div class="product-classes">
+                  <span class="class-badge class-a">Clase A</span>
+                  <span class="class-badge class-b">Clase B</span>
+                  <span class="class-badge class-c">Clase C</span>
+                </div>
+                <ul class="product-features">
+                  <li>Máxima capacidad premium</li>
+                  <li>Protección para salas blancas</li>
+                  <li>Con carrito de ruedas incluido</li>
+                  <li>Certificación internacional</li>
+                </ul>
+                <div class="product-price">
+                  $16,500 <small>MXN</small>
+                </div>
+                <div class="product-actions">
+                  <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%2013%20kg" class="btn-cotizar" target="_blank">Cotizar Ahora</a>
+                  <button class="btn-detalles" onclick="alert('Ficha técnica en desarrollo')">Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="catalog-cta">
+      <div class="container">
+        <h2>¿Necesitas Ayuda para Elegir el Extintor Correcto?</h2>
+        <p>Nuestros expertos con 80+ años de experiencia te asesoran sin costo</p>
+        <div class="cta-buttons">
+          <a href="tel:5539689272" class="btn-cta-primary">Llamar Ahora: 55 3968 9272</a>
+          <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20asesoría%20para%20elegir%20extintores" class="btn-cta-secondary" target="_blank">WhatsApp</a>
+          <a href="contacto.html" class="btn-cta-secondary">Solicitar Cotización</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.95rem;">
+          <strong>Incluimos:</strong> Entrega e instalación • Señalización • Capacitación de uso • Certificado NOM
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER (se cargará dinámicamente) -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript para tabs y filtros -->
+    <script>
+    // Cargar menu
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+        // Re-ejecutar scripts del menu
+        const scripts = document.getElementById('menu-container').querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+
+    // Cargar footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

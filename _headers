@@ -1,0 +1,35 @@
+# Cache headers para Cloudflare Pages / Netlify
+
+# Imágenes - 1 año
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS - 1 año (usamos versioning ?v=13)
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# JavaScript - 1 año
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML - 1 hora con revalidación
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Fuentes
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# Manifest
+/site.webmanifest
+  Cache-Control: public, max-age=604800
+
+# Favicon
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/icon.svg
+  Cache-Control: public, max-age=31536000, immutable

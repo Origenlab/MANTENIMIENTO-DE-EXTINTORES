@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog - MANEXT | Consejos y Noticias sobre Protección Contra Incendios</title>
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://wa.me" crossorigin>
+    <link rel="dns-prefetch" href="https://wa.me">
+
+    <!-- Preload recursos críticos para romper cadena de dependencias -->
+    <link rel="preload" href="menu.html?v=3" as="fetch" crossorigin>
+    <link rel="preload" href="footer.html?v=3" as="fetch" crossorigin>
+
+    <!-- CSS Crítico Inline para Above-the-Fold -->
+    <style>:root{--primary-color:#d32f2f;--secondary-color:#f44336;--dark-color:#212121;--light-color:#fafafa;--gray-color:#757575;--white:#ffffff;--shadow:0 2px 10px rgba(0,0,0,0.1)}*{margin:0;padding:0;box-sizing:border-box}html{overflow-x:hidden;color:#222;font-size:1em;line-height:1.4}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--dark-color);line-height:1.6;overflow-x:hidden;width:100%}.container{max-width:1400px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}.header{background-color:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{display:flex;align-items:center}.logo a{display:flex;align-items:center}.logo-img{height:110px;width:auto;max-width:100%;object-fit:contain}.nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}.nav-link{color:var(--dark-color);font-weight:500;padding:0.5rem 0}.nav-phone{background-color:var(--primary-color);color:var(--white);padding:0.5rem 1.5rem;border-radius:25px}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background-color:var(--white);box-shadow:var(--shadow);list-style:none;min-width:250px;opacity:0;visibility:hidden;border-radius:8px;overflow:hidden}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible}.menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}.menu-toggle span{width:28px;height:3px;background-color:var(--dark-color);margin:4px 0;border-radius:3px;display:block}.breadcrumbs{background:#f5f5f5;padding:0.75rem 0;border-bottom:1px solid #e0e0e0}.breadcrumb-list{display:flex;align-items:center;gap:0.5rem;list-style:none;font-size:0.9rem}.breadcrumb-item{display:flex;align-items:center;gap:0.3rem;color:var(--gray-color)}.breadcrumb-item a{color:var(--gray-color);text-decoration:none;display:flex;align-items:center;gap:0.3rem}.breadcrumb-item a:hover{color:var(--primary-color)}.hero{background-color:var(--white);color:var(--dark-color);padding:3rem 0;border-bottom:1px solid #e0e0e0}.hero-content{width:100%}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.hero-left{display:flex;flex-direction:column;gap:1.5rem}.hero-title{font-size:3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;color:var(--dark-color)}.hero-subtitle{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-color);font-weight:600}.hero-description{font-size:1.1rem;margin-bottom:1.5rem;line-height:1.8;color:var(--gray-color)}.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}.hero-right{display:flex;flex-direction:column;justify-content:center}.hero-text{background-color:var(--white)}.hero-paragraph{color:var(--dark-color);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;text-align:left}.hero-paragraph strong{color:var(--primary-color);font-weight:600}.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-primary{background-color:var(--primary-color);color:var(--white);border-color:var(--primary-color)}.btn-whatsapp{background-color:#25D366;color:var(--white);border-color:#25D366}@media screen and (max-width:768px){.menu-toggle{display:flex}.nav-menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background-color:var(--white);flex-direction:column;align-items:flex-start;padding:5rem 0 2rem;box-shadow:-4px 0 20px rgba(0,0,0,0.15);gap:0;overflow-y:auto;z-index:1000}.nav-menu.active{right:0}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.2rem}.logo-img{height:104px}}</style>
+
+    <!-- CSS Principal - Carga Diferida -->
+    <link rel="preload" href="css/style.css?v=14" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css?v=14"></noscript>
+    <meta
+      name="description"
+      content="Blog de MANEXT sobre protección contra incendios, mantenimiento de extintores, normativas NOM y consejos de seguridad para empresas en CDMX."
+    />
+
+    <meta property="og:title" content="Blog - MANEXT Mantenimiento de Extintores" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mantenimientodeextintores.mx/blog.html" />
+    <meta property="og:image" content="img/og-image.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#d32f2f" />
+  </head>
+
+  <body>
+    <!-- MENU (se cargará dinámicamente) -->
+    <div id="menu-container"></div>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs" aria-label="Navegación de migas de pan">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href="https://mantenimientodeextintores.mx/">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+              Inicio
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <span>Blog</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding: 3rem 0;">
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-grid" style="grid-template-columns: 1fr;">
+            <div class="hero-left" style="text-align: center; max-width: 800px; margin: 0 auto;">
+              <h1 class="hero-title">Blog de Protección Contra Incendios</h1>
+              <p class="hero-subtitle">
+                Consejos, noticias y guías profesionales sobre seguridad
+              </p>
+              <p class="hero-description">
+                Información actualizada sobre normativas, mantenimiento de extintores, prevención de incendios y mejores prácticas de seguridad para tu empresa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS DEL BLOG -->
+    <section class="blog-categories-section" style="background: #f5f5f5; padding: 3rem 0 2rem;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 0.5rem;">Explora por Categoría</h2>
+          <p style="color: #666; font-size: 1.1rem;">Encuentra artículos organizados por temas de tu interés</p>
+        </div>
+
+        <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1rem;">
+
+          <!-- Categoría: Seguridad Contra Incendios -->
+          <a href="blog/seguridad-contra-incendios.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Seguridad Contra Incendios</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Guías de prevención, protocolos de seguridad y selección de equipos</p>
+            <div style="margin-top: 1rem; color: #d32f2f; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Tipos de Extintores -->
+          <a href="blog/tipos-de-extintores.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f57c00 0%, #e65100 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M8 2h8v2h-8zM7 6h10v14H7z"/>
+                  <circle cx="12" cy="13" r="2"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Tipos de Extintores</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">PQS, CO2, Agua, Tipo K y agentes especializados</p>
+            <div style="margin-top: 1rem; color: #f57c00; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Mantenimiento y Recarga -->
+          <a href="blog/mantenimiento-y-recarga.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Mantenimiento y Recarga</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Frecuencias, procesos certificados y señales de advertencia</p>
+            <div style="margin-top: 1rem; color: #1976d2; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Equipos Contra Incendio -->
+          <a href="blog/equipos-contra-incendio.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C8.08 13.88 8.04 13.83 8 13.76C6.87 12.33 6.69 10.28 7.45 8.64C5.78 10 4.87 12.3 5 14.47C5.06 14.97 5.12 15.47 5.29 15.97C5.43 16.57 5.7 17.17 6 17.7C7.08 19.43 8.95 20.67 10.96 20.92C13.1 21.19 15.39 20.8 17.03 19.32C18.86 17.66 19.5 15 18.56 12.72L18.43 12.46C18.22 12 17.66 11.2 17.66 11.2M14.5 17.5C14.22 17.74 13.76 18 13.4 18.1C12.28 18.5 11.16 17.94 10.5 17.28C11.69 17 12.4 16.12 12.61 15.23C12.78 14.43 12.46 13.77 12.33 13C12.21 12.26 12.23 11.63 12.5 10.94C12.69 11.32 12.89 11.7 13.13 12C13.9 13 15.11 13.44 15.37 14.8C15.41 14.94 15.43 15.08 15.43 15.23C15.46 16.05 15.1 16.95 14.5 17.5H14.5Z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Equipos Contra Incendio</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Sistemas integrales, detección temprana y supresión automática</p>
+            <div style="margin-top: 1rem; color: #7b1fa2; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Normativas y Certificaciones -->
+          <a href="blog/normativas-y-certificaciones.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #00796b 0%, #004d40 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Normativas y Certificaciones</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">NOM-154-SCFI, NOM-002-STPS y cumplimiento legal</p>
+            <div style="margin-top: 1rem; color: #00796b; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Prevención Empresarial -->
+          <a href="blog/prevencion-empresarial.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #c62828 0%, #8e0000 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V7.3l7-3.11v8.8z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Prevención Empresarial</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Auditorías, cultura de seguridad y protocolos integrales</p>
+            <div style="margin-top: 1rem; color: #c62828; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Emergencias y Protocolos -->
+          <a href="blog/emergencias-y-protocolos.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e53935 0%, #c62828 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Emergencias y Protocolos</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Planes de evacuación, respuesta rápida y simulacros</p>
+            <div style="margin-top: 1rem; color: #e53935; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Guías y Comparativas -->
+          <a href="blog/guias-y-comparativas.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #5e35b1 0%, #311b92 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Guías y Comparativas</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Análisis detallados para tomar mejores decisiones</p>
+            <div style="margin-top: 1rem; color: #5e35b1; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Industria y Comercio -->
+          <a href="blog/industria-y-comercio.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0288d1 0%, #01579b 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M22 9L12 2 2 9h9v13h2V9h9zM12 4.44L15.66 7H8.34L12 4.44z"/>
+                  <path d="M4.14 12l-1.96.37.82 4.37V22h2l.02-4H7v4h2v-6H4.9l-.76-4zM19.1 16H15v6h2v-4h1.98l.02 4h2v-5.26l.82-4.37-1.96-.37-.76 4z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Industria y Comercio</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Soluciones especializadas para sectores industriales</p>
+            <div style="margin-top: 1rem; color: #0288d1; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+          <!-- Categoría: Hogar y Familia -->
+          <a href="blog/hogar-y-familia.html" class="category-card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none;  border: 2px solid transparent; display: block;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+              </div>
+              <h3 style="color: #1a1a1a; font-size: 1.15rem; margin: 0;">Hogar y Familia</h3>
+            </div>
+            <p style="color: #666; font-size: 0.95rem; margin: 0; line-height: 1.5;">Protección residencial y seguridad doméstica</p>
+            <div style="margin-top: 1rem; color: #43a047; font-weight: 500; font-size: 0.9rem;">Ver artículos →</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        border-color: #ddd !important;
+      }
+      @media (max-width: 768px) {
+        .categories-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+
+    <!-- BLOG CONTENT -->
+    <section class="blog-section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.75rem; color: #1a1a1a; margin-bottom: 0.5rem;">Artículos Recientes</h2>
+          <p style="color: #666;">Los últimos contenidos publicados en nuestro blog</p>
+        </div>
+        <div class="blog-layout">
+          <!-- CONTENIDO PRINCIPAL -->
+          <main class="blog-main" id="articles-container">
+            <!-- Artículo NUEVO - Mantenimiento de Extintores CDMX -->
+            <article class="blog-card" data-date="2025-11-27">
+              <div class="blog-card-image">
+                <img src="img/img-index/mantenimiento-de-extintores.webp" alt="Mantenimiento de Extintores en CDMX" loading="lazy">
+                <span class="blog-category">Mantenimiento y Recarga</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/mantenimiento-y-recarga/mantenimiento-extintores-cdmx-servicio-profesional.html">Mantenimiento de Extintores en CDMX: Servicio Profesional Certificado 2025</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Servicio profesional de mantenimiento de extintores en Ciudad de México. Cumple con NOM-154-SCFI, técnicos certificados y servicio a domicilio en todas las alcaldías.
+                </p>
+                <a href="blog/mantenimiento-y-recarga/mantenimiento-extintores-cdmx-servicio-profesional.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo - Venta de Extintores CDMX -->
+            <article class="blog-card" data-date="2025-11-26">
+              <div class="blog-card-image">
+                <img src="img/img-index/venta-de-extintores.webp" alt="Venta de Extintores en CDMX" loading="lazy">
+                <span class="blog-category">Seguridad Contra Incendios</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/seguridad-contra-incendios/venta-extintores-cdmx-guia-compra-empresas.html">Venta de Extintores en CDMX: Guía Completa para Empresas 2025</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Guía completa de compra de extintores certificados en Ciudad de México. Precios actualizados, tipos disponibles, zonas de entrega y todo lo que necesitas saber antes de comprar.
+                </p>
+                <a href="blog/seguridad-contra-incendios/venta-extintores-cdmx-guia-compra-empresas.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 1 - Cómo Elegir -->
+            <article class="blog-card" data-date="2025-11-20">
+              <div class="blog-card-image">
+                <img src="img/img-index/venta-de-extintores.webp" alt="Cómo Elegir el Extintor Correcto" loading="lazy">
+                <span class="blog-category">Seguridad Contra Incendios</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/seguridad-contra-incendios/como-elegir-extintor-correcto-negocio-cdmx.html">Cómo Elegir el Extintor Correcto para tu Negocio en CDMX</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Guía profesional para seleccionar el extintor ideal según tu tipo de negocio, riesgos específicos y normativa. Decisiones basadas en más de 80 años de experiencia.
+                </p>
+                <a href="blog/seguridad-contra-incendios/como-elegir-extintor-correcto-negocio-cdmx.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="blog-card" data-date="2025-11-15">
+              <div class="blog-card-image">
+                <img src="img/img-index/polvo-quimico-seco-pqs.webp" alt="Extintor de Polvo Químico Seco PQS" loading="lazy">
+                <span class="blog-category">Tipos de Extintores</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/tipos-de-extintores/extintor-polvo-quimico-seco-pqs-usos-ventajas.html">Extintor de Polvo Químico Seco (PQS): Guía Completa</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Todo sobre extintores de polvo químico seco: usos, ventajas, clases de fuego que combate, mantenimiento y normativa NOM. El extintor más versátil del mercado.
+                </p>
+                <a href="blog/tipos-de-extintores/extintor-polvo-quimico-seco-pqs-usos-ventajas.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="blog-card" data-date="2025-11-10">
+              <div class="blog-card-image">
+                <img src="img/img-index/recarga-de-extintores.webp" alt="Cuándo Recargar un Extintor" loading="lazy">
+                <span class="blog-category">Mantenimiento y Recarga</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/mantenimiento-y-recarga/cuando-recargar-extintor-señales-frecuencia-normativa.html">¿Cuándo Recargar un Extintor? Señales, Frecuencia y Normativa</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Señales de advertencia, frecuencia según normativa NOM y consecuencias de no recargar a tiempo. Protege tu inversión y cumple con la ley.
+                </p>
+                <a href="blog/mantenimiento-y-recarga/cuando-recargar-extintor-señales-frecuencia-normativa.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="blog-card" data-date="2025-11-05">
+              <div class="blog-card-image">
+                <img src="img/img-index/venta-de-extintores.webp" alt="Sistemas de Protección Integral" loading="lazy">
+                <span class="blog-category">Equipos Contra Incendio</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/equipos-contra-incendio/sistemas-proteccion-integral-empresas-cdmx-2025.html">Sistemas de Protección Integral Contra Incendios para Empresas</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Diseño de sistemas completos: extintores, detección temprana, supresión automática, señalización y brigadas. Protección en capas para máxima seguridad.
+                </p>
+                <a href="blog/equipos-contra-incendio/sistemas-proteccion-integral-empresas-cdmx-2025.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="blog-card" data-date="2025-10-28">
+              <div class="blog-card-image">
+                <img src="img/img-index/venta-de-extintores.webp" alt="NOM-154-SCFI Cumplimiento" loading="lazy">
+                <span class="blog-category">Normativas y Certificaciones</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/normativas-y-certificaciones/nom-154-scfi-guia-completa-cumplimiento-extintores.html">NOM-154-SCFI: Guía Completa de Cumplimiento para Extintores</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Requisitos técnicos obligatorios, certificación, etiquetado, pruebas y sanciones por incumplimiento. Todo lo que necesitas saber para cumplir con la normativa.
+                </p>
+                <a href="blog/normativas-y-certificaciones/nom-154-scfi-guia-completa-cumplimiento-extintores.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="blog-card" data-date="2025-10-20">
+              <div class="blog-card-image">
+                <img src="img/img-index/capacitacion-y-brigadas.webp" alt="Prevención de Incendios Empresarial" loading="lazy">
+                <span class="blog-category">Prevención Empresarial</span>
+              </div>
+              <div class="blog-card-content">
+                <h2 class="blog-card-title">
+                  <a href="blog/prevencion-empresarial/prevencion-incendios-empresas-protocolo-completo-cdmx.html">Prevención de Incendios en Empresas: Protocolo Completo</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Auditoría de riesgos, cultura de seguridad, inspecciones programadas y plan de emergencia integral. Reduce hasta 92% el riesgo de incendios.
+                </p>
+                <a href="blog/prevencion-empresarial/prevencion-incendios-empresas-protocolo-completo-cdmx.html" class="blog-read-more">
+                  Leer más
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Paginación -->
+            <div class="blog-pagination" id="pagination-container">
+              <!-- Se genera dinámicamente con JavaScript -->
+            </div>
+          </main>
+
+          <!-- SIDEBAR -->
+          <aside class="blog-sidebar">
+            <!-- Buscador -->
+            <div class="sidebar-widget search-widget">
+              <h3 class="widget-title">Buscar Artículos</h3>
+              <form class="search-form">
+                <input type="text" placeholder="Buscar..." class="search-input">
+                <button type="submit" class="search-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Categorías -->
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Categorías</h3>
+              <ul class="category-list">
+                <li>
+                  <a href="blog/tipos-de-extintores.html">
+                    <span>Tipos de Extintores</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog/seguridad-contra-incendios.html">
+                    <span>Seguridad Contra Incendios</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog/mantenimiento-y-recarga.html">
+                    <span>Mantenimiento y Recarga</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog/normativas-y-certificaciones.html">
+                    <span>Normativas y Certificaciones</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog/equipos-contra-incendio.html">
+                    <span>Equipos Contra Incendio</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blog/prevencion-empresarial.html">
+                    <span>Prevención Empresarial</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Artículos Populares -->
+            <div class="sidebar-widget">
+              <h3 class="widget-title">Artículos Populares</h3>
+              <div class="popular-posts">
+                <article class="popular-post">
+                  <div class="popular-post-image">
+                    <img src="img/img-index/mantenimiento-de-extintores.webp" alt="Mantenimiento de Extintores CDMX" loading="lazy">
+                  </div>
+                  <div class="popular-post-content">
+                    <h4><a href="blog/mantenimiento-y-recarga/mantenimiento-extintores-cdmx-servicio-profesional.html">Mantenimiento de Extintores en CDMX: Servicio Profesional</a></h4>
+                  </div>
+                </article>
+
+                <article class="popular-post">
+                  <div class="popular-post-image">
+                    <img src="img/img-index/venta-de-extintores.webp" alt="Venta de Extintores CDMX" loading="lazy">
+                  </div>
+                  <div class="popular-post-content">
+                    <h4><a href="blog/seguridad-contra-incendios/venta-extintores-cdmx-guia-compra-empresas.html">Venta de Extintores en CDMX: Guía Completa 2025</a></h4>
+                  </div>
+                </article>
+
+                <article class="popular-post">
+                  <div class="popular-post-image">
+                    <img src="img/img-index/recarga-de-extintores.webp" alt="Recarga de Extintores" loading="lazy">
+                  </div>
+                  <div class="popular-post-content">
+                    <h4><a href="blog/mantenimiento-y-recarga/cuando-recargar-extintor-señales-frecuencia-normativa.html">5 Señales de que tu Extintor Necesita Recarga</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- CTA Widget -->
+            <div class="sidebar-widget cta-widget">
+              <h3 class="widget-title">¿Necesitas Asesoría?</h3>
+              <p>Nuestros expertos están listos para ayudarte con cualquier duda sobre protección contra incendios.</p>
+              <a href="tel:5539689272" class="widget-cta-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Llamar Ahora
+              </a>
+              <a href="https://wa.me/5215539689272" class="widget-cta-btn whatsapp-btn" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (se cargará dinámicamente) -->
+    <div id="footer-container"></div>
+
+    <script>
+    // Cargar menu
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+        // Re-ejecutar scripts del menu
+        const scripts = document.getElementById('menu-container').querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+
+    // Cargar footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+    <script src="js/app.js"></script>
+
+    <!-- Sistema de Paginación del Blog -->
+    <script>
+    (function() {
+      'use strict';
+
+      // Configuración
+      const ARTICLES_PER_PAGE = 6;
+
+      // Elementos del DOM
+      const container = document.getElementById('articles-container');
+      const paginationContainer = document.getElementById('pagination-container');
+
+      if (!container || !paginationContainer) return;
+
+      // Obtener todos los artículos
+      const articles = Array.from(container.querySelectorAll('.blog-card'));
+
+      // Ordenar artículos por fecha (más reciente primero)
+      articles.sort((a, b) => {
+        const dateA = new Date(a.dataset.date || '2020-01-01');
+        const dateB = new Date(b.dataset.date || '2020-01-01');
+        return dateB - dateA;
+      });
+
+      // Reorganizar artículos en el DOM según el orden
+      articles.forEach(article => container.appendChild(article));
+
+      // Calcular número de páginas
+      const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+      let currentPage = 1;
+
+      // Función para mostrar página específica
+      function showPage(page) {
+        currentPage = page;
+        const start = (page - 1) * ARTICLES_PER_PAGE;
+        const end = start + ARTICLES_PER_PAGE;
+
+        articles.forEach((article, index) => {
+          if (index >= start && index < end) {
+            article.style.display = '';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+
+        renderPagination();
+
+        // Scroll al inicio de los artículos
+        const blogSection = document.querySelector('.blog-section');
+        if (blogSection && page !== 1) {
+          blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      // Función para renderizar paginación
+      function renderPagination() {
+        if (totalPages <= 1) {
+          paginationContainer.style.display = 'none';
+          return;
+        }
+
+        let html = '';
+
+        // Botón Anterior
+        html += `
+          <a href="#" class="pagination-btn pagination-prev ${currentPage === 1 ? 'disabled' : ''}" data-page="${currentPage - 1}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Anterior
+          </a>
+        `;
+
+        // Números de página
+        html += '<div class="pagination-numbers">';
+        for (let i = 1; i <= totalPages; i++) {
+          if (
+            i === 1 ||
+            i === totalPages ||
+            (i >= currentPage - 1 && i <= currentPage + 1)
+          ) {
+            html += `<a href="#" class="pagination-number ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
+          } else if (i === currentPage - 2 || i === currentPage + 2) {
+            html += '<span class="pagination-ellipsis">...</span>';
+          }
+        }
+        html += '</div>';
+
+        // Botón Siguiente
+        html += `
+          <a href="#" class="pagination-btn pagination-next ${currentPage === totalPages ? 'disabled' : ''}" data-page="${currentPage + 1}">
+            Siguiente
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        `;
+
+        paginationContainer.innerHTML = html;
+
+        // Agregar event listeners
+        paginationContainer.querySelectorAll('[data-page]').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (this.classList.contains('disabled')) return;
+            const page = parseInt(this.dataset.page);
+            if (page >= 1 && page <= totalPages) {
+              showPage(page);
+            }
+          });
+        });
+      }
+
+      // Inicializar
+      showPage(1);
+    })();
+    </script>
+
+    <!-- Estilos adicionales para paginación -->
+    <style>
+      .blog-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .pagination-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .pagination-btn:hover:not(.disabled) {
+        background: #f5f5f5;
+        border-color: #ccc;
+      }
+
+      .pagination-btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+
+      .pagination-numbers {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .pagination-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .pagination-number:hover:not(.active) {
+        background: #f5f5f5;
+        border-color: #ccc;
+      }
+
+      .pagination-number.active {
+        background: #d32f2f;
+        border-color: #d32f2f;
+        color: white;
+      }
+
+      .pagination-ellipsis {
+        color: #999;
+        padding: 0 0.25rem;
+      }
+
+      @media (max-width: 768px) {
+        .blog-pagination {
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .pagination-btn {
+          padding: 0.6rem 1rem;
+          font-size: 0.875rem;
+        }
+
+        .pagination-btn span {
+          display: none;
+        }
+
+        .pagination-number {
+          width: 36px;
+          height: 36px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </body>
+</html>
