@@ -102,6 +102,22 @@
   ],
   "articles": [
     {
+      "id": "nom-002-stps-seguridad-incendios-trabajo",
+      "title": "Guía Completa sobre NOM-002-STPS Seguridad Incendios",
+      "slug": "nom-002-stps-seguridad-incendios-trabajo",
+      "category": "normativas-y-certificaciones",
+      "date": "2025-12-16",
+      "image": "img/img-blog/nom-002-stps-seguridad-incendios-trabajo-hero-1765867340067.jpg",
+      "excerpt": "Descubre cómo la NOM-002-STPS asegura tu lugar de trabajo. ¡Contacta a MANEXT para cumplir con esta normativa!",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "NOM-002-STPS seguridad incendios",
+        "seguridad laboral",
+        "extintores trabajo"
+      ]
+    },
+    {
       "id": "clases-fuego-a-b-c-d-k-guia-completa",
       "title": "Conozca las Clases de Fuego A B C D K en México",
       "slug": "clases-fuego-a-b-c-d-k-guia-completa",
