@@ -15,7 +15,11 @@
       "slug": "polvo-quimico-seco",
       "description": "Los más versátiles del mercado. Ideales para todo tipo de negocios y oficinas. Combaten fuegos Clase A, B y C.",
       "color": "#c62828",
-      "fireClasses": ["A", "B", "C"],
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
       "icon": "pqs",
       "tabId": "pqs"
     },
@@ -25,7 +29,10 @@
       "slug": "co2",
       "description": "Especializados para equipos electrónicos y eléctricos. No dejan residuos. Perfectos para data centers, servidores y equipos delicados.",
       "color": "#1565c0",
-      "fireClasses": ["B", "C"],
+      "fireClasses": [
+        "B",
+        "C"
+      ],
       "icon": "co2",
       "tabId": "co2"
     },
@@ -35,7 +42,9 @@
       "slug": "agua-presion",
       "description": "Especializados para materiales sólidos. El agua enfría y penetra materiales porosos. Ideales para bodegas de materiales.",
       "color": "#0288d1",
-      "fireClasses": ["A"],
+      "fireClasses": [
+        "A"
+      ],
       "icon": "agua",
       "tabId": "agua"
     },
@@ -45,7 +54,9 @@
       "slug": "tipo-k",
       "description": "Diseñados específicamente para fuegos de cocina. Saponifican grasas y aceites. Obligatorios en restaurantes y cocinas industriales.",
       "color": "#f9a825",
-      "fireClasses": ["K"],
+      "fireClasses": [
+        "K"
+      ],
       "icon": "tipo-k",
       "tabId": "tipok"
     },
@@ -55,7 +66,10 @@
       "slug": "espuma-afff",
       "description": "Especializados en líquidos inflamables e hidrocarburos. Forman película acuosa que sella el combustible. Ideales para talleres y gasolineras.",
       "color": "#e65100",
-      "fireClasses": ["A", "B"],
+      "fireClasses": [
+        "A",
+        "B"
+      ],
       "icon": "espuma",
       "tabId": "espuma"
     },
@@ -65,7 +79,11 @@
       "slug": "agentes-limpios",
       "description": "Tecnología premium para áreas críticas. Cero residuos, no afecta la capa de ozono. Perfectos para museos, archivos y equipos de alta precisión.",
       "color": "#7b1fa2",
-      "fireClasses": ["A", "B", "C"],
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
       "icon": "limpio",
       "tabId": "limpios"
     }
@@ -1206,14 +1224,14 @@
       "badge": "Premium",
       "badgeType": "premium",
       "featured": true,
-      "image": "productos/polvo-quimico-seco/producto-extintor-pqs-68kg-rodante-principal-1765927523537.jpg",
+      "image": "productos/polvo-quimico-seco/producto-extintor-pqs-68kg-rodante-principal-1765929155728.jpg",
       "images": [
-        "producto-extintor-pqs-68kg-rodante-principal-1765927523537.jpg",
-        "producto-extintor-pqs-68kg-rodante-lateral-1765927523537.jpg",
-        "producto-extintor-pqs-68kg-rodante-detalle-1765927523537.jpg",
-        "producto-extintor-pqs-68kg-rodante-uso-1765927523537.jpg"
+        "producto-extintor-pqs-68kg-rodante-principal-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-lateral-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-detalle-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-uso-1765929155728.jpg"
       ],
-      "excerpt": "Protege tu industria con el extintor PQS 68 kg rodante premium. Eficaz en fuegos A, B y C.",
+      "excerpt": "Protección industrial con el extintor PQS 68 kg rodante premium.",
       "related": [],
       "dateAdded": "2025-12-16"
     }
