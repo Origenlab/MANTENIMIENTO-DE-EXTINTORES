@@ -1,72 +1,149 @@
-<!DOCTYPE html>
+// ═══════════════════════════════════════════════════════════════════════════════
+// GENERADOR HTML - PRODUCTO CATALOGO v3.0
+// Con galería de imágenes, productos relacionados dinámicos, colores por categoría
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const data = $input.first().json;
+const p = data.producto;
+const c = data.contenido;
+const e = data.empresa;
+
+const productUrl = 'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + data.filename;
+const whatsappMsg = encodeURIComponent(c.cta?.mensajeWhatsApp || ('Hola, quiero cotizar ' + p.title));
+
+// Colores por categoría
+const categoryColors = {
+  'polvo-quimico-seco': '#c62828',
+  'co2': '#1565c0',
+  'agua-presion': '#0288d1',
+  'tipo-k': '#f9a825',
+  'espuma-afff': '#e65100',
+  'agentes-limpios': '#7b1fa2'
+};
+const accentColor = categoryColors[p.categoria] || '#d32f2f';
+
+// URLs de breadcrumb por categoría
+const categoryUrls = {
+  'polvo-quimico-seco': { url: '../../polvo-quimico-seco.html', name: 'Extintores PQS' },
+  'co2': { url: '../../co2.html', name: 'Extintores CO2' },
+  'agua-presion': { url: '../../agua-presion.html', name: 'Extintores Agua' },
+  'tipo-k': { url: '../../tipo-k.html', name: 'Extintores Tipo K' },
+  'espuma-afff': { url: '../../espuma-afff.html', name: 'Extintores Espuma' },
+  'agentes-limpios': { url: '../../agentes-limpios.html', name: 'Agentes Limpios' }
+};
+const catInfo = categoryUrls[p.categoria] || { url: '../../catalogo.html', name: p.categoriaDisplay };
+
+// Imágenes - todas las 4
+const imgs = data.imagenesFilenames;
+const imgPrincipal = imgs.principal;
+const imgLateral = imgs.lateral;
+const imgDetalle = imgs.detalle;
+const imgUso = imgs.uso;
+
+// Badges de clases de fuego
+const fireClassColors = { 'A': '#4caf50', 'B': '#ff9800', 'C': '#2196f3', 'D': '#9c27b0', 'K': '#795548' };
+const fireClassNames = { 'A': 'Sólidos', 'B': 'Líquidos', 'C': 'Eléctricos', 'D': 'Metales', 'K': 'Cocinas' };
+
+const classBadgesHtml = p.fireClasses.map(cls => {
+  return `<span class="class-badge" style="background:${fireClassColors[cls] || '#666'};color:white;">${cls} - ${fireClassNames[cls] || cls}</span>`;
+}).join('\n                  ');
+
+// Features HTML (2 columnas)
+const featuresHtml = c.caracteristicas.slice(0, 6).map(f => `<li>${f}</li>`).join('\n                ');
+
+// Specs compactas
+const specs = c.especificaciones;
+
+// Product Schema
+const productSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': p.title,
+  'description': c.seo.metaDescription,
+  'image': [
+    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgPrincipal,
+    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgLateral,
+    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgDetalle,
+    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgUso
+  ],
+  'brand': { '@type': 'Brand', 'name': 'MANEXT' },
+  'manufacturer': { '@type': 'Organization', 'name': 'MANEXT' },
+  'category': p.categoriaDisplay,
+  'offers': {
+    '@type': 'Offer',
+    'availability': 'https://schema.org/InStock',
+    'priceCurrency': 'MXN',
+    'seller': { '@type': 'Organization', 'name': 'MANEXT' }
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// GENERAR HTML COMPLETO
+// ═══════════════════════════════════════════════════════════════════════════════
+
+let html = `<!DOCTYPE html>
 <html lang="es-MX">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Extintor CO2 6.81 kg (15 lbs) - Certificado NOM-154-SCFI | MANEXT</title>
-    <!-- Preconnect para recursos externos -->
+    <title>${c.seo.titulo} | MANEXT</title>
     <link rel="preconnect" href="https://wa.me" crossorigin>
     <link rel="dns-prefetch" href="https://wa.me">
 
-    <!-- CSS Principal -->
-    <link rel="preload" href="../../css/style.css?v=14" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../../css/style.css?v=14"></noscript>
-    <meta
-      name="description"
-      content="Extintor de CO2 6.81 kg (15 lbs) certificado NOM. Ideal para data centers medianos y áreas críticas. No deja residuos."
-    />
+    <link rel="preload" href="../../css/style.css?v=15" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../css/style.css?v=15"></noscript>
+    <meta name="description" content="${c.seo.metaDescription}" />
+    <meta name="keywords" content="${c.seo.metaKeywords}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="geo.region" content="MX-CMX">
     <meta name="geo.placename" content="Ciudad de Mexico">
 
-    <meta property="og:title" content="Extintor CO2 6.81 kg (15 lbs) Certificado NOM - MANEXT" />
+    <meta property="og:title" content="${c.seo.titulo} | MANEXT" />
     <meta property="og:type" content="product" />
-    <meta property="og:url" content="https://mantenimientodeextintores.mx/productos/co2/producto-extintor-co2-6-81kg.html" />
-    <meta property="og:image" content="https://mantenimientodeextintores.mx/img/og-image.jpg" />
+    <meta property="og:url" content="${productUrl}" />
+    <meta property="og:image" content="https://mantenimientodeextintores.mx/productos/${p.categoria}/${imgPrincipal}" />
+    <meta property="og:description" content="${c.seo.metaDescription}" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="MANEXT - Mantenimiento de Extintores" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Extintor CO2 6.81 kg (15 lbs) Certificado NOM - MANEXT">
-    <meta name="twitter:description" content="Extintor de CO2 6.81 kg (15 lbs) certificado NOM. Ideal para data centers medianos y áreas críticas.">
-    <meta name="twitter:image" content="https://mantenimientodeextintores.mx/img/og-image.jpg">
+    <meta name="twitter:title" content="${c.seo.titulo} | MANEXT">
+    <meta name="twitter:description" content="${c.seo.metaDescription}">
+    <meta name="twitter:image" content="https://mantenimientodeextintores.mx/productos/${p.categoria}/${imgPrincipal}">
+
+    <script type="application/ld+json">${productSchema}</script>
 
     <style>
-      /* ========== HERO COMPACTO - TEMA CO2 AZUL ========== */
+      /* ========== HERO COMPACTO ========== */
       .product-hero {
-        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         padding: 1.5rem 0 2rem 0;
       }
-
       .product-hero .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
       .product-breadcrumb {
         margin-bottom: 1.25rem;
         font-size: 0.85rem;
       }
-
       .product-breadcrumb a {
-        color: rgba(255,255,255,0.7);
+        color: #999;
         text-decoration: none;
       }
-
       .product-breadcrumb a:hover {
-        color: #fff;
+        color: ${accentColor};
       }
-
       .product-breadcrumb span {
-        color: rgba(255,255,255,0.5);
+        color: #666;
         margin: 0 0.5rem;
       }
-
       .product-breadcrumb strong {
         color: #fff;
       }
 
-      /* Layout Principal - 2 columnas equilibradas */
+      /* Layout Principal */
       .product-main {
         display: grid;
         grid-template-columns: 450px 1fr;
@@ -74,59 +151,70 @@
         align-items: start;
       }
 
-      /* Columna de Imagen */
-      .product-images {
+      /* Galería de Imágenes */
+      .product-gallery {
         position: sticky;
         top: 100px;
       }
-
       .product-image-main {
         background: white;
         border-radius: 12px;
         padding: 1.5rem;
         box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        margin-bottom: 1rem;
       }
-
       .product-image-main img {
         width: 100%;
-        height: 380px;
+        height: 350px;
         object-fit: contain;
         border-radius: 8px;
+        cursor: zoom-in;
+      }
+      .product-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+      }
+      .thumbnail {
+        background: white;
+        border-radius: 8px;
+        padding: 0.5rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .thumbnail:hover {
+        border-color: ${accentColor};
+      }
+      .thumbnail.active {
+        border-color: ${accentColor};
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 70px;
+        object-fit: contain;
       }
 
-      /* Columna de Información - Compacta */
+      /* Columna de Información */
       .product-info {
         color: white;
       }
-
       .product-badges {
         display: flex;
         gap: 0.75rem;
         margin-bottom: 1rem;
         flex-wrap: wrap;
       }
-
       .product-badge {
         padding: 0.4rem 0.9rem;
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 600;
       }
-
-      .badge-certified {
-        background: #2196f3;
-        color: white;
-      }
-
-      .badge-stock {
-        background: #4caf50;
-        color: white;
-      }
-
-      .badge-no-residue {
-        background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
-        color: white;
-      }
+      .badge-certified { background: #2196f3; color: white; }
+      .badge-stock { background: #4caf50; color: white; }
+      .badge-category { background: ${accentColor}; color: white; }
 
       .product-title {
         font-size: 1.9rem;
@@ -135,43 +223,35 @@
         color: white;
         line-height: 1.2;
       }
-
       .product-short-description {
         font-size: 0.95rem;
         line-height: 1.6;
-        color: rgba(255,255,255,0.85);
+        color: #ccc;
         margin-bottom: 1.25rem;
         padding: 1rem;
-        background: rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.05);
         border-radius: 8px;
-        border-left: 3px solid #2196f3;
+        border-left: 3px solid ${accentColor};
       }
+      .product-short-description strong { color: #fff; }
 
-      .product-short-description strong {
-        color: #fff;
-      }
-
-      /* Grid de 2 columnas para clases y specs */
+      /* Grid de clases y specs */
       .product-info-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         margin-bottom: 1.25rem;
       }
-
-      .product-classes h3,
-      .product-specs h3 {
+      .product-classes h3, .product-specs h3 {
         font-size: 0.95rem;
         margin-bottom: 0.6rem;
         color: #fff;
       }
-
       .class-badges {
         display: flex;
         flex-direction: column;
         gap: 0.4rem;
       }
-
       .class-badge {
         padding: 0.4rem 0.8rem;
         border-radius: 6px;
@@ -179,49 +259,33 @@
         font-weight: 600;
         text-align: center;
       }
-
-      .class-b { background: #ff9800; color: white; }
-      .class-c { background: #2196f3; color: white; }
-
       .product-specs {
-        background: rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.05);
         padding: 0.9rem;
         border-radius: 8px;
       }
-
       .specs-list {
         display: flex;
         flex-direction: column;
         gap: 0.4rem;
       }
-
       .spec-item {
         display: flex;
         align-items: center;
         gap: 0.4rem;
         font-size: 0.85rem;
-        color: rgba(255,255,255,0.9);
+        color: #ddd;
       }
+      .spec-icon { font-size: 0.9rem; }
+      .spec-item strong { color: ${accentColor}; }
 
-      .spec-icon {
-        font-size: 0.9rem;
-      }
-
-      .spec-item strong {
-        color: #64b5f6;
-      }
-
-      /* Features compactas en 2 columnas */
-      .product-features {
-        margin-bottom: 1.25rem;
-      }
-
+      /* Features */
+      .product-features { margin-bottom: 1.25rem; }
       .product-features h3 {
         font-size: 0.95rem;
         margin-bottom: 0.6rem;
         color: white;
       }
-
       .product-features ul {
         list-style: none;
         padding: 0;
@@ -229,16 +293,13 @@
         grid-template-columns: 1fr 1fr;
         gap: 0.4rem;
       }
-
       .product-features li {
-        padding: 0.35rem 0;
-        padding-left: 1.3rem;
+        padding: 0.35rem 0 0.35rem 1.3rem;
         position: relative;
-        color: rgba(255,255,255,0.85);
+        color: #ccc;
         font-size: 0.82rem;
         line-height: 1.3;
       }
-
       .product-features li:before {
         content: "✓";
         position: absolute;
@@ -248,26 +309,23 @@
         font-size: 0.85rem;
       }
 
-      /* CTA compacto con botón verde WhatsApp */
+      /* CTA */
       .product-cta {
-        background: rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.08);
         padding: 1.25rem;
         border-radius: 8px;
         text-align: center;
       }
-
       .product-cta h3 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
         color: white;
       }
-
       .product-cta p {
-        color: rgba(255,255,255,0.8);
+        color: #bbb;
         margin-bottom: 1rem;
         font-size: 0.9rem;
       }
-
       .btn-cotizar-producto {
         display: inline-flex;
         align-items: center;
@@ -284,30 +342,26 @@
         cursor: pointer;
         transition: all 0.3s ease;
       }
-
       .btn-cotizar-producto:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
       }
-
       .contact-phones {
         margin-top: 0.75rem;
-        color: rgba(255,255,255,0.7);
+        color: #999;
         font-size: 0.85rem;
       }
-
       .contact-phones a {
         color: #4caf50;
         text-decoration: none;
         font-weight: 600;
       }
 
-      /* ========== CONTENIDO PRINCIPAL CON SIDEBAR ========== */
+      /* ========== CONTENIDO + SIDEBAR ========== */
       .product-content-wrapper {
         background: #f8f9fa;
         padding: 3rem 0;
       }
-
       .content-layout {
         display: grid;
         grid-template-columns: 1fr 350px;
@@ -316,115 +370,78 @@
         margin: 0 auto;
         padding: 0 2rem;
       }
+      .main-content { min-width: 0; }
 
-      .main-content {
-        min-width: 0;
-      }
-
-      /* Descripción */
-      .description-card {
+      /* Cards */
+      .description-card, .related-products-section {
         background: white;
         border-radius: 12px;
         padding: 2rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         margin-bottom: 2rem;
       }
-
-      .description-card h2 {
+      .description-card h2, .related-products-section h2 {
         font-size: 1.5rem;
         color: #333;
         margin-bottom: 1.5rem;
         padding-bottom: 0.75rem;
-        border-bottom: 2px solid #2196f3;
+        border-bottom: 2px solid ${accentColor};
       }
-
-      .description-section {
-        margin-bottom: 1.5rem;
-      }
-
-      .description-section:last-child {
-        margin-bottom: 0;
-      }
-
+      .description-section { margin-bottom: 1.5rem; }
+      .description-section:last-child { margin-bottom: 0; }
       .description-section h3 {
         font-size: 1.15rem;
-        color: #1565c0;
+        color: ${accentColor};
         margin-bottom: 0.75rem;
       }
-
       .description-section p {
         font-size: 0.95rem;
         line-height: 1.7;
         color: #555;
         margin-bottom: 0.75rem;
       }
-
       .description-section ul {
         list-style: none;
         padding-left: 0;
       }
-
       .description-section li {
-        padding: 0.4rem 0;
-        padding-left: 1.5rem;
+        padding: 0.4rem 0 0.4rem 1.5rem;
         position: relative;
         font-size: 0.92rem;
         color: #555;
       }
-
       .description-section li:before {
         content: "▸";
         position: absolute;
         left: 0;
-        color: #2196f3;
+        color: ${accentColor};
         font-weight: bold;
       }
-
       .highlight-box {
-        background: #e3f2fd;
+        background: #fff8e1;
         padding: 1.25rem;
         border-radius: 8px;
-        border-left: 4px solid #2196f3;
+        border-left: 4px solid #ff9800;
         margin: 1.5rem 0;
       }
-
       .highlight-box h4 {
         font-size: 1rem;
-        color: #1565c0;
+        color: #e65100;
         margin-bottom: 0.5rem;
       }
-
       .highlight-box p {
         font-size: 0.9rem;
         color: #555;
         margin-bottom: 0.5rem;
       }
+      .highlight-box p:last-child { margin-bottom: 0; }
 
-      .highlight-box p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* Productos Relacionados Inline */
-      .related-products-inline {
-        background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      }
-
-      .related-products-inline h2 {
-        font-size: 1.3rem;
-        color: #333;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-
+      /* Related Products Grid */
       .related-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
       }
-
       .related-card {
         display: flex;
         flex-direction: column;
@@ -437,63 +454,54 @@
         height: 100%;
         border: 1px solid #eee;
       }
-
       .related-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       }
-
       .related-card-image {
         height: 140px;
         overflow: hidden;
         background: white;
       }
-
       .related-card-image img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         padding: 0.75rem;
       }
-
       .related-card-content {
         padding: 1rem;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
       }
-
       .related-card-title {
         font-size: 0.95rem;
         font-weight: 700;
         color: #1a1a1a;
         margin-bottom: 0.3rem;
       }
-
       .related-card-capacity {
         font-size: 0.8rem;
         color: #666;
         margin-bottom: 0.6rem;
       }
-
       .related-card-badges {
         display: flex;
         gap: 0.3rem;
         margin-bottom: 0.75rem;
         flex-wrap: wrap;
       }
-
       .related-card-badges .class-badge {
         padding: 0.2rem 0.5rem;
         font-size: 0.7rem;
       }
-
       .related-card-link {
         display: block;
         width: 100%;
         padding: 0.6rem;
         margin-top: auto;
-        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+        background: linear-gradient(135deg, ${accentColor} 0%, #1a1a1a 100%);
         color: white;
         font-weight: 600;
         font-size: 0.85rem;
@@ -501,44 +509,35 @@
         border-radius: 6px;
         transition: all 0.3s ease;
       }
-
       .related-card:hover .related-card-link {
-        background: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+        background: linear-gradient(135deg, #1a1a1a 0%, ${accentColor} 100%);
       }
 
-      /* ========== SIDEBAR ========== */
+      /* Sidebar */
       .sidebar {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
       }
-
       .sidebar-widget {
         background: white;
         border-radius: 12px;
         padding: 1.5rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       }
-
       .sidebar-widget h3 {
         font-size: 1.1rem;
         color: #333;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
-        border-bottom: 2px solid #2196f3;
+        border-bottom: 2px solid ${accentColor};
       }
-
-      /* Widget de Servicios */
       .service-list {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-
-      .service-list li {
-        margin-bottom: 0.5rem;
-      }
-
+      .service-list li { margin-bottom: 0.5rem; }
       .service-list a {
         display: flex;
         align-items: center;
@@ -551,24 +550,17 @@
         font-size: 0.9rem;
         transition: all 0.3s ease;
       }
-
       .service-list a:hover {
-        background: #1565c0;
+        background: ${accentColor};
         color: white;
         transform: translateX(4px);
       }
-
-      .service-icon {
-        font-size: 1.1rem;
-      }
-
-      /* Widget de Blog */
+      .service-icon { font-size: 1.1rem; }
       .blog-list {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
       }
-
       .blog-item {
         display: block;
         padding: 0.75rem;
@@ -577,11 +569,7 @@
         text-decoration: none;
         transition: all 0.3s ease;
       }
-
-      .blog-item:hover {
-        background: #e8e8e8;
-      }
-
+      .blog-item:hover { background: #e8e8e8; }
       .blog-title {
         font-size: 0.85rem;
         color: #333;
@@ -589,26 +577,18 @@
         line-height: 1.4;
         display: block;
       }
-
-      .blog-list .blog-category {
-        display: none;
-      }
-
-      /* Widget Nosotros */
+      .blog-list .blog-category { display: none; }
       .about-widget p {
         font-size: 0.9rem;
         color: #555;
         line-height: 1.6;
         margin-bottom: 0.75rem;
       }
-
       .about-widget a {
-        color: #1565c0;
+        color: ${accentColor};
         font-weight: 600;
         text-decoration: none;
       }
-
-      /* Widget Contacto */
       .contact-widget-item {
         display: flex;
         align-items: center;
@@ -616,65 +596,46 @@
         padding: 0.6rem 0;
         border-bottom: 1px solid #eee;
       }
-
-      .contact-widget-item:last-child {
-        border-bottom: none;
-      }
-
-      .contact-icon {
-        font-size: 1.2rem;
-      }
-
+      .contact-widget-item:last-child { border-bottom: none; }
+      .contact-icon { font-size: 1.2rem; }
       .contact-info span {
         display: block;
         font-size: 0.8rem;
         color: #999;
       }
-
-      .contact-info a,
-      .contact-info strong {
+      .contact-info a, .contact-info strong {
         font-size: 0.95rem;
         color: #333;
         text-decoration: none;
         font-weight: 600;
       }
-
-      .contact-info a:hover {
-        color: #1565c0;
-      }
-
-      /* Widget Ubicación */
+      .contact-info a:hover { color: ${accentColor}; }
       .location-widget address {
         font-style: normal;
         font-size: 0.9rem;
         color: #555;
         line-height: 1.6;
       }
-
-      /* Widget CTA */
       .cta-widget {
-        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%) !important;
+        background: linear-gradient(135deg, ${accentColor} 0%, #1a1a1a 100%) !important;
         color: white;
         text-align: center;
       }
-
       .cta-widget h3 {
         color: white !important;
         border-bottom-color: rgba(255,255,255,0.3) !important;
       }
-
       .cta-widget p {
         color: rgba(255,255,255,0.9);
         font-size: 0.9rem;
         margin-bottom: 1rem;
       }
-
       .cta-widget .btn-cta {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
         background: white;
-        color: #1565c0;
+        color: ${accentColor};
         padding: 0.75rem 1.5rem;
         border-radius: 50px;
         text-decoration: none;
@@ -682,139 +643,110 @@
         font-size: 0.95rem;
         transition: all 0.3s ease;
       }
-
       .cta-widget .btn-cta:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       }
 
-      /* ========== RESPONSIVE ========== */
+      /* Responsive */
       @media (max-width: 1100px) {
         .content-layout {
           grid-template-columns: 1fr 300px;
           gap: 2rem;
         }
       }
-
       @media (max-width: 968px) {
         .product-main {
           grid-template-columns: 1fr;
           gap: 2rem;
         }
-
-        .product-images {
+        .product-gallery {
           position: static;
-          max-width: 400px;
+          max-width: 500px;
           margin: 0 auto;
         }
-
-        .product-info-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .content-layout {
-          grid-template-columns: 1fr;
-        }
-
+        .content-layout { grid-template-columns: 1fr; }
         .sidebar {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 1rem;
         }
-
-        .cta-widget {
-          grid-column: span 2;
-        }
+        .cta-widget { grid-column: span 2; }
       }
-
       @media (max-width: 600px) {
-        .product-hero {
-          padding: 1rem 0 1.5rem 0;
-        }
-
-        .product-hero .container {
-          padding: 0 1rem;
-        }
-
-        .product-title {
-          font-size: 1.5rem;
-        }
-
-        .product-info-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .product-features ul {
-          grid-template-columns: 1fr;
-        }
-
-        .related-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .sidebar {
-          grid-template-columns: 1fr;
-        }
-
-        .cta-widget {
-          grid-column: span 1;
-        }
-
-        .content-layout {
-          padding: 0 1rem;
-        }
+        .product-hero { padding: 1rem 0 1.5rem 0; }
+        .product-hero .container { padding: 0 1rem; }
+        .product-title { font-size: 1.5rem; }
+        .product-info-grid { grid-template-columns: 1fr; }
+        .product-features ul { grid-template-columns: 1fr; }
+        .product-thumbnails { grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+        .thumbnail img { height: 50px; }
+        .related-grid { grid-template-columns: 1fr; }
+        .sidebar { grid-template-columns: 1fr; }
+        .cta-widget { grid-column: span 1; }
+        .content-layout { padding: 0 1rem; }
       }
     </style>
-    <link rel="canonical" href="https://mantenimientodeextintores.mx/productos/co2/producto-extintor-co2-6-81kg.html">
+    <link rel="canonical" href="${productUrl}">
   </head>
 
   <body>
-    <!-- Menu de Navegación -->
     <div id="menu-container"></div>
 
-    <!-- HERO DEL PRODUCTO -->
+    <!-- HERO -->
     <section class="product-hero">
       <div class="container">
-        <!-- Breadcrumb -->
         <div class="product-breadcrumb">
           <a href="https://mantenimientodeextintores.mx/">Inicio</a>
           <span>/</span>
           <a href="../../catalogo.html">Catálogo</a>
           <span>/</span>
-          <a href="../../co2.html">Extintores CO2</a>
+          <a href="${catInfo.url}">${catInfo.name}</a>
           <span>/</span>
-          <strong>Extintor CO2 6.81 kg</strong>
+          <strong>${p.title}</strong>
         </div>
 
         <div class="product-main">
-          <!-- Columna de Imagen -->
-          <div class="product-images">
+          <!-- Galería de Imágenes -->
+          <div class="product-gallery">
             <div class="product-image-main">
-              <img src="img-extintores-co2/Extintores-industriales-CO2-15lbs.webp" alt="Extintor CO2 6.81 kg (15 lbs) Certificado NOM" width="640" height="480" id="mainImage" />
+              <img src="${imgPrincipal}" alt="${p.title}" width="640" height="480" id="mainImage" />
+            </div>
+            <div class="product-thumbnails">
+              <div class="thumbnail active" onclick="changeImage('${imgPrincipal}', this)">
+                <img src="${imgPrincipal}" alt="${p.title} - Vista principal" loading="lazy" />
+              </div>
+              <div class="thumbnail" onclick="changeImage('${imgLateral}', this)">
+                <img src="${imgLateral}" alt="${p.title} - Vista lateral" loading="lazy" />
+              </div>
+              <div class="thumbnail" onclick="changeImage('${imgDetalle}', this)">
+                <img src="${imgDetalle}" alt="${p.title} - Detalle" loading="lazy" />
+              </div>
+              <div class="thumbnail" onclick="changeImage('${imgUso}', this)">
+                <img src="${imgUso}" alt="${p.title} - En uso" loading="lazy" />
+              </div>
             </div>
           </div>
 
-          <!-- Columna de Información -->
+          <!-- Información -->
           <div class="product-info">
             <div class="product-badges">
               <span class="product-badge badge-certified">Certificado NOM-154</span>
-              <span class="product-badge badge-no-residue">Sin Residuos</span>
               <span class="product-badge badge-stock">Disponible</span>
+              <span class="product-badge badge-category">${p.badge}</span>
             </div>
 
-            <h1 class="product-title">Extintor CO2 6.81 kg (15 lbs)</h1>
+            <h1 class="product-title">${p.title}</h1>
 
             <div class="product-short-description">
-              <strong>Extintor de CO2 de 6.81 kg (15 lbs)</strong>, ideal para data centers medianos y áreas con equipos críticos. <strong>No deja residuos</strong> post-descarga. Mayor capacidad para combatir incendios <strong>Clase B y C</strong>.
+              ${c.hero.descripcionCorta}
             </div>
 
-            <!-- Grid de 2 columnas: Clases y Specs -->
             <div class="product-info-grid">
               <div class="product-classes">
                 <h3>Clases de Fuego</h3>
                 <div class="class-badges">
-                  <span class="class-badge class-b">B - Líquidos</span>
-                  <span class="class-badge class-c">C - Eléctricos</span>
+                  ${classBadgesHtml}
                 </div>
               </div>
 
@@ -823,47 +755,40 @@
                 <div class="specs-list">
                   <div class="spec-item">
                     <span class="spec-icon">⚖️</span>
-                    <span><strong>6.81 kg</strong> (15 lbs)</span>
+                    <span><strong>${specs.capacidad}</strong></span>
                   </div>
                   <div class="spec-item">
                     <span class="spec-icon">📏</span>
-                    <span><strong>3-4 m</strong> alcance</span>
+                    <span><strong>${specs.alcance}</strong></span>
                   </div>
                   <div class="spec-item">
                     <span class="spec-icon">⏱️</span>
-                    <span><strong>12-15 seg</strong></span>
+                    <span><strong>${specs.tiempoDescarga}</strong></span>
                   </div>
                   <div class="spec-item">
                     <span class="spec-icon">📐</span>
-                    <span><strong>52 cm</strong> altura</span>
+                    <span><strong>${specs.altura}</strong></span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Features en 2 columnas -->
             <div class="product-features">
               <h3>Incluye</h3>
               <ul>
-                <li>Extintor certificado NOM</li>
-                <li>Corneta reforzada</li>
-                <li>Válvula alta presión</li>
-                <li>Soporte reforzado</li>
-                <li>Garantía de fábrica</li>
-                <li>Sin residuos</li>
+                ${featuresHtml}
               </ul>
             </div>
 
-            <!-- CTA -->
             <div class="product-cta">
-              <h3>¿Listo para Proteger tu Data Center?</h3>
-              <p>Cotiza ahora y recibe asesoría de nuestros expertos</p>
-              <a href="https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20el%20Extintor%20CO2%206.81%20kg%20(15%20lbs)%20que%20vi%20en%20la%20página" class="btn-cotizar-producto" target="_blank">
+              <h3>${c.cta.titulo}</h3>
+              <p>${c.cta.descripcion}</p>
+              <a href="https://wa.me/${e.whatsapp}?text=${whatsappMsg}" class="btn-cotizar-producto" target="_blank">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Cotizar por WhatsApp
               </a>
               <div class="contact-phones">
-                También llámanos: <a href="tel:5539689272">55 3968 9272</a>
+                También llámanos: <a href="tel:${e.telefono.replace(/\\s/g, '')}">${e.telefono}</a>
               </div>
             </div>
           </div>
@@ -871,212 +796,96 @@
       </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL + SIDEBAR -->
+    <!-- CONTENIDO + SIDEBAR -->
     <section class="product-content-wrapper">
       <div class="content-layout">
-        <!-- Contenido Principal -->
         <div class="main-content">
-          <!-- Descripción -->
           <div class="description-card">
             <h2>Descripción del Producto</h2>
 
             <div class="description-section">
-              <h3>¿Por qué elegir el Extintor CO2 6.81 kg?</h3>
-              <p>
-                El <strong>extintor CO2 de 6.81 kg (15 lbs)</strong> representa el siguiente nivel en protección para instalaciones críticas. Con <strong>alcance de 3-4 metros</strong> y <strong>12-15 segundos de descarga</strong>, ofrece capacidad suficiente para data centers medianos.
-              </p>
-              <p>
-                Su principal ventaja: <strong>cero residuos post-descarga</strong>. El CO2 actúa por desplazamiento de oxígeno y enfriamiento rápido sin dañar equipos electrónicos.
-              </p>
+              <h3>¿Por qué elegir este extintor?</h3>
+              ${c.descripcionDetallada.introduccion}
             </div>
 
             <div class="description-section">
               <h3>Características Técnicas</h3>
-              <ul>
-                <li><strong>Cilindro robusto:</strong> Acero de alta presión, soporta hasta 1800 PSI</li>
-                <li><strong>Agente extintor:</strong> CO2 gas licuado 100% puro</li>
-                <li><strong>Presurización:</strong> Auto-presurizado (850-900 PSI a 21°C)</li>
-                <li><strong>Corneta reforzada:</strong> Mayor diámetro para cobertura ampliada</li>
-                <li><strong>Seguridad eléctrica:</strong> Hasta 35,000 voltios</li>
-              </ul>
+              ${c.descripcionDetallada.caracteristicasTecnicas}
             </div>
 
             <div class="highlight-box">
-              <h4>Ideal para Data Centers Medianos</h4>
-              <p>
-                Este modelo es perfecto para <strong>data centers de 40-60 m²</strong> o salas con 20-40 racks. El tiempo de descarga extendido permite mayor margen de maniobra para combatir incendios en áreas de difícil acceso.
-              </p>
+              <h4>⚠️ Mantenimiento Obligatorio</h4>
+              ${c.descripcionDetallada.mantenimiento}
             </div>
 
             <div class="description-section">
               <h3>Aplicaciones Recomendadas</h3>
-              <ul>
-                <li><strong>Data centers medianos:</strong> Instalaciones con 20-40 racks</li>
-                <li><strong>Telecomunicaciones:</strong> Centrales telefónicas y equipos de transmisión</li>
-                <li><strong>Laboratorios electrónicos:</strong> Manufactura de circuitos y pruebas</li>
-                <li><strong>Salas de control:</strong> Sistemas SCADA y DCS</li>
-                <li><strong>Instalaciones médicas:</strong> Equipos de diagnóstico electrónico</li>
-              </ul>
+              ${c.descripcionDetallada.aplicaciones}
             </div>
 
             <div class="description-section">
               <h3>Garantía y Certificaciones</h3>
-              <ul>
-                <li>Garantía de fábrica de <strong>1 año</strong></li>
-                <li>Certificado <strong>NOM-154-SCFI-2005</strong> vigente</li>
-                <li>Cumple <strong>NOM-002-STPS-2010</strong></li>
-                <li>Vida útil del cilindro: 15 años</li>
-              </ul>
+              ${c.descripcionDetallada.garantia}
             </div>
           </div>
 
-          <!-- Productos Relacionados -->
-          <div class="related-products-inline">
-            <h2>Otros Extintores CO2</h2>
-            <div class="related-grid">
-              <div class="related-card">
-                <div class="related-card-image">
-                  <img src="img-extintores-co2/Mantenimiento-de-extintores-CO2-10lbs.webp" alt="Extintor CO2 4.54 kg" width="640" height="480" loading="lazy" />
-                </div>
-                <div class="related-card-content">
-                  <h3 class="related-card-title">Extintor CO2 4.54 kg</h3>
-                  <p class="related-card-capacity">4.54 kg | 2-3 metros</p>
-                  <div class="related-card-badges">
-                    <span class="class-badge class-b">B</span>
-                    <span class="class-badge class-c">C</span>
-                  </div>
-                  <a href="producto-extintor-co2-4-54kg.html" class="related-card-link">Ver Detalles →</a>
-                </div>
-              </div>
-
-              <div class="related-card">
-                <div class="related-card-image">
-                  <img src="img-extintores-co2/Extintores-industriales-CO2-20lbs.webp" alt="Extintor CO2 9.08 kg" width="640" height="480" loading="lazy" />
-                </div>
-                <div class="related-card-content">
-                  <h3 class="related-card-title">Extintor CO2 9.08 kg</h3>
-                  <p class="related-card-capacity">9.08 kg | 4-5 metros</p>
-                  <div class="related-card-badges">
-                    <span class="class-badge class-b">B</span>
-                    <span class="class-badge class-c">C</span>
-                  </div>
-                  <a href="producto-extintor-co2-9-08kg.html" class="related-card-link">Ver Detalles →</a>
-                </div>
-              </div>
-
-              <div class="related-card">
-                <div class="related-card-image">
-                  <img src="img-extintores-co2/extintor-portatil-co2-30lbs.webp" alt="Extintor CO2 13.62 kg" width="640" height="480" loading="lazy" />
-                </div>
-                <div class="related-card-content">
-                  <h3 class="related-card-title">Extintor CO2 13.62 kg</h3>
-                  <p class="related-card-capacity">13.62 kg | 5-6 metros</p>
-                  <div class="related-card-badges">
-                    <span class="class-badge class-b">B</span>
-                    <span class="class-badge class-c">C</span>
-                  </div>
-                  <a href="producto-extintor-co2-13-62kg.html" class="related-card-link">Ver Detalles →</a>
-                </div>
-              </div>
-
-              <div class="related-card">
-                <div class="related-card-image">
-                  <img src="img-extintores-co2/Extintor-de-CO2-5lbs.webp" alt="Extintor CO2 2.27 kg" width="640" height="480" loading="lazy" />
-                </div>
-                <div class="related-card-content">
-                  <h3 class="related-card-title">Extintor CO2 2.27 kg</h3>
-                  <p class="related-card-capacity">2.27 kg | 1-2 metros</p>
-                  <div class="related-card-badges">
-                    <span class="class-badge class-b">B</span>
-                    <span class="class-badge class-c">C</span>
-                  </div>
-                  <a href="producto-extintor-co2-2-27kg.html" class="related-card-link">Ver Detalles →</a>
-                </div>
-              </div>
+          <!-- Productos Relacionados - Cargados dinámicamente -->
+          <div class="related-products-section">
+            <h2>Productos Relacionados</h2>
+            <div class="related-grid" id="related-products" data-slug="${p.slug}" data-category="${p.categoria}">
+              <p style="text-align:center;color:#666;grid-column:span 2;">Cargando productos relacionados...</p>
             </div>
           </div>
         </div>
 
         <!-- Sidebar -->
         <aside class="sidebar">
-          <!-- Widget Servicios -->
           <div class="sidebar-widget">
             <h3>Nuestros Servicios</h3>
             <ul class="service-list">
-              <li>
-                <a href="../../venta-de-extintores.html">
-                  <span class="service-icon">🧯</span>
-                  Venta de Extintores
-                </a>
-              </li>
-              <li>
-                <a href="../../recarga-de-extintores.html">
-                  <span class="service-icon">🔄</span>
-                  Recarga de Extintores
-                </a>
-              </li>
-              <li>
-                <a href="../../mantenimiento-preventivo.html">
-                  <span class="service-icon">🔧</span>
-                  Mantenimiento Preventivo
-                </a>
-              </li>
-              <li>
-                <a href="../../prueba-hidrostatica.html">
-                  <span class="service-icon">💧</span>
-                  Prueba Hidrostática
-                </a>
-              </li>
-              <li>
-                <a href="../../capacitacion-brigadas.html">
-                  <span class="service-icon">👨‍🏫</span>
-                  Capacitación
-                </a>
-              </li>
+              <li><a href="../../venta-de-extintores.html"><span class="service-icon">🧯</span>Venta de Extintores</a></li>
+              <li><a href="../../recarga-de-extintores.html"><span class="service-icon">🔄</span>Recarga de Extintores</a></li>
+              <li><a href="../../mantenimiento-preventivo.html"><span class="service-icon">🔧</span>Mantenimiento Preventivo</a></li>
+              <li><a href="../../prueba-hidrostatica.html"><span class="service-icon">💧</span>Prueba Hidrostática</a></li>
+              <li><a href="../../capacitacion-brigadas.html"><span class="service-icon">👨‍🏫</span>Capacitación</a></li>
             </ul>
           </div>
 
-          <!-- Widget Blog -->
           <div class="sidebar-widget">
             <h3>Artículos Relacionados</h3>
             <div class="blog-list">
               <a href="../../blog/tipos-de-extintores/extintor-polvo-quimico-seco-pqs-usos-ventajas.html" class="blog-item">
-                <span class="blog-category">Tipos de Extintores</span>
-                <span class="blog-title">Extintores CO2: Usos y Ventajas</span>
+                <span class="blog-title">Extintor PQS: Usos y Ventajas</span>
               </a>
               <a href="../../blog/normativas-y-certificaciones/nom-154-scfi-guia-completa-cumplimiento-extintores.html" class="blog-item">
-                <span class="blog-category">Normativas</span>
                 <span class="blog-title">NOM-154-SCFI: Guía Completa</span>
               </a>
               <a href="../../blog/mantenimiento-y-recarga/cuando-recargar-extintor-señales-frecuencia-normativa.html" class="blog-item">
-                <span class="blog-category">Mantenimiento</span>
                 <span class="blog-title">Cuándo Recargar tu Extintor</span>
               </a>
             </div>
           </div>
 
-          <!-- Widget Nosotros -->
           <div class="sidebar-widget about-widget">
             <h3>Sobre MANEXT</h3>
             <p>Somos especialistas en seguridad contra incendios con más de 80 años de experiencia protegiendo a México.</p>
             <p><a href="../../nosotros.html">Conoce nuestra historia →</a></p>
           </div>
 
-          <!-- Widget Contacto -->
           <div class="sidebar-widget">
             <h3>Contacto Rápido</h3>
             <div class="contact-widget-item">
               <span class="contact-icon">📞</span>
               <div class="contact-info">
                 <span>Teléfono</span>
-                <a href="tel:5539689272">55 3968 9272</a>
+                <a href="tel:${e.telefono.replace(/\\s/g, '')}">${e.telefono}</a>
               </div>
             </div>
             <div class="contact-widget-item">
               <span class="contact-icon">💬</span>
               <div class="contact-info">
                 <span>WhatsApp</span>
-                <a href="https://wa.me/5215539689272" target="_blank">Enviar mensaje</a>
+                <a href="https://wa.me/${e.whatsapp}" target="_blank">Enviar mensaje</a>
               </div>
             </div>
             <div class="contact-widget-item">
@@ -1088,77 +897,58 @@
             </div>
           </div>
 
-          <!-- Widget Ubicación -->
           <div class="sidebar-widget location-widget">
             <h3>Ubicación</h3>
-            <address>
-              📍 Ciudad de México y Área Metropolitana<br><br>
-              Servicio a domicilio disponible para empresas e industrias.
-            </address>
+            <address>📍 ${e.direccion}<br><br>Servicio a domicilio disponible.</address>
           </div>
 
-          <!-- Widget CTA -->
           <div class="sidebar-widget cta-widget">
             <h3>¿Necesitas Ayuda?</h3>
             <p>Nuestros expertos están listos para asesorarte</p>
-            <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20asesoría%20sobre%20extintores%20CO2" class="btn-cta" target="_blank">
-              💬 Chatea con Nosotros
-            </a>
+            <a href="https://wa.me/${e.whatsapp}?text=Hola%2C%20necesito%20asesoría%20sobre%20extintores" class="btn-cta" target="_blank">💬 Chatea con Nosotros</a>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Catalog System para productos relacionados -->
+    <script src="../../js/catalog-system.js?v=3"></script>
+
     <script>
+      // Cambiar imagen principal
+      function changeImage(src, thumb) {
+        document.getElementById('mainImage').src = src;
+        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      }
+
       // Cargar menu y footer
       fetch('../../menu.html')
-        .then(response => response.text())
+        .then(r => r.text())
         .then(data => {
           document.getElementById('menu-container').innerHTML = data;
-          initMenu();
+          const scripts = document.getElementById('menu-container').querySelectorAll('script');
+          scripts.forEach(old => {
+            const s = document.createElement('script');
+            s.textContent = old.textContent;
+            old.parentNode.replaceChild(s, old);
+          });
         });
 
       fetch('../../footer.html')
-        .then(response => response.text())
+        .then(r => r.text())
         .then(data => {
           document.getElementById('footer-container').innerHTML = data;
         });
-
-      function initMenu() {
-        var menuToggle = document.getElementById('menuToggle');
-        var navMenu = document.getElementById('navMenu');
-        var menuOverlay = document.getElementById('menuOverlay');
-        if (!menuToggle || !navMenu) return;
-
-        menuToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          navMenu.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (menuOverlay) menuOverlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-
-        if (menuOverlay) {
-          menuOverlay.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-          });
-        }
-
-        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-          toggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-              e.preventDefault();
-              this.parentElement.classList.toggle('active');
-            }
-          });
-        });
-      }
     </script>
   </body>
-</html>
+</html>`;
+
+return [{
+  json: {
+    ...data,
+    htmlContent: html
+  }
+}];

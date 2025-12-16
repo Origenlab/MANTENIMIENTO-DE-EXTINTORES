@@ -1,7 +1,6 @@
 /**
- * MANEXT Catalog System v2.0
- * Sistema de renderizado dinamico de productos desde JSON con paginacion
- * Simplificado: todos los productos en un grid con paginacion (sin tabs ni filtros)
+ * MANEXT Catalog System v3.0
+ * Sistema de renderizado dinamico de productos con filtros y busqueda
  */
 
 (function() {
@@ -15,8 +14,15 @@
     whatsappNumber: '5215539689272'
   };
 
-  // Cache de datos
-  let productsData = null;
+  // Estado de la aplicacion
+  let state = {
+    products: [],
+    categories: [],
+    filteredProducts: [],
+    currentCategory: 'all',
+    searchQuery: '',
+    currentPage: 1
+  };
 
   /**
    * Detecta el nivel de profundidad de la pagina actual
@@ -36,14 +42,15 @@
    * Carga los datos del JSON
    */
   async function loadProductsData() {
-    if (productsData) return productsData;
-
     const basePath = getBasePath();
     try {
       const response = await fetch(basePath + CONFIG.dataPath);
       if (!response.ok) throw new Error('Error cargando datos');
-      productsData = await response.json();
-      return productsData;
+      const data = await response.json();
+      state.products = data.products || [];
+      state.categories = data.categories || [];
+      state.filteredProducts = [...state.products];
+      return data;
     } catch (error) {
       console.error('Error cargando productos:', error);
       return null;
@@ -53,30 +60,89 @@
   /**
    * Obtiene la categoria por ID
    */
-  function getCategoryById(categories, categoryId) {
-    return categories.find(cat => cat.id === categoryId) || null;
+  function getCategoryById(categoryId) {
+    return state.categories.find(cat => cat.id === categoryId) || null;
   }
 
   /**
-   * Filtra productos por categoria
+   * Filtra productos por categoria y busqueda
    */
-  function filterByCategory(products, categoryId) {
-    if (!categoryId) return products;
-    return products.filter(product => product.category === categoryId);
+  function filterProducts() {
+    let filtered = [...state.products];
+
+    // Filtrar por categoria
+    if (state.currentCategory !== 'all') {
+      filtered = filtered.filter(p => p.category === state.currentCategory);
+    }
+
+    // Filtrar por busqueda
+    if (state.searchQuery.trim()) {
+      const query = state.searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(p => {
+        return p.title.toLowerCase().includes(query) ||
+               p.capacity.toLowerCase().includes(query) ||
+               p.excerpt.toLowerCase().includes(query) ||
+               (p.category && p.category.toLowerCase().includes(query));
+      });
+    }
+
+    // Ordenar por capacidad
+    filtered.sort((a, b) => a.capacityValue - b.capacityValue);
+
+    state.filteredProducts = filtered;
+    state.currentPage = 1;
   }
 
   /**
-   * Ordena productos por capacidad
+   * Actualiza los contadores de categorias
    */
-  function sortByCapacity(products) {
-    return [...products].sort((a, b) => a.capacityValue - b.capacityValue);
+  function updateCategoryCounts() {
+    const counts = {
+      all: state.products.length,
+      pqs: 0,
+      co2: 0,
+      agua: 0,
+      tipok: 0,
+      espuma: 0,
+      limpios: 0
+    };
+
+    state.products.forEach(p => {
+      switch(p.category) {
+        case 'polvo-quimico-seco': counts.pqs++; break;
+        case 'co2': counts.co2++; break;
+        case 'agua-presion': counts.agua++; break;
+        case 'tipo-k': counts.tipok++; break;
+        case 'espuma-afff': counts.espuma++; break;
+        case 'agentes-limpios': counts.limpios++; break;
+      }
+    });
+
+    console.log('Product counts:', counts);
+
+    // Actualizar DOM
+    const countAll = document.getElementById('count-all');
+    const countPqs = document.getElementById('count-pqs');
+    const countCo2 = document.getElementById('count-co2');
+    const countAgua = document.getElementById('count-agua');
+    const countTipok = document.getElementById('count-tipok');
+    const countEspuma = document.getElementById('count-espuma');
+    const countLimpios = document.getElementById('count-limpios');
+
+    if (countAll) countAll.textContent = counts.all;
+    if (countPqs) countPqs.textContent = counts.pqs;
+    if (countCo2) countCo2.textContent = counts.co2;
+    if (countAgua) countAgua.textContent = counts.agua;
+    if (countTipok) countTipok.textContent = counts.tipok;
+    if (countEspuma) countEspuma.textContent = counts.espuma;
+    if (countLimpios) countLimpios.textContent = counts.limpios;
   }
 
   /**
    * Genera la URL del producto
    */
-  function getProductUrl(product, categories) {
-    const category = getCategoryById(categories, product.category);
+  function getProductUrl(product) {
+    const category = getCategoryById(product.category);
     const basePath = getBasePath();
     if (category) {
       return basePath + 'productos/' + category.slug + '/' + product.slug + '.html';
@@ -113,9 +179,9 @@
   /**
    * Renderiza una card de producto para el catalogo
    */
-  function renderProductCard(product, categories) {
-    var category = getCategoryById(categories, product.category);
-    var productUrl = getProductUrl(product, categories);
+  function renderProductCard(product) {
+    var category = getCategoryById(product.category);
+    var productUrl = getProductUrl(product);
     var imageUrl = getImageUrl(product.image);
     var whatsappUrl = getWhatsAppUrl(product);
 
@@ -124,11 +190,12 @@
                      product.badgeType === 'premium' ? 'premium' : '';
 
     var categoryName = category ? category.name : 'General';
+    var categoryColor = category ? category.color : '#d32f2f';
 
     var html = '<article class="product-card">';
     html += '  <a href="' + productUrl + '" class="product-card-image">';
     html += '    <img src="' + imageUrl + '" alt="' + product.title + '" loading="lazy">';
-    html += '    <span class="product-category" style="background: ' + (category ? category.color : '#d32f2f') + '">' + categoryName + '</span>';
+    html += '    <span class="product-category" style="background: ' + categoryColor + '">' + categoryName + '</span>';
     if (product.badge) {
       html += '    <span class="product-badge ' + badgeClass + '">' + product.badge + '</span>';
     }
@@ -162,6 +229,18 @@
   }
 
   /**
+   * Renderiza mensaje de no productos
+   */
+  function renderNoProducts() {
+    return '<div class="no-products">' +
+      '<div class="no-products-icon">🔍</div>' +
+      '<h3>No se encontraron productos</h3>' +
+      '<p>Intenta con otra búsqueda o categoría</p>' +
+      '<button type="button" class="clear-filters-btn" onclick="ManextCatalog.clearFilters()">Ver todos los productos</button>' +
+      '</div>';
+  }
+
+  /**
    * Renderiza controles de paginacion
    */
   function renderPaginationControls(current, total) {
@@ -170,17 +249,17 @@
     var html = '<div class="catalog-pagination">';
 
     // Anterior
-    html += '<a href="#" class="pagination-btn ' + (current === 1 ? 'disabled' : '') + '" data-page="' + (current - 1) + '">';
+    html += '<button type="button" class="pagination-btn ' + (current === 1 ? 'disabled' : '') + '" data-page="' + (current - 1) + '">';
     html += '  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">';
     html += '    <polyline points="15 18 9 12 15 6"></polyline>';
     html += '  </svg> Anterior';
-    html += '</a>';
+    html += '</button>';
 
     // Numeros
     html += '<div class="pagination-numbers">';
     for (var i = 1; i <= total; i++) {
       if (i === 1 || i === total || (i >= current - 1 && i <= current + 1)) {
-        html += '<a href="#" class="pagination-number ' + (i === current ? 'active' : '') + '" data-page="' + i + '">' + i + '</a>';
+        html += '<button type="button" class="pagination-number ' + (i === current ? 'active' : '') + '" data-page="' + i + '">' + i + '</button>';
       } else if (i === current - 2 || i === current + 2) {
         html += '<span class="pagination-ellipsis">...</span>';
       }
@@ -188,58 +267,192 @@
     html += '</div>';
 
     // Siguiente
-    html += '<a href="#" class="pagination-btn ' + (current === total ? 'disabled' : '') + '" data-page="' + (current + 1) + '">';
+    html += '<button type="button" class="pagination-btn ' + (current === total ? 'disabled' : '') + '" data-page="' + (current + 1) + '">';
     html += '  Siguiente <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">';
     html += '    <polyline points="9 18 15 12 9 6"></polyline>';
     html += '  </svg>';
-    html += '</a>';
+    html += '</button>';
 
     html += '</div>';
     return html;
   }
 
   /**
-   * Sistema de paginacion
+   * Renderiza los productos en el contenedor
    */
-  function createPagination(products, container, categories) {
+  function renderProducts() {
+    var container = document.getElementById('products-container');
+    if (!container) return;
+
+    var products = state.filteredProducts;
     var totalPages = Math.ceil(products.length / CONFIG.productsPerPage);
-    var currentPage = 1;
+    var currentPage = state.currentPage;
 
-    function showPage(page) {
-      currentPage = page;
-      var start = (page - 1) * CONFIG.productsPerPage;
-      var end = start + CONFIG.productsPerPage;
-      var pageProducts = products.slice(start, end);
-
-      // Renderizar productos
-      var productsHtml = pageProducts.map(function(product) {
-        return renderProductCard(product, categories);
-      }).join('');
-
-      // Agregar paginacion
-      var paginationHtml = renderPaginationControls(currentPage, totalPages);
-
-      container.innerHTML = productsHtml + paginationHtml;
-
-      // Event listeners para paginacion
-      container.querySelectorAll('[data-page]').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          if (this.classList.contains('disabled')) return;
-          var newPage = parseInt(this.dataset.page);
-          if (newPage >= 1 && newPage <= totalPages) {
-            showPage(newPage);
-            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
+    // Si no hay productos
+    if (products.length === 0) {
+      container.innerHTML = renderNoProducts();
+      updateResultsInfo(0);
+      return;
     }
 
-    showPage(1);
+    // Obtener productos de la pagina actual
+    var start = (currentPage - 1) * CONFIG.productsPerPage;
+    var end = start + CONFIG.productsPerPage;
+    var pageProducts = products.slice(start, end);
+
+    // Renderizar productos
+    var productsHtml = pageProducts.map(function(product) {
+      return renderProductCard(product);
+    }).join('');
+
+    // Agregar paginacion
+    var paginationHtml = renderPaginationControls(currentPage, totalPages);
+
+    container.innerHTML = productsHtml + paginationHtml;
+
+    // Event listeners para paginacion
+    container.querySelectorAll('[data-page]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (this.classList.contains('disabled')) return;
+        var newPage = parseInt(this.dataset.page);
+        if (newPage >= 1 && newPage <= totalPages) {
+          state.currentPage = newPage;
+          renderProducts();
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    updateResultsInfo(products.length);
   }
 
   /**
-   * Inicializa la pagina del catalogo (version simplificada con paginacion)
+   * Actualiza la info de resultados
+   */
+  function updateResultsInfo(count) {
+    var resultsInfo = document.getElementById('search-results-info');
+    var resultsCount = document.getElementById('results-count');
+
+    if (resultsInfo && resultsCount) {
+      if (state.currentCategory !== 'all' || state.searchQuery.trim()) {
+        resultsInfo.style.display = 'flex';
+        resultsCount.textContent = count;
+      } else {
+        resultsInfo.style.display = 'none';
+      }
+    }
+  }
+
+  /**
+   * Configura los filtros de categoria
+   */
+  function setupCategoryFilters() {
+    var filtersContainer = document.getElementById('category-filters');
+    if (!filtersContainer) return;
+
+    filtersContainer.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+
+      var category = btn.dataset.category;
+      state.currentCategory = category;
+
+      // Actualizar UI de botones
+      filtersContainer.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      // Filtrar y renderizar
+      filterProducts();
+      renderProducts();
+    });
+  }
+
+  /**
+   * Configura el buscador
+   */
+  function setupSearch() {
+    var searchInput = document.getElementById('catalog-search');
+    var clearSearchBtn = document.getElementById('clear-search');
+
+    if (!searchInput) return;
+
+    var searchTimeout;
+
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      var value = this.value;
+
+      // Mostrar/ocultar boton de limpiar
+      if (clearSearchBtn) {
+        clearSearchBtn.style.display = value.length > 0 ? 'flex' : 'none';
+      }
+
+      // Debounce
+      searchTimeout = setTimeout(function() {
+        state.searchQuery = value;
+        filterProducts();
+        renderProducts();
+      }, 300);
+    });
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.focus();
+        this.style.display = 'none';
+        state.searchQuery = '';
+        filterProducts();
+        renderProducts();
+      });
+    }
+  }
+
+  /**
+   * Configura el boton de limpiar filtros
+   */
+  function setupClearFilters() {
+    var clearBtn = document.getElementById('clear-filters');
+    if (!clearBtn) return;
+
+    clearBtn.addEventListener('click', function() {
+      clearFilters();
+    });
+  }
+
+  /**
+   * Limpia todos los filtros
+   */
+  function clearFilters() {
+    state.currentCategory = 'all';
+    state.searchQuery = '';
+    state.currentPage = 1;
+
+    // Limpiar input de busqueda
+    var searchInput = document.getElementById('catalog-search');
+    var clearSearchBtn = document.getElementById('clear-search');
+    if (searchInput) searchInput.value = '';
+    if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+
+    // Actualizar botones de filtro
+    var filtersContainer = document.getElementById('category-filters');
+    if (filtersContainer) {
+      filtersContainer.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+        if (b.dataset.category === 'all') {
+          b.classList.add('active');
+        }
+      });
+    }
+
+    filterProducts();
+    renderProducts();
+  }
+
+  /**
+   * Inicializa la pagina del catalogo
    */
   async function initCatalogPage() {
     var productsContainer = document.getElementById('products-container');
@@ -247,24 +460,28 @@
     var data = await loadProductsData();
     if (!data) {
       if (productsContainer) {
-        productsContainer.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">Error al cargar los productos. Por favor recarga la página.</p>';
+        productsContainer.innerHTML = '<div class="no-products"><div class="no-products-icon">⚠️</div><h3>Error al cargar</h3><p>Por favor recarga la página</p></div>';
       }
       return;
     }
 
-    // Renderizar todos los productos con paginacion
-    if (productsContainer) {
-      var allProducts = sortByCapacity(data.products);
-      createPagination(allProducts, productsContainer, data.categories);
-    }
+    // Actualizar contadores
+    updateCategoryCounts();
+
+    // Configurar filtros y busqueda
+    setupCategoryFilters();
+    setupSearch();
+    setupClearFilters();
+
+    // Renderizar productos
+    renderProducts();
   }
 
   /**
    * Renderiza una card de producto relacionado (version compacta)
    */
-  function renderRelatedProductCard(product, categories) {
-    var category = getCategoryById(categories, product.category);
-    var productUrl = getProductUrl(product, categories);
+  function renderRelatedProductCard(product) {
+    var productUrl = getProductUrl(product);
     var imageUrl = getImageUrl(product.image);
 
     var html = '<a href="' + productUrl + '" class="related-card">';
@@ -285,15 +502,16 @@
   }
 
   /**
-   * Obtiene productos relacionados usando el campo 'related' del JSON
+   * Obtiene productos relacionados
    */
   async function getRelatedProducts(currentSlug, categoryId, limit) {
     limit = limit || 4;
-    var data = await loadProductsData();
-    if (!data) return [];
+    if (state.products.length === 0) {
+      await loadProductsData();
+    }
 
     // Buscar el producto actual para obtener sus relacionados predefinidos
-    var currentProduct = data.products.find(function(p) {
+    var currentProduct = state.products.find(function(p) {
       return p.slug === currentSlug || p.id === currentSlug;
     });
     var related = [];
@@ -303,7 +521,7 @@
       var relatedIds = currentProduct.related;
       related = relatedIds
         .map(function(id) {
-          return data.products.find(function(p) {
+          return state.products.find(function(p) {
             return p.id === id || p.slug === id;
           });
         })
@@ -312,7 +530,7 @@
 
     // Si no hay suficientes, agregar de la misma categoria
     if (related.length < limit) {
-      var sameCategory = data.products.filter(function(p) {
+      var sameCategory = state.products.filter(function(p) {
         return p.slug !== currentSlug &&
                p.id !== currentSlug &&
                p.category === categoryId &&
@@ -323,7 +541,7 @@
 
     // Si aun no hay suficientes, agregar de otras categorias
     if (related.length < limit) {
-      var otherProducts = data.products.filter(function(p) {
+      var otherProducts = state.products.filter(function(p) {
         return p.slug !== currentSlug &&
                p.id !== currentSlug &&
                p.category !== categoryId &&
@@ -343,10 +561,8 @@
 
     if (!relatedContainer) return;
 
-    var data = await loadProductsData();
-    if (!data) {
-      relatedContainer.innerHTML = '<p style="text-align:center;color:#666;">No se pudieron cargar los productos relacionados.</p>';
-      return;
+    if (state.products.length === 0) {
+      await loadProductsData();
     }
 
     // Obtener productos relacionados
@@ -359,7 +575,7 @@
 
     // Renderizar productos relacionados
     var relatedHtml = relatedProducts.map(function(product) {
-      return renderRelatedProductCard(product, data.categories);
+      return renderRelatedProductCard(product);
     }).join('');
     relatedContainer.innerHTML = relatedHtml;
   }
@@ -367,8 +583,8 @@
   /**
    * Renderiza una card mini de producto (para sidebar de articulos)
    */
-  function renderMiniProductCard(product, categories) {
-    var productUrl = getProductUrl(product, categories);
+  function renderMiniProductCard(product) {
+    var productUrl = getProductUrl(product);
     var imageUrl = getImageUrl(product.image);
 
     var html = '<a href="' + productUrl + '" class="product-mini-card">';
@@ -392,18 +608,19 @@
     var container = document.querySelector('.product-mini-list');
     if (!container) return;
 
-    var data = await loadProductsData();
-    if (!data) return;
+    if (state.products.length === 0) {
+      await loadProductsData();
+    }
 
     // Obtener productos destacados
-    var featured = data.products
+    var featured = state.products
       .filter(function(p) { return p.featured; })
       .slice(0, limit);
 
     if (featured.length === 0) return;
 
     container.innerHTML = featured.map(function(p) {
-      return renderMiniProductCard(p, data.categories);
+      return renderMiniProductCard(p);
     }).join('');
   }
 
@@ -419,7 +636,9 @@
     renderMini: renderMiniProductCard,
     getBasePath: getBasePath,
     getProductUrl: getProductUrl,
-    getWhatsAppUrl: getWhatsAppUrl
+    getWhatsAppUrl: getWhatsAppUrl,
+    clearFilters: clearFilters,
+    getState: function() { return state; }
   };
 
   // Auto-inicializacion segun la pagina

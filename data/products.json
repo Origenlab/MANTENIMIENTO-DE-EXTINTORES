@@ -11,65 +11,51 @@
   "categories": [
     {
       "id": "polvo-quimico-seco",
-      "name": "Polvo Quimico Seco (PQS)",
+      "name": "Polvo Químico Seco (PQS)",
       "slug": "polvo-quimico-seco",
-      "description": "Los mas versatiles del mercado. Ideales para todo tipo de negocios y oficinas. Combaten fuegos Clase A, B y C.",
-      "color": "#f57c00",
-      "fireClasses": [
-        "A",
-        "B",
-        "C"
-      ],
+      "description": "Los más versátiles del mercado. Ideales para todo tipo de negocios y oficinas. Combaten fuegos Clase A, B y C.",
+      "color": "#c62828",
+      "fireClasses": ["A", "B", "C"],
       "icon": "pqs",
       "tabId": "pqs"
     },
     {
       "id": "co2",
-      "name": "Dioxido de Carbono (CO2)",
+      "name": "Dióxido de Carbono (CO2)",
       "slug": "co2",
-      "description": "Especializados para equipos electronicos y electricos. No dejan residuos. Perfectos para data centers, servidores y equipos delicados.",
-      "color": "#2196f3",
-      "fireClasses": [
-        "B",
-        "C"
-      ],
+      "description": "Especializados para equipos electrónicos y eléctricos. No dejan residuos. Perfectos para data centers, servidores y equipos delicados.",
+      "color": "#1565c0",
+      "fireClasses": ["B", "C"],
       "icon": "co2",
       "tabId": "co2"
     },
     {
       "id": "agua-presion",
-      "name": "Agua a Presion",
+      "name": "Agua a Presión",
       "slug": "agua-presion",
-      "description": "Especializados para materiales solidos. El agua enfria y penetra materiales porosos. Ideales para bodegas de materiales.",
-      "color": "#00bcd4",
-      "fireClasses": [
-        "A"
-      ],
+      "description": "Especializados para materiales sólidos. El agua enfría y penetra materiales porosos. Ideales para bodegas de materiales.",
+      "color": "#0288d1",
+      "fireClasses": ["A"],
       "icon": "agua",
       "tabId": "agua"
     },
     {
       "id": "tipo-k",
-      "name": "Agente Humedo (Tipo K)",
+      "name": "Tipo K (Cocinas)",
       "slug": "tipo-k",
-      "description": "Disenados especificamente para fuegos de cocina. Saponifican grasas y aceites. Obligatorios en restaurantes y cocinas industriales.",
-      "color": "#9c27b0",
-      "fireClasses": [
-        "K"
-      ],
+      "description": "Diseñados específicamente para fuegos de cocina. Saponifican grasas y aceites. Obligatorios en restaurantes y cocinas industriales.",
+      "color": "#f9a825",
+      "fireClasses": ["K"],
       "icon": "tipo-k",
-      "tabId": "tipo-k"
+      "tabId": "tipok"
     },
     {
       "id": "espuma-afff",
       "name": "Espuma (AFFF)",
       "slug": "espuma-afff",
-      "description": "Especializados en liquidos inflamables e hidrocarburos. Forman pelicula acuosa que sella el combustible. Ideales para talleres y gasolineras.",
-      "color": "#ff5722",
-      "fireClasses": [
-        "A",
-        "B"
-      ],
+      "description": "Especializados en líquidos inflamables e hidrocarburos. Forman película acuosa que sella el combustible. Ideales para talleres y gasolineras.",
+      "color": "#e65100",
+      "fireClasses": ["A", "B"],
       "icon": "espuma",
       "tabId": "espuma"
     },
@@ -77,15 +63,11 @@
       "id": "agentes-limpios",
       "name": "Agentes Limpios",
       "slug": "agentes-limpios",
-      "description": "Tecnologia premium para areas criticas. Cero residuos, no afecta la capa de ozono. Perfectos para museos, archivos y equipos de alta precision.",
-      "color": "#607d8b",
-      "fireClasses": [
-        "A",
-        "B",
-        "C"
-      ],
+      "description": "Tecnología premium para áreas críticas. Cero residuos, no afecta la capa de ozono. Perfectos para museos, archivos y equipos de alta precisión.",
+      "color": "#7b1fa2",
+      "fireClasses": ["A", "B", "C"],
       "icon": "limpio",
-      "tabId": "agentes-limpios"
+      "tabId": "limpios"
     }
   ],
   "products": [

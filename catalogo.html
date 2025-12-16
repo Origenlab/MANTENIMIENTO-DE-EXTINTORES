@@ -16,7 +16,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css?v=15">
-    <link rel="stylesheet" href="css/catalog-system.css?v=2">
+    <link rel="stylesheet" href="css/catalog-system.css?v=3">
 
     <meta name="description" content="Catálogo completo de extintores certificados NOM-154-SCFI. Todos los modelos disponibles: PQS, CO2, Agua, Tipo K, Espuma y Agentes Limpios. Entrega inmediata CDMX."/>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -81,12 +81,78 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero" style="padding: 3rem 0;">
+    <section class="catalog-hero">
       <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-          <h1 class="hero-title">Catálogo de Extintores</h1>
-          <p class="hero-subtitle">Certificados NOM-154-SCFI</p>
-          <p class="hero-description">Encuentra el extintor ideal para tu negocio. Todos nuestros productos cuentan con certificación vigente, garantía de fábrica y servicio de mantenimiento incluido.</p>
+        <div class="catalog-hero-content">
+          <h1 class="catalog-hero-title">Catálogo de Extintores</h1>
+          <p class="catalog-hero-subtitle">Certificados NOM-154-SCFI</p>
+          <p class="catalog-hero-description">Encuentra el extintor ideal para tu negocio. Todos nuestros productos cuentan con certificación vigente, garantía de fábrica y servicio de mantenimiento incluido.</p>
+
+          <!-- Buscador -->
+          <div class="catalog-search">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              <input type="text" id="catalog-search" placeholder="Buscar por nombre, capacidad o tipo..." autocomplete="off">
+              <button type="button" id="clear-search" class="clear-search-btn" style="display: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS POR CATEGORIA -->
+    <section class="catalog-filters-section">
+      <div class="container">
+        <div class="category-filters" id="category-filters">
+          <button class="filter-btn active" data-category="all">
+            <span class="filter-icon">🔥</span>
+            <span class="filter-text">Todos</span>
+            <span class="filter-count" id="count-all">0</span>
+          </button>
+          <button class="filter-btn" data-category="polvo-quimico-seco">
+            <span class="filter-icon">🧯</span>
+            <span class="filter-text">PQS</span>
+            <span class="filter-count" id="count-pqs">0</span>
+          </button>
+          <button class="filter-btn" data-category="co2">
+            <span class="filter-icon">❄️</span>
+            <span class="filter-text">CO2</span>
+            <span class="filter-count" id="count-co2">0</span>
+          </button>
+          <button class="filter-btn" data-category="agua-presion">
+            <span class="filter-icon">💧</span>
+            <span class="filter-text">Agua</span>
+            <span class="filter-count" id="count-agua">0</span>
+          </button>
+          <button class="filter-btn" data-category="tipo-k">
+            <span class="filter-icon">🍳</span>
+            <span class="filter-text">Tipo K</span>
+            <span class="filter-count" id="count-tipok">0</span>
+          </button>
+          <button class="filter-btn" data-category="espuma-afff">
+            <span class="filter-icon">🫧</span>
+            <span class="filter-text">Espuma</span>
+            <span class="filter-count" id="count-espuma">0</span>
+          </button>
+          <button class="filter-btn" data-category="agentes-limpios">
+            <span class="filter-icon">✨</span>
+            <span class="filter-text">Agentes Limpios</span>
+            <span class="filter-count" id="count-limpios">0</span>
+          </button>
+        </div>
+
+        <!-- Resultado de búsqueda -->
+        <div class="search-results-info" id="search-results-info" style="display: none;">
+          <span id="results-count">0</span> productos encontrados
+          <button type="button" id="clear-filters" class="clear-filters-btn">Limpiar filtros</button>
         </div>
       </div>
     </section>
@@ -94,16 +160,12 @@
     <!-- PRODUCTOS -->
     <section class="catalog-section">
       <div class="container">
-        <div style="text-align: center; margin-bottom: 2rem;">
-          <h2 style="font-size: 1.75rem; color: #1a1a1a; margin-bottom: 0.5rem;">Nuestros Productos</h2>
-          <p style="color: #666;">Extintores para todo tipo de necesidades y aplicaciones</p>
-        </div>
-
         <div class="catalog-layout">
           <!-- CONTENIDO PRINCIPAL -->
           <main id="products-container" class="products-grid">
             <!-- Se cargan dinámicamente -->
-            <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+            <div class="products-loading">
+              <div class="loading-spinner"></div>
               <p>Cargando productos...</p>
             </div>
           </main>
@@ -145,6 +207,41 @@
               </div>
             </div>
 
+            <!-- Guía rápida -->
+            <div class="sidebar-widget guide-widget">
+              <h3 class="widget-title">Guía Rápida</h3>
+              <div class="guide-items">
+                <div class="guide-item">
+                  <span class="guide-icon">🏢</span>
+                  <div class="guide-text">
+                    <strong>Oficinas</strong>
+                    <span>PQS 4.5 kg o CO2</span>
+                  </div>
+                </div>
+                <div class="guide-item">
+                  <span class="guide-icon">🍽️</span>
+                  <div class="guide-text">
+                    <strong>Restaurantes</strong>
+                    <span>Tipo K + PQS</span>
+                  </div>
+                </div>
+                <div class="guide-item">
+                  <span class="guide-icon">🏭</span>
+                  <div class="guide-text">
+                    <strong>Industrias</strong>
+                    <span>PQS 6-9 kg + Espuma</span>
+                  </div>
+                </div>
+                <div class="guide-item">
+                  <span class="guide-icon">💻</span>
+                  <div class="guide-text">
+                    <strong>Data Centers</strong>
+                    <span>CO2 o Agentes Limpios</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- CTA -->
             <div class="sidebar-widget cta-widget">
               <h3 class="widget-title">¿Necesitas Asesoría?</h3>
@@ -168,12 +265,12 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); padding: 4rem 0; text-align: center; color: white;">
+    <section class="catalog-cta-final">
       <div class="container">
-        <h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Listo para proteger tu negocio?</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">Solicita una cotización sin compromiso. Entrega e instalación en CDMX y área metropolitana.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="tel:5539689272" class="btn btn-primary" style="background: white; color: #d32f2f;">
+        <h2>¿Listo para proteger tu negocio?</h2>
+        <p>Solicita una cotización sin compromiso. Entrega e instalación en CDMX y área metropolitana.</p>
+        <div class="cta-buttons">
+          <a href="tel:5539689272" class="btn btn-primary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
@@ -216,7 +313,7 @@
     </script>
 
     <!-- Catalog System -->
-    <script src="js/catalog-system.js?v=2"></script>
+    <script src="js/catalog-system.js?v=3"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
