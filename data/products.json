@@ -1200,6 +1200,40 @@
       "excerpt": "Protege tu cocina con el extintor Tipo K 1.6 galones, ideal para aceites.",
       "related": [],
       "dateAdded": "2025-12-16"
+    },
+    {
+      "id": "pqs-68kg-rodante",
+      "title": "Extintor PQS 68 kg Rodante Premium",
+      "slug": "producto-extintor-pqs-68kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "68 kg",
+      "capacityType": "industrial",
+      "capacityValue": 68,
+      "range": "10-15 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "features": [
+        "Máxima capacidad disponible",
+        "Sistema de ruedas reforzado",
+        "Manguera de alta presión 6m",
+        "Certificación completa NOM"
+      ],
+      "badge": "Premium",
+      "badgeType": "premium",
+      "featured": true,
+      "image": "productos/polvo-quimico-seco/producto-extintor-pqs-68kg-rodante-principal-1765927523537.jpg",
+      "images": [
+        "producto-extintor-pqs-68kg-rodante-principal-1765927523537.jpg",
+        "producto-extintor-pqs-68kg-rodante-lateral-1765927523537.jpg",
+        "producto-extintor-pqs-68kg-rodante-detalle-1765927523537.jpg",
+        "producto-extintor-pqs-68kg-rodante-uso-1765927523537.jpg"
+      ],
+      "excerpt": "Protege tu industria con el extintor PQS 68 kg rodante premium. Eficaz en fuegos A, B y C.",
+      "related": [],
+      "dateAdded": "2025-12-16"
     }
   ]
 }
