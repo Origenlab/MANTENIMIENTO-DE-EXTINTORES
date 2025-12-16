@@ -102,86 +102,20 @@
   ],
   "articles": [
     {
-      "id": "nom-002-stps-seguridad-incendios-trabajo",
-      "title": "Guía Completa sobre NOM-002-STPS Seguridad Incendios",
-      "slug": "nom-002-stps-seguridad-incendios-trabajo",
-      "category": "normativas-y-certificaciones",
-      "date": "2025-12-16",
-      "image": "img/img-blog/nom-002-stps-seguridad-incendios-trabajo-hero-1765867340067.jpg",
-      "excerpt": "Descubre cómo la NOM-002-STPS asegura tu lugar de trabajo. ¡Contacta a MANEXT para cumplir con esta normativa!",
-      "readTime": "12 min",
-      "featured": false,
-      "tags": [
-        "NOM-002-STPS seguridad incendios",
-        "seguridad laboral",
-        "extintores trabajo"
-      ]
-    },
-    {
-      "id": "clases-fuego-a-b-c-d-k-guia-completa",
-      "title": "Conozca las Clases de Fuego A B C D K en México",
-      "slug": "clases-fuego-a-b-c-d-k-guia-completa",
+      "id": "como-elegir-extintor-correcto-negocio-cdmx",
+      "title": "Cómo Elegir el Extintor Correcto para tu Negocio en CDMX",
+      "slug": "como-elegir-extintor-correcto-negocio-cdmx",
       "category": "seguridad-contra-incendios",
-      "date": "2025-12-16",
-      "image": "img/img-blog/clases-fuego-a-b-c-d-k-guia-completa-hero-1765865903727.jpg",
-      "excerpt": "Descubre las clases de fuego A B C D K y cómo MANEXT puede ayudarte. ¡Contacta ahora!",
-      "readTime": "12 min",
+      "date": "2025-12-05",
+      "image": "img/img-index/elegir-extintor.webp",
+      "excerpt": "Guía profesional para seleccionar el extintor ideal según tu tipo de negocio, superficie, riesgos específicos y cumplimiento de normativa NOM.",
+      "readTime": "8 min",
       "featured": false,
-      "tags": [
-        "clases de fuego A B C D K",
-        "tipos de incendio",
-        "clasificacion fuegos"
-      ]
-    },
-    {
-      "id": "precios-extintores-cdmx-guia-actualizada",
-      "title": "Guia Completa de Precios de Extintores en CDMX",
-      "slug": "precios-extintores-cdmx-guia-actualizada",
-      "category": "guias-y-comparativas",
-      "date": "2025-12-16",
-      "image": "img/img-blog/precios-extintores-cdmx-guia-actualizada-hero-1765865502288.jpg",
-      "excerpt": "Descubre los precios de extintores en CDMX. ¡Consulta nuestra guia y asegura tu hogar ahora!",
-      "readTime": "12 min",
-      "featured": false,
-      "tags": [
-        "precios de extintores CDMX",
-        "precio extintor",
-        "cuanto cuesta extintor",
-        "extintores baratos"
-      ]
-    },
-    {
-      "id": "vida-util-extintor-cuando-reemplazarlo",
-      "title": "Descubre la Vida Util de un Extintor y Cuándo Cambiarlo",
-      "slug": "vida-util-extintor-cuando-reemplazarlo",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-12-16",
-      "image": "img/img-blog/vida-util-extintor-cuando-reemplazarlo-hero-1765864864214.jpg",
-      "excerpt": "Descubre la vida util de un extintor y cuándo reemplazarlo. Contacta a MANEXT para asesoría y mantenimiento.",
-      "readTime": "12 min",
-      "featured": false,
-      "tags": [
-        "vida util de un extintor",
-        "vida util extintor",
-        "duracion extintor",
-        "cuando cambiar extintor"
-      ]
-    },
-    {
-      "id": "mantenimiento-extintores-cdmx-servicio-profesional",
-      "title": "Mantenimiento de Extintores en CDMX: Servicio Profesional Certificado 2025",
-      "slug": "mantenimiento-extintores-cdmx-servicio-profesional",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-12-15",
-      "image": "img/img-index/mantenimiento-de-extintores.webp",
-      "excerpt": "Servicio profesional de mantenimiento de extintores en Ciudad de México. Cumple con NOM-154-SCFI, técnicos certificados y servicio a domicilio en todas las alcaldías.",
-      "readTime": "10 min",
-      "featured": true,
-      "tags": [
-        "mantenimiento",
-        "cdmx",
-        "nom-154",
-        "servicio-profesional"
+      "tags": ["seleccion", "negocios", "guia", "normativa"],
+      "related": [
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "venta-extintores-cdmx-guia-compra-empresas"
       ]
     },
     {
@@ -194,45 +128,28 @@
       "excerpt": "Guía completa de compra de extintores certificados en Ciudad de México. Precios actualizados, tipos disponibles y entrega en todas las alcaldías.",
       "readTime": "12 min",
       "featured": true,
-      "tags": [
-        "venta",
-        "cdmx",
-        "empresas",
-        "precios"
+      "tags": ["venta", "cdmx", "empresas", "precios"],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
       ]
     },
     {
-      "id": "recarga-extintores-cdmx-cuando-donde-precio",
-      "title": "Recarga de Extintores en CDMX: Cuándo, Dónde y Precios 2025",
-      "slug": "recarga-extintores-cdmx-cuando-donde-precio",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-12-13",
-      "image": "img/img-index/recarga-de-extintores.webp",
-      "excerpt": "Todo sobre la recarga de extintores en CDMX: frecuencia según NOM-154, proceso certificado, precios por tipo y servicio a domicilio disponible.",
-      "readTime": "8 min",
-      "featured": true,
-      "tags": [
-        "recarga",
-        "cdmx",
-        "precios",
-        "nom-154"
-      ]
-    },
-    {
-      "id": "prueba-hidrostatica-extintores-que-es-cuando",
-      "title": "Prueba Hidrostática de Extintores: Qué es, Cuándo y Por Qué es Obligatoria",
-      "slug": "prueba-hidrostatica-extintores-que-es-cuando",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-12-12",
-      "image": "img/img-index/prueba-hidrostatica.webp",
-      "excerpt": "La prueba hidrostática es obligatoria cada 5 años. Conoce el proceso, requisitos NOM, costos y por qué es vital para la seguridad de tu empresa.",
-      "readTime": "9 min",
+      "id": "clases-fuego-a-b-c-d-k-guia-completa",
+      "title": "Conozca las Clases de Fuego A B C D K en México",
+      "slug": "clases-fuego-a-b-c-d-k-guia-completa",
+      "category": "seguridad-contra-incendios",
+      "date": "2025-12-16",
+      "image": "img/img-blog/clases-fuego-a-b-c-d-k-guia-completa-hero-1765865903727.jpg",
+      "excerpt": "Descubre las clases de fuego A B C D K y cómo MANEXT puede ayudarte. ¡Contacta ahora!",
+      "readTime": "12 min",
       "featured": false,
-      "tags": [
-        "prueba-hidrostatica",
-        "nom-154",
-        "seguridad",
-        "obligatorio"
+      "tags": ["clases de fuego A B C D K", "tipos de incendio", "clasificacion fuegos"],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx"
       ]
     },
     {
@@ -245,113 +162,62 @@
       "excerpt": "El extintor PQS es el más versátil del mercado. Combate fuegos clase A, B y C. Conoce sus usos, ventajas, capacidades disponibles y mantenimiento.",
       "readTime": "10 min",
       "featured": true,
-      "tags": [
-        "pqs",
-        "polvo-quimico",
-        "abc",
-        "versatil"
+      "tags": ["pqs", "polvo-quimico", "abc", "versatil"],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
       ]
     },
     {
-      "id": "extintor-co2-dioxido-carbono-usos-aplicaciones",
-      "title": "Extintor de CO2 (Dióxido de Carbono): Usos, Ventajas y Aplicaciones",
-      "slug": "extintor-co2-dioxido-carbono-usos-aplicaciones",
-      "category": "tipos-de-extintores",
-      "date": "2025-12-10",
-      "image": "img/img-index/extintor-co2.webp",
-      "excerpt": "El extintor de CO2 es ideal para equipos eléctricos y electrónicos. No deja residuos y es perfecto para oficinas, centros de datos y laboratorios.",
-      "readTime": "9 min",
-      "featured": false,
-      "tags": [
-        "co2",
-        "dioxido-carbono",
-        "equipos-electricos",
-        "sin-residuos"
+      "id": "mantenimiento-extintores-cdmx-servicio-profesional",
+      "title": "Mantenimiento de Extintores en CDMX: Servicio Profesional Certificado 2025",
+      "slug": "mantenimiento-extintores-cdmx-servicio-profesional",
+      "category": "mantenimiento-y-recarga",
+      "date": "2025-12-15",
+      "image": "img/img-index/mantenimiento-de-extintores.webp",
+      "excerpt": "Servicio profesional de mantenimiento de extintores en Ciudad de México. Cumple con NOM-154-SCFI, técnicos certificados y servicio a domicilio en todas las alcaldías.",
+      "readTime": "10 min",
+      "featured": true,
+      "tags": ["mantenimiento", "cdmx", "nom-154", "servicio-profesional"],
+      "related": [
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "vida-util-extintor-cuando-reemplazarlo",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
       ]
     },
     {
-      "id": "extintor-tipo-k-cocinas-restaurantes",
-      "title": "Extintor Tipo K para Cocinas: Obligatorio en Restaurantes y Cocinas Industriales",
-      "slug": "extintor-tipo-k-cocinas-restaurantes",
-      "category": "tipos-de-extintores",
-      "date": "2025-12-09",
-      "image": "img/img-index/extintor-tipo-k.webp",
-      "excerpt": "El extintor Tipo K es obligatorio para cocinas comerciales. Especializado en fuegos de aceites y grasas. Conoce capacidades, instalación y normativa.",
-      "readTime": "8 min",
-      "featured": false,
-      "tags": [
-        "tipo-k",
-        "cocinas",
-        "restaurantes",
-        "aceites-grasas"
-      ]
-    },
-    {
-      "id": "extintor-agua-presion-usos-ventajas",
-      "title": "Extintor de Agua a Presión: Usos, Ventajas y Cuándo Utilizarlo",
-      "slug": "extintor-agua-presion-usos-ventajas",
-      "category": "tipos-de-extintores",
-      "date": "2025-12-08",
-      "image": "img/img-index/extintor-agua.webp",
-      "excerpt": "El extintor de agua es efectivo para fuegos clase A (sólidos). Económico, ecológico y fácil de recargar. Ideal para oficinas, escuelas y almacenes.",
-      "readTime": "7 min",
-      "featured": false,
-      "tags": [
-        "agua",
-        "clase-a",
-        "economico",
-        "ecologico"
-      ]
-    },
-    {
-      "id": "extintor-espuma-afff-industrial",
-      "title": "Extintor de Espuma AFFF: Protección Industrial de Alto Rendimiento",
-      "slug": "extintor-espuma-afff-industrial",
-      "category": "tipos-de-extintores",
-      "date": "2025-12-07",
-      "image": "img/img-index/extintor-espuma.webp",
-      "excerpt": "El extintor de espuma AFFF combate fuegos clase A y B. Ideal para industrias con líquidos inflamables, gasolineras y plantas químicas.",
-      "readTime": "9 min",
-      "featured": false,
-      "tags": [
-        "espuma",
-        "afff",
-        "industrial",
-        "liquidos-inflamables"
-      ]
-    },
-    {
-      "id": "extintor-agente-limpio-centros-datos",
-      "title": "Extintor de Agente Limpio: Protección para Centros de Datos y Equipos Sensibles",
-      "slug": "extintor-agente-limpio-centros-datos",
-      "category": "tipos-de-extintores",
-      "date": "2025-12-06",
-      "image": "img/img-index/extintor-agente-limpio.webp",
-      "excerpt": "Los extintores de agente limpio (HFC-227ea, FK-5-1-12) no dañan equipos electrónicos. Perfectos para servidores, museos y salas de telecomunicaciones.",
+      "id": "cuando-recargar-extintor-senales-frecuencia-normativa",
+      "title": "Cuando Recargar tu Extintor: Senales, Frecuencia y Normativa",
+      "slug": "cuando-recargar-extintor-senales-frecuencia-normativa",
+      "category": "mantenimiento-y-recarga",
+      "date": "2025-12-16",
+      "image": "img/img-blog/cuando-recargar-extintor-senales-frecuencia-normativa-hero.jpg",
+      "excerpt": "Guia profesional sobre cuando recargar extintor. MANEXT expertos en proteccion contra incendios en CDMX.",
       "readTime": "10 min",
       "featured": false,
-      "tags": [
-        "agente-limpio",
-        "centros-datos",
-        "electronica",
-        "sin-daño"
+      "tags": ["recargar extintor", "frecuencia recarga", "senales recarga", "normativa"],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "vida-util-extintor-cuando-reemplazarlo",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
       ]
     },
     {
-      "id": "como-elegir-extintor-correcto-negocio-cdmx",
-      "title": "Cómo Elegir el Extintor Correcto para tu Negocio en CDMX",
-      "slug": "como-elegir-extintor-correcto-negocio-cdmx",
-      "category": "seguridad-contra-incendios",
-      "date": "2025-12-05",
-      "image": "img/img-index/elegir-extintor.webp",
-      "excerpt": "Guía profesional para seleccionar el extintor ideal según tu tipo de negocio, superficie, riesgos específicos y cumplimiento de normativa NOM.",
-      "readTime": "8 min",
+      "id": "vida-util-extintor-cuando-reemplazarlo",
+      "title": "Descubre la Vida Util de un Extintor y Cuándo Cambiarlo",
+      "slug": "vida-util-extintor-cuando-reemplazarlo",
+      "category": "mantenimiento-y-recarga",
+      "date": "2025-12-16",
+      "image": "img/img-blog/vida-util-extintor-cuando-reemplazarlo-hero-1765864864214.jpg",
+      "excerpt": "Descubre la vida util de un extintor y cuándo reemplazarlo. Contacta a MANEXT para asesoría y mantenimiento.",
+      "readTime": "12 min",
       "featured": false,
-      "tags": [
-        "seleccion",
-        "negocios",
-        "guia",
-        "normativa"
+      "tags": ["vida util de un extintor", "vida util extintor", "duracion extintor", "cuando cambiar extintor"],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "venta-extintores-cdmx-guia-compra-empresas"
       ]
     },
     {
@@ -364,351 +230,79 @@
       "excerpt": "Requisitos técnicos obligatorios de la NOM-154-SCFI: certificación, etiquetado, pruebas, mantenimiento y sanciones por incumplimiento.",
       "readTime": "12 min",
       "featured": true,
-      "tags": [
-        "nom-154",
-        "normativa",
-        "certificacion",
-        "obligatorio"
+      "tags": ["nom-154", "normativa", "certificacion", "obligatorio"],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx"
       ]
     },
     {
-      "id": "nom-002-stps-condiciones-seguridad-incendios",
-      "title": "NOM-002-STPS: Condiciones de Seguridad para Prevención de Incendios",
-      "slug": "nom-002-stps-condiciones-seguridad-incendios",
+      "id": "nom-002-stps-seguridad-incendios-trabajo",
+      "title": "Guía Completa sobre NOM-002-STPS Seguridad Incendios",
+      "slug": "nom-002-stps-seguridad-incendios-trabajo",
       "category": "normativas-y-certificaciones",
-      "date": "2025-12-03",
-      "image": "img/img-index/nom-002.webp",
-      "excerpt": "La NOM-002-STPS establece las condiciones de seguridad en centros de trabajo. Conoce los requisitos de extintores, rutas de evacuación y capacitación.",
-      "readTime": "11 min",
-      "featured": false,
-      "tags": [
-        "nom-002",
-        "stps",
-        "centros-trabajo",
-        "seguridad"
-      ]
-    },
-    {
-      "id": "clases-fuego-abc-dk-guia-completa",
-      "title": "Clases de Fuego A, B, C, D y K: Guía Completa para Elegir tu Extintor",
-      "slug": "clases-fuego-abc-dk-guia-completa",
-      "category": "guias-y-comparativas",
-      "date": "2025-12-02",
-      "image": "img/img-index/clases-fuego.webp",
-      "excerpt": "Aprende a identificar los tipos de fuego y selecciona el extintor correcto. Tabla completa de clases A, B, C, D y K con ejemplos prácticos.",
-      "readTime": "10 min",
-      "featured": false,
-      "tags": [
-        "clases-fuego",
-        "abc",
-        "seleccion",
-        "guia"
-      ]
-    },
-    {
-      "id": "extintores-restaurantes-normativa-obligatoria",
-      "title": "Extintores para Restaurantes: Normativa Obligatoria y Tipos Requeridos",
-      "slug": "extintores-restaurantes-normativa-obligatoria",
-      "category": "industria-y-comercio",
-      "date": "2025-12-01",
-      "image": "img/img-index/extintores-restaurantes.webp",
-      "excerpt": "Los restaurantes requieren extintores Tipo K obligatoriamente. Conoce la normativa, cantidad requerida, ubicación y mantenimiento para tu negocio.",
-      "readTime": "9 min",
-      "featured": false,
-      "tags": [
-        "restaurantes",
-        "tipo-k",
-        "normativa",
-        "cocinas"
-      ]
-    },
-    {
-      "id": "extintores-oficinas-cuantos-necesito",
-      "title": "Extintores para Oficinas: ¿Cuántos Necesito Según la Normativa?",
-      "slug": "extintores-oficinas-cuantos-necesito",
-      "category": "industria-y-comercio",
-      "date": "2025-11-30",
-      "image": "img/img-index/extintores-oficinas.webp",
-      "excerpt": "Calcula cuántos extintores necesita tu oficina según metros cuadrados, nivel de riesgo y normativa NOM. Incluye calculadora y ejemplos prácticos.",
-      "readTime": "8 min",
-      "featured": false,
-      "tags": [
-        "oficinas",
-        "cantidad",
-        "normativa",
-        "calculo"
-      ]
-    },
-    {
-      "id": "extintores-bodegas-almacenes-industriales",
-      "title": "Extintores para Bodegas y Almacenes: Requisitos de Protección Industrial",
-      "slug": "extintores-bodegas-almacenes-industriales",
-      "category": "industria-y-comercio",
-      "date": "2025-11-29",
-      "image": "img/img-index/extintores-bodegas.webp",
-      "excerpt": "Las bodegas y almacenes tienen requisitos especiales de protección contra incendios. Conoce tipos de extintores, cantidad, ubicación y sistemas complementarios.",
-      "readTime": "11 min",
-      "featured": false,
-      "tags": [
-        "bodegas",
-        "almacenes",
-        "industrial",
-        "proteccion"
-      ]
-    },
-    {
-      "id": "extintores-condominios-edificios-residenciales",
-      "title": "Extintores para Condominios: Requisitos y Responsabilidades del Administrador",
-      "slug": "extintores-condominios-edificios-residenciales",
-      "category": "hogar-y-familia",
-      "date": "2025-11-28",
-      "image": "img/img-index/extintores-condominios.webp",
-      "excerpt": "Los condominios y edificios residenciales tienen obligaciones legales de protección contra incendios. Conoce los requisitos y responsabilidades.",
-      "readTime": "8 min",
-      "featured": false,
-      "tags": [
-        "condominios",
-        "edificios",
-        "residencial",
-        "administrador"
-      ]
-    },
-    {
-      "id": "extintor-casa-hogar-cual-comprar",
-      "title": "Extintor para Casa: ¿Cuál Comprar y Dónde Colocarlo?",
-      "slug": "extintor-casa-hogar-cual-comprar",
-      "category": "hogar-y-familia",
-      "date": "2025-11-27",
-      "image": "img/img-index/extintor-hogar.webp",
-      "excerpt": "Protege tu hogar con el extintor adecuado. Recomendaciones de tipo, capacidad, ubicación ideal y mantenimiento para extintores domésticos.",
-      "readTime": "7 min",
-      "featured": false,
-      "tags": [
-        "hogar",
-        "casa",
-        "domestico",
-        "familia"
-      ]
-    },
-    {
-      "id": "capacitacion-uso-extintores-brigadas",
-      "title": "Capacitación en Uso de Extintores: Formación de Brigadas Contra Incendios",
-      "slug": "capacitacion-uso-extintores-brigadas",
-      "category": "prevencion-empresarial",
-      "date": "2025-11-26",
-      "image": "img/img-index/capacitacion-y-brigadas.webp",
-      "excerpt": "La capacitación en uso de extintores es obligatoria para empresas. Conoce los programas de formación, técnica PASS y certificación de brigadas.",
-      "readTime": "10 min",
-      "featured": false,
-      "tags": [
-        "capacitacion",
-        "brigadas",
-        "tecnica-pass",
-        "formacion"
-      ]
-    },
-    {
-      "id": "senalizacion-extintores-normativa-colores",
-      "title": "Señalización de Extintores: Normativa, Colores y Ubicación Correcta",
-      "slug": "senalizacion-extintores-normativa-colores",
-      "category": "equipos-contra-incendio",
-      "date": "2025-11-25",
-      "image": "img/img-index/senalizacion.webp",
-      "excerpt": "La señalización correcta de extintores es obligatoria. Conoce los requisitos de color, tamaño, altura y materiales según la normativa mexicana.",
-      "readTime": "7 min",
-      "featured": false,
-      "tags": [
-        "senalizacion",
-        "normativa",
-        "ubicacion",
-        "colores"
-      ]
-    },
-    {
-      "id": "sistemas-deteccion-incendios-empresas",
-      "title": "Sistemas de Detección de Incendios: Tipos, Instalación y Mantenimiento",
-      "slug": "sistemas-deteccion-incendios-empresas",
-      "category": "equipos-contra-incendio",
-      "date": "2025-11-24",
-      "image": "img/img-index/deteccion-incendios.webp",
-      "excerpt": "Los sistemas de detección de incendios son esenciales para la protección temprana. Conoce detectores de humo, calor, llama y sistemas inteligentes.",
+      "date": "2025-12-16",
+      "image": "img/img-blog/nom-002-stps-seguridad-incendios-trabajo-hero-1765867340067.jpg",
+      "excerpt": "Descubre cómo la NOM-002-STPS asegura tu lugar de trabajo. ¡Contacta a MANEXT para cumplir con esta normativa!",
       "readTime": "12 min",
       "featured": false,
-      "tags": [
-        "deteccion",
-        "alarmas",
-        "sistemas",
-        "proteccion"
+      "tags": ["NOM-002-STPS seguridad incendios", "seguridad laboral", "extintores trabajo"],
+      "related": [
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
       ]
     },
     {
-      "id": "plan-emergencia-incendios-empresa",
-      "title": "Plan de Emergencia Contra Incendios: Guía para Empresas en CDMX",
-      "slug": "plan-emergencia-incendios-empresa",
-      "category": "emergencias-y-protocolos",
-      "date": "2025-11-23",
-      "image": "img/img-index/plan-emergencia.webp",
-      "excerpt": "Elabora un plan de emergencia efectivo para tu empresa. Incluye rutas de evacuación, puntos de reunión, brigadas y simulacros periódicos.",
-      "readTime": "13 min",
-      "featured": false,
-      "tags": [
-        "plan-emergencia",
-        "evacuacion",
-        "simulacros",
-        "empresa"
-      ]
-    },
-    {
-      "id": "precios-extintores-cdmx-2025",
-      "title": "Precios de Extintores en CDMX 2025: Guía de Costos Actualizada",
-      "slug": "precios-extintores-cdmx-2025",
-      "category": "guias-y-comparativas",
-      "date": "2025-11-22",
-      "image": "img/img-index/precios-extintores.webp",
-      "excerpt": "Tabla de precios actualizada de extintores en Ciudad de México. Comparativa por tipo, capacidad, marca y dónde comprar al mejor precio.",
-      "readTime": "8 min",
-      "featured": false,
-      "tags": [
-        "precios",
-        "costos",
-        "cdmx",
-        "comparativa"
-      ]
-    },
-    {
-      "id": "precios-recarga-extintores-cdmx-2025",
-      "title": "Precios de Recarga de Extintores en CDMX 2025: Tabla Comparativa",
-      "slug": "precios-recarga-extintores-cdmx-2025",
-      "category": "guias-y-comparativas",
-      "date": "2025-11-21",
-      "image": "img/img-index/precios-recarga.webp",
-      "excerpt": "Consulta los precios de recarga de extintores en CDMX. Comparativa por tipo (PQS, CO2, Tipo K), capacidad y servicio a domicilio incluido.",
-      "readTime": "7 min",
-      "featured": false,
-      "tags": [
-        "precios",
-        "recarga",
-        "cdmx",
-        "comparativa"
-      ]
-    },
-    {
-      "id": "comparativa-extintores-pqs-vs-co2",
-      "title": "Extintor PQS vs CO2: ¿Cuál es Mejor para tu Negocio?",
-      "slug": "comparativa-extintores-pqs-vs-co2",
-      "category": "guias-y-comparativas",
-      "date": "2025-11-20",
-      "image": "img/img-index/pqs-vs-co2.webp",
-      "excerpt": "Comparativa detallada entre extintores PQS y CO2. Ventajas, desventajas, aplicaciones ideales y cuál elegir según tu tipo de negocio.",
-      "readTime": "9 min",
-      "featured": false,
-      "tags": [
-        "comparativa",
-        "pqs",
-        "co2",
-        "seleccion"
-      ]
-    },
-    {
-      "id": "inspeccion-mensual-extintores-checklist",
-      "title": "Inspección Mensual de Extintores: Checklist Completo y Obligatorio",
-      "slug": "inspeccion-mensual-extintores-checklist",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-11-19",
-      "image": "img/img-index/inspeccion-mensual.webp",
-      "excerpt": "La inspección mensual de extintores es obligatoria según la NOM. Descarga nuestro checklist gratuito y aprende a realizar la inspección correctamente.",
-      "readTime": "6 min",
-      "featured": false,
-      "tags": [
-        "inspeccion",
-        "mensual",
-        "checklist",
-        "obligatorio"
-      ]
-    },
-    {
-      "id": "vida-util-extintor-cuando-reemplazar",
-      "title": "Vida Útil de un Extintor: ¿Cuándo Reemplazarlo?",
-      "slug": "vida-util-extintor-cuando-reemplazar",
-      "category": "mantenimiento-y-recarga",
-      "date": "2025-11-18",
-      "image": "img/img-index/vida-util-extintor.webp",
-      "excerpt": "Los extintores tienen una vida útil de 20 años con mantenimiento adecuado. Conoce las señales de que es momento de reemplazar tu extintor.",
-      "readTime": "7 min",
-      "featured": false,
-      "tags": [
-        "vida-util",
-        "reemplazo",
-        "mantenimiento",
-        "seguridad"
-      ]
-    },
-    {
-      "id": "multas-sanciones-falta-extintores-cdmx",
-      "title": "Multas y Sanciones por Falta de Extintores en CDMX: Lo que Debes Saber",
-      "slug": "multas-sanciones-falta-extintores-cdmx",
-      "category": "normativas-y-certificaciones",
-      "date": "2025-11-17",
-      "image": "img/img-index/multas-sanciones.webp",
-      "excerpt": "Las multas por falta de extintores o mantenimiento pueden superar $500,000 MXN. Conoce las sanciones, inspecciones de Protección Civil y cómo evitarlas.",
-      "readTime": "9 min",
-      "featured": false,
-      "tags": [
-        "multas",
-        "sanciones",
-        "proteccion-civil",
-        "legal"
-      ]
-    },
-    {
-      "id": "proteccion-civil-inspeccion-extintores",
-      "title": "Inspección de Protección Civil: Requisitos de Extintores para tu Negocio",
-      "slug": "proteccion-civil-inspeccion-extintores",
-      "category": "normativas-y-certificaciones",
-      "date": "2025-11-16",
-      "image": "img/img-index/proteccion-civil.webp",
-      "excerpt": "Prepara tu negocio para la inspección de Protección Civil. Requisitos de extintores, documentación necesaria y errores comunes a evitar.",
+      "id": "sistemas-proteccion-integral-empresas-cdmx-2025",
+      "title": "Sistemas de Proteccion Integral contra Incendios para Empresas CDMX",
+      "slug": "sistemas-proteccion-integral-empresas-cdmx-2025",
+      "category": "equipos-contra-incendio",
+      "date": "2025-12-16",
+      "image": "img/img-blog/sistemas-proteccion-integral-empresas-cdmx-2025-hero.jpg",
+      "excerpt": "Guia profesional sobre sistemas proteccion integral. MANEXT expertos en proteccion contra incendios en CDMX.",
       "readTime": "10 min",
       "featured": false,
-      "tags": [
-        "proteccion-civil",
-        "inspeccion",
-        "requisitos",
-        "documentacion"
+      "tags": ["sistemas proteccion", "proteccion integral", "empresas cdmx", "equipos contra incendio"],
+      "related": [
+        "prevencion-incendios-empresas-protocolo-completo-cdmx",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
       ]
     },
     {
-      "id": "prevenir-incendios-negocios-10-consejos",
-      "title": "10 Consejos para Prevenir Incendios en tu Negocio",
-      "slug": "prevenir-incendios-negocios-10-consejos",
+      "id": "prevencion-incendios-empresas-protocolo-completo-cdmx",
+      "title": "Prevencion de Incendios en Empresas: Protocolo Completo CDMX",
+      "slug": "prevencion-incendios-empresas-protocolo-completo-cdmx",
       "category": "prevencion-empresarial",
-      "date": "2025-11-15",
-      "image": "img/img-index/prevenir-incendios.webp",
-      "excerpt": "La prevención es la mejor protección. Implementa estos 10 consejos probados para reducir drásticamente el riesgo de incendios en tu empresa.",
-      "readTime": "8 min",
+      "date": "2025-12-16",
+      "image": "img/img-blog/prevencion-incendios-empresas-protocolo-completo-cdmx-hero.jpg",
+      "excerpt": "Guia profesional sobre prevencion incendios empresas. MANEXT expertos en proteccion contra incendios en CDMX.",
+      "readTime": "10 min",
       "featured": false,
-      "tags": [
-        "prevencion",
-        "consejos",
-        "negocios",
-        "seguridad"
+      "tags": ["prevencion incendios", "protocolo empresas", "seguridad empresarial", "cdmx"],
+      "related": [
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "sistemas-proteccion-integral-empresas-cdmx-2025",
+        "como-elegir-extintor-correcto-negocio-cdmx"
       ]
     },
     {
-      "id": "como-usar-extintor-tecnica-pass",
-      "title": "Cómo Usar un Extintor: Técnica PASS Paso a Paso",
-      "slug": "como-usar-extintor-tecnica-pass",
-      "category": "emergencias-y-protocolos",
-      "date": "2025-11-14",
-      "image": "img/img-index/tecnica-pass.webp",
-      "excerpt": "Aprende a usar un extintor correctamente con la técnica PASS: Presiona, Apunta, Aprieta y Sopla. Incluye video tutorial y errores comunes.",
-      "readTime": "5 min",
+      "id": "precios-extintores-cdmx-guia-actualizada",
+      "title": "Guia Completa de Precios de Extintores en CDMX",
+      "slug": "precios-extintores-cdmx-guia-actualizada",
+      "category": "guias-y-comparativas",
+      "date": "2025-12-16",
+      "image": "img/img-blog/precios-extintores-cdmx-guia-actualizada-hero-1765865502288.jpg",
+      "excerpt": "Descubre los precios de extintores en CDMX. ¡Consulta nuestra guia y asegura tu hogar ahora!",
+      "readTime": "12 min",
       "featured": false,
-      "tags": [
-        "tecnica-pass",
-        "uso",
-        "tutorial",
-        "emergencia"
+      "tags": ["precios de extintores CDMX", "precio extintor", "cuanto cuesta extintor", "extintores baratos"],
+      "related": [
+        "venta-extintores-cdmx-guia-compra-empresas",
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas"
       ]
     }
   ]

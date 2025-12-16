@@ -325,15 +325,149 @@
   }
 
   /**
-   * Obtiene artículos relacionados
+   * Obtiene artículos relacionados usando el campo 'related' del JSON
    */
   async function getRelatedArticles(currentSlug, categoryId, limit = 3) {
     const data = await loadArticlesData();
     if (!data) return [];
 
-    return data.articles
-      .filter(a => a.slug !== currentSlug && a.category === categoryId)
-      .slice(0, limit);
+    // Buscar el artículo actual para obtener sus relacionados predefinidos
+    const currentArticle = data.articles.find(a => a.slug === currentSlug);
+    let related = [];
+
+    // Si el artículo tiene relacionados predefinidos, usarlos primero
+    if (currentArticle && currentArticle.related && currentArticle.related.length > 0) {
+      const relatedSlugs = currentArticle.related;
+      related = relatedSlugs
+        .map(slug => data.articles.find(a => a.slug === slug))
+        .filter(a => a !== undefined);
+    }
+
+    // Si no hay suficientes, agregar de la misma categoría
+    if (related.length < limit) {
+      const sameCategory = data.articles
+        .filter(a => a.slug !== currentSlug &&
+                     a.category === categoryId &&
+                     !related.find(r => r.slug === a.slug));
+      related = [...related, ...sameCategory.slice(0, limit - related.length)];
+    }
+
+    // Si aún no hay suficientes, agregar de otras categorías
+    if (related.length < limit) {
+      const otherArticles = data.articles
+        .filter(a => a.slug !== currentSlug &&
+                     a.category !== categoryId &&
+                     !related.find(r => r.slug === a.slug));
+      related = [...related, ...otherArticles.slice(0, limit - related.length)];
+    }
+
+    return related.slice(0, limit);
+  }
+
+  /**
+   * Renderiza una card de artículo relacionado
+   */
+  function renderRelatedCard(article, categories) {
+    const category = getCategoryById(categories, article.category);
+    const articleUrl = getArticleUrl(article, categories);
+    const imageUrl = getImageUrl(article.image);
+
+    return `
+      <a href="${articleUrl}" class="related-card">
+        <div class="related-card-image">
+          <img src="${imageUrl}" alt="${article.title}" loading="lazy">
+          <span class="related-card-category" style="background: ${category ? category.color : '#d32f2f'}">${category ? category.name : 'General'}</span>
+        </div>
+        <div class="related-card-content">
+          <h3 class="related-card-title">${article.title}</h3>
+          <p class="related-card-excerpt">${article.excerpt.substring(0, 100)}...</p>
+          <div class="related-card-meta">
+            <span>${formatDate(article.date)}</span>
+            <span>${article.readTime || '5 min'} lectura</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  /**
+   * Inicializa la página de artículo (carga artículos relacionados)
+   */
+  async function initArticlePage(currentSlug, categoryId) {
+    const relatedContainer = document.getElementById('related-articles');
+
+    if (!relatedContainer) return;
+
+    const data = await loadArticlesData();
+    if (!data) {
+      relatedContainer.innerHTML = '<p style="text-align:center;color:#666;">No se pudieron cargar los artículos relacionados.</p>';
+      return;
+    }
+
+    // Obtener artículos relacionados
+    const relatedArticles = await getRelatedArticles(currentSlug, categoryId, 3);
+
+    if (relatedArticles.length === 0) {
+      relatedContainer.innerHTML = '<p style="text-align:center;color:#666;">No hay artículos relacionados disponibles.</p>';
+      return;
+    }
+
+    // Renderizar artículos relacionados
+    const relatedHtml = relatedArticles.map(article => renderRelatedCard(article, data.categories)).join('');
+    relatedContainer.innerHTML = relatedHtml;
+  }
+
+  /**
+   * Inicializa FAQs interactivas
+   */
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      if (question) {
+        question.addEventListener('click', () => {
+          // Cerrar otros FAQs abiertos (opcional - toggle único)
+          // faqItems.forEach(otherItem => {
+          //   if (otherItem !== item) otherItem.classList.remove('active');
+          // });
+
+          // Toggle el actual
+          item.classList.toggle('active');
+        });
+      }
+    });
+  }
+
+  /**
+   * Inicializa el scroll spy para la tabla de contenidos
+   */
+  function initTocScrollSpy() {
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('h2[id], h3[id]');
+
+    if (tocLinks.length === 0 || sections.length === 0) return;
+
+    function updateActiveLink() {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
   }
 
   // API pública
@@ -341,10 +475,15 @@
     init: loadArticlesData,
     initMain: initBlogMain,
     initCategory: initCategoryPage,
+    initArticle: initArticlePage,
+    initFaq: initFaqAccordion,
+    initToc: initTocScrollSpy,
     getRelated: getRelatedArticles,
     renderCard: renderArticleCard,
+    renderRelated: renderRelatedCard,
     renderPopular: renderPopularPost,
-    getBasePath: getBasePath
+    getBasePath: getBasePath,
+    formatDate: formatDate
   };
 
   // Auto-inicialización según la página
@@ -354,6 +493,26 @@
     // Detectar tipo de página
     if (path.endsWith('/blog.html') || path.endsWith('/blog/')) {
       initBlogMain();
+    }
+
+    // Inicializar FAQs si existen en la página
+    if (document.querySelector('.faq-item')) {
+      initFaqAccordion();
+    }
+
+    // Inicializar TOC scroll spy si existe
+    if (document.querySelector('.toc-list')) {
+      initTocScrollSpy();
+    }
+
+    // Inicializar artículos relacionados si existe el contenedor
+    const relatedContainer = document.getElementById('related-articles');
+    if (relatedContainer) {
+      const slug = relatedContainer.dataset.slug;
+      const category = relatedContainer.dataset.category;
+      if (slug && category) {
+        initArticlePage(slug, category);
+      }
     }
   });
 
