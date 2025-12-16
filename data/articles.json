@@ -102,6 +102,23 @@
   ],
   "articles": [
     {
+      "id": "precios-extintores-cdmx-guia-actualizada",
+      "title": "Guia Completa de Precios de Extintores en CDMX",
+      "slug": "precios-extintores-cdmx-guia-actualizada",
+      "category": "guias-y-comparativas",
+      "date": "2025-12-16",
+      "image": "img/img-blog/precios-extintores-cdmx-guia-actualizada-hero-1765865502288.jpg",
+      "excerpt": "Descubre los precios de extintores en CDMX. ¡Consulta nuestra guia y asegura tu hogar ahora!",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "precios de extintores CDMX",
+        "precio extintor",
+        "cuanto cuesta extintor",
+        "extintores baratos"
+      ]
+    },
+    {
       "id": "vida-util-extintor-cuando-reemplazarlo",
       "title": "Descubre la Vida Util de un Extintor y Cuándo Cambiarlo",
       "slug": "vida-util-extintor-cuando-reemplazarlo",
