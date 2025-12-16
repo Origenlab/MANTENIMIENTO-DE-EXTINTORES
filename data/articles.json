@@ -102,6 +102,23 @@
   ],
   "articles": [
     {
+      "id": "proteccion-civil-cdmx-requisitos-extintores",
+      "title": "Conoce los Requisitos de Proteccion Civil CDMX para Extintores",
+      "slug": "proteccion-civil-cdmx-requisitos-extintores",
+      "category": "normativas-y-certificaciones",
+      "date": "2025-12-16",
+      "image": "img/img-blog/proteccion-civil-cdmx-requisitos-extintores-hero-1765875702538.jpg",
+      "excerpt": "Descubre los requisitos de proteccion civil CDMX para extintores y asegura tu licencia de funcionamiento. Contacta a MANEXT hoy mismo.",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "proteccion civil CDMX extintores",
+        "proteccion civil",
+        "requisitos CDMX",
+        "licencia funcionamiento"
+      ]
+    },
+    {
       "id": "como-elegir-extintor-correcto-negocio-cdmx",
       "title": "Cómo Elegir el Extintor Correcto para tu Negocio en CDMX",
       "slug": "como-elegir-extintor-correcto-negocio-cdmx",
@@ -111,7 +128,12 @@
       "excerpt": "Guía profesional para seleccionar el extintor ideal según tu tipo de negocio, superficie, riesgos específicos y cumplimiento de normativa NOM.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["seleccion", "negocios", "guia", "normativa"],
+      "tags": [
+        "seleccion",
+        "negocios",
+        "guia",
+        "normativa"
+      ],
       "related": [
         "extintor-polvo-quimico-seco-pqs-usos-ventajas",
         "nom-154-scfi-guia-completa-cumplimiento-extintores",
@@ -128,7 +150,12 @@
       "excerpt": "Guía completa de compra de extintores certificados en Ciudad de México. Precios actualizados, tipos disponibles y entrega en todas las alcaldías.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["venta", "cdmx", "empresas", "precios"],
+      "tags": [
+        "venta",
+        "cdmx",
+        "empresas",
+        "precios"
+      ],
       "related": [
         "como-elegir-extintor-correcto-negocio-cdmx",
         "extintor-polvo-quimico-seco-pqs-usos-ventajas",
@@ -145,7 +172,11 @@
       "excerpt": "Descubre las clases de fuego A B C D K y cómo MANEXT puede ayudarte. ¡Contacta ahora!",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["clases de fuego A B C D K", "tipos de incendio", "clasificacion fuegos"],
+      "tags": [
+        "clases de fuego A B C D K",
+        "tipos de incendio",
+        "clasificacion fuegos"
+      ],
       "related": [
         "como-elegir-extintor-correcto-negocio-cdmx",
         "extintor-polvo-quimico-seco-pqs-usos-ventajas",
@@ -162,7 +193,12 @@
       "excerpt": "El extintor PQS es el más versátil del mercado. Combate fuegos clase A, B y C. Conoce sus usos, ventajas, capacidades disponibles y mantenimiento.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["pqs", "polvo-quimico", "abc", "versatil"],
+      "tags": [
+        "pqs",
+        "polvo-quimico",
+        "abc",
+        "versatil"
+      ],
       "related": [
         "como-elegir-extintor-correcto-negocio-cdmx",
         "cuando-recargar-extintor-senales-frecuencia-normativa",
@@ -179,7 +215,12 @@
       "excerpt": "Servicio profesional de mantenimiento de extintores en Ciudad de México. Cumple con NOM-154-SCFI, técnicos certificados y servicio a domicilio en todas las alcaldías.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["mantenimiento", "cdmx", "nom-154", "servicio-profesional"],
+      "tags": [
+        "mantenimiento",
+        "cdmx",
+        "nom-154",
+        "servicio-profesional"
+      ],
       "related": [
         "cuando-recargar-extintor-senales-frecuencia-normativa",
         "vida-util-extintor-cuando-reemplazarlo",
@@ -196,7 +237,12 @@
       "excerpt": "Guia profesional sobre cuando recargar extintor. MANEXT expertos en proteccion contra incendios en CDMX.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["recargar extintor", "frecuencia recarga", "senales recarga", "normativa"],
+      "tags": [
+        "recargar extintor",
+        "frecuencia recarga",
+        "senales recarga",
+        "normativa"
+      ],
       "related": [
         "mantenimiento-extintores-cdmx-servicio-profesional",
         "vida-util-extintor-cuando-reemplazarlo",
@@ -213,7 +259,12 @@
       "excerpt": "Descubre la vida util de un extintor y cuándo reemplazarlo. Contacta a MANEXT para asesoría y mantenimiento.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["vida util de un extintor", "vida util extintor", "duracion extintor", "cuando cambiar extintor"],
+      "tags": [
+        "vida util de un extintor",
+        "vida util extintor",
+        "duracion extintor",
+        "cuando cambiar extintor"
+      ],
       "related": [
         "mantenimiento-extintores-cdmx-servicio-profesional",
         "cuando-recargar-extintor-senales-frecuencia-normativa",
@@ -230,7 +281,12 @@
       "excerpt": "Requisitos técnicos obligatorios de la NOM-154-SCFI: certificación, etiquetado, pruebas, mantenimiento y sanciones por incumplimiento.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["nom-154", "normativa", "certificacion", "obligatorio"],
+      "tags": [
+        "nom-154",
+        "normativa",
+        "certificacion",
+        "obligatorio"
+      ],
       "related": [
         "mantenimiento-extintores-cdmx-servicio-profesional",
         "cuando-recargar-extintor-senales-frecuencia-normativa",
@@ -247,7 +303,11 @@
       "excerpt": "Descubre cómo la NOM-002-STPS asegura tu lugar de trabajo. ¡Contacta a MANEXT para cumplir con esta normativa!",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["NOM-002-STPS seguridad incendios", "seguridad laboral", "extintores trabajo"],
+      "tags": [
+        "NOM-002-STPS seguridad incendios",
+        "seguridad laboral",
+        "extintores trabajo"
+      ],
       "related": [
         "nom-154-scfi-guia-completa-cumplimiento-extintores",
         "prevencion-incendios-empresas-protocolo-completo-cdmx",
@@ -264,7 +324,12 @@
       "excerpt": "Guia profesional sobre sistemas proteccion integral. MANEXT expertos en proteccion contra incendios en CDMX.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["sistemas proteccion", "proteccion integral", "empresas cdmx", "equipos contra incendio"],
+      "tags": [
+        "sistemas proteccion",
+        "proteccion integral",
+        "empresas cdmx",
+        "equipos contra incendio"
+      ],
       "related": [
         "prevencion-incendios-empresas-protocolo-completo-cdmx",
         "nom-154-scfi-guia-completa-cumplimiento-extintores",
@@ -281,7 +346,12 @@
       "excerpt": "Guia profesional sobre prevencion incendios empresas. MANEXT expertos en proteccion contra incendios en CDMX.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["prevencion incendios", "protocolo empresas", "seguridad empresarial", "cdmx"],
+      "tags": [
+        "prevencion incendios",
+        "protocolo empresas",
+        "seguridad empresarial",
+        "cdmx"
+      ],
       "related": [
         "nom-154-scfi-guia-completa-cumplimiento-extintores",
         "sistemas-proteccion-integral-empresas-cdmx-2025",
@@ -298,7 +368,12 @@
       "excerpt": "Descubre los precios de extintores en CDMX. ¡Consulta nuestra guia y asegura tu hogar ahora!",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["precios de extintores CDMX", "precio extintor", "cuanto cuesta extintor", "extintores baratos"],
+      "tags": [
+        "precios de extintores CDMX",
+        "precio extintor",
+        "cuanto cuesta extintor",
+        "extintores baratos"
+      ],
       "related": [
         "venta-extintores-cdmx-guia-compra-empresas",
         "como-elegir-extintor-correcto-negocio-cdmx",
