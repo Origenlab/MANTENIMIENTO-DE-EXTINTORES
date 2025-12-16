@@ -102,6 +102,23 @@
   ],
   "articles": [
     {
+      "id": "vida-util-extintor-cuando-reemplazarlo",
+      "title": "Descubre la Vida Util de un Extintor y Cuándo Cambiarlo",
+      "slug": "vida-util-extintor-cuando-reemplazarlo",
+      "category": "mantenimiento-y-recarga",
+      "date": "2025-12-16",
+      "image": "img/img-blog/vida-util-extintor-cuando-reemplazarlo-hero-1765864864214.jpg",
+      "excerpt": "Descubre la vida util de un extintor y cuándo reemplazarlo. Contacta a MANEXT para asesoría y mantenimiento.",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "vida util de un extintor",
+        "vida util extintor",
+        "duracion extintor",
+        "cuando cambiar extintor"
+      ]
+    },
+    {
       "id": "mantenimiento-extintores-cdmx-servicio-profesional",
       "title": "Mantenimiento de Extintores en CDMX: Servicio Profesional Certificado 2025",
       "slug": "mantenimiento-extintores-cdmx-servicio-profesional",
@@ -111,7 +128,12 @@
       "excerpt": "Servicio profesional de mantenimiento de extintores en Ciudad de México. Cumple con NOM-154-SCFI, técnicos certificados y servicio a domicilio en todas las alcaldías.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["mantenimiento", "cdmx", "nom-154", "servicio-profesional"]
+      "tags": [
+        "mantenimiento",
+        "cdmx",
+        "nom-154",
+        "servicio-profesional"
+      ]
     },
     {
       "id": "venta-extintores-cdmx-guia-compra-empresas",
@@ -123,7 +145,12 @@
       "excerpt": "Guía completa de compra de extintores certificados en Ciudad de México. Precios actualizados, tipos disponibles y entrega en todas las alcaldías.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["venta", "cdmx", "empresas", "precios"]
+      "tags": [
+        "venta",
+        "cdmx",
+        "empresas",
+        "precios"
+      ]
     },
     {
       "id": "recarga-extintores-cdmx-cuando-donde-precio",
@@ -135,7 +162,12 @@
       "excerpt": "Todo sobre la recarga de extintores en CDMX: frecuencia según NOM-154, proceso certificado, precios por tipo y servicio a domicilio disponible.",
       "readTime": "8 min",
       "featured": true,
-      "tags": ["recarga", "cdmx", "precios", "nom-154"]
+      "tags": [
+        "recarga",
+        "cdmx",
+        "precios",
+        "nom-154"
+      ]
     },
     {
       "id": "prueba-hidrostatica-extintores-que-es-cuando",
@@ -147,7 +179,12 @@
       "excerpt": "La prueba hidrostática es obligatoria cada 5 años. Conoce el proceso, requisitos NOM, costos y por qué es vital para la seguridad de tu empresa.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["prueba-hidrostatica", "nom-154", "seguridad", "obligatorio"]
+      "tags": [
+        "prueba-hidrostatica",
+        "nom-154",
+        "seguridad",
+        "obligatorio"
+      ]
     },
     {
       "id": "extintor-polvo-quimico-seco-pqs-usos-ventajas",
@@ -159,7 +196,12 @@
       "excerpt": "El extintor PQS es el más versátil del mercado. Combate fuegos clase A, B y C. Conoce sus usos, ventajas, capacidades disponibles y mantenimiento.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["pqs", "polvo-quimico", "abc", "versatil"]
+      "tags": [
+        "pqs",
+        "polvo-quimico",
+        "abc",
+        "versatil"
+      ]
     },
     {
       "id": "extintor-co2-dioxido-carbono-usos-aplicaciones",
@@ -171,7 +213,12 @@
       "excerpt": "El extintor de CO2 es ideal para equipos eléctricos y electrónicos. No deja residuos y es perfecto para oficinas, centros de datos y laboratorios.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["co2", "dioxido-carbono", "equipos-electricos", "sin-residuos"]
+      "tags": [
+        "co2",
+        "dioxido-carbono",
+        "equipos-electricos",
+        "sin-residuos"
+      ]
     },
     {
       "id": "extintor-tipo-k-cocinas-restaurantes",
@@ -183,7 +230,12 @@
       "excerpt": "El extintor Tipo K es obligatorio para cocinas comerciales. Especializado en fuegos de aceites y grasas. Conoce capacidades, instalación y normativa.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["tipo-k", "cocinas", "restaurantes", "aceites-grasas"]
+      "tags": [
+        "tipo-k",
+        "cocinas",
+        "restaurantes",
+        "aceites-grasas"
+      ]
     },
     {
       "id": "extintor-agua-presion-usos-ventajas",
@@ -195,7 +247,12 @@
       "excerpt": "El extintor de agua es efectivo para fuegos clase A (sólidos). Económico, ecológico y fácil de recargar. Ideal para oficinas, escuelas y almacenes.",
       "readTime": "7 min",
       "featured": false,
-      "tags": ["agua", "clase-a", "economico", "ecologico"]
+      "tags": [
+        "agua",
+        "clase-a",
+        "economico",
+        "ecologico"
+      ]
     },
     {
       "id": "extintor-espuma-afff-industrial",
@@ -207,7 +264,12 @@
       "excerpt": "El extintor de espuma AFFF combate fuegos clase A y B. Ideal para industrias con líquidos inflamables, gasolineras y plantas químicas.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["espuma", "afff", "industrial", "liquidos-inflamables"]
+      "tags": [
+        "espuma",
+        "afff",
+        "industrial",
+        "liquidos-inflamables"
+      ]
     },
     {
       "id": "extintor-agente-limpio-centros-datos",
@@ -219,7 +281,12 @@
       "excerpt": "Los extintores de agente limpio (HFC-227ea, FK-5-1-12) no dañan equipos electrónicos. Perfectos para servidores, museos y salas de telecomunicaciones.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["agente-limpio", "centros-datos", "electronica", "sin-daño"]
+      "tags": [
+        "agente-limpio",
+        "centros-datos",
+        "electronica",
+        "sin-daño"
+      ]
     },
     {
       "id": "como-elegir-extintor-correcto-negocio-cdmx",
@@ -231,7 +298,12 @@
       "excerpt": "Guía profesional para seleccionar el extintor ideal según tu tipo de negocio, superficie, riesgos específicos y cumplimiento de normativa NOM.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["seleccion", "negocios", "guia", "normativa"]
+      "tags": [
+        "seleccion",
+        "negocios",
+        "guia",
+        "normativa"
+      ]
     },
     {
       "id": "nom-154-scfi-guia-completa-cumplimiento-extintores",
@@ -243,7 +315,12 @@
       "excerpt": "Requisitos técnicos obligatorios de la NOM-154-SCFI: certificación, etiquetado, pruebas, mantenimiento y sanciones por incumplimiento.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["nom-154", "normativa", "certificacion", "obligatorio"]
+      "tags": [
+        "nom-154",
+        "normativa",
+        "certificacion",
+        "obligatorio"
+      ]
     },
     {
       "id": "nom-002-stps-condiciones-seguridad-incendios",
@@ -255,7 +332,12 @@
       "excerpt": "La NOM-002-STPS establece las condiciones de seguridad en centros de trabajo. Conoce los requisitos de extintores, rutas de evacuación y capacitación.",
       "readTime": "11 min",
       "featured": false,
-      "tags": ["nom-002", "stps", "centros-trabajo", "seguridad"]
+      "tags": [
+        "nom-002",
+        "stps",
+        "centros-trabajo",
+        "seguridad"
+      ]
     },
     {
       "id": "clases-fuego-abc-dk-guia-completa",
@@ -267,7 +349,12 @@
       "excerpt": "Aprende a identificar los tipos de fuego y selecciona el extintor correcto. Tabla completa de clases A, B, C, D y K con ejemplos prácticos.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["clases-fuego", "abc", "seleccion", "guia"]
+      "tags": [
+        "clases-fuego",
+        "abc",
+        "seleccion",
+        "guia"
+      ]
     },
     {
       "id": "extintores-restaurantes-normativa-obligatoria",
@@ -279,7 +366,12 @@
       "excerpt": "Los restaurantes requieren extintores Tipo K obligatoriamente. Conoce la normativa, cantidad requerida, ubicación y mantenimiento para tu negocio.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["restaurantes", "tipo-k", "normativa", "cocinas"]
+      "tags": [
+        "restaurantes",
+        "tipo-k",
+        "normativa",
+        "cocinas"
+      ]
     },
     {
       "id": "extintores-oficinas-cuantos-necesito",
@@ -291,7 +383,12 @@
       "excerpt": "Calcula cuántos extintores necesita tu oficina según metros cuadrados, nivel de riesgo y normativa NOM. Incluye calculadora y ejemplos prácticos.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["oficinas", "cantidad", "normativa", "calculo"]
+      "tags": [
+        "oficinas",
+        "cantidad",
+        "normativa",
+        "calculo"
+      ]
     },
     {
       "id": "extintores-bodegas-almacenes-industriales",
@@ -303,7 +400,12 @@
       "excerpt": "Las bodegas y almacenes tienen requisitos especiales de protección contra incendios. Conoce tipos de extintores, cantidad, ubicación y sistemas complementarios.",
       "readTime": "11 min",
       "featured": false,
-      "tags": ["bodegas", "almacenes", "industrial", "proteccion"]
+      "tags": [
+        "bodegas",
+        "almacenes",
+        "industrial",
+        "proteccion"
+      ]
     },
     {
       "id": "extintores-condominios-edificios-residenciales",
@@ -315,7 +417,12 @@
       "excerpt": "Los condominios y edificios residenciales tienen obligaciones legales de protección contra incendios. Conoce los requisitos y responsabilidades.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["condominios", "edificios", "residencial", "administrador"]
+      "tags": [
+        "condominios",
+        "edificios",
+        "residencial",
+        "administrador"
+      ]
     },
     {
       "id": "extintor-casa-hogar-cual-comprar",
@@ -327,7 +434,12 @@
       "excerpt": "Protege tu hogar con el extintor adecuado. Recomendaciones de tipo, capacidad, ubicación ideal y mantenimiento para extintores domésticos.",
       "readTime": "7 min",
       "featured": false,
-      "tags": ["hogar", "casa", "domestico", "familia"]
+      "tags": [
+        "hogar",
+        "casa",
+        "domestico",
+        "familia"
+      ]
     },
     {
       "id": "capacitacion-uso-extintores-brigadas",
@@ -339,7 +451,12 @@
       "excerpt": "La capacitación en uso de extintores es obligatoria para empresas. Conoce los programas de formación, técnica PASS y certificación de brigadas.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["capacitacion", "brigadas", "tecnica-pass", "formacion"]
+      "tags": [
+        "capacitacion",
+        "brigadas",
+        "tecnica-pass",
+        "formacion"
+      ]
     },
     {
       "id": "senalizacion-extintores-normativa-colores",
@@ -351,7 +468,12 @@
       "excerpt": "La señalización correcta de extintores es obligatoria. Conoce los requisitos de color, tamaño, altura y materiales según la normativa mexicana.",
       "readTime": "7 min",
       "featured": false,
-      "tags": ["senalizacion", "normativa", "ubicacion", "colores"]
+      "tags": [
+        "senalizacion",
+        "normativa",
+        "ubicacion",
+        "colores"
+      ]
     },
     {
       "id": "sistemas-deteccion-incendios-empresas",
@@ -363,7 +485,12 @@
       "excerpt": "Los sistemas de detección de incendios son esenciales para la protección temprana. Conoce detectores de humo, calor, llama y sistemas inteligentes.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["deteccion", "alarmas", "sistemas", "proteccion"]
+      "tags": [
+        "deteccion",
+        "alarmas",
+        "sistemas",
+        "proteccion"
+      ]
     },
     {
       "id": "plan-emergencia-incendios-empresa",
@@ -375,7 +502,12 @@
       "excerpt": "Elabora un plan de emergencia efectivo para tu empresa. Incluye rutas de evacuación, puntos de reunión, brigadas y simulacros periódicos.",
       "readTime": "13 min",
       "featured": false,
-      "tags": ["plan-emergencia", "evacuacion", "simulacros", "empresa"]
+      "tags": [
+        "plan-emergencia",
+        "evacuacion",
+        "simulacros",
+        "empresa"
+      ]
     },
     {
       "id": "precios-extintores-cdmx-2025",
@@ -387,7 +519,12 @@
       "excerpt": "Tabla de precios actualizada de extintores en Ciudad de México. Comparativa por tipo, capacidad, marca y dónde comprar al mejor precio.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["precios", "costos", "cdmx", "comparativa"]
+      "tags": [
+        "precios",
+        "costos",
+        "cdmx",
+        "comparativa"
+      ]
     },
     {
       "id": "precios-recarga-extintores-cdmx-2025",
@@ -399,7 +536,12 @@
       "excerpt": "Consulta los precios de recarga de extintores en CDMX. Comparativa por tipo (PQS, CO2, Tipo K), capacidad y servicio a domicilio incluido.",
       "readTime": "7 min",
       "featured": false,
-      "tags": ["precios", "recarga", "cdmx", "comparativa"]
+      "tags": [
+        "precios",
+        "recarga",
+        "cdmx",
+        "comparativa"
+      ]
     },
     {
       "id": "comparativa-extintores-pqs-vs-co2",
@@ -411,7 +553,12 @@
       "excerpt": "Comparativa detallada entre extintores PQS y CO2. Ventajas, desventajas, aplicaciones ideales y cuál elegir según tu tipo de negocio.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["comparativa", "pqs", "co2", "seleccion"]
+      "tags": [
+        "comparativa",
+        "pqs",
+        "co2",
+        "seleccion"
+      ]
     },
     {
       "id": "inspeccion-mensual-extintores-checklist",
@@ -423,7 +570,12 @@
       "excerpt": "La inspección mensual de extintores es obligatoria según la NOM. Descarga nuestro checklist gratuito y aprende a realizar la inspección correctamente.",
       "readTime": "6 min",
       "featured": false,
-      "tags": ["inspeccion", "mensual", "checklist", "obligatorio"]
+      "tags": [
+        "inspeccion",
+        "mensual",
+        "checklist",
+        "obligatorio"
+      ]
     },
     {
       "id": "vida-util-extintor-cuando-reemplazar",
@@ -435,7 +587,12 @@
       "excerpt": "Los extintores tienen una vida útil de 20 años con mantenimiento adecuado. Conoce las señales de que es momento de reemplazar tu extintor.",
       "readTime": "7 min",
       "featured": false,
-      "tags": ["vida-util", "reemplazo", "mantenimiento", "seguridad"]
+      "tags": [
+        "vida-util",
+        "reemplazo",
+        "mantenimiento",
+        "seguridad"
+      ]
     },
     {
       "id": "multas-sanciones-falta-extintores-cdmx",
@@ -447,7 +604,12 @@
       "excerpt": "Las multas por falta de extintores o mantenimiento pueden superar $500,000 MXN. Conoce las sanciones, inspecciones de Protección Civil y cómo evitarlas.",
       "readTime": "9 min",
       "featured": false,
-      "tags": ["multas", "sanciones", "proteccion-civil", "legal"]
+      "tags": [
+        "multas",
+        "sanciones",
+        "proteccion-civil",
+        "legal"
+      ]
     },
     {
       "id": "proteccion-civil-inspeccion-extintores",
@@ -459,7 +621,12 @@
       "excerpt": "Prepara tu negocio para la inspección de Protección Civil. Requisitos de extintores, documentación necesaria y errores comunes a evitar.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["proteccion-civil", "inspeccion", "requisitos", "documentacion"]
+      "tags": [
+        "proteccion-civil",
+        "inspeccion",
+        "requisitos",
+        "documentacion"
+      ]
     },
     {
       "id": "prevenir-incendios-negocios-10-consejos",
@@ -471,7 +638,12 @@
       "excerpt": "La prevención es la mejor protección. Implementa estos 10 consejos probados para reducir drásticamente el riesgo de incendios en tu empresa.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["prevencion", "consejos", "negocios", "seguridad"]
+      "tags": [
+        "prevencion",
+        "consejos",
+        "negocios",
+        "seguridad"
+      ]
     },
     {
       "id": "como-usar-extintor-tecnica-pass",
@@ -483,7 +655,12 @@
       "excerpt": "Aprende a usar un extintor correctamente con la técnica PASS: Presiona, Apunta, Aprieta y Sopla. Incluye video tutorial y errores comunes.",
       "readTime": "5 min",
       "featured": false,
-      "tags": ["tecnica-pass", "uso", "tutorial", "emergencia"]
+      "tags": [
+        "tecnica-pass",
+        "uso",
+        "tutorial",
+        "emergencia"
+      ]
     }
   ]
 }
