@@ -646,10 +646,16 @@
     var path = window.location.pathname;
     console.log('Catalog System v3.0 - Path:', path);
 
-    // Detectar pagina de catalogo - buscar el contenedor de productos
+    // Detectar pagina de catalogo - buscar el contenedor con loading spinner
     var productsContainer = document.getElementById('products-container');
-    if (productsContainer && (path.includes('catalogo') || path === '/' || path === '/index.html')) {
-      console.log('Inicializando catálogo...');
+    var loadingSpinner = productsContainer ? productsContainer.querySelector('.products-loading') : null;
+
+    // Si hay contenedor de productos con spinner de carga, es la pagina del catalogo
+    if (productsContainer && loadingSpinner) {
+      console.log('Inicializando catálogo (detectado por spinner)...');
+      initCatalogPage();
+    } else if (productsContainer && productsContainer.classList.contains('products-grid')) {
+      console.log('Inicializando catálogo (detectado por clase)...');
       initCatalogPage();
     }
 
