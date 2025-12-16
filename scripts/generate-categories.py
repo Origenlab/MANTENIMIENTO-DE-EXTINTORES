@@ -1,9 +1,25 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Script para generar páginas de categoría del blog automáticamente.
+Lee las categorías desde data/articles.json y genera las páginas HTML.
+"""
+
+import json
+import os
+from pathlib import Path
+
+# Directorio base
+BASE_DIR = Path(__file__).parent.parent
+BLOG_DIR = BASE_DIR / 'blog'
+DATA_FILE = BASE_DIR / 'data' / 'articles.json'
+
+# Template de categoría
+CATEGORY_TEMPLATE = '''<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seguridad Contra Incendios | Blog MANEXT</title>
+    <title>{name} | Blog MANEXT</title>
 
     <!-- Preload -->
     <link rel="preload" href="../menu.html" as="fetch" crossorigin>
@@ -14,11 +30,11 @@
     <link rel="stylesheet" href="../css/style.css?v=15">
     <link rel="stylesheet" href="../css/blog-system.css?v=1">
 
-    <meta name="description" content="Guías de prevención, protocolos de seguridad y selección de equipos - Blog MANEXT sobre protección contra incendios en CDMX."/>
+    <meta name="description" content="{description} - Blog MANEXT sobre protección contra incendios en CDMX."/>
 
-    <meta property="og:title" content="Seguridad Contra Incendios - Blog MANEXT" />
+    <meta property="og:title" content="{name} - Blog MANEXT" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mantenimientodeextintores.mx/blog/seguridad-contra-incendios.html" />
+    <meta property="og:url" content="https://mantenimientodeextintores.mx/blog/{slug}.html" />
     <meta property="og:image" content="../img/og-image.jpg" />
 
     <link rel="icon" href="../favicon.ico" sizes="any">
@@ -48,7 +64,7 @@
             <a href="../blog.html">Blog</a>
           </li>
           <li class="breadcrumb-item">
-            <span>Seguridad Contra Incendios</span>
+            <span>{name}</span>
           </li>
         </ol>
       </div>
@@ -58,9 +74,9 @@
     <section class="hero" style="padding: 3rem 0;">
       <div class="container">
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-          <span class="category-badge" style="background: #d32f2f; color: white; padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 1rem;">Seguridad Contra Incendios</span>
-          <h1 class="hero-title">Seguridad Contra Incendios</h1>
-          <p class="hero-subtitle">Guías de prevención, protocolos de seguridad y selección de equipos</p>
+          <span class="category-badge" style="background: {color}; color: white; padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 1rem;">{name}</span>
+          <h1 class="hero-title">{name}</h1>
+          <p class="hero-subtitle">{description}</p>
         </div>
       </div>
     </section>
@@ -96,16 +112,7 @@
             <div class="sidebar-widget">
               <h3 class="widget-title">Categorías</h3>
               <ul class="categories-list">
-                <li><a href="seguridad-contra-incendios.html" class="active">Seguridad Contra Incendios</a></li>
-                <li><a href="tipos-de-extintores.html">Tipos de Extintores</a></li>
-                <li><a href="mantenimiento-y-recarga.html">Mantenimiento y Recarga</a></li>
-                <li><a href="equipos-contra-incendio.html">Equipos Contra Incendio</a></li>
-                <li><a href="normativas-y-certificaciones.html">Normativas y Certificaciones</a></li>
-                <li><a href="prevencion-empresarial.html">Prevención Empresarial</a></li>
-                <li><a href="emergencias-y-protocolos.html">Emergencias y Protocolos</a></li>
-                <li><a href="guias-y-comparativas.html">Guías y Comparativas</a></li>
-                <li><a href="industria-y-comercio.html">Industria y Comercio</a></li>
-                <li><a href="hogar-y-familia.html">Hogar y Familia</a></li>
+{categories_list}
               </ul>
             </div>
 
@@ -138,38 +145,90 @@
       // Cargar menu
       fetch(basePath + 'menu.html')
         .then(response => response.text())
-        .then(data => {
+        .then(data => {{
           let adjustedData = data
-            .replace(/src="(?!http|https|\/\/)([^"]+)"/g, 'src="' + basePath + '$1"')
-            .replace(/href="(?!http|https|tel:|mailto:|#|\/\/)([^"]+)"/g, 'href="' + basePath + '$1"');
+            .replace(/src="(?!http|https|\\/\\/)([^"]+)"/g, 'src="' + basePath + '$1"')
+            .replace(/href="(?!http|https|tel:|mailto:|#|\\/\\/)([^"]+)"/g, 'href="' + basePath + '$1"');
           document.getElementById('menu-container').innerHTML = adjustedData;
 
           const scripts = document.getElementById('menu-container').querySelectorAll('script');
-          scripts.forEach(oldScript => {
+          scripts.forEach(oldScript => {{
             const newScript = document.createElement('script');
             newScript.textContent = oldScript.textContent;
             oldScript.parentNode.replaceChild(newScript, oldScript);
-          });
-        });
+          }});
+        }});
 
       // Cargar footer
       fetch(basePath + 'footer.html')
         .then(response => response.text())
-        .then(data => {
+        .then(data => {{
           let adjustedData = data
-            .replace(/src="(?!http|https|\/\/)([^"]+)"/g, 'src="' + basePath + '$1"')
-            .replace(/href="(?!http|https|tel:|mailto:|#|\/\/)([^"]+)"/g, 'href="' + basePath + '$1"');
+            .replace(/src="(?!http|https|\\/\\/)([^"]+)"/g, 'src="' + basePath + '$1"')
+            .replace(/href="(?!http|https|tel:|mailto:|#|\\/\\/)([^"]+)"/g, 'href="' + basePath + '$1"');
           document.getElementById('footer-container').innerHTML = adjustedData;
-        });
+        }});
     </script>
 
     <!-- Blog System para Categoría -->
     <script src="../js/blog-system.js?v=1"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        ManextBlog.initCategory('seguridad-contra-incendios');
-      });
+      document.addEventListener('DOMContentLoaded', function() {{
+        ManextBlog.initCategory('{id}');
+      }});
     </script>
     <script src="../js/app.js"></script>
   </body>
 </html>
+'''
+
+def generate_categories_list(categories, current_slug):
+    """Genera la lista HTML de categorías para el sidebar."""
+    lines = []
+    for cat in categories:
+        active = ' class="active"' if cat['slug'] == current_slug else ''
+        lines.append(f'                <li><a href="{cat["slug"]}.html"{active}>{cat["name"]}</a></li>')
+    return '\n'.join(lines)
+
+def main():
+    print("=" * 60)
+    print("GENERADOR DE PÁGINAS DE CATEGORÍA")
+    print("=" * 60)
+
+    # Crear directorio scripts si no existe
+    os.makedirs(BASE_DIR / 'scripts', exist_ok=True)
+
+    # Leer datos del JSON
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    categories = data['categories']
+
+    # Crear directorio blog si no existe
+    os.makedirs(BLOG_DIR, exist_ok=True)
+
+    # Generar cada página de categoría
+    for category in categories:
+        categories_list = generate_categories_list(categories, category['slug'])
+
+        html_content = CATEGORY_TEMPLATE.format(
+            id=category['id'],
+            name=category['name'],
+            slug=category['slug'],
+            description=category['description'],
+            color=category['color'],
+            categories_list=categories_list
+        )
+
+        output_file = BLOG_DIR / f"{category['slug']}.html"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+
+        print(f"[OK] Generado: blog/{category['slug']}.html")
+
+    print("\n" + "=" * 60)
+    print(f"TOTAL: {len(categories)} páginas de categoría generadas")
+    print("=" * 60)
+
+if __name__ == '__main__':
+    main()
