@@ -644,9 +644,12 @@
   // Auto-inicializacion segun la pagina
   document.addEventListener('DOMContentLoaded', function() {
     var path = window.location.pathname;
+    console.log('Catalog System v3.0 - Path:', path);
 
-    // Detectar pagina de catalogo
-    if (path.endsWith('/catalogo.html') || path.endsWith('/catalogo/') || path === '/catalogo.html') {
+    // Detectar pagina de catalogo - buscar el contenedor de productos
+    var productsContainer = document.getElementById('products-container');
+    if (productsContainer && (path.includes('catalogo') || path === '/' || path === '/index.html')) {
+      console.log('Inicializando catálogo...');
       initCatalogPage();
     }
 
@@ -660,6 +663,7 @@
     if (relatedContainer) {
       var slug = relatedContainer.dataset.slug;
       var category = relatedContainer.dataset.category;
+      console.log('Productos relacionados - Slug:', slug, 'Category:', category);
       if (slug && category) {
         initProductPage(slug, category);
       }
