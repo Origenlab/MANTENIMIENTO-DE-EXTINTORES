@@ -102,6 +102,22 @@
   ],
   "articles": [
     {
+      "id": "clases-fuego-a-b-c-d-k-guia-completa",
+      "title": "Conozca las Clases de Fuego A B C D K en México",
+      "slug": "clases-fuego-a-b-c-d-k-guia-completa",
+      "category": "seguridad-contra-incendios",
+      "date": "2025-12-16",
+      "image": "img/img-blog/clases-fuego-a-b-c-d-k-guia-completa-hero-1765865903727.jpg",
+      "excerpt": "Descubre las clases de fuego A B C D K y cómo MANEXT puede ayudarte. ¡Contacta ahora!",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "clases de fuego A B C D K",
+        "tipos de incendio",
+        "clasificacion fuegos"
+      ]
+    },
+    {
       "id": "precios-extintores-cdmx-guia-actualizada",
       "title": "Guia Completa de Precios de Extintores en CDMX",
       "slug": "precios-extintores-cdmx-guia-actualizada",
