@@ -1,0 +1,1248 @@
+{
+  "name": "MANEXT - Generador Productos Catalogo v3.0",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "daysInterval": 4,
+              "triggerAtHour": 11
+            }
+          ]
+        },
+        "timezone": "America/Mexico_City"
+      },
+      "id": "trigger-schedule-001",
+      "name": "Cada 4 Dias",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "trigger-manual-001",
+      "name": "Ejecutar Manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ═══════════════════════════════════════════════════════════════════════════════\n// SELECTOR DE PRODUCTOS v1.0 - MANEXT CATALOGO\n// Productos de extintores por categoria\n// ═══════════════════════════════════════════════════════════════════════════════\n\nconst productos = [\n  // ═══ POLVO QUIMICO SECO (PQS) ═══\n  {\n    id: 'pqs-12kg',\n    categoria: 'polvo-quimico-seco',\n    categoriaDisplay: 'Polvo Químico Seco',\n    tabId: 'pqs',\n    title: 'Extintor PQS 12 kg Certificado NOM',\n    slug: 'producto-extintor-pqs-12kg',\n    capacity: '12 kg',\n    capacityType: 'industrial',\n    capacityValue: 12,\n    range: '6-8 metros',\n    fireClasses: ['A', 'B', 'C'],\n    badge: 'Certificado NOM',\n    badgeType: 'nom',\n    keywords: ['extintor 12kg', 'extintor PQS industrial', 'extintor grande'],\n    keywordPrincipal: 'extintor PQS 12 kg certificado',\n    descripcion: 'Extintor de polvo químico seco de 12 kg ideal para naves industriales y grandes espacios.',\n    features: [\n      'Certificado NOM-154-SCFI vigente',\n      'Ideal para naves industriales',\n      'Cilindro de acero alta resistencia',\n      'Manómetro de presión incluido'\n    ],\n    imagenesContexto: {\n      principal: 'professional 12kg red ABC dry chemical powder fire extinguisher PQS in industrial warehouse Mexico, safety equipment photography white background',\n      lateral: 'side view 12kg red fire extinguisher PQS showing gauge and handle, industrial safety equipment Mexico white background',\n      detalle: 'close up fire extinguisher pressure gauge and safety pin detail, NOM certification label visible Mexico',\n      uso: 'industrial worker using 12kg fire extinguisher in factory warehouse Mexico, fire safety demonstration'\n    }\n  },\n  {\n    id: 'pqs-50kg-rodante',\n    categoria: 'polvo-quimico-seco',\n    categoriaDisplay: 'Polvo Químico Seco',\n    tabId: 'pqs',\n    title: 'Extintor PQS 50 kg Rodante Industrial',\n    slug: 'producto-extintor-pqs-50kg-rodante',\n    capacity: '50 kg',\n    capacityType: 'industrial',\n    capacityValue: 50,\n    range: '8-12 metros',\n    fireClasses: ['A', 'B', 'C'],\n    badge: 'Industrial',\n    badgeType: 'premium',\n    keywords: ['extintor rodante', 'extintor 50kg', 'extintor industrial grande'],\n    keywordPrincipal: 'extintor PQS 50 kg rodante industrial',\n    descripcion: 'Extintor rodante de 50 kg para máxima protección en instalaciones industriales.',\n    features: [\n      'Sistema rodante de fácil manejo',\n      'Manguera de 5 metros',\n      'Certificación NOM-154-SCFI',\n      'Alcance máximo de 12 metros'\n    ],\n    imagenesContexto: {\n      principal: 'professional 50kg wheeled fire extinguisher cart red ABC dry chemical powder in industrial plant Mexico, safety equipment photography',\n      lateral: 'side view 50kg wheeled fire extinguisher showing wheels and long hose, industrial safety Mexico',\n      detalle: 'close up 50kg wheeled extinguisher handle and hose connection detail, professional equipment',\n      uso: 'factory safety team positioning 50kg wheeled fire extinguisher in manufacturing plant Mexico'\n    }\n  },\n  {\n    id: 'pqs-68kg-rodante',\n    categoria: 'polvo-quimico-seco',\n    categoriaDisplay: 'Polvo Químico Seco',\n    tabId: 'pqs',\n    title: 'Extintor PQS 68 kg Rodante Premium',\n    slug: 'producto-extintor-pqs-68kg-rodante',\n    capacity: '68 kg',\n    capacityType: 'industrial',\n    capacityValue: 68,\n    range: '10-15 metros',\n    fireClasses: ['A', 'B', 'C'],\n    badge: 'Premium',\n    badgeType: 'premium',\n    keywords: ['extintor 68kg', 'extintor rodante grande', 'extintor industrial premium'],\n    keywordPrincipal: 'extintor PQS 68 kg rodante premium',\n    descripcion: 'Extintor rodante de máxima capacidad para protección industrial de alto nivel.',\n    features: [\n      'Máxima capacidad disponible',\n      'Sistema de ruedas reforzado',\n      'Manguera de alta presión 6m',\n      'Certificación completa NOM'\n    ],\n    imagenesContexto: {\n      principal: 'professional 68kg wheeled fire extinguisher largest capacity red ABC dry chemical in industrial facility Mexico',\n      lateral: 'side view 68kg wheeled fire extinguisher premium industrial grade showing reinforced wheels Mexico',\n      detalle: 'close up 68kg extinguisher professional gauge and valve system, heavy duty industrial equipment',\n      uso: 'emergency response team with 68kg wheeled extinguisher in petrochemical plant Mexico'\n    }\n  },\n  // ═══ CO2 DIOXIDO DE CARBONO ═══\n  {\n    id: 'co2-9kg',\n    categoria: 'co2',\n    categoriaDisplay: 'CO2 Dióxido de Carbono',\n    tabId: 'co2',\n    title: 'Extintor CO2 9 kg Premium',\n    slug: 'producto-extintor-co2-9kg',\n    capacity: '9 kg',\n    capacityType: 'comercial',\n    capacityValue: 9,\n    range: '2-3 metros',\n    fireClasses: ['B', 'C'],\n    badge: 'Premium',\n    badgeType: 'premium',\n    keywords: ['extintor CO2 9kg', 'extintor dioxido carbono grande', 'extintor equipos electricos'],\n    keywordPrincipal: 'extintor CO2 9 kg premium',\n    descripcion: 'Extintor de CO2 de alta capacidad para protección de equipos electrónicos y maquinaria.',\n    features: [\n      'No deja residuos',\n      'Ideal para data centers',\n      'Cilindro de aluminio',\n      'Corneta de descarga incluida'\n    ],\n    imagenesContexto: {\n      principal: 'professional 9kg CO2 carbon dioxide fire extinguisher silver cylinder in server room data center Mexico',\n      lateral: 'side view 9kg CO2 fire extinguisher showing discharge horn and handle, electronics protection Mexico',\n      detalle: 'close up CO2 extinguisher discharge horn and valve mechanism, professional equipment detail',\n      uso: 'IT technician with CO2 extinguisher protecting server equipment in data center Mexico'\n    }\n  },\n  {\n    id: 'co2-23kg-rodante',\n    categoria: 'co2',\n    categoriaDisplay: 'CO2 Dióxido de Carbono',\n    tabId: 'co2',\n    title: 'Extintor CO2 23 kg Rodante Industrial',\n    slug: 'producto-extintor-co2-23kg-rodante',\n    capacity: '23 kg',\n    capacityType: 'industrial',\n    capacityValue: 23,\n    range: '3-5 metros',\n    fireClasses: ['B', 'C'],\n    badge: 'Industrial',\n    badgeType: 'premium',\n    keywords: ['extintor CO2 rodante', 'extintor CO2 23kg', 'extintor industrial CO2'],\n    keywordPrincipal: 'extintor CO2 23 kg rodante industrial',\n    descripcion: 'Extintor rodante de CO2 para máxima protección en instalaciones industriales y centros de datos.',\n    features: [\n      'Sistema rodante profesional',\n      'Manguera de 3 metros',\n      'No deja residuos',\n      'Doble corneta de descarga'\n    ],\n    imagenesContexto: {\n      principal: 'professional 23kg wheeled CO2 fire extinguisher in large data center facility Mexico',\n      lateral: 'side view 23kg wheeled CO2 extinguisher showing cart and dual discharge horns Mexico',\n      detalle: 'close up 23kg CO2 extinguisher dual discharge horn system professional grade',\n      uso: 'data center fire safety team with 23kg wheeled CO2 extinguisher Mexico'\n    }\n  },\n  // ═══ AGUA A PRESION ═══\n  {\n    id: 'agua-2-5gal',\n    categoria: 'agua-presion',\n    categoriaDisplay: 'Agua a Presión',\n    tabId: 'agua',\n    title: 'Extintor de Agua 2.5 Galones',\n    slug: 'producto-extintor-agua-2-5gal',\n    capacity: '2.5 gal',\n    capacityType: 'comercial',\n    capacityValue: 2.5,\n    range: '10-12 metros',\n    fireClasses: ['A'],\n    badge: 'Ecológico',\n    badgeType: 'featured',\n    keywords: ['extintor agua', 'extintor ecologico', 'extintor clase A'],\n    keywordPrincipal: 'extintor de agua 2.5 galones',\n    descripcion: 'Extintor de agua a presión ecológico ideal para materiales sólidos combustibles.',\n    features: [\n      'Agente ecológico 100%',\n      'Largo alcance 12 metros',\n      'Ideal para bodegas',\n      'Fácil recarga'\n    ],\n    imagenesContexto: {\n      principal: 'professional 2.5 gallon pressurized water fire extinguisher silver in warehouse with paper products Mexico',\n      lateral: 'side view water pressure fire extinguisher showing pump mechanism and hose Mexico',\n      detalle: 'close up water extinguisher pump handle and pressure release mechanism detail',\n      uso: 'warehouse worker using water fire extinguisher on cardboard fire demonstration Mexico'\n    }\n  },\n  // ═══ TIPO K COCINAS ═══\n  {\n    id: 'tipo-k-1-6gal',\n    categoria: 'tipo-k',\n    categoriaDisplay: 'Tipo K Cocinas',\n    tabId: 'tipok',\n    title: 'Extintor Tipo K 1.6 Galones Premium',\n    slug: 'producto-extintor-tipo-k-1-6gal',\n    capacity: '1.6 gal',\n    capacityType: 'comercial',\n    capacityValue: 1.6,\n    range: '3-4 metros',\n    fireClasses: ['K'],\n    badge: 'Restaurantes',\n    badgeType: 'featured',\n    keywords: ['extintor tipo K', 'extintor cocina comercial', 'extintor aceites'],\n    keywordPrincipal: 'extintor tipo K 1.6 galones cocinas',\n    descripcion: 'Extintor especializado para cocinas comerciales con agente húmedo para fuegos de aceites.',\n    features: [\n      'Agente húmedo especializado',\n      'Obligatorio en restaurantes',\n      'Saponifica aceites',\n      'Certificación NOM'\n    ],\n    imagenesContexto: {\n      principal: 'professional type K wet chemical fire extinguisher chrome in commercial restaurant kitchen Mexico',\n      lateral: 'side view type K fire extinguisher showing wet chemical agent label and hose Mexico',\n      detalle: 'close up type K extinguisher discharge wand and safety features for kitchen use',\n      uso: 'chef using type K fire extinguisher near commercial fryer in restaurant kitchen Mexico'\n    }\n  },\n  // ═══ ESPUMA AFFF ═══\n  {\n    id: 'espuma-9L',\n    categoria: 'espuma-afff',\n    categoriaDisplay: 'Espuma AFFF',\n    tabId: 'espuma',\n    title: 'Extintor Espuma AFFF 9 Litros',\n    slug: 'producto-extintor-espuma-afff-9L',\n    capacity: '9 L',\n    capacityType: 'comercial',\n    capacityValue: 9,\n    range: '5-6 metros',\n    fireClasses: ['A', 'B'],\n    badge: 'Líquidos',\n    badgeType: 'featured',\n    keywords: ['extintor espuma', 'extintor AFFF', 'extintor liquidos inflamables'],\n    keywordPrincipal: 'extintor espuma AFFF 9 litros',\n    descripcion: 'Extintor de espuma AFFF ideal para combatir fuegos de líquidos inflamables.',\n    features: [\n      'Espuma formadora de película',\n      'Sofoca y enfría',\n      'Ideal para gasolineras',\n      'Crea barrera protectora'\n    ],\n    imagenesContexto: {\n      principal: 'professional 9 liter AFFF foam fire extinguisher red in gas station fuel depot Mexico',\n      lateral: 'side view AFFF foam fire extinguisher showing foam agent label and discharge nozzle Mexico',\n      detalle: 'close up AFFF foam extinguisher special discharge nozzle for foam creation detail',\n      uso: 'gas station attendant training with AFFF foam extinguisher on fuel spill Mexico'\n    }\n  },\n  // ═══ AGENTES LIMPIOS ═══\n  {\n    id: 'halotron-6kg',\n    categoria: 'agentes-limpios',\n    categoriaDisplay: 'Agentes Limpios',\n    tabId: 'limpios',\n    title: 'Extintor Halotron 6 kg Premium',\n    slug: 'producto-extintor-halotron-6kg',\n    capacity: '6 kg',\n    capacityType: 'comercial',\n    capacityValue: 6,\n    range: '4-5 metros',\n    fireClasses: ['A', 'B', 'C'],\n    badge: 'Premium',\n    badgeType: 'premium',\n    keywords: ['extintor halotron', 'extintor agente limpio', 'extintor sin residuos'],\n    keywordPrincipal: 'extintor halotron 6 kg agente limpio',\n    descripcion: 'Extintor de agente limpio Halotron que no deja residuos, ideal para equipos sensibles.',\n    features: [\n      'Cero residuos',\n      'No conductor eléctrico',\n      'Ideal para museos y arte',\n      'Seguro para electrónicos'\n    ],\n    imagenesContexto: {\n      principal: 'professional 6kg Halotron clean agent fire extinguisher in museum art gallery protecting paintings Mexico',\n      lateral: 'side view Halotron clean agent extinguisher showing premium finish and label Mexico',\n      detalle: 'close up Halotron extinguisher discharge mechanism and clean agent certification label',\n      uso: 'museum security using Halotron clean agent extinguisher near valuable artwork Mexico'\n    }\n  },\n  {\n    id: 'fe36-4kg',\n    categoria: 'agentes-limpios',\n    categoriaDisplay: 'Agentes Limpios',\n    tabId: 'limpios',\n    title: 'Extintor FE-36 4 kg Electrónicos',\n    slug: 'producto-extintor-fe36-4kg',\n    capacity: '4 kg',\n    capacityType: 'comercial',\n    capacityValue: 4,\n    range: '3-4 metros',\n    fireClasses: ['A', 'B', 'C'],\n    badge: 'Electrónicos',\n    badgeType: 'premium',\n    keywords: ['extintor FE-36', 'extintor electronica', 'extintor servidores'],\n    keywordPrincipal: 'extintor FE-36 4 kg para electrónicos',\n    descripcion: 'Extintor FE-36 especializado para protección de equipos electrónicos de alto valor.',\n    features: [\n      'Protege servidores',\n      'No daña componentes',\n      'Evaporación instantánea',\n      'Certificación internacional'\n    ],\n    imagenesContexto: {\n      principal: 'professional 4kg FE-36 clean agent fire extinguisher protecting computer servers Mexico City',\n      lateral: 'side view FE-36 clean agent extinguisher showing electronics protection label Mexico',\n      detalle: 'close up FE-36 extinguisher special valve and discharge system for sensitive equipment',\n      uso: 'IT manager demonstrating FE-36 extinguisher use near server racks Mexico'\n    }\n  }\n];\n\n// Seleccionar producto aleatorio no usado recientemente\nconst staticData = $getWorkflowStaticData('global');\nlet usedProducts = staticData.usedProducts || [];\n\nconst availableProducts = productos.filter(p => !usedProducts.includes(p.id));\nif (availableProducts.length === 0) {\n  usedProducts = [];\n}\n\nconst productsToUse = availableProducts.length > 0 ? availableProducts : productos;\nconst randomIndex = Math.floor(Math.random() * productsToUse.length);\nconst selectedProduct = productsToUse[randomIndex];\n\nusedProducts.push(selectedProduct.id);\nstaticData.usedProducts = usedProducts.slice(-8);\n\nconst timestamp = Date.now();\n\nreturn [{\n  json: {\n    producto: selectedProduct,\n    timestamp: timestamp,\n    filename: `${selectedProduct.slug}.html`,\n    baseUrl: 'https://mantenimientodeextintores.mx',\n    githubRepo: 'Origenlab/MANTENIMIENTO-DE-EXTINTORES',\n    empresa: {\n      nombre: 'MANEXT',\n      nombreCompleto: 'Mantenimiento de Extintores',\n      telefono: '55 3968 9272',\n      whatsapp: '5215539689272',\n      email: 'contacto@mantenimientodeextintores.mx',\n      direccion: 'CDMX y Área Metropolitana',\n      horario: 'Lunes a Viernes 9:00 - 18:00, Sábados 9:00 - 14:00'\n    }\n  }\n}];"
+      },
+      "id": "selector-producto-001",
+      "name": "Selector Producto MANEXT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ═══════════════════════════════════════════════════════════════════════════════\n// CONSTRUCTOR DE PROMPT - PRODUCTO CATALOGO\n// ═══════════════════════════════════════════════════════════════════════════════\n\nconst data = $input.first().json;\nconst p = data.producto;\nconst e = data.empresa;\n\nconst systemPrompt = `Eres un redactor experto en SEO y seguridad contra incendios para MANEXT, empresa líder en venta y mantenimiento de extintores en CDMX. \n\nGenera contenido profesional, técnico y optimizado para posicionamiento web. El contenido debe ser informativo, persuasivo y cumplir con estándares de calidad Google E-E-A-T.\n\nIMPORTANTE:\n- Usa HTML semántico en el contenido (párrafos con <p>, listas con <ul><li>, negritas con <strong>)\n- No uses markdown, solo HTML\n- Incluye datos técnicos reales de extintores\n- Menciona normativas mexicanas (NOM-154-SCFI, NOM-002-STPS)\n- El tono debe ser profesional pero accesible`;\n\nconst userPrompt = `Genera el contenido completo para la página de producto:\n\nPRODUCTO: ${p.title}\nCATEGORIA: ${p.categoriaDisplay}\nCAPACIDAD: ${p.capacity}\nALCANCE: ${p.range}\nCLASES DE FUEGO: ${p.fireClasses.join(', ')}\nKEYWORD PRINCIPAL: ${p.keywordPrincipal}\nKEYWORDS SECUNDARIAS: ${p.keywords.join(', ')}\n\nGenera un JSON con esta estructura exacta:\n{\n  \"seo\": {\n    \"titulo\": \"Título SEO optimizado (max 60 caracteres)\",\n    \"metaDescription\": \"Meta description persuasiva (max 155 caracteres)\",\n    \"metaKeywords\": \"keyword1, keyword2, keyword3, keyword4, keyword5\"\n  },\n  \"hero\": {\n    \"descripcionCorta\": \"Descripción breve y persuasiva del producto en HTML (2-3 oraciones con <strong> para destacar)\"\n  },\n  \"especificaciones\": {\n    \"capacidad\": \"${p.capacity}\",\n    \"alcance\": \"${p.range}\",\n    \"tiempoDescarga\": \"tiempo estimado en segundos\",\n    \"agente\": \"tipo de agente extintor\",\n    \"presion\": \"PSI aproximado\",\n    \"peso\": \"peso aproximado con agente\",\n    \"altura\": \"altura aproximada cm\",\n    \"diametro\": \"diámetro aproximado cm\"\n  },\n  \"caracteristicas\": [\n    \"Característica 1 detallada\",\n    \"Característica 2 detallada\",\n    \"Característica 3 detallada\",\n    \"Característica 4 detallada\",\n    \"Característica 5 detallada\",\n    \"Característica 6 detallada\",\n    \"Característica 7 detallada\",\n    \"Característica 8 detallada\"\n  ],\n  \"descripcionDetallada\": {\n    \"introduccion\": \"Párrafo introductorio completo en HTML (150-200 palabras)\",\n    \"caracteristicasTecnicas\": \"Sección de características técnicas en HTML con lista <ul>\",\n    \"aplicaciones\": \"Sección de aplicaciones recomendadas en HTML con lista <ul>\",\n    \"mantenimiento\": \"Sección de mantenimiento y cuidados en HTML\",\n    \"normativa\": \"Sección sobre normativa y certificaciones en HTML\",\n    \"garantia\": \"Información de garantía y certificaciones\"\n  },\n  \"faq\": [\n    {\n      \"pregunta\": \"Pregunta frecuente 1 sobre este producto\",\n      \"respuesta\": \"Respuesta completa y útil\"\n    },\n    {\n      \"pregunta\": \"Pregunta frecuente 2\",\n      \"respuesta\": \"Respuesta completa\"\n    },\n    {\n      \"pregunta\": \"Pregunta frecuente 3\",\n      \"respuesta\": \"Respuesta completa\"\n    },\n    {\n      \"pregunta\": \"Pregunta frecuente 4\",\n      \"respuesta\": \"Respuesta completa\"\n    },\n    {\n      \"pregunta\": \"Pregunta frecuente 5 sobre MANEXT\",\n      \"respuesta\": \"Respuesta mencionando servicios de MANEXT\"\n    }\n  ],\n  \"cta\": {\n    \"titulo\": \"Título persuasivo para CTA\",\n    \"descripcion\": \"Descripción breve para el llamado a la acción\",\n    \"mensajeWhatsApp\": \"Hola, quiero cotizar el ${p.title}\"\n  }\n}\n\nIMPORTANTE: Responde SOLO con el JSON, sin texto adicional ni bloques de código.`;\n\nreturn [{\n  json: {\n    ...data,\n    prompts: {\n      system: systemPrompt,\n      user: userPrompt\n    }\n  }\n}];"
+      },
+      "id": "constructor-prompt-001",
+      "name": "Constructor Prompt Producto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        700,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_OPENAI_API_KEY_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": {{ JSON.stringify($json.prompts.system) }}\n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.prompts.user) }}\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 4000\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "chatgpt-api-001",
+      "name": "ChatGPT API Producto",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        950,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 10000
+    },
+    {
+      "parameters": {
+        "jsCode": "const gptResponse = $input.first().json;\nconst dataOriginal = $('Constructor Prompt Producto').first().json;\n\nlet contenido;\ntry {\n  let responseText = gptResponse.choices[0].message.content;\n  responseText = responseText.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n  contenido = JSON.parse(responseText);\n} catch (error) {\n  throw new Error('Error parseando respuesta de ChatGPT: ' + error.message);\n}\n\nif (!contenido.seo || !contenido.hero || !contenido.especificaciones) {\n  throw new Error('Respuesta de ChatGPT incompleta');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    contenido: contenido\n  }\n}];"
+      },
+      "id": "validar-respuesta-001",
+      "name": "Validar Respuesta GPT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ═══════════════════════════════════════════════════════════════════════════════\n// CONSTRUCTOR DE PROMPTS PARA 4 IMAGENES - FAL.AI (SECUENCIAL)\n// v1.1 - Ejecucion secuencial para evitar errores de paralelismo\n// ═══════════════════════════════════════════════════════════════════════════════\n\nconst data = $input.first().json;\nconst p = data.producto;\nconst timestamp = data.timestamp;\n\nconst basePrompt = 'Professional product photography, studio lighting, white background, high resolution 4K, commercial product shot, clean minimal style, ';\n\nconst imagePrompts = [\n  {\n    tipo: 'principal',\n    prompt: basePrompt + p.imagenesContexto.principal,\n    filename: `${p.slug}-principal-${timestamp}.jpg`\n  },\n  {\n    tipo: 'lateral',\n    prompt: basePrompt + p.imagenesContexto.lateral,\n    filename: `${p.slug}-lateral-${timestamp}.jpg`\n  },\n  {\n    tipo: 'detalle',\n    prompt: basePrompt + p.imagenesContexto.detalle,\n    filename: `${p.slug}-detalle-${timestamp}.jpg`\n  },\n  {\n    tipo: 'uso',\n    prompt: basePrompt + p.imagenesContexto.uso,\n    filename: `${p.slug}-uso-${timestamp}.jpg`\n  }\n];\n\n// Inicializar objeto para acumular URLs de imagenes\nreturn [{\n  json: {\n    ...data,\n    imagenes: imagePrompts,\n    imagenesUrls: {},\n    imagenesFilenames: {\n      principal: imagePrompts[0].filename,\n      lateral: imagePrompts[1].filename,\n      detalle: imagePrompts[2].filename,\n      uso: imagePrompts[3].filename\n    },\n    currentPrompt: imagePrompts[0].prompt,\n    currentTipo: 'principal'\n  }\n}];"
+      },
+      "id": "constructor-fal-prompts-001",
+      "name": "Constructor FAL Prompts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://fal.run/fal-ai/flux/schnell",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key YOUR_FAL_AI_KEY_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": {{ JSON.stringify($json.imagenes[0].prompt) }},\n  \"image_size\": \"landscape_16_9\",\n  \"num_inference_steps\": 4,\n  \"num_images\": 1\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "fal-imagen-1-001",
+      "name": "FAL Imagen 1 Principal",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Procesar resultado de Imagen 1 y preparar para Imagen 2\nconst falResponse = $input.first().json;\nconst dataOriginal = $('Constructor FAL Prompts').first().json;\n\nconst imageUrl = falResponse?.images?.[0]?.url;\nif (!imageUrl) {\n  throw new Error('No se obtuvo URL de imagen 1 de FAL.ai');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesUrls: {\n      principal: imageUrl\n    },\n    currentPrompt: dataOriginal.imagenes[1].prompt,\n    currentTipo: 'lateral'\n  }\n}];"
+      },
+      "id": "procesar-img1-001",
+      "name": "Procesar Imagen 1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://fal.run/fal-ai/flux/schnell",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key YOUR_FAL_AI_KEY_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": {{ JSON.stringify($json.imagenes[1].prompt) }},\n  \"image_size\": \"landscape_16_9\",\n  \"num_inference_steps\": 4,\n  \"num_images\": 1\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "fal-imagen-2-001",
+      "name": "FAL Imagen 2 Lateral",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Procesar resultado de Imagen 2 y preparar para Imagen 3\nconst falResponse = $input.first().json;\nconst dataOriginal = $('Procesar Imagen 1').first().json;\n\nconst imageUrl = falResponse?.images?.[0]?.url;\nif (!imageUrl) {\n  throw new Error('No se obtuvo URL de imagen 2 de FAL.ai');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesUrls: {\n      ...dataOriginal.imagenesUrls,\n      lateral: imageUrl\n    },\n    currentPrompt: dataOriginal.imagenes[2].prompt,\n    currentTipo: 'detalle'\n  }\n}];"
+      },
+      "id": "procesar-img2-001",
+      "name": "Procesar Imagen 2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://fal.run/fal-ai/flux/schnell",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key YOUR_FAL_AI_KEY_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": {{ JSON.stringify($json.imagenes[2].prompt) }},\n  \"image_size\": \"landscape_16_9\",\n  \"num_inference_steps\": 4,\n  \"num_images\": 1\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "fal-imagen-3-001",
+      "name": "FAL Imagen 3 Detalle",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2700,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Procesar resultado de Imagen 3 y preparar para Imagen 4\nconst falResponse = $input.first().json;\nconst dataOriginal = $('Procesar Imagen 2').first().json;\n\nconst imageUrl = falResponse?.images?.[0]?.url;\nif (!imageUrl) {\n  throw new Error('No se obtuvo URL de imagen 3 de FAL.ai');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesUrls: {\n      ...dataOriginal.imagenesUrls,\n      detalle: imageUrl\n    },\n    currentPrompt: dataOriginal.imagenes[3].prompt,\n    currentTipo: 'uso'\n  }\n}];"
+      },
+      "id": "procesar-img3-001",
+      "name": "Procesar Imagen 3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://fal.run/fal-ai/flux/schnell",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key YOUR_FAL_AI_KEY_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": {{ JSON.stringify($json.imagenes[3].prompt) }},\n  \"image_size\": \"landscape_16_9\",\n  \"num_inference_steps\": 4,\n  \"num_images\": 1\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "fal-imagen-4-001",
+      "name": "FAL Imagen 4 Uso",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3200,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Procesar resultado de Imagen 4 - TODAS LAS IMAGENES COMPLETADAS\nconst falResponse = $input.first().json;\nconst dataOriginal = $('Procesar Imagen 3').first().json;\n\nconst imageUrl = falResponse?.images?.[0]?.url;\nif (!imageUrl) {\n  throw new Error('No se obtuvo URL de imagen 4 de FAL.ai');\n}\n\n// Ahora tenemos las 4 URLs de imagenes\nconst imagenesUrlsCompletas = {\n  ...dataOriginal.imagenesUrls,\n  uso: imageUrl\n};\n\n// Validar que tenemos las 4\nif (!imagenesUrlsCompletas.principal || !imagenesUrlsCompletas.lateral || \n    !imagenesUrlsCompletas.detalle || !imagenesUrlsCompletas.uso) {\n  throw new Error('No se obtuvieron todas las 4 imagenes de FAL.ai');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesUrls: imagenesUrlsCompletas\n  }\n}];"
+      },
+      "id": "procesar-img4-001",
+      "name": "Procesar Imagen 4 Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.imagenesUrls.principal }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "descargar-img1-001",
+      "name": "Descargar Imagen 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3700,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "// Guardar binario de imagen 1 y continuar\nconst downloadResult = $input.first();\nconst dataOriginal = $('Procesar Imagen 4 Final').first().json;\n\nconst binaryData = downloadResult.binary?.data?.data;\nif (!binaryData) {\n  throw new Error('No se pudo descargar imagen 1');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesBase64: {\n      principal: binaryData\n    }\n  }\n}];"
+      },
+      "id": "guardar-img1-001",
+      "name": "Guardar Imagen 1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.imagenesUrls.lateral }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "descargar-img2-001",
+      "name": "Descargar Imagen 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4200,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "// Guardar binario de imagen 2 y continuar\nconst downloadResult = $input.first();\nconst dataOriginal = $('Guardar Imagen 1').first().json;\n\nconst binaryData = downloadResult.binary?.data?.data;\nif (!binaryData) {\n  throw new Error('No se pudo descargar imagen 2');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesBase64: {\n      ...dataOriginal.imagenesBase64,\n      lateral: binaryData\n    }\n  }\n}];"
+      },
+      "id": "guardar-img2-001",
+      "name": "Guardar Imagen 2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.imagenesUrls.detalle }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "descargar-img3-001",
+      "name": "Descargar Imagen 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4700,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "// Guardar binario de imagen 3 y continuar\nconst downloadResult = $input.first();\nconst dataOriginal = $('Guardar Imagen 2').first().json;\n\nconst binaryData = downloadResult.binary?.data?.data;\nif (!binaryData) {\n  throw new Error('No se pudo descargar imagen 3');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesBase64: {\n      ...dataOriginal.imagenesBase64,\n      detalle: binaryData\n    }\n  }\n}];"
+      },
+      "id": "guardar-img3-001",
+      "name": "Guardar Imagen 3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.imagenesUrls.uso }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "id": "descargar-img4-001",
+      "name": "Descargar Imagen 4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5200,
+        200
+      ],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "// Guardar binario de imagen 4 - TODAS LAS DESCARGAS COMPLETADAS\nconst downloadResult = $input.first();\nconst dataOriginal = $('Guardar Imagen 3').first().json;\n\nconst binaryData = downloadResult.binary?.data?.data;\nif (!binaryData) {\n  throw new Error('No se pudo descargar imagen 4');\n}\n\nconst imagenesBase64Completas = {\n  ...dataOriginal.imagenesBase64,\n  uso: binaryData\n};\n\n// Validar que tenemos las 4\nif (!imagenesBase64Completas.principal || !imagenesBase64Completas.lateral || \n    !imagenesBase64Completas.detalle || !imagenesBase64Completas.uso) {\n  throw new Error('No se descargaron todas las 4 imagenes');\n}\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesBase64: imagenesBase64Completas\n  }\n}];"
+      },
+      "id": "guardar-img4-001",
+      "name": "Guardar Imagen 4 Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/productos/{{ $json.producto.categoria }}/{{ $json.imagenesFilenames.principal }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Add product image: {{ $json.imagenesFilenames.principal }}\",\"content\":\"{{ $json.imagenesBase64.principal }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-subir-img1-001",
+      "name": "GitHub Subir Img 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5700,
+        200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preparar datos despues de subir imagen 1\nconst dataOriginal = $('Guardar Imagen 4 Final').first().json;\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    img1Subida: true\n  }\n}];"
+      },
+      "id": "prep-img2-github-001",
+      "name": "Prep Subir Img 2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/productos/{{ $json.producto.categoria }}/{{ $json.imagenesFilenames.lateral }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Add product image: {{ $json.imagenesFilenames.lateral }}\",\"content\":\"{{ $json.imagenesBase64.lateral }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-subir-img2-001",
+      "name": "GitHub Subir Img 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6200,
+        200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preparar datos despues de subir imagen 2\nconst dataOriginal = $('Prep Subir Img 2').first().json;\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    img2Subida: true\n  }\n}];"
+      },
+      "id": "prep-img3-github-001",
+      "name": "Prep Subir Img 3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/productos/{{ $json.producto.categoria }}/{{ $json.imagenesFilenames.detalle }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Add product image: {{ $json.imagenesFilenames.detalle }}\",\"content\":\"{{ $json.imagenesBase64.detalle }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-subir-img3-001",
+      "name": "GitHub Subir Img 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        6700,
+        200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preparar datos despues de subir imagen 3\nconst dataOriginal = $('Prep Subir Img 3').first().json;\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    img3Subida: true\n  }\n}];"
+      },
+      "id": "prep-img4-github-001",
+      "name": "Prep Subir Img 4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/productos/{{ $json.producto.categoria }}/{{ $json.imagenesFilenames.uso }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Add product image: {{ $json.imagenesFilenames.uso }}\",\"content\":\"{{ $json.imagenesBase64.uso }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-subir-img4-001",
+      "name": "GitHub Subir Img 4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        7200,
+        200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Consolidar despues de subir todas las imagenes\nconst dataOriginal = $('Prep Subir Img 4').first().json;\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    imagenesSubidas: true\n  }\n}];"
+      },
+      "id": "consolidar-subida-imagenes-001",
+      "name": "Imagenes Subidas OK",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ═══════════════════════════════════════════════════════════════════════════════\n// GENERADOR HTML - PRODUCTO CATALOGO v3.0\n// Con galería de imágenes, productos relacionados dinámicos, colores por categoría\n// ═══════════════════════════════════════════════════════════════════════════════\n\nconst data = $input.first().json;\nconst p = data.producto;\nconst c = data.contenido;\nconst e = data.empresa;\n\nconst productUrl = 'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + data.filename;\nconst whatsappMsg = encodeURIComponent(c.cta?.mensajeWhatsApp || ('Hola, quiero cotizar ' + p.title));\n\n// Colores por categoría\nconst categoryColors = {\n  'polvo-quimico-seco': '#c62828',\n  'co2': '#1565c0',\n  'agua-presion': '#0288d1',\n  'tipo-k': '#f9a825',\n  'espuma-afff': '#e65100',\n  'agentes-limpios': '#7b1fa2'\n};\nconst accentColor = categoryColors[p.categoria] || '#d32f2f';\n\n// URLs de breadcrumb por categoría\nconst categoryUrls = {\n  'polvo-quimico-seco': { url: '../../polvo-quimico-seco.html', name: 'Extintores PQS' },\n  'co2': { url: '../../co2.html', name: 'Extintores CO2' },\n  'agua-presion': { url: '../../agua-presion.html', name: 'Extintores Agua' },\n  'tipo-k': { url: '../../tipo-k.html', name: 'Extintores Tipo K' },\n  'espuma-afff': { url: '../../espuma-afff.html', name: 'Extintores Espuma' },\n  'agentes-limpios': { url: '../../agentes-limpios.html', name: 'Agentes Limpios' }\n};\nconst catInfo = categoryUrls[p.categoria] || { url: '../../catalogo.html', name: p.categoriaDisplay };\n\n// Imágenes - todas las 4\nconst imgs = data.imagenesFilenames;\nconst imgPrincipal = imgs.principal;\nconst imgLateral = imgs.lateral;\nconst imgDetalle = imgs.detalle;\nconst imgUso = imgs.uso;\n\n// Badges de clases de fuego\nconst fireClassColors = { 'A': '#4caf50', 'B': '#ff9800', 'C': '#2196f3', 'D': '#9c27b0', 'K': '#795548' };\nconst fireClassNames = { 'A': 'Sólidos', 'B': 'Líquidos', 'C': 'Eléctricos', 'D': 'Metales', 'K': 'Cocinas' };\n\nconst classBadgesHtml = p.fireClasses.map(cls => {\n  return `<span class=\"class-badge\" style=\"background:${fireClassColors[cls] || '#666'};color:white;\">${cls} - ${fireClassNames[cls] || cls}</span>`;\n}).join('\\n                  ');\n\n// Features HTML (2 columnas)\nconst featuresHtml = c.caracteristicas.slice(0, 6).map(f => `<li>${f}</li>`).join('\\n                ');\n\n// Specs compactas\nconst specs = c.especificaciones;\n\n// Product Schema\nconst productSchema = JSON.stringify({\n  '@context': 'https://schema.org',\n  '@type': 'Product',\n  'name': p.title,\n  'description': c.seo.metaDescription,\n  'image': [\n    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgPrincipal,\n    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgLateral,\n    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgDetalle,\n    'https://mantenimientodeextintores.mx/productos/' + p.categoria + '/' + imgUso\n  ],\n  'brand': { '@type': 'Brand', 'name': 'MANEXT' },\n  'manufacturer': { '@type': 'Organization', 'name': 'MANEXT' },\n  'category': p.categoriaDisplay,\n  'offers': {\n    '@type': 'Offer',\n    'availability': 'https://schema.org/InStock',\n    'priceCurrency': 'MXN',\n    'seller': { '@type': 'Organization', 'name': 'MANEXT' }\n  }\n});\n\n// ═══════════════════════════════════════════════════════════════════════════════\n// GENERAR HTML COMPLETO\n// ═══════════════════════════════════════════════════════════════════════════════\n\nlet html = `<!DOCTYPE html>\n<html lang=\"es-MX\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>${c.seo.titulo} | MANEXT</title>\n    <link rel=\"preconnect\" href=\"https://wa.me\" crossorigin>\n    <link rel=\"dns-prefetch\" href=\"https://wa.me\">\n\n    <link rel=\"preload\" href=\"../../css/style.css?v=15\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <noscript><link rel=\"stylesheet\" href=\"../../css/style.css?v=15\"></noscript>\n    <link rel=\"stylesheet\" href=\"../../css/catalog-system.css?v=4\">\n    <meta name=\"description\" content=\"${c.seo.metaDescription}\" />\n    <meta name=\"keywords\" content=\"${c.seo.metaKeywords}\">\n    <meta name=\"robots\" content=\"index, follow, max-image-preview:large, max-snippet:-1\">\n    <meta name=\"geo.region\" content=\"MX-CMX\">\n    <meta name=\"geo.placename\" content=\"Ciudad de Mexico\">\n\n    <meta property=\"og:title\" content=\"${c.seo.titulo} | MANEXT\" />\n    <meta property=\"og:type\" content=\"product\" />\n    <meta property=\"og:url\" content=\"${productUrl}\" />\n    <meta property=\"og:image\" content=\"https://mantenimientodeextintores.mx/productos/${p.categoria}/${imgPrincipal}\" />\n    <meta property=\"og:description\" content=\"${c.seo.metaDescription}\" />\n    <meta property=\"og:locale\" content=\"es_MX\" />\n    <meta property=\"og:site_name\" content=\"MANEXT - Mantenimiento de Extintores\" />\n\n    <meta name=\"twitter:card\" content=\"summary_large_image\">\n    <meta name=\"twitter:title\" content=\"${c.seo.titulo} | MANEXT\">\n    <meta name=\"twitter:description\" content=\"${c.seo.metaDescription}\">\n    <meta name=\"twitter:image\" content=\"https://mantenimientodeextintores.mx/productos/${p.categoria}/${imgPrincipal}\">\n\n    <script type=\"application/ld+json\">${productSchema}</script>\n\n    <style>\n      /* ========== HERO COMPACTO ========== */\n      .product-hero {\n        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);\n        padding: 1.5rem 0 2rem 0;\n      }\n      .product-hero .container {\n        max-width: 1400px;\n        margin: 0 auto;\n        padding: 0 2rem;\n      }\n      .product-breadcrumb {\n        margin-bottom: 1.25rem;\n        font-size: 0.85rem;\n      }\n      .product-breadcrumb a {\n        color: #999;\n        text-decoration: none;\n      }\n      .product-breadcrumb a:hover {\n        color: ${accentColor};\n      }\n      .product-breadcrumb span {\n        color: #666;\n        margin: 0 0.5rem;\n      }\n      .product-breadcrumb strong {\n        color: #fff;\n      }\n\n      /* Layout Principal */\n      .product-main {\n        display: grid;\n        grid-template-columns: 450px 1fr;\n        gap: 3rem;\n        align-items: start;\n      }\n\n      /* Galería de Imágenes */\n      .product-gallery {\n        position: sticky;\n        top: 100px;\n      }\n      .product-image-main {\n        background: white;\n        border-radius: 12px;\n        padding: 1.5rem;\n        box-shadow: 0 4px 20px rgba(0,0,0,0.15);\n        margin-bottom: 1rem;\n      }\n      .product-image-main img {\n        width: 100%;\n        height: 350px;\n        object-fit: contain;\n        border-radius: 8px;\n        cursor: zoom-in;\n      }\n      .product-thumbnails {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n        gap: 0.75rem;\n      }\n      .thumbnail {\n        background: white;\n        border-radius: 8px;\n        padding: 0.5rem;\n        cursor: pointer;\n        border: 2px solid transparent;\n        transition: all 0.3s ease;\n      }\n      .thumbnail:hover {\n        border-color: ${accentColor};\n      }\n      .thumbnail.active {\n        border-color: ${accentColor};\n        box-shadow: 0 2px 8px rgba(0,0,0,0.15);\n      }\n      .thumbnail img {\n        width: 100%;\n        height: 70px;\n        object-fit: contain;\n      }\n\n      /* Columna de Información */\n      .product-info {\n        color: white;\n      }\n      .product-badges {\n        display: flex;\n        gap: 0.75rem;\n        margin-bottom: 1rem;\n        flex-wrap: wrap;\n      }\n      .product-badge {\n        padding: 0.4rem 0.9rem;\n        border-radius: 20px;\n        font-size: 0.8rem;\n        font-weight: 600;\n      }\n      .badge-certified { background: #2196f3; color: white; }\n      .badge-stock { background: #4caf50; color: white; }\n      .badge-category { background: ${accentColor}; color: white; }\n\n      .product-title {\n        font-size: 1.9rem;\n        font-weight: 700;\n        margin-bottom: 0.75rem;\n        color: white;\n        line-height: 1.2;\n      }\n      .product-short-description {\n        font-size: 0.95rem;\n        line-height: 1.6;\n        color: #ccc;\n        margin-bottom: 1.25rem;\n        padding: 1rem;\n        background: rgba(255,255,255,0.05);\n        border-radius: 8px;\n        border-left: 3px solid ${accentColor};\n      }\n      .product-short-description strong { color: #fff; }\n\n      /* Grid de clases y specs */\n      .product-info-grid {\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 1rem;\n        margin-bottom: 1.25rem;\n      }\n      .product-classes h3, .product-specs h3 {\n        font-size: 0.95rem;\n        margin-bottom: 0.6rem;\n        color: #fff;\n      }\n      .class-badges {\n        display: flex;\n        flex-direction: column;\n        gap: 0.4rem;\n      }\n      .class-badge {\n        padding: 0.4rem 0.8rem;\n        border-radius: 6px;\n        font-size: 0.8rem;\n        font-weight: 600;\n        text-align: center;\n      }\n      .product-specs {\n        background: rgba(255,255,255,0.05);\n        padding: 0.9rem;\n        border-radius: 8px;\n      }\n      .specs-list {\n        display: flex;\n        flex-direction: column;\n        gap: 0.4rem;\n      }\n      .spec-item {\n        display: flex;\n        align-items: center;\n        gap: 0.4rem;\n        font-size: 0.85rem;\n        color: #ddd;\n      }\n      .spec-icon { font-size: 0.9rem; }\n      .spec-item strong { color: ${accentColor}; }\n\n      /* Features */\n      .product-features { margin-bottom: 1.25rem; }\n      .product-features h3 {\n        font-size: 0.95rem;\n        margin-bottom: 0.6rem;\n        color: white;\n      }\n      .product-features ul {\n        list-style: none;\n        padding: 0;\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        gap: 0.4rem;\n      }\n      .product-features li {\n        padding: 0.35rem 0 0.35rem 1.3rem;\n        position: relative;\n        color: #ccc;\n        font-size: 0.82rem;\n        line-height: 1.3;\n      }\n      .product-features li:before {\n        content: \"✓\";\n        position: absolute;\n        left: 0;\n        color: #4caf50;\n        font-weight: bold;\n        font-size: 0.85rem;\n      }\n\n      /* CTA */\n      .product-cta {\n        background: rgba(255,255,255,0.08);\n        padding: 1.25rem;\n        border-radius: 8px;\n        text-align: center;\n      }\n      .product-cta h3 {\n        font-size: 1.1rem;\n        margin-bottom: 0.5rem;\n        color: white;\n      }\n      .product-cta p {\n        color: #bbb;\n        margin-bottom: 1rem;\n        font-size: 0.9rem;\n      }\n      .btn-cotizar-producto {\n        display: inline-flex;\n        align-items: center;\n        justify-content: center;\n        gap: 0.5rem;\n        background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);\n        color: white;\n        padding: 0.9rem 2rem;\n        border-radius: 50px;\n        text-decoration: none;\n        font-weight: 600;\n        font-size: 1rem;\n        border: none;\n        cursor: pointer;\n        transition: all 0.3s ease;\n      }\n      .btn-cotizar-producto:hover {\n        transform: translateY(-2px);\n        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);\n      }\n      .contact-phones {\n        margin-top: 0.75rem;\n        color: #999;\n        font-size: 0.85rem;\n      }\n      .contact-phones a {\n        color: #4caf50;\n        text-decoration: none;\n        font-weight: 600;\n      }\n\n      /* ========== CONTENIDO + SIDEBAR ========== */\n      .product-content-wrapper {\n        background: #f8f9fa;\n        padding: 3rem 0;\n      }\n      .content-layout {\n        display: grid;\n        grid-template-columns: 1fr 350px;\n        gap: 3rem;\n        max-width: 1400px;\n        margin: 0 auto;\n        padding: 0 2rem;\n      }\n      .main-content { min-width: 0; }\n\n      /* Cards */\n      .description-card, .related-products-section {\n        background: white;\n        border-radius: 12px;\n        padding: 2rem;\n        box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n        margin-bottom: 2rem;\n      }\n      .description-card h2, .related-products-section h2 {\n        font-size: 1.5rem;\n        color: #333;\n        margin-bottom: 1.5rem;\n        padding-bottom: 0.75rem;\n        border-bottom: 2px solid ${accentColor};\n      }\n      .description-section { margin-bottom: 1.5rem; }\n      .description-section:last-child { margin-bottom: 0; }\n      .description-section h3 {\n        font-size: 1.15rem;\n        color: ${accentColor};\n        margin-bottom: 0.75rem;\n      }\n      .description-section p {\n        font-size: 0.95rem;\n        line-height: 1.7;\n        color: #555;\n        margin-bottom: 0.75rem;\n      }\n      .description-section ul {\n        list-style: none;\n        padding-left: 0;\n      }\n      .description-section li {\n        padding: 0.4rem 0 0.4rem 1.5rem;\n        position: relative;\n        font-size: 0.92rem;\n        color: #555;\n      }\n      .description-section li:before {\n        content: \"▸\";\n        position: absolute;\n        left: 0;\n        color: ${accentColor};\n        font-weight: bold;\n      }\n      .highlight-box {\n        background: #fff8e1;\n        padding: 1.25rem;\n        border-radius: 8px;\n        border-left: 4px solid #ff9800;\n        margin: 1.5rem 0;\n      }\n      .highlight-box h4 {\n        font-size: 1rem;\n        color: #e65100;\n        margin-bottom: 0.5rem;\n      }\n      .highlight-box p {\n        font-size: 0.9rem;\n        color: #555;\n        margin-bottom: 0.5rem;\n      }\n      .highlight-box p:last-child { margin-bottom: 0; }\n\n      /* Related Products Grid */\n      .related-grid {\n        display: grid;\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1.25rem;\n      }\n      .related-card {\n        display: flex;\n        flex-direction: column;\n        background: #f8f9fa;\n        border-radius: 12px;\n        overflow: hidden;\n        transition: all 0.3s ease;\n        text-decoration: none;\n        color: inherit;\n        height: 100%;\n        border: 1px solid #eee;\n      }\n      .related-card:hover {\n        transform: translateY(-4px);\n        box-shadow: 0 8px 20px rgba(0,0,0,0.1);\n      }\n      .related-card-image {\n        height: 140px;\n        overflow: hidden;\n        background: white;\n      }\n      .related-card-image img {\n        width: 100%;\n        height: 100%;\n        object-fit: contain;\n        padding: 0.75rem;\n      }\n      .related-card-content {\n        padding: 1rem;\n        display: flex;\n        flex-direction: column;\n        flex-grow: 1;\n      }\n      .related-card-title {\n        font-size: 0.95rem;\n        font-weight: 700;\n        color: #1a1a1a;\n        margin-bottom: 0.3rem;\n      }\n      .related-card-capacity {\n        font-size: 0.8rem;\n        color: #666;\n        margin-bottom: 0.6rem;\n      }\n      .related-card-badges {\n        display: flex;\n        gap: 0.3rem;\n        margin-bottom: 0.75rem;\n        flex-wrap: wrap;\n      }\n      .related-card-badges .class-badge {\n        padding: 0.2rem 0.5rem;\n        font-size: 0.7rem;\n      }\n      .related-card-link {\n        display: block;\n        width: 100%;\n        padding: 0.6rem;\n        margin-top: auto;\n        background: linear-gradient(135deg, ${accentColor} 0%, #1a1a1a 100%);\n        color: white;\n        font-weight: 600;\n        font-size: 0.85rem;\n        text-align: center;\n        border-radius: 6px;\n        transition: all 0.3s ease;\n      }\n      .related-card:hover .related-card-link {\n        background: linear-gradient(135deg, #1a1a1a 0%, ${accentColor} 100%);\n      }\n\n      /* Sidebar */\n      .sidebar {\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n      }\n      .sidebar-widget {\n        background: white;\n        border-radius: 12px;\n        padding: 1.5rem;\n        box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n      }\n      .sidebar-widget h3 {\n        font-size: 1.1rem;\n        color: #333;\n        margin-bottom: 1rem;\n        padding-bottom: 0.5rem;\n        border-bottom: 2px solid ${accentColor};\n      }\n      .service-list {\n        list-style: none;\n        padding: 0;\n        margin: 0;\n      }\n      .service-list li { margin-bottom: 0.5rem; }\n      .service-list a {\n        display: flex;\n        align-items: center;\n        gap: 0.6rem;\n        padding: 0.6rem 0.8rem;\n        background: #f8f9fa;\n        border-radius: 8px;\n        color: #333;\n        text-decoration: none;\n        font-size: 0.9rem;\n        transition: all 0.3s ease;\n      }\n      .service-list a:hover {\n        background: ${accentColor};\n        color: white;\n        transform: translateX(4px);\n      }\n      .service-icon { font-size: 1.1rem; }\n      .blog-list {\n        display: flex;\n        flex-direction: column;\n        gap: 0.75rem;\n      }\n      .blog-item {\n        display: block;\n        padding: 0.75rem;\n        background: #f8f9fa;\n        border-radius: 8px;\n        text-decoration: none;\n        transition: all 0.3s ease;\n      }\n      .blog-item:hover { background: #e8e8e8; }\n      .blog-title {\n        font-size: 0.85rem;\n        color: #333;\n        font-weight: 500;\n        line-height: 1.4;\n        display: block;\n      }\n      .blog-list .blog-category { display: none; }\n      .about-widget p {\n        font-size: 0.9rem;\n        color: #555;\n        line-height: 1.6;\n        margin-bottom: 0.75rem;\n      }\n      .about-widget a {\n        color: ${accentColor};\n        font-weight: 600;\n        text-decoration: none;\n      }\n      .contact-widget-item {\n        display: flex;\n        align-items: center;\n        gap: 0.75rem;\n        padding: 0.6rem 0;\n        border-bottom: 1px solid #eee;\n      }\n      .contact-widget-item:last-child { border-bottom: none; }\n      .contact-icon { font-size: 1.2rem; }\n      .contact-info span {\n        display: block;\n        font-size: 0.8rem;\n        color: #999;\n      }\n      .contact-info a, .contact-info strong {\n        font-size: 0.95rem;\n        color: #333;\n        text-decoration: none;\n        font-weight: 600;\n      }\n      .contact-info a:hover { color: ${accentColor}; }\n      .location-widget address {\n        font-style: normal;\n        font-size: 0.9rem;\n        color: #555;\n        line-height: 1.6;\n      }\n      .cta-widget {\n        background: linear-gradient(135deg, ${accentColor} 0%, #1a1a1a 100%) !important;\n        color: white;\n        text-align: center;\n      }\n      .cta-widget h3 {\n        color: white !important;\n        border-bottom-color: rgba(255,255,255,0.3) !important;\n      }\n      .cta-widget p {\n        color: rgba(255,255,255,0.9);\n        font-size: 0.9rem;\n        margin-bottom: 1rem;\n      }\n      .cta-widget .btn-cta {\n        display: inline-flex;\n        align-items: center;\n        gap: 0.5rem;\n        background: white;\n        color: ${accentColor};\n        padding: 0.75rem 1.5rem;\n        border-radius: 50px;\n        text-decoration: none;\n        font-weight: 600;\n        font-size: 0.95rem;\n        transition: all 0.3s ease;\n      }\n      .cta-widget .btn-cta:hover {\n        transform: scale(1.05);\n        box-shadow: 0 4px 15px rgba(0,0,0,0.2);\n      }\n\n      /* Responsive */\n      @media (max-width: 1100px) {\n        .content-layout {\n          grid-template-columns: 1fr 300px;\n          gap: 2rem;\n        }\n      }\n      @media (max-width: 968px) {\n        .product-main {\n          grid-template-columns: 1fr;\n          gap: 2rem;\n        }\n        .product-gallery {\n          position: static;\n          max-width: 500px;\n          margin: 0 auto;\n        }\n        .content-layout { grid-template-columns: 1fr; }\n        .sidebar {\n          display: grid;\n          grid-template-columns: repeat(2, 1fr);\n          gap: 1rem;\n        }\n        .cta-widget { grid-column: span 2; }\n      }\n      @media (max-width: 600px) {\n        .product-hero { padding: 1rem 0 1.5rem 0; }\n        .product-hero .container { padding: 0 1rem; }\n        .product-title { font-size: 1.5rem; }\n        .product-info-grid { grid-template-columns: 1fr; }\n        .product-features ul { grid-template-columns: 1fr; }\n        .product-thumbnails { grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }\n        .thumbnail img { height: 50px; }\n        .related-grid { grid-template-columns: 1fr; }\n        .sidebar { grid-template-columns: 1fr; }\n        .cta-widget { grid-column: span 1; }\n        .content-layout { padding: 0 1rem; }\n      }\n    </style>\n    <link rel=\"canonical\" href=\"${productUrl}\">\n  </head>\n\n  <body>\n    <div id=\"menu-container\"></div>\n\n    <!-- HERO -->\n    <section class=\"product-hero\">\n      <div class=\"container\">\n        <div class=\"product-breadcrumb\">\n          <a href=\"https://mantenimientodeextintores.mx/\">Inicio</a>\n          <span>/</span>\n          <a href=\"../../catalogo.html\">Catálogo</a>\n          <span>/</span>\n          <a href=\"${catInfo.url}\">${catInfo.name}</a>\n          <span>/</span>\n          <strong>${p.title}</strong>\n        </div>\n\n        <div class=\"product-main\">\n          <!-- Galería de Imágenes -->\n          <div class=\"product-gallery\">\n            <div class=\"product-image-main\">\n              <img src=\"${imgPrincipal}\" alt=\"${p.title}\" width=\"640\" height=\"480\" id=\"mainImage\" />\n            </div>\n            <div class=\"product-thumbnails\">\n              <div class=\"thumbnail active\" onclick=\"changeImage('${imgPrincipal}', this)\">\n                <img src=\"${imgPrincipal}\" alt=\"${p.title} - Vista principal\" loading=\"lazy\" />\n              </div>\n              <div class=\"thumbnail\" onclick=\"changeImage('${imgLateral}', this)\">\n                <img src=\"${imgLateral}\" alt=\"${p.title} - Vista lateral\" loading=\"lazy\" />\n              </div>\n              <div class=\"thumbnail\" onclick=\"changeImage('${imgDetalle}', this)\">\n                <img src=\"${imgDetalle}\" alt=\"${p.title} - Detalle\" loading=\"lazy\" />\n              </div>\n              <div class=\"thumbnail\" onclick=\"changeImage('${imgUso}', this)\">\n                <img src=\"${imgUso}\" alt=\"${p.title} - En uso\" loading=\"lazy\" />\n              </div>\n            </div>\n          </div>\n\n          <!-- Información -->\n          <div class=\"product-info\">\n            <div class=\"product-badges\">\n              <span class=\"product-badge badge-certified\">Certificado NOM-154</span>\n              <span class=\"product-badge badge-stock\">Disponible</span>\n              <span class=\"product-badge badge-category\">${p.badge}</span>\n            </div>\n\n            <h1 class=\"product-title\">${p.title}</h1>\n\n            <div class=\"product-short-description\">\n              ${c.hero.descripcionCorta}\n            </div>\n\n            <div class=\"product-info-grid\">\n              <div class=\"product-classes\">\n                <h3>Clases de Fuego</h3>\n                <div class=\"class-badges\">\n                  ${classBadgesHtml}\n                </div>\n              </div>\n\n              <div class=\"product-specs\">\n                <h3>Especificaciones</h3>\n                <div class=\"specs-list\">\n                  <div class=\"spec-item\">\n                    <span class=\"spec-icon\">⚖️</span>\n                    <span><strong>${specs.capacidad}</strong></span>\n                  </div>\n                  <div class=\"spec-item\">\n                    <span class=\"spec-icon\">📏</span>\n                    <span><strong>${specs.alcance}</strong></span>\n                  </div>\n                  <div class=\"spec-item\">\n                    <span class=\"spec-icon\">⏱️</span>\n                    <span><strong>${specs.tiempoDescarga}</strong></span>\n                  </div>\n                  <div class=\"spec-item\">\n                    <span class=\"spec-icon\">📐</span>\n                    <span><strong>${specs.altura}</strong></span>\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <div class=\"product-features\">\n              <h3>Incluye</h3>\n              <ul>\n                ${featuresHtml}\n              </ul>\n            </div>\n\n            <div class=\"product-cta\">\n              <h3>${c.cta.titulo}</h3>\n              <p>${c.cta.descripcion}</p>\n              <a href=\"https://wa.me/${e.whatsapp}?text=${whatsappMsg}\" class=\"btn-cotizar-producto\" target=\"_blank\">\n                <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z\"/></svg>\n                Cotizar por WhatsApp\n              </a>\n              <div class=\"contact-phones\">\n                También llámanos: <a href=\"tel:${e.telefono.replace(/\\\\s/g, '')}\">${e.telefono}</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- CONTENIDO + SIDEBAR -->\n    <section class=\"product-content-wrapper\">\n      <div class=\"content-layout\">\n        <div class=\"main-content\">\n          <div class=\"description-card\">\n            <h2>Descripción del Producto</h2>\n\n            <div class=\"description-section\">\n              <h3>¿Por qué elegir este extintor?</h3>\n              ${c.descripcionDetallada.introduccion}\n            </div>\n\n            <div class=\"description-section\">\n              <h3>Características Técnicas</h3>\n              ${c.descripcionDetallada.caracteristicasTecnicas}\n            </div>\n\n            <div class=\"highlight-box\">\n              <h4>⚠️ Mantenimiento Obligatorio</h4>\n              ${c.descripcionDetallada.mantenimiento}\n            </div>\n\n            <div class=\"description-section\">\n              <h3>Aplicaciones Recomendadas</h3>\n              ${c.descripcionDetallada.aplicaciones}\n            </div>\n\n            <div class=\"description-section\">\n              <h3>Garantía y Certificaciones</h3>\n              ${c.descripcionDetallada.garantia}\n            </div>\n          </div>\n\n          <!-- Productos Relacionados - Cargados dinámicamente -->\n          <div class=\"related-products-section\">\n            <h2>Productos Relacionados</h2>\n            <div class=\"related-grid\" id=\"related-products\" data-slug=\"${p.slug}\" data-category=\"${p.categoria}\">\n              <p style=\"text-align:center;color:#666;grid-column:span 2;\">Cargando productos relacionados...</p>\n            </div>\n          </div>\n        </div>\n\n        <!-- Sidebar -->\n        <aside class=\"sidebar\">\n          <div class=\"sidebar-widget\">\n            <h3>Nuestros Servicios</h3>\n            <ul class=\"service-list\">\n              <li><a href=\"../../venta-de-extintores.html\"><span class=\"service-icon\">🧯</span>Venta de Extintores</a></li>\n              <li><a href=\"../../recarga-de-extintores.html\"><span class=\"service-icon\">🔄</span>Recarga de Extintores</a></li>\n              <li><a href=\"../../mantenimiento-preventivo.html\"><span class=\"service-icon\">🔧</span>Mantenimiento Preventivo</a></li>\n              <li><a href=\"../../prueba-hidrostatica.html\"><span class=\"service-icon\">💧</span>Prueba Hidrostática</a></li>\n              <li><a href=\"../../capacitacion-brigadas.html\"><span class=\"service-icon\">👨‍🏫</span>Capacitación</a></li>\n            </ul>\n          </div>\n\n          <div class=\"sidebar-widget\">\n            <h3>Artículos Relacionados</h3>\n            <div class=\"blog-list\">\n              <a href=\"../../blog/tipos-de-extintores/extintor-polvo-quimico-seco-pqs-usos-ventajas.html\" class=\"blog-item\">\n                <span class=\"blog-title\">Extintor PQS: Usos y Ventajas</span>\n              </a>\n              <a href=\"../../blog/normativas-y-certificaciones/nom-154-scfi-guia-completa-cumplimiento-extintores.html\" class=\"blog-item\">\n                <span class=\"blog-title\">NOM-154-SCFI: Guía Completa</span>\n              </a>\n              <a href=\"../../blog/mantenimiento-y-recarga/cuando-recargar-extintor-señales-frecuencia-normativa.html\" class=\"blog-item\">\n                <span class=\"blog-title\">Cuándo Recargar tu Extintor</span>\n              </a>\n            </div>\n          </div>\n\n          <div class=\"sidebar-widget about-widget\">\n            <h3>Sobre MANEXT</h3>\n            <p>Somos especialistas en seguridad contra incendios con más de 80 años de experiencia protegiendo a México.</p>\n            <p><a href=\"../../nosotros.html\">Conoce nuestra historia →</a></p>\n          </div>\n\n          <div class=\"sidebar-widget\">\n            <h3>Contacto Rápido</h3>\n            <div class=\"contact-widget-item\">\n              <span class=\"contact-icon\">📞</span>\n              <div class=\"contact-info\">\n                <span>Teléfono</span>\n                <a href=\"tel:${e.telefono.replace(/\\\\s/g, '')}\">${e.telefono}</a>\n              </div>\n            </div>\n            <div class=\"contact-widget-item\">\n              <span class=\"contact-icon\">💬</span>\n              <div class=\"contact-info\">\n                <span>WhatsApp</span>\n                <a href=\"https://wa.me/${e.whatsapp}\" target=\"_blank\">Enviar mensaje</a>\n              </div>\n            </div>\n            <div class=\"contact-widget-item\">\n              <span class=\"contact-icon\">🕐</span>\n              <div class=\"contact-info\">\n                <span>Horario</span>\n                <strong>Lun-Vie 8:00-18:00</strong>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"sidebar-widget location-widget\">\n            <h3>Ubicación</h3>\n            <address>📍 ${e.direccion}<br><br>Servicio a domicilio disponible.</address>\n          </div>\n\n          <div class=\"sidebar-widget cta-widget\">\n            <h3>¿Necesitas Ayuda?</h3>\n            <p>Nuestros expertos están listos para asesorarte</p>\n            <a href=\"https://wa.me/${e.whatsapp}?text=Hola%2C%20necesito%20asesoría%20sobre%20extintores\" class=\"btn-cta\" target=\"_blank\">💬 Chatea con Nosotros</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <div id=\"footer-container\"></div>\n\n    <!-- Catalog System para productos relacionados -->\n    <script src=\"../../js/catalog-system.js?v=3\"></script>\n\n    <script>\n      // Cambiar imagen principal\n      function changeImage(src, thumb) {\n        document.getElementById('mainImage').src = src;\n        document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));\n        thumb.classList.add('active');\n      }\n\n      // Cargar menu y footer\n      fetch('../../menu.html')\n        .then(r => r.text())\n        .then(data => {\n          document.getElementById('menu-container').innerHTML = data;\n          const scripts = document.getElementById('menu-container').querySelectorAll('script');\n          scripts.forEach(old => {\n            const s = document.createElement('script');\n            s.textContent = old.textContent;\n            old.parentNode.replaceChild(s, old);\n          });\n        });\n\n      fetch('../../footer.html')\n        .then(r => r.text())\n        .then(data => {\n          document.getElementById('footer-container').innerHTML = data;\n        });\n    </script>\n  </body>\n</html>`;\n\nreturn [{\n  json: {\n    ...data,\n    htmlContent: html\n  }\n}];\n"
+      },
+      "id": "generar-html-producto-001",
+      "name": "Generar HTML Producto v3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7700,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst htmlContent = data.htmlContent;\n\nreturn [{\n  json: {\n    ...data,\n    htmlBase64: Buffer.from(htmlContent).toString('base64')\n  }\n}];"
+      },
+      "id": "preparar-html-github-001",
+      "name": "Preparar HTML GitHub",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/productos/{{ $json.producto.categoria }}/{{ $json.filename }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Add product page: {{ $json.filename }}\",\"content\":\"{{ $json.htmlBase64 }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-subir-html-001",
+      "name": "GitHub Subir Producto HTML",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        8200,
+        200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/{{ $('Preparar HTML GitHub').first().json.githubRepo }}/contents/data/products.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "github-descargar-json-001",
+      "name": "GitHub Descargar products.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        8450,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const githubResponse = $input.first().json;\nconst dataOriginal = $('Preparar HTML GitHub').first().json;\nconst p = dataOriginal.producto;\nconst c = dataOriginal.contenido;\n\nlet productsData;\ntry {\n  const jsonContent = Buffer.from(githubResponse.content, 'base64').toString('utf8');\n  productsData = JSON.parse(jsonContent);\n} catch (e) {\n  throw new Error('Error parseando products.json: ' + e.message);\n}\n\n// Crear nuevo producto\nconst newProduct = {\n  id: p.id,\n  title: p.title,\n  slug: p.slug,\n  category: p.categoria,\n  capacity: p.capacity,\n  capacityType: p.capacityType,\n  capacityValue: p.capacityValue,\n  range: p.range,\n  fireClasses: p.fireClasses,\n  features: p.features,\n  badge: p.badge,\n  badgeType: p.badgeType,\n  featured: p.badgeType === 'premium',\n  image: `productos/${p.categoria}/${dataOriginal.imagenesFilenames.principal}`,\n  images: [\n    dataOriginal.imagenesFilenames.principal,\n    dataOriginal.imagenesFilenames.lateral,\n    dataOriginal.imagenesFilenames.detalle,\n    dataOriginal.imagenesFilenames.uso\n  ],\n  excerpt: c.seo.metaDescription,\n  related: [],\n  dateAdded: new Date().toISOString().split('T')[0]\n};\n\n// Verificar si ya existe\nconst existingIndex = productsData.products.findIndex(prod => prod.id === newProduct.id);\nif (existingIndex >= 0) {\n  productsData.products[existingIndex] = newProduct;\n} else {\n  productsData.products.push(newProduct);\n}\n\nconst updatedJson = JSON.stringify(productsData, null, 2);\nconst updatedBase64 = Buffer.from(updatedJson).toString('base64');\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    productsJsonSha: githubResponse.sha,\n    updatedProductsJson: updatedBase64,\n    newProduct: newProduct\n  }\n}];"
+      },
+      "id": "actualizar-products-json-001",
+      "name": "Actualizar products.json",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        8700,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $json.githubRepo }}/contents/data/products.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token YOUR_GITHUB_TOKEN_HERE"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":\"Update products.json: add {{ $json.producto.title }}\",\"content\":\"{{ $json.updatedProductsJson }}\",\"sha\":\"{{ $json.productsJsonSha }}\",\"branch\":\"main\"}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "github-actualizar-json-001",
+      "name": "GitHub Actualizar JSON",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        8950,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst dataOriginal = $('Actualizar products.json').first().json;\n\nreturn [{\n  json: {\n    ...dataOriginal,\n    success: true,\n    productUrl: `${dataOriginal.baseUrl}/productos/${dataOriginal.producto.categoria}/${dataOriginal.filename}`\n  }\n}];"
+      },
+      "id": "consolidar-final-001",
+      "name": "Consolidar Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        9200,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "772938445",
+        "text": "=✅ *PRODUCTO MANEXT PUBLICADO*\n\n📦 *{{ $json.producto.title }}*\n\n🏷️ Categoría: {{ $json.producto.categoriaDisplay }}\n📏 Capacidad: {{ $json.producto.capacity }}\n🔥 Clases: {{ $json.producto.fireClasses.join(', ') }}\n\n🔗 {{ $json.productUrl }}\n\n🖼️ 4 imágenes generadas\n✨ SEO + FAQ Schema + Product Schema\n\n🎯 MANEXT Catálogo v1.1",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-001",
+      "name": "Telegram Notificacion",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        9450,
+        200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-manext-001",
+          "name": "Telegram MANEXT Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cada 4 Dias": {
+      "main": [
+        [
+          {
+            "node": "Selector Producto MANEXT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ejecutar Manual": {
+      "main": [
+        [
+          {
+            "node": "Selector Producto MANEXT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Selector Producto MANEXT": {
+      "main": [
+        [
+          {
+            "node": "Constructor Prompt Producto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Constructor Prompt Producto": {
+      "main": [
+        [
+          {
+            "node": "ChatGPT API Producto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ChatGPT API Producto": {
+      "main": [
+        [
+          {
+            "node": "Validar Respuesta GPT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Respuesta GPT": {
+      "main": [
+        [
+          {
+            "node": "Constructor FAL Prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Constructor FAL Prompts": {
+      "main": [
+        [
+          {
+            "node": "FAL Imagen 1 Principal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAL Imagen 1 Principal": {
+      "main": [
+        [
+          {
+            "node": "Procesar Imagen 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Imagen 1": {
+      "main": [
+        [
+          {
+            "node": "FAL Imagen 2 Lateral",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAL Imagen 2 Lateral": {
+      "main": [
+        [
+          {
+            "node": "Procesar Imagen 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Imagen 2": {
+      "main": [
+        [
+          {
+            "node": "FAL Imagen 3 Detalle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAL Imagen 3 Detalle": {
+      "main": [
+        [
+          {
+            "node": "Procesar Imagen 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Imagen 3": {
+      "main": [
+        [
+          {
+            "node": "FAL Imagen 4 Uso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAL Imagen 4 Uso": {
+      "main": [
+        [
+          {
+            "node": "Procesar Imagen 4 Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Imagen 4 Final": {
+      "main": [
+        [
+          {
+            "node": "Descargar Imagen 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Imagen 1": {
+      "main": [
+        [
+          {
+            "node": "Guardar Imagen 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Imagen 1": {
+      "main": [
+        [
+          {
+            "node": "Descargar Imagen 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Imagen 2": {
+      "main": [
+        [
+          {
+            "node": "Guardar Imagen 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Imagen 2": {
+      "main": [
+        [
+          {
+            "node": "Descargar Imagen 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Imagen 3": {
+      "main": [
+        [
+          {
+            "node": "Guardar Imagen 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Imagen 3": {
+      "main": [
+        [
+          {
+            "node": "Descargar Imagen 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Imagen 4": {
+      "main": [
+        [
+          {
+            "node": "Guardar Imagen 4 Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Imagen 4 Final": {
+      "main": [
+        [
+          {
+            "node": "GitHub Subir Img 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Subir Img 1": {
+      "main": [
+        [
+          {
+            "node": "Prep Subir Img 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Subir Img 2": {
+      "main": [
+        [
+          {
+            "node": "GitHub Subir Img 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Subir Img 2": {
+      "main": [
+        [
+          {
+            "node": "Prep Subir Img 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Subir Img 3": {
+      "main": [
+        [
+          {
+            "node": "GitHub Subir Img 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Subir Img 3": {
+      "main": [
+        [
+          {
+            "node": "Prep Subir Img 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Subir Img 4": {
+      "main": [
+        [
+          {
+            "node": "GitHub Subir Img 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Subir Img 4": {
+      "main": [
+        [
+          {
+            "node": "Imagenes Subidas OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Imagenes Subidas OK": {
+      "main": [
+        [
+          {
+            "node": "Generar HTML Producto v3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar HTML GitHub": {
+      "main": [
+        [
+          {
+            "node": "GitHub Subir Producto HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Subir Producto HTML": {
+      "main": [
+        [
+          {
+            "node": "GitHub Descargar products.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Descargar products.json": {
+      "main": [
+        [
+          {
+            "node": "Actualizar products.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar products.json": {
+      "main": [
+        [
+          {
+            "node": "GitHub Actualizar JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Actualizar JSON": {
+      "main": [
+        [
+          {
+            "node": "Consolidar Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consolidar Final": {
+      "main": [
+        [
+          {
+            "node": "Telegram Notificacion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar HTML Producto v3": {
+      "main": [
+        [
+          {
+            "node": "Preparar HTML GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-16T00:00:00.000Z",
+  "versionId": "3.0.0"
+}
