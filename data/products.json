@@ -1234,6 +1234,40 @@
       "excerpt": "Protección industrial con el extintor PQS 68 kg rodante premium.",
       "related": [],
       "dateAdded": "2025-12-16"
+    },
+    {
+      "id": "pqs-50kg-rodante",
+      "title": "Extintor PQS 50 kg Rodante Industrial",
+      "slug": "producto-extintor-pqs-50kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "50 kg",
+      "capacityType": "industrial",
+      "capacityValue": 50,
+      "range": "8-12 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "features": [
+        "Sistema rodante de fácil manejo",
+        "Manguera de 5 metros",
+        "Certificación NOM-154-SCFI",
+        "Alcance máximo de 12 metros"
+      ],
+      "badge": "Industrial",
+      "badgeType": "premium",
+      "featured": true,
+      "image": "productos/polvo-quimico-seco/producto-extintor-pqs-50kg-rodante-principal-1765929780534.jpg",
+      "images": [
+        "producto-extintor-pqs-50kg-rodante-principal-1765929780534.jpg",
+        "producto-extintor-pqs-50kg-rodante-lateral-1765929780534.jpg",
+        "producto-extintor-pqs-50kg-rodante-detalle-1765929780534.jpg",
+        "producto-extintor-pqs-50kg-rodante-uso-1765929780534.jpg"
+      ],
+      "excerpt": "Compra el extintor PQS 50 kg rodante industrial en MANEXT, ideal para fuegos clase A, B, C.",
+      "related": [],
+      "dateAdded": "2025-12-17"
     }
   ]
 }
