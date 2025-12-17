@@ -92,6 +92,7 @@ let html = `<!DOCTYPE html>
 
     <link rel="preload" href="../../css/style.css?v=15" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../../css/style.css?v=15"></noscript>
+    <link rel="stylesheet" href="../../css/catalog-system.css?v=4">
     <meta name="description" content="${c.seo.metaDescription}" />
     <meta name="keywords" content="${c.seo.metaKeywords}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
