@@ -116,7 +116,6 @@
         </a>
         <div class="blog-card-content">
           <div class="blog-meta">
-            <span class="blog-date">${formatDate(article.date)}</span>
             <span class="blog-read-time">${article.readTime || '5 min'} lectura</span>
           </div>
           <h2 class="blog-card-title">
@@ -382,7 +381,6 @@
           <h3 class="related-card-title">${article.title}</h3>
           <p class="related-card-excerpt">${article.excerpt.substring(0, 100)}...</p>
           <div class="related-card-meta">
-            <span>${formatDate(article.date)}</span>
             <span>${article.readTime || '5 min'} lectura</span>
           </div>
         </div>
