@@ -2231,6 +2231,39 @@
         "extintor-tipo-k-9l",
         "extintor-tipo-k-6l"
       ]
+    },
+    {
+      "id": "co2-9kg",
+      "title": "Extintor CO2 9 kg Premium",
+      "slug": "producto-extintor-co2-9kg",
+      "category": "co2",
+      "capacity": "9 kg",
+      "capacityType": "comercial",
+      "capacityValue": 9,
+      "range": "2-3 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "features": [
+        "No deja residuos",
+        "Ideal para data centers",
+        "Cilindro de aluminio",
+        "Corneta de descarga incluida"
+      ],
+      "badge": "Premium",
+      "badgeType": "premium",
+      "featured": true,
+      "image": "productos/co2/producto-extintor-co2-9kg-principal-1765930828188.jpg",
+      "images": [
+        "producto-extintor-co2-9kg-principal-1765930828188.jpg",
+        "producto-extintor-co2-9kg-lateral-1765930828188.jpg",
+        "producto-extintor-co2-9kg-detalle-1765930828188.jpg",
+        "producto-extintor-co2-9kg-uso-1765930828188.jpg"
+      ],
+      "excerpt": "Protege tus espacios con el extintor CO2 9 kg premium. Ideal para fuegos B y C.",
+      "related": [],
+      "dateAdded": "2025-12-17"
     }
   ]
 }
