@@ -6,7 +6,7 @@
     <link rel="dns-prefetch" href="https://app.rybbit.io">
     <title>{{TITULO}} | MANEXT</title>
     <link rel="stylesheet" href="../css/style.css?v=18">
-    <link rel="stylesheet" href="../css/blog-system.css?v=6">
+    <link rel="stylesheet" href="../css/blog-system.css?v=7">
     <meta name="description" content="{{META_DESCRIPTION}}">
     <meta name="keywords" content="{{META_KEYWORDS}}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -16,7 +16,7 @@
     <meta property="og:description" content="{{META_DESCRIPTION}}">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="es_MX">
-    <meta property="og:url" content="https://mantenimientodeextintores.mx/blog/{{SLUG}}.html">
+    <meta property="og:url" content="https://mantenimientodeextintores.mx/blog/{{SLUG}}">
     <meta property="og:image" content="https://mantenimientodeextintores.mx/{{IMAGEN_PRINCIPAL}}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="{{TITULO}}">
     <meta name="twitter:description" content="{{META_DESCRIPTION}}">
     <meta name="twitter:image" content="https://mantenimientodeextintores.mx/{{IMAGEN_PRINCIPAL}}">
-    <link rel="canonical" href="https://mantenimientodeextintores.mx/blog/{{SLUG}}.html">
+    <link rel="canonical" href="https://mantenimientodeextintores.mx/blog/{{SLUG}}">
     <link rel="icon" href="../favicon.ico" sizes="any">
     <link rel="icon" href="../icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../icon.avif">
@@ -54,7 +54,7 @@
         "dateModified": "{{FECHA_PUBLICACION}}",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://mantenimientodeextintores.mx/blog/{{SLUG}}.html"
+            "@id": "https://mantenimientodeextintores.mx/blog/{{SLUG}}"
         }
     }
     </script>
@@ -104,14 +104,73 @@
         </div>
     </div>
 
-    <div id="menu-container"></div>
+    <!-- Skip Link para Accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Menu de Navegacion -->
+    <header class="header" role="banner">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="Navegacion principal">
+          <div class="logo">
+            <a href="/" aria-label="MANEXT - Ir al inicio">
+              <img src="../img/img-index/venta-y-mantenimiento-de-extintores.avif" alt="MANEXT - Mantenimiento de Extintores" class="logo-img" width="220" height="110">
+            </a>
+          </div>
+
+          <button
+            class="menu-toggle"
+            aria-label="Abrir menu de navegacion"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            id="menuToggle"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+          <ul class="nav-menu" id="navMenu" role="menubar">
+            <li class="dropdown" role="none">
+              <a href="/servicios" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Servicios <span class="arrow" aria-hidden="true">▼</span></a>
+              <ul class="dropdown-menu" role="menu" aria-label="Submenu de Servicios">
+                <li role="none"><a href="/venta-de-extintores" role="menuitem">Venta de Extintores</a></li>
+                <li role="none"><a href="/mantenimiento-preventivo" role="menuitem">Mantenimiento Preventivo</a></li>
+                <li role="none"><a href="/recarga-de-extintores" role="menuitem">Recarga de Extintores</a></li>
+                <li role="none"><a href="/prueba-hidrostatica" role="menuitem">Prueba Hidrostatica</a></li>
+                <li role="none"><a href="/capacitacion-brigadas" role="menuitem">Capacitacion y Brigadas</a></li>
+                <li role="none"><a href="/senalizacion" role="menuitem">Senalizacion</a></li>
+              </ul>
+            </li>
+            <li role="none"><a href="/extintores" class="nav-link" role="menuitem">Extintores</a></li>
+            <li class="dropdown" role="none">
+              <a href="/catalogo" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Catalogo <span class="arrow" aria-hidden="true">▼</span></a>
+              <ul class="dropdown-menu" role="menu" aria-label="Submenu de Catalogo">
+                <li role="none"><a href="/catalogo" role="menuitem"><strong>Ver Catalogo Completo</strong></a></li>
+                <li role="none"><a href="/polvo-quimico-seco" role="menuitem">Polvo Quimico Seco (PQS)</a></li>
+                <li role="none"><a href="/co2" role="menuitem">Dioxido de Carbono (CO2)</a></li>
+                <li role="none"><a href="/agua-presion" role="menuitem">Agua a Presion</a></li>
+                <li role="none"><a href="/tipo-k" role="menuitem">Agente Humedo (Tipo K)</a></li>
+                <li role="none"><a href="/espuma-afff" role="menuitem">Espuma (AFFF)</a></li>
+                <li role="none"><a href="/agentes-limpios" role="menuitem">Agentes Limpios</a></li>
+              </ul>
+            </li>
+            <li role="none"><a href="/nosotros" class="nav-link" role="menuitem">Nosotros</a></li>
+            <li role="none"><a href="/blog/" class="nav-link" role="menuitem">Blog</a></li>
+            <li role="none"><a href="/contacto" class="nav-link" role="menuitem">Contacto</a></li>
+            <li role="none"><a href="tel:5539689272" class="nav-link nav-phone" role="menuitem" aria-label="Llamar al 55 3968 9272">55 3968 9272</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <section class="breadcrumbs">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb-list">
                     <li class="breadcrumb-item">
-                        <a href="../index.html">
+                        <a href="/">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -120,10 +179,10 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="./">Blog</a>
+                        <a href="/blog/">Blog</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{CATEGORIA_SLUG}}.html">{{CATEGORIA}}</a>
+                        <a href="{{CATEGORIA_SLUG}}">{{CATEGORIA}}</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">{{BREADCRUMB_TEXT}}</li>
                 </ol>
@@ -131,7 +190,7 @@
         </div>
     </section>
 
-    <article class="blog-post-article">
+    <article class="blog-post-article" id="main-content">
         <div class="container">
             <div class="blog-post-layout">
                 <div class="blog-post-main">
@@ -140,7 +199,7 @@
                         <h1 class="blog-post-title">{{TITULO}}</h1>
                         <div class="blog-post-meta">
                             <span class="blog-post-author">Por MANEXT - Expertos en Proteccion Contra Incendios</span>
-                            
+
                             <span class="blog-post-reading-time">{{TIEMPO_LECTURA}}</span>
                         </div>
                     </header>
@@ -192,9 +251,9 @@
                                     <span class="sidebar-product-badge">Certificado</span>
                                 </div>
                                 <div class="sidebar-product-content">
-                                    <h4><a href="../venta-de-extintores.html">Venta de Extintores</a></h4>
+                                    <h4><a href="/venta-de-extintores">Venta de Extintores</a></h4>
                                     <p class="sidebar-product-desc">Todos los tipos certificados NOM</p>
-                                    <a href="../venta-de-extintores.html" class="sidebar-product-btn">Ver Catalogo</a>
+                                    <a href="/venta-de-extintores" class="sidebar-product-btn">Ver Catalogo</a>
                                 </div>
                             </article>
                             <article class="sidebar-product-card">
@@ -203,9 +262,9 @@
                                     <span class="sidebar-product-badge">Servicio</span>
                                 </div>
                                 <div class="sidebar-product-content">
-                                    <h4><a href="../recarga-de-extintores.html">Recarga de Extintores</a></h4>
+                                    <h4><a href="/recarga-de-extintores">Recarga de Extintores</a></h4>
                                     <p class="sidebar-product-desc">Servicio profesional certificado</p>
-                                    <a href="../recarga-de-extintores.html" class="sidebar-product-btn">Ver Servicio</a>
+                                    <a href="/recarga-de-extintores" class="sidebar-product-btn">Ver Servicio</a>
                                 </div>
                             </article>
                             <article class="sidebar-product-card">
@@ -214,9 +273,9 @@
                                     <span class="sidebar-product-badge">Obligatorio</span>
                                 </div>
                                 <div class="sidebar-product-content">
-                                    <h4><a href="../capacitacion-brigadas.html">Capacitacion Brigadas</a></h4>
+                                    <h4><a href="/capacitacion-brigadas">Capacitacion Brigadas</a></h4>
                                     <p class="sidebar-product-desc">Cumplimiento NOM-002-STPS</p>
-                                    <a href="../capacitacion-brigadas.html" class="sidebar-product-btn">Ver Cursos</a>
+                                    <a href="/capacitacion-brigadas" class="sidebar-product-btn">Ver Cursos</a>
                                 </div>
                             </article>
                         </div>
@@ -261,39 +320,214 @@
                     </ul>
                 </div>
                 <div class="final-cta-buttons">
-                    <a href="../contacto.html" class="btn-primary-large">Solicitar Cotizacion</a>
-                    <a href="../catalogo.html" class="btn-secondary-large">Ver Catalogo Completo</a>
+                    <a href="/contacto" class="btn-primary-large">Solicitar Cotizacion</a>
+                    <a href="/catalogo" class="btn-secondary-large">Ver Catalogo Completo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="footer-container"></div>
+    <footer>
+      <div class="footer-container">
+        <!-- Columna 1 - Marca y Contacto -->
+        <div class="footer-col">
+          <h4>MANEXT</h4>
+          <p>Protegiendo a Mexico desde 1943</p>
+          <p>Especialistas en mantenimiento, recarga y venta de extintores.</p>
+          <p style="margin-top: 1.5rem;"><strong>Contacto:</strong></p>
+          <p class="footer-phone"><a href="tel:5539689272">55 3968 9272</a></p>
+          <p class="footer-whatsapp"><a href="https://wa.me/5215539689272" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p style="margin-top: 1rem;"><strong>Horario:</strong><br>
+          Lun-Vie: 8:00-18:00<br>
+          Sab: 9:00-14:00</p>
+        </div>
+
+        <!-- Columna 2 - Servicios -->
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <p><a href="/venta-de-extintores">Venta de Extintores</a></p>
+          <p><a href="/mantenimiento-preventivo">Mantenimiento Preventivo</a></p>
+          <p><a href="/recarga-de-extintores">Recarga de Extintores</a></p>
+          <p><a href="/prueba-hidrostatica">Prueba Hidrostatica</a></p>
+          <p><a href="/capacitacion-brigadas">Capacitacion y Brigadas</a></p>
+          <p><a href="/senalizacion">Senalizacion</a></p>
+        </div>
+
+        <!-- Columna 3 - Tipos de Extintores -->
+        <div class="footer-col">
+          <h4>Tipos de Extintores</h4>
+          <p><a href="/polvo-quimico-seco">Polvo Quimico Seco</a></p>
+          <p><a href="/co2">CO2 (Dioxido de Carbono)</a></p>
+          <p><a href="/agua-presion">Agua a Presion</a></p>
+          <p><a href="/tipo-k">Tipo K (Cocinas)</a></p>
+          <p><a href="/espuma-afff">Espuma AFFF</a></p>
+          <p><a href="/agentes-limpios">Agentes Limpios</a></p>
+        </div>
+
+        <!-- Columna 4 - Navegacion y Recursos -->
+        <div class="footer-col">
+          <h4>Navegacion</h4>
+          <p><a href="/">Inicio</a></p>
+          <p><a href="/servicios">Servicios</a></p>
+          <p><a href="/extintores">Extintores</a></p>
+          <p><a href="/nosotros">Nosotros</a></p>
+          <p><a href="/blog/">Blog</a></p>
+          <p><a href="/contacto">Contacto</a></p>
+          <p style="margin-top: 1.5rem;"><strong>Recursos:</strong></p>
+          <p><a href="/catalogo">Catalogo Digital</a></p>
+          <p><a href="/preguntas-frecuentes">FAQ</a></p>
+          <p><a href="/terminos">Terminos</a></p>
+          <p><a href="/privacidad">Privacidad</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p>&copy; 2025 MANEXT - Mantenimiento de Extintores. Todos los derechos reservados.</p>
+          <p><strong>Protegiendo a Mexico desde 1943</strong> | Certificaciones: NOM-154-SCFI, NOM-002-STPS</p>
+          <p>Especialistas en mantenimiento, recarga y venta de extintores en CDMX y Area Metropolitana</p>
+          <p class="footer-legal">
+            <a href="/privacidad">Politica de Privacidad</a> |
+            <a href="/terminos">Terminos y Condiciones</a> |
+            <a href="/sitemap.xml">Mapa del Sitio</a>
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script>
-        const basePath = '../';
-        fetch(basePath + 'menu.html')
-            .then(response => response.text())
-            .then(data => {
-                let adjustedData = data
-                    .replace(/src="(?!http|https|\/\/)([^"]+)"/g, 'src="' + basePath + '$1"')
-                    .replace(/href="(?!http|https|tel:|mailto:|#|\/\/)([^"]+)"/g, 'href="' + basePath + '$1"');
-                document.getElementById('menu-container').innerHTML = adjustedData;
-                const scripts = document.getElementById('menu-container').querySelectorAll('script');
-                scripts.forEach(oldScript => {
-                    const newScript = document.createElement('script');
-                    newScript.textContent = oldScript.textContent;
-                    oldScript.parentNode.replaceChild(newScript, oldScript);
-                });
-            });
-        fetch(basePath + 'footer.html')
-            .then(response => response.text())
-            .then(data => {
-                let adjustedData = data
-                    .replace(/src="(?!http|https|\/\/)([^"]+)"/g, 'src="' + basePath + '$1"')
-                    .replace(/href="(?!http|https|tel:|mailto:|#|\/\/)([^"]+)"/g, 'href="' + basePath + '$1"');
-                document.getElementById('footer-container').innerHTML = adjustedData;
-            });
+    (function() {
+      'use strict';
+
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const body = document.body;
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      if (!menuToggle || !navMenu || !menuOverlay) return;
+
+      function openMenu() {
+        navMenu.classList.add('active');
+        menuToggle.classList.add('active');
+        menuOverlay.classList.add('active');
+        body.classList.add('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.setAttribute('aria-label', 'Cerrar menu de navegacion');
+        menuOverlay.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeMenu() {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu de navegacion');
+        menuOverlay.setAttribute('aria-hidden', 'true');
+
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('active');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (navMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      menuOverlay.addEventListener('click', function() {
+        closeMenu();
+      });
+
+      dropdowns.forEach(function(dropdown) {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        if (dropdownToggle) {
+          dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              e.stopPropagation();
+              const isActive = dropdown.classList.contains('active');
+              dropdowns.forEach(function(otherDropdown) {
+                if (otherDropdown !== dropdown) {
+                  otherDropdown.classList.remove('active');
+                  const otherToggle = otherDropdown.querySelector('.dropdown-toggle');
+                  if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+                }
+              });
+              if (isActive) {
+                dropdown.classList.remove('active');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+              } else {
+                dropdown.classList.add('active');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+              }
+            }
+          });
+
+          dropdownToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              dropdownToggle.click();
+            }
+          });
+        }
+      });
+
+      const navLinks = navMenu.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+
+      const dropdownLinks = navMenu.querySelectorAll('.dropdown-menu a');
+      dropdownLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+
+      navMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
+        }, 250);
+      });
+
+      const currentPath = window.location.pathname;
+      const allNavLinks = document.querySelectorAll('.nav-menu a');
+      allNavLinks.forEach(function(link) {
+        const linkPath = new URL(link.href, window.location.origin).pathname;
+        if (currentPath === linkPath ||
+            (currentPath.endsWith('/') && linkPath === '/') ||
+            (currentPath === '/' && linkPath === '/')) {
+          link.setAttribute('aria-current', 'page');
+          link.classList.add('active');
+        }
+      });
+    })();
     </script>
 </body>
 </html>
