@@ -112,6 +112,25 @@
   ],
   "articles": [
     {
+      "id": "prueba-hidrostatica-extintores-2026",
+      "title": "¿Qué es la Prueba Hidrostatica? Conoce Todo en 2026",
+      "slug": "prueba-hidrostatica-extintores-2026",
+      "category": "mantenimiento-y-recarga",
+      "date": "2026-01-28",
+      "image": "img/img-index/recarga-de-extintores.avif",
+      "excerpt": "Prueba hidrostatica de extintores en CDMX: vital para seguridad. Evita sanciones. Aprende cómo y cuándo hacerla. Llama: 55 3968 9272",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "prueba hidrostatica",
+        "seguridad contra incendios",
+        "mantenimiento extintores",
+        "NOM-154-SCFI",
+        "protección civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "extintor-tipo-k-todo-lo-que-necesitas-saber",
       "title": "¿Extintor Tipo K? Todo lo que Necesitas Saber",
       "slug": "extintor-tipo-k-todo-lo-que-necesitas-saber",
