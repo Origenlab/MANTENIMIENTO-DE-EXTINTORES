@@ -112,6 +112,26 @@
   ],
   "articles": [
     {
+      "id": "clases-de-fuego-extintor-correcto",
+      "title": "Clases de Fuego: A B C D K y el Extintor Correcto",
+      "slug": "clases-de-fuego-extintor-correcto",
+      "category": "seguridad-contra-incendios",
+      "date": "2026-01-28",
+      "image": "img/img-index/venta-de-extintores.avif",
+      "excerpt": "Descubre las clases de fuego y qué extintor usar para proteger tu negocio. Llámanos al 55 3968 9272 para asesoría profesional.",
+      "readTime": "12 min",
+      "featured": false,
+      "tags": [
+        "clases de fuego",
+        "extintores",
+        "seguridad contra incendios",
+        "NOM-154-SCFI",
+        "NOM-002-STPS",
+        "protección civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "prueba-hidrostatica-extintores-2026",
       "title": "¿Qué es la Prueba Hidrostatica? Conoce Todo en 2026",
       "slug": "prueba-hidrostatica-extintores-2026",
