@@ -504,6 +504,31 @@
         "extintor-polvo-quimico-seco-pqs-usos-ventajas"
       ],
       "cta": "Comparar precios"
+    },
+    {
+      "id": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
+      "title": "Capacitación Brigadas Contra Incendio: Formación CDMX",
+      "slug": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
+      "category": "prevencion-empresarial",
+      "date": "2026-01-28",
+      "image": "img/img-index/capacitacion-y-brigadas.avif",
+      "excerpt": "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. Cursos certificados para empresas CDMX. Cumplimiento normativo garantizado. Consulta: 55 3968 9272",
+      "readTime": "15 min",
+      "featured": false,
+      "tags": [
+        "capacitación brigadas",
+        "NOM-002-STPS",
+        "cursos incendios",
+        "formación brigadas",
+        "CDMX",
+        "certificación STPS"
+      ],
+      "related": [
+        "nom-002-stps-seguridad-incendios-trabajo",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx",
+        "proteccion-civil-cdmx-requisitos-extintores"
+      ],
+      "cta": "Ver capacitación"
     }
   ]
 }
