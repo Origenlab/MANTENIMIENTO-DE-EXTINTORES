@@ -112,6 +112,27 @@
   ],
   "articles": [
     {
+      "id": "prueba-hidrostatica-extintores-guia-tecnica",
+      "title": "Prueba Hidrostática de Extintores: Guía Técnica 2024",
+      "slug": "prueba-hidrostatica-extintores-guia-tecnica",
+      "category": "mantenimiento-y-recarga",
+      "image": "img/img-index/prueba-hidrostatica.avif",
+      "excerpt": "Prueba hidrostática de extintores cada 5 años según NOM-154-SCFI. Proceso, costos y normativa completa. Servicio certificado CDMX. ☎️ 55 3968 9272",
+      "readTime": "18 min",
+      "featured": false,
+      "tags": [
+        "prueba hidrostatica",
+        "mantenimiento extintores",
+        "NOM-154-SCFI",
+        "certificacion cilindros",
+        "laboratorio acreditado",
+        "proteccion civil",
+        "seguridad industrial",
+        "equipos contra incendio"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "senalizacion-extintores-normativa-nom-026-stps",
       "title": "Senalizacion Extintores y Normativa NOM-026-STPS",
       "slug": "senalizacion-extintores-normativa-nom-026-stps",
