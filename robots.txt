@@ -1,0 +1,31 @@
+# https://www.robotstxt.org/
+# MANEXT - Mantenimiento de Extintores
+# Última actualización: 2026-01-23
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos de desarrollo y herramientas
+Disallow: /MANTENIMIENTO-TOOLS/
+Disallow: /.audit/
+Disallow: /.claude/
+Disallow: /templates/
+Disallow: /scripts/
+Disallow: /js/webpack.*
+Disallow: /*_backup*
+
+# Bloquear páginas de utilidad
+Disallow: /offline.html
+Disallow: /404.html
+
+# Bloquear archivos duplicados en subdirectorios
+Disallow: /js/css/
+Disallow: /js/js/
+Disallow: /img/css/
+Disallow: /img/js/
+
+# Crawl-delay para ser amigable con el servidor
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://mantenimientodeextintores.mx/sitemap.xml

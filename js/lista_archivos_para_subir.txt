@@ -1,0 +1,47 @@
+ARCHIVOS QUE DEBES SUBIR AL SERVIDOR
+=====================================
+
+📄 ARCHIVOS HTML EN LA RAÍZ:
+- espuma-afff.html ✅ (actualizado hoy)
+
+📁 CARPETA productos/espuma-afff/:
+productos/espuma-afff/producto-extintor-espuma-afff-6L.html
+productos/espuma-afff/producto-extintor-espuma-afff-9L.html
+productos/espuma-afff/producto-extintor-espuma-afff-11L.html
+productos/espuma-afff/producto-extintor-espuma-afff-15L.html
+productos/espuma-afff/producto-extintor-espuma-afff-18L.html
+productos/espuma-afff/producto-extintor-espuma-afff-20L.html
+
+📁 CARPETA productos/espuma-afff/img-espuma-afff/:
+productos/espuma-afff/img-espuma-afff/equipo-contra-incendio-espuma-afff-12lt.webp
+productos/espuma-afff/img-espuma-afff/equipo-contra-incendio-espuma-afff-18lt.webp
+productos/espuma-afff/img-espuma-afff/equipo-contra-incendio-espuma-afff-20lt.webp
+productos/espuma-afff/img-espuma-afff/equipo-contra-incendio-espuma-afff-6lt.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-12lt-mantenimiento.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-12lt-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-12lt-venta.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-18lt-mantenimiento.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-18lt-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-18lt-servicio.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-20lt-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-20lt-servicio.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-6lt-mantenimiento.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-6lt-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-6lt-venta.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-9lt-mantenimiento.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-9lt-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-9lt-venta.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-mantenimiento.webp
+productos/espuma-afff/img-espuma-afff/extintor-espuma-afff-recarga.webp
+productos/espuma-afff/img-espuma-afff/extintores-afff-20lt-para-negocios.webp
+productos/espuma-afff/img-espuma-afff/inspeccion-extintores-espuma-afff.webp
+productos/espuma-afff/img-espuma-afff/recarga-extintores-espuma-afff-9lt.webp
+productos/espuma-afff/img-espuma-afff/recarga-extintores-espuma-afff.webp
+
+📁 CARPETA productos/agentes-limpios/ (SI HICISTE CAMBIOS):
+productos/agentes-limpios/producto-extintor-agente-limpio-6-8kg.html
+productos/agentes-limpios/producto-extintor-agente-limpio-9kg.html
+productos/agentes-limpios/producto-extintor-agente-limpio-11kg.html
+productos/agentes-limpios/img-agente-limpio/*.png
+
+TOTAL: 31+ archivos

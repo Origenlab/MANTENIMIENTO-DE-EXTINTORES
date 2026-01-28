@@ -1,0 +1,306 @@
+{
+  "name": "Blog MEDEDUL v7.0 - Sistema Profesional",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 3,
+              "triggerAtHour": 10
+            }
+          ]
+        }
+      },
+      "id": "scheduler",
+      "name": "Trigger Programado",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-60, 400]
+    },
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Trigger Manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-60, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================\n// SELECTOR INTELIGENTE v7.0\n// Sistema de rotacion sin repeticion\n// ============================================\n\nconst CONFIG = {\n  baseUrl: 'https://mesas-de-dulces.com',\n  github: {\n    owner: 'Origenlab',\n    repo: 'MEDEDUL',\n    branch: 'main'\n  },\n  empresa: {\n    nombre: 'Mededul',\n    telefono: '55 2522 6442',\n    whatsapp: '525525226442',\n    email: 'info@mesas-de-dulces.com'\n  },\n  categories: {\n    'bodas': 'Bodas',\n    'xv-anos': 'XV Anos',\n    'baby-shower': 'Baby Shower',\n    'corporativos': 'Corporativos',\n    'infantiles': 'Infantiles',\n    'estaciones': 'Estaciones'\n  },\n  colonias: [\n    'Polanco', 'Lomas de Chapultepec', 'Santa Fe', 'Pedregal',\n    'Condesa', 'Roma', 'Interlomas', 'Bosques de las Lomas',\n    'San Angel', 'Coyoacan', 'Tecamachalco', 'Del Valle'\n  ],\n  venues: [\n    'Hacienda de los Morales', 'Casa de las Campanas',\n    'Four Seasons Mexico City', 'St. Regis Mexico City',\n    'Hotel Camino Real Polanco', 'Jardin Botanico UNAM'\n  ],\n  products: [\n    {\n      id: 'mesa-dulces-bodas',\n      name: 'Mesa de Dulces para Bodas',\n      category: 'bodas',\n      categoryName: 'Bodas',\n      focus: 'mesas de dulces elegantes para bodas en CDMX',\n      audience: 'Parejas que celebran bodas en venues exclusivos',\n      keywords: ['mesa dulces boda CDMX', 'candy bar boda elegante', 'postres boda premium'],\n      priceRange: '$35,000-$80,000 MXN',\n      guests: '100-300 invitados',\n      piecesPerPerson: '8-12 piezas'\n    },\n    {\n      id: 'mesa-dulces-xv-anos',\n      name: 'Mesa de Dulces para XV Anos',\n      category: 'xv-anos',\n      categoryName: 'XV Anos',\n      focus: 'celebraciones de quinceanera memorables',\n      audience: 'Familias celebrando XV anos',\n      keywords: ['mesa dulces XV anos', 'candy bar quinceanera', 'postres quinceanera'],\n      priceRange: '$25,000-$60,000 MXN',\n      guests: '80-250 invitados',\n      piecesPerPerson: '8-10 piezas'\n    },\n    {\n      id: 'mesa-dulces-baby-shower',\n      name: 'Mesa de Dulces para Baby Shower',\n      category: 'baby-shower',\n      categoryName: 'Baby Shower',\n      focus: 'celebraciones tiernas para baby showers',\n      audience: 'Futuras mamas y familias',\n      keywords: ['mesa dulces baby shower', 'candy bar prenatal', 'dulces baby shower'],\n      priceRange: '$15,000-$35,000 MXN',\n      guests: '30-80 invitados',\n      piecesPerPerson: '6-8 piezas'\n    },\n    {\n      id: 'mesa-dulces-corporativos',\n      name: 'Mesa de Dulces Corporativos',\n      category: 'corporativos',\n      categoryName: 'Corporativos',\n      focus: 'catering dulce para eventos empresariales',\n      audience: 'Empresas en Santa Fe, Reforma, Polanco',\n      keywords: ['mesa dulces corporativo', 'candy bar empresarial', 'catering eventos'],\n      priceRange: '$20,000-$50,000 MXN',\n      guests: '50-200 invitados',\n      piecesPerPerson: '5-8 piezas'\n    },\n    {\n      id: 'mesa-dulces-infantil',\n      name: 'Mesa de Dulces Infantil',\n      category: 'infantiles',\n      categoryName: 'Infantiles',\n      focus: 'fiestas infantiles magicas y divertidas',\n      audience: 'Familias con ninos',\n      keywords: ['mesa dulces cumpleanos infantil', 'candy bar ninos', 'fiesta infantil'],\n      priceRange: '$12,000-$30,000 MXN',\n      guests: '20-60 invitados',\n      piecesPerPerson: '8-12 piezas'\n    },\n    {\n      id: 'estaciones-interactivas',\n      name: 'Estaciones Interactivas Gourmet',\n      category: 'estaciones',\n      categoryName: 'Estaciones',\n      focus: 'experiencias culinarias interactivas',\n      audience: 'Anfitriones que buscan sorprender',\n      keywords: ['fuente chocolate eventos', 'estacion postres gourmet', 'experiencia dulces'],\n      priceRange: '$8,000-$25,000 MXN',\n      guests: '50-300 invitados',\n      piecesPerPerson: 'Ilimitado'\n    }\n  ],\n  articleTypes: [\n    { id: 'guia-completa', name: 'Guia Completa', tone: 'educativo y detallado' },\n    { id: 'tendencias', name: 'Tendencias', tone: 'vanguardista y actual' },\n    { id: 'consejos', name: 'Consejos Profesionales', tone: 'experto y practico' },\n    { id: 'inspiracion', name: 'Inspiracion', tone: 'aspiracional y visual' },\n    { id: 'planificacion', name: 'Planificacion', tone: 'organizado y detallado' }\n  ],\n  images: {\n    'bodas': [\n      '../img/galeria/candy-bar-boda-rosa-dorado-elegante-peonias.avif',\n      '../img/galeria/candy-bar-boda-contemporanea-geometrico.avif',\n      '../img/galeria/candy-bar-boda-lujo-chocolates-dorado-cristaleria.avif',\n      '../img/galeria/candy-bar-boda-vintage-madera-flores.avif',\n      '../img/galeria/candy-bar-boda-blanca-total-minimalista.avif',\n      '../img/galeria/candy-bar-boda-exterior-elegante-flores-rosas.avif',\n      '../img/galeria/candy-bar-boda-lujoso-cristal-flores.avif'\n    ],\n    'xv-anos': [\n      '../img/galeria/candy-bar-quinceanera-rosa-elegante-globos.avif',\n      '../img/galeria/candy-bar-quinceanos-moderno-rosa-plateado.avif',\n      '../img/galeria/candy-bar-tema-princesa-castillo-rosa.avif',\n      '../img/galeria/candy-bar-princesa-elegante-cupcakes-coronas.avif',\n      '../img/galeria/candy-bar-quinceanera-rosa-fresas-dorado.avif'\n    ],\n    'baby-shower': [\n      '../img/galeria/candy-bar-baby-shower-celeste-macarons-osito.avif',\n      '../img/galeria/candy-bar-baby-shower-rosa-macarons-fresas.avif',\n      '../img/galeria/candy-bar-bautizo-comunion-celeste-palomas.avif'\n    ],\n    'corporativos': [\n      '../img/galeria/candy-bar-empresarial-moderno-minimalista.avif',\n      '../img/galeria/candy-bar-lanzamiento-producto-elegante.avif',\n      '../img/galeria/candy-bar-gourmet-elegante.avif',\n      '../img/galeria/candy-bar-profesional-eventos.avif'\n    ],\n    'infantiles': [\n      '../img/galeria/candy-bar-fiesta-ninos-arcoiris-dulces.avif'\n    ],\n    'estaciones': [\n      '../img/galeria/candy-bar-elegante-terraza-atardecer.avif',\n      '../img/galeria/candy-bar-chocolate-oscuro-elegante.avif'\n    ]\n  }\n};\n\n// Estado persistente para evitar repeticiones\nconst state = $getWorkflowStaticData('global');\nif (!state.usedProducts) state.usedProducts = [];\nif (!state.usedImages) state.usedImages = [];\nif (!state.usedTypes) state.usedTypes = [];\nif (!state.articleCount) state.articleCount = 0;\n\n// Seleccionar producto sin repetir\nlet availableProducts = CONFIG.products.filter(p => !state.usedProducts.includes(p.id));\nif (availableProducts.length === 0) {\n  state.usedProducts = [];\n  availableProducts = CONFIG.products;\n}\nconst product = availableProducts[Math.floor(Math.random() * availableProducts.length)];\nstate.usedProducts.push(product.id);\n\n// Seleccionar tipo de articulo sin repetir\nlet availableTypes = CONFIG.articleTypes.filter(t => !state.usedTypes.includes(t.id));\nif (availableTypes.length === 0) {\n  state.usedTypes = [];\n  availableTypes = CONFIG.articleTypes;\n}\nconst articleType = availableTypes[Math.floor(Math.random() * availableTypes.length)];\nstate.usedTypes.push(articleType.id);\n\n// Seleccionar imagen sin repetir\nlet categoryImages = CONFIG.images[product.category] || CONFIG.images['bodas'];\nlet availableImages = categoryImages.filter(i => !state.usedImages.includes(i));\nif (availableImages.length === 0) {\n  state.usedImages = state.usedImages.filter(i => !categoryImages.includes(i));\n  availableImages = categoryImages;\n}\nconst heroImage = availableImages[Math.floor(Math.random() * availableImages.length)];\nstate.usedImages.push(heroImage);\n\n// Seleccionar colonias y venues aleatorios\nconst colonias = [...CONFIG.colonias].sort(() => Math.random() - 0.5).slice(0, 4);\nconst venues = [...CONFIG.venues].sort(() => Math.random() - 0.5).slice(0, 3);\n\n// Incrementar contador\nstate.articleCount++;\n\n// Generar ID unico\nconst articleId = Date.now();\n\nreturn [{\n  json: {\n    CONFIG,\n    product,\n    articleType,\n    heroImage,\n    colonias,\n    venues,\n    articleId,\n    articleNumber: state.articleCount\n  }\n}];"
+      },
+      "id": "selector",
+      "name": "Selector Inteligente",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [180, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst p = data.product;\nconst t = data.articleType;\nconst colonias = data.colonias;\nconst venues = data.venues;\n\nconst prompt = `Eres un PERIODISTA EXPERTO y COPYWRITER DE LUJO especializado en lifestyle, bodas y eventos de alta gama. Escribes para la revista mas exclusiva de eventos en Mexico.\n\n═══════════════════════════════════════════════════════════\nMISION: CREAR UN ARTICULO EDITORIAL DE REVISTA DE LUJO\n═══════════════════════════════════════════════════════════\n\nEscribe un articulo que podria aparecer en Vogue Novias, Martha Stewart Weddings o Architectural Digest. El contenido debe ser:\n\n• NARRATIVO: Cuenta historias, describe experiencias sensoriales, pinta escenas vividas\n• ASPIRACIONAL: Inspira al lector a sonar con su evento perfecto\n• EXPERTO: Demuestra conocimiento profundo del mundo de eventos de lujo\n• ORIGINAL: Cada parrafo debe aportar valor unico, no repetir conceptos\n\n═══════════════════════════════════════════════════════════\nCONTEXTO DEL ARTICULO\n═══════════════════════════════════════════════════════════\n- Tema central: ${p.name}\n- Categoria: ${p.categoryName}\n- Enfoque editorial: ${p.focus}\n- Lector objetivo: ${p.audience}\n- Keywords SEO: ${p.keywords.join(', ')}\n- Estilo narrativo: ${t.name} - ${t.tone}\n- Zonas de CDMX a mencionar: ${colonias.join(', ')}\n- Venues de referencia: ${venues.join(', ')}\n\n═══════════════════════════════════════════════════════════\nREGLAS CRITICAS DE REDACCION\n═══════════════════════════════════════════════════════════\n\n1. PROHIBIDO:\n   ✗ NO mencionar precios, costos ni rangos de inversion\n   ✗ NO incluir fechas, anos ni temporadas especificas\n   ✗ NO usar listas largas (maximo 1 lista corta de 3-4 items por seccion)\n   ✗ NO repetir la misma idea en diferentes secciones\n   ✗ NO usar frases genericas como \"es importante\", \"es fundamental\"\n   ✗ NO empezar parrafos con \"Ademas\", \"Tambien\", \"Por otro lado\"\n\n2. OBLIGATORIO:\n   ✓ Minimo 2000 palabras de contenido NARRATIVO\n   ✓ Cada seccion debe tener 4-5 parrafos DENSOS y originales\n   ✓ Usar descripciones sensoriales (colores, texturas, aromas, sabores)\n   ✓ Incluir anecdotas o escenarios hipoteticos que conecten emocionalmente\n   ✓ Mencionar colonias de CDMX de forma natural en el contexto\n   ✓ Vocabulario sofisticado: curado, artesanal, bespoke, efimero, sublime\n   ✓ Transiciones elegantes entre secciones\n\n3. ESTRUCTURA DE PARRAFOS:\n   - Primera oracion: Gancho que atrape al lector\n   - Desarrollo: Informacion valiosa con ejemplos concretos\n   - Cierre: Reflexion o conexion emocional\n   - Minimo 80 palabras por parrafo\n\n═══════════════════════════════════════════════════════════\nESTRUCTURA HTML DEL ARTICULO\n═══════════════════════════════════════════════════════════\n\n<div class=\"article-intro\">\n  <p>[2-3 parrafos introductorios poeticos y evocadores que establezcan el tono editorial. Primera oracion con <strong>keyword principal</strong>. Describir la magia del momento, la emocion del evento, por que este tema importa.]</p>\n</div>\n\n<nav class=\"toc\">\n  <h4>En Este Articulo</h4>\n  <ol><li><a href=\"#seccion-1\">Titulo Seccion 1</a></li>...</ol>\n</nav>\n\n[5-6 SECCIONES con H2 - cada una explorando un angulo DIFERENTE del tema]\n\n<h2 id=\"seccion-slug\">Titulo Creativo con Keyword</h2>\n<p>[4-5 parrafos narrativos, NO listas. Explorar el tema desde perspectivas unicas: historia, psicologia, estetica, experiencia sensorial, tendencias culturales.]</p>\n\n[Maximo 1 highlight-box por cada 2 secciones]\n<div class=\"highlight-box\">\n  <h4>Perspectiva del Experto</h4>\n  <p>[Insight profesional genuino, no obvio, que demuestre expertise]</p>\n</div>\n\n[SECCION FAQ al final - preguntas que el lector realmente tendria]\n<h2 id=\"preguntas-frecuentes\">Preguntas Frecuentes</h2>\n<div class=\"faq-section\">\n  <div class=\"faq-item\">\n    <div class=\"faq-question\">Pregunta natural y especifica?<span class=\"icon\">+</span></div>\n    <div class=\"faq-answer\"><p>[Respuesta completa 60-100 palabras, util y concreta]</p></div>\n  </div>\n  [5-6 FAQs]\n</div>\n\n[CONCLUSION - Cierre inspiracional]\n<h2 id=\"reflexion-final\">Reflexion Final</h2>\n<p>[2 parrafos que cierren con inspiracion y una invitacion sutil a contactar a Mededul para hacer realidad la vision]</p>\n\n═══════════════════════════════════════════════════════════\nEJEMPLOS DE REDACCION DESEADA\n═══════════════════════════════════════════════════════════\n\nMAL (generico, lista, sin alma):\n\"Las mesas de dulces son importantes para tu evento. Aqui te presentamos una lista de beneficios: 1. Decoran el espacio 2. Ofrecen variedad 3. Son memorables\"\n\nBIEN (narrativo, sensorial, original):\n\"Imagina el momento: tus invitados cruzan el umbral del salon y sus miradas se detienen, casi involuntariamente, en esa composicion de colores y texturas que parece sacada de un sueno. La mesa de dulces no es simplemente un elemento decorativo—es el primer capitulo de una historia que se desplegara a lo largo de la noche. En las celebraciones mas sofisticadas de Polanco y Lomas de Chapultepec, este momento de descubrimiento se ha convertido en un arte refinado, donde cada macaron, cada bombom artesanal, cuenta una parte de la narrativa del anfitrion.\"\n\n═══════════════════════════════════════════════════════════\nTEMAS A EXPLORAR EN LAS SECCIONES (elige 5-6)\n═══════════════════════════════════════════════════════════\n- La psicologia detras de la experiencia dulce en eventos\n- El arte de la composicion visual y el color\n- Tendencias internacionales adaptadas al gusto mexicano\n- La seleccion de dulces como expresion de personalidad\n- El rol del espacio y la arquitectura en la presentacion\n- Maridajes inesperados: dulces con bebidas, flores, aromas\n- La experiencia del invitado: del descubrimiento al recuerdo\n- Personalizacion como forma de storytelling\n- El equilibrio entre tradicion e innovacion\n- La importancia de la artesania y lo hecho a mano\n\n═══════════════════════════════════════════════════════════\nFORMATO DE RESPUESTA JSON\n═══════════════════════════════════════════════════════════\n{\n  \"title\": \"[45-65 chars, keyword al inicio, tono editorial elegante]\",\n  \"metaDescription\": \"[150-160 chars, evocador, con keyword y llamada a la accion sutil]\",\n  \"metaKeywords\": \"[6-8 keywords relevantes separadas por coma]\",\n  \"excerpt\": \"[150-200 chars, gancho emocional para la card del blog]\",\n  \"breadcrumbText\": \"[15-25 chars]\",\n  \"readingTime\": \"12 min lectura\",\n  \"cta\": \"Disenar Tu Experiencia\",\n  \"contenidoHTML\": \"[HTML completo del articulo siguiendo la estructura indicada]\",\n  \"faq\": [{\"question\": \"...\", \"answer\": \"...\"}]\n}\n\nRECUERDA: Este articulo debe poder publicarse en una revista de lujo. Cada palabra cuenta. Nada de relleno.`;\n\nreturn [{ json: { ...data, prompt } }];"
+      },
+      "id": "prompt",
+      "name": "Constructor Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\nconst body = {\n  model: 'gpt-4o',\n  messages: [\n    {\n      role: 'system',\n      content: 'Eres un PERIODISTA DE LUJO y EDITOR SENIOR de revistas como Vogue Novias y Architectural Digest. Tu especialidad es escribir articulos editoriales sobre eventos de alta gama en CDMX. REGLAS INVIOLABLES: 1) Escribe de forma NARRATIVA, poetica y sensorial - NUNCA uses listas largas. 2) PROHIBIDO mencionar precios, costos, fechas o anos. 3) Cada parrafo debe tener minimo 80 palabras con contenido ORIGINAL. 4) Usa descripciones sensoriales: colores, texturas, aromas, sabores. 5) Menciona las colonias de CDMX de forma natural en la narrativa. 6) El tono debe ser aspiracional, sofisticado y genuinamente inspirador. 7) SOLO responde con JSON valido sin markdown. 8) El contenidoHTML debe ser minimo 2000 palabras de prosa de alta calidad editorial.'\n    },\n    { role: 'user', content: d.prompt }\n  ],\n  temperature: 0.85,\n  max_tokens: 16000,\n  response_format: { type: 'json_object' }\n};\nreturn [{ json: { ...d, chatGPTBody: JSON.stringify(body) } }];"
+      },
+      "id": "preparar-chatgpt",
+      "name": "Preparar Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [620, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Authorization", "value": "Bearer {{TU_OPENAI_API_KEY}}" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.chatGPTBody }}",
+        "options": { "timeout": 180000 }
+      },
+      "id": "chatgpt",
+      "name": "ChatGPT API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [840, 300],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst data = $('Constructor Prompt').first().json;\nconst p = data.product;\nconst t = data.articleType;\nconst heroImage = data.heroImage;\nconst articleId = data.articleId;\nconst colonias = data.colonias;\n\n// Parsear respuesta de ChatGPT\nlet content;\ntry {\n  let raw = response.choices[0].message.content\n    .replace(/```json\\n?/gi, '')\n    .replace(/```\\n?/gi, '')\n    .trim();\n  content = JSON.parse(raw);\n} catch(e) {\n  throw new Error('Error parseando JSON: ' + e.message);\n}\n\n// Validar campos requeridos\nif (!content.title || content.title.length < 20) {\n  throw new Error('Titulo invalido o muy corto: ' + (content.title || 'VACIO'));\n}\nif (!content.contenidoHTML || content.contenidoHTML.length < 500) {\n  throw new Error('Contenido HTML invalido o muy corto');\n}\n\n// Aplicar valores por defecto\ncontent.metaDescription = content.metaDescription || `Descubre ${p.name} con Mededul en CDMX. Guia profesional con precios y consejos.`;\ncontent.metaKeywords = content.metaKeywords || p.keywords.join(', ');\ncontent.excerpt = content.excerpt || content.metaDescription.substring(0, 200);\ncontent.breadcrumbText = content.breadcrumbText || content.title.substring(0, 25);\ncontent.readingTime = content.readingTime || '10 min lectura';\ncontent.cta = content.cta || 'Ver ' + p.categoryName;\ncontent.faq = content.faq || [];\n\n// ============================================\n// GENERADOR DE SLUG SEO-FRIENDLY (SIN NUMEROS)\n// ============================================\n\n// Slugs SEO predefinidos por categoria y tipo\nconst seoSlugs = {\n  'bodas': {\n    'guia-completa': 'guia-completa-mesa-dulces-bodas-cdmx',\n    'tendencias': 'tendencias-candy-bar-bodas-cdmx',\n    'consejos': 'consejos-mesa-dulces-bodas-perfecta',\n    'inspiracion': 'ideas-mesa-dulces-bodas-elegantes',\n    'planificacion': 'como-planificar-mesa-dulces-boda'\n  },\n  'xv-anos': {\n    'guia-completa': 'guia-mesa-dulces-xv-anos-cdmx',\n    'tendencias': 'tendencias-candy-bar-quinceanera',\n    'consejos': 'consejos-mesa-dulces-xv-anos',\n    'inspiracion': 'ideas-mesa-dulces-quinceanera-elegante',\n    'planificacion': 'planificar-mesa-dulces-xv-anos'\n  },\n  'baby-shower': {\n    'guia-completa': 'guia-mesa-dulces-baby-shower-cdmx',\n    'tendencias': 'tendencias-candy-bar-baby-shower',\n    'consejos': 'consejos-mesa-dulces-baby-shower',\n    'inspiracion': 'ideas-mesa-dulces-baby-shower-tierno',\n    'planificacion': 'planificar-mesa-dulces-baby-shower'\n  },\n  'corporativos': {\n    'guia-completa': 'guia-mesa-dulces-eventos-corporativos',\n    'tendencias': 'tendencias-catering-dulces-empresas',\n    'consejos': 'consejos-candy-bar-corporativo-cdmx',\n    'inspiracion': 'ideas-mesa-dulces-eventos-empresariales',\n    'planificacion': 'planificar-catering-dulces-corporativo'\n  },\n  'infantiles': {\n    'guia-completa': 'guia-mesa-dulces-fiestas-infantiles',\n    'tendencias': 'tendencias-candy-bar-cumpleanos-ninos',\n    'consejos': 'consejos-mesa-dulces-fiesta-infantil',\n    'inspiracion': 'ideas-mesa-dulces-cumpleanos-infantil',\n    'planificacion': 'planificar-mesa-dulces-fiesta-ninos'\n  },\n  'estaciones': {\n    'guia-completa': 'guia-estaciones-interactivas-eventos',\n    'tendencias': 'tendencias-estaciones-gourmet-cdmx',\n    'consejos': 'consejos-fuentes-chocolate-eventos',\n    'inspiracion': 'ideas-estaciones-postres-interactivas',\n    'planificacion': 'planificar-estaciones-dulces-evento'\n  }\n};\n\n// Variaciones para evitar duplicados\nconst variations = [\n  '-premium', '-exclusivo', '-profesional', '-luxury',\n  '-polanco', '-santa-fe', '-lomas', '-condesa',\n  '-moderno', '-elegante', '-sofisticado', '-contemporaneo'\n];\n\nfunction generateSlug(text) {\n  if (!text || typeof text !== 'string') return null;\n  \n  return text\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/[^a-z0-9\\s-]/g, '')\n    .replace(/\\s+/g, '-')\n    .replace(/-+/g, '-')\n    .replace(/^-+|-+$/g, '')\n    .substring(0, 60);\n}\n\n// 1. Intentar generar slug del titulo\nlet slug = generateSlug(content.title);\n\n// 2. Si el slug es invalido, usar slug SEO predefinido\nif (!slug || slug.length < 15) {\n  const categorySlugs = seoSlugs[p.category] || seoSlugs['bodas'];\n  slug = categorySlugs[t.id] || categorySlugs['guia-completa'];\n  \n  // Agregar variacion aleatoria para evitar duplicados\n  const variation = variations[Math.floor(Math.random() * variations.length)];\n  slug = slug + variation;\n}\n\n// 3. Asegurar que el slug tenga palabras clave SEO\nif (!slug.includes('mesa') && !slug.includes('candy') && !slug.includes('dulces')) {\n  slug = 'mesa-dulces-' + slug;\n}\n\n// 4. Asegurar ubicacion geografica\nif (!slug.includes('cdmx') && !slug.includes('polanco') && !slug.includes('santa-fe') && !slug.includes('lomas') && !slug.includes('condesa')) {\n  const colonia = colonias[0].toLowerCase().replace(/\\s+/g, '-').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');\n  slug = slug + '-' + colonia;\n}\n\n// 5. Limitar longitud\nslug = slug.substring(0, 65);\n\nconsole.log('TITULO:', content.title);\nconsole.log('SLUG SEO:', slug);\n\n// Construir FAQ Schema\nconst faqSchema = {\n  '@context': 'https://schema.org',\n  '@type': 'FAQPage',\n  'mainEntity': content.faq.map(f => ({\n    '@type': 'Question',\n    'name': f.question,\n    'acceptedAnswer': {\n      '@type': 'Answer',\n      'text': f.answer\n    }\n  }))\n};\n\nreturn [{\n  json: {\n    ...data,\n    content,\n    slug,\n    articleId,\n    heroImage,\n    faqSchemaJSON: JSON.stringify(faqSchema)\n  }\n}];"
+      },
+      "id": "validar",
+      "name": "Validar Respuesta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1060, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/MEDEDUL/contents/blog/TEMPLATE-ARTICULO.html",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-template",
+      "name": "GitHub: Obtener Template",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1280, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Validar Respuesta').first().json;\nconst templateResp = $input.first().json;\nconst c = data.content;\nconst p = data.product;\nconst slug = data.slug;\nconst heroImage = data.heroImage;\nconst faqSchemaJSON = data.faqSchemaJSON;\n\n// Decodificar template\nlet template;\ntry {\n  template = Buffer.from(templateResp.content, 'base64').toString('utf8');\n} catch(e) {\n  throw new Error('Error decodificando template: ' + e.message);\n}\n\n// Ruta de imagen (quitar ../ para URL absoluta)\nconst imagePath = heroImage.replace('../', '');\n\n// Reemplazar todas las variables\nlet html = template\n  .replace(/\\{\\{TITULO\\}\\}/g, c.title)\n  .replace(/\\{\\{SLUG\\}\\}/g, slug)\n  .replace(/\\{\\{META_DESCRIPTION\\}\\}/g, c.metaDescription)\n  .replace(/\\{\\{META_KEYWORDS\\}\\}/g, c.metaKeywords)\n  .replace(/\\{\\{CATEGORIA\\}\\}/g, p.categoryName)\n  .replace(/\\{\\{CATEGORIA_SLUG\\}\\}/g, p.category)\n  .replace(/\\{\\{IMAGEN_PRINCIPAL\\}\\}/g, imagePath)\n  .replace(/\\{\\{IMAGEN_ALT\\}\\}/g, c.title + ' - Mededul CDMX')\n  .replace(/\\{\\{BREADCRUMB_TEXT\\}\\}/g, c.breadcrumbText)\n  .replace(/\\{\\{TIEMPO_LECTURA\\}\\}/g, c.readingTime)\n  .replace(/\\{\\{CONTENIDO\\}\\}/g, c.contenidoHTML)\n  .replace(/\\{\\{FAQ_SCHEMA\\}\\}/g, faqSchemaJSON);\n\n// Convertir a Base64\nconst htmlBase64 = Buffer.from(html).toString('base64');\n\nreturn [{\n  json: {\n    ...data,\n    articleHtml: html,\n    articleHtmlBase64: htmlBase64,\n    slug\n  }\n}];"
+      },
+      "id": "construir-html",
+      "name": "Construir HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst c = data.content;\nconst p = data.product;\nconst slug = data.slug;\nconst articleId = data.articleId;\nconst heroImage = data.heroImage;\n\n// VALIDACION CRITICA antes de continuar\nif (!slug || slug === '' || slug.length < 5) {\n  throw new Error('ERROR en Construir Card: Slug invalido \"' + slug + '\". Titulo: \"' + c.title + '\"');\n}\n\n// Construir entry para articles.json\nconst articleEntry = {\n  id: articleId,\n  title: c.title,\n  excerpt: c.excerpt,\n  category: p.category,\n  image: heroImage,\n  slug: slug,\n  readTime: c.readingTime,\n  cta: c.cta\n};\n\nreturn [{\n  json: {\n    ...data,\n    articleEntry\n  }\n}];"
+      },
+      "id": "construir-card",
+      "name": "Construir Card",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1720, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/Origenlab/MEDEDUL/contents/blog/{{ $json.slug }}.html",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add article: {{ $json.slug }}\",\n  \"content\": \"{{ $json.articleHtmlBase64 }}\",\n  \"branch\": \"main\"\n}"
+      },
+      "id": "github-upload-article",
+      "name": "GitHub: Subir Articulo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1940, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/MEDEDUL/contents/blog/articles.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-articles",
+      "name": "GitHub: Obtener JSON",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2160, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Construir Card').first().json;\nconst articleEntry = data.articleEntry;\nconst slug = data.slug;\nconst gh = $input.first().json;\n\n// VALIDACION CRITICA del slug\nif (!slug || slug === '' || slug.length < 5) {\n  throw new Error('ERROR CRITICO: Slug invalido antes de guardar en articles.json. Slug: \"' + slug + '\"');\n}\n\nif (!gh.content) throw new Error('articles.json no encontrado');\n\n// Decodificar JSON actual\nlet articlesData;\ntry {\n  const content = Buffer.from(gh.content, 'base64').toString('utf8');\n  articlesData = JSON.parse(content);\n} catch(e) {\n  throw new Error('Error parseando articles.json: ' + e.message);\n}\n\n// Validar estructura\nif (!articlesData.articles || !Array.isArray(articlesData.articles)) {\n  articlesData = { version: '2.0', lastUpdate: '', articles: [] };\n}\n\n// Verificar duplicados\nconst exists = articlesData.articles.some(a => a.slug === slug);\nif (exists) {\n  throw new Error('Articulo con slug \"' + slug + '\" ya existe');\n}\n\n// Agregar al inicio\narticlesData.articles.unshift(articleEntry);\narticlesData.lastUpdate = new Date().toISOString().split('T')[0];\narticlesData.version = '2.0';\n\n// Convertir a Base64\nconst newJSON = JSON.stringify(articlesData, null, 2);\nconst newBase64 = Buffer.from(newJSON).toString('base64');\n\nreturn [{\n  json: {\n    slug,\n    newArticlesBase64: newBase64,\n    sha: gh.sha,\n    articleTitle: data.content.title,\n    articleEntry,\n    totalArticles: articlesData.articles.length\n  }\n}];"
+      },
+      "id": "update-articles",
+      "name": "Actualizar JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2380, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Origenlab/MEDEDUL/contents/blog/articles.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add to blog: {{ $json.slug }}\",\n  \"content\": \"{{ $json.newArticlesBase64 }}\",\n  \"sha\": \"{{ $json.sha }}\",\n  \"branch\": \"main\"\n}"
+      },
+      "id": "github-put-articles",
+      "name": "GitHub: Guardar JSON",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2600, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/MEDEDUL/contents/sitemap.xml",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-sitemap",
+      "name": "GitHub: Obtener Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2820, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Actualizar JSON').first().json;\nconst slug = data.slug;\nconst articleTitle = data.articleTitle;\nconst totalArticles = data.totalArticles;\nconst gh = $input.first().json;\n\n// Validar slug antes de continuar\nif (!slug || slug === '' || slug.length < 5) {\n  throw new Error('SLUG INVALIDO en Actualizar Sitemap: \"' + slug + '\"');\n}\n\nif (!gh.content) throw new Error('sitemap.xml no encontrado');\n\n// Decodificar\nlet sitemap = Buffer.from(gh.content, 'base64').toString('utf8');\n\n// Verificar si ya existe\nif (sitemap.includes(slug + '.html')) {\n  return [{ json: { slug, articleTitle, totalArticles, sitemapUpdated: false, sha: gh.sha } }];\n}\n\n// Crear entrada\nconst newUrl = `  <url>\n    <loc>https://mesas-de-dulces.com/blog/${slug}.html</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`;\n\n// Insertar\nconst newSitemap = sitemap.replace('</urlset>', newUrl + '\\n</urlset>');\nconst newBase64 = Buffer.from(newSitemap).toString('base64');\n\nreturn [{\n  json: {\n    slug,\n    articleTitle,\n    totalArticles,\n    newSitemapBase64: newBase64,\n    sha: gh.sha,\n    sitemapUpdated: true\n  }\n}];"
+      },
+      "id": "update-sitemap",
+      "name": "Actualizar Sitemap",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3040, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Origenlab/MEDEDUL/contents/sitemap.xml",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{TU_GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add sitemap: {{ $json.slug }}\",\n  \"content\": \"{{ $json.newSitemapBase64 }}\",\n  \"sha\": \"{{ $json.sha }}\",\n  \"branch\": \"main\"\n}"
+      },
+      "id": "github-put-sitemap",
+      "name": "GitHub: Guardar Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3260, 300],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8253197429:AAFuUSGCueoJoKZ0CaoMqWSIRMAnCeCIrMw/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"772938445\",\n  \"text\": \"✅ MEDEDUL - Articulo #{{ $('Actualizar Sitemap').first().json.totalArticles }}\\n\\n📝 {{ $('Actualizar Sitemap').first().json.articleTitle }}\\n\\n🔗 https://mesas-de-dulces.com/blog/{{ $('Actualizar Sitemap').first().json.slug }}.html\\n\\n📊 articles.json actualizado\\n🗺️ sitemap.xml actualizado\",\n  \"parse_mode\": \"HTML\"\n}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "telegram",
+      "name": "Telegram Notificacion",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3480, 300],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "fin",
+      "name": "Fin",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [3700, 300]
+    }
+  ],
+  "connections": {
+    "Trigger Programado": { "main": [[{ "node": "Selector Inteligente", "type": "main", "index": 0 }]] },
+    "Trigger Manual": { "main": [[{ "node": "Selector Inteligente", "type": "main", "index": 0 }]] },
+    "Selector Inteligente": { "main": [[{ "node": "Constructor Prompt", "type": "main", "index": 0 }]] },
+    "Constructor Prompt": { "main": [[{ "node": "Preparar Request", "type": "main", "index": 0 }]] },
+    "Preparar Request": { "main": [[{ "node": "ChatGPT API", "type": "main", "index": 0 }]] },
+    "ChatGPT API": { "main": [[{ "node": "Validar Respuesta", "type": "main", "index": 0 }]] },
+    "Validar Respuesta": { "main": [[{ "node": "GitHub: Obtener Template", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener Template": { "main": [[{ "node": "Construir HTML", "type": "main", "index": 0 }]] },
+    "Construir HTML": { "main": [[{ "node": "Construir Card", "type": "main", "index": 0 }]] },
+    "Construir Card": { "main": [[{ "node": "GitHub: Subir Articulo", "type": "main", "index": 0 }]] },
+    "GitHub: Subir Articulo": { "main": [[{ "node": "GitHub: Obtener JSON", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener JSON": { "main": [[{ "node": "Actualizar JSON", "type": "main", "index": 0 }]] },
+    "Actualizar JSON": { "main": [[{ "node": "GitHub: Guardar JSON", "type": "main", "index": 0 }]] },
+    "GitHub: Guardar JSON": { "main": [[{ "node": "GitHub: Obtener Sitemap", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener Sitemap": { "main": [[{ "node": "Actualizar Sitemap", "type": "main", "index": 0 }]] },
+    "Actualizar Sitemap": { "main": [[{ "node": "GitHub: Guardar Sitemap", "type": "main", "index": 0 }]] },
+    "GitHub: Guardar Sitemap": { "main": [[{ "node": "Telegram Notificacion", "type": "main", "index": 0 }]] },
+    "Telegram Notificacion": { "main": [[{ "node": "Fin", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  }
+}

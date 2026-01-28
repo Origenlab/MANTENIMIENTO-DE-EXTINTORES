@@ -1,0 +1,2269 @@
+{
+  "site": {
+    "name": "MANEXT",
+    "fullName": "MANEXT - Mantenimiento de Extintores",
+    "domain": "mantenimientodeextintores.mx",
+    "phone": "5539689272",
+    "whatsapp": "5215539689272",
+    "email": "contacto@mantenimientodeextintores.mx",
+    "location": "Ciudad de Mexico y Area Metropolitana"
+  },
+  "categories": [
+    {
+      "id": "polvo-quimico-seco",
+      "name": "Polvo Químico Seco (PQS)",
+      "slug": "polvo-quimico-seco",
+      "description": "Los más versátiles del mercado. Ideales para todo tipo de negocios y oficinas. Combaten fuegos Clase A, B y C.",
+      "color": "#c62828",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "icon": "pqs",
+      "tabId": "pqs"
+    },
+    {
+      "id": "co2",
+      "name": "Dióxido de Carbono (CO2)",
+      "slug": "co2",
+      "description": "Especializados para equipos electrónicos y eléctricos. No dejan residuos. Perfectos para data centers, servidores y equipos delicados.",
+      "color": "#1565c0",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "icon": "co2",
+      "tabId": "co2"
+    },
+    {
+      "id": "agua-presion",
+      "name": "Agua a Presión",
+      "slug": "agua-presion",
+      "description": "Especializados para materiales sólidos. El agua enfría y penetra materiales porosos. Ideales para bodegas de materiales.",
+      "color": "#0288d1",
+      "fireClasses": [
+        "A"
+      ],
+      "icon": "agua",
+      "tabId": "agua"
+    },
+    {
+      "id": "tipo-k",
+      "name": "Tipo K (Cocinas)",
+      "slug": "tipo-k",
+      "description": "Diseñados específicamente para fuegos de cocina. Saponifican grasas y aceites. Obligatorios en restaurantes y cocinas industriales.",
+      "color": "#f9a825",
+      "fireClasses": [
+        "K"
+      ],
+      "icon": "tipo-k",
+      "tabId": "tipok"
+    },
+    {
+      "id": "espuma-afff",
+      "name": "Espuma (AFFF)",
+      "slug": "espuma-afff",
+      "description": "Especializados en líquidos inflamables e hidrocarburos. Forman película acuosa que sella el combustible. Ideales para talleres y gasolineras.",
+      "color": "#e65100",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "icon": "espuma",
+      "tabId": "espuma"
+    },
+    {
+      "id": "agentes-limpios",
+      "name": "Agentes Limpios",
+      "slug": "agentes-limpios",
+      "description": "Tecnología premium para áreas críticas. Cero residuos, no afecta la capa de ozono. Perfectos para museos, archivos y equipos de alta precisión.",
+      "color": "#7b1fa2",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "icon": "limpio",
+      "tabId": "limpios"
+    }
+  ],
+  "products": [
+    {
+      "id": "extintor-agente-limpio-halotron-1-8kg",
+      "title": "Extintor Halotron I 1.8 kg Compacto",
+      "slug": "producto-extintor-halotron-1-8kg",
+      "category": "agentes-limpios",
+      "capacity": "1.8 kg",
+      "capacityValue": 1.8,
+      "capacityType": "pequeno",
+      "range": "1.5-3 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "El mas compacto agente limpio",
+        "Ideal para cajeros automaticos",
+        "Proteccion de equipos ATM",
+        "Descarga limpia y segura"
+      ],
+      "excerpt": "Extintor Halotron I compacto para cajeros automaticos, kioscos electronicos y equipos de punto de venta.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-2-7kg",
+        "extintor-co2-2-27kg",
+        "extintor-agente-limpio-halotron-4kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-fe36-2-3kg",
+      "title": "Extintor FE-36 2.3 kg Compacto",
+      "slug": "producto-extintor-fe36-2-3kg",
+      "category": "agentes-limpios",
+      "capacity": "2.3 kg",
+      "capacityValue": 2.3,
+      "capacityType": "pequeno",
+      "range": "2-3 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Tecnologia FE-36 de ultima generacion",
+        "Cero impacto ambiental",
+        "Para equipos de alta precision",
+        "Dielectrico y no conductor"
+      ],
+      "excerpt": "Extintor FE-36 compacto para equipos medicos de precision, laboratorios y areas de instrumentacion.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-2-7kg",
+        "extintor-agente-limpio-fe36-6kg",
+        "extintor-co2-2-27kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-2-7kg",
+      "title": "Extintor Agente Limpio 2.7 kg",
+      "slug": "producto-extintor-agente-limpio-2-7kg",
+      "category": "agentes-limpios",
+      "capacity": "2.7 kg",
+      "capacityValue": 2.7,
+      "capacityType": "pequeno",
+      "range": "2-4 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Tecnologia Novec 1230",
+        "Cero residuos post-descarga",
+        "No dana equipos delicados",
+        "Amigable con medio ambiente"
+      ],
+      "excerpt": "Extintor de agente limpio Novec 1230 para equipos electronicos sensibles y areas criticas.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-4-5kg",
+        "extintor-agente-limpio-5-4kg",
+        "extintor-co2-2-27kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-halotron-4kg",
+      "title": "Extintor Halotron I 4 kg",
+      "slug": "producto-extintor-halotron-4kg",
+      "category": "agentes-limpios",
+      "capacity": "4 kg",
+      "capacityValue": 4,
+      "capacityType": "mediano",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad media Halotron I",
+        "Para areas de control",
+        "No afecta equipos sensibles",
+        "Reemplazo ideal del halon"
+      ],
+      "excerpt": "Extintor Halotron I 4 kg para salas de control, centros de monitoreo y areas de telecomunicaciones.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-halotron-1-8kg",
+        "extintor-agente-limpio-5-4kg",
+        "extintor-co2-4-54kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-4-5kg",
+      "title": "Extintor Agente Limpio 4.5 kg",
+      "slug": "producto-extintor-agente-limpio-4-5kg",
+      "category": "agentes-limpios",
+      "capacity": "4.5 kg",
+      "capacityValue": 4.5,
+      "capacityType": "mediano",
+      "range": "4-6 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Ideal para salas de control",
+        "Agente FM-200 de ultima generacion",
+        "Dielectrico no conductor",
+        "Certificacion EPA/SNAP"
+      ],
+      "excerpt": "Extintor de agente limpio FM-200 para salas de control y equipos de alta precision.",
+      "featured": true,
+      "related": [
+        "extintor-agente-limpio-2-7kg",
+        "extintor-agente-limpio-5-4kg",
+        "extintor-agente-limpio-6-8kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-novec-4-5kg",
+      "title": "Extintor Novec 1230 4.5 kg",
+      "slug": "producto-extintor-novec-1230-4-5kg",
+      "category": "agentes-limpios",
+      "capacity": "4.5 kg",
+      "capacityValue": 4.5,
+      "capacityType": "mediano",
+      "range": "4-6 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Ecologico",
+      "badgeType": "featured",
+      "features": [
+        "Tecnologia 3M Novec 1230",
+        "GWP de solo 1 (menor huella)",
+        "Para centros de computo verdes",
+        "Sin impacto en ozono"
+      ],
+      "excerpt": "Extintor Novec 1230 ecologico para data centers sustentables, empresas con certificacion verde.",
+      "featured": true,
+      "related": [
+        "extintor-agente-limpio-2-7kg",
+        "extintor-agente-limpio-novec-9kg",
+        "extintor-agente-limpio-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-5-4kg",
+      "title": "Extintor Agente Limpio 5.4 kg",
+      "slug": "producto-extintor-agente-limpio-5-4kg",
+      "category": "agentes-limpios",
+      "capacity": "5.4 kg",
+      "capacityValue": 5.4,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Para centros de datos medianos",
+        "Tecnologia Halotron I",
+        "Cero impacto en ozono",
+        "Descarga controlada"
+      ],
+      "excerpt": "Extintor de agente limpio Halotron I para centros de datos y equipos de telecomunicaciones.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-4-5kg",
+        "extintor-agente-limpio-6-8kg",
+        "extintor-co2-4-54kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-fe36-6kg",
+      "title": "Extintor FE-36 6 kg Premium",
+      "slug": "producto-extintor-fe36-6kg",
+      "category": "agentes-limpios",
+      "capacity": "6 kg",
+      "capacityValue": 6,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Mayor capacidad FE-36",
+        "Ideal para salas de resonancia",
+        "No deja residuos ni manchas",
+        "Certificacion EPA aprobada"
+      ],
+      "excerpt": "Extintor FE-36 6 kg para hospitales, salas de resonancia magnetica y equipos medicos sensibles.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-fe36-2-3kg",
+        "extintor-agente-limpio-6-8kg",
+        "extintor-co2-6-81kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-6-8kg",
+      "title": "Extintor Agente Limpio 6.8 kg",
+      "slug": "producto-extintor-agente-limpio-6-8kg",
+      "category": "agentes-limpios",
+      "capacity": "6.8 kg",
+      "capacityValue": 6.8,
+      "capacityType": "mediano",
+      "range": "6-8 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Proteccion para museos y archivos",
+        "No deja residuos corrosivos",
+        "Potencial cero de agotamiento ozono",
+        "Descarga limpia y rapida"
+      ],
+      "excerpt": "Extintor de agente limpio para museos, archivos historicos y bibliotecas.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-5-4kg",
+        "extintor-agente-limpio-9kg",
+        "extintor-co2-6-81kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-9kg",
+      "title": "Extintor Agente Limpio 9 kg",
+      "slug": "producto-extintor-agente-limpio-9kg",
+      "category": "agentes-limpios",
+      "capacity": "9 kg",
+      "capacityValue": 9,
+      "capacityType": "grande",
+      "range": "8-10 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Gran capacidad para areas criticas",
+        "Tecnologia Halotron I",
+        "Valvula de laton cromado premium",
+        "Ideal para centros de computo"
+      ],
+      "excerpt": "Extintor de agente limpio de alta capacidad para grandes centros de computo y data centers.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-6-8kg",
+        "extintor-agente-limpio-11kg",
+        "extintor-co2-9-08kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-novec-9kg",
+      "title": "Extintor Novec 1230 9 kg Premium",
+      "slug": "producto-extintor-novec-1230-9kg",
+      "category": "agentes-limpios",
+      "capacity": "9 kg",
+      "capacityValue": 9,
+      "capacityType": "grande",
+      "range": "7-10 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Alta capacidad Novec 1230",
+        "El agente mas ecologico disponible",
+        "Para corporativos sustentables",
+        "Certificacion LEED compatible"
+      ],
+      "excerpt": "Extintor Novec 1230 de alta capacidad para corporativos con certificacion LEED y compromiso ambiental.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-novec-4-5kg",
+        "extintor-agente-limpio-9kg",
+        "extintor-agente-limpio-11kg"
+      ]
+    },
+    {
+      "id": "extintor-agente-limpio-11kg",
+      "title": "Extintor Agente Limpio 11 kg",
+      "slug": "producto-extintor-agente-limpio-11kg",
+      "category": "agentes-limpios",
+      "capacity": "11 kg",
+      "capacityValue": 11,
+      "capacityType": "grande",
+      "range": "10-12 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad premium",
+        "Para instalaciones criticas",
+        "Certificacion internacional",
+        "Proteccion de nivel empresarial"
+      ],
+      "excerpt": "Extintor de agente limpio de maxima capacidad para instalaciones criticas de nivel empresarial.",
+      "featured": false,
+      "related": [
+        "extintor-agente-limpio-9kg",
+        "extintor-agente-limpio-6-8kg",
+        "extintor-co2-11-3kg"
+      ]
+    },
+    {
+      "id": "extintor-agua-6l",
+      "title": "Extintor Agua 6 Litros",
+      "slug": "producto-extintor-agua-6L",
+      "category": "agua-presion",
+      "capacity": "6 L",
+      "capacityValue": 6,
+      "capacityType": "pequeno",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para materiales solidos",
+        "Efecto de enfriamiento rapido",
+        "Facil recarga",
+        "Uso domestico y comercial"
+      ],
+      "excerpt": "Extintor de agua presurizada para fuegos clase A. Ideal para bodegas de materiales solidos.",
+      "featured": false,
+      "related": [
+        "extintor-agua-9l",
+        "extintor-agua-12l",
+        "extintor-pqs-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-agua-pulverizada-6l",
+      "title": "Extintor Agua Pulverizada 6 Litros",
+      "slug": "producto-extintor-agua-pulverizada-6l",
+      "category": "agua-presion",
+      "capacity": "6 L",
+      "capacityValue": 6,
+      "capacityType": "pequeno",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Descarga en neblina fina",
+        "Mayor eficiencia de enfriamiento",
+        "Ideal para textiles y papel",
+        "Minimo dano por agua"
+      ],
+      "excerpt": "Extintor de agua pulverizada 6 litros para industria textil, papeleras y almacenes de tela.",
+      "featured": false,
+      "related": [
+        "extintor-agua-6l",
+        "extintor-agua-pulverizada-9l",
+        "extintor-pqs-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-agua-9l",
+      "title": "Extintor Agua 9 Litros",
+      "slug": "producto-extintor-agua-9L",
+      "category": "agua-presion",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "El mas vendido en agua",
+        "Mayor alcance de descarga",
+        "Ideal para carpinterias",
+        "Penetra materiales porosos"
+      ],
+      "excerpt": "Extintor de agua mas vendido. Ideal para carpinterias, bodegas de papel y materiales solidos.",
+      "featured": true,
+      "related": [
+        "extintor-agua-6l",
+        "extintor-agua-12l",
+        "extintor-espuma-9l"
+      ]
+    },
+    {
+      "id": "extintor-agua-pulverizada-9l",
+      "title": "Extintor Agua Pulverizada 9 Litros",
+      "slug": "producto-extintor-agua-pulverizada-9l",
+      "category": "agua-presion",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "7-10 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "Neblina de alta penetracion",
+        "El mas vendido en pulverizada",
+        "Para escuelas y hospitales",
+        "Menor dano por humedad"
+      ],
+      "excerpt": "Extintor de agua pulverizada 9 litros para escuelas, hospitales, bibliotecas y archivos.",
+      "featured": true,
+      "related": [
+        "extintor-agua-pulverizada-6l",
+        "extintor-agua-9l",
+        "extintor-agua-12l"
+      ]
+    },
+    {
+      "id": "extintor-agua-destilada-9l",
+      "title": "Extintor Agua Destilada 9 Litros",
+      "slug": "producto-extintor-agua-destilada-9l",
+      "category": "agua-presion",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "6-9 metros",
+      "fireClasses": [
+        "A",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Especial",
+      "badgeType": "featured",
+      "features": [
+        "Agua desmineralizada conductiva baja",
+        "Seguro cerca de equipos electricos",
+        "Para areas hibridas A y C",
+        "Tecnologia de boquilla especial"
+      ],
+      "excerpt": "Extintor de agua destilada dielectrica para areas mixtas con materiales solidos y equipos electricos.",
+      "featured": false,
+      "related": [
+        "extintor-agua-9l",
+        "extintor-agua-pulverizada-9l",
+        "extintor-co2-4-54kg"
+      ]
+    },
+    {
+      "id": "extintor-agua-12l",
+      "title": "Extintor Agua 12 Litros",
+      "slug": "producto-extintor-agua-12L",
+      "category": "agua-presion",
+      "capacity": "12 L",
+      "capacityValue": 12,
+      "capacityType": "mediano",
+      "range": "7-10 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad de enfriamiento",
+        "Ideal para industrias textiles",
+        "Manguera de largo alcance",
+        "Recarga economica"
+      ],
+      "excerpt": "Extintor de agua de alta capacidad para industrias textiles y bodegas de materiales solidos.",
+      "featured": false,
+      "related": [
+        "extintor-agua-9l",
+        "extintor-agua-15l",
+        "extintor-espuma-11l"
+      ]
+    },
+    {
+      "id": "extintor-agua-15l",
+      "title": "Extintor Agua 15 Litros",
+      "slug": "producto-extintor-agua-15L",
+      "category": "agua-presion",
+      "capacity": "15 L",
+      "capacityValue": 15,
+      "capacityType": "grande",
+      "range": "10-12 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Gran capacidad industrial",
+        "Mayor tiempo de descarga",
+        "Ideal para almacenes grandes",
+        "Valvula de alta presion"
+      ],
+      "excerpt": "Extintor de agua industrial para grandes almacenes y bodegas de materiales combustibles.",
+      "featured": false,
+      "related": [
+        "extintor-agua-12l",
+        "extintor-agua-18l",
+        "extintor-espuma-15l"
+      ]
+    },
+    {
+      "id": "extintor-agua-18l",
+      "title": "Extintor Agua 18 Litros",
+      "slug": "producto-extintor-agua-18L",
+      "category": "agua-presion",
+      "capacity": "18 L",
+      "capacityValue": 18,
+      "capacityType": "grande",
+      "range": "12-15 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad profesional",
+        "Maximo enfriamiento",
+        "Para areas extensas",
+        "Certificacion industrial"
+      ],
+      "excerpt": "Extintor de agua profesional de gran capacidad para areas industriales extensas.",
+      "featured": false,
+      "related": [
+        "extintor-agua-15l",
+        "extintor-agua-20l",
+        "extintor-espuma-18l"
+      ]
+    },
+    {
+      "id": "extintor-agua-20l",
+      "title": "Extintor Agua 20 Litros",
+      "slug": "producto-extintor-agua-20L",
+      "category": "agua-presion",
+      "capacity": "20 L",
+      "capacityValue": 20,
+      "capacityType": "grande",
+      "range": "15-20 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad disponible",
+        "Con ruedas para movilidad",
+        "Ideal para fabricas textiles",
+        "Manguera de 3 metros"
+      ],
+      "excerpt": "Extintor de agua de maxima capacidad con ruedas. Ideal para fabricas textiles y papeleras.",
+      "featured": false,
+      "related": [
+        "extintor-agua-18l",
+        "extintor-agua-15l",
+        "extintor-espuma-20l"
+      ]
+    },
+    {
+      "id": "extintor-agua-25l-rodante",
+      "title": "Extintor Agua 25 Litros Rodante",
+      "slug": "producto-extintor-agua-25l-rodante",
+      "category": "agua-presion",
+      "capacity": "25 L",
+      "capacityValue": 25,
+      "capacityType": "rodante",
+      "range": "15-20 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Sistema rodante industrial",
+        "Para bodegas de carton y papel",
+        "Manguera de 4 metros",
+        "Valvula de alta presion"
+      ],
+      "excerpt": "Extintor de agua rodante 25 litros para bodegas de carton, papel, industrias textiles y empaques.",
+      "featured": false,
+      "related": [
+        "extintor-agua-20l",
+        "extintor-agua-50l-rodante",
+        "extintor-espuma-25l-rodante"
+      ]
+    },
+    {
+      "id": "extintor-agua-50l-rodante",
+      "title": "Extintor Agua 50 Litros Rodante Industrial",
+      "slug": "producto-extintor-agua-50l-rodante",
+      "category": "agua-presion",
+      "capacity": "50 L",
+      "capacityValue": 50,
+      "capacityType": "rodante",
+      "range": "20-25 metros",
+      "fireClasses": [
+        "A"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Industrial",
+      "badgeType": "featured",
+      "features": [
+        "Maxima capacidad agua rodante",
+        "Para fabricas de papel y carton",
+        "Sistema de presion permanente",
+        "Manguera de 5 metros premium"
+      ],
+      "excerpt": "Extintor de agua industrial 50 litros para fabricas de papel, carton, textiles y maderas.",
+      "featured": false,
+      "related": [
+        "extintor-agua-25l-rodante",
+        "extintor-agua-20l",
+        "extintor-pqs-50kg-rodante"
+      ]
+    },
+    {
+      "id": "extintor-co2-2-27kg",
+      "title": "Extintor CO2 2.27 kg (5 lbs)",
+      "slug": "producto-extintor-co2-2-27kg",
+      "category": "co2",
+      "capacity": "2.27 kg",
+      "capacityValue": 2.27,
+      "capacityType": "pequeno",
+      "range": "1-2 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para racks de servidores",
+        "No conduce electricidad",
+        "Cero residuos post-descarga",
+        "Manometro de alta presion"
+      ],
+      "excerpt": "Extintor de CO2 para equipos electronicos y servidores. Sin residuos, ideal para data centers.",
+      "featured": false,
+      "related": [
+        "extintor-co2-4-54kg",
+        "extintor-agente-limpio-2-7kg",
+        "extintor-pqs-2-5kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-3-2kg",
+      "title": "Extintor CO2 3.2 kg (7 lbs)",
+      "slug": "producto-extintor-co2-3-2kg",
+      "category": "co2",
+      "capacity": "3.2 kg",
+      "capacityValue": 3.2,
+      "capacityType": "pequeno",
+      "range": "1.5-2.5 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Compacto para oficinas tecnologicas",
+        "Ideal para escritorios con equipos",
+        "No dana computadoras ni servidores",
+        "Facil de operar y transportar"
+      ],
+      "excerpt": "Extintor CO2 compacto de 7 lbs para oficinas con equipos de computo, call centers y areas de TI.",
+      "featured": false,
+      "related": [
+        "extintor-co2-2-27kg",
+        "extintor-co2-4-54kg",
+        "extintor-agente-limpio-2-7kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-4-54kg",
+      "title": "Extintor CO2 4.54 kg (10 lbs)",
+      "slug": "producto-extintor-co2-4-54kg",
+      "category": "co2",
+      "capacity": "4.54 kg",
+      "capacityValue": 4.54,
+      "capacityType": "mediano",
+      "range": "2-3 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "Perfecto para cuartos electricos",
+        "Aprobado para laboratorios",
+        "Cilindro de acero de alta resistencia",
+        "Incluye corneta de descarga"
+      ],
+      "excerpt": "El extintor CO2 mas vendido para cuartos electricos y laboratorios. Sin residuos.",
+      "featured": true,
+      "related": [
+        "extintor-co2-2-27kg",
+        "extintor-co2-6-81kg",
+        "extintor-agente-limpio-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-6-81kg",
+      "title": "Extintor CO2 6.81 kg (15 lbs)",
+      "slug": "producto-extintor-co2-6-81kg",
+      "category": "co2",
+      "capacity": "6.81 kg",
+      "capacityValue": 6.81,
+      "capacityType": "mediano",
+      "range": "3-4 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para salas de computo",
+        "Mayor tiempo de descarga",
+        "No dana equipos sensibles",
+        "Corneta difusora especial"
+      ],
+      "excerpt": "Extintor CO2 de alta capacidad para salas de computo y equipos electronicos sensibles.",
+      "featured": false,
+      "related": [
+        "extintor-co2-4-54kg",
+        "extintor-co2-9-08kg",
+        "extintor-agente-limpio-6-8kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-9-08kg",
+      "title": "Extintor CO2 9.08 kg (20 lbs)",
+      "slug": "producto-extintor-co2-9-08kg",
+      "category": "co2",
+      "capacity": "9.08 kg",
+      "capacityValue": 9.08,
+      "capacityType": "grande",
+      "range": "4-5 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad para industrias",
+        "Proteccion para data centers grandes",
+        "Valvula de alta presion",
+        "Manguera con corneta difusora"
+      ],
+      "excerpt": "Extintor CO2 industrial de alta capacidad. Ideal para data centers y areas de alto riesgo electrico.",
+      "featured": false,
+      "related": [
+        "extintor-co2-6-81kg",
+        "extintor-co2-11-3kg",
+        "extintor-agente-limpio-9kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-11-3kg",
+      "title": "Extintor CO2 11.3 kg (25 lbs)",
+      "slug": "producto-extintor-co2-11-3kg",
+      "category": "co2",
+      "capacity": "11.3 kg",
+      "capacityValue": 11.3,
+      "capacityType": "grande",
+      "range": "5-6 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad profesional",
+        "Para areas criticas",
+        "Cilindro de acero reforzado",
+        "Certificacion industrial"
+      ],
+      "excerpt": "Extintor CO2 profesional de gran capacidad para areas criticas y subestaciones electricas.",
+      "featured": false,
+      "related": [
+        "extintor-co2-9-08kg",
+        "extintor-co2-13-62kg",
+        "extintor-pqs-9kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-13-62kg",
+      "title": "Extintor CO2 13.62 kg (30 lbs)",
+      "slug": "producto-extintor-co2-13-62kg",
+      "category": "co2",
+      "capacity": "13.62 kg",
+      "capacityValue": 13.62,
+      "capacityType": "grande",
+      "range": "6-7 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad CO2",
+        "Con ruedas para movilidad",
+        "Ideal para industrias",
+        "Proteccion de subestaciones"
+      ],
+      "excerpt": "El extintor CO2 de mayor capacidad. Con ruedas, ideal para industrias y subestaciones electricas.",
+      "featured": false,
+      "related": [
+        "extintor-co2-11-3kg",
+        "extintor-co2-9-08kg",
+        "extintor-pqs-13kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-22-7kg-rodante",
+      "title": "Extintor CO2 22.7 kg (50 lbs) Rodante",
+      "slug": "producto-extintor-co2-22-7kg-rodante",
+      "category": "co2",
+      "capacity": "22.7 kg",
+      "capacityValue": 22.7,
+      "capacityType": "rodante",
+      "range": "6-8 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Alta capacidad para subestaciones",
+        "Sistema rodante de precision",
+        "Corneta difusora de alto flujo",
+        "Proteccion para cuartos electricos grandes"
+      ],
+      "excerpt": "Extintor CO2 rodante de 50 lbs para subestaciones electricas, cuartos de transformadores y data centers.",
+      "featured": true,
+      "related": [
+        "extintor-co2-45-4kg-rodante",
+        "extintor-co2-13-62kg",
+        "extintor-co2-9-08kg"
+      ]
+    },
+    {
+      "id": "extintor-co2-45-4kg-rodante",
+      "title": "Extintor CO2 45.4 kg (100 lbs) Rodante",
+      "slug": "producto-extintor-co2-45-4kg-rodante",
+      "category": "co2",
+      "capacity": "45.4 kg",
+      "capacityValue": 45.4,
+      "capacityType": "rodante",
+      "range": "8-10 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad CO2 disponible",
+        "Para plantas de generacion electrica",
+        "Sistema de doble cilindro",
+        "Manguera de 4 metros con corneta"
+      ],
+      "excerpt": "Extintor CO2 de maxima capacidad 100 lbs para plantas de generacion electrica y subestaciones de alta tension.",
+      "featured": false,
+      "related": [
+        "extintor-co2-22-7kg-rodante",
+        "extintor-co2-13-62kg",
+        "extintor-agente-limpio-11kg"
+      ]
+    },
+    {
+      "id": "extintor-espuma-3l",
+      "title": "Extintor Espuma AFFF 3 Litros Compacto",
+      "slug": "producto-extintor-espuma-afff-3l",
+      "category": "espuma-afff",
+      "capacity": "3 L",
+      "capacityValue": 3,
+      "capacityType": "pequeno",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Compacto para talleres pequenos",
+        "Efectivo en gasolina y aceites",
+        "Biodegradable y ecologico",
+        "Ideal para uso vehicular"
+      ],
+      "excerpt": "Extintor de espuma AFFF 3 litros para talleres mecanicos pequenos, garajes y uso vehicular.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-6l",
+        "extintor-pqs-4-5kg",
+        "extintor-espuma-9l"
+      ]
+    },
+    {
+      "id": "extintor-espuma-6l",
+      "title": "Extintor Espuma AFFF 6 Litros",
+      "slug": "producto-extintor-espuma-afff-6L",
+      "category": "espuma-afff",
+      "capacity": "6 L",
+      "capacityValue": 6,
+      "capacityType": "pequeno",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "Perfecto para talleres mecanicos",
+        "Efectivo en gasolina y diesel",
+        "Biodegradable y no toxico",
+        "Rapida supresion de llamas"
+      ],
+      "excerpt": "Extintor de espuma AFFF para talleres mecanicos y areas con liquidos inflamables.",
+      "featured": true,
+      "related": [
+        "extintor-espuma-9l",
+        "extintor-espuma-11l",
+        "extintor-pqs-6kg"
+      ]
+    },
+    {
+      "id": "extintor-espuma-9l",
+      "title": "Extintor Espuma AFFF 9 Litros",
+      "slug": "producto-extintor-espuma-afff-9L",
+      "category": "espuma-afff",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "7-10 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para areas de almacenamiento",
+        "Previene re-ignicion efectivamente",
+        "Manguera de aplicacion flexible",
+        "Resistente a congelamiento"
+      ],
+      "excerpt": "Extintor de espuma de mediana capacidad para areas de almacenamiento de combustibles.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-6l",
+        "extintor-espuma-11l",
+        "extintor-espuma-15l"
+      ]
+    },
+    {
+      "id": "extintor-espuma-ar-afff-9l",
+      "title": "Extintor Espuma AR-AFFF 9 Litros",
+      "slug": "producto-extintor-espuma-ar-afff-9l",
+      "category": "espuma-afff",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "6-9 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Especial",
+      "badgeType": "featured",
+      "features": [
+        "Resistente a alcoholes y solventes",
+        "Para laboratorios quimicos",
+        "Formador de pelicula resistente",
+        "Certificacion especializada"
+      ],
+      "excerpt": "Extintor AR-AFFF resistente a alcoholes para laboratorios quimicos, farmaceuticas e industria de solventes.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-9l",
+        "extintor-espuma-ar-afff-20l",
+        "extintor-pqs-9kg"
+      ]
+    },
+    {
+      "id": "extintor-espuma-11l",
+      "title": "Extintor Espuma AFFF 11 Litros",
+      "slug": "producto-extintor-espuma-afff-11L",
+      "category": "espuma-afff",
+      "capacity": "11 L",
+      "capacityValue": 11,
+      "capacityType": "mediano",
+      "range": "10-12 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Gran capacidad para industrias",
+        "Certificado para hidrocarburos",
+        "Valvula de descarga regulable",
+        "Base reforzada antivuelco"
+      ],
+      "excerpt": "Extintor de espuma industrial certificado para hidrocarburos y derivados del petroleo.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-9l",
+        "extintor-espuma-15l",
+        "extintor-espuma-18l"
+      ]
+    },
+    {
+      "id": "extintor-espuma-15l",
+      "title": "Extintor Espuma AFFF 15 Litros",
+      "slug": "producto-extintor-espuma-afff-15L",
+      "category": "espuma-afff",
+      "capacity": "15 L",
+      "capacityValue": 15,
+      "capacityType": "grande",
+      "range": "12-15 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad para gasolineras",
+        "Pelicula formadora de pelicula",
+        "Efecto sellador duradero",
+        "Ideal para hangares"
+      ],
+      "excerpt": "Extintor de espuma de alta capacidad para gasolineras, hangares y areas de combustibles.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-11l",
+        "extintor-espuma-18l",
+        "extintor-espuma-20l"
+      ]
+    },
+    {
+      "id": "extintor-espuma-18l",
+      "title": "Extintor Espuma AFFF 18 Litros",
+      "slug": "producto-extintor-espuma-afff-18L",
+      "category": "espuma-afff",
+      "capacity": "18 L",
+      "capacityValue": 18,
+      "capacityType": "grande",
+      "range": "15-18 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad profesional",
+        "Para areas de alto riesgo",
+        "Manguera reforzada de 2m",
+        "Certificacion industrial"
+      ],
+      "excerpt": "Extintor de espuma profesional para areas de alto riesgo con liquidos inflamables.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-15l",
+        "extintor-espuma-20l",
+        "extintor-espuma-11l"
+      ]
+    },
+    {
+      "id": "extintor-espuma-20l",
+      "title": "Extintor Espuma AFFF 20 Litros",
+      "slug": "producto-extintor-espuma-afff-20L",
+      "category": "espuma-afff",
+      "capacity": "20 L",
+      "capacityValue": 20,
+      "capacityType": "grande",
+      "range": "15-20 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Tipo carretilla con ruedas",
+        "Maxima proteccion para hangares",
+        "Manguera de 3 metros",
+        "Ideal para aeropuertos y puertos"
+      ],
+      "excerpt": "Extintor de espuma tipo carretilla para aeropuertos, puertos y areas de alto riesgo.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-18l",
+        "extintor-espuma-15l",
+        "extintor-pqs-13kg"
+      ]
+    },
+    {
+      "id": "extintor-espuma-ar-afff-20l",
+      "title": "Extintor Espuma AR-AFFF 20 Litros",
+      "slug": "producto-extintor-espuma-ar-afff-20l",
+      "category": "espuma-afff",
+      "capacity": "20 L",
+      "capacityValue": 20,
+      "capacityType": "grande",
+      "range": "12-15 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad alcohol-resistente",
+        "Para industria farmaceutica",
+        "Efectivo en solventes polares",
+        "Manguera de largo alcance"
+      ],
+      "excerpt": "Extintor AR-AFFF 20 litros para industria farmaceutica, plantas quimicas y areas de solventes polares.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-ar-afff-9l",
+        "extintor-espuma-20l",
+        "extintor-pqs-13kg"
+      ]
+    },
+    {
+      "id": "extintor-espuma-25l-rodante",
+      "title": "Extintor Espuma AFFF 25 Litros Rodante",
+      "slug": "producto-extintor-espuma-afff-25l-rodante",
+      "category": "espuma-afff",
+      "capacity": "25 L",
+      "capacityValue": 25,
+      "capacityType": "rodante",
+      "range": "15-20 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Industrial",
+      "badgeType": "featured",
+      "features": [
+        "Sistema rodante de alta capacidad",
+        "Ideal para estaciones de servicio",
+        "Pelicula acuosa de largo duracion",
+        "Manguera de 4 metros incluida"
+      ],
+      "excerpt": "Extintor de espuma rodante 25 litros para estaciones de servicio, gasolineras y depositos de combustible.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-50l-rodante",
+        "extintor-espuma-20l",
+        "extintor-pqs-35kg-rodante"
+      ]
+    },
+    {
+      "id": "extintor-espuma-50l-rodante",
+      "title": "Extintor Espuma AFFF 50 Litros Rodante",
+      "slug": "producto-extintor-espuma-afff-50l-rodante",
+      "category": "espuma-afff",
+      "capacity": "50 L",
+      "capacityValue": 50,
+      "capacityType": "rodante",
+      "range": "20-25 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad espuma disponible",
+        "Para hangares y aeropuertos",
+        "Sistema de presion reforzado",
+        "Manguera de 5 metros de alcance"
+      ],
+      "excerpt": "Extintor de espuma industrial 50 litros para hangares de aviacion, aeropuertos y terminales de combustible.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-25l-rodante",
+        "extintor-pqs-50kg-rodante",
+        "extintor-espuma-100l-rodante"
+      ]
+    },
+    {
+      "id": "extintor-espuma-100l-rodante",
+      "title": "Extintor Espuma AFFF 100 Litros Industrial",
+      "slug": "producto-extintor-espuma-afff-100l-rodante",
+      "category": "espuma-afff",
+      "capacity": "100 L",
+      "capacityValue": 100,
+      "capacityType": "rodante",
+      "range": "25-30 metros",
+      "fireClasses": [
+        "A",
+        "B"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Capacidad industrial premium",
+        "Para refinarias y petroquimicas",
+        "Sistema de presion dual",
+        "Manguera de 6 metros premium"
+      ],
+      "excerpt": "Extintor de espuma profesional 100 litros para refinarias, plantas petroquimicas y terminales de almacenamiento.",
+      "featured": false,
+      "related": [
+        "extintor-espuma-50l-rodante",
+        "extintor-pqs-125kg-rodante",
+        "extintor-espuma-25l-rodante"
+      ]
+    },
+    {
+      "id": "extintor-pqs-1kg",
+      "title": "Extintor PQS 1 kg",
+      "slug": "producto-extintor-pqs-1kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "1 kg",
+      "capacityValue": 1,
+      "capacityType": "pequeno",
+      "range": "1-2 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/extintor-1kg-pqs.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para vehiculos y espacios reducidos",
+        "Certificado NOM-154-SCFI vigente",
+        "Incluye soporte vehicular",
+        "Garantia de fabrica 1 ano"
+      ],
+      "excerpt": "Extintor portatil de polvo quimico seco ideal para vehiculos y espacios reducidos. Certificado NOM-154-SCFI.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-2-5kg",
+        "extintor-pqs-4-5kg",
+        "extintor-co2-2-27kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-2-5kg",
+      "title": "Extintor PQS 2.5 kg",
+      "slug": "producto-extintor-pqs-2-5kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "2.5 kg",
+      "capacityValue": 2.5,
+      "capacityType": "pequeno",
+      "range": "2-3 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/Extintor-de-2kg-PQS.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Perfecto para oficinas pequenas",
+        "Facil de usar y transportar",
+        "Incluye base de pared",
+        "Mantenimiento cada 12 meses"
+      ],
+      "excerpt": "Extintor de polvo quimico seco para oficinas pequenas y comercios. Facil manejo y certificacion NOM.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-1kg",
+        "extintor-pqs-4-5kg",
+        "extintor-pqs-6kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-3kg-vehicular",
+      "title": "Extintor PQS 3 kg Vehicular",
+      "slug": "producto-extintor-pqs-3kg-vehicular",
+      "category": "polvo-quimico-seco",
+      "capacity": "3 kg",
+      "capacityValue": 3,
+      "capacityType": "vehicular",
+      "range": "2-3 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Vehicular",
+      "badgeType": "featured",
+      "features": [
+        "Incluye soporte vehicular de acero",
+        "Ideal para camionetas y SUV",
+        "Certificado para uso automotriz",
+        "Compacto y de facil acceso"
+      ],
+      "excerpt": "Extintor PQS 3 kg con soporte vehicular para automoviles, camionetas y vehiculos comerciales en CDMX.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-1kg",
+        "extintor-pqs-2-5kg",
+        "extintor-pqs-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-4-5kg",
+      "title": "Extintor PQS 4.5 kg",
+      "slug": "producto-extintor-pqs-4-5kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "4.5 kg",
+      "capacityValue": 4.5,
+      "capacityType": "mediano",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/Extintor-de-4kg-PQS.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "El mas vendido para comercios",
+        "Cumple requisitos de Proteccion Civil",
+        "Instalacion profesional incluida",
+        "Senalizacion fotoluminiscente incluida"
+      ],
+      "excerpt": "El extintor mas vendido para comercios en CDMX. Cumple con Proteccion Civil y NOM-154-SCFI.",
+      "featured": true,
+      "related": [
+        "extintor-pqs-6kg",
+        "extintor-pqs-2-5kg",
+        "extintor-co2-4-54kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-abc-4-5kg-multiprop",
+      "title": "Extintor PQS ABC 4.5 kg Multiproposito",
+      "slug": "producto-extintor-pqs-abc-4-5kg-multiproposito",
+      "category": "polvo-quimico-seco",
+      "capacity": "4.5 kg",
+      "capacityValue": 4.5,
+      "capacityType": "mediano",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Universal",
+      "badgeType": "featured",
+      "features": [
+        "Cobertura total ABC garantizada",
+        "Fosfato monoamonico 90%",
+        "El mas versatil del mercado",
+        "Cumple todas las normativas"
+      ],
+      "excerpt": "Extintor PQS ABC multiproposito para todo tipo de fuegos clase A, B y C. El mas versatil para comercios.",
+      "featured": true,
+      "related": [
+        "extintor-pqs-4-5kg",
+        "extintor-pqs-6kg",
+        "extintor-pqs-abc-6kg-multiprop"
+      ]
+    },
+    {
+      "id": "extintor-pqs-bc-4-5kg",
+      "title": "Extintor PQS BC 4.5 kg Especializado",
+      "slug": "producto-extintor-pqs-bc-4-5kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "4.5 kg",
+      "capacityValue": 4.5,
+      "capacityType": "mediano",
+      "range": "3-5 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "BC Especial",
+      "badgeType": "featured",
+      "features": [
+        "Bicarbonato de sodio especializado",
+        "Mayor eficiencia en liquidos",
+        "Para gasolineras y talleres",
+        "Agente no corrosivo"
+      ],
+      "excerpt": "Extintor PQS BC especializado en fuegos de liquidos inflamables y equipos electricos energizados.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-4-5kg",
+        "extintor-espuma-6l",
+        "extintor-co2-4-54kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-6kg",
+      "title": "Extintor PQS 6 kg",
+      "slug": "producto-extintor-pqs-6kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "6 kg",
+      "capacityValue": 6,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/Extintores-certificados-6kg.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para naves industriales",
+        "Mayor capacidad de extincion",
+        "Valvula de bronce reforzada",
+        "Recarga disponible en 24 horas"
+      ],
+      "excerpt": "Extintor de alta capacidad para naves industriales y almacenes. Certificacion NOM-154-SCFI vigente.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-4-5kg",
+        "extintor-pqs-9kg",
+        "extintor-pqs-13kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-abc-6kg-multiprop",
+      "title": "Extintor PQS ABC 6 kg Multiproposito Plus",
+      "slug": "producto-extintor-pqs-abc-6kg-multiproposito",
+      "category": "polvo-quimico-seco",
+      "capacity": "6 kg",
+      "capacityValue": 6,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Plus",
+      "badgeType": "featured",
+      "features": [
+        "Mayor capacidad multiproposito",
+        "Agente ABC de alta pureza",
+        "Para locales comerciales grandes",
+        "Instalacion y senalizacion incluidas"
+      ],
+      "excerpt": "Extintor PQS ABC Plus de 6 kg para locales comerciales, tiendas departamentales y plazas comerciales.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-abc-4-5kg-multiprop",
+        "extintor-pqs-6kg",
+        "extintor-pqs-9kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-9kg",
+      "title": "Extintor PQS 9 kg",
+      "slug": "producto-extintor-pqs-9kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "9 kg",
+      "capacityValue": 9,
+      "capacityType": "grande",
+      "range": "6-8 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/extintor-9kg-pqs.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad para industrias",
+        "Mayor tiempo de descarga",
+        "Manguera reforzada incluida",
+        "Ideal para bodegas grandes"
+      ],
+      "excerpt": "Extintor industrial de 9 kg para areas de alto riesgo. Certificacion NOM-154-SCFI.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-6kg",
+        "extintor-pqs-13kg",
+        "extintor-co2-9-08kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-bc-9kg",
+      "title": "Extintor PQS BC 9 kg Industrial",
+      "slug": "producto-extintor-pqs-bc-9kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "9 kg",
+      "capacityValue": 9,
+      "capacityType": "grande",
+      "range": "6-8 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Alta capacidad BC industrial",
+        "Para cuartos de maquinas",
+        "Efectivo en transformadores",
+        "Bicarbonato de potasio Purple K"
+      ],
+      "excerpt": "Extintor PQS BC 9 kg Purple K para cuartos de maquinas, transformadores y subestaciones.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-bc-4-5kg",
+        "extintor-pqs-9kg",
+        "extintor-co2-9-08kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-12kg",
+      "title": "Extintor PQS 12 kg Industrial",
+      "slug": "producto-extintor-pqs-12kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "12 kg",
+      "capacityValue": 12,
+      "capacityType": "grande",
+      "range": "7-9 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad ideal para fabricas",
+        "Valvula de bronce de alta duracion",
+        "Manguera con pistola de descarga",
+        "Cumple NOM-002-STPS"
+      ],
+      "excerpt": "Extintor PQS 12 kg para fabricas, talleres industriales y areas de produccion. Certificado NOM-154-SCFI.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-9kg",
+        "extintor-pqs-13kg",
+        "extintor-pqs-6kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-13kg",
+      "title": "Extintor PQS 13 kg",
+      "slug": "producto-extintor-pqs-13kg",
+      "category": "polvo-quimico-seco",
+      "capacity": "13 kg",
+      "capacityValue": 13,
+      "capacityType": "grande",
+      "range": "8-10 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "productos/polvo-quimico-seco/Extintor-para-bodegas-13kg.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad para areas grandes",
+        "Con ruedas para facil movilidad",
+        "Ideal para bodegas y almacenes",
+        "Certificacion industrial"
+      ],
+      "excerpt": "Extintor de maxima capacidad con ruedas. Ideal para bodegas, almacenes y areas industriales.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-9kg",
+        "extintor-pqs-6kg",
+        "extintor-co2-13-62kg"
+      ]
+    },
+    {
+      "id": "extintor-pqs-20kg-rodante",
+      "title": "Extintor PQS 20 kg Rodante",
+      "slug": "producto-extintor-pqs-20kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "20 kg",
+      "capacityValue": 20,
+      "capacityType": "rodante",
+      "range": "8-12 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Industrial",
+      "badgeType": "featured",
+      "features": [
+        "Sistema rodante de alta movilidad",
+        "Manguera de 3 metros reforzada",
+        "Valvula de descarga rapida",
+        "Certificacion NOM-154-SCFI industrial"
+      ],
+      "excerpt": "Extintor rodante PQS de 20 kg para naves industriales, bodegas y almacenes de alto riesgo en CDMX.",
+      "featured": true,
+      "related": [
+        "extintor-pqs-35kg-rodante",
+        "extintor-pqs-13kg",
+        "extintor-pqs-50kg-rodante"
+      ]
+    },
+    {
+      "id": "extintor-pqs-35kg-rodante",
+      "title": "Extintor PQS 35 kg Rodante Industrial",
+      "slug": "producto-extintor-pqs-35kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "35 kg",
+      "capacityValue": 35,
+      "capacityType": "rodante",
+      "range": "10-15 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Capacidad para areas extensas",
+        "Chasis reforzado con ruedas neumaticas",
+        "Manguera de 4 metros de alcance",
+        "Ideal para plantas de manufactura"
+      ],
+      "excerpt": "Extintor industrial PQS 35 kg con ruedas para plantas de manufactura, almacenes y zonas de alto riesgo.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-20kg-rodante",
+        "extintor-pqs-50kg-rodante",
+        "pqs-68kg-rodante"
+      ]
+    },
+    {
+      "id": "extintor-pqs-50kg-rodante",
+      "title": "Extintor PQS 50 kg Rodante Premium",
+      "slug": "producto-extintor-pqs-50kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "50 kg",
+      "capacityValue": 50,
+      "capacityType": "rodante",
+      "range": "12-18 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Alta capacidad para industrias pesadas",
+        "Sistema de ruedas todo terreno",
+        "Manguera de 5 metros con pistola",
+        "Proteccion para areas de alto riesgo"
+      ],
+      "excerpt": "Extintor rodante premium PQS 50 kg para industrias pesadas, petroquimicas y zonas de riesgo extremo.",
+      "featured": false,
+      "related": [
+        "pqs-68kg-rodante",
+        "extintor-pqs-35kg-rodante",
+        "extintor-pqs-125kg-rodante"
+      ]
+    },
+    {
+      "id": "pqs-68kg-rodante",
+      "title": "Extintor PQS 68 kg Rodante Premium",
+      "slug": "producto-extintor-pqs-68kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "68 kg",
+      "capacityType": "industrial",
+      "capacityValue": 68,
+      "range": "10-15 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "features": [
+        "Máxima capacidad disponible",
+        "Sistema de ruedas reforzado",
+        "Manguera de alta presión 6m",
+        "Certificación completa NOM"
+      ],
+      "badge": "Premium",
+      "badgeType": "premium",
+      "featured": true,
+      "image": "productos/polvo-quimico-seco/producto-extintor-pqs-68kg-rodante-principal-1765929155728.jpg",
+      "images": [
+        "producto-extintor-pqs-68kg-rodante-principal-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-lateral-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-detalle-1765929155728.jpg",
+        "producto-extintor-pqs-68kg-rodante-uso-1765929155728.jpg"
+      ],
+      "excerpt": "Protección industrial con el extintor PQS 68 kg rodante premium.",
+      "related": [],
+      "dateAdded": "2025-12-16"
+    },
+    {
+      "id": "extintor-pqs-125kg-rodante",
+      "title": "Extintor PQS 125 kg Rodante Industrial",
+      "slug": "producto-extintor-pqs-125kg-rodante",
+      "category": "polvo-quimico-seco",
+      "capacity": "125 kg",
+      "capacityValue": 125,
+      "capacityType": "rodante",
+      "range": "15-25 metros",
+      "fireClasses": [
+        "A",
+        "B",
+        "C"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad industrial disponible",
+        "Sistema de presion permanente",
+        "Manguera de 6 metros de alcance",
+        "Para refinarias y petroquimicas"
+      ],
+      "excerpt": "Extintor industrial de maxima capacidad PQS 125 kg para refinarias, petroquimicas y plantas de alto riesgo.",
+      "featured": false,
+      "related": [
+        "extintor-pqs-50kg-rodante",
+        "pqs-68kg-rodante",
+        "extintor-espuma-50l-rodante"
+      ]
+    },
+    {
+      "id": "tipo-k-1-6gal",
+      "title": "Extintor Tipo K 1.6 Galones Premium",
+      "slug": "producto-extintor-tipo-k-1-6gal",
+      "category": "tipo-k",
+      "capacity": "1.6 gal",
+      "capacityType": "comercial",
+      "capacityValue": 1.6,
+      "range": "3-4 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "features": [
+        "Agente húmedo especializado",
+        "Obligatorio en restaurantes",
+        "Saponifica aceites",
+        "Certificación NOM"
+      ],
+      "badge": "Restaurantes",
+      "badgeType": "featured",
+      "featured": false,
+      "image": "productos/tipo-k/producto-extintor-tipo-k-1-6gal-principal-1765914219447.jpg",
+      "images": [
+        "producto-extintor-tipo-k-1-6gal-principal-1765914219447.jpg",
+        "producto-extintor-tipo-k-1-6gal-lateral-1765914219447.jpg",
+        "producto-extintor-tipo-k-1-6gal-detalle-1765914219447.jpg",
+        "producto-extintor-tipo-k-1-6gal-uso-1765914219447.jpg"
+      ],
+      "excerpt": "Protege tu cocina con el extintor Tipo K 1.6 galones, ideal para aceites.",
+      "related": [],
+      "dateAdded": "2025-12-16"
+    },
+    {
+      "id": "extintor-tipo-k-2-5l",
+      "title": "Extintor Tipo K 2.5 Litros",
+      "slug": "producto-extintor-tipo-k-2-5L",
+      "category": "tipo-k",
+      "capacity": "2.5 L",
+      "capacityValue": 2.5,
+      "capacityType": "pequeno",
+      "range": "2-3 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Ideal para cocinas pequenas",
+        "Saponifica grasas al contacto",
+        "Seguro para aceites calientes",
+        "Obligatorio por Proteccion Civil"
+      ],
+      "excerpt": "Extintor Tipo K para cocinas pequenas. Obligatorio por Proteccion Civil en restaurantes.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-4l",
+        "extintor-tipo-k-6l",
+        "extintor-pqs-2-5kg"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-4l",
+      "title": "Extintor Tipo K 4 Litros",
+      "slug": "producto-extintor-tipo-k-4L",
+      "category": "tipo-k",
+      "capacity": "4 L",
+      "capacityValue": 4,
+      "capacityType": "pequeno",
+      "range": "3-4 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Para fondas y taquerias",
+        "Enfria aceites rapidamente",
+        "No produce vaporizacion",
+        "Instalacion cerca de estufa"
+      ],
+      "excerpt": "Extintor Tipo K para fondas, taquerias y cocinas comerciales medianas.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-2-5l",
+        "extintor-tipo-k-6l",
+        "extintor-pqs-4-5kg"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-6l",
+      "title": "Extintor Tipo K 6 Litros",
+      "slug": "producto-extintor-tipo-k-6L",
+      "category": "tipo-k",
+      "capacity": "6 L",
+      "capacityValue": 6,
+      "capacityType": "mediano",
+      "range": "4-6 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Mas vendido",
+      "badgeType": "featured",
+      "features": [
+        "El mas vendido para restaurantes",
+        "Cumple NOM y UL 300",
+        "Efectivo en freidoras industriales",
+        "Evita re-ignicion"
+      ],
+      "excerpt": "El extintor Tipo K mas vendido para restaurantes. Cumple NOM-154-SCFI y UL 300.",
+      "featured": true,
+      "related": [
+        "extintor-tipo-k-9l",
+        "extintor-tipo-k-4l",
+        "extintor-tipo-k-12l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-2gal",
+      "title": "Extintor Tipo K 2 Galones Comercial",
+      "slug": "producto-extintor-tipo-k-2gal",
+      "category": "tipo-k",
+      "capacity": "2 gal",
+      "capacityValue": 7.6,
+      "capacityType": "comercial",
+      "range": "4-5 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Restaurantes",
+      "badgeType": "featured",
+      "features": [
+        "Capacidad comercial mas popular",
+        "Agente acetato de potasio certificado",
+        "Obligatorio para restaurantes medianos",
+        "Cumple UL 300 y NOM-154"
+      ],
+      "excerpt": "Extintor Tipo K 2 galones para restaurantes, fondas y cocinas comerciales. Obligatorio por Proteccion Civil CDMX.",
+      "featured": true,
+      "related": [
+        "tipo-k-1-6gal",
+        "extintor-tipo-k-2-5gal",
+        "extintor-tipo-k-6l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-9l",
+      "title": "Extintor Tipo K 9 Litros",
+      "slug": "producto-extintor-tipo-k-9L",
+      "category": "tipo-k",
+      "capacity": "9 L",
+      "capacityValue": 9,
+      "capacityType": "mediano",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Cocinas industriales medianas",
+        "Mayor cobertura de freidoras",
+        "Agente acetato de potasio",
+        "Certificacion UL"
+      ],
+      "excerpt": "Extintor Tipo K de alta capacidad para cocinas industriales medianas y comedores.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-6l",
+        "extintor-tipo-k-12l",
+        "extintor-tipo-k-15l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-2-5gal",
+      "title": "Extintor Tipo K 2.5 Galones Industrial",
+      "slug": "producto-extintor-tipo-k-2-5gal",
+      "category": "tipo-k",
+      "capacity": "2.5 gal",
+      "capacityValue": 9.5,
+      "capacityType": "comercial",
+      "range": "4-6 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Mayor cobertura para cocinas grandes",
+        "Ideal para hoteles y comedores",
+        "Saponificacion rapida de aceites",
+        "Previene re-ignicion efectivamente"
+      ],
+      "excerpt": "Extintor Tipo K 2.5 galones para hoteles, comedores industriales y cocinas de gran capacidad.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-2gal",
+        "extintor-tipo-k-6l",
+        "extintor-tipo-k-9l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-3gal",
+      "title": "Extintor Tipo K 3 Galones Premium",
+      "slug": "producto-extintor-tipo-k-3gal",
+      "category": "tipo-k",
+      "capacity": "3 gal",
+      "capacityValue": 11.4,
+      "capacityType": "comercial",
+      "range": "5-7 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "Premium",
+      "badgeType": "premium",
+      "features": [
+        "Capacidad premium para cadenas",
+        "Multiples freidoras cubiertas",
+        "Certificacion UL y FM",
+        "Valvula de accion rapida"
+      ],
+      "excerpt": "Extintor Tipo K 3 galones premium para cadenas de restaurantes, franquicias y cocinas industriales.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-2-5gal",
+        "extintor-tipo-k-12l",
+        "extintor-tipo-k-15l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-12l",
+      "title": "Extintor Tipo K 12 Litros",
+      "slug": "producto-extintor-tipo-k-12L",
+      "category": "tipo-k",
+      "capacity": "12 L",
+      "capacityValue": 12,
+      "capacityType": "grande",
+      "range": "7-10 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Cocinas industriales grandes",
+        "Alta capacidad de saponificacion",
+        "Valvula de laton cromado",
+        "Instalacion cerca de freidoras"
+      ],
+      "excerpt": "Extintor Tipo K para cocinas industriales grandes y hoteles con multiples freidoras.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-9l",
+        "extintor-tipo-k-15l",
+        "extintor-tipo-k-6l"
+      ]
+    },
+    {
+      "id": "extintor-tipo-k-15l",
+      "title": "Extintor Tipo K 15 Litros",
+      "slug": "producto-extintor-tipo-k-15L",
+      "category": "tipo-k",
+      "capacity": "15 L",
+      "capacityValue": 15,
+      "capacityType": "grande",
+      "range": "10-12 metros",
+      "fireClasses": [
+        "K"
+      ],
+      "image": "img/img-index/extintor.webp",
+      "badge": "NOM-154-SCFI",
+      "badgeType": "nom",
+      "features": [
+        "Maxima capacidad para hoteles",
+        "Proteccion para multiples freidoras",
+        "Con ruedas para movilidad",
+        "Certificacion UL 300"
+      ],
+      "excerpt": "Extintor Tipo K de maxima capacidad para hoteles y cocinas industriales de gran escala.",
+      "featured": false,
+      "related": [
+        "extintor-tipo-k-12l",
+        "extintor-tipo-k-9l",
+        "extintor-tipo-k-6l"
+      ]
+    },
+    {
+      "id": "co2-9kg",
+      "title": "Extintor CO2 9 kg Premium",
+      "slug": "producto-extintor-co2-9kg",
+      "category": "co2",
+      "capacity": "9 kg",
+      "capacityType": "comercial",
+      "capacityValue": 9,
+      "range": "2-3 metros",
+      "fireClasses": [
+        "B",
+        "C"
+      ],
+      "features": [
+        "No deja residuos",
+        "Ideal para data centers",
+        "Cilindro de aluminio",
+        "Corneta de descarga incluida"
+      ],
+      "badge": "Premium",
+      "badgeType": "premium",
+      "featured": true,
+      "image": "productos/co2/producto-extintor-co2-9kg-principal-1765930828188.jpg",
+      "images": [
+        "producto-extintor-co2-9kg-principal-1765930828188.jpg",
+        "producto-extintor-co2-9kg-lateral-1765930828188.jpg",
+        "producto-extintor-co2-9kg-detalle-1765930828188.jpg",
+        "producto-extintor-co2-9kg-uso-1765930828188.jpg"
+      ],
+      "excerpt": "Protege tus espacios con el extintor CO2 9 kg premium. Ideal para fuegos B y C.",
+      "related": [],
+      "dateAdded": "2025-12-17"
+    }
+  ]
+}

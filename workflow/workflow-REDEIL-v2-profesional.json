@@ -1,0 +1,311 @@
+{
+  "name": "Blog REDEIL v4.0 - SEO Marketing de Contenidos",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 3,
+              "triggerAtHour": 10
+            }
+          ]
+        }
+      },
+      "id": "scheduler",
+      "name": "Trigger Programado",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-60, 400]
+    },
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Trigger Manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-60, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================\n// SELECTOR INTELIGENTE REDEIL v2.0\n// Sistema de rotacion sin repeticion\n// ============================================\n\nconst CONFIG = {\n  baseUrl: 'https://redeil.com',\n  github: {\n    owner: 'Origenlab',\n    repo: 'REDEIL',\n    branch: 'main'\n  },\n  empresa: {\n    nombre: 'REDEIL',\n    slogan: 'Produccion Audiovisual para Eventos',\n    telefono: '55 4937 5172',\n    whatsapp: '525549375172',\n    email: 'redeil.mx@gmail.com',\n    horario: 'Lun - Dom / 8:00 - 23:00'\n  },\n  categories: {\n    'guias': 'Guias',\n    'tendencias': 'Tendencias',\n    'tips': 'Tips',\n    'bodas': 'Bodas',\n    'xv-anos': 'XV Anos',\n    'corporativos': 'Corporativos',\n    'inspiracion': 'Inspiracion'\n  },\n  colonias: [\n    'Polanco', 'Condesa', 'Roma', 'Santa Fe', 'Coyoacan',\n    'Del Valle', 'Napoles', 'San Angel', 'Pedregal', 'Interlomas',\n    'Naucalpan', 'Tlalnepantla', 'Huixquilucan', 'Metepec'\n  ],\n  venues: [\n    'Hacienda de Cortes', 'Jardin Etnobotanico', 'Club de Banqueros',\n    'Hacienda Panoaya', 'La Casona de Tezozomoc', 'Club de Golf Chapultepec',\n    'Hacienda de los Morales', 'Casa de las Campanas'\n  ],\n  products: [\n    {\n      id: 'guirnaldas',\n      name: 'Guirnaldas de Luces',\n      category: 'guias',\n      categoryName: 'Guias',\n      focus: 'iluminacion romantica con guirnaldas para eventos',\n      audience: 'Parejas y organizadores de bodas, fiestas y eventos',\n      keywords: ['guirnaldas para eventos', 'focos edison renta', 'luces vintage bodas', 'iluminacion romantica CDMX'],\n      url: '/renta-de-iluminacion/guirnaldas.html',\n      relatedServices: [\n        {name: 'Cascadas LED', url: '/renta-de-iluminacion/cascadas-led.html'},\n        {name: 'Luz Neon', url: '/renta-de-iluminacion/luz-neon.html'},\n        {name: 'Bocinas para Bodas', url: '/renta-de-bocinas/bocinas-para-bodas.html'}\n      ]\n    },\n    {\n      id: 'luz-neon',\n      name: 'Luz Neon LED',\n      category: 'tendencias',\n      categoryName: 'Tendencias',\n      focus: 'iluminacion moderna con efectos neon para eventos',\n      audience: 'Organizadores de fiestas modernas y XV anos',\n      keywords: ['luz neon eventos', 'neon LED fiestas', 'iluminacion moderna CDMX', 'efectos neon renta'],\n      url: '/renta-de-iluminacion/luz-neon.html',\n      relatedServices: [\n        {name: 'Luz Negra UV', url: '/renta-de-iluminacion/luz-negra.html'},\n        {name: 'Cabezas Moviles', url: '/renta-de-iluminacion/cabezas-moviles.html'},\n        {name: 'Bocinas para Fiestas', url: '/renta-de-bocinas/bocinas-para-fiestas.html'}\n      ]\n    },\n    {\n      id: 'city-color',\n      name: 'City Color LED',\n      category: 'corporativos',\n      categoryName: 'Corporativos',\n      focus: 'iluminacion arquitectonica y uplighting profesional',\n      audience: 'Empresas y organizadores de eventos corporativos',\n      keywords: ['city color renta', 'uplighting eventos', 'iluminacion fachadas CDMX', 'wash LED profesional'],\n      url: '/renta-de-iluminacion/city-color.html',\n      relatedServices: [\n        {name: 'Luces Arquitectonicas', url: '/renta-de-iluminacion/luces-arquitectonicas.html'},\n        {name: 'Audio Conferencias', url: '/renta-de-bocinas/audio-para-conferencias.html'},\n        {name: 'Proyector de Gobos', url: '/renta-de-iluminacion/proyector-de-gobos.html'}\n      ]\n    },\n    {\n      id: 'cabezas-moviles',\n      name: 'Cabezas Moviles',\n      category: 'guias',\n      categoryName: 'Guias',\n      focus: 'iluminacion robotica profesional para eventos',\n      audience: 'DJs, productores de eventos y fiestas',\n      keywords: ['cabezas moviles renta', 'luces roboticas eventos', 'beam spot CDMX', 'iluminacion profesional'],\n      url: '/renta-de-iluminacion/cabezas-moviles.html',\n      relatedServices: [\n        {name: 'Iluminacion Laser', url: '/renta-de-iluminacion/iluminacion-laser.html'},\n        {name: 'Maquina de Humo', url: '/equipos-para-eventos/maquina-de-humo.html'},\n        {name: 'Bolas Disco', url: '/equipos-para-eventos/bolas-disco.html'}\n      ]\n    },\n    {\n      id: 'luz-negra',\n      name: 'Luz Negra UV',\n      category: 'tips',\n      categoryName: 'Tips',\n      focus: 'fiestas tematicas con luz ultravioleta',\n      audience: 'Organizadores de fiestas neon y tematicas',\n      keywords: ['luz negra renta', 'UV fiestas', 'neon party CDMX', 'fiesta fluorescente'],\n      url: '/renta-de-iluminacion/luz-negra.html',\n      relatedServices: [\n        {name: 'Luz Neon LED', url: '/renta-de-iluminacion/luz-neon.html'},\n        {name: 'Maquina de Humo', url: '/equipos-para-eventos/maquina-de-humo.html'},\n        {name: 'Bocinas para Fiestas', url: '/renta-de-bocinas/bocinas-para-fiestas.html'}\n      ]\n    },\n    {\n      id: 'bocinas-bodas',\n      name: 'Bocinas para Bodas',\n      category: 'bodas',\n      categoryName: 'Bodas',\n      focus: 'audio profesional para ceremonias y recepciones',\n      audience: 'Parejas que celebran bodas',\n      keywords: ['bocinas bodas renta', 'sonido boda CDMX', 'audio ceremonia', 'sonido recepcion'],\n      url: '/renta-de-bocinas/bocinas-para-bodas.html',\n      relatedServices: [\n        {name: 'Guirnaldas', url: '/renta-de-iluminacion/guirnaldas.html'},\n        {name: 'Humo Bajo', url: '/equipos-para-eventos/humo-bajo.html'},\n        {name: 'Proyector de Gobos', url: '/renta-de-iluminacion/proyector-de-gobos.html'}\n      ]\n    },\n    {\n      id: 'bocinas-xv',\n      name: 'Bocinas para XV Anos',\n      category: 'xv-anos',\n      categoryName: 'XV Anos',\n      focus: 'audio potente para fiestas de quinceanera',\n      audience: 'Familias celebrando XV anos',\n      keywords: ['bocinas XV anos', 'sonido quinceanera', 'audio fiesta CDMX', 'renta bocinas'],\n      url: '/renta-de-bocinas/bocinas-para-xv-anos.html',\n      relatedServices: [\n        {name: 'Cabezas Moviles', url: '/renta-de-iluminacion/cabezas-moviles.html'},\n        {name: 'Maquina de Confeti', url: '/equipos-para-eventos/maquina-de-confeti.html'},\n        {name: 'Luz Neon', url: '/renta-de-iluminacion/luz-neon.html'}\n      ]\n    },\n    {\n      id: 'humo-bajo',\n      name: 'Humo Bajo',\n      category: 'bodas',\n      categoryName: 'Bodas',\n      focus: 'efecto de nubes para primer baile de bodas',\n      audience: 'Parejas que quieren un primer baile magico',\n      keywords: ['humo bajo bodas', 'baile nubes CDMX', 'efecto pista', 'primer baile'],\n      url: '/equipos-para-eventos/humo-bajo.html',\n      relatedServices: [\n        {name: 'Guirnaldas', url: '/renta-de-iluminacion/guirnaldas.html'},\n        {name: 'Bocinas para Bodas', url: '/renta-de-bocinas/bocinas-para-bodas.html'},\n        {name: 'City Color', url: '/renta-de-iluminacion/city-color.html'}\n      ]\n    },\n    {\n      id: 'iluminacion-laser',\n      name: 'Iluminacion Laser',\n      category: 'tendencias',\n      categoryName: 'Tendencias',\n      focus: 'shows de laser espectaculares para eventos',\n      audience: 'Productores de eventos y fiestas',\n      keywords: ['laser eventos renta', 'show laser CDMX', 'efectos laser', 'iluminacion disco'],\n      url: '/renta-de-iluminacion/iluminacion-laser.html',\n      relatedServices: [\n        {name: 'Cabezas Moviles', url: '/renta-de-iluminacion/cabezas-moviles.html'},\n        {name: 'Maquina de Humo', url: '/equipos-para-eventos/maquina-de-humo.html'},\n        {name: 'Bocinas para Fiestas', url: '/renta-de-bocinas/bocinas-para-fiestas.html'}\n      ]\n    },\n    {\n      id: 'audio-conferencias',\n      name: 'Audio para Conferencias',\n      category: 'corporativos',\n      categoryName: 'Corporativos',\n      focus: 'sistemas de sonido profesional para eventos empresariales',\n      audience: 'Empresas en Santa Fe, Reforma, Polanco',\n      keywords: ['audio conferencias CDMX', 'sonido corporativo', 'microfonos eventos', 'sistema PA renta'],\n      url: '/renta-de-bocinas/audio-para-conferencias.html',\n      relatedServices: [\n        {name: 'City Color', url: '/renta-de-iluminacion/city-color.html'},\n        {name: 'Luces Arquitectonicas', url: '/renta-de-iluminacion/luces-arquitectonicas.html'},\n        {name: 'Proyector de Gobos', url: '/renta-de-iluminacion/proyector-de-gobos.html'}\n      ]\n    },\n    {\n      id: 'cascadas-led',\n      name: 'Cascadas LED',\n      category: 'bodas',\n      categoryName: 'Bodas',\n      focus: 'cortinas de luces LED para decoracion de bodas y eventos',\n      audience: 'Parejas y organizadores de bodas elegantes',\n      keywords: ['cascadas LED bodas', 'cortinas de luces CDMX', 'decoracion luminosa eventos', 'iluminacion cascada'],\n      url: '/renta-de-iluminacion/cascadas-led.html',\n      relatedServices: [\n        {name: 'Guirnaldas de Luces', url: '/renta-de-iluminacion/guirnaldas.html'},\n        {name: 'Humo Bajo', url: '/equipos-para-eventos/humo-bajo.html'},\n        {name: 'Bocinas para Bodas', url: '/renta-de-bocinas/bocinas-para-bodas.html'}\n      ]\n    },\n    {\n      id: 'maquina-humo',\n      name: 'Maquina de Humo',\n      category: 'tips',\n      categoryName: 'Tips',\n      focus: 'efectos de humo y niebla para ambientes dramaticos',\n      audience: 'Organizadores de fiestas y eventos tematicos',\n      keywords: ['maquina humo renta', 'efecto niebla eventos', 'humo fiestas CDMX', 'efectos especiales'],\n      url: '/equipos-para-eventos/maquina-de-humo.html',\n      relatedServices: [\n        {name: 'Iluminacion Laser', url: '/renta-de-iluminacion/iluminacion-laser.html'},\n        {name: 'Cabezas Moviles', url: '/renta-de-iluminacion/cabezas-moviles.html'},\n        {name: 'Luz Negra UV', url: '/renta-de-iluminacion/luz-negra.html'}\n      ]\n    },\n    {\n      id: 'proyector-gobos',\n      name: 'Proyector de Gobos',\n      category: 'bodas',\n      categoryName: 'Bodas',\n      focus: 'proyeccion de monogramas y logos personalizados',\n      audience: 'Parejas que quieren personalizacion unica',\n      keywords: ['proyector gobos bodas', 'monograma boda CDMX', 'logo personalizado evento', 'proyeccion nombres'],\n      url: '/renta-de-iluminacion/proyector-de-gobos.html',\n      relatedServices: [\n        {name: 'City Color', url: '/renta-de-iluminacion/city-color.html'},\n        {name: 'Guirnaldas de Luces', url: '/renta-de-iluminacion/guirnaldas.html'},\n        {name: 'Bocinas para Bodas', url: '/renta-de-bocinas/bocinas-para-bodas.html'}\n      ]\n    },\n    {\n      id: 'bocinas-fiestas',\n      name: 'Bocinas para Fiestas',\n      category: 'guias',\n      categoryName: 'Guias',\n      focus: 'audio de alta potencia para fiestas privadas',\n      audience: 'Anfitriones de fiestas y cumpleanos',\n      keywords: ['bocinas fiestas renta', 'sonido fiesta CDMX', 'audio potente eventos', 'renta equipo sonido'],\n      url: '/renta-de-bocinas/bocinas-para-fiestas.html',\n      relatedServices: [\n        {name: 'Luz Neon LED', url: '/renta-de-iluminacion/luz-neon.html'},\n        {name: 'Cabezas Moviles', url: '/renta-de-iluminacion/cabezas-moviles.html'},\n        {name: 'Maquina de Humo', url: '/equipos-para-eventos/maquina-de-humo.html'}\n      ]\n    },\n    {\n      id: 'luces-arquitectonicas',\n      name: 'Luces Arquitectonicas',\n      category: 'corporativos',\n      categoryName: 'Corporativos',\n      focus: 'iluminacion de fachadas y espacios arquitectonicos',\n      audience: 'Empresas y organizadores de eventos de gala',\n      keywords: ['iluminacion arquitectonica', 'wash LED fachadas', 'luces edificios CDMX', 'iluminacion profesional'],\n      url: '/renta-de-iluminacion/luces-arquitectonicas.html',\n      relatedServices: [\n        {name: 'City Color LED', url: '/renta-de-iluminacion/city-color.html'},\n        {name: 'Audio para Conferencias', url: '/renta-de-bocinas/audio-para-conferencias.html'},\n        {name: 'Proyector de Gobos', url: '/renta-de-iluminacion/proyector-de-gobos.html'}\n      ]\n    }\n  ],\n  articleTypes: [\n    { id: 'guia-completa', name: 'Guia Completa', tone: 'educativo y detallado' },\n    { id: 'tendencias', name: 'Tendencias', tone: 'vanguardista y actual' },\n    { id: 'consejos', name: 'Consejos Profesionales', tone: 'experto y practico' },\n    { id: 'inspiracion', name: 'Inspiracion', tone: 'aspiracional y visual' },\n    { id: 'comparativa', name: 'Comparativa', tone: 'analitico y objetivo' }\n  ],\n  images: {\n    'guias': [\n      '/renta-de-iluminacion/img-guirnaldas/focos-edison-guirnalda-jardin.avif',\n      '/renta-de-iluminacion/img-guirnaldas/guirnaldas-focos-antiguos-fiesta.avif',\n      '/renta-de-iluminacion/img-guirnaldas/serie-focos-edison-ambiente.avif',\n      '/img/img-index/cabezas-moviles.avif'\n    ],\n    'tendencias': [\n      '/img/img-index/luz-neon.avif',\n      '/img/img-index/iluminacion-laser.avif',\n      '/img/img-index/sky-tracker.avif'\n    ],\n    'tips': [\n      '/img/img-index/luz-negra.avif',\n      '/img/img-index/bocinas-para-fiestas.avif'\n    ],\n    'bodas': [\n      '/renta-de-iluminacion/img-guirnaldas/renta-guirnaldas-pergola-iluminada.avif',\n      '/renta-de-iluminacion/img-guirnaldas/serie-luces-vintage-romantico.avif',\n      '/img/img-index/bocinas-para-bodas.avif'\n    ],\n    'xv-anos': [\n      '/img/img-index/bocinas-para-xv-anos.avif',\n      '/img/img-index/cascadas-led.avif'\n    ],\n    'corporativos': [\n      '/img/img-index/city-color.avif',\n      '/img/img-index/conferencias.avif',\n      '/img/img-index/iluminacion-arquitectonica.avif'\n    ],\n    'inspiracion': [\n      '/renta-de-iluminacion/img-guirnaldas/focos-vintage-serie-decorativa-evento.avif',\n      '/img/img-index/proyector-de-gobos.avif'\n    ]\n  }\n};\n\n// Estado persistente para evitar repeticiones\nconst state = $getWorkflowStaticData('global');\nif (!state.usedProducts) state.usedProducts = [];\nif (!state.usedImages) state.usedImages = [];\nif (!state.usedTypes) state.usedTypes = [];\nif (!state.articleCount) state.articleCount = 0;\n\n// Seleccionar producto sin repetir\nlet availableProducts = CONFIG.products.filter(p => !state.usedProducts.includes(p.id));\nif (availableProducts.length === 0) {\n  state.usedProducts = [];\n  availableProducts = CONFIG.products;\n}\nconst product = availableProducts[Math.floor(Math.random() * availableProducts.length)];\nstate.usedProducts.push(product.id);\n\n// Seleccionar tipo de articulo sin repetir\nlet availableTypes = CONFIG.articleTypes.filter(t => !state.usedTypes.includes(t.id));\nif (availableTypes.length === 0) {\n  state.usedTypes = [];\n  availableTypes = CONFIG.articleTypes;\n}\nconst articleType = availableTypes[Math.floor(Math.random() * availableTypes.length)];\nstate.usedTypes.push(articleType.id);\n\n// Seleccionar imagen sin repetir\nlet categoryImages = CONFIG.images[product.category] || CONFIG.images['guias'];\nlet availableImages = categoryImages.filter(i => !state.usedImages.includes(i));\nif (availableImages.length === 0) {\n  state.usedImages = state.usedImages.filter(i => !categoryImages.includes(i));\n  availableImages = categoryImages;\n}\nconst heroImage = availableImages[Math.floor(Math.random() * availableImages.length)];\nstate.usedImages.push(heroImage);\n\n// Seleccionar colonias y venues aleatorios\nconst colonias = [...CONFIG.colonias].sort(() => Math.random() - 0.5).slice(0, 5);\nconst venues = [...CONFIG.venues].sort(() => Math.random() - 0.5).slice(0, 3);\n\n// Incrementar contador\nstate.articleCount++;\n\n// Generar ID unico\nconst articleId = Date.now();\n\nreturn [{\n  json: {\n    CONFIG,\n    product,\n    articleType,\n    heroImage,\n    colonias,\n    venues,\n    articleId,\n    articleNumber: state.articleCount\n  }\n}];"
+      },
+      "id": "selector",
+      "name": "Selector Inteligente",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [180, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================\n// CONSTRUCTOR PROMPT REDEIL v4.0\n// Prompt SEO Optimizado con Marketing de Contenidos\n// ============================================\n\nconst data = $input.first().json;\nconst p = data.product;\nconst t = data.articleType;\nconst colonias = data.colonias;\nconst venues = data.venues;\nconst rs = p.relatedServices;\n\n// Determinar intencion de busqueda basada en categoria\nconst searchIntents = {\n  'guias': 'informacional - el usuario busca aprender y entender',\n  'tendencias': 'informacional/inspiracional - el usuario busca ideas actuales',\n  'tips': 'informacional - el usuario busca consejos practicos',\n  'bodas': 'transaccional/informacional - el usuario planea contratar servicios',\n  'xv-anos': 'transaccional/informacional - el usuario planea contratar servicios',\n  'corporativos': 'transaccional - el usuario necesita soluciones profesionales',\n  'inspiracion': 'inspiracional - el usuario busca ideas visuales'\n};\n\nconst searchIntent = searchIntents[p.category] || 'informacional';\n\n// Sistema de variacion de titulos - ROTAR para evitar repeticion\nconst titlePatterns = [\n  { pattern: '[Keyword]: Todo lo que Necesitas Saber', style: 'directo' },\n  { pattern: '[Keyword] para Eventos: Consejos de Expertos', style: 'experto' },\n  { pattern: 'Como Elegir [Keyword] para tu Evento', style: 'how-to' },\n  { pattern: '[Keyword] en CDMX: Ideas y Tendencias', style: 'local' },\n  { pattern: 'Renta de [Keyword]: Lo que Debes Considerar', style: 'practico' },\n  { pattern: '[Keyword] para Bodas: Crea Momentos Magicos', style: 'emocional' },\n  { pattern: '[Keyword] Profesional: Eleva tu Evento', style: 'premium' },\n  { pattern: 'Secretos del [Keyword] para Eventos Inolvidables', style: 'revelador' },\n  { pattern: '[Keyword]: Opciones y Recomendaciones', style: 'comparativo' },\n  { pattern: 'Transforma tu Evento con [Keyword]', style: 'transformacional' }\n];\n\n// Seleccionar patron basado en tipo de articulo y producto\nconst patternIndex = (data.articleNumber || 1) % titlePatterns.length;\nconst selectedTitlePattern = titlePatterns[patternIndex];\n\nconst prompt = `Eres un EXPERTO EN MARKETING DE CONTENIDOS y ESPECIALISTA SEO con 15 anos de experiencia en el sector de renta de equipo audiovisual y de iluminacion para eventos en Mexico (CDMX).\n\nTu mision es crear un articulo que POSICIONE en Google, ATRAIGA trafico organico y CONVIERTA visitantes en clientes potenciales.\n\n═══════════════════════════════════════════════════════════\nCONTEXTO DE LA EMPRESA\n═══════════════════════════════════════════════════════════\n\n**REDEIL - Renta de Iluminacion y Sonido para Eventos CDMX**\n- Telefono: 55 4937 5172\n- WhatsApp: wa.me/525549375172\n- Email: redeil.mx@gmail.com\n- Cobertura: CDMX y Estado de Mexico (area metropolitana)\n- Experiencia: Mas de 500 eventos exitosos\n\n**Servicios principales:**\n- Renta de equipo de iluminacion (guirnaldas, cascadas LED, luz neon, cabezas moviles, laser)\n- Renta de audio profesional (bocinas para bodas, XV anos, fiestas, conferencias)\n- Efectos especiales (humo bajo, confeti, bolas disco, maquina de humo)\n- Equipos adicionales (podiums, pantallas inflables, proyectores de gobos)\n\n**Propuesta de valor diferenciadora:**\n- Equipo profesional de alta gama (no equipo de consumidor)\n- Instalacion y montaje tecnico incluido en el precio\n- Operador/tecnico durante todo el evento\n- Asesoria personalizada sin costo desde la planeacion\n- Garantia de funcionamiento y equipo de respaldo\n\n═══════════════════════════════════════════════════════════\nAUDIENCIA OBJETIVO (CONOCE A TU LECTOR)\n═══════════════════════════════════════════════════════════\n\n**Perfiles principales:**\n1. NOVIOS planeando su boda (25-40 anos) - buscan crear momentos magicos, priorizan fotos/videos\n2. COORDINADORES DE EVENTOS - profesionales que necesitan proveedores confiables\n3. FAMILIAS organizando XV anos - quieren impresionar invitados, valoran la experiencia completa\n4. EMPRESAS con eventos corporativos - buscan profesionalismo y puntualidad\n5. ANFITRIONES de fiestas privadas - quieren elevar su evento sin complicaciones\n\n**Audiencia especifica de este articulo:** ${p.audience}\n\n**Preguntas que tiene este lector:**\n- Como elegir el equipo correcto para mi tipo de evento?\n- Que debo considerar antes de contratar?\n- Como se hace la instalacion?\n- Que pasa si algo falla durante el evento?\n- El servicio cubre mi zona en CDMX?\n\n═══════════════════════════════════════════════════════════\nCONTEXTO DEL ARTICULO\n═══════════════════════════════════════════════════════════\n\n**Tema central:** ${p.name}\n**Categoria:** ${p.categoryName}\n**Enfoque editorial:** ${p.focus}\n**Tipo de contenido:** ${t.name} - ${t.tone}\n\n**Intencion de busqueda a satisfacer:** ${searchIntent}\n- Si es INFORMACIONAL: educar completamente al lector\n- Si es TRANSACCIONAL: resolver objeciones y facilitar decision de compra\n- Si es INSPIRACIONAL: mostrar posibilidades y despertar deseo\n\n**Keywords principales (DEBEN aparecer de forma natural):**\n${p.keywords.map((k, i) => (i + 1) + '. \"' + k + '\"').join('\\n')}\n\n**Keywords de cola larga a incluir:**\n- \"renta de ${p.name.toLowerCase()} en CDMX\"\n- \"${p.name.toLowerCase()} para eventos ${colonias[0]}\"\n- \"precio ${p.name.toLowerCase()} eventos\" (sin dar numeros)\n- \"mejor ${p.name.toLowerCase()} para bodas\"\n- \"como elegir ${p.name.toLowerCase()}\"\n\n**Zonas de CDMX a mencionar naturalmente:** ${colonias.join(', ')}\n**Venues de referencia (ejemplos reales):** ${venues.join(', ')}\n\n**Servicios relacionados para enlaces internos:**\n1. ${rs[0].name} - ${rs[0].url}\n2. ${rs[1].name} - ${rs[1].url}\n3. ${rs[2].name} - ${rs[2].url}\n\n═══════════════════════════════════════════════════════════\nESTRATEGIA SEO (SIGUE ESTAS REGLAS)\n═══════════════════════════════════════════════════════════\n\n### Titulo SEO (H1 y meta title)\n- Keyword principal al INICIO del titulo\n- Maximo 60 caracteres\n- IMPORTANTE: USA ESTE PATRON ESPECIFICO para este articulo: \"${selectedTitlePattern.pattern.replace('[Keyword]', p.name)}\"\n- Estilo del titulo: ${selectedTitlePattern.style}\n- PROHIBIDO usar siempre \"Guia Completa\" o \"Guia Perfecta\" - varia los titulos\n- Opciones de modificadores: Consejos, Ideas, Tendencias, Como elegir, Secretos, Todo sobre, Opciones, Recomendaciones\n- Ejemplos variados:\n  * \"${p.name}: Todo lo que Necesitas Saber\"\n  * \"Como Elegir ${p.name} para tu Evento\"\n  * \"${p.name} en CDMX: Ideas y Tendencias\"\n  * \"Secretos del ${p.name} para Eventos\"\n  * \"Renta de ${p.name}: Consejos de Expertos\"\n\n### Meta Description\n- 150-160 caracteres exactos\n- Incluir keyword principal\n- Incluir beneficio claro o propuesta de valor\n- Llamada a accion suave (Descubre, Aprende, Conoce)\n\n### Estructura de Headers (H2/H3)\n- Cada H2 debe contener variacion de la keyword principal\n- H2 formulados como preguntas cuando sea posible (mejor para featured snippets)\n- H3 para subsecciones detalladas\n\n### Contenido optimizado\n- Densidad de keyword: 1-1.5% (natural, no forzado)\n- Incluir minimo 20 keywords LSI relacionadas\n- Parrafos de 3-5 oraciones (facil de escanear)\n- Listas con vinetas para beneficios y pasos\n- Tablas comparativas si aplica\n\n### Responder estas preguntas en el contenido:\n- Que es ${p.name} y para que sirve?\n- Cuales son los beneficios vs no usarlo?\n- Como elegir el adecuado para mi evento?\n- Que tipos existen y para que sirve cada uno?\n- Que errores debo evitar?\n- Preguntas frecuentes reales de clientes\n\n═══════════════════════════════════════════════════════════\nREQUISITOS DE CONTENIDO\n═══════════════════════════════════════════════════════════\n\n### Longitud y calidad\n- Extension: 1800-2500 palabras utiles (no relleno)\n- 100% original, verificable, practico\n- Cada parrafo debe aportar VALOR REAL al lector\n- Incluir ejemplos especificos de eventos en CDMX\n\n### Tono y voz de marca\n- Profesional pero accesible (no corporativo frio)\n- Experto que ASESORA, no vendedor que presiona\n- Usar \"tu\" para conectar con el lector\n- Transmitir confianza y experiencia (mencionar 500+ eventos)\n\n### PROHIBICIONES ABSOLUTAS (NUNCA incluir)\n- Precios especificos o rangos de precio\n- Estadisticas inventadas o no verificables\n- Frases genericas de IA:\n  * \"en el mundo actual\" / \"hoy en dia\"\n  * \"es importante destacar\" / \"cabe mencionar\"\n  * \"sin duda alguna\" / \"definitivamente\"\n  * \"en este sentido\" / \"por lo tanto\"\n  * \"a lo largo de los anos\"\n  * \"de esta manera\" / \"de igual forma\"\n- Repetir frases o estructuras identicas\n- Emojis en ningun lugar\n- Mencionar competidores\n- CTA de venta al final (ya esta en template)\n\n═══════════════════════════════════════════════════════════\nESTRUCTURA HTML EXACTA (SEGUIR AL PIE DE LA LETRA)\n═══════════════════════════════════════════════════════════\n\n<div class=\"article-intro\">\n    <p>[Parrafo 1: HOOK emocional. Primera oracion con <strong>keyword principal</strong>. Conecta con el problema o deseo del lector. Pinta una imagen de lo que quieren lograr.]</p>\n    <p>[Parrafo 2: Contexto y relevancia para eventos en CDMX. Menciona una zona como ${colonias[0]} o ${colonias[1]}. Establece credibilidad.]</p>\n    <p>[Parrafo 3: Adelanto claro de lo que aprendera: beneficios, tipos, como elegir, consejos de expertos y errores a evitar. Genera expectativa.]</p>\n</div>\n\n<section id=\"que-es\">\n    <h2>Que es ${p.name} y Por Que Transforma tu Evento</h2>\n    <p>[Definicion clara y accesible. Que es, como funciona, por que importa. NO asumir conocimiento previo del lector.]</p>\n    <p>[Contexto de uso en eventos reales. Ejemplos de cuando y donde se utiliza en CDMX. Mencionar venues como ${venues[0]} o ${venues[1]}.]</p>\n    <p>[Diferenciador: Por que el equipo PROFESIONAL es diferente al de consumidor. Valor agregado de REDEIL.]</p>\n</section>\n\n<section id=\"beneficios\">\n    <h2>Beneficios de ${p.name} Profesional para tu Evento</h2>\n    <p>[Introduccion breve explicando que estos beneficios hacen la diferencia entre un evento comun y uno memorable.]</p>\n    <ul>\n        <li><strong>[Beneficio 1 - Impacto visual/auditivo]:</strong> [Explicacion de 2-3 lineas con ejemplo especifico de evento]</li>\n        <li><strong>[Beneficio 2 - Experiencia invitados]:</strong> [Como mejora la experiencia de los asistentes]</li>\n        <li><strong>[Beneficio 3 - Fotos/videos]:</strong> [Como mejora el material grafico del evento]</li>\n        <li><strong>[Beneficio 4 - Profesionalismo]:</strong> [Como eleva la percepcion del evento]</li>\n        <li><strong>[Beneficio 5 - Tranquilidad]:</strong> [Equipo confiable con soporte tecnico]</li>\n    </ul>\n</section>\n\n<div class=\"info-box\">\n    <h4>Dato Importante</h4>\n    <p>[Dato relevante y verificable del sector. Puede ser tip profesional que solo expertos conocen. Relacionado con ${p.name}. Agregar valor real.]</p>\n</div>\n\n<section id=\"como-elegir\">\n    <h2>Como Elegir el Mejor ${p.name} para tu Evento</h2>\n    <p>[Introduccion al proceso de seleccion. Mencionar que depende del tipo de evento, tamano del espacio y objetivos.]</p>\n    <ol>\n        <li><strong>Evalua el espacio y tipo de evento:</strong> [Que considerar segun interior/exterior, tamano, estilo]</li>\n        <li><strong>Define tus objetivos visuales/auditivos:</strong> [Que quieres lograr, que ambiente crear]</li>\n        <li><strong>Verifica la experiencia del proveedor:</strong> [Importancia de elegir profesionales, preguntas clave]</li>\n        <li><strong>Confirma que incluye instalacion y soporte:</strong> [Por que es crucial el servicio completo]</li>\n        <li><strong>Solicita una asesoria previa:</strong> [Valor de la visita tecnica o consulta personalizada]</li>\n    </ol>\n</section>\n\n<section id=\"tipos\">\n    <h2>Tipos de ${p.name} para Diferentes Eventos</h2>\n    <p>[Introduccion explicando que existen opciones para cada necesidad y presupuesto.]</p>\n    <h3>${p.name} para Bodas y Eventos Elegantes</h3>\n    <p>[Descripcion especifica. Ideal para ceremonias, recepciones en lugares como ${venues[0]}. Menciona zonas como ${colonias[0]}, ${colonias[1]}.]</p>\n    <h3>${p.name} para Fiestas y Celebraciones</h3>\n    <p>[Descripcion para XV anos, cumpleanos, graduaciones. Ambiente mas dinamico y festivo.]</p>\n    <h3>${p.name} para Eventos Corporativos</h3>\n    <p>[Descripcion para conferencias, lanzamientos, cenas de gala. Enfoque profesional y sobrio.]</p>\n</section>\n\n<div class=\"warning-box\">\n    <h4>Recomendacion de Expertos</h4>\n    <p>[Consejo basado en experiencia de mas de 500 eventos. Advertencia importante o tip que evita problemas comunes. Algo que solo un profesional sabria.]</p>\n</div>\n\n<section id=\"consejos\">\n    <h2>Consejos Profesionales para ${p.name} en tu Evento</h2>\n    <p>[Introduccion mencionando que estos consejos vienen de anos de experiencia en eventos reales.]</p>\n    <ul>\n        <li><strong>[Consejo 1 - Planificacion]:</strong> [Cuanto tiempo antes reservar, coordinar con otros proveedores]</li>\n        <li><strong>[Consejo 2 - Coordinacion]:</strong> [Como sincronizar con DJ, fotografo, wedding planner]</li>\n        <li><strong>[Consejo 3 - Espacio]:</strong> [Consideraciones del lugar, electricidad, accesos]</li>\n        <li><strong>[Consejo 4 - Prueba previa]:</strong> [Importancia de verificar antes del evento]</li>\n    </ul>\n</section>\n\n<section id=\"errores\">\n    <h2>Errores Comunes que Arruinan el Resultado de ${p.name}</h2>\n    <ul>\n        <li><strong>[Error 1]:</strong> [Descripcion del error comun y como evitarlo. Consecuencias reales.]</li>\n        <li><strong>[Error 2]:</strong> [Descripcion del error comun y como evitarlo. Consecuencias reales.]</li>\n        <li><strong>[Error 3]:</strong> [Descripcion del error comun y como evitarlo. Consecuencias reales.]</li>\n    </ul>\n</section>\n\n<div class=\"article-interlink\">\n    <h2>Complementa tu Evento con REDEIL</h2>\n    <p>Combina ${p.name} con estos servicios para una experiencia completa e impactante:</p>\n    <div class=\"article-services__grid\">\n        <a href=\"${rs[0].url}\" class=\"article-services__item\">${rs[0].name}</a>\n        <a href=\"${rs[1].url}\" class=\"article-services__item\">${rs[1].name}</a>\n        <a href=\"${rs[2].url}\" class=\"article-services__item\">${rs[2].name}</a>\n    </div>\n</div>\n\n<section id=\"faq\" class=\"faq-section\">\n    <h2>Preguntas Frecuentes sobre ${p.name}</h2>\n    <div class=\"faq-item\">\n        <div class=\"faq-question\"><h3>Como elegir el ${p.name.toLowerCase()} adecuado para mi evento?</h3><span class=\"faq-icon\">+</span></div>\n        <div class=\"faq-answer\"><p>[Respuesta completa de 3-4 lineas. Factores clave a considerar.]</p></div>\n    </div>\n    <div class=\"faq-item\">\n        <div class=\"faq-question\"><h3>Que incluye el servicio de renta de ${p.name.toLowerCase()}?</h3><span class=\"faq-icon\">+</span></div>\n        <div class=\"faq-answer\"><p>[Explicar: equipo, instalacion, operador, soporte. Sin mencionar precios.]</p></div>\n    </div>\n    <div class=\"faq-item\">\n        <div class=\"faq-question\"><h3>Con cuanto tiempo de anticipacion debo reservar?</h3><span class=\"faq-icon\">+</span></div>\n        <div class=\"faq-answer\"><p>[Recomendacion practica segun tipo de evento y temporada.]</p></div>\n    </div>\n    <div class=\"faq-item\">\n        <div class=\"faq-question\"><h3>El servicio cubre ${colonias[0]} y zona metropolitana?</h3><span class=\"faq-icon\">+</span></div>\n        <div class=\"faq-answer\"><p>[Confirmar cobertura en CDMX y Estado de Mexico. Mencionar zonas especificas.]</p></div>\n    </div>\n    <div class=\"faq-item\">\n        <div class=\"faq-question\"><h3>Que pasa si hay algun problema tecnico durante mi evento?</h3><span class=\"faq-icon\">+</span></div>\n        <div class=\"faq-answer\"><p>[Explicar soporte tecnico, equipo de respaldo, garantia de funcionamiento.]</p></div>\n    </div>\n</section>\n\n<section id=\"conclusion\">\n    <h2>Transforma tu Evento con ${p.name} Profesional</h2>\n    <p>[Resumen de los 3-4 puntos clave del articulo. Reforzar el valor del servicio profesional vs hacerlo amateur.]</p>\n    <p>Con mas de 500 eventos exitosos, en REDEIL contamos con la experiencia y el equipo necesario para que tu ${p.name.toLowerCase()} sea exactamente lo que imaginaste.</p>\n    <p>Si estas planeando un evento en ${colonias[0]}, ${colonias[1]} o cualquier zona de CDMX y Estado de Mexico, contactanos al <strong>55 4937 5172</strong> o escribenos por WhatsApp para una asesoria personalizada sin compromiso.</p>\n</section>\n\n═══════════════════════════════════════════════════════════\nFORMATO DE RESPUESTA (JSON ESTRICTO)\n═══════════════════════════════════════════════════════════\n\nResponde UNICAMENTE con este JSON (sin texto adicional, sin markdown, sin comentarios):\n\n{\n    \"titulo\": \"[Titulo SEO max 60 chars - keyword al inicio - incluir modificador]\",\n    \"slug\": \"[url-amigable-sin-acentos-max-50-chars]\",\n    \"metaDescription\": \"[150-160 chars exactos - keyword + beneficio + llamada a accion suave]\",\n    \"metaKeywords\": \"[keyword principal, keyword secundaria 1, keyword secundaria 2, LSI 1, LSI 2, REDEIL, CDMX]\",\n    \"breadcrumbText\": \"[15-25 caracteres max]\",\n    \"categoria\": \"${p.categoryName}\",\n    \"tiempoLectura\": \"[X] min de lectura\",\n    \"contenidoHTML\": \"[HTML COMPLETO siguiendo la estructura EXACTA de arriba - minimo 1800 palabras]\",\n    \"faqSchema\": [\n        {\"pregunta\": \"[Pregunta 1]\", \"respuesta\": \"[Respuesta 1]\"},\n        {\"pregunta\": \"[Pregunta 2]\", \"respuesta\": \"[Respuesta 2]\"},\n        {\"pregunta\": \"[Pregunta 3]\", \"respuesta\": \"[Respuesta 3]\"},\n        {\"pregunta\": \"[Pregunta 4]\", \"respuesta\": \"[Respuesta 4]\"},\n        {\"pregunta\": \"[Pregunta 5]\", \"respuesta\": \"[Respuesta 5]\"}\n    ],\n    \"tags\": [\"tag1\", \"tag2\", \"tag3\", \"tag4\", \"tag5\"]\n}\n\n═══════════════════════════════════════════════════════════\nCHECKLIST FINAL (VERIFICA ANTES DE ENVIAR)\n═══════════════════════════════════════════════════════════\n\n[ ] Titulo tiene keyword al inicio y < 60 caracteres\n[ ] Meta description tiene 150-160 caracteres con keyword y beneficio\n[ ] Contenido tiene 1800+ palabras de VALOR REAL\n[ ] Hay 9 secciones con IDs: que-es, beneficios, como-elegir, tipos, consejos, errores, faq, conclusion\n[ ] Incluye 1 info-box y 1 warning-box con contenido util\n[ ] Incluye article-interlink con 3 servicios relacionados\n[ ] Tiene 5 FAQ con preguntas REALES que hacen los clientes\n[ ] Menciona zonas de CDMX de forma natural (${colonias.slice(0, 3).join(', ')})\n[ ] Menciona telefono 55 4937 5172 SOLO en conclusion\n[ ] NO hay frases genericas de IA\n[ ] Tono es profesional pero cercano y accesible\n[ ] NO hay CTA de venta al final (ya esta en template)\n[ ] Cada parrafo aporta VALOR REAL al lector\n\nGENERA EL ARTICULO AHORA.`;\n\nreturn [{ json: { ...data, prompt } }];"
+      },
+      "id": "prompt",
+      "name": "Constructor Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\nconst body = {\n  model: 'gpt-4o',\n  messages: [\n    {\n      role: 'system',\n      content: 'Eres un EXPERTO EN MARKETING DE CONTENIDOS y ESPECIALISTA SEO con 15 anos de experiencia en el sector de renta de equipo audiovisual e iluminacion para eventos en Mexico (CDMX). Escribes para REDEIL. REGLAS INVIOLABLES: 1) Contenido 100% ORIGINAL que aporta VALOR REAL - nada generico. 2) PROHIBIDO mencionar precios. 3) Satisface la INTENCION DE BUSQUEDA del usuario. 4) Usa keywords de cola larga naturalmente. 5) Tono profesional pero cercano - experto que asesora, no vendedor. 6) Menciona zonas de CDMX y venues reales. 7) Sigue la estructura HTML EXACTA solicitada. 8) SOLO responde con JSON valido sin markdown. 9) contenidoHTML minimo 1800 palabras utiles. 10) NUNCA uses frases de IA: \"en el mundo actual\", \"es importante destacar\", \"cabe mencionar\", \"sin duda alguna\", \"hoy en dia\", \"a lo largo de los anos\". 11) Cada parrafo debe resolver una duda o aportar informacion practica. 12) TITULOS VARIADOS: NUNCA uses \"Guia Completa\" ni \"Guia Perfecta\" - usa el patron de titulo especificado en el prompt. Varia entre: Consejos, Ideas, Tendencias, Como elegir, Secretos, Todo sobre, Opciones.'\n    },\n    { role: 'user', content: d.prompt }\n  ],\n  temperature: 0.85,\n  max_tokens: 16000,\n  response_format: { type: 'json_object' }\n};\nreturn [{ json: { ...d, chatGPTBody: JSON.stringify(body) } }];"
+      },
+      "id": "preparar-chatgpt",
+      "name": "Preparar Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [620, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Authorization", "value": "Bearer {{OPENAI_API_KEY}}" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.chatGPTBody }}",
+        "options": { "timeout": 180000 }
+      },
+      "id": "chatgpt",
+      "name": "ChatGPT API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [840, 300],
+      "retryOnFail": true,
+      "maxTries": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst data = $('Constructor Prompt').first().json;\nconst p = data.product;\nconst t = data.articleType;\nconst heroImage = data.heroImage;\nconst articleId = data.articleId;\nconst colonias = data.colonias;\n\n// Parsear respuesta de ChatGPT\nlet content;\ntry {\n  let raw = response.choices[0].message.content\n    .replace(/```json\\n?/gi, '')\n    .replace(/```\\n?/gi, '')\n    .trim();\n  content = JSON.parse(raw);\n} catch(e) {\n  throw new Error('Error parseando JSON: ' + e.message);\n}\n\n// Validar campos requeridos\nif (!content.titulo || content.titulo.length < 20) {\n  throw new Error('Titulo invalido o muy corto: ' + (content.titulo || 'VACIO'));\n}\nif (!content.contenidoHTML || content.contenidoHTML.length < 500) {\n  throw new Error('Contenido HTML invalido o muy corto');\n}\n\n// Corregir titulos repetitivos - reemplazar \"Guia Completa\" o \"Guia Perfecta\"\nconst tituloOriginal = content.titulo;\nconst reemplazos = ['Consejos de Expertos', 'Todo lo que Necesitas Saber', 'Ideas y Tendencias', 'Opciones y Recomendaciones', 'Lo que Debes Saber'];\nconst reemplazoAleatorio = reemplazos[Math.floor(Math.random() * reemplazos.length)];\ncontent.titulo = content.titulo\n  .replace(/Gu[ií]a Completa/gi, reemplazoAleatorio)\n  .replace(/Gu[ií]a Perfecta/gi, reemplazoAleatorio)\n  .replace(/La Gu[ií]a Definitiva/gi, reemplazoAleatorio);\nif (tituloOriginal !== content.titulo) {\n  console.log('TITULO CORREGIDO: ' + tituloOriginal + ' -> ' + content.titulo);\n}\n\n// Aplicar valores por defecto\ncontent.metaDescription = content.metaDescription || `Descubre ${p.name} con REDEIL en CDMX. Guia profesional con consejos de expertos.`;\ncontent.metaKeywords = content.metaKeywords || p.keywords.join(', ');\ncontent.breadcrumbText = content.breadcrumbText || content.titulo.substring(0, 25);\ncontent.tiempoLectura = content.tiempoLectura || '10 min de lectura';\ncontent.faqSchema = content.faqSchema || [];\ncontent.tags = content.tags || p.keywords.slice(0, 5);\n\n// Generar slug SEO\nfunction generateSlug(text) {\n  if (!text || typeof text !== 'string') return null;\n  return text\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/[^a-z0-9\\s-]/g, '')\n    .replace(/\\s+/g, '-')\n    .replace(/-+/g, '-')\n    .replace(/^-+|-+$/g, '')\n    .substring(0, 55);\n}\n\nlet slug = content.slug ? generateSlug(content.slug) : generateSlug(content.titulo);\n\n// Asegurar que tenga palabras clave\nif (!slug.includes('iluminacion') && !slug.includes('audio') && !slug.includes('eventos') && !slug.includes('bodas') && !slug.includes('renta')) {\n  const keyword = p.keywords[0].split(' ')[0].toLowerCase();\n  slug = keyword + '-' + slug;\n}\n\n// Limitar longitud\nslug = slug.substring(0, 60);\n\nconsole.log('TITULO:', content.titulo);\nconsole.log('SLUG SEO:', slug);\n\n// Construir FAQ Schema\nconst faqSchemaJSON = JSON.stringify({\n  '@context': 'https://schema.org',\n  '@type': 'FAQPage',\n  'mainEntity': content.faqSchema.map(f => ({\n    '@type': 'Question',\n    'name': f.pregunta,\n    'acceptedAnswer': {\n      '@type': 'Answer',\n      'text': f.respuesta\n    }\n  }))\n});\n\nreturn [{\n  json: {\n    ...data,\n    content,\n    slug,\n    articleId,\n    heroImage,\n    faqSchemaJSON\n  }\n}];"
+      },
+      "id": "validar",
+      "name": "Validar Respuesta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1060, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/REDEIL/contents/blog/TEMPLATE-ARTICULO.html",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-template",
+      "name": "GitHub: Obtener Template",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1280, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Validar Respuesta').first().json;\nconst templateResp = $input.first().json;\nconst c = data.content;\nconst p = data.product;\nconst slug = data.slug;\nconst heroImage = data.heroImage;\nconst faqSchemaJSON = data.faqSchemaJSON;\n\n// Decodificar template\nlet template;\ntry {\n  template = Buffer.from(templateResp.content, 'base64').toString('utf8');\n} catch(e) {\n  throw new Error('Error decodificando template: ' + e.message);\n}\n\n// Reemplazar todas las variables\nlet html = template\n  .replace(/\\{\\{TITULO\\}\\}/g, c.titulo)\n  .replace(/\\{\\{SLUG\\}\\}/g, slug)\n  .replace(/\\{\\{META_DESCRIPTION\\}\\}/g, c.metaDescription)\n  .replace(/\\{\\{META_KEYWORDS\\}\\}/g, c.metaKeywords)\n  .replace(/\\{\\{CATEGORIA\\}\\}/g, c.categoria || p.categoryName)\n  .replace(/\\{\\{CATEGORIA_SLUG\\}\\}/g, p.category)\n  .replace(/\\{\\{IMAGEN_PRINCIPAL\\}\\}/g, heroImage)\n  .replace(/\\{\\{IMAGEN_ALT\\}\\}/g, c.titulo + ' - REDEIL CDMX')\n  .replace(/\\{\\{BREADCRUMB_TEXT\\}\\}/g, c.breadcrumbText)\n  .replace(/\\{\\{TIEMPO_LECTURA\\}\\}/g, c.tiempoLectura)\n  .replace(/\\{\\{CONTENIDO\\}\\}/g, c.contenidoHTML)\n  .replace(/\\{\\{FAQ_SCHEMA\\}\\}/g, faqSchemaJSON);\n\n// Convertir a Base64\nconst htmlBase64 = Buffer.from(html).toString('base64');\n\nreturn [{\n  json: {\n    ...data,\n    articleHtml: html,\n    articleHtmlBase64: htmlBase64,\n    slug\n  }\n}];"
+      },
+      "id": "construir-html",
+      "name": "Construir HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst c = data.content;\nconst p = data.product;\nconst slug = data.slug;\nconst articleId = data.articleId;\nconst heroImage = data.heroImage;\n\n// Validacion critica\nif (!slug || slug.length < 5) {\n  throw new Error('Slug invalido: ' + slug);\n}\n\n// Construir entry para articulos.json (estructura compatible con blog/index.html)\nconst articleEntry = {\n  id: slug,\n  slug: slug,\n  titulo: c.titulo,\n  descripcion: c.metaDescription,\n  imagen: heroImage,\n  categoria: c.categoria || p.categoryName,\n  autor: 'REDEIL Team',\n  fechaPublicacion: new Date().toISOString().split('T')[0],\n  url: slug + '.html',\n  lecturaMinutos: parseInt(c.tiempoLectura) || 10\n};\n\nreturn [{\n  json: {\n    ...data,\n    articleEntry\n  }\n}];"
+      },
+      "id": "construir-card",
+      "name": "Construir Card",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1720, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/Origenlab/REDEIL/contents/blog/{{ $json.slug }}.html",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add article: {{ $json.slug }}\",\n  \"content\": \"{{ $json.articleHtmlBase64 }}\",\n  \"branch\": \"main\"\n}"
+      },
+      "id": "github-upload-article",
+      "name": "GitHub: Subir Articulo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1940, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/REDEIL/contents/blog/articulos.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-articles",
+      "name": "GitHub: Obtener JSON",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2160, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Construir Card').first().json;\nconst articleEntry = data.articleEntry;\nconst slug = data.slug;\nconst gh = $input.first().json;\n\nif (!slug || slug.length < 5) {\n  throw new Error('Slug invalido antes de guardar: ' + slug);\n}\n\nif (!gh.content) throw new Error('articulos.json no encontrado');\n\n// Decodificar JSON actual\nlet articlesJson;\ntry {\n  const content = Buffer.from(gh.content, 'base64').toString('utf8');\n  articlesJson = JSON.parse(content);\n} catch(e) {\n  throw new Error('Error parseando articulos.json: ' + e.message);\n}\n\n// Validar estructura { articulos: [...] }\nif (!articlesJson.articulos || !Array.isArray(articlesJson.articulos)) {\n  articlesJson = { articulos: [] };\n}\n\n// Verificar duplicados\nconst exists = articlesJson.articulos.some(a => a.slug === slug);\nif (exists) {\n  throw new Error('Articulo con slug \"' + slug + '\" ya existe');\n}\n\n// Agregar al inicio del array\narticlesJson.articulos.unshift(articleEntry);\n\n// Convertir a Base64\nconst newJSON = JSON.stringify(articlesJson, null, 2);\nconst newBase64 = Buffer.from(newJSON).toString('base64');\n\nreturn [{\n  json: {\n    slug,\n    newArticlesBase64: newBase64,\n    sha: gh.sha,\n    articleTitle: data.content.titulo,\n    articleEntry,\n    totalArticles: articlesJson.articulos.length\n  }\n}];"
+      },
+      "id": "update-articles",
+      "name": "Actualizar JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2380, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Origenlab/REDEIL/contents/blog/articulos.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add to articulos.json: {{ $json.slug }}\",\n  \"content\": \"{{ $json.newArticlesBase64 }}\",\n  \"sha\": \"{{ $json.sha }}\",\n  \"branch\": \"main\"\n}"
+      },
+      "id": "github-put-articles",
+      "name": "GitHub: Guardar JSON",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2600, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/Origenlab/REDEIL/contents/sitemap.xml",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "github-get-sitemap",
+      "name": "GitHub: Obtener Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2820, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('Actualizar JSON').first().json;\nconst slug = data.slug;\nconst articleTitle = data.articleTitle;\nconst totalArticles = data.totalArticles;\nconst gh = $input.first().json;\n\nif (!slug || slug.length < 5) {\n  throw new Error('Slug invalido en Sitemap: ' + slug);\n}\n\nif (!gh.content) throw new Error('sitemap.xml no encontrado');\n\nlet sitemap = Buffer.from(gh.content, 'base64').toString('utf8');\n\n// Verificar si ya existe\nif (sitemap.includes(slug + '.html')) {\n  return [{ json: { slug, articleTitle, totalArticles, sitemapUpdated: false, sha: gh.sha } }];\n}\n\n// Crear entrada\nconst today = new Date().toISOString().split('T')[0];\nconst newUrl = `  <url>\n    <loc>https://redeil.com/blog/${slug}.html</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`;\n\n// Insertar antes de </urlset>\nconst newSitemap = sitemap.replace('</urlset>', newUrl + '\\n</urlset>');\nconst newBase64 = Buffer.from(newSitemap).toString('base64');\n\nreturn [{\n  json: {\n    slug,\n    articleTitle,\n    totalArticles,\n    newSitemapBase64: newBase64,\n    sha: gh.sha,\n    sitemapUpdated: true\n  }\n}];"
+      },
+      "id": "update-sitemap",
+      "name": "Actualizar Sitemap",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3040, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/Origenlab/REDEIL/contents/sitemap.xml",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"Add to sitemap: {{ $json.slug }}\",\n  \"content\": \"{{ $json.newSitemapBase64 }}\",\n  \"sha\": \"{{ $json.sha }}\",\n  \"branch\": \"main\"\n}",
+        "options": {}
+      },
+      "id": "github-put-sitemap",
+      "name": "GitHub: Guardar Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3260, 300],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/bot8253197429:AAFuUSGCueoJoKZ0CaoMqWSIRMAnCeCIrMw/sendMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"772938445\",\n  \"text\": \"✅ *Nuevo Artículo Publicado*\\n\\n📝 *Título:* {{ $('Actualizar Sitemap').first().json.articleTitle }}\\n🔗 *URL:* https://redeil.com/blog/{{ $('Actualizar Sitemap').first().json.slug }}.html\\n📊 *Total artículos:* {{ $('Actualizar Sitemap').first().json.totalArticles }}\\n\\n_Blog REDEIL - Sistema Automático_\",\n  \"parse_mode\": \"Markdown\"\n}"
+      },
+      "id": "telegram",
+      "name": "Telegram Notificacion",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3480, 300]
+    },
+    {
+      "parameters": {},
+      "id": "fin",
+      "name": "Fin - Articulo Publicado",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [3700, 300]
+    }
+  ],
+  "connections": {
+    "Trigger Programado": { "main": [[{ "node": "Selector Inteligente", "type": "main", "index": 0 }]] },
+    "Trigger Manual": { "main": [[{ "node": "Selector Inteligente", "type": "main", "index": 0 }]] },
+    "Selector Inteligente": { "main": [[{ "node": "Constructor Prompt", "type": "main", "index": 0 }]] },
+    "Constructor Prompt": { "main": [[{ "node": "Preparar Request", "type": "main", "index": 0 }]] },
+    "Preparar Request": { "main": [[{ "node": "ChatGPT API", "type": "main", "index": 0 }]] },
+    "ChatGPT API": { "main": [[{ "node": "Validar Respuesta", "type": "main", "index": 0 }]] },
+    "Validar Respuesta": { "main": [[{ "node": "GitHub: Obtener Template", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener Template": { "main": [[{ "node": "Construir HTML", "type": "main", "index": 0 }]] },
+    "Construir HTML": { "main": [[{ "node": "Construir Card", "type": "main", "index": 0 }]] },
+    "Construir Card": { "main": [[{ "node": "GitHub: Subir Articulo", "type": "main", "index": 0 }]] },
+    "GitHub: Subir Articulo": { "main": [[{ "node": "GitHub: Obtener JSON", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener JSON": { "main": [[{ "node": "Actualizar JSON", "type": "main", "index": 0 }]] },
+    "Actualizar JSON": { "main": [[{ "node": "GitHub: Guardar JSON", "type": "main", "index": 0 }]] },
+    "GitHub: Guardar JSON": { "main": [[{ "node": "GitHub: Obtener Sitemap", "type": "main", "index": 0 }]] },
+    "GitHub: Obtener Sitemap": { "main": [[{ "node": "Actualizar Sitemap", "type": "main", "index": 0 }]] },
+    "Actualizar Sitemap": { "main": [[{ "node": "GitHub: Guardar Sitemap", "type": "main", "index": 0 }]] },
+    "GitHub: Guardar Sitemap": { "main": [[{ "node": "Telegram Notificacion", "type": "main", "index": 0 }]] },
+    "Telegram Notificacion": { "main": [[{ "node": "Fin - Articulo Publicado", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  }
+}
