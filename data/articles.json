@@ -112,6 +112,27 @@
   ],
   "articles": [
     {
+      "id": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
+      "title": "Capacitación Brigadas Contra Incendio: Formación CDMX",
+      "slug": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
+      "category": "prevencion-empresarial",
+      "image": "img/img-index/capacitacion-y-brigadas.avif",
+      "excerpt": "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. Cursos certificados para empresas CDMX. Cumplimiento normativo garantizado. Consulta: 55 3968 9272",
+      "readTime": "16 min",
+      "featured": false,
+      "tags": [
+        "capacitacion brigadas",
+        "extintores empresas",
+        "NOM-002-STPS",
+        "seguridad industrial",
+        "prevencion incendios",
+        "brigadas CDMX",
+        "curso extintores",
+        "proteccion civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "prueba-hidrostatica-extintores-guia-tecnica",
       "title": "Prueba Hidrostática de Extintores: Guía Técnica 2024",
       "slug": "prueba-hidrostatica-extintores-guia-tecnica",
