@@ -168,6 +168,24 @@ details.faq-item .faq-answer p:last-child{margin-bottom:0}
 @keyframes faqSlideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
 /* ============================================
+   COMPARISON TABLES - Premium Design
+   ============================================ */
+.table-responsive{overflow-x:auto;margin:2rem 0;border-radius:var(--blog-radius);box-shadow:var(--blog-shadow)}
+.comparison-table{width:100%;border-collapse:collapse;background:#fff;font-size:0.9rem}
+.comparison-table thead{background:linear-gradient(135deg,var(--blog-primary) 0%,var(--blog-primary-dark) 100%)}
+.comparison-table th{padding:1.25rem 1rem;color:#fff;font-weight:700;text-align:left;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px}
+.comparison-table th:first-child{border-radius:var(--blog-radius) 0 0 0}
+.comparison-table th:last-child{border-radius:0 var(--blog-radius) 0 0}
+.comparison-table td{padding:1rem;border-bottom:1px solid var(--blog-border);color:var(--blog-dark)}
+.comparison-table tbody tr:hover{background:rgba(211,47,47,0.04)}
+.comparison-table tbody tr:last-child td{border-bottom:none}
+.comparison-table tbody tr:last-child td:first-child{border-radius:0 0 0 var(--blog-radius)}
+.comparison-table tbody tr:last-child td:last-child{border-radius:0 0 var(--blog-radius) 0}
+.comparison-table td:first-child{font-weight:600;background:var(--blog-light)}
+.comparison-table .highlight{background:rgba(211,47,47,0.08);font-weight:600;color:var(--blog-primary)}
+@media(max-width:768px){.comparison-table{font-size:0.8rem}.comparison-table th,.comparison-table td{padding:0.75rem 0.5rem}}
+
+/* ============================================
    TOC & INFO BOXES
    ============================================ */
 .toc-widget{background:#fff;border:2px solid var(--blog-border)}
