@@ -4,3 +4,8 @@
 node_modules
 dist
 .cache
+
+# Workflows con credenciales - NO SUBIR
+workflow/*-IMPORTAR-N8N.json
+workflow/*-CON-CREDENCIALES.json
+*.credentials.json
