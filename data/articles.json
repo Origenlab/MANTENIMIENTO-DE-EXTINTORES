@@ -112,6 +112,27 @@
   ],
   "articles": [
     {
+      "id": "extintor-co2-equipos-electronicos",
+      "title": "Extintor CO2: Guia Completa para Equipos Electronicos",
+      "slug": "extintor-co2-equipos-electronicos",
+      "category": "tipos-de-extintores",
+      "image": "img/img-index/espuma-afff.avif",
+      "excerpt": "Extintor CO2: protege equipos electronicos sin residuos. Aprende especificaciones, precios y seleccion correcta. Llama 55 3968 9272.",
+      "readTime": "15 min",
+      "featured": false,
+      "tags": [
+        "extintor CO2",
+        "dioxido de carbono",
+        "extintor equipos electronicos",
+        "extintor sin residuos",
+        "agente extintor",
+        "capacidad kg",
+        "clases de fuego A B C",
+        "cilindro presurizado"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "clases-de-fuego-extintor-correcto",
       "title": "Clases de Fuego: A B C D K y el Extintor Correcto",
       "slug": "clases-de-fuego-extintor-correcto",
