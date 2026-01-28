@@ -112,6 +112,25 @@
   ],
   "articles": [
     {
+      "id": "extintor-tipo-k-todo-lo-que-necesitas-saber",
+      "title": "¿Extintor Tipo K? Todo lo que Necesitas Saber",
+      "slug": "extintor-tipo-k-todo-lo-que-necesitas-saber",
+      "category": "industria-y-comercio",
+      "date": "2026-01-28",
+      "image": "img/img-index/tipo-k.avif",
+      "excerpt": "Descubre por qué el extintor Tipo K es esencial para cocinas en CDMX. Protege tu negocio con MANEXT. ¡Llámanos!",
+      "readTime": "9 min",
+      "featured": false,
+      "tags": [
+        "extintor Tipo K",
+        "seguridad contra incendios",
+        "cocinas comerciales",
+        "normativa NOM",
+        "protección civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "extintores-restaurantes-requisitos-normativa-cdmx",
       "title": "Extintores para Restaurantes: Requisitos y Normativa CDMX",
       "slug": "extintores-restaurantes-requisitos-normativa-cdmx",
@@ -121,7 +140,13 @@
       "excerpt": "¿Tienes un restaurante en CDMX? Conoce los extintores Tipo K obligatorios, la ubicación correcta según m², y cómo evitar multas de hasta $150,000 MXN. Incluye checklist gratuito para tu inspección de Protección Civil.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["extintores restaurantes", "Tipo K", "normativa CDMX", "cocina comercial", "Protección Civil"],
+      "tags": [
+        "extintores restaurantes",
+        "Tipo K",
+        "normativa CDMX",
+        "cocina comercial",
+        "Protección Civil"
+      ],
       "cta": "Ver requisitos restaurantes"
     },
     {
@@ -134,7 +159,12 @@
       "excerpt": "Las multas por incumplimiento en extintores pueden alcanzar los $500,000 MXN y el cierre temporal de tu negocio. Descubre exactamente qué revisa Protección Civil, los montos actualizados y el plan de 5 pasos para cumplir al 100%.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["multas extintores", "sanciones", "Protección Civil", "cumplimiento normativo"],
+      "tags": [
+        "multas extintores",
+        "sanciones",
+        "Protección Civil",
+        "cumplimiento normativo"
+      ],
       "cta": "Conocer multas y sanciones"
     },
     {
@@ -147,8 +177,17 @@
       "excerpt": "Obtén tu licencia de funcionamiento sin contratiempos. Te explicamos los 7 requisitos exactos que revisa Protección Civil CDMX: cantidad de extintores por m², señalización, vigencia de recarga y documentación obligatoria.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["Protección Civil", "licencia funcionamiento", "requisitos CDMX", "inspección"],
-      "related": ["nom-154-scfi-guia-completa-cumplimiento-extintores", "nom-002-stps-seguridad-incendios-trabajo", "prevencion-incendios-empresas-protocolo-completo-cdmx"],
+      "tags": [
+        "Protección Civil",
+        "licencia funcionamiento",
+        "requisitos CDMX",
+        "inspección"
+      ],
+      "related": [
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "nom-002-stps-seguridad-incendios-trabajo",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx"
+      ],
       "cta": "Ver requisitos licencia"
     },
     {
@@ -161,8 +200,17 @@
       "excerpt": "Elegir mal un extintor puede costarte multas, daños a tu equipo o incluso vidas. Aprende a identificar las clases de fuego en tu negocio, calcular la capacidad necesaria y cumplir con NOM-154-SCFI. Incluye tabla de selección rápida.",
       "readTime": "8 min",
       "featured": false,
-      "tags": ["selección extintores", "clases de fuego", "guía compra", "NOM-154"],
-      "related": ["extintor-polvo-quimico-seco-pqs-usos-ventajas", "nom-154-scfi-guia-completa-cumplimiento-extintores", "venta-extintores-cdmx-guia-compra-empresas"],
+      "tags": [
+        "selección extintores",
+        "clases de fuego",
+        "guía compra",
+        "NOM-154"
+      ],
+      "related": [
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "venta-extintores-cdmx-guia-compra-empresas"
+      ],
       "cta": "Guía selección extintor"
     },
     {
@@ -175,8 +223,17 @@
       "excerpt": "Compara precios de extintores certificados en CDMX: desde $450 MXN (PQS 4.5kg) hasta $8,500 MXN (Agente Limpio). Te mostramos dónde comprar con garantía, qué certificaciones exigir y cómo obtener factura para deducir impuestos.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["venta extintores", "precios CDMX", "compra empresas", "certificación"],
-      "related": ["como-elegir-extintor-correcto-negocio-cdmx", "extintor-polvo-quimico-seco-pqs-usos-ventajas", "nom-154-scfi-guia-completa-cumplimiento-extintores"],
+      "tags": [
+        "venta extintores",
+        "precios CDMX",
+        "compra empresas",
+        "certificación"
+      ],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
+      ],
       "cta": "Ver precios extintores"
     },
     {
@@ -189,8 +246,17 @@
       "excerpt": "El 68% de los incendios industriales se agravan por usar el extintor equivocado. Domina las 5 clases de fuego con ejemplos reales: materiales que los causan, extintores compatibles y los errores fatales que debes evitar.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["clases de fuego", "A B C D K", "tipos incendio", "selección extintor"],
-      "related": ["como-elegir-extintor-correcto-negocio-cdmx", "extintor-polvo-quimico-seco-pqs-usos-ventajas", "prevencion-incendios-empresas-protocolo-completo-cdmx"],
+      "tags": [
+        "clases de fuego",
+        "A B C D K",
+        "tipos incendio",
+        "selección extintor"
+      ],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx"
+      ],
       "cta": "Conocer clases de fuego"
     },
     {
@@ -203,8 +269,17 @@
       "excerpt": "El extintor PQS es el más vendido en México por una razón: combate fuegos clase A, B y C con un solo equipo. Descubre sus 7 ventajas, capacidades disponibles (2.5kg a 68kg), precios actualizados y cuándo NO debes usarlo.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["extintor PQS", "polvo químico seco", "ABC", "multiusos"],
-      "related": ["como-elegir-extintor-correcto-negocio-cdmx", "cuando-recargar-extintor-senales-frecuencia-normativa", "mantenimiento-extintores-cdmx-servicio-profesional"],
+      "tags": [
+        "extintor PQS",
+        "polvo químico seco",
+        "ABC",
+        "multiusos"
+      ],
+      "related": [
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
+      ],
       "cta": "Ver guía extintor PQS"
     },
     {
@@ -217,8 +292,17 @@
       "excerpt": "Un extintor sin mantenimiento tiene 40% de probabilidad de fallar. Conoce los 3 tipos de servicio obligatorio (mensual, anual, quinquenal), costos promedio en CDMX y cómo verificar que tu proveedor esté certificado ante la STPS.",
       "readTime": "10 min",
       "featured": true,
-      "tags": ["mantenimiento extintores", "servicio CDMX", "NOM-154", "certificación"],
-      "related": ["cuando-recargar-extintor-senales-frecuencia-normativa", "vida-util-extintor-cuando-reemplazarlo", "nom-154-scfi-guia-completa-cumplimiento-extintores"],
+      "tags": [
+        "mantenimiento extintores",
+        "servicio CDMX",
+        "NOM-154",
+        "certificación"
+      ],
+      "related": [
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "vida-util-extintor-cuando-reemplazarlo",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
+      ],
       "cta": "Ver servicio mantenimiento"
     },
     {
@@ -231,8 +315,17 @@
       "excerpt": "¿Tu extintor perdió presión? ¿Tiene más de 12 meses sin recarga? Aprende las 5 señales visuales de que necesita servicio urgente, la frecuencia obligatoria según NOM-154 y por qué la recarga casera puede anular tu garantía.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["recarga extintor", "frecuencia", "señales alerta", "NOM-154"],
-      "related": ["mantenimiento-extintores-cdmx-servicio-profesional", "vida-util-extintor-cuando-reemplazarlo", "nom-154-scfi-guia-completa-cumplimiento-extintores"],
+      "tags": [
+        "recarga extintor",
+        "frecuencia",
+        "señales alerta",
+        "NOM-154"
+      ],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "vida-util-extintor-cuando-reemplazarlo",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores"
+      ],
       "cta": "Cuándo recargar extintor"
     },
     {
@@ -245,8 +338,17 @@
       "excerpt": "Mito: los extintores duran para siempre. Realidad: tienen vida útil de 5 a 20 años según el tipo. Te revelamos cómo calcular la edad real de tu extintor, qué dice la NOM sobre reemplazo obligatorio y cuándo reparar vs. comprar nuevo.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["vida útil extintor", "reemplazo", "cuándo cambiar", "normativa"],
-      "related": ["mantenimiento-extintores-cdmx-servicio-profesional", "cuando-recargar-extintor-senales-frecuencia-normativa", "venta-extintores-cdmx-guia-compra-empresas"],
+      "tags": [
+        "vida útil extintor",
+        "reemplazo",
+        "cuándo cambiar",
+        "normativa"
+      ],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "venta-extintores-cdmx-guia-compra-empresas"
+      ],
       "cta": "Ver vida útil extintor"
     },
     {
@@ -259,8 +361,17 @@
       "excerpt": "La NOM-154-SCFI no es opcional: es ley. Desglosamos los 12 requisitos técnicos obligatorios para extintores, las sanciones por incumplimiento (hasta $1.5 millones MXN) y el checklist que usan los inspectores de Protección Civil.",
       "readTime": "12 min",
       "featured": true,
-      "tags": ["NOM-154-SCFI", "normativa", "cumplimiento", "requisitos legales"],
-      "related": ["mantenimiento-extintores-cdmx-servicio-profesional", "cuando-recargar-extintor-senales-frecuencia-normativa", "prevencion-incendios-empresas-protocolo-completo-cdmx"],
+      "tags": [
+        "NOM-154-SCFI",
+        "normativa",
+        "cumplimiento",
+        "requisitos legales"
+      ],
+      "related": [
+        "mantenimiento-extintores-cdmx-servicio-profesional",
+        "cuando-recargar-extintor-senales-frecuencia-normativa",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx"
+      ],
       "cta": "Consultar NOM-154"
     },
     {
@@ -273,8 +384,17 @@
       "excerpt": "Si tienes empleados, la NOM-002-STPS te aplica. Conoce las obligaciones de brigadas contra incendio, simulacros anuales, capacitación obligatoria y el equipo mínimo que debe tener tu centro de trabajo según su nivel de riesgo.",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["NOM-002-STPS", "seguridad laboral", "brigadas", "capacitación"],
-      "related": ["nom-154-scfi-guia-completa-cumplimiento-extintores", "prevencion-incendios-empresas-protocolo-completo-cdmx", "mantenimiento-extintores-cdmx-servicio-profesional"],
+      "tags": [
+        "NOM-002-STPS",
+        "seguridad laboral",
+        "brigadas",
+        "capacitación"
+      ],
+      "related": [
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "prevencion-incendios-empresas-protocolo-completo-cdmx",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
+      ],
       "cta": "Ver NOM-002-STPS"
     },
     {
@@ -287,8 +407,17 @@
       "excerpt": "Los extintores son solo el 20% de un sistema completo. Descubre cómo integrar detectores de humo, rociadores automáticos, señalización fotoluminiscente y gabinetes contra incendio para una protección 360° que cumple con NFPA.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["sistemas protección", "detectores humo", "rociadores", "NFPA"],
-      "related": ["prevencion-incendios-empresas-protocolo-completo-cdmx", "nom-154-scfi-guia-completa-cumplimiento-extintores", "mantenimiento-extintores-cdmx-servicio-profesional"],
+      "tags": [
+        "sistemas protección",
+        "detectores humo",
+        "rociadores",
+        "NFPA"
+      ],
+      "related": [
+        "prevencion-incendios-empresas-protocolo-completo-cdmx",
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "mantenimiento-extintores-cdmx-servicio-profesional"
+      ],
       "cta": "Ver sistemas protección"
     },
     {
@@ -301,8 +430,17 @@
       "excerpt": "El 80% de los incendios empresariales son prevenibles. Implementa nuestro protocolo probado en +500 empresas: evaluación de riesgos, plan de emergencia, capacitación de brigadas y auditorías trimestrales que blindan tu negocio.",
       "readTime": "10 min",
       "featured": false,
-      "tags": ["prevención incendios", "protocolo empresarial", "plan emergencia", "auditoría"],
-      "related": ["nom-154-scfi-guia-completa-cumplimiento-extintores", "sistemas-proteccion-integral-empresas-cdmx", "como-elegir-extintor-correcto-negocio-cdmx"],
+      "tags": [
+        "prevención incendios",
+        "protocolo empresarial",
+        "plan emergencia",
+        "auditoría"
+      ],
+      "related": [
+        "nom-154-scfi-guia-completa-cumplimiento-extintores",
+        "sistemas-proteccion-integral-empresas-cdmx",
+        "como-elegir-extintor-correcto-negocio-cdmx"
+      ],
       "cta": "Ver protocolo prevención"
     },
     {
@@ -315,8 +453,17 @@
       "excerpt": "Antes de comprar, compara: PQS desde $450, CO2 desde $1,800, Tipo K desde $2,500. Te mostramos precios por marca, capacidad y proveedor, más los 3 factores ocultos que aumentan el costo real (instalación, señalización, mantenimiento).",
       "readTime": "12 min",
       "featured": false,
-      "tags": ["precios extintores", "comparativa", "CDMX", "costo real"],
-      "related": ["venta-extintores-cdmx-guia-compra-empresas", "como-elegir-extintor-correcto-negocio-cdmx", "extintor-polvo-quimico-seco-pqs-usos-ventajas"],
+      "tags": [
+        "precios extintores",
+        "comparativa",
+        "CDMX",
+        "costo real"
+      ],
+      "related": [
+        "venta-extintores-cdmx-guia-compra-empresas",
+        "como-elegir-extintor-correcto-negocio-cdmx",
+        "extintor-polvo-quimico-seco-pqs-usos-ventajas"
+      ],
       "cta": "Comparar precios"
     }
   ]
