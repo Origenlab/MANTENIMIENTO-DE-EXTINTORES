@@ -112,6 +112,27 @@
   ],
   "articles": [
     {
+      "id": "clases-de-fuego-a-b-c-d-k-guia-completa-extintor",
+      "title": "Clases de Fuego A B C D K: Guía Completa para Elegir Extintor",
+      "slug": "clases-de-fuego-a-b-c-d-k-guia-completa-extintor",
+      "category": "seguridad-contra-incendios",
+      "image": "img/img-index/prevencion-de-incendios.avif",
+      "excerpt": "Clases de fuego A B C D K explicadas por ingenieros. Identifica el extintor correcto para cada tipo de fuego. Normativa NOM-154-SCFI. Consulta: 55 3968 9272",
+      "readTime": "18 min",
+      "featured": false,
+      "tags": [
+        "clases de fuego",
+        "extintor ABC",
+        "extintor CO2",
+        "extintor clase K",
+        "NOM-154-SCFI",
+        "seguridad contra incendios",
+        "brigada de emergencia",
+        "protección civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "clases-clases-fuego-a-b-c-d-k-guia-tecnica-completa",
       "title": "Clases de Fuego A B C D K: Guía Técnica Completa 2024",
       "slug": "clases-clases-fuego-a-b-c-d-k-guia-tecnica-completa",
