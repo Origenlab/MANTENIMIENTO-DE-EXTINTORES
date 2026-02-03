@@ -112,6 +112,60 @@
   ],
   "articles": [
     {
+      "id": "clases-de-fuego-a-b-c-d-k-guia-completa-extintor",
+      "title": "Clases de Fuego A B C D K: Guía Completa para Elegir Extintor",
+      "slug": "clases-de-fuego-a-b-c-d-k-guia-completa-extintor",
+      "category": "seguridad-contra-incendios",
+      "image": "img/img-index/prevencion-de-incendios.avif",
+      "excerpt": "Clases de fuego A B C D K explicadas por ingenieros. Identifica el extintor correcto para cada tipo de fuego. Normativa NOM-154-SCFI. Consulta: 55 3968 9272",
+      "readTime": "18 min",
+      "featured": false,
+      "tags": [
+        "clases de fuego",
+        "extintor ABC",
+        "extintor CO2",
+        "extintor clase K",
+        "NOM-154-SCFI",
+        "seguridad contra incendios",
+        "brigada de emergencia",
+        "protección civil"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
+      "id": "clases-clases-fuego-a-b-c-d-k-guia-tecnica-completa",
+      "title": "Clases de Fuego A B C D K: Guía Técnica Completa 2024",
+      "slug": "clases-clases-fuego-a-b-c-d-k-guia-tecnica-completa",
+      "category": "seguridad-contra-incendios",
+      "image": "img/img-index/prevencion-de-incendios.avif",
+      "excerpt": "Clases de fuego A B C D K explicadas por ingenieros expertos. Identifica el extintor correcto según material combustible. Normativas NOM-154-SCFI. ☎️ 55-3968-9272",
+      "readTime": "18 min",
+      "featured": false,
+      "tags": [],
+      "cta": "Leer articulo"
+    },
+    {
+      "id": "clases-clases-de-fuego-a-b-c-d-k-guia-tecnica-completa",
+      "title": "Clases de Fuego A B C D K: Guía Técnica Completa",
+      "slug": "clases-clases-de-fuego-a-b-c-d-k-guia-tecnica-completa",
+      "category": "seguridad-contra-incendios",
+      "image": "img/img-index/prevencion-de-incendios.avif",
+      "excerpt": "Clases de fuego A B C D K explicadas por expertos. Identifica tipos de fuego y extintor correcto según NOM-154-SCFI. Asesoría técnica MANEXT: 55 3968 9272",
+      "readTime": "18 min",
+      "featured": false,
+      "tags": [
+        "clases de fuego",
+        "tipos de fuego",
+        "extintor clase A",
+        "extintor clase B",
+        "extintor clase C",
+        "extintor clase D",
+        "extintor clase K",
+        "seguridad contra incendios"
+      ],
+      "cta": "Leer articulo"
+    },
+    {
       "id": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
       "title": "Capacitación Brigadas Contra Incendio: Formación CDMX",
       "slug": "capacitacion-brigadas-contra-incendio-formacion-cdmx",
