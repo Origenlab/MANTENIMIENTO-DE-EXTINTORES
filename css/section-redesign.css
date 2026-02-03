@@ -1,0 +1,158 @@
+/* ============================================
+   SECTION REDESIGN - Shared Components
+   Replaces old .services-intro-section design
+   ============================================ */
+
+/* --- Base Section --- */
+.rd-section{padding:5rem 0}
+.rd-section--white{background:#fff}
+.rd-section--gray{background:#fafafa}
+
+/* --- Section Header --- */
+.rd-header{text-align:center;margin-bottom:3rem}
+.rd-header h2{font-size:2rem;color:#212121;font-weight:800;margin-bottom:1rem;line-height:1.3}
+.rd-header p{font-size:1.1rem;color:#757575;max-width:700px;margin:0 auto;line-height:1.7}
+.rd-intro{text-align:center;max-width:800px;margin:0 auto 3rem;color:#616161;line-height:1.8;font-size:1rem}
+
+/* --- Grid Layouts --- */
+.rd-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.rd-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.rd-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.rd-grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+
+/* --- Card Base --- */
+.rd-card{background:#fff;border-radius:12px;padding:2.5rem;box-shadow:0 2px 15px rgba(0,0,0,.08);border:1px solid #e8e8e8;transition:box-shadow .3s ease}
+.rd-card:hover{box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.rd-card--gray{background:#fafafa}
+.rd-card--hover-lift{transition:all .3s ease}
+.rd-card--hover-lift:hover{box-shadow:0 8px 25px rgba(211,47,47,.12);border-color:#d32f2f;transform:translateY(-4px)}
+
+/* --- Card Icon --- */
+.rd-card-icon{width:56px;height:56px;background:linear-gradient(135deg,#d32f2f,#f44336);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:1.5rem;flex-shrink:0}
+.rd-card-icon--circle{border-radius:50%}
+.rd-card-icon--lg{width:64px;height:64px}
+.rd-card-icon--sm{width:48px;height:48px}
+.rd-card-icon--outline{background:#fafafa;color:#d32f2f;border:none}
+
+/* --- Card Content --- */
+.rd-card h3{font-size:1.25rem;color:#212121;margin-bottom:1rem;font-weight:700}
+.rd-card h4{font-size:1.1rem;color:#212121;margin-bottom:.75rem;font-weight:700}
+.rd-card p{color:#616161;line-height:1.8;font-size:.98rem;margin-bottom:1rem}
+.rd-card p:last-child{margin-bottom:0}
+
+/* --- Card Header (icon + title inline) --- */
+.rd-card-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.rd-card-head h4{margin:0;font-size:1.05rem;color:#212121;font-weight:700}
+
+/* --- NOM Badges --- */
+.rd-badges{display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+.rd-badge{display:inline-flex;align-items:center;gap:.5rem;background:#fff5f5;border:1px solid #ffcdd2;border-radius:8px;padding:.6rem 1.1rem;font-size:.85rem;font-weight:600;color:#c62828}
+.rd-badge svg{flex-shrink:0}
+.rd-badge--green{background:#e8f5e9;border-color:#c8e6c9;color:#2e7d32}
+.rd-badge--blue{background:#e3f2fd;border-color:#bbdefb;color:#1565c0}
+
+/* --- Pill Badge --- */
+.rd-pill{display:inline-block;background:#e8f5e9;color:#2e7d32;padding:.35rem .9rem;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:1rem}
+.rd-pill--red{background:#ffebee;color:#c62828}
+.rd-pill--blue{background:#e3f2fd;color:#1565c0}
+
+/* --- Alert Box --- */
+.rd-alert{margin-top:2.5rem;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:1px solid #ffcc80;border-left:4px solid #e65100;border-radius:12px;padding:2rem 2.5rem;display:flex;align-items:flex-start;gap:1.5rem}
+.rd-alert-icon{width:48px;height:48px;background:#e65100;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rd-alert-content h4{font-size:1.1rem;color:#bf360c;margin-bottom:.5rem;font-weight:700}
+.rd-alert-content p{color:#4e342e;line-height:1.7;font-size:.95rem;margin:0}
+.rd-alert-content strong{color:#bf360c}
+
+/* --- Info Box (Blue) --- */
+.rd-info{margin-top:2.5rem;background:linear-gradient(135deg,#e3f2fd,#bbdefb);border:1px solid #90caf9;border-radius:12px;padding:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
+.rd-info-icon{width:64px;height:64px;background:#1565c0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rd-info-content h4{font-size:1.15rem;color:#0d47a1;font-weight:700;margin:0 0 .75rem}
+.rd-info-content p{color:#1a237e;line-height:1.7;font-size:.95rem;margin:0 0 .5rem}
+.rd-info-content p:last-child{margin:0}
+.rd-info-content strong{color:#0d47a1}
+.rd-info-badges{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+.rd-info-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.7);border:1px solid #90caf9;border-radius:20px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:#1565c0}
+
+/* --- Checkmark List --- */
+.rd-checklist{list-style:none;padding:0;margin:0}
+.rd-checklist li{padding:.45rem 0;padding-left:1.5rem;position:relative;color:#616161;font-size:.9rem;line-height:1.6}
+.rd-checklist li::before{content:"✓";position:absolute;left:0;color:#d32f2f;font-weight:700;font-size:.85rem}
+
+/* --- Step Cards --- */
+.rd-step{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 15px rgba(0,0,0,.08);border:1px solid #e8e8e8;transition:all .3s ease;position:relative;padding-top:2.5rem}
+.rd-step:hover{box-shadow:0 8px 25px rgba(211,47,47,.12);border-color:#d32f2f;transform:translateY(-3px)}
+.rd-step-num{position:absolute;top:-16px;left:2rem;width:36px;height:36px;background:linear-gradient(135deg,#d32f2f,#f44336);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.95rem;box-shadow:0 4px 12px rgba(211,47,47,.3)}
+.rd-step h4{font-size:1rem;color:#212121;margin-bottom:.5rem;font-weight:700}
+.rd-step p{color:#757575;line-height:1.6;font-size:.9rem;margin:0}
+
+/* --- Level Cards (centered with icon) --- */
+.rd-level{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 15px rgba(0,0,0,.08);border:1px solid #e8e8e8;text-align:center;transition:all .3s ease}
+.rd-level:hover{box-shadow:0 8px 25px rgba(211,47,47,.12);border-color:#d32f2f;transform:translateY(-4px)}
+.rd-level-icon{width:64px;height:64px;background:#fafafa;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:#d32f2f;transition:background .3s ease}
+.rd-level:hover .rd-level-icon{background:#fff5f5}
+.rd-level h4{font-size:1.1rem;color:#212121;margin-bottom:.75rem;font-weight:700}
+.rd-level p{color:#757575;line-height:1.7;font-size:.9rem}
+
+/* --- Feature Items (horizontal icon + text) --- */
+.rd-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.rd-feature{display:flex;align-items:flex-start;gap:1rem;background:#fff;border-radius:10px;padding:1.5rem;border:1px solid #e8e8e8}
+.rd-feature-icon{width:40px;height:40px;background:#e8f5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#2e7d32}
+.rd-feature-icon--red{background:#ffebee;color:#d32f2f}
+.rd-feature h5{font-size:.95rem;color:#212121;font-weight:600;margin:0 0 .35rem}
+.rd-feature p{font-size:.85rem;color:#757575;line-height:1.6;margin:0}
+
+/* --- Pricing Table --- */
+.rd-price-table{width:100%;border-collapse:collapse;margin:2rem 0;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.08)}
+.rd-price-table thead tr{background:linear-gradient(135deg,#d32f2f,#c62828)}
+.rd-price-table th{padding:1rem 1.25rem;text-align:left;color:#fff;font-weight:600;font-size:.9rem;border:none}
+.rd-price-table th:not(:first-child){text-align:center}
+.rd-price-table td{padding:.9rem 1.25rem;border-bottom:1px solid #f0f0f0;font-size:.95rem;color:#424242}
+.rd-price-table td:not(:first-child){text-align:center}
+.rd-price-table tbody tr:nth-child(even){background:#fafafa}
+.rd-price-table tbody tr:hover{background:#fff5f5}
+.rd-price-table td strong{color:#212121}
+.rd-price-range{font-weight:700;color:#d32f2f}
+
+/* --- Warning Signs --- */
+.rd-warning-card{background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;display:flex;align-items:flex-start;gap:1rem;transition:all .3s ease}
+.rd-warning-card:hover{border-color:#ffcc80;box-shadow:0 4px 15px rgba(230,81,0,.1)}
+.rd-warning-icon{width:44px;height:44px;background:#fff3e0;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#e65100}
+.rd-warning-card h5{font-size:.95rem;color:#212121;font-weight:600;margin:0 0 .25rem}
+.rd-warning-card p{font-size:.85rem;color:#757575;line-height:1.5;margin:0}
+
+/* --- Why Choose Section --- */
+.rd-why{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.rd-why-col{display:flex;flex-direction:column;gap:1.5rem}
+.rd-why-item{display:flex;gap:1rem;align-items:flex-start}
+.rd-why-item-icon{width:44px;height:44px;background:linear-gradient(135deg,#d32f2f,#f44336);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.rd-why-item-content h4{font-size:1rem;color:#212121;font-weight:700;margin:0 0 .5rem}
+.rd-why-item-content p{font-size:.9rem;color:#616161;line-height:1.7;margin:0}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media(max-width:1024px){
+.rd-grid-4{grid-template-columns:repeat(2,1fr)}
+.rd-features{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:768px){
+.rd-grid-2{grid-template-columns:1fr;gap:2rem}
+.rd-grid-3{grid-template-columns:1fr}
+.rd-grid-4{grid-template-columns:1fr}
+.rd-grid-6{grid-template-columns:1fr}
+.rd-features{grid-template-columns:1fr}
+.rd-why{grid-template-columns:1fr;gap:2rem}
+.rd-alert{flex-direction:column;align-items:center;text-align:center}
+.rd-info{grid-template-columns:1fr;text-align:center;justify-items:center}
+}
+
+@media(max-width:480px){
+.rd-section{padding:3rem 0}
+.rd-header h2{font-size:1.5rem}
+.rd-card{padding:1.5rem}
+.rd-step{padding:1.5rem;padding-top:2.5rem}
+.rd-level{padding:1.5rem}
+.rd-alert{padding:1.5rem}
+.rd-info{padding:1.5rem}
+}
