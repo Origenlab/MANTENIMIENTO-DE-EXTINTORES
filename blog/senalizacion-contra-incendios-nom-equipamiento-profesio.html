@@ -48,7 +48,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="../css/style.css?v=18">
-<link rel="stylesheet" href="../css/blog-article.css?v=1">
+<link rel="stylesheet" href="../css/blog-article.css?v=4">
 <link rel="stylesheet" href="../css/blog-system.css?v=8">
 <link rel="stylesheet" href="../css/mobile-enhancements.css?v=1">
 
@@ -451,13 +451,57 @@ Te Puede Interesar
   <div class="footer-bottom"><div class="footer-bottom-container"><p>&copy; 2025 MANEXT - Mantenimiento de Extintores. Todos los derechos reservados.</p><p><strong>Protegiendo a Mexico desde 1943</strong> | Certificaciones: NOM-154-SCFI, NOM-002-STPS</p></div></div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/5215539689272?text=Hola!%20Me%20gustaria%20mas%20informacion" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-</a>
-
 <!-- Scripts -->
 <script src="../js/blog-system.js?v=8"></script>
+
+<!-- WhatsApp Float - Creado via JS para garantizar position:fixed -->
+<script>
+(function(){
+  var a=document.createElement('a');
+  a.href='https://wa.me/5215539689272?text=Hola!%20Me%20gustaria%20mas%20informacion';
+  a.target='_blank';
+  a.rel='noopener';
+  a.setAttribute('aria-label','Contactar por WhatsApp');
+  a.id='whatsapp-float-js';
+  var s=a.style;
+  s.setProperty('position','fixed','important');
+  s.setProperty('bottom','30px','important');
+  s.setProperty('right','30px','important');
+  s.setProperty('width','60px','important');
+  s.setProperty('height','60px','important');
+  s.setProperty('display','flex','important');
+  s.setProperty('align-items','center','important');
+  s.setProperty('justify-content','center','important');
+  s.setProperty('background','linear-gradient(135deg, #25D366 0%, #128C7E 100%)','important');
+  s.setProperty('border-radius','50%','important');
+  s.setProperty('color','#ffffff','important');
+  s.setProperty('text-decoration','none','important');
+  s.setProperty('z-index','99999','important');
+  s.setProperty('box-shadow','0 4px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.1)','important');
+  s.setProperty('visibility','visible','important');
+  s.setProperty('opacity','1','important');
+  s.setProperty('cursor','pointer','important');
+  s.transition='transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease';
+
+  var badge=document.createElement('span');
+  var bs=badge.style;
+  bs.position='absolute';bs.top='-4px';bs.right='-4px';
+  bs.width='22px';bs.height='22px';
+  bs.background='linear-gradient(135deg, #ff5252 0%, #e53935 100%)';
+  bs.color='#fff';bs.fontSize='12px';bs.fontWeight='700';
+  bs.borderRadius='50%';bs.display='flex';bs.alignItems='center';bs.justifyContent='center';
+  bs.boxShadow='0 2px 8px rgba(229,57,53,0.5)';bs.border='2px solid #fff';
+  badge.textContent='1';
+
+  a.innerHTML='<svg viewBox="0 0 32 32" style="width:32px;height:32px;fill:#fff;flex-shrink:0"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.837.736 5.502 2.034 7.818L.105 31.895l8.303-1.903A15.924 15.924 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.405 22.994c-.347.973-1.716 1.782-2.362 1.868-.646.087-1.243.389-4.194-.872-3.56-1.52-5.747-5.168-5.921-5.408-.174-.24-1.421-1.889-1.421-3.603 0-1.714.898-2.559 1.217-2.908.318-.35.694-.437.925-.437.231 0 .463.002.665.012.213.01.5-.081.782.597.29.694.983 2.401 1.069 2.575.087.174.144.377.029.608-.116.231-.174.377-.347.578-.174.202-.366.451-.521.605-.174.174-.354.362-.152.71.202.347.898 1.48 1.928 2.399 1.324 1.182 2.44 1.548 2.787 1.722.347.174.55.144.752-.087.202-.231.867-1.012 1.098-1.36.231-.347.463-.289.782-.174.318.116 2.023.954 2.37 1.127.347.174.578.26.665.405.087.144.087.838-.26 1.811z"/></svg>';
+  a.appendChild(badge);
+
+  a.addEventListener('mouseenter',function(){a.style.transform='scale(1.1)';a.style.boxShadow='0 6px 30px rgba(37,211,102,0.5), 0 4px 12px rgba(0,0,0,0.15)';});
+  a.addEventListener('mouseleave',function(){a.style.transform='scale(1)';a.style.boxShadow='0 4px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.1)';});
+
+  document.body.appendChild(a);
+})();
+</script>
 
 </body>
 </html>
