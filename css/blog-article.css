@@ -42,6 +42,26 @@
 
 .article-content a {
     word-break: break-all;
+    color: var(--art-primary);
+    text-decoration: underline;
+    text-decoration-color: rgba(211, 47, 47, 0.3);
+    text-underline-offset: 2px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.article-content a:hover {
+    color: var(--art-primary-light);
+    text-decoration-color: var(--art-primary-light);
+}
+
+.article-cta a {
+    color: #fff;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.article-cta a:hover {
+    color: #fff;
+    text-decoration-color: #fff;
 }
 
 .table-responsive {
