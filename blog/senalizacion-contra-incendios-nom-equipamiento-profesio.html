@@ -209,20 +209,28 @@
 })();
 </script>
 
-<!-- Spacer for fixed header -->
-<div class="header-spacer"></div>
-
 <!-- BREADCRUMB -->
-<section class="breadcrumb-section">
+<section class="breadcrumbs">
     <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Inicio</a>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
-            <a href="/blog/">Blog</a>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
-            <a href="/blog/equipos-contra-incendio">Equipos Contra Incendio</a>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
-            <span>Señalización Contra Incendios</span>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Inicio
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/blog/">Blog</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/blog/equipos-contra-incendio">Equipos Contra Incendio</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Señalización Contra Incendios</li>
+            </ol>
         </nav>
     </div>
 </section>
@@ -343,6 +351,65 @@ Nuestros Servicios
 </ul>
 </div>
 
+<!-- Tipos de Extintores -->
+<div class="sidebar-widget">
+<h3 class="sidebar-widget-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+Tipos de Extintores
+</h3>
+<div class="sidebar-extintores-list">
+<a href="/polvo-quimico-seco" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">Polvo Químico Seco (PQS)</span><span class="extintor-arrow">&#8594;</span></a>
+<a href="/co2" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">CO2 (Dióxido de Carbono)</span><span class="extintor-arrow">&#8594;</span></a>
+<a href="/agua-presion" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">Agua a Presión</span><span class="extintor-arrow">&#8594;</span></a>
+<a href="/tipo-k" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">Tipo K (Cocinas)</span><span class="extintor-arrow">&#8594;</span></a>
+<a href="/espuma-afff" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">Espuma AFFF</span><span class="extintor-arrow">&#8594;</span></a>
+<a href="/agentes-limpios" class="sidebar-extintor-link"><span class="extintor-dot"></span><span class="extintor-name">Agentes Limpios</span><span class="extintor-arrow">&#8594;</span></a>
+</div>
+</div>
+
+<!-- Zonas de Servicio -->
+<div class="sidebar-widget">
+<h3 class="sidebar-widget-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+Zonas de Servicio
+</h3>
+<div class="sidebar-zonas-tags">
+<span class="sidebar-zona-tag">Polanco</span>
+<span class="sidebar-zona-tag">Reforma</span>
+<span class="sidebar-zona-tag">Santa Fe</span>
+<span class="sidebar-zona-tag">Condesa</span>
+<span class="sidebar-zona-tag">Roma</span>
+<span class="sidebar-zona-tag">Del Valle</span>
+<span class="sidebar-zona-tag">Coyoacán</span>
+<span class="sidebar-zona-tag">Naucalpan</span>
+<span class="sidebar-zona-tag">Tlalnepantla</span>
+<span class="sidebar-zona-tag">Ecatepec</span>
+</div>
+<p class="sidebar-zonas-note">Cobertura en toda la CDMX y Edo. de México</p>
+</div>
+
+<!-- Normativas -->
+<div class="sidebar-widget">
+<h3 class="sidebar-widget-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+Normativas
+</h3>
+<div class="sidebar-normas-list">
+<div class="sidebar-norma-item">
+<div class="sidebar-norma-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+<div class="sidebar-norma-info"><strong>NOM-154-SCFI</strong><span>Extintores: diseño, recarga y mantenimiento</span></div>
+</div>
+<div class="sidebar-norma-item">
+<div class="sidebar-norma-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+<div class="sidebar-norma-info"><strong>NOM-002-STPS</strong><span>Seguridad en centros de trabajo</span></div>
+</div>
+<div class="sidebar-norma-item">
+<div class="sidebar-norma-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+<div class="sidebar-norma-info"><strong>Protección Civil</strong><span>Regulaciones CDMX y Edo. Mex.</span></div>
+</div>
+</div>
+</div>
+
 <!-- Related Links -->
 <div class="sidebar-widget">
 <h3 class="sidebar-widget-title">
@@ -352,7 +419,9 @@ Te Puede Interesar
 <div class="sidebar-related-links">
 <a href="/blog/" class="sidebar-related-link"><span class="related-icon">&#128218;</span><span class="related-text">Más Artículos</span><span class="related-arrow">&#8594;</span></a>
 <a href="/servicios" class="sidebar-related-link"><span class="related-icon">&#128736;&#65039;</span><span class="related-text">Nuestros Servicios</span><span class="related-arrow">&#8594;</span></a>
-<a href="/catalogo" class="sidebar-related-link"><span class="related-icon">&#128203;</span><span class="related-text">Catálogo de Extintores</span><span class="related-arrow">&#8594;</span></a>
+<a href="/extintores" class="sidebar-related-link"><span class="related-icon">&#128293;</span><span class="related-text">Guía de Extintores</span><span class="related-arrow">&#8594;</span></a>
+<a href="/catalogo" class="sidebar-related-link"><span class="related-icon">&#128203;</span><span class="related-text">Catálogo Completo</span><span class="related-arrow">&#8594;</span></a>
+<a href="/nosotros" class="sidebar-related-link"><span class="related-icon">&#127970;</span><span class="related-text">Sobre MANEXT</span><span class="related-arrow">&#8594;</span></a>
 <a href="/contacto" class="sidebar-related-link"><span class="related-icon">&#128222;</span><span class="related-text">Contacto</span><span class="related-arrow">&#8594;</span></a>
 </div>
 </div>

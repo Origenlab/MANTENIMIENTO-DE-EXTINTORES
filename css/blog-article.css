@@ -139,12 +139,12 @@ article[itemscope] {
 header.article-hero,
 .article-hero {
     position: relative;
-    min-height: 500px;
+    min-height: 320px;
     display: flex;
     align-items: center;
     overflow: hidden;
     background: linear-gradient(180deg, #ffcdd2 0%, #ffebee 30%, #fef2f2 70%, #ffffff 100%);
-    padding: 150px 0 100px;
+    padding: 80px 0 60px;
     margin: 0 !important;
     margin-top: 0 !important;
     border: none !important;
@@ -1267,8 +1267,8 @@ header.article-hero,
     }
 
     .article-hero {
-        min-height: 350px;
-        padding: 80px 0 60px;
+        min-height: 220px;
+        padding: 50px 0 40px;
         margin-top: 0 !important;
     }
 
@@ -1472,11 +1472,11 @@ header.article-hero,
 }
 
 .sidebar-service-item .service-name {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--texto-oscuro);
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
     word-break: break-word;
 }
 
@@ -1622,6 +1622,139 @@ header.article-hero,
 .sidebar-related-link .related-arrow {
     color: var(--art-primary);
     font-weight: bold;
+}
+
+/* Módulo: Tipos de Extintores */
+.sidebar-extintores-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-extintor-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-extintor-link:hover {
+    background: #fef2f2;
+    border-left-color: var(--art-primary);
+    transform: translateX(3px);
+}
+
+.sidebar-extintor-link .extintor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--art-primary);
+    flex-shrink: 0;
+}
+
+.sidebar-extintor-link .extintor-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--texto-oscuro);
+    flex: 1;
+}
+
+.sidebar-extintor-link .extintor-arrow {
+    color: var(--art-primary);
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar-extintor-link:hover .extintor-arrow {
+    opacity: 1;
+}
+
+/* Módulo: Zonas de Servicio */
+.sidebar-zonas-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sidebar-zona-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #fef2f2 0%, #fff 100%);
+    color: var(--texto-oscuro);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(211, 47, 47, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sidebar-zona-tag:hover {
+    background: var(--art-primary);
+    color: #fff;
+    border-color: var(--art-primary);
+}
+
+.sidebar-zonas-note {
+    font-size: 0.8rem;
+    color: var(--texto-gris);
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Módulo: Normativas */
+.sidebar-normas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-norma-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.sidebar-norma-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #d32f2f, #f44336);
+    color: #fff;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.sidebar-norma-badge svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
+}
+
+.sidebar-norma-info strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 2px;
+}
+
+.sidebar-norma-info span {
+    font-size: 0.75rem;
+    color: var(--texto-gris);
+    line-height: 1.3;
 }
 
 /* Sin animaciones en links */
