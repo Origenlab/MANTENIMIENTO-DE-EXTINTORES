@@ -1,0 +1,1317 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MANEXT",
+  "description": "Empresa líder en venta, mantenimiento y recarga de extintores en Ciudad de México. Más de 80 años de experiencia. Servicio 24/7.",
+  "url": "https://mantenimientodeextintores.mx",
+  "telephone": "+525539689272",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.4326",
+    "longitude": "-99.1332"
+  },
+  "openingHours": "Mo-Su 08:00-18:00",
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "15000"
+  },
+  "serviceType": [
+    "Venta de Extintores",
+    "Mantenimiento de Extintores",
+    "Recarga de Extintores",
+    "Prueba Hidrostática",
+    "Capacitación"
+  ],
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Extintores",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Extintor Polvo Químico Seco PQS",
+          "description": "Extintor tipo ABC para oficinas y comercios"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Extintor CO2",
+          "description": "Extintor para equipos electrónicos sin residuos"
+        }
+      }
+    ]
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el precio de un extintor en CDMX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio varía según tipo y capacidad. PQS ABC 4.5 kg desde $650 MXN, CO2 5 lb desde $1,800 MXN, Tipo K desde $3,500 MXN. Incluyen certificado NOM-154-SCFI e instalación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué ventajas ofrece comprar extintores con un proveedor certificado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Garantiza productos de fabricación aprobada, stock disponible, asesoría profesional, instalación incluida, documentación para Protección Civil y precios competitivos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los agentes extintores disponibles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PQS para fuegos ABC, CO2 para fuegos BC, Agua a presión clase A, Espuma AFFF clases AB, Tipo K para cocinas, y Agentes Limpios para tecnología sensible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué beneficios obtengo al integrar un sistema completo de extintores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cumplimiento NOM-002-STPS, reducción de accidentes, satisfacción en auditorías de Protección Civil y protección integral de patrimonio y colaboradores."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Venta de Extintores en CDMX | Certificados NOM | MANEXT"
+  description="Venta de extintores certificados NOM en CDMX. Mantenimiento, recarga y productos de alta calidad con stock disponible. +80 años protegiendo empresas. Cotización gratuita 24/7."
+  canonical="https://mantenimientodeextintores.mx/"
+  ogTitle="Venta de Extintores en CDMX | Certificados NOM | MANEXT"
+  ogDescription="Empresa líder en venta, mantenimiento y recarga de extintores en Ciudad de México. Más de 80 años de experiencia. Servicio 24/7. Cotiza gratis ahora."
+  ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
+  breadcrumbs={[]}
+  schemas={[localBusinessSchema, faqSchema]}
+  extraCss={['/css/section-redesign.css?v=1']}
+>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">Venta de Extintores Certificados — Protección Contra Incendios en CDMX</h1>
+          <p class="hero-subtitle">+80 años ofreciendo los mejores productos en seguridad contra incendios</p>
+          <p class="hero-description">Venta y mantenimiento de extintores con certificación NOM. Productos de alta calidad, stock disponible y entrega en 48 horas en CDMX.</p>
+          <div class="hero-buttons">
+            <a href="tel:5539689272" class="btn btn-primary">Llamar Ahora</a>
+            <a href="https://wa.me/5215539689272" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-text">
+            <p class="hero-paragraph"><strong>MANEXT</strong> es la empresa líder en venta y mantenimiento de extintores en Ciudad de México y Estado de México, con más de 80 años de trayectoria. Nuestros productos y servicios de protección contra incendios están aprobados bajo las normas oficiales mexicanas <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>, garantizando el correcto funcionamiento de cada producto que entregamos.</p>
+            <p class="hero-paragraph">MANEXT ofrece equipos de fabricación certificada con respaldo documental completo para inspecciones de Protección Civil. Con ubicación estratégica en CDMX, nuestra prioridad es prevenir accidentes y proteger lo que más importa: <strong>su patrimonio, sus colaboradores y su continuidad operativa</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="benefits" aria-labelledby="benefits-heading">
+  <div class="container">
+    <h2 id="benefits-heading" class="sr-only">Seguridad y Protección Civil Certificada</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+        </div>
+        <h3>Certificación Garantizada</h3>
+        <p>Cumplimiento con NOM-154-SCFI y NOM-002-STPS</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3>Servicio 24/7</h3>
+        <p>Disponibilidad todos los días del año</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>80+ Años de Experiencia</h3>
+        <p>Líderes en protección contra incendios</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+        </div>
+        <h3>Personal Certificado</h3>
+        <p>Técnicos expertos y capacitados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Trust -->
+<section class="certifications-trust">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Normas y Certificaciones de Protección Civil</h2>
+      <p class="section-subtitle">Cumplimiento normativo garantizado con respaldo oficial mexicano para tu empresa</p>
+    </div>
+    <div class="certifications-grid">
+      <div class="certification-card">
+        <div class="certification-badge">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+        <h3>NOM-154-SCFI</h3>
+        <p class="certification-description">Certificación oficial para equipos contra incendio - extintores portátiles</p>
+        <span class="certification-status">&#10003; Certificado Vigente</span>
+      </div>
+      <div class="certification-card">
+        <div class="certification-badge">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+        <h3>NOM-002-STPS</h3>
+        <p class="certification-description">Condiciones de seguridad - prevención y protección contra incendios</p>
+        <span class="certification-status">&#10003; Certificado Vigente</span>
+      </div>
+      <div class="certification-card">
+        <div class="certification-badge">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+        <h3>NOM-026-STPS</h3>
+        <p class="certification-description">Colores y señales de seguridad e higiene - identificación de peligros</p>
+        <span class="certification-status">&#10003; Certificado Vigente</span>
+      </div>
+      <div class="certification-card">
+        <div class="certification-badge">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M9 12l2 2 4-4"></path></svg>
+        </div>
+        <h3>Garantía Total</h3>
+        <p class="certification-description">Respaldo total en productos y atención con póliza de garantía incluida</p>
+        <span class="certification-status">&#10003; 100% Garantizado</span>
+      </div>
+    </div>
+    <div class="trust-indicators-grid">
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="trust-card-content">
+          <div class="trust-number">+80</div>
+          <div class="trust-label">Años de Experiencia</div>
+          <div class="trust-desc">Protegiendo a México desde 1943</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="trust-card-content">
+          <div class="trust-number">+15,000</div>
+          <div class="trust-label">Empresas Atendidas</div>
+          <div class="trust-desc">Confían en Nosotros</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="trust-card-content">
+          <div class="trust-number">100%</div>
+          <div class="trust-label">Certificación NOM</div>
+          <div class="trust-desc">Equipos Certificados</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="trust-card-content">
+          <div class="trust-number">24/7/365</div>
+          <div class="trust-label">Servicio Continuo</div>
+          <div class="trust-desc">Atención de Emergencias</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="trust-card-content">
+          <div class="trust-number">60+</div>
+          <div class="trust-label">Técnicos Certificados</div>
+          <div class="trust-desc">Especializados NOM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Venta, Mantenimiento y Recarga de Extintores Certificados</h2>
+      <p class="section-subtitle">Productos y soluciones integrales certificadas para tu negocio</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/venta-de-extintores">
+            <img src="/img/img-index/venta-de-extintores.avif" alt="Venta de extintores certificados NOM en CDMX - entrega e instalación en 48 horas" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Venta de Extintores</h3>
+          <p>Productos nuevos certificados de todas las clases: PQS, CO2, agua, espuma y agentes limpios. Asesoría profesional según las necesidades de tu empresa e instalación incluida.</p>
+          <ul class="service-features">
+            <li>Productos certificados NOM-154-SCFI</li>
+            <li>Instalación y señalamiento incluido</li>
+            <li>Garantía de fábrica</li>
+            <li>Análisis profesional de necesidades</li>
+          </ul>
+          <a href="/venta-de-extintores" class="service-link">Venta de Extintores</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/mantenimiento-preventivo">
+            <img src="/img/img-index/mantenimiento-preventivo.avif" alt="Servicio de mantenimiento preventivo anual de extintores con pólizas certificadas NOM" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Mantenimiento Preventivo</h3>
+          <p>Pólizas anuales con inspección exhaustiva, reportes técnicos detallados y garantía de cumplimiento ante auditorías de Protección Civil conforme a la norma NOM-002-STPS.</p>
+          <ul class="service-features">
+            <li>Inspecciones mensuales programadas</li>
+            <li>Reportes técnicos certificados</li>
+            <li>Bitácoras actualizadas</li>
+            <li>Documentación para auditorías</li>
+          </ul>
+          <a href="/mantenimiento-preventivo" class="service-link">Mantenimiento Preventivo</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/recarga-de-extintores">
+            <img src="/img/img-index/recarga-de-extintores.avif" alt="Servicio de recarga de extintores certificada a domicilio en CDMX - agentes de calidad garantizada" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Recarga de Extintores</h3>
+          <p>Recarga certificada con agentes de alta calidad garantizada. Inspección completa, recarga profesional y corrección de fallas con collares de garantía.</p>
+          <ul class="service-features">
+            <li>Atención a domicilio en 24 horas</li>
+            <li>Préstamo de extintores durante el proceso</li>
+            <li>Agentes certificados</li>
+            <li>Collares de garantía incluidos</li>
+          </ul>
+          <a href="/recarga-de-extintores" class="service-link">Recarga de Extintores</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/prueba-hidrostatica">
+            <img src="/img/img-index/prueba-hidrostatica.avif" alt="Prueba hidrostática quinquenal obligatoria para verificar integridad de cilindros de extintores" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Prueba Hidrostática</h3>
+          <p>Verificación de integridad estructural del cilindro con tecnología de presión certificada. Obligatorio cada 5 años según la norma NOM-154-SCFI vigente.</p>
+          <ul class="service-features">
+            <li>Tecnología de prueba certificada</li>
+            <li>Técnicos capacitados NOM-154</li>
+            <li>Certificado de prueba oficial</li>
+            <li>Detección de fallas estructurales</li>
+          </ul>
+          <a href="/prueba-hidrostatica" class="service-link">Prueba Hidrostática</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/capacitacion-brigadas">
+            <img src="/img/img-index/capacitacion-y-brigadas.avif" alt="Capacitación contra incendios y formación de brigadas certificadas NOM-002-STPS con constancias DC-3" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Capacitación y Brigadas</h3>
+          <p>Cursos certificados de combate de incendios y formación de brigadas. Constancias DC-3 válidas ante STPS con simulacros realistas y prácticas controladas.</p>
+          <ul class="service-features">
+            <li>Constancias DC-3 oficiales STPS</li>
+            <li>Simulacros con fuego real</li>
+            <li>Formación de brigadas internas</li>
+            <li>Material didáctico incluido</li>
+          </ul>
+          <a href="/capacitacion-brigadas" class="service-link">Capacitación y Brigadas</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/senalizacion">
+            <img src="/img/img-index/señalizaion-y-equipamiento.avif" alt="Señalización fotoluminiscente y equipamiento contra incendios conforme NOM-026-STPS y NOM-002-STPS" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Señalamiento y Complementos</h3>
+          <p>Señalamiento reglamentario de seguridad, gabinetes para extintores, detectores de humo y complementos según normativas NOM-002-STPS y NOM-026-STPS.</p>
+          <ul class="service-features">
+            <li>Señales fotoluminiscentes</li>
+            <li>Gabinetes metálicos y acrílicos</li>
+            <li>Instalación profesional</li>
+            <li>Cumplimiento normativo 100%</li>
+          </ul>
+          <a href="/senalizacion" class="service-link">Señalización y Equipamiento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Asesoría en Equipos Contra Incendio y Sistemas de Protección</h2>
+        <p class="about-intro">Desde 1943, MANEXT ha sido líder en la compra y venta de extintores en México, con más de 80 años de experiencia respaldando la seguridad de empresas y hogares. Nuestra satisfacción del cliente es del 100%.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="about-feature-text">
+              <h3>Experiencia Comprobada</h3>
+              <p>Más de 20 años sirviendo a cientos de clientes nacionales y regionales</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="about-feature-text">
+              <h3>Cobertura Total</h3>
+              <p>Servicio 24/7/365 en Ciudad de México y área metropolitana</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="about-feature-text">
+              <h3>Certificaciones Oficiales</h3>
+              <p>Cumplimiento garantizado con NOM-154-SCFI y NOM-002-STPS</p>
+            </div>
+          </div>
+        </div>
+        <a href="/nosotros" class="btn btn-primary">Conocer Más</a>
+      </div>
+      <div class="about-text-content">
+        <p class="about-paragraph">Nuestra trayectoria de más de ocho décadas nos ha consolidado como el socio de confianza para empresas de todos los tamaños. Ofrecemos los mejores productos certificados y una relación integral que garantiza la continuidad operativa de tu negocio. Con MANEXT, cada mantenimiento o recarga se realiza con calidad y satisfacción garantizada, respaldados por las normas <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>. Además, complementamos tu sistema con detectores de humo y señalamiento reglamentario.</p>
+        <p class="about-paragraph">Nuestro compromiso va más allá de la venta. Brindamos atención a domicilio con préstamo de extintores durante las reparaciones, asegurando que tu empresa nunca quede desprotegida. Contamos con técnicos certificados, documentación completa para auditorías de Protección Civil, y una disponibilidad 24/7/365 que garantiza respuesta inmediata. Con MANEXT proteges lo que más importa: tu patrimonio, tus colaboradores y la continuidad de tu operación. Conoce nuestro precio competitivo y stock permanente en todos los tipos de extintores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Premium -->
+<section class="cta-premium">
+  <div class="container">
+    <div class="cta-premium-wrapper">
+      <div class="cta-premium-content">
+        <div class="cta-premium-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Protección Garantizada</span>
+        </div>
+        <h2>El Crecimiento de tu Negocio Depende de su Seguridad</h2>
+        <p class="cta-premium-description">No arriesgues tu operación por falta de protección. Contacta a nuestros expertos ahora mismo y asegura tu inversión con productos certificados y atención profesional respaldada por más de <strong>80 años de experiencia</strong>.</p>
+        <div class="cta-premium-features">
+          <div class="cta-premium-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Respuesta en menos de 24 horas</span>
+          </div>
+          <div class="cta-premium-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Productos certificados NOM-154-SCFI</span>
+          </div>
+          <div class="cta-premium-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Servicio a domicilio incluido</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta-premium-card">
+        <div class="cta-premium-card-header">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <h3>Contacta a un Experto</h3>
+        </div>
+        <div class="cta-premium-buttons">
+          <a href="tel:5539689272" class="cta-premium-btn cta-premium-btn-phone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div class="cta-premium-btn-content">
+              <span class="cta-premium-btn-label">Llámanos ahora</span>
+              <span class="cta-premium-btn-number">55 3968 9272</span>
+            </div>
+          </a>
+          <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20información%20sobre%20sus%20servicios%20de%20extintores" class="cta-premium-btn cta-premium-btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <div class="cta-premium-btn-content">
+              <span class="cta-premium-btn-label">Escríbenos por</span>
+              <span class="cta-premium-btn-number">WhatsApp</span>
+            </div>
+          </a>
+          <a href="/contacto" class="cta-premium-btn cta-premium-btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Solicitar Cotización
+          </a>
+        </div>
+        <div class="cta-premium-guarantee">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Cotización sin compromiso en menos de 1 hora</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Extinguishers -->
+<section class="extinguishers">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Compra de Extintores: Polvo Seco ABC, CO2, PQS y Más</h2>
+      <p class="section-subtitle">Productos certificados para cada necesidad de protección</p>
+    </div>
+    <div class="extinguishers-grid">
+      <div class="extinguisher-card">
+        <a href="/polvo-quimico-seco" class="extinguisher-image">
+          <img src="/img/img-index/polvo-quimico-seco-pqs.avif" alt="Extintor de Polvo Químico Seco PQS certificado NOM-154-SCFI - clase ABC para oficinas, negocios y hogares en CDMX" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Polvo Químico Seco (PQS)</h3>
+          <p>El producto más versátil del mercado para oficinas, negocios y hogares. Efectivo contra fuegos de materiales sólidos, líquidos inflamables y aparatos eléctricos energizados.</p>
+          <ul class="extinguisher-features">
+            <li>Clases A, B, C</li>
+            <li>Capacidades: 0.75 kg a 13 kg</li>
+            <li>Ideal para todo tipo de negocios</li>
+            <li>Certificado NOM-154-SCFI</li>
+          </ul>
+          <a href="/polvo-quimico-seco" class="extinguisher-link">Polvo Químico Seco (PQS)</a>
+        </div>
+      </div>
+      <div class="extinguisher-card">
+        <a href="/co2" class="extinguisher-image">
+          <img src="/img/img-index/dioxido-de-carbono-co2.avif" alt="Extintor de Dióxido de Carbono CO2 sin residuos - ideal para equipos electrónicos, data centers y servidores" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Dióxido de Carbono (CO2)</h3>
+          <p>Perfecto para aparatos electrónicos sensibles, laboratorios y salas de servidores. No deja residuos y es no conductor de electricidad. Aprobados bajo estándares UL.</p>
+          <ul class="extinguisher-features">
+            <li>Clases B, C</li>
+            <li>Capacidades: 2.27 kg a 9.08 kg</li>
+            <li>No deja residuos corrosivos</li>
+            <li>Ideal para data centers</li>
+          </ul>
+          <a href="/co2" class="extinguisher-link">Dióxido de Carbono (CO2)</a>
+        </div>
+      </div>
+      <div class="extinguisher-card">
+        <a href="/agua-presion" class="extinguisher-image">
+          <img src="/img/img-index/agua-a-presion.avif" alt="Extintor de Agua a Presión clase A - efectivo para materiales sólidos combustibles en oficinas y escuelas" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Agua a Presión</h3>
+          <p>Diseñado para materiales sólidos combustibles como madera, papel y textiles. Ideal para oficinas, escuelas y almacenes sin exposición eléctrica.</p>
+          <ul class="extinguisher-features">
+            <li>Clase A</li>
+            <li>Capacidades: 6 L y 9 L</li>
+            <li>Alto poder de enfriamiento</li>
+            <li>Económico y eficiente</li>
+          </ul>
+          <a href="/agua-presion" class="extinguisher-link">Agua a Presión</a>
+        </div>
+      </div>
+      <div class="extinguisher-card">
+        <a href="/tipo-k" class="extinguisher-image">
+          <img src="/img/img-index/agente-humedo-tipo-k.avif" alt="Extintor de Agente Húmedo Tipo K obligatorio para cocinas comerciales - combate aceites y grasas NOM-002-STPS" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Agente Húmedo (Tipo K)</h3>
+          <p>Especialmente diseñado para cocinas comerciales y restaurantes. Combate incendios de aceites y grasas vegetales/animales con tecnología especializada de saponificación.</p>
+          <ul class="extinguisher-features">
+            <li>Clase K</li>
+            <li>Obligatorio en cocinas comerciales</li>
+            <li>Enfría y sella aceites calientes</li>
+            <li>Cumple NOM-002-STPS</li>
+          </ul>
+          <a href="/tipo-k" class="extinguisher-link">Agente Húmedo (Tipo K)</a>
+        </div>
+      </div>
+      <div class="extinguisher-card">
+        <a href="/espuma-afff" class="extinguisher-image">
+          <img src="/img/img-index/espuma-afff.avif" alt="Extintor de Espuma AFFF clase AB - ideal para industrias, talleres y estaciones de servicio con hidrocarburos" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Espuma (AFFF)</h3>
+          <p>Ideal para industrias, talleres y estaciones de servicio. Combina capacidad para materiales sólidos y líquidos inflamables, formando una película sobre combustibles líquidos.</p>
+          <ul class="extinguisher-features">
+            <li>Clases A, B</li>
+            <li>Película supresora de vapores</li>
+            <li>Previene re-ignición</li>
+            <li>Ideal para hidrocarburos</li>
+          </ul>
+          <a href="/espuma-afff" class="extinguisher-link">Espuma (AFFF)</a>
+        </div>
+      </div>
+      <div class="extinguisher-card">
+        <a href="/agentes-limpios" class="extinguisher-image">
+          <img src="/img/img-index/agente-limpio.avif" alt="Extintor de Agentes Limpios sin residuos - protección premium para equipos electrónicos de alto valor y áreas críticas" width="640" height="380" loading="lazy" />
+        </a>
+        <div class="extinguisher-content">
+          <h3>Agentes Limpios</h3>
+          <p>Para electrónicos de alto valor y áreas críticas. No conductor, no corrosivo y no deja residuos. Protección premium para tecnología sensible con certificado vigente.</p>
+          <ul class="extinguisher-features">
+            <li>Clases A, B, C</li>
+            <li>Cero residuos post-descarga</li>
+            <li>No afecta capa de ozono</li>
+            <li>Ideal para áreas críticas</li>
+          </ul>
+          <a href="/agentes-limpios" class="extinguisher-link">Agentes Limpios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="contact-form-wrapper">
+      <div class="contact-info">
+        <h2>Cotización de Productos y Servicio de Extintores</h2>
+        <p class="contact-intro">Completa el formulario y nos pondremos en contacto contigo inmediatamente vía WhatsApp para brindarte la mejor solución. Consulta precio, disponibilidad en stock y asesoría sin compromiso.</p>
+        <div class="contact-features">
+          <div class="contact-feature-item">
+            <div class="contact-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-feature-text">
+              <h3>Respuesta Inmediata</h3>
+              <p>Te contactamos en menos de 5 minutos</p>
+            </div>
+          </div>
+          <div class="contact-feature-item">
+            <div class="contact-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+            </div>
+            <div class="contact-feature-text">
+              <h3>Cotización Sin Compromiso</h3>
+              <p>Asesoría profesional para tu negocio</p>
+            </div>
+          </div>
+          <div class="contact-feature-item">
+            <div class="contact-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="contact-feature-text">
+              <h3>Atención 24/7</h3>
+              <p>Disponibles todos los días del año</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-direct">
+          <p><strong>¿Prefieres llamar directamente?</strong></p>
+          <a href="tel:5539689272" class="contact-phone">55 3968 9272</a>
+          <a href="tel:5539689272" class="contact-phone">55 3968 9272</a>
+        </div>
+      </div>
+      <div class="contact-form-container">
+        <form id="whatsappForm" class="contact-form">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" />
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio de Interés *</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="Venta de Extintores">Venta de Extintores</option>
+              <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+              <option value="Recarga de Extintores">Recarga de Extintores</option>
+              <option value="Prueba Hidrostática">Prueba Hidrostática</option>
+              <option value="Capacitación y Brigadas">Capacitación y Brigadas</option>
+              <option value="Señalización y Equipamiento">Señalización y Equipamiento</option>
+              <option value="Cotización General">Cotización General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Enviar por WhatsApp
+          </button>
+          <p class="form-privacy">Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privacidad</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Clients Section -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Instalación de Extintores y Señalamiento por Sector</h2>
+      <p class="section-subtitle">Más de 10,000 clientes en industrias clave de México confían en nuestros productos y atención profesional</p>
+    </div>
+    <div class="clients-industries">
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </div>
+        <h3>Corporativos</h3>
+        <p>Oficinas y edificios empresariales</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        </div>
+        <h3>Hospitales</h3>
+        <p>Instituciones de salud</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+        <h3>Hoteles</h3>
+        <p>Sector hotelero y turismo</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3>Restaurantes</h3>
+        <p>Cocinas comerciales e industriales</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </div>
+        <h3>Industrias</h3>
+        <p>Manufactura y producción</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
+        <h3>Data Centers</h3>
+        <p>Centros de datos y TI</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        </div>
+        <h3>Condominios</h3>
+        <p>Residenciales y comerciales</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+        </div>
+        <h3>Escuelas</h3>
+        <p>Instituciones educativas</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><path d="M9 9v.01"></path><path d="M9 12v.01"></path><path d="M9 15v.01"></path><path d="M9 18v.01"></path></svg>
+        </div>
+        <h3>Centros Comerciales</h3>
+        <p>Plazas y galerías comerciales</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 7h10"></path><path d="M7 11h10"></path></svg>
+        </div>
+        <h3>Laboratorios</h3>
+        <p>Centros de investigación y análisis</p>
+      </div>
+    </div>
+    <div class="service-guarantees">
+      <div class="guarantee-card">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <h3>Productos 100% Certificados NOM</h3>
+        <p>Cada producto cumple con NOM-154-SCFI y NOM-002-STPS</p>
+      </div>
+      <div class="guarantee-card">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <h3>Disponibilidad 24/7/365</h3>
+        <p>Atención de emergencia disponible todos los días del año</p>
+      </div>
+      <div class="guarantee-card">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <h3>Documentación Completa</h3>
+        <p>Certificados, pólizas y reportes técnicos para Protección Civil</p>
+      </div>
+      <div class="guarantee-card">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <h3>Entrega en 48 Horas</h3>
+        <p>Instalación express en CDMX y área metropolitana</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>Calidad y Satisfacción del Cliente</h2>
+      <p class="section-subtitle">Empresas líderes y condominios de prestigio confían en nuestra trayectoria para proteger sus activos</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/daniel-gonzalez.avif" alt="Daniel González, Director de Operaciones de Grupo Industrial Monterrey - testimonio de servicio de mantenimiento de extintores" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">Daniel González</h3>
+            <p class="testimonial-position">Director de Operaciones</p>
+            <p class="testimonial-company">Grupo Industrial Monterrey</p>
+            <p class="testimonial-location">Monterrey, N.L.</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"El servicio de mantenimiento de extintores de MANEXT ha sido excepcional. Su equipo técnico es altamente profesional y siempre cumple con los plazos establecidos. La documentación que proporcionan es impecable y nos ha facilitado todas las auditorías de Protección Civil. Definitivamente son nuestro aliado estratégico en seguridad contra incendios."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/marie-fernanda-lopez.avif" alt="María Fernanda López, Gerente de Administración de Condominio Residencial Las Palmas Polanco - testimonio de mantenimiento anual de extintores" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">María Fernanda López</h3>
+            <p class="testimonial-position">Gerente de Administración</p>
+            <p class="testimonial-company">Condominio Residencial Las Palmas</p>
+            <p class="testimonial-location">Polanco, CDMX</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"Contratamos a MANEXT para el mantenimiento anual de todos los extintores del condominio y quedamos sumamente satisfechos. El servicio a domicilio es muy conveniente y el préstamo de equipos mientras hacen las recargas demuestra su compromiso con la seguridad. Sus técnicos son puntuales, ordenados y muy profesionales."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/roberto-martinez.avif" alt="Roberto Martínez, Director General de Restaurantes Gourmet del Centro - testimonio de extintores tipo K para cocinas comerciales" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">Roberto Martínez</h3>
+            <p class="testimonial-position">Director General</p>
+            <p class="testimonial-company">Restaurantes Gourmet del Centro S.A.</p>
+            <p class="testimonial-location">Centro Histórico, CDMX</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"En el sector restaurantero, la seguridad contra incendios es crítica. MANEXT nos asesoró sobre los extintores tipo K para nuestras cocinas y el mantenimiento preventivo nos ha dado total tranquilidad. Su disponibilidad 24/7 es un gran respaldo. Excelente servicio profesional."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/ana-patricia-ruiz.avif" alt="Ana Patricia Ruiz, Coordinadora de Seguridad Hospital San Rafael - testimonio de cumplimiento NOM y capacitación de brigadas con constancias DC-3" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">Ana Patricia Ruiz</h3>
+            <p class="testimonial-position">Coordinadora de Seguridad e Higiene</p>
+            <p class="testimonial-company">Hospital San Rafael</p>
+            <p class="testimonial-location">Tlalnepantla, Edo. Méx.</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"Como institución de salud, nuestros estándares de seguridad son muy altos. MANEXT no solo cumple con todas las normas NOM-154-SCFI y NOM-002-STPS, sino que su capacitación para nuestras brigadas de emergencia fue excelente. Las constancias DC-3 son válidas y aceptadas en todas nuestras auditorías."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/jorge-alberto-ramirez.avif" alt="Jorge Alberto Ramírez, Gerente de Infraestructura TechHub Data Center Santa Fe - testimonio de extintores CO2 y agentes limpios para servidores" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">Jorge Alberto Ramírez</h3>
+            <p class="testimonial-position">Gerente de Infraestructura</p>
+            <p class="testimonial-company">TechHub Data Center</p>
+            <p class="testimonial-location">Santa Fe, CDMX</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"Para nuestro data center necesitábamos extintores de CO2 y agentes limpios que no dañaran los equipos electrónicos. MANEXT nos asesoró perfectamente y nos proporcionó exactamente lo que necesitábamos. El mantenimiento es impecable y los reportes técnicos son muy detallados. Altamente recomendables."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="/img/img-index/sandra-gabriela-torres.avif" alt="Sandra Gabriela Torres, Directora de Recursos Humanos Corporativo Torres y Asociados - testimonio de póliza anual de mantenimiento de extintores" class="testimonial-image" loading="lazy" />
+          <div class="testimonial-info">
+            <h3 class="testimonial-name">Sandra Gabriela Torres</h3>
+            <p class="testimonial-position">Directora de Recursos Humanos</p>
+            <p class="testimonial-company">Corporativo Torres & Asociados</p>
+            <p class="testimonial-location">Interlomas, Edo. Méx.</p>
+          </div>
+        </div>
+        <div class="testimonial-rating"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="testimonial-text">"Llevamos más de 5 años trabajando con MANEXT y el servicio siempre ha sido excepcional. La póliza anual de mantenimiento nos ahorra tiempo y garantiza que nuestros más de 100 extintores estén siempre operativos. Su equipo es responsable, profesional y la atención al cliente es de primera. Los recomiendo ampliamente."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Preguntas Frecuentes sobre Extintores en CDMX</h2>
+      <p class="section-subtitle">Resolvemos tus dudas sobre venta, recarga y mantenimiento de extintores en Ciudad de México y Estado de México</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cada cuánto tiempo debo recargar mi extintor en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Según la NOM-154-SCFI, los extintores en Ciudad de México y Estado de México deben recargarse anualmente o inmediatamente después de ser utilizados, aunque sea parcialmente. Los extintores de polvo químico seco (PQS) requieren recarga cada 12 meses, mientras que los de CO2 cada año. El mantenimiento preventivo anual es obligatorio para cumplir con Protección Civil y evitar multas significativas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué incluye el servicio de recarga de extintores en Ciudad de México?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ofrecemos servicio de recarga de extintores en CDMX para todos los tipos y capacidades: PQS de 4.5kg, 6kg, 9kg, CO2 de 5lb, 10lb y más. Incluimos servicio a domicilio en toda la zona metropolitana, préstamo de equipo durante el mantenimiento, collares de garantía y certificación oficial. Solicita tu cotización al 55 3968 9272.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué tipo de extintor necesito para mi negocio en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>La selección depende de tu actividad: <strong>Oficinas y comercios:</strong> PQS tipo ABC. <strong>Restaurantes y cocinas:</strong> Tipo K (agente húmedo) obligatorio. <strong>Data centers y servidores:</strong> CO2 o agentes limpios. <strong>Industrias:</strong> Combinación de PQS y espuma AFFF. <strong>Talleres mecánicos:</strong> PQS tipo ABC de alta capacidad. En MANEXT realizamos análisis gratuito y te asesoramos según la NOM-002-STPS para garantizar el cumplimiento normativo en Ciudad de México.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuáles son las multas por no tener extintores certificados en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Protección Civil en Ciudad de México puede imponer multas significativas por: no contar con extintores certificados, extintores vencidos o sin mantenimiento anual, falta de señalamiento obligatorio, no tener bitácoras actualizadas, incumplimiento de NOM-002-STPS. Además, pueden clausurar temporalmente tu negocio hasta regularizar. Con nuestras pólizas anuales de mantenimiento garantizamos el cumplimiento al 100% y te proporcionamos toda la documentación necesaria para inspecciones.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Hacen servicio a domicilio para recarga de extintores en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, ofrecemos servicio a domicilio en toda Ciudad de México y área metropolitana (Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán Izcalli). Acudimos a tu domicilio o negocio en menos de 24 horas, recolectamos tus extintores, proporcionamos equipos de préstamo SIN COSTO para que nunca quedes desprotegido, realizamos la recarga certificada en nuestro taller, y los devolvemos instalados con collares de garantía. Servicio disponible 24/7/365. Llama al 55 3968 9272.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué incluye el mantenimiento preventivo de extintores?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Nuestro servicio de mantenimiento preventivo incluye: inspección visual completa del cilindro y componentes, verificación de presión manométrica, revisión de mangueras, boquillas y seguros, limpieza externa del equipo, prueba de disparo, actualización de etiquetas de servicio, registro en bitácora oficial, certificación con collares de garantía, reporte técnico fotográfico, cumplimiento NOM-154-SCFI y NOM-002-STPS, documentación para Protección Civil. Todo respaldado con garantía escrita válida en CDMX y Estado de México.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuántos extintores necesito según la NOM-002-STPS?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>La NOM-002-STPS establece: <strong>Riesgo ordinario (oficinas):</strong> 1 extintor cada 300 m² o cada 23 metros de recorrido. <strong>Riesgo alto (industrias):</strong> 1 extintor cada 200 m² o cada 15 metros. <strong>Cocinas comerciales:</strong> 1 extintor tipo K obligatorio por cada área de cocción. <strong>Áreas con equipos eléctricos:</strong> Extintores clase C adicionales. La distancia de recorrido nunca debe superar 23 metros desde cualquier punto hasta el extintor más cercano. Realizamos cálculo gratuito de requerimientos para tu negocio en CDMX.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué diferencia hay entre recarga y prueba hidrostática?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p><strong>Recarga:</strong> Reemplazo del agente extintor (polvo, CO2, etc.). Se realiza anualmente o después de uso. Tiempo: 24-48 horas. <strong>Prueba hidrostática:</strong> Verificación de integridad estructural del cilindro mediante presión de agua. Obligatoria cada 5 años según NOM-154-SCFI. Tiempo: 3-5 días. Ambos servicios son diferentes pero complementarios. Un extintor puede tener recarga vigente pero necesitar prueba hidrostática. Verificamos ambas fechas y te notificamos oportunamente en CDMX.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Venden extintores nuevos con instalación en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, vendemos extintores nuevos certificados NOM-154-SCFI con garantía de fábrica. Incluimos: asesoría técnica profesional según tus necesidades, productos de todas las capacidades (0.75kg a 13kg), instalación profesional con herrajes certificados, señalamiento reglamentario fotoluminiscente, capacitación básica de uso sin costo, registro en bitácora inicial, certificado de instalación para Protección Civil. Entrega e instalación en 24 horas en toda la CDMX. Solicita cotización: 55 3968 9272.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Ofrecen pólizas anuales de mantenimiento para empresas?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, nuestras pólizas anuales incluyen: 12 visitas mensuales de inspección preventiva, recarga anual de todos los equipos, préstamo de extintores sin costo durante servicios, atención de emergencias 24/7, reportes técnicos mensuales con fotografías, bitácoras actualizadas para Protección Civil, certificaciones y collares de garantía, descuentos en equipos nuevos y capacitación, asesoría permanente sobre normatividad, recordatorios automáticos de vencimientos. Ideal para condominios, corporativos, industrias y comercios en Ciudad de México. Cotiza tu póliza empresarial al WhatsApp 55 3968 9272.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuánto dura la vida útil de un extintor en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>La vida útil depende del tipo: <strong>Extintores PQS:</strong> 15-20 años con mantenimiento adecuado. <strong>Extintores CO2:</strong> 10-15 años. <strong>Agentes limpios:</strong> 20+ años. <strong>Tipo K (cocinas):</strong> 12-15 años. Sin embargo, el agente extintor vence anualmente y debe recargarse. El cilindro requiere prueba hidrostática cada 5 años. Factores que reducen la vida útil: falta de mantenimiento anual, exposición a corrosión o humedad, golpes o abolladuras, uso en ambientes químicos agresivos. Evaluamos sin costo el estado de tus equipos en Ciudad de México.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Dan capacitación en uso de extintores para empresas en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, impartimos capacitación certificada NOM-002-STPS con constancia DC-3 oficial válida ante STPS. Incluye: teoría de tipos de fuego (A, B, C, D, K), técnica PASS (Jalar, Apuntar, Apretar, Barrer), prácticas con fuego real controlado, identificación de extintores según necesidad, formación de brigadas contra incendios, simulacros de evacuación, primeros auxilios básicos, material didáctico impreso. Duración: 4 horas. Acudimos a tu empresa en CDMX. Constancias DC-3 válidas para inspecciones de Protección Civil y auditorías STPS. Agenda: 55 3968 9272.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuál es el precio de un extintor en CDMX?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>El precio de un extintor varía según el tipo y capacidad. Un extintor de polvo seco ABC de 4.5 kg tiene un precio desde $650 MXN, mientras que un CO2 de 5 lb desde $1,800 MXN. Los extintores tipo K para cocinas comerciales parten desde $3,500 MXN. Todos nuestros productos incluyen certificado NOM-154-SCFI, instalación y señalamiento. Contacta a MANEXT para una cotización ajustada a tu presupuesto.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué ventajas ofrece comprar extintores con un proveedor certificado?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>La compra a través de un proveedor certificado como MANEXT garantiza productos de fabricación aprobada bajo norma NOM, stock disponible permanente, asesoría profesional en la selección del producto adecuado, instalación incluida, documentación completa para Protección Civil y precios competitivos. Además, aseguras el correcto funcionamiento y la satisfacción total con cada producto adquirido.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Cuáles son los agentes extintores disponibles?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Los principales agentes extintores son: Polvo Químico Seco (PQS) para fuegos clase ABC, Dióxido de Carbono (CO2) para fuegos BC, Agua a presión para clase A, Espuma AFFF para clases AB, Agente Húmedo Tipo K para cocinas comerciales, y Agentes Limpios para áreas con tecnología sensible. Cada agente tiene un funcionamiento distinto y su selección depende de las necesidades de tu ubicación.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">¿Qué beneficios obtengo al integrar un sistema completo de extintores?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Un sistema completo de protección incluye extintores, detectores de humo, señalamiento y capacitación de brigadas. Los beneficios son: cumplimiento total de la NOM-002-STPS, reducción de accidentes laborales, satisfacción en auditorías de Protección Civil, y protección integral de patrimonio y colaboradores. MANEXT ofrece asesoría integral para diseñar el sistema que tu empresa necesita.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA B2B -->
+<section class="cta-b2b">
+  <div class="container">
+    <div class="cta-b2b-content">
+      <div class="cta-b2b-text">
+        <span class="cta-b2b-badge">Soluciones para Empresas</span>
+        <h2>Protege tu Operación con un Aliado Certificado</h2>
+        <p class="cta-b2b-description">Más de <strong>80 años de experiencia</strong> respaldando la continuidad operativa de empresas en CDMX y Estado de México. Evita multas, clausuras por incumplimiento normativo y situaciones que pueden detener tu negocio.</p>
+        <div class="cta-b2b-benefits">
+          <div class="cta-b2b-benefit">
+            <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <div>
+              <strong>Cumplimiento Normativo Garantizado</strong>
+              <p>NOM-154-SCFI y NOM-002-STPS con documentación respaldada ante Protección Civil</p>
+            </div>
+          </div>
+          <div class="cta-b2b-benefit">
+            <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div>
+              <strong>Atención a Domicilio sin Interrupciones</strong>
+              <p>Préstamo de extintores durante el proceso - Tu negocio nunca queda desprotegido</p>
+            </div>
+          </div>
+          <div class="cta-b2b-benefit">
+            <svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <div>
+              <strong>Pólizas Anuales Empresariales</strong>
+              <p>Programa de mantenimiento con reportes técnicos y bitácoras oficiales para auditorías</p>
+            </div>
+          </div>
+        </div>
+        <div class="cta-b2b-stats">
+          <div class="cta-stat">
+            <span class="stat-number">80+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="cta-stat">
+            <span class="stat-number">24/7/365</span>
+            <span class="stat-label">Cobertura Disponible</span>
+          </div>
+          <div class="cta-stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Certificados</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta-b2b-actions">
+        <div class="cta-action-card">
+          <h3>Solicita una Cotización Empresarial</h3>
+          <p>Asesoría profesional para tu tipo de negocio con análisis integral de necesidades</p>
+          <div class="cta-buttons">
+            <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20una%20cotización%20empresarial%20para%20extintores%20en%20mi%20negocio" class="cta-btn cta-btn-whatsapp" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              WhatsApp Empresarial
+            </a>
+            <a href="tel:5539689272" class="cta-btn cta-btn-phone">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              55 3968 9272
+            </a>
+          </div>
+          <div class="cta-alternative">
+            <p><strong>Horario de atención:</strong> Lunes a Domingo 8:00 AM - 6:00 PM</p>
+            <p class="cta-email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:[email protected]">[email protected]</a>
+            </p>
+          </div>
+          <div class="cta-urgency">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Servicio de emergencia disponible 24/7/365 en CDMX y Estado de México</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section Home -->
+<section class="blog-section-home">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Últimos Artículos del Blog</h2>
+      <p class="section-subtitle">Consejos profesionales, guías técnicas y todo sobre protección contra incendios</p>
+    </div>
+    <div class="blog-grid-home">
+      <article class="blog-card-home">
+        <a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-card-image-home">
+          <img src="/img/img-index/polvo-quimico-seco-pqs.avif" alt="Guía completa del extintor de Polvo Químico Seco PQS, usos y ventajas para oficinas y negocios" loading="lazy" />
+          <span class="blog-badge-home">Tipos de Extintores</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas">Extintor de Polvo Químico Seco (PQS): Guía Completa</a></h3>
+          <p>Todo sobre extintores PQS: usos, ventajas, clases de fuego, mantenimiento y normativa NOM. Guía completa 2025.</p>
+          <a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card-home">
+        <a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-card-image-home">
+          <img src="/img/img-index/venta-de-extintores.avif" alt="Guía profesional para elegir el extintor correcto para tu negocio en CDMX" loading="lazy" />
+          <span class="blog-badge-home">Seguridad</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx">¿Cómo Elegir el Extintor Correcto para tu Negocio?</a></h3>
+          <p>Guía profesional para seleccionar el extintor ideal según tipo de fuego, superficie y normativa NOM-002-STPS.</p>
+          <a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card-home">
+        <a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa" class="blog-card-image-home">
+          <img src="/img/img-index/recarga-de-extintores.avif" alt="Señales y normativa para saber cuándo recargar tu extintor contra incendios" loading="lazy" />
+          <span class="blog-badge-home">Mantenimiento</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa">¿Cuándo Recargar tu Extintor? Señales y Normativa</a></h3>
+          <p>10 señales críticas que indican recarga inmediata y calendario de mantenimiento según NOM-154-SCFI.</p>
+          <a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card-home">
+        <a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-card-image-home">
+          <img src="/img/img-index/polias-de-mantenimiento-anual.avif" alt="Guía completa de cumplimiento de la norma NOM-154-SCFI para extintores" loading="lazy" />
+          <span class="blog-badge-home">Normativas</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores">NOM-154-SCFI: Guía Completa de Cumplimiento</a></h3>
+          <p>Especificaciones técnicas, etiquetado, pruebas obligatorias y checklist completo de cumplimiento normativo.</p>
+          <a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card-home">
+        <a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-card-image-home">
+          <img src="/img/img-index/tecnologia-monitoreo.avif" alt="Sistemas de protección integral contra incendios para empresas en CDMX" loading="lazy" />
+          <span class="blog-badge-home">Equipos</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025">Sistemas de Protección Integral Contra Incendios CDMX</a></h3>
+          <p>Guía completa de sistemas de detección, alarmas, rociadores automáticos y equipos contra incendio para empresas 2025.</p>
+          <a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+      <article class="blog-card-home">
+        <a href="/blog/prevencion-incendios-empresas-protocolo-completo-cdmx" class="blog-card-image-home">
+          <img src="/img/img-index/capacitacion-y-brigadas.avif" alt="Protocolo completo de prevención de incendios para empresas en CDMX" loading="lazy" />
+          <span class="blog-badge-home">Prevención</span>
+        </a>
+        <div class="blog-card-content-home">
+          <h3><a href="/blog/prevencion-incendios-empresas-protocolo-completo-cdmx">Prevención de Incendios en Empresas: Protocolo Completo</a></h3>
+          <p>Protocolo profesional con 12 medidas críticas, plan de evacuación, formación de brigadas y cumplimiento NOM-002-STPS.</p>
+          <a href="/blog/prevencion-incendios-empresas-protocolo-completo-cdmx" class="blog-link-home">Leer artículo &#8594;</a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align: center; margin-top: 3rem">
+      <a href="/blog/" class="btn-view-all-blog">Ver Todos los Artículos</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.blog-section-home{background:#f9f9f9;padding:4rem 0}.blog-section-home .container{max-width:1200px;margin:0 auto;padding:0 2rem}.blog-section-home .section-header{text-align:center;margin-bottom:1rem}.blog-section-home .section-title{color:#1a1a1a;font-size:2.5rem;font-weight:700;margin-bottom:0.8rem}.blog-section-home .section-subtitle{color:#666;font-size:1.1rem;max-width:700px;margin:0 auto}.blog-grid-home{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}.blog-card-home{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column}.blog-card-home:hover{box-shadow:0 6px 16px rgba(0,0,0,0.1)}.blog-card-image-home{position:relative;overflow:hidden;display:block;aspect-ratio:16/10}.blog-card-image-home img{width:100%;height:100%;object-fit:cover}.blog-badge-home{position:absolute;top:12px;left:12px;background:#d32f2f;color:white;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}.blog-card-content-home{padding:1.5rem;flex:1;display:flex;flex-direction:column}.blog-card-content-home h3{font-size:1.2rem;font-weight:700;margin-bottom:0.8rem;line-height:1.4}.blog-card-content-home h3 a{color:#1a1a1a;text-decoration:none}.blog-card-content-home h3 a:hover{color:#d32f2f}.blog-card-content-home p{color:#666;font-size:0.95rem;line-height:1.6;margin-bottom:1.2rem;flex:1}.blog-link-home{color:#d32f2f;font-weight:600;text-decoration:none;font-size:0.95rem;display:inline-flex;align-items:center;gap:0.4rem}.blog-link-home:hover{color:#b71c1c}.btn-view-all-blog{display:inline-block;background:#d32f2f;color:white;padding:1rem 2.5rem;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.05rem;box-shadow:0 4px 12px rgba(211,47,47,0.3)}.btn-view-all-blog:hover{background:#b71c1c;box-shadow:0 6px 16px rgba(211,47,47,0.4)}@media (max-width:768px){.blog-section-home{padding:3rem 0}.blog-section-home .section-title{font-size:2rem}.blog-grid-home{grid-template-columns:1fr;gap:1.5rem}.blog-card-content-home{padding:1.2rem}.btn-view-all-blog{padding:0.9rem 2rem;font-size:1rem}}
+</style>
+
+<!-- Emergency CTA -->
+<section class="emergency-cta">
+  <div class="container">
+    <div class="emergency-cta-content">
+      <div class="emergency-header">
+        <h2>¿Necesitas Extintores Urgente?</h2>
+        <p>Atención inmediata para empresas en CDMX y Estado de México</p>
+      </div>
+      <div class="emergency-actions">
+        <a href="tel:5539689272" class="emergency-action-card emergency-phone">
+          <div class="emergency-action-info">
+            <span class="emergency-label">Llamar Ahora</span>
+            <span class="emergency-contact">55 3968 9272</span>
+            <span class="emergency-desc">Respuesta inmediata</span>
+          </div>
+        </a>
+        <a href="https://wa.me/5215539689272?text=Necesito%20cotización%20urgente%20de%20extintores" class="emergency-action-card emergency-whatsapp" target="_blank" rel="noopener">
+          <div class="emergency-action-info">
+            <span class="emergency-label">WhatsApp</span>
+            <span class="emergency-contact">Cotización Express</span>
+            <span class="emergency-desc">Atención prioritaria 24/7</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.emergency-cta{background:#f5f5f5;padding:4rem 0}.emergency-cta-content{max-width:900px;margin:0 auto}.emergency-header{text-align:center;margin-bottom:3rem}.emergency-header h2{font-size:2.2rem;font-weight:800;color:#212121;margin:0 0 0.75rem 0;letter-spacing:-0.02em}.emergency-header p{font-size:1.1rem;color:#616161;margin:0;font-weight:400}.emergency-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.emergency-action-card{background:#ffffff;border:2px solid #e0e0e0;border-radius:12px;padding:2.5rem 2rem;text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center}.emergency-action-card:hover{border-color:var(--primary-color);box-shadow:0 6px 20px rgba(211,47,47,0.12)}.emergency-action-info{display:flex;flex-direction:column;gap:0.5rem}.emergency-label{font-size:0.875rem;font-weight:600;color:#757575;text-transform:uppercase;letter-spacing:0.05em}.emergency-contact{font-size:1.75rem;font-weight:800;color:#212121;letter-spacing:-0.01em;margin:0.25rem 0}.emergency-desc{font-size:0.95rem;color:#616161;font-weight:500}.emergency-phone:hover .emergency-contact{color:var(--primary-color)}.emergency-whatsapp:hover .emergency-contact{color:#25d366}@media (max-width:768px){.emergency-cta{padding:3rem 0}.emergency-header h2{font-size:1.75rem}.emergency-header p{font-size:1rem}.emergency-header{margin-bottom:2rem}.emergency-actions{grid-template-columns:1fr;gap:1rem}.emergency-action-card{padding:2rem 1.5rem}.emergency-contact{font-size:1.5rem}}@media (max-width:480px){.emergency-header h2{font-size:1.5rem}.emergency-contact{font-size:1.3rem}}
+</style>
+
+<!-- FAQ Accordion Script -->
+<script is:inline>
+(function() {
+  'use strict';
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      var faqItem = this.parentElement;
+      var answer = faqItem.querySelector('.faq-answer');
+      var icon = this.querySelector('.faq-icon');
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all other FAQ items
+      faqQuestions.forEach(function(otherQuestion) {
+        if (otherQuestion !== question) {
+          otherQuestion.setAttribute('aria-expanded', 'false');
+          var otherItem = otherQuestion.parentElement;
+          var otherAnswer = otherItem.querySelector('.faq-answer');
+          var otherIcon = otherQuestion.querySelector('.faq-icon');
+          if (otherAnswer) otherAnswer.style.display = 'none';
+          if (otherIcon) otherIcon.textContent = '+';
+          otherItem.classList.remove('active');
+        }
+      });
+
+      // Toggle current FAQ item
+      if (isOpen) {
+        this.setAttribute('aria-expanded', 'false');
+        if (answer) answer.style.display = 'none';
+        if (icon) icon.textContent = '+';
+        faqItem.classList.remove('active');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        if (answer) answer.style.display = 'block';
+        if (icon) icon.textContent = '−';
+        faqItem.classList.add('active');
+      }
+    });
+  });
+})();
+</script>
+
+<!-- WhatsApp Form Script -->
+<script is:inline>
+(function() {
+  'use strict';
+  var form = document.getElementById('whatsappForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var nombre = document.getElementById('nombre').value.trim();
+    var empresa = document.getElementById('empresa').value.trim();
+    var telefono = document.getElementById('telefono').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var servicio = document.getElementById('servicio').value;
+    var mensaje = document.getElementById('mensaje').value.trim();
+
+    if (!nombre || !telefono || !servicio) {
+      alert('Por favor completa los campos obligatorios: Nombre, Teléfono y Servicio.');
+      return;
+    }
+
+    var text = 'Hola, me comunico desde la página web de MANEXT.\n\n';
+    text += '*Nombre:* ' + nombre + '\n';
+    if (empresa) text += '*Empresa:* ' + empresa + '\n';
+    text += '*Teléfono:* ' + telefono + '\n';
+    if (email) text += '*Email:* ' + email + '\n';
+    text += '*Servicio de interés:* ' + servicio + '\n';
+    if (mensaje) text += '*Mensaje:* ' + mensaje + '\n';
+
+    var whatsappUrl = 'https://wa.me/5215539689272?text=' + encodeURIComponent(text);
+    window.open(whatsappUrl, '_blank');
+  });
+})();
+</script>
+
+</Layout>
