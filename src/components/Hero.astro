@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  ctaPhone: string;
+  ctaWhatsApp: string;
+  paragraphs: string[];
+}
+
+const { title, subtitle, description, ctaPhone, ctaWhatsApp, paragraphs } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">{title}</h1>
+          <p class="hero-subtitle">{subtitle}</p>
+          <p class="hero-description">{description}</p>
+          <div class="hero-buttons">
+            <a href={`tel:${ctaPhone}`} class="btn btn-primary">Llamar Ahora</a>
+            <a href={`https://wa.me/521${ctaWhatsApp}`} class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-text">
+            {paragraphs.map((p) => (
+              <p class="hero-paragraph" set:html={p} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
