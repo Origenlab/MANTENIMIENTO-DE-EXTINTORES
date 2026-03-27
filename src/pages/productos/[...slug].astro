@@ -1,24 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('productos');
   return entries.map(entry => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout 
   title={`${entry.data.title} | MANEXT`}
   description={entry.data.description || entry.data.title}
-  canonical={`https://mantenimientodeextintores.mx/productos/${entry.slug}`}
-  breadcrumbs={[{name: 'Catálogo', url: '/catalogo'}, {name: entry.data.title, url: `/productos/${entry.slug}`}]}
+  canonical={`https://mantenimientodeextintores.mx/productos/${entry.id}`}
+  breadcrumbs={[{name: 'Catálogo', url: '/catalogo'}, {name: entry.data.title, url: `/productos/${entry.id}`}]}
 >
   <style>
     .product-hero{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:2rem 0}
