@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('productos');
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`${entry.data.title} | MANEXT`}
+  description={entry.data.description || entry.data.title}
+  canonical={`https://mantenimientodeextintores.mx/productos/${entry.slug}`}
+  breadcrumbs={[{name: 'Catálogo', url: '/catalogo'}, {name: entry.data.title, url: `/productos/${entry.slug}`}]}
+>
+  <style>
+    .product-hero{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:2rem 0}
+    .hero-grid{display:grid;grid-template-columns:450px 1fr;gap:3rem;align-items:start}
+    .product-image-main{background:linear-gradient(145deg,#ffffff 0%,#f5f5f5 100%);border-radius:16px;padding:2rem;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+    .product-image-main img{width:100%;height:380px;object-fit:contain}
+    .product-info{color:#fff}
+    .product-title{font-size:2rem;font-weight:700;margin-bottom:0.75rem;line-height:1.2}
+    .product-short-description{font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;padding:1.25rem;background:rgba(123,31,162,0.15);border-radius:12px;border-left:4px solid #7b1fa2}
+    .product-cta{background:rgba(123,31,162,0.2);padding:1.5rem;border-radius:12px;text-align:center;border:1px solid rgba(123,31,162,0.3)}
+    .btn-cotizar{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;padding:1rem 2.5rem;border-radius:50px;font-weight:600;font-size:1.05rem;border:none;cursor:pointer;transition:all 0.3s ease;text-decoration:none}
+    .content-wrapper{display:grid;grid-template-columns:1fr;gap:3rem;padding:3rem 0;background:#fff}
+    .description-section h2{font-size:1.75rem;color:#333;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:3px solid #7b1fa2}
+    .description-section h3{font-size:1.25rem;color:#7b1fa2;margin:1.5rem 0 0.75rem}
+    .description-section p{font-size:1rem;line-height:1.8;color:#555;margin-bottom:1rem}
+    .description-section ul{list-style:none;padding:0;margin:1rem 0}
+    .description-section li{padding:0.5rem 0 0.5rem 1.75rem;position:relative;color:#555}
+    .description-section li:before{content:"▸";position:absolute;left:0;color:#7b1fa2;font-weight:bold}
+    .highlight-box{background:linear-gradient(135deg,#f3e5f5 0%,#e1bee7 100%);padding:1.5rem;border-radius:12px;border-left:4px solid #7b1fa2;margin:1.5rem 0}
+    @media(max-width:968px){ .hero-grid{grid-template-columns:1fr;gap:2rem} }
+  </style>
+
+  <section class="product-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="product-image-container">
+          <div class="product-image-main">
+            <img src={entry.data.image ? `/${entry.data.image}` : '/img/img-index/extintor.avif'} alt={entry.data.title} />
+          </div>
+        </div>
+        <div class="product-info">
+          <h1 class="product-title">{entry.data.title}</h1>
+          <div class="product-short-description">
+            <p>{entry.data.description}</p>
+          </div>
+          <div class="product-cta">
+            <h3>Cotiza este producto</h3>
+            <a href={`https://wa.me/5215627596245?text=Hola%2C%20quiero%20cotizar%20${entry.data.title}`} class="btn-cotizar" target="_blank" rel="noopener">
+              Cotizar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <main class="main-content">
+        <div class="description-section">
+          <Content />
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>

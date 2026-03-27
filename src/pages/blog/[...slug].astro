@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`${entry.data.title} | MANEXT`}
+  description={entry.data.description || entry.data.title}
+  canonical={`https://mantenimientodeextintores.mx/blog/${entry.slug}`}
+  ogImage={entry.data.heroImage ? `https://mantenimientodeextintores.mx/${entry.data.heroImage}` : undefined}
+  extraCss={['/css/blog-article.css?v=5', '/css/blog-system.css?v=8']}
+  breadcrumbs={[{name: 'Blog', url: '/blog/'}, {name: entry.data.title, url: `/blog/${entry.slug}`}]}
+>
+  <article itemscope itemtype="https://schema.org/Article" id="main-content">
+    <header class="article-hero">
+      <div class="article-hero-content">
+        <div class="container">
+          <span class="article-category-tag" itemprop="articleSection">Blog</span>
+          <h1 itemprop="headline">{entry.data.title}</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-wrapper">
+      <div class="article-layout">
+        <div class="article-container">
+          {entry.data.heroImage && (
+            <figure class="article-featured-image">
+              <img src={`/${entry.data.heroImage}`} alt={entry.data.title} loading="eager" width="800" height="450" itemprop="image">
+            </figure>
+          )}
+
+          <div class="article-content" itemprop="articleBody">
+            <Content />
+          </div>
+        </div>
+        
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar">
+          <div class="sidebar-sticky">
+            <div class="sidebar-widget sidebar-cta-whatsapp">
+              <div class="sidebar-cta-badge">Atención Personalizada</div>
+              <h4>¿Tienes dudas?</h4>
+              <p>Escríbenos y te respondemos rápidamente</p>
+              <a href={`https://wa.me/5215539689272?text=Hola%2C%20le%C3%AD%20el%20artículo%20sobre%20${entry.data.title}%20y%20me%20interesa`} class="sidebar-cta-btn-wa" target="_blank" rel="noopener">
+                Contactar por WhatsApp
+              </a>
+              <span class="sidebar-cta-phone"><a href="tel:5539689272">55 3968 9272</a></span>
+            </div>
+            
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Nuestros Servicios</h3>
+              <div class="sidebar-services-grid">
+                <a href="/venta-de-extintores" class="sidebar-service-item"><span class="service-name">Venta de Extintores</span></a>
+                <a href="/mantenimiento-preventivo" class="sidebar-service-item"><span class="service-name">Mantenimiento</span></a>
+                <a href="/recarga-de-extintores" class="sidebar-service-item"><span class="service-name">Recarga</span></a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</Layout>
