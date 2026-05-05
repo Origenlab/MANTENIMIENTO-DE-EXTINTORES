@@ -87,5 +87,5 @@ description: "Descubre por qué el extintor Tipo K es esencial para cocinas en C
     <h3>¿Necesitas Extintor Tipo K para Cocinas?</h3>
     <p>80+ años experiencia. Respaldo para Proteccion Civil.</p>
     <div class="cta-inline-buttons">
-      <a href="tel:5539689272" class="btn-primary">Llamar: 55 3968 9272</a>
-      <a href="https://wa.me/5215539689272" class="btn-whatsapp">WhatsApp</a>
+      <a href="tel:5570081816" class="btn-primary">Llamar: 55 7008 1816</a>
+      <a href="https://wa.me/5215570081816" class="btn-whatsapp">WhatsApp</a>

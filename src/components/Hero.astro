@@ -1,37 +1,197 @@
 ---
-interface Props {
+/**
+ * Hero — componente compartido del sitio MANEXT
+ * Versión: 3.0 (2026-05-05)
+ *
+ * Variantes:
+ *   - "home": hero completo con párrafos derechos + service strip hardcoded de 4 cards
+ *   - "page": hero de página interna; muestra columna derecha si se pasan paragraphs
+ *             y service strip contextual si se pasan `services`
+ *
+ * Props:
+ *   title         (string, req)      — H1 visible
+ *   subtitle      (string, opt)      — línea roja debajo del título
+ *   description   (string, opt)      — párrafo gris de contexto
+ *   eyebrow       (string, opt)      — chip superior con punto rojo
+ *   paragraphs    (string[], opt)    — prosa para columna derecha
+ *   services      (ServiceItem[], opt) — cards del strip inferior contextual
+ *   variant       ('home'|'page', opt) — default "home"
+ *   showServices  (boolean, opt)     — fuerza mostrar/ocultar el strip (default: auto)
+ */
+
+type IconName =
+  | 'wrench' | 'refresh' | 'shield' | 'phone' | 'fire'
+  | 'users'  | 'book'    | 'flask'  | 'droplet'| 'zap'
+  | 'utensils'| 'leaf'   | 'foam'   | 'grid'   | 'building';
+
+interface ServiceItem {
+  href: string;
   title: string;
-  subtitle: string;
   description: string;
-  ctaPhone: string;
-  ctaWhatsApp: string;
-  paragraphs: string[];
+  icon: IconName;
+  featured?: boolean;
 }
 
-const { title, subtitle, description, ctaPhone, ctaWhatsApp, paragraphs } = Astro.props;
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  eyebrow?: string;
+  paragraphs?: string[];
+  services?: ServiceItem[];
+  variant?: 'home' | 'page';
+  showServices?: boolean;
+  /** legacy — ignorados, conservados por compatibilidad */
+  ctaPhone?: string;
+  ctaWhatsApp?: string;
+}
+
+// Mapa de rutas SVG (Lucide-compatible, viewBox 0 0 24 24)
+const ICONS: Record<IconName, string> = {
+  wrench:    '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  refresh:   '<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.08"/>',
+  shield:    '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  phone:     '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  fire:      '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+  users:     '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  book:      '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  flask:     '<path d="M9 3h6l1 7H8L9 3z"/><path d="M8 10l-3 9a1 1 0 0 0 .9 1.4h12.2a1 1 0 0 0 .9-1.4L16 10"/><path d="M8.5 3.5h7"/>',
+  droplet:   '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>',
+  zap:       '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  utensils:  '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>',
+  leaf:      '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+  foam:      '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+  grid:      '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
+  building:  '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+};
+
+const {
+  title,
+  subtitle,
+  description,
+  eyebrow = 'Cobertura nacional · Entrega 48h en CDMX',
+  paragraphs = [],
+  services,
+  variant = 'home',
+  showServices,
+} = Astro.props;
+
+const isHome = variant === 'home';
+// Mostrar strip si: se pasan services explícitamente, o showServices=true, o es home por defecto
+const renderServices = services ? services.length > 0 : (showServices ?? isHome);
+const hasRight = paragraphs.length > 0;
 ---
 
-<section class="hero">
+<section
+  class={`hero hero-redesigned hero-dark ${isHome ? 'hero-variant-home' : 'hero-variant-page'} ${hasRight ? 'hero-has-right' : ''}`}
+  aria-label="Encabezado de página"
+>
+  <div class="hero-bg-decor" aria-hidden="true">
+    <span class="hero-blob hero-blob-1"></span>
+    <span class="hero-blob hero-blob-2"></span>
+    <span class="hero-grid-pattern"></span>
+  </div>
+
   <div class="hero-content">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
+          <span class="hero-eyebrow">
+            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+            {eyebrow}
+          </span>
+
           <h1 class="hero-title">{title}</h1>
-          <p class="hero-subtitle">{subtitle}</p>
-          <p class="hero-description">{description}</p>
-          <div class="hero-buttons">
-            <a href={`tel:${ctaPhone}`} class="btn btn-primary">Llamar Ahora</a>
-            <a href={`https://wa.me/521${ctaWhatsApp}`} class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+          {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+          {description && <p class="hero-description">{description}</p>}
         </div>
-        <div class="hero-right">
-          <div class="hero-text">
-            {paragraphs.map((p) => (
-              <p class="hero-paragraph" set:html={p} />
-            ))}
+
+        {paragraphs.length > 0 && (
+          <div class="hero-right">
+            <div class="hero-text">
+              {paragraphs.map((p) => (
+                <p class="hero-paragraph" set:html={p} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   </div>
+
+  {renderServices && (
+    <div class="hero-services" aria-label="Acceso rápido a servicios">
+      <div class="container">
+        <div class="hero-services-grid">
+          {services && services.length > 0 ? (
+            services.map((card) => (
+              <a href={card.href} class={`hero-service-card${card.featured ? ' hero-service-featured' : ''}`}>
+                <span class="hero-service-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS[card.icon]} />
+                </span>
+                <div class="hero-service-body">
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                </div>
+                <svg class="hero-service-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </a>
+            ))
+          ) : (
+            <>
+              <a href="/servicios/" class="hero-service-card">
+                <span class="hero-service-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS.wrench} />
+                </span>
+                <div class="hero-service-body">
+                  <h3>Nuestros Servicios</h3>
+                  <p>Venta, recarga y mantenimiento</p>
+                </div>
+                <svg class="hero-service-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </a>
+              <a href="/capacitacion-brigadas/" class="hero-service-card">
+                <span class="hero-service-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS.users} />
+                </span>
+                <div class="hero-service-body">
+                  <h3>Capacitación y Brigadas</h3>
+                  <p>Formación certificada NOM-002</p>
+                </div>
+                <svg class="hero-service-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </a>
+              <a href="/senalizacion/" class="hero-service-card">
+                <span class="hero-service-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS.shield} />
+                </span>
+                <div class="hero-service-body">
+                  <h3>Señalización Oficial</h3>
+                  <p>Fotoluminiscente NOM-003-SEGOB</p>
+                </div>
+                <svg class="hero-service-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </a>
+              <a href="/contacto/" class="hero-service-card hero-service-featured">
+                <span class="hero-service-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={ICONS.phone} />
+                </span>
+                <div class="hero-service-body">
+                  <h3>Cotización Gratuita</h3>
+                  <p>Respuesta en menos de 24 h</p>
+                </div>
+                <svg class="hero-service-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  )}
 </section>

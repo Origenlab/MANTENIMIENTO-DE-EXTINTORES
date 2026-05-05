@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -23,14 +24,14 @@ const { Content } = await render(entry);
   breadcrumbs={[{name: 'Blog', url: '/blog/'}, {name: entry.data.title, url: `/blog/${entry.id}`}]}
 >
   <article itemscope itemtype="https://schema.org/Article" id="main-content">
-    <header class="article-hero">
-      <div class="article-hero-content">
-        <div class="container">
-          <span class="article-category-tag" itemprop="articleSection">Blog</span>
-          <h1 itemprop="headline">{entry.data.title}</h1>
-        </div>
-      </div>
-    </header>
+    <Hero
+      variant="page"
+      title={entry.data.title}
+      description={entry.data.description}
+      eyebrow="Blog · Artículo"
+    />
+    <meta itemprop="headline" content={entry.data.title} />
+    <meta itemprop="articleSection" content="Blog" />
 
     <div class="article-wrapper">
       <div class="article-layout">
@@ -53,10 +54,10 @@ const { Content } = await render(entry);
               <div class="sidebar-cta-badge">Atención Personalizada</div>
               <h4>¿Tienes dudas?</h4>
               <p>Escríbenos y te respondemos rápidamente</p>
-              <a href={`https://wa.me/5215539689272?text=Hola%2C%20le%C3%AD%20el%20artículo%20sobre%20${entry.data.title}%20y%20me%20interesa`} class="sidebar-cta-btn-wa" target="_blank" rel="noopener">
+              <a href={`https://wa.me/5215570081816?text=Hola%2C%20le%C3%AD%20el%20artículo%20sobre%20${entry.data.title}%20y%20me%20interesa`} class="sidebar-cta-btn-wa" target="_blank" rel="noopener">
                 Contactar por WhatsApp
               </a>
-              <span class="sidebar-cta-phone"><a href="tel:5539689272">55 3968 9272</a></span>
+              <span class="sidebar-cta-phone"><a href="tel:5570081816">55 7008 1816</a></span>
             </div>
             
             <div class="sidebar-widget">

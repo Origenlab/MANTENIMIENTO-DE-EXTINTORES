@@ -21,24 +21,33 @@ const { Content } = await render(entry);
   breadcrumbs={[{name: 'Catálogo', url: '/catalogo'}, {name: entry.data.title, url: `/productos/${entry.id}`}]}
 >
   <style>
-    .product-hero{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:2rem 0}
-    .hero-grid{display:grid;grid-template-columns:450px 1fr;gap:3rem;align-items:start}
-    .product-image-main{background:linear-gradient(145deg,#ffffff 0%,#f5f5f5 100%);border-radius:16px;padding:2rem;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
-    .product-image-main img{width:100%;height:380px;object-fit:contain}
+    /* Hero producto — alineado con design system MANEXT (dark + rojo) */
+    .product-hero{position:relative;overflow:hidden;background:#0a0a0a;padding:clamp(2.5rem,5vw,4rem) 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .product-hero::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(110px);background:radial-gradient(circle,#d32f2f 0%,transparent 70%);opacity:.32;top:-180px;left:-180px;pointer-events:none}
+    .product-hero::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;filter:blur(100px);background:radial-gradient(circle,#f44336 0%,transparent 70%);opacity:.20;bottom:-140px;right:-120px;pointer-events:none}
+    .product-hero .container{position:relative;z-index:1}
+    .product-hero .hero-grid{display:grid;grid-template-columns:420px 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+    .product-image-main{position:relative;background:linear-gradient(145deg,#ffffff 0%,#f5f5f5 100%);border-radius:18px;padding:2rem;box-shadow:0 20px 50px -10px rgba(211,47,47,0.25),0 8px 24px -6px rgba(0,0,0,0.4)}
+    .product-image-main img{width:100%;height:360px;object-fit:contain}
     .product-info{color:#fff}
-    .product-title{font-size:2rem;font-weight:700;margin-bottom:0.75rem;line-height:1.2}
-    .product-short-description{font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;padding:1.25rem;background:rgba(123,31,162,0.15);border-radius:12px;border-left:4px solid #7b1fa2}
-    .product-cta{background:rgba(123,31,162,0.2);padding:1.5rem;border-radius:12px;text-align:center;border:1px solid rgba(123,31,162,0.3)}
-    .btn-cotizar{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;padding:1rem 2.5rem;border-radius:50px;font-weight:600;font-size:1.05rem;border:none;cursor:pointer;transition:all 0.3s ease;text-decoration:none}
+    .product-eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem 1rem;font-size:.78rem;font-weight:600;color:#ffe0e0;background:rgba(211,47,47,0.14);border:1px solid rgba(244,67,54,0.35);border-radius:999px;margin-bottom:1rem}
+    .product-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,0.18)}
+    .product-title{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;margin:0 0 .9rem;line-height:1.15;letter-spacing:-.02em;color:#fff}
+    .product-short-description{font-size:1rem;line-height:1.7;color:#cfcfcf;margin-bottom:1.5rem;padding:1.1rem 1.25rem;background:rgba(255,255,255,0.04);border-radius:12px;border-left:3px solid #d32f2f}
+    .product-short-description p{margin:0}
+    .product-cta{background:rgba(255,255,255,0.04);padding:1.25rem 1.5rem;border-radius:14px;text-align:center;border:1px solid rgba(255,255,255,0.08)}
+    .product-cta h3{color:#fff;font-size:1rem;margin:0 0 .9rem;font-weight:700}
+    .btn-cotizar{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#d32f2f 0%,#ef4444 100%);color:#fff;padding:.95rem 2rem;border-radius:10px;font-weight:600;font-size:1rem;border:none;cursor:pointer;text-decoration:none;box-shadow:0 8px 22px -8px rgba(239,68,68,0.5);transition:transform .18s ease,box-shadow .18s ease}
+    .btn-cotizar:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(239,68,68,0.7)}
     .content-wrapper{display:grid;grid-template-columns:1fr;gap:3rem;padding:3rem 0;background:#fff}
-    .description-section h2{font-size:1.75rem;color:#333;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:3px solid #7b1fa2}
-    .description-section h3{font-size:1.25rem;color:#7b1fa2;margin:1.5rem 0 0.75rem}
+    .description-section h2{font-size:1.75rem;color:#212121;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:3px solid #d32f2f}
+    .description-section h3{font-size:1.25rem;color:#d32f2f;margin:1.5rem 0 .75rem}
     .description-section p{font-size:1rem;line-height:1.8;color:#555;margin-bottom:1rem}
     .description-section ul{list-style:none;padding:0;margin:1rem 0}
-    .description-section li{padding:0.5rem 0 0.5rem 1.75rem;position:relative;color:#555}
-    .description-section li:before{content:"▸";position:absolute;left:0;color:#7b1fa2;font-weight:bold}
-    .highlight-box{background:linear-gradient(135deg,#f3e5f5 0%,#e1bee7 100%);padding:1.5rem;border-radius:12px;border-left:4px solid #7b1fa2;margin:1.5rem 0}
-    @media(max-width:968px){ .hero-grid{grid-template-columns:1fr;gap:2rem} }
+    .description-section li{padding:.5rem 0 .5rem 1.75rem;position:relative;color:#555}
+    .description-section li:before{content:"▸";position:absolute;left:0;color:#d32f2f;font-weight:bold}
+    .highlight-box{background:linear-gradient(135deg,#fff5f5 0%,#ffebee 100%);padding:1.5rem;border-radius:12px;border-left:4px solid #d32f2f;margin:1.5rem 0}
+    @media(max-width:968px){.product-hero .hero-grid{grid-template-columns:1fr;gap:2rem}.product-image-main img{height:280px}}
   </style>
 
   <section class="product-hero">
@@ -50,13 +59,14 @@ const { Content } = await render(entry);
           </div>
         </div>
         <div class="product-info">
+          <span class="product-eyebrow">Catálogo · Producto certificado</span>
           <h1 class="product-title">{entry.data.title}</h1>
           <div class="product-short-description">
             <p>{entry.data.description}</p>
           </div>
           <div class="product-cta">
             <h3>Cotiza este producto</h3>
-            <a href={`https://wa.me/5215539689272?text=Hola%2C%20quiero%20cotizar%20${entry.data.title}`} class="btn-cotizar" target="_blank" rel="noopener">
+            <a href={`https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20${entry.data.title}`} class="btn-cotizar" target="_blank" rel="noopener">
               Cotizar por WhatsApp
             </a>
           </div>

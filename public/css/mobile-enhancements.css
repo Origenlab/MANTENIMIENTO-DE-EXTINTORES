@@ -34,21 +34,12 @@ body .share-btn {
   min-height: 44px;
 }
 
-/* Footer links con mejor área de tap */
-footer .footer-col p a {
-  display: inline-block;
-  padding: 0.3rem 0;
-}
 
 /* ==========================================================================
    SECCIÓN 2: Tablet (max-width: 1024px)
    ========================================================================== */
 
 @media screen and (max-width: 1024px) {
-  body .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
 
   body .hero-grid {
     gap: 2.5rem;
@@ -174,29 +165,6 @@ footer .footer-col p a {
     margin-bottom: 2rem;
   }
 
-  /* --- Footer 1 columna --- */
-  body .footer-container {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem;
-  }
-
-  body .footer-col h4 {
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-  }
-
-  body .footer-bottom {
-    padding: 1.25rem 16px;
-  }
-
-  body .footer-bottom p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  body .footer-bottom-container {
-    gap: 0.5rem;
-  }
 
   /* --- Formularios --- */
   body .form-row {
@@ -321,10 +289,9 @@ footer .footer-col p a {
     border-radius: 10px;
   }
 
-  /* --- Container padding --- */
+  /* --- Container width móvil --- */
   body .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    width: 92%;
   }
 
   /* --- FAQ accordion --- */
@@ -519,19 +486,10 @@ footer .footer-col p a {
     line-height: 1.25;
   }
 
-  /* Footer centrado */
-  body .footer-col {
-    text-align: center;
-  }
 
-  body .footer-bottom p {
-    font-size: 0.8rem;
-  }
-
-  /* Container padding reducido */
+  /* --- Container width móvil pequeño --- */
   body .container {
-    padding-left: 12px;
-    padding-right: 12px;
+    width: 94%;
   }
 
   /* Botones más compactos */
@@ -645,15 +603,11 @@ footer .footer-col p a {
   }
 
   body .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 96%;
   }
 
   body .benefit-card {
     padding: 0.875rem;
   }
 
-  body .footer-col h4 {
-    font-size: 1rem;
-  }
 }

@@ -1,0 +1,37 @@
+---
+/**
+ * SectionHeader — two-column section header
+ *
+ * Props:
+ *   title      — main H2 (required)
+ *   subtitle   — descriptive line below the title (optional)
+ *   eyebrow    — small red label above the title (optional)
+ *   paragraphs — array of 1-2 HTML strings rendered in the right column (optional)
+ *                When omitted the component falls back to single-column centred layout.
+ */
+interface Props {
+  title: string;
+  subtitle?: string;
+  eyebrow?: string;
+  paragraphs?: string[];
+}
+
+const { title, subtitle, eyebrow, paragraphs = [] } = Astro.props;
+const hasTwoCols = paragraphs.length > 0;
+---
+
+<div class={`sh${hasTwoCols ? ' sh--split' : ' sh--center'}`}>
+  <div class="sh__left">
+    {eyebrow && <span class="sh__eyebrow">{eyebrow}</span>}
+    <h2 class="sh__title">{title}</h2>
+    {subtitle && <p class="sh__subtitle">{subtitle}</p>}
+  </div>
+
+  {hasTwoCols && (
+    <div class="sh__right">
+      {paragraphs.map((p) => (
+        <p class="sh__para" set:html={p} />
+      ))}
+    </div>
+  )}
+</div>

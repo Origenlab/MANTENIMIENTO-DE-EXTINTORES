@@ -135,7 +135,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 <h2 id="proceso">Proceso y Servicio Profesional de Recarga</h2>
 
 <ol class="steps-list">
-  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT vía WhatsApp (5215539689272) o teléfono (55 3968 9272) para programar una evaluación inicial. Nuestros técnicos certificados realizarán un diagnóstico completo de tus extintores, identificando cuáles requieren recarga, mantenimiento o reemplazo según su estado y fecha de vencimiento.</p></li>
+  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT vía WhatsApp (5215570081816) o teléfono (55 7008 1816) para programar una evaluación inicial. Nuestros técnicos certificados realizarán un diagnóstico completo de tus extintores, identificando cuáles requieren recarga, mantenimiento o reemplazo según su estado y fecha de vencimiento.</p></li>
   <li><strong>Paso 2: Inspección técnica en sitio</strong><p>Un especialista certificado visitará tus instalaciones para evaluar el tipo de riesgos presentes, verificar la ubicación y señalización de extintores, y determinar si la distribución actual cumple con las normativas aplicables. Esta inspección incluye revisión de registros de mantenimiento previo y recomendaciones de mejora.</p></li>
   <li><strong>Paso 3: Cotización personalizada</strong><p>Recibirás una propuesta técnica detallada que incluye el tipo de servicio requerido para cada extintor, cronograma de trabajo, certificaciones a entregar y garantías del servicio. La cotización especifica los agentes extintores a utilizar y las pruebas de calidad que se realizarán.</p></li>
   <li><strong>Paso 4: Ejecución del servicio profesional</strong><p>Los extintores se recolectan y transportan a nuestras instalaciones certificadas donde se realiza el proceso completo de recarga: desmontaje, limpieza, inspección de componentes, pruebas de presión, recarga con agentes certificados y pruebas funcionales finales.</p></li>
@@ -181,7 +181,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
   
   <div class="faq-item">
     <div class="faq-question">¿Cómo puedo solicitar una cotización para recarga de extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215539689272 o llamando al 55 3968 9272. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
+    <div class="faq-answer"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
   </div>
   
   <div class="faq-item">
@@ -198,6 +198,6 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 <div id="contacto" class="article-cta">
   <h3>Protege Tu Negocio Hoy</h3>
   <p>En MANEXT somos especialistas certificados en recarga de extintores con más de una década de experiencia. Atendemos toda la CDMX y área metropolitana con técnicos certificados NOM-154-SCFI. Nuestro servicio incluye evaluación gratuita, extintores de reemplazo y certificación completa.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
+  <a href="https://wa.me/5215570081816?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
+  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>

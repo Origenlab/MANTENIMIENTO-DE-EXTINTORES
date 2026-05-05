@@ -47,10 +47,11 @@ const breadcrumbSchema = {
 <link rel="preconnect" href="https://wa.me" crossorigin>
 <link rel="dns-prefetch" href="https://wa.me">
 <link rel="dns-prefetch" href="https://app.rybbit.io">
-<style>:root{--primary-color:#d32f2f;--secondary-color:#f44336;--dark-color:#212121;--light-color:#fafafa;--gray-color:#757575;--white:#ffffff;--shadow:0 2px 10px rgba(0,0,0,0.1)}*{margin:0;padding:0;box-sizing:border-box}html{overflow-x:hidden;color:#222;font-size:1em;line-height:1.4}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--dark-color);line-height:1.6;overflow-x:hidden;width:100%}.container{max-width:1400px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}.header{background-color:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{display:flex;align-items:center}.logo a{display:flex;align-items:center}.logo-img{height:110px;width:auto;max-width:100%;object-fit:contain}.nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}.nav-link{color:var(--dark-color);font-weight:500;padding:0.5rem 0}.nav-phone{background-color:var(--primary-color);color:var(--white);padding:0.5rem 1.5rem;border-radius:25px}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background-color:var(--white);box-shadow:var(--shadow);list-style:none;min-width:250px;opacity:0;visibility:hidden;border-radius:8px;overflow:hidden}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible}.menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}.menu-toggle span{width:28px;height:3px;background-color:var(--dark-color);margin:4px 0;border-radius:3px;display:block}.breadcrumbs{background:#f5f5f5;padding:0.75rem 0;border-bottom:1px solid #e0e0e0}.breadcrumb-list{display:flex;align-items:center;gap:0.5rem;list-style:none;font-size:0.9rem}.breadcrumb-item{display:flex;align-items:center;gap:0.3rem;color:var(--gray-color)}.breadcrumb-item a{color:var(--gray-color);text-decoration:none;display:flex;align-items:center;gap:0.3rem}.breadcrumb-item a:hover{color:var(--primary-color)}.hero{background-color:var(--white);color:var(--dark-color);padding:3rem 0;border-bottom:1px solid #e0e0e0}.hero-content{width:100%}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.hero-left{display:flex;flex-direction:column;gap:1.5rem}.hero-title{font-size:3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;color:var(--dark-color)}.hero-subtitle{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-color);font-weight:600}.hero-description{font-size:1.1rem;margin-bottom:1.5rem;line-height:1.8;color:var(--gray-color)}.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}.hero-right{display:flex;flex-direction:column;justify-content:center}.hero-text{background-color:var(--white)}.hero-paragraph{color:var(--dark-color);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;text-align:left}.hero-paragraph strong{color:var(--primary-color);font-weight:600}.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-primary{background-color:var(--primary-color);color:var(--white);border-color:var(--primary-color)}.btn-whatsapp{background-color:#25D366;color:var(--white);border-color:#25D366}@media screen and (max-width:768px){.menu-toggle{display:flex}.nav-menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background-color:var(--white);flex-direction:column;align-items:flex-start;padding:5rem 0 2rem;box-shadow:-4px 0 20px rgba(0,0,0,0.15);gap:0;overflow-y:auto;z-index:1000}.nav-menu.active{right:0}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.2rem}.logo-img{height:104px}}</style>
-<link rel="preload" href="/css/style.css?v=18" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/style.css?v=18"></noscript>
-<link rel="stylesheet" href="/css/mobile-enhancements.css?v=1">
+<style>:root{--primary-color:#d32f2f;--secondary-color:#f44336;--dark-color:#212121;--light-color:#fafafa;--gray-color:#757575;--white:#ffffff;--shadow:0 2px 10px rgba(0,0,0,0.1)}*{margin:0;padding:0;box-sizing:border-box}html{overflow-x:hidden;color:#222;font-size:1em;line-height:1.4}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--dark-color);line-height:1.6;overflow-x:hidden;width:100%}.container{width:90%;margin:0 auto;padding:0}a{text-decoration:none;color:inherit}.header{background-color:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{display:flex;align-items:center}.logo a{display:flex;align-items:center}.logo-img{height:110px;width:auto;max-width:100%;object-fit:contain}.nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}.nav-link{color:var(--dark-color);font-weight:500;padding:0.5rem 0}.nav-phone{background-color:var(--primary-color);color:var(--white);padding:0.5rem 1.5rem;border-radius:25px}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background-color:var(--white);box-shadow:var(--shadow);list-style:none;min-width:250px;opacity:0;visibility:hidden;border-radius:8px;overflow:hidden}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible}.menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}.menu-toggle span{width:28px;height:3px;background-color:var(--dark-color);margin:4px 0;border-radius:3px;display:block}.breadcrumbs{background:#f5f5f5;padding:0.75rem 0;border-bottom:1px solid #e0e0e0}.breadcrumb-list{display:flex;align-items:center;gap:0.5rem;list-style:none;font-size:0.9rem}.breadcrumb-item{display:flex;align-items:center;gap:0.3rem;color:var(--gray-color)}.breadcrumb-item a{color:var(--gray-color);text-decoration:none;display:flex;align-items:center;gap:0.3rem}.breadcrumb-item a:hover{color:var(--primary-color)}.hero{background-color:var(--white);color:var(--dark-color);padding:3rem 0;border-bottom:1px solid #e0e0e0}.hero-content{width:100%}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.hero-left{display:flex;flex-direction:column;gap:1.5rem}.hero-title{font-size:3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;color:var(--dark-color)}.hero-subtitle{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-color);font-weight:600}.hero-description{font-size:1.1rem;margin-bottom:1.5rem;line-height:1.8;color:var(--gray-color)}.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}.hero-right{display:flex;flex-direction:column;justify-content:center}.hero-text{background-color:var(--white)}.hero-paragraph{color:var(--dark-color);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;text-align:left}.hero-paragraph strong{color:var(--primary-color);font-weight:600}.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-primary{background-color:var(--primary-color);color:var(--white);border-color:var(--primary-color)}.btn-whatsapp{background-color:#25D366;color:var(--white);border-color:#25D366}@media screen and (max-width:768px){.menu-toggle{display:flex}.nav-menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background-color:var(--white);flex-direction:column;align-items:flex-start;padding:5rem 0 2rem;box-shadow:-4px 0 20px rgba(0,0,0,0.15);gap:0;overflow-y:auto;z-index:1000}.nav-menu.active{right:0}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.2rem}.logo-img{height:104px}}</style>
+<link rel="preload" href="/css/style.css?v=24" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/style.css?v=24"></noscript>
+<link rel="stylesheet" href="/css/mobile-enhancements.css?v=3">
+<link rel="stylesheet" href="/css/section-redesign.css?v=5">
 {extraCss.map(css => <link rel="stylesheet" href={css} />)}
 <meta name="description" content={description} />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -79,7 +80,7 @@ const breadcrumbSchema = {
 {schemas.map(s => <script type="application/ld+json" set:html={s} />)}
 </head>
 <body>
-<div class="top-info-bar"><div class="container"><div class="top-info-bar-left"><span class="brand-text">Mantenimiento de Extintores</span></div><div class="top-info-bar-right"><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:5539689272">55 3968 9272</a></div><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>L-V: 8:00-18:00 | Sáb: 9:00-14:00</span></div><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="hide-mobile">CDMX y Edo. M&eacute;x.</span></div><div class="top-social-links"><a href="https://wa.me/5215539689272" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="https://facebook.com/manextcdmx" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div></div></div></div>
+<div class="top-info-bar"><div class="container"><div class="top-info-bar-left"><span class="brand-text">Mantenimiento de Extintores</span></div><div class="top-info-bar-right"><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:5570081816">55 7008 1816</a></div><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>L-V: 8:00-18:00 | Sáb: 9:00-14:00</span></div><div class="top-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="hide-mobile">CDMX y Edo. M&eacute;x.</span></div><div class="top-social-links"><a href="https://wa.me/5215570081816" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="https://facebook.com/manextcdmx" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div></div></div></div>
 
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
@@ -126,7 +127,7 @@ const breadcrumbSchema = {
         <li role="none"><a href="/nosotros" class="nav-link" role="menuitem">Nosotros</a></li>
         <li role="none"><a href="/blog/" class="nav-link" role="menuitem">Blog</a></li>
         <li role="none"><a href="/contacto" class="nav-link" role="menuitem">Contacto</a></li>
-        <li role="none"><a href="tel:5539689272" class="nav-link nav-phone" role="menuitem" aria-label="Llamar al 55 3968 9272">55 3968 9272</a></li>
+        <li role="none"><a href="tel:5570081816" class="nav-link nav-phone" role="menuitem" aria-label="Llamar al 55 7008 1816">55 7008 1816</a></li>
       </ul>
     </nav>
   </div>
@@ -261,63 +262,96 @@ const breadcrumbSchema = {
   <slot />
 </main>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4>MANEXT</h4>
-      <p>Protegiendo a M&eacute;xico desde 1943</p>
-      <p>Especialistas en mantenimiento, recarga y venta de extintores.</p>
-      <p style="margin-top: 1.5rem;"><strong>Contacto:</strong></p>
-      <p class="footer-phone"><a href="tel:5539689272">55 3968 9272</a></p>
-      <p class="footer-whatsapp"><a href="https://wa.me/5215539689272" target="_blank" rel="noopener">WhatsApp</a></p>
-      <p style="margin-top: 1rem;"><strong>Horario:</strong><br>
-      Lun-Vie: 8:00-18:00<br>
-      S&aacute;b: 9:00-14:00</p>
-    </div>
-    <div class="footer-col">
-      <h4>Servicios</h4>
-      <p><a href="/venta-de-extintores">Venta de Extintores</a></p>
-      <p><a href="/mantenimiento-preventivo">Mantenimiento Preventivo</a></p>
-      <p><a href="/recarga-de-extintores">Recarga de Extintores</a></p>
-      <p><a href="/prueba-hidrostatica">Prueba Hidrostática</a></p>
-      <p><a href="/capacitacion-brigadas">Capacitación y Brigadas</a></p>
-      <p><a href="/senalizacion">Señalización</a></p>
-    </div>
-    <div class="footer-col">
-      <h4>Tipos de Extintores</h4>
-      <p><a href="/polvo-quimico-seco">Polvo Químico Seco</a></p>
-      <p><a href="/co2">CO2 (Dióxido de Carbono)</a></p>
-      <p><a href="/agua-presion">Agua a Presión</a></p>
-      <p><a href="/tipo-k">Tipo K (Cocinas)</a></p>
-      <p><a href="/espuma-afff">Espuma AFFF</a></p>
-      <p><a href="/agentes-limpios">Agentes Limpios</a></p>
-    </div>
-    <div class="footer-col">
-      <h4>Navegación</h4>
-      <p><a href="/">Inicio</a></p>
-      <p><a href="/servicios">Servicios</a></p>
-      <p><a href="/extintores">Extintores</a></p>
-      <p><a href="/nosotros">Nosotros</a></p>
-      <p><a href="/blog/">Blog</a></p>
-      <p><a href="/contacto">Contacto</a></p>
-      <p style="margin-top: 1.5rem;"><strong>Recursos:</strong></p>
-      <p><a href="/catalogo">Catálogo Digital</a></p>
-      <p><a href="/terminos">Términos</a></p>
-      <p><a href="/privacidad">Privacidad</a></p>
+<footer class="site-footer">
+
+  <!-- Top bar: certificaciones -->
+  <div class="footer-trust-bar">
+    <div class="footer-trust-inner">
+      <span>NOM-154-SCFI</span>
+      <span class="ft-sep">·</span>
+      <span>NOM-002-STPS</span>
+      <span class="ft-sep">·</span>
+      <span>Protección Civil CDMX</span>
+      <span class="ft-sep">·</span>
+      <span>+10,000 clientes en México</span>
+      <span class="ft-sep">·</span>
+      <span>Desde 1943</span>
     </div>
   </div>
+
+  <!-- Main footer grid -->
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label="MANEXT inicio">
+        <img src="/img/img-index/venta-y-mantenimiento-de-extintores.avif" alt="MANEXT Extintores" width="160" height="80" loading="lazy" />
+      </a>
+      <p class="footer-tagline">Especialistas en venta, recarga y mantenimiento de extintores en CDMX y Área Metropolitana.</p>
+      <div class="footer-contact-block">
+        <a href="tel:5570081816" class="footer-cta-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          55 7008 1816
+        </a>
+        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20extintores" class="footer-cta-wa" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="footer-hours">
+        <p><span>Lun – Vie</span> 8:00 – 18:00</p>
+        <p><span>Sábado</span> 9:00 – 14:00</p>
+      </div>
+    </div>
+
+    <nav class="footer-nav-col" aria-label="Servicios">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="/venta-de-extintores">Venta de Extintores</a></li>
+        <li><a href="/mantenimiento-preventivo">Mantenimiento Preventivo</a></li>
+        <li><a href="/recarga-de-extintores">Recarga de Extintores</a></li>
+        <li><a href="/prueba-hidrostatica">Prueba Hidrostática</a></li>
+        <li><a href="/capacitacion-brigadas">Capacitación y Brigadas</a></li>
+        <li><a href="/senalizacion">Señalización</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav-col" aria-label="Extintores">
+      <h5>Extintores</h5>
+      <ul>
+        <li><a href="/polvo-quimico-seco">Polvo Químico Seco (PQS)</a></li>
+        <li><a href="/co2">CO₂ — Dióxido de Carbono</a></li>
+        <li><a href="/agua-presion">Agua a Presión</a></li>
+        <li><a href="/tipo-k">Tipo K — Cocinas Comerciales</a></li>
+        <li><a href="/espuma-afff">Espuma AFFF</a></li>
+        <li><a href="/agentes-limpios">Agentes Limpios</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav-col" aria-label="Empresa">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/extintores">Catálogo de Extintores</a></li>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/catalogo">Catálogo Digital</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Bottom bar -->
   <div class="footer-bottom">
-    <div class="footer-bottom-container">
-      <p>&copy; 2025 MANEXT - Mantenimiento de Extintores. Todos los derechos reservados.</p>
-      <p><strong>Protegiendo a M&eacute;xico desde 1943</strong> | Certificaciones: NOM-154-SCFI, NOM-002-STPS</p>
-      <p>Especialistas en mantenimiento, recarga y venta de extintores en CDMX y &Aacute;rea Metropolitana</p>
-      <p class="footer-legal">
-        <a href="/privacidad">Política de Privacidad</a> |
-        <a href="/terminos">Términos y Condiciones</a> |
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">&copy; 2025 MANEXT — Mantenimiento de Extintores. Todos los derechos reservados.</p>
+      <nav class="footer-legal-nav" aria-label="Legal">
+        <a href="/privacidad">Aviso de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
         <a href="/sitemap.xml">Mapa del Sitio</a>
-      </p>
+      </nav>
     </div>
   </div>
+
 </footer>
 
 </body>

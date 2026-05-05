@@ -150,7 +150,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 <h2 id="proceso">Proceso y Servicio Profesional</h2>
 
 <ol class="steps-list">
-  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT a través de WhatsApp (5215539689272) o llamada telefónica (55 3968 9272) para solicitar evaluación de tus extintores. Nuestros técnicos especializados programan visita para inspección preliminar y diagnóstico del estado actual de tus equipos.</p></li>
+  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT a través de WhatsApp (5215570081816) o llamada telefónica (55 7008 1816) para solicitar evaluación de tus extintores. Nuestros técnicos especializados programan visita para inspección preliminar y diagnóstico del estado actual de tus equipos.</p></li>
   <li><strong>Paso 2: Inspección técnica en sitio</strong><p>Los técnicos certificados realizan evaluación completa de cada extintor: verificación de presión, inspección visual de componentes, revisión de etiquetas y documentación. Se identifica qué equipos requieren recarga inmediata y cuáles necesitan mantenimiento adicional.</p></li>
   <li><strong>Paso 3: Cotización personalizada</strong><p>Elaboramos propuesta técnica detallada incluyendo servicios requeridos, frecuencias de mantenimiento y cronograma de actividades. La cotización especifica tipos de agente extintor, certificaciones incluidas y garantías del servicio.</p></li>
   <li><strong>Paso 4: Ejecución del servicio de recarga</strong><p>Los extintores se trasladan a instalaciones certificadas donde se realiza desmontaje completo, limpieza de componentes, verificación de válvulas y recarga con agente extintor nuevo. Se realizan pruebas de presión y funcionamiento antes de la entrega.</p></li>
@@ -198,7 +198,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
   
   <div class="faq-item">
     <div class="faq-question">¿Cómo solicito una cotización para recarga de extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Solicita tu cotización personalizada contactando por WhatsApp al 5215539689272 o llamando al 55 3968 9272. Proporciónanos información sobre cantidad y tipos de extintores, ubicación de tu establecimiento y frecuencia de servicio requerida. Programamos visita técnica gratuita para evaluación y elaboración de propuesta detallada sin compromiso.</p></div>
+    <div class="faq-answer"><p>Solicita tu cotización personalizada contactando por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Proporciónanos información sobre cantidad y tipos de extintores, ubicación de tu establecimiento y frecuencia de servicio requerida. Programamos visita técnica gratuita para evaluación y elaboración de propuesta detallada sin compromiso.</p></div>
   </div>
   
   <div class="faq-item">
@@ -215,6 +215,6 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 <div class="article-cta" id="contacto">
   <h3>Protege Tu Negocio con Recarga Certificada</h3>
   <p>En MANEXT somos especialistas certificados en recarga de extintores con más de una década de experiencia. Atendemos Condesa, Del Valle, Azcapotzalco, Tlalpan y toda la CDMX con técnicos certificados NOM-154-SCFI. Garantizamos la efectividad de tus equipos contra incendio con certificación oficial y documentación completa.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
+  <a href="https://wa.me/5215570081816?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
+  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>
