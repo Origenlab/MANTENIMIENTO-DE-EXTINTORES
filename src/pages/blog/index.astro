@@ -1,0 +1,377 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const CATEGORY_SLUGS = [
+  'index','guias-y-comparativas','hogar-y-familia','industria-y-comercio',
+  'mantenimiento-y-recarga','normativas-y-certificaciones','prevencion-empresarial',
+  'seguridad-contra-incendios','emergencias-y-protocolos','equipos-contra-incendio',
+  'tipos-de-extintores',
+];
+
+function getCategory(id: string): string {
+  const s = id.replace(/\.md$/, '');
+  if (/capacitacion|brigadas|constancias|dc3/.test(s)) return 'Capacitación';
+  if (/nom-|normativa|proteccion-civil|multas/.test(s))  return 'Normativas';
+  if (/recarga|mantenimiento|poliza|inspeccion/.test(s)) return 'Mantenimiento';
+  if (/prueba-hidrostatica/.test(s))                     return 'Prueba Hidrostática';
+  if (/pqs|co2|tipo-k|agua|espuma|agente/.test(s))       return 'Tipos de Extintor';
+  if (/restaurante|empresa|cocina|gabinete|senalizacion|evacuacion/.test(s)) return 'Empresas';
+  return 'Seguridad';
+}
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter(p => !CATEGORY_SLUGS.includes(p.id.replace(/\.md$/, '')))
+  .sort((a, b) => {
+    const da = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
+    const db = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
+    return db - da;
+  });
+
+const topics = [
+  { label: 'Tipos de Extintor',   icon: 'fire',     desc: 'PQS, CO₂, Tipo K, AFFF y más' },
+  { label: 'Normativas NOM',      icon: 'shield',   desc: 'NOM-154, NOM-002, Protección Civil' },
+  { label: 'Mantenimiento',       icon: 'wrench',   desc: 'Recarga, pólizas e inspección' },
+  { label: 'Prueba Hidrostática', icon: 'flask',    desc: 'Certificación de presión NOM' },
+  { label: 'Capacitación',        icon: 'people',   desc: 'Brigadas y constancias DC-3' },
+  { label: 'Empresas',            icon: 'building', desc: 'Restaurantes, industria, oficinas' },
+];
+
+const svgIcons: Record<string, string> = {
+  fire:     `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
+  shield:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  wrench:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  flask:    `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 9h4M5 21h14a2 2 0 0 0 1.84-2.75L15 8V3H9v5L3.16 18.25A2 2 0 0 0 5 21z"/></svg>`,
+  people:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  building: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22V12h6v10M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01"/></svg>`,
+};
+---
+
+<Layout
+  title="Blog Técnico de Extintores y Seguridad Contra Incendios | MANEXT"
+  description="Guías técnicas, normativas NOM, mantenimiento y todo lo que necesitas saber sobre extintores y protección contra incendios en México. +80 años de experiencia."
+  canonical="https://mantenimientodeextintores.mx/blog"
+  ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
+  breadcrumbs={[{ name: 'Blog', url: '/blog' }]}
+  extraCss={['/css/section-redesign.css?v=5', '/css/blog-system.css?v=8']}
+>
+
+  <Hero
+    variant="page"
+    title="Blog Técnico de Extintores"
+    description="Guías prácticas, normativas NOM vigentes y consejos de expertos para mantener tus extintores certificados y tu empresa protegida."
+    eyebrow="Recursos y conocimiento"
+    paragraphs={[
+      'En <strong>MANEXT</strong> publicamos contenido técnico verificado sobre extintores, normativas <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>, mantenimiento preventivo y capacitación de brigadas. Cada artículo es redactado por técnicos con más de 80 años de experiencia en protección contra incendios.',
+      'Encuentra guías de selección por tipo de riesgo, calendarios de mantenimiento, requisitos de Protección Civil y comparativas técnicas — todo el conocimiento que necesitas para mantener tu empresa segura y en <strong>cumplimiento normativo</strong>.',
+    ]}
+  />
+
+  <!-- TEMAS -->
+  <section class="bl-topics">
+    <div class="bl-container">
+      <SectionHeader
+        eyebrow="Explora por tema"
+        title="Temas del Blog Técnico"
+        subtitle="Contenido especializado en seguridad contra incendios"
+      />
+      <div class="bl-topics-grid">
+        {topics.map(t => (
+          <div class="bl-topic-card">
+            <span class="bl-topic-icon" set:html={svgIcons[t.icon]} />
+            <strong class="bl-topic-label">{t.label}</strong>
+            <span class="bl-topic-desc">{t.desc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTÍCULOS -->
+  <section class="bl-articles">
+    <div class="bl-container">
+      <SectionHeader
+        eyebrow="Artículos técnicos"
+        title="Guías y Recursos de Seguridad Contra Incendios"
+        subtitle={`${posts.length} artículos verificados por técnicos certificados MANEXT`}
+        paragraphs={[
+          'Guías verificadas sobre selección, mantenimiento y normativas de extintores en México. Cada artículo incluye referencias a las <strong>normas NOM vigentes</strong>, especificaciones técnicas reales y recomendaciones de nuestros técnicos con más de 80 años en el sector.',
+          'Desde la elección del agente extintor correcto hasta los requisitos de Protección Civil — el conocimiento técnico que necesitas para proteger tu empresa y <strong>cumplir con la normativa mexicana</strong>.',
+        ]}
+      />
+      <div class="bl-grid">
+        {posts.map((post) => {
+          const cat = getCategory(post.id);
+          const slug = post.id.replace(/\.md$/, '');
+          return (
+            <article class="bl-card">
+              <div class="bl-card-top">
+                <span class="bl-card-cat">{cat}</span>
+              </div>
+              <h3 class="bl-card-title">
+                <a href={`/blog/${slug}`}>{post.data.title}</a>
+              </h3>
+              {post.data.description && (
+                <p class="bl-card-desc">{post.data.description}</p>
+              )}
+              <a href={`/blog/${slug}`} class="bl-card-cta">
+                Leer artículo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="bl-cta">
+    <div class="bl-cta-inner">
+      <div class="bl-cta-text">
+        <p class="bl-cta-eyebrow">¿Necesitas asesoría?</p>
+        <h2 class="bl-cta-title">Habla con un técnico certificado MANEXT</h2>
+        <p class="bl-cta-sub">Cotización gratuita · Respuesta en menos de 24 h · +80 años de experiencia</p>
+      </div>
+      <div class="bl-cta-actions">
+        <a href="https://wa.me/5215570081816" target="_blank" rel="noopener noreferrer" class="bl-btn bl-btn--wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="/contacto" class="bl-btn bl-btn--outline">
+          Solicitar cotización
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-footer Interlinking Strip -->
+  <nav class="pf-strip" aria-label="Navegación rápida">
+    <div class="pf-strip__inner">
+      <a href="/extintores" class="pf-card">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Catálogo de Extintores</strong>
+          <span>PQS, CO₂, AFFF, Tipo K y más</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+      <a href="/recarga-de-extintores" class="pf-card">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Recarga de Extintores</strong>
+          <span>Servicio NOM-154 a domicilio</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+      <a href="/mantenimiento-preventivo" class="pf-card">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Mantenimiento Preventivo</strong>
+          <span>Pólizas anuales certificadas</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+      <a href="/prueba-hidrostatica" class="pf-card">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 9h4M5 21h14a2 2 0 0 0 1.84-2.75L15 8V3H9v5L3.16 18.25A2 2 0 0 0 5 21z"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Prueba Hidrostática</strong>
+          <span>Certificación de presión NOM-154</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+      <a href="/capacitacion-brigadas" class="pf-card">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Capacitación y Brigadas</strong>
+          <span>Constancias DC-3 válidas STPS</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+      <a href="/contacto" class="pf-card pf-card--featured">
+        <span class="pf-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <span class="pf-card__body">
+          <strong>Cotización Gratuita</strong>
+          <span>Respuesta en menos de 24 h</span>
+        </span>
+        <span class="pf-card__arrow">→</span>
+      </a>
+    </div>
+  </nav>
+
+</Layout>
+
+<style>
+.bl-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Topics ── */
+.bl-topics { background: #fff; padding-bottom: 3rem; }
+.bl-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.bl-topic-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .4rem;
+  padding: 1.2rem 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: default;
+  transition: border-color .2s, box-shadow .2s;
+}
+.bl-topic-card:hover {
+  border-color: #d32f2f;
+  box-shadow: 0 4px 16px rgba(211,47,47,.08);
+}
+.bl-topic-icon { color: #d32f2f; display: flex; }
+.bl-topic-label { font-size: .875rem; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
+.bl-topic-desc  { font-size: .76rem; color: #757575; line-height: 1.4; }
+
+/* ── Articles ── */
+.bl-articles { background: #f5f5f5; padding: 3rem 0 5rem; }
+.bl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.bl-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-left: 3px solid #d32f2f;
+  border-radius: 8px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  transition: box-shadow .2s, transform .2s;
+}
+.bl-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+  transform: translateY(-2px);
+}
+.bl-card-top { display: flex; }
+.bl-card-cat {
+  display: inline-block;
+  background: rgba(211,47,47,.08);
+  color: #d32f2f;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .2rem .6rem;
+  border-radius: 50px;
+}
+.bl-card-title {
+  font-size: .975rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0;
+  color: #1a1a1a;
+  flex: 1;
+}
+.bl-card-title a { color: inherit; text-decoration: none; transition: color .2s; }
+.bl-card-title a:hover { color: #d32f2f; }
+.bl-card-desc {
+  font-size: .845rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bl-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #d32f2f;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: .25rem;
+  transition: gap .2s;
+}
+.bl-card-cta:hover { gap: .55rem; }
+
+/* ── CTA Strip ── */
+.bl-cta { background: #1a1a1a; padding: 3.5rem 20px; }
+.bl-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.bl-cta-eyebrow {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #d32f2f;
+  margin: 0 0 .35rem;
+}
+.bl-cta-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 .35rem;
+  line-height: 1.2;
+}
+.bl-cta-sub { font-size: .85rem; color: #888; margin: 0; }
+.bl-cta-actions { display: flex; gap: .75rem; flex-shrink: 0; flex-wrap: wrap; }
+.bl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .875rem;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+  white-space: nowrap;
+}
+.bl-btn--wa      { background: #25d366; color: #fff; }
+.bl-btn--wa:hover { background: #1ebe5d; }
+.bl-btn--outline  { background: transparent; color: #fff; border: 1px solid #444; }
+.bl-btn--outline:hover { border-color: #fff; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .bl-topics-grid { grid-template-columns: repeat(3, 1fr); }
+  .bl-grid         { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .bl-topics-grid { grid-template-columns: repeat(2, 1fr); }
+  .bl-grid         { grid-template-columns: 1fr; }
+  .bl-cta-inner    { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 380px) {
+  .bl-topics-grid { grid-template-columns: 1fr; }
+}
+</style>
