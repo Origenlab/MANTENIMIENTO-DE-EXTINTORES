@@ -304,7 +304,7 @@ El costo total de propiedad de un extintor Tipo K durante 12 años (vida útil) 
 <div class="faq-item">
 <button class="faq-question" aria-expanded="false" aria-controls="faq-k-5">¿Cuánto tarda en llegar MANEXT a instalar el extintor Tipo K?</button>
 <div class="faq-answer" id="faq-k-5">
-<p>Para CDMX y zona metropolitana (Naucalpan, Tlalnepantla, Huixquilucan, Ecatepec, Nezahualcóyotl), tenemos capacidad de entrega e instalación en <strong>24 a 48 horas hábiles</strong>. Para casos urgentes previos a inspección de Protección Civil, ofrecemos servicio express con costo adicional. Contáctanos por WhatsApp al 55 7008 1816 para coordinar.</p>
+<p>Para CDMX y zona metropolitana (Naucalpan, Tlalnepantla, Huixquilucan, Ecatepec, Nezahualcóyotl), tenemos capacidad de entrega e instalación en <strong>24 a 48 horas hábiles</strong>. Para casos urgentes previos a inspección de Protección Civil, ofrecemos servicio express con costo adicional. Contáctanos por WhatsApp al 56 1461 2594 para coordinar.</p>
 </div>
 </div>
 

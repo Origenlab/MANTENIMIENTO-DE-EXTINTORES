@@ -383,7 +383,7 @@ La forma más barata de cumplir es antes de la inspección. El kit mínimo para 
 </button>
 <div class="faq-answer" id="faq-answer-6" aria-hidden="true">
 <div class="faq-answer-content">
-<p>Sí. MANEXT lleva más de 80 años equipando restaurantes, cocinas industriales y establecimientos de alimentos en toda la Ciudad de México y Estado de México. El servicio incluye: asesoría normativa (qué tipo y cuántos necesitas por zona), suministro de extintores Tipo K, PQS ABC y CO₂ con certificación NOM-154-SCFI, instalación con soporte y señalización NOM-026-STPS, y emisión de etiqueta de servicio para el historial de mantenimiento. Entrega en 24-48 horas hábiles en CDMX. Contáctanos por WhatsApp al 55 7008 1816 para cotización sin costo.</p>
+<p>Sí. MANEXT lleva más de 80 años equipando restaurantes, cocinas industriales y establecimientos de alimentos en toda la Ciudad de México y Estado de México. El servicio incluye: asesoría normativa (qué tipo y cuántos necesitas por zona), suministro de extintores Tipo K, PQS ABC y CO₂ con certificación NOM-154-SCFI, instalación con soporte y señalización NOM-026-STPS, y emisión de etiqueta de servicio para el historial de mantenimiento. Entrega en 24-48 horas hábiles en CDMX. Contáctanos por WhatsApp al 56 1461 2594 para cotización sin costo.</p>
 </div>
 </div>
 </div>

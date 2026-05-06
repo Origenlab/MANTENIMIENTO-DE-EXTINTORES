@@ -338,7 +338,7 @@ En MANEXT retiramos extintores dados de baja cuando entregamos equipos nuevos �
 </button>
 <div class="faq-answer" id="faq-answer-5" aria-hidden="true">
 <div class="faq-answer-content">
-<p>Sí. MANEXT ofrece inspección técnica de extintores para empresas en CDMX y Estado de México. Revisamos fecha de fabricación, estado del cilindro, vigencia del servicio, estado del agente extintor y proximidad a prueba hidrostática — y te entregamos un dictamen por escrito sobre cada equipo: continuar con mantenimiento, dar de baja o reemplazar. Contáctanos al 55 7008 1816 o por WhatsApp. La visita de inspección no tiene costo cuando contratas el servicio posterior con nosotros.</p>
+<p>Sí. MANEXT ofrece inspección técnica de extintores para empresas en CDMX y Estado de México. Revisamos fecha de fabricación, estado del cilindro, vigencia del servicio, estado del agente extintor y proximidad a prueba hidrostática — y te entregamos un dictamen por escrito sobre cada equipo: continuar con mantenimiento, dar de baja o reemplazar. Contáctanos al 56 1461 2594 o por WhatsApp. La visita de inspección no tiene costo cuando contratas el servicio posterior con nosotros.</p>
 </div>
 </div>
 </div>

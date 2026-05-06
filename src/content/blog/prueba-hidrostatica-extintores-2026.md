@@ -14,8 +14,8 @@ heroRight:
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">¿Qué es la prueba hidrostática?</a></li>
     <li><a href="#especificaciones">Especificaciones técnicas por tipo de extintor</a></li>
     <li><a href="#normativa">Marco normativo: NOM-154-SCFI y NOM-002-STPS</a></li>
@@ -24,7 +24,7 @@ heroRight:
     <li><a href="#proceso">Proceso de certificación MANEXT paso a paso</a></li>
     <li><a href="#costos">Costos en CDMX 2026</a></li>
     <li><a href="#faq">Preguntas frecuentes</a></li>
-  </ol>
+  </ul>
 </nav>
 
 ---

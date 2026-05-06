@@ -2,21 +2,62 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+
+const servicesSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Servicios Integrales de Protección Contra Incendios",
+  "name": "Servicios MANEXT — Venta, Mantenimiento, Recarga y Capacitación",
+  "description": "Servicios integrales de protección contra incendios en CDMX y Estado de México: venta de extintores, recarga, mantenimiento preventivo, prueba hidrostática, señalización y capacitación de brigadas con constancia DC-3.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MANEXT",
+    "telephone": "+525614612594",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tlalnepantla de Baz",
+      "addressRegion": "Estado de México",
+      "addressCountry": "MX"
+    }
+  },
+  "areaServed": ["Ciudad de México", "Estado de México"]
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué servicios ofrece MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cinco servicios integrales: venta de extintores certificados NOM-154-SCFI, recarga anual a domicilio, mantenimiento preventivo con protocolo de 25 puntos, prueba hidrostática quinquenal con certificación 5 años, señalización fotoluminiscente NOM-026 y capacitación de brigadas con constancia DC-3 oficial. Todo bajo un solo proveedor con más de 80 años de experiencia." }},
+    { "@type": "Question", "name": "¿Cubren toda la CDMX y Estado de México?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cobertura completa en las 16 alcaldías de CDMX y zona metropolitana: Tlalnepantla, Naucalpan, Atizapán, Ecatepec, Cuautitlán Izcalli, Tultitlán, Nicolás Romero, Coacalco y municipios conurbados. Servicio de emergencia 24/7/365 incluyendo fines de semana y días festivos." }},
+    { "@type": "Question", "name": "¿Cómo es el proceso de cotización?", "acceptedAnswer": { "@type": "Answer", "text": "Tres pasos: 1) Contactas por WhatsApp, llamada o formulario web (respuesta en menos de 5 min en horario laboral). 2) Coordinamos visita técnica gratuita en sitio con ingeniero certificado para análisis de riesgo. 3) Recibes propuesta detallada con plano de distribución, precio total con instalación y opciones de financiamiento — sin compromiso de compra." }},
+    { "@type": "Question", "name": "¿MANEXT ofrece pólizas anuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Pólizas anuales con visitas trimestrales/semestrales programadas, recarga incluida, descuentos del 15-25% sobre tarifas individuales, equipo de préstamo durante servicio, dashboard digital con histórico y alertas automáticas previas a vencimientos. Ideales para corporativos con múltiples sucursales o auditorías ISO." }},
+    { "@type": "Question", "name": "¿Qué documentación entregan?", "acceptedAnswer": { "@type": "Answer", "text": "Todo lo que solicita Protección Civil, STPS, COFEPRIS y aseguradoras: certificados NOM-154-SCFI, etiquetas de fabricante con trazabilidad, tarjetas de inspección, planos de distribución, bitácoras oficiales firmadas por técnico avalado, reportes fotográficos, constancias DC-3 (capacitación) y facturas fiscales CFDI 4.0." }},
+    { "@type": "Question", "name": "¿Cuál es el tiempo de respuesta para emergencias?", "acceptedAnswer": { "@type": "Answer", "text": "Para emergencias o urgencias (inspección al día siguiente, descarga reciente, apertura de negocio inminente) coordinamos atención el mismo día en la mayoría de zonas. Para servicios estándar la entrega e instalación es en 24-48 horas. WhatsApp y línea telefónica con respuesta en menos de 5 minutos en horario laboral." }},
+    { "@type": "Question", "name": "¿Manejan financiamiento empresarial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Financiamiento sin intereses a 3, 6 o 12 meses con aprobación express en menos de 24 horas. Aplicable a venta, instalación y pólizas anuales. Aceptamos transferencia bancaria, tarjetas empresariales con MSI bancarios, cheque certificado y, para clientes con cuenta, crédito directo a 30 días previa aprobación." }},
+    { "@type": "Question", "name": "¿Por qué elegir MANEXT sobre otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Más de 80 años de operación continua desde 1943 (no somos nuevos), unidad de verificación autorizada NOM-154-SCFI, +15,000 clientes atendidos, servicio integral 360° (no necesitas múltiples proveedores), ejecutivo de cuenta asignado, garantía de aprobación en inspección y cobertura 24/7/365 en toda CDMX y Edomex." }}
+  ]
+});
 ---
 
 <Layout
-  title="Venta y Mantenimiento de Extintores Certificados | CDMX"
-  description="Venta de extintores certificados NOM en CDMX. Recarga y mantenimiento de extintores, prueba hidrostática, señalamiento y capacitación. Distribuidor líder con +80 años. Cotiza gratis 24/7."
+  title="Servicios Integrales de Protección Contra Incendios en CDMX | MANEXT"
+  description="Venta, recarga, mantenimiento, prueba hidrostática, señalización y capacitación de brigadas certificada NOM. Más de 80 años protegiendo empresas, comercios y particulares en CDMX y Estado de México con servicio integral 360° y atención 24/7."
   canonical="https://mantenimientodeextintores.mx/servicios"
-  ogTitle="Venta y Mantenimiento de Extintores Certificados | CDMX"
-  ogDescription="Servicios profesionales de venta, recarga, mantenimiento y capacitación en extintores. Certificados NOM-154-SCFI. Servicio 24/7 en CDMX."
+  ogTitle="Servicios Integrales Contra Incendios — MANEXT CDMX desde 1943"
+  ogDescription="Un solo proveedor para venta, recarga, mantenimiento, capacitación, prueba hidrostática y señalización. Certificación NOM, cobertura 24/7 y +80 años de experiencia en CDMX."
   ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' }
   ]}
-  schemas={[
-    
-  ]}
+  schemas={[servicesSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 <Hero title="Venta de Extintores y Equipos Contra Incendios — Recarga y Mantenimiento"
@@ -171,7 +212,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     <h2>Venta de Extintores Certificados</h2>
     <p>En <strong>MANEXT</strong> ofrecemos la más amplia gama de extintores aprobados bajo <strong>NOM-154-SCFI</strong> para tu empresa, negocio u hogar. Como distribuidor autorizado, contamos con stock permanente de todas las clases: polvo seco (PQS) ABC, CO2, agua a presión, espuma AFFF, agentes limpios y tipo K para cocinas comerciales. Cada producto incluye <strong>instalación, señalamiento reglamentario y garantía de fábrica</strong>, asegurando la conformidad con Protección Civil desde el primer día.</p>
     <p>Nuestra atención integral comienza con un <strong>análisis de necesidades sin costo</strong>, donde evaluamos las características específicas de tu inmueble para determinar el tipo, capacidad y cantidad exacta de extintores según la NOM-002-STPS. Realizamos la entrega e instalación en menos de 48 horas en toda la Ciudad de México, incluyendo herrajes, collares de garantía, etiquetado completo y capacitación básica de uso para tu personal. Con más de 80 años de experiencia, somos líderes en extintores en México con los mejores precios del mercado.</p>
-    <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20venta%20de%20extintores%20certificados" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20venta%20de%20extintores%20certificados" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -185,7 +226,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     <h2>Mantenimiento de Extintores Preventivo</h2>
     <p>La <strong>revisión preventiva anual</strong> es requerida según la NOM-154-SCFI para que tus extintores funcionen correctamente en caso de emergencia. En MANEXT ofrecemos <strong>pólizas anuales</strong> con inspecciones exhaustivas que incluyen: verificación de presión manométrica, revisión de mangueras y válvulas, limpieza completa, prueba de disparo, actualización de etiquetas y registro en bitácoras oficiales. Cada proceso se documenta con <strong>reportes técnicos fotográficos</strong> que te respaldan ante cualquier auditoría o inspección STPS.</p>
     <p>Nuestras pólizas para clientes empresariales brindan <strong>tranquilidad total y apego normativo al 100%</strong>. Incluyen visitas programadas según calendario, atención prioritaria 24/7, préstamo de extintores durante el proceso para que nunca quedes desprotegido, y recordatorios automáticos de vencimientos. Ideal para condominios, corporativos, industrias, comercios y todo tipo de negocios en CDMX que necesitan documentación impecable y atención constante.</p>
-    <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20p%C3%B3lizas%20de%20mantenimiento%20preventivo%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20p%C3%B3lizas%20de%20mantenimiento%20preventivo%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -213,7 +254,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     <h2>Realización de Pruebas Hidrostáticas NOM-154</h2>
     <p>La <strong>prueba hidrostática</strong> es un proceso técnico necesario cada 5 años según la NOM-154-SCFI, diseñado para verificar la integridad estructural del cilindro y detectar posibles fallas, fisuras, corrosión interna o debilitamiento del metal. Este procedimiento consiste en someter el cilindro vacío a una presión de agua superior a su presión de trabajo normal, mientras se monitorea cualquier deformación permanente o fuga. Solo los cilindros que aprueban esta prueba pueden seguir operando.</p>
     <p>En MANEXT contamos con <strong>tecnología y técnicos capacitados</strong> para la realización de pruebas hidrostáticas conforme a la norma oficial mexicana. El proceso incluye: desmontaje completo, limpieza interna del cilindro, aplicación de la prueba con presión calibrada, inspección visual detallada, reporte fotográfico completo, y constancia oficial de aprobación. Después de aprobar la prueba, procedemos con la recarga del agente extintor, reemplazo de sellos y empaques, y entrega lista para operar. Tiempo: 3 a 5 días hábiles.</p>
-    <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20prueba%20hidrost%C3%A1tica%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20prueba%20hidrost%C3%A1tica%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -227,7 +268,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     <h2>Capacitación en Brigadas de Protección Civil</h2>
     <p>La <strong>capacitación en combate de incendios</strong> es necesaria según la NOM-002-STPS para todas las empresas en México. En MANEXT impartimos cursos con <strong>constancias DC-3 oficiales válidas ante la STPS</strong>, diseñados para formar brigadas efectivas. Nuestros cursos incluyen teoría sobre tipos de fuego (A, B, C, D, K), identificación de extintores según necesidad, técnica PASS (Jalar, Apuntar, Apretar, Barrer), y prácticas reales con fuego controlado donde cada participante utiliza un extintor en condiciones simuladas.</p>
     <p>Acudimos directamente a tus instalaciones en Ciudad de México con todo lo <strong>necesario para simulacros realistas</strong>: charolas de fuego, extintores de práctica, material didáctico impreso y dispositivos de seguridad industrial. La capacitación tiene una duración de 4 horas e incluye formación de brigadas internas, protocolos de evacuación y primeros auxilios básicos. Cada participante recibe su constancia DC-3 oficial con registro ante STPS. Cursos para grupos de hasta 20 personas.</p>
-    <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20capacitaci%C3%B3n%20y%20formaci%C3%B3n%20de%20brigadas%20contra%20incendios" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20capacitaci%C3%B3n%20y%20formaci%C3%B3n%20de%20brigadas%20contra%20incendios" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -241,7 +282,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     <h2>Señalamiento, Detectores de Humo y Equipo Contra Incendio</h2>
     <p>El <strong>señalamiento de seguridad</strong> es necesario según las normas NOM-002-STPS y NOM-026-STPS para que empleados y visitantes puedan localizar rápidamente los extintores y equipos de protección, así como las rutas de evacuación en caso de emergencia. En MANEXT ofrecemos señalamiento reglamentario fotoluminiscente que incluye: indicadores de ubicación de extintores, señales de salidas de emergencia, flechas direccionales, señalética de prohibición y advertencia, y detectores de humo.</p>
     <p>Además, proveemos <strong>gabinetes metálicos y acrílicos</strong> para proteger tus extintores de la intemperie, vandalismo y manipulación no autorizada. Nuestros gabinetes están fabricados en lámina calibre 20 con acabado en pintura electrostática color rojo, incluyen vidrio o acrílico transparente, cerradura, y opción de martillo rompe-vidrios. El proceso incluye instalación con herrajes, nivelación perfecta, y colocación de toda la señalética requerida. Entregamos constancia de instalación y planos de ubicación para las autoridades. <strong>Solución integral para apego normativo al 100%.</strong></p>
-    <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20se%C3%B1alizaci%C3%B3n%20y%20gabinetes%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20se%C3%B1alizaci%C3%B3n%20y%20gabinetes%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -296,7 +337,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 
       <!-- Left: FAQ -->
       <div class="faq-cot-left">
-        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre venta, recarga, mantenimiento y normativa de extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215570081816" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
+        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre venta, recarga, mantenimiento y normativa de extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
         <div class="faq-grid">
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -313,7 +354,7 @@ import SectionHeader from '../components/SectionHeader.astro';
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>El <strong>mantenimiento preventivo</strong> en MANEXT está disponible para todos los tipos y capacidades de equipos: PQS de 4.5kg, 6kg, 9kg, CO2 de 5lb, 10lb y más. <strong>Incluimos sin costo adicional:</strong> servicio a domicilio en toda la CDMX y zona metropolitana, préstamo de equipos durante el servicio, collares de garantía oficiales, certificación NOM-154-SCFI, bitácora digital de mantenimiento y reporte fotográfico completo. Ofrecemos descuentos especiales por volumen para empresas con más de 10 equipos. Cotiza sin compromiso al 55 7008 1816.</p>
+              <p>El <strong>mantenimiento preventivo</strong> en MANEXT está disponible para todos los tipos y capacidades de equipos: PQS de 4.5kg, 6kg, 9kg, CO2 de 5lb, 10lb y más. <strong>Incluimos sin costo adicional:</strong> servicio a domicilio en toda la CDMX y zona metropolitana, préstamo de equipos durante el servicio, collares de garantía oficiales, certificación NOM-154-SCFI, bitácora digital de mantenimiento y reporte fotográfico completo. Ofrecemos descuentos especiales por volumen para empresas con más de 10 equipos. Cotiza sin compromiso al 56 1461 2594.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -572,7 +613,7 @@ import SectionHeader from '../components/SectionHeader.astro';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
 
-    var whatsappUrl = 'https://wa.me/5215570081816?text=' + encodeURIComponent(text);
+    var whatsappUrl = 'https://wa.me/5215614612594?text=' + encodeURIComponent(text);
     window.open(whatsappUrl, '_blank');
   });
 })();

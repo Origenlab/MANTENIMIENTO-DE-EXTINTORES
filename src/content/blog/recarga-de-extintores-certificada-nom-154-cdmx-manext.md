@@ -139,7 +139,7 @@ heroRight:
 <h2 id="proceso">Proceso y Servicio Profesional de Recarga</h2>
 
 <ol class="steps-list">
-  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT vía WhatsApp (5215570081816) o teléfono (55 7008 1816) para programar una evaluación inicial. Nuestros técnicos certificados realizarán un diagnóstico completo de tus extintores, identificando cuáles requieren recarga, mantenimiento o reemplazo según su estado y fecha de vencimiento.</p></li>
+  <li><strong>Paso 1: Contacto y diagnóstico inicial</strong><p>Contacta a MANEXT vía WhatsApp (5215614612594) o teléfono (56 1461 2594) para programar una evaluación inicial. Nuestros técnicos certificados realizarán un diagnóstico completo de tus extintores, identificando cuáles requieren recarga, mantenimiento o reemplazo según su estado y fecha de vencimiento.</p></li>
   <li><strong>Paso 2: Inspección técnica en sitio</strong><p>Un especialista certificado visitará tus instalaciones para evaluar el tipo de riesgos presentes, verificar la ubicación y señalización de extintores, y determinar si la distribución actual cumple con las normativas aplicables. Esta inspección incluye revisión de registros de mantenimiento previo y recomendaciones de mejora.</p></li>
   <li><strong>Paso 3: Cotización personalizada</strong><p>Recibirás una propuesta técnica detallada que incluye el tipo de servicio requerido para cada extintor, cronograma de trabajo, certificaciones a entregar y garantías del servicio. La cotización especifica los agentes extintores a utilizar y las pruebas de calidad que se realizarán.</p></li>
   <li><strong>Paso 4: Ejecución del servicio profesional</strong><p>Los extintores se recolectan y transportan a nuestras instalaciones certificadas donde se realiza el proceso completo de recarga: desmontaje, limpieza, inspección de componentes, pruebas de presión, recarga con agentes certificados y pruebas funcionales finales.</p></li>
@@ -185,7 +185,7 @@ heroRight:
   
   <div class="faq-item">
     <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-4">¿Cómo puedo solicitar una cotización para recarga de extintores?</button>
-    <div class="faq-answer" id="faq-recarga3-4"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
+    <div class="faq-answer" id="faq-recarga3-4"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215614612594 o llamando al 56 1461 2594. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
   </div>
   
   <div class="faq-item">

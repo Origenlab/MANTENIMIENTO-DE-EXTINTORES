@@ -1,33 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Nosotros — MANEXT desde 1943",
+  "description": "Empresa mexicana fundada en 1943, especializada en venta, mantenimiento y recarga de extintores en CDMX y Estado de México. Más de 80 años de operación continua y más de 15,000 clientes atendidos.",
+  "url": "https://mantenimientodeextintores.mx/nosotros",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "MANEXT",
+    "alternateName": "Mantenimiento de Extintores",
+    "foundingDate": "1943",
+    "description": "Distribuidor autorizado de extintores certificados NOM-154-SCFI. Tres generaciones operando en CDMX desde 1943.",
+    "url": "https://mantenimientodeextintores.mx",
+    "telephone": "+525614612594",
+    "email": "[email protected]",
+    "areaServed": ["Ciudad de México", "Estado de México"],
+    "knowsAbout": ["NOM-154-SCFI", "NOM-002-STPS", "NOM-026-STPS", "Extintores", "Recarga", "Prueba Hidrostática", "Capacitación de Brigadas", "NFPA 2001", "NFPA 75"]
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Nosotros", "item": "https://mantenimientodeextintores.mx/nosotros" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuándo se fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT se fundó en 1943 por Esteban García Martínez en Ciudad de México. Hoy operamos bajo la tercera generación familiar, con más de 80 años de operación continua y más de 15,000 clientes atendidos en CDMX y Estado de México." }},
+    { "@type": "Question", "name": "¿Qué certificaciones respaldan a MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Somos unidad de verificación autorizada bajo NOM-154-SCFI-2005, cumplimos NOM-002-STPS-2010 sobre prevención de incendios en centros de trabajo y NOM-026-STPS sobre señalización. Nuestro personal técnico cuenta con certificaciones internacionales NFPA y formación continua trimestral." }},
+    { "@type": "Question", "name": "¿Qué hace diferente a MANEXT de otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Tres factores: 80 años de experiencia acumulada (no somos una empresa nueva), servicio integral 360° (venta, recarga, prueba hidrostática, capacitación, señalización en un solo lugar) y atención personalizada con ejecutivo de cuenta asignado. Cada cliente recibe seguimiento real, no un número de ticket." }},
+    { "@type": "Question", "name": "¿MANEXT atiende empresas grandes y pequeñas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Atendemos desde residenciales y comercios pequeños hasta corporativos multinacionales con múltiples sucursales, plantas industriales, hospitales, hoteles y dependencias gubernamentales. Para flotas amplias ofrecemos precios de mayoreo, financiamiento sin intereses 3/6/12 meses y pólizas anuales con visitas programadas." }},
+    { "@type": "Question", "name": "¿En qué zonas de CDMX y Estado de México atiende MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cobertura total en las 16 alcaldías de CDMX y zona metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán Izcalli, Atizapán, Huixquilucan y municipios conurbados. Servicio de emergencia 24/7/365 con tiempo de respuesta inmediato." }},
+    { "@type": "Question", "name": "¿MANEXT participa en iniciativas de responsabilidad social?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Como empresa 100% mexicana, ofrecemos programas de capacitación gratuita en escuelas públicas, apoyamos iniciativas de seguridad comunitaria y participamos en simulacros con Protección Civil. Nuestra trayectoria desde 1943 incluye colaboración activa en la reconstrucción post-sismo de 1985." }},
+    { "@type": "Question", "name": "¿Qué documentación oficial emite MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Emitimos toda la documentación que solicitan inspectores y auditores: certificados de venta NOM-154-SCFI, certificados de recarga, certificados de prueba hidrostática, bitácoras de mantenimiento firmadas y selladas, reportes fotográficos, planos de distribución NOM-002-STPS, constancias de capacitación DC-3 y facturas fiscales CFDI 4.0." }}
+  ]
+});
 ---
 
 <Layout
-  title="Nosotros | Más de 80 Años en Extintores CDMX"
-  description="Más de 80 años en venta de extintores y mantenimiento de extintores en CDMX. Empresa líder certificada NOM. Confianza y experiencia."
+  title="Nosotros — MANEXT desde 1943 | Tres Generaciones Protegiendo CDMX"
+  description="MANEXT, empresa familiar mexicana fundada en 1943. Más de 80 años de operación continua, 15,000+ clientes atendidos y unidad de verificación autorizada NOM-154-SCFI en CDMX y Estado de México."
   canonical="https://mantenimientodeextintores.mx/nosotros"
-  ogTitle="Nosotros - MANEXT Mantenimiento de Extintores"
-  ogDescription="MANEXT: Más de 80 años protegiendo CDMX. Líderes en venta y mantenimiento de extintores certificados. Empresa familiar de confianza."
+  ogTitle="Nosotros — MANEXT desde 1943 | 80 Años Protegiendo CDMX"
+  ogDescription="Tres generaciones de experiencia protegiendo empresas, comercios y familias. Empresa mexicana certificada NOM-154-SCFI con servicio integral en CDMX y Estado de México."
   ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
     { name: 'Nosotros', url: 'https://mantenimientodeextintores.mx/nosotros' }
   ]}
->
+  schemas={[aboutSchema, breadcrumbSchema, faqSchema]}>
 
 <Hero title="Más de 80 Años Protegiendo a México"
-  subtitle="Tradición, experiencia y compromiso con tu seguridad"
-  description="Desde 1943, MANEXT ha sido pionero en protección contra incendios en CDMX y Estado de México, brindando soluciones certificadas con la más alta calidad y servicio personalizado."
-  eyebrow="Sobre MANEXT · Desde 1943"
+  subtitle="Tres generaciones, una misma misión: extintores certificados y cumplimiento real para empresas mexicanas"
+  description="Desde 1943, MANEXT ha sido pionero en protección contra incendios en CDMX y Estado de México. Empresa familiar, unidad de verificación autorizada NOM-154-SCFI, con más de 15,000 clientes atendidos."
+  eyebrow="Sobre MANEXT · Empresa familiar desde 1943"
   services={[
-    { href: '/servicios/', title: 'Nuestros Servicios', description: 'Venta, recarga y mantenimiento', icon: 'wrench' },
-    { href: '/catalogo/', title: 'Ver Catálogo', description: 'Todos los productos certificados', icon: 'book' },
-    { href: '/capacitacion-brigadas/', title: 'Capacitación NOM', description: 'Constancias DC-3 oficiales', icon: 'users' },
-    { href: '/contacto/', title: 'Contáctanos', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
+    { href: '/servicios', title: 'Nuestros servicios', description: 'Venta, recarga y mantenimiento', icon: 'wrench' },
+    { href: '/catalogo', title: 'Ver catálogo', description: 'Todos los productos certificados NOM', icon: 'book' },
+    { href: '/capacitacion-brigadas', title: 'Capacitación NOM', description: 'Constancias DC-3 oficiales STPS', icon: 'users' },
+    { href: '/contacto', title: 'Contáctanos', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'Fundada en <strong>1943</strong>, <strong>MANEXT</strong> es una de las empresas con mayor trayectoria en venta y mantenimiento de extintores en México. Durante más de ocho décadas hemos acompañado a empresas, industrias y familias en la implementación de soluciones de protección contra incendios certificadas bajo las normas oficiales mexicanas <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>.',
-    'Nuestra filosofía se basa en tres pilares: <strong>conocimiento técnico profundo</strong>, atención personalizada desde el primer contacto, y compromiso real con la seguridad de cada cliente. No vendemos solo extintores — construimos la primera línea de defensa que protege el patrimonio, a los colaboradores y la continuidad operativa de quienes confían en nosotros.'
+    'Fundada en <strong>1943</strong> por Esteban García Martínez, <strong>MANEXT</strong> es una de las empresas con mayor trayectoria en venta y mantenimiento de extintores en México. Tres generaciones de la misma familia han sostenido <strong>ocho décadas de operación continua</strong>, acompañando a empresas, industrias y familias mexicanas en la implementación de soluciones certificadas bajo <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>. Hemos protegido a más de <strong>15,000 clientes</strong>, desde fondas familiares hasta corporativos multinacionales.',
+    'Nuestra filosofía se sostiene en tres pilares: <strong>conocimiento técnico profundo</strong> heredado generación tras generación, <strong>atención personalizada</strong> con ejecutivo de cuenta asignado a cada cliente, y <strong>compromiso real con la seguridad</strong> — no vendemos por vender, asesoramos y damos seguimiento puntual. No te entregamos un cilindro: construimos contigo la primera línea de defensa que protege patrimonio, vidas y continuidad operativa.'
   ]}
   variant="page" />
 
@@ -105,16 +147,16 @@ Nuestros precios son <strong>transparentes, competitivos y sin sorpresas</strong
 
 <section class="cta-b2b"><div class="container"><div class="cta-b2b-content"><div class="cta-b2b-text"><span class="cta-b2b-badge">MANEXT - 80 Años de Experiencia</span><h2>Protección Contra Incendios que Miles de Empresas ya Confían en CDMX</h2><p class="cta-b2b-description">
 Desde <strong>1943, MANEXT</strong> ha sido la primera opción de <strong>más de 15,000 empresas</strong> en Ciudad de México para su protección contra incendios. Nuestra experiencia de <strong>8 décadas</strong> garantiza que cada extintor, cada inspección y cada servicio cumpla con las <strong>normativas NOM-154-SCFI y NOM-002-STPS</strong> más estrictas. Ofrecemos <strong>soluciones integrales certificadas</strong> con instalación profesional, mantenimiento preventivo y atención personalizada 24/7/365 en toda CDMX y área metropolitana.
-</p><div class="cta-b2b-benefits"><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><div><strong>Experiencia Real de 80 Años</strong><p>No somos nuevos ni improvisados - Décadas protegiendo empresas mexicanas exitosamente</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><div><strong>Certificaciones Oficiales Garantizadas</strong><p>Todos nuestros servicios cumplen NOM-154-SCFI y NOM-002-STPS con documentación oficial</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><div><strong>Servicio Integral 360</strong><p>Venta, instalación, mantenimiento, recarga, capacitación y asesoría en un solo lugar</p></div></div></div><div class="cta-b2b-stats"><div class="cta-stat"><span class="stat-number">80+</span><span class="stat-label">Años de Experiencia</span></div><div class="cta-stat"><span class="stat-number">15K+</span><span class="stat-label">Clientes Satisfechos</span></div><div class="cta-stat"><span class="stat-number">24/7</span><span class="stat-label">Atención Continua</span></div></div></div><div class="cta-b2b-actions"><div class="cta-action-card"><h3>Solicita tu Cotización Sin Compromiso</h3><p>Respuesta inmediata con análisis de riesgos gratuito y asesoría técnica especializada</p><div class="cta-buttons"><a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20información%20sobre%20servicios%20de%20protección%20contra%20incendios%20de%20MANEXT"
+</p><div class="cta-b2b-benefits"><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><div><strong>Experiencia Real de 80 Años</strong><p>No somos nuevos ni improvisados - Décadas protegiendo empresas mexicanas exitosamente</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><div><strong>Certificaciones Oficiales Garantizadas</strong><p>Todos nuestros servicios cumplen NOM-154-SCFI y NOM-002-STPS con documentación oficial</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><div><strong>Servicio Integral 360</strong><p>Venta, instalación, mantenimiento, recarga, capacitación y asesoría en un solo lugar</p></div></div></div><div class="cta-b2b-stats"><div class="cta-stat"><span class="stat-number">80+</span><span class="stat-label">Años de Experiencia</span></div><div class="cta-stat"><span class="stat-number">15K+</span><span class="stat-label">Clientes Satisfechos</span></div><div class="cta-stat"><span class="stat-number">24/7</span><span class="stat-label">Atención Continua</span></div></div></div><div class="cta-b2b-actions"><div class="cta-action-card"><h3>Solicita tu Cotización Sin Compromiso</h3><p>Respuesta inmediata con análisis de riesgos gratuito y asesoría técnica especializada</p><div class="cta-buttons"><a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20información%20sobre%20servicios%20de%20protección%20contra%20incendios%20de%20MANEXT"
 class="cta-btn cta-btn-whatsapp"
 target="_blank"
 rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 Cotizar por WhatsApp
-</a><a href="tel:5570081816" class="cta-btn cta-btn-phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-Llamar: 55 7008 1816
+</a><a href="tel:5614612594" class="cta-btn cta-btn-phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+Llamar: 56 1461 2594
 </a></div><div class="cta-alternative"><p><strong>Incluye:</strong> Evaluación gratuita + Cotización personalizada + Asesoría técnica + Documentación oficial</p><p class="cta-email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:[email protected]">[email protected]</a></p></div><div class="cta-urgency"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Respuesta inmediata en menos de 2 horas - Cobertura total CDMX y Estado de México</span></div></div></div></div></div></section>
 
-<section class="emergency-cta"><div class="container"><div class="emergency-cta-content"><div class="emergency-header"><h2>¿Necesitas Extintores Urgente?</h2><p>Atención inmediata para empresas en CDMX y Estado de México</p></div><div class="emergency-actions"><a href="tel:5570081816" class="emergency-action-card emergency-phone"><div class="emergency-action-info"><span class="emergency-label">Llamar Ahora</span><span class="emergency-contact">55 7008 1816</span><span class="emergency-desc">Respuesta inmediata</span></div></a><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20más%20información%20sobre%20MANEXT" class="emergency-action-card emergency-whatsapp" target="_blank" rel="noopener"><div class="emergency-action-info"><span class="emergency-label">WhatsApp</span><span class="emergency-contact">Cotización Express</span><span class="emergency-desc">Atención prioritaria 24/7</span></div></a></div></div></div>
+<section class="emergency-cta"><div class="container"><div class="emergency-cta-content"><div class="emergency-header"><h2>¿Necesitas Extintores Urgente?</h2><p>Atención inmediata para empresas en CDMX y Estado de México</p></div><div class="emergency-actions"><a href="tel:5614612594" class="emergency-action-card emergency-phone"><div class="emergency-action-info"><span class="emergency-label">Llamar Ahora</span><span class="emergency-contact">56 1461 2594</span><span class="emergency-desc">Respuesta inmediata</span></div></a><a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20más%20información%20sobre%20MANEXT" class="emergency-action-card emergency-whatsapp" target="_blank" rel="noopener"><div class="emergency-action-info"><span class="emergency-label">WhatsApp</span><span class="emergency-contact">Cotización Express</span><span class="emergency-desc">Atención prioritaria 24/7</span></div></a></div></div></div>
 <style>.emergency-cta{background:#f5f5f5;padding:4rem 0}.emergency-cta-content{max-width:900px;margin:0 auto}.emergency-header{text-align:center;margin-bottom:3rem}.emergency-header h2{font-size:2.2rem;font-weight:800;color:#212121;margin:0 0 0.75rem 0;letter-spacing:-0.02em}.emergency-header p{font-size:1.1rem;color:#616161;margin:0;font-weight:400}.emergency-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.emergency-action-card{background:#ffffff;border:2px solid #e0e0e0;border-radius:12px;padding:2.5rem 2rem;text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center}.emergency-action-card:hover{border-color:var(--primary-color);box-shadow:0 6px 20px rgba(211,47,47,0.12)}.emergency-action-info{display:flex;flex-direction:column;gap:0.5rem}.emergency-label{font-size:0.875rem;font-weight:600;color:#757575;text-transform:uppercase;letter-spacing:0.05em}.emergency-contact{font-size:1.75rem;font-weight:800;color:#212121;letter-spacing:-0.01em;margin:0.25rem 0}.emergency-desc{font-size:0.95rem;color:#616161;font-weight:500}.emergency-phone:hover .emergency-contact{color:var(--primary-color)}.emergency-whatsapp:hover .emergency-contact{color:#25d366}@media (max-width:768px){.emergency-cta{padding:3rem 0}.emergency-header h2{font-size:1.75rem}.emergency-header p{font-size:1rem}.emergency-header{margin-bottom:2rem}.emergency-actions{grid-template-columns:1fr;gap:1rem}.emergency-action-card{padding:2rem 1.5rem}.emergency-contact{font-size:1.5rem}}@media (max-width:480px){.emergency-header h2{font-size:1.5rem}.emergency-contact{font-size:1.3rem}}</style>
 </section>
 

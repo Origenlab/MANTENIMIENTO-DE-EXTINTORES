@@ -14,8 +14,8 @@ heroRight:
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#montos-multas">Montos exactos de multas por extintores</a></li>
     <li><a href="#quien-sanciona">¿Quién aplica las sanciones y qué revisan?</a></li>
     <li><a href="#requisitos-negocio">Requisitos según tu tipo de negocio</a></li>
@@ -23,7 +23,7 @@ heroRight:
     <li><a href="#impugnacion">Proceso de impugnación de multas</a></li>
     <li><a href="#checklist">Checklist de cumplimiento normativo</a></li>
     <li><a href="#faq">Preguntas frecuentes</a></li>
-  </ol>
+  </ul>
 </nav>
 
 ---

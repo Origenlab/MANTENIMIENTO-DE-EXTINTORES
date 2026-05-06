@@ -345,7 +345,7 @@ En MANEXT incluimos la señalización básica (señal de ubicación + soporte de
 <div class="faq-item">
 <button class="faq-question" aria-expanded="false" aria-controls="faq-se-6">¿MANEXT incluye señalización al comprar extintores?</button>
 <div class="faq-answer" id="faq-se-6">
-<p>Sí. En todas las compras de extintores con MANEXT incluimos la señal de ubicación NOM-026-STPS y su instalación a la altura correcta. Para negocios que necesitan señalización completa (rutas de evacuación, salidas de emergencia, puntos de reunión), ofrecemos paquetes integrales con cotización gratuita según las dimensiones de tu local. Llamar al <strong>55 7008 1816</strong> o escribir por WhatsApp para agendar evaluación.</p>
+<p>Sí. En todas las compras de extintores con MANEXT incluimos la señal de ubicación NOM-026-STPS y su instalación a la altura correcta. Para negocios que necesitan señalización completa (rutas de evacuación, salidas de emergencia, puntos de reunión), ofrecemos paquetes integrales con cotización gratuita según las dimensiones de tu local. Llamar al <strong>56 1461 2594</strong> o escribir por WhatsApp para agendar evaluación.</p>
 </div>
 </div>
 </section>

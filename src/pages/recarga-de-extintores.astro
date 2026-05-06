@@ -2,22 +2,67 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Recarga de Extintores Certificada NOM-154-SCFI",
+  "name": "Recarga Anual de Extintores con Equipo de Préstamo a Domicilio",
+  "description": "Recarga de extintores certificada NOM-154-SCFI a domicilio en CDMX y Estado de México. PQS, CO₂, AFFF, agentes limpios FM-200/Novec y Tipo K. Verificación por pesaje, agente original certificado y extintor de préstamo durante el proceso.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MANEXT — Mantenimiento de Extintores",
+    "image": "https://mantenimientodeextintores.mx/img/logo.avif",
+    "telephone": "+52-56-1461-2594",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Ayuntamiento 75",
+      "addressLocality": "Tlalnepantla de Baz",
+      "addressRegion": "Estado de México",
+      "addressCountry": "MX"
+    }
+  },
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "offers": { "@type": "Offer", "description": "Recarga anual de extintores certificada NOM-154-SCFI con verificación por pesaje y certificado individual." }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" },
+    { "@type": "ListItem", "position": 2, "name": "Recarga de Extintores", "item": "https://mantenimientodeextintores.mx/recarga-de-extintores" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o tras cualquier descarga, aunque sea parcial. Los agentes extintores se degradan o pierden presión con el tiempo: el polvo PQS se compacta por humedad, el CO₂ pierde carga por evaporación lenta y el agente AFFF pierde efectividad química. Sin recarga vigente el extintor puede fallar en una emergencia y la inspección lo observa." }},
+    { "@type": "Question", "name": "¿Cuánto cuesta la recarga de un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga PQS desde $300 MXN según capacidad (4.5 kg, 6 kg, 9 kg, 20 kg). Recarga CO₂ desde $450 MXN. Recarga AFFF desde $550 MXN. Tipo K desde $700 MXN. Agentes limpios FM-200/Novec bajo cotización por agente original. Pólizas anuales con descuentos por volumen del 15-25%. Cotización gratuita por WhatsApp." }},
+    { "@type": "Question", "name": "¿La recarga se hace en sitio o en taller?", "acceptedAnswer": { "@type": "Answer", "text": "Depende del agente. PQS y agua se pueden recargar en sitio con unidad móvil. CO₂, AFFF, Tipo K y agentes limpios requieren taller especializado por presión, agente original y trazabilidad. MANEXT recoge en tu sitio sin costo, recarga con verificación por pesaje calibrado y entrega en 24-48 horas con certificado individual y extintor de préstamo durante el proceso." }},
+    { "@type": "Question", "name": "¿Por qué la verificación se hace por pesaje y no por manómetro?", "acceptedAnswer": { "@type": "Answer", "text": "El manómetro indica presión instantánea, no carga real de agente. En CO₂, AFFF y agentes limpios el manómetro puede mostrar verde pero el cilindro estar parcialmente vacío por fuga lenta. Por eso la NOM exige verificación por pesaje contra el peso de tara grabado en la base del cilindro. MANEXT usa balanzas calibradas con trazabilidad y firma cada pesaje." }},
+    { "@type": "Question", "name": "¿Prestan extintores durante la recarga?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin costo adicional. Durante las 24-48 horas que tu extintor está en proceso, prestamos un equipo de respaldo del mismo tipo y capacidad para que tu sitio mantenga cobertura el 100% del tiempo — un requisito frecuente de aseguradoras y clientes corporativos con auditorías ISO 45001." }},
+    { "@type": "Question", "name": "¿Qué pasa si el extintor está dañado o vencido?", "acceptedAnswer": { "@type": "Answer", "text": "Si presenta corrosión profunda, deformación, válvula dañada o cilindro fuera de prueba hidrostática, lo evaluamos en taller. Casos menores: reparación con refacciones originales. Casos graves: damos de baja con acta formal y ofrecemos sustitución a precio preferencial. Para clientes con póliza activa el descuento de reposición sube hasta 25%." }},
+    { "@type": "Question", "name": "¿Qué documentación entregan tras la recarga?", "acceptedAnswer": { "@type": "Answer", "text": "Cada cilindro recargado se entrega con: certificado individual de recarga (folio, fecha, agente, peso verificado), nueva tarjeta de inspección, etiqueta de fabricante con trazabilidad, factura fiscal CFDI 4.0 y bitácora actualizada. Documentación válida ante Protección Civil, STPS, COFEPRIS y aseguradoras por 12 meses." }},
+    { "@type": "Question", "name": "¿Cómo agendo recarga sin interrumpir mi negocio?", "acceptedAnswer": { "@type": "Answer", "text": "Coordinamos visitas en horario de baja operación (mañanas tempranas, cierre o sábados sin recargo). Para corporativos con flotas amplias armamos calendario rotativo con extintores de préstamo para cubrir múltiples sucursales sin afectar operación. Tiempo total típico por cilindro: 24-48 horas; en sitio para PQS, en taller para resto." }}
+  ]
+});
 ---
 
 <Layout
-  title="Recarga de Extintores Certificada NOM-154 | Precios CDMX"
-  description="Recarga de extintores avalada NOM-154. Precios por kg: PQS, dióxido de carbono, AFFF, limpios y tipo K. Equipo de préstamo 24-48h CDMX. 55 7008 1816"
+  title="Recarga de Extintores Certificada NOM-154 a Domicilio en CDMX | MANEXT"
+  description="Recarga anual de extintores PQS, CO₂, AFFF, Tipo K y agentes limpios certificada NOM-154-SCFI. Verificación por pesaje calibrado, agente original, equipo de préstamo durante el proceso y entrega en 24-48 horas en CDMX y Estado de México."
   canonical="https://mantenimientodeextintores.mx/recarga-de-extintores"
-  ogTitle="Recarga de Extintores Certificada NOM-154 | Precios CDMX"
-  ogDescription="Renovación de agente extintor avalada NOM-154-SCFI. Atención a domicilio con equipos de préstamo. Precios por kilogramo y tipo."
+  ogTitle="Recarga de Extintores NOM-154 a Domicilio en 24-48 h | MANEXT CDMX"
+  ogDescription="Recarga certificada NOM-154 con verificación por pesaje calibrado y extintor de préstamo durante el proceso. Cobertura total CDMX y Estado de México con +80 años de experiencia."
   ogImage="https://mantenimientodeextintores.mx/img/og-recarga-extintores.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' },
     { name: 'Recarga de Extintores', url: 'https://mantenimientodeextintores.mx/recarga-de-extintores' }
   ]}
-  schemas={[
-    `{"@context": "https://schema.org","@type": "Service","serviceType": "Recarga de Extintores","provider": {"@type": "LocalBusiness","name": "MANEXT - Mantenimiento de Extintores","image": "https://mantenimientodeextintores.mx/img/logo.avif","telephone": "+52-55-3968-9272","address": {"@type": "PostalAddress","addressLocality": "Ciudad de México","addressRegion": "CDMX","addressCountry": "MX"}},"areaServed": {"@type": "City","name": "Ciudad de México"},"offers": {"@type": "Offer","description": "Recarga de extintor certificada NOM-154-SCFI"}}`
-  ]}
+  schemas={[serviceSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
@@ -183,7 +228,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores PQS — Polvo Químico Seco Tipo ABC</h2>
           <p>Los equipos de <strong>agente seco tipo ABC</strong> son los más utilizados en oficinas, comercios y centros de trabajo por su versatilidad para combatir fuegos clase A (sólidos), B (líquidos) y C (eléctricos). El rellenado incluye vaciado total del polvo anterior, limpieza profunda interna con solución desincrustante, secado completo con aire filtrado y llenado con agente monofosfato de amonio grado premium de fabricante autorizado.</p>
           <p>Disponibles en capacidades de 4.5 kg, 6 kg, 9 kg, 12 kg y 20 kg. Se verifica que el manómetro marque la presión operativa correcta y se instala collar de garantía inviolable. Constancia válida ante Protección Civil incluida en el servicio.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga PQS</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga PQS</a>
         </div>
       </div>
 
@@ -195,7 +240,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores CO₂ — Bióxido de Carbono</h2>
           <p>Los cilindros de <strong>bióxido de carbono</strong> clase BC son ideales para equipos electrónicos sensibles, data centers, cuartos de servidores y laboratorios. El gas no conduce electricidad y no deja residuos. El proceso incluye pesaje preciso del cilindro vacío, llenado con gas carbónico licuado de alta pureza (99.9%) y verificación de presión operativa (850-950 PSI a 21°C).</p>
           <p>Capacidades disponibles: 5 lb, 10 lb, 15 lb y 20 lb. Cada cilindro se documenta con número de serie, peso exacto y fecha de vencimiento para facilitar el control de inventarios de tu centro de trabajo.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20CO2" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga CO₂</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20CO2" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga CO₂</a>
         </div>
       </div>
 
@@ -207,7 +252,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores de Espuma AFFF</h2>
           <p>Equipos especializados clase AB para industrias con riesgo de fuegos de líquidos inflamables: gasolineras, plantas químicas, talleres mecánicos y almacenes de solventes. Utilizamos concentrado AFFF 3% o 6% grado industrial que crea película acuosa sellante. La espuma tiene vida útil limitada de 10-12 meses por degradación química, haciendo la reposición cada 12 meses crítica.</p>
           <p>Concentrado fresco con menos de 60 días de fabricación para máxima efectividad. Se realizan pruebas de porcentaje de concentración para garantizar la proporción correcta y se verifica el mecanismo de aspiración de aire que genera la expansión de la espuma al momento de la descarga.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20AFFF" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga AFFF</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20AFFF" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga AFFF</a>
         </div>
       </div>
 
@@ -219,7 +264,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores con Agentes Limpios (Halotron, HFC-236fa)</h2>
           <p>Dispositivos clase ABC con gases halogenados que no dejan residuos, no conducen electricidad y son seguros para equipos ultra sensibles. Ideales para centros de datos, salas de telecomunicaciones, museos y quirófanos. El proceso requiere equipamiento de recuperación de gases para evitar emisiones atmosféricas, vaciado controlado y verificación de válvulas de precisión con pruebas de hermeticidad.</p>
           <p>El agente recuperado se maneja conforme a protocolos ambientales para evitar emisión de gases de efecto invernadero. Ideal para empresas que requieren proteger activos de alto valor sin riesgo de daño colateral por residuos.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20con%20agentes%20limpios" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agentes Limpios</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20con%20agentes%20limpios" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agentes Limpios</a>
         </div>
       </div>
 
@@ -231,7 +276,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores Tipo K para Cocinas Comerciales</h2>
           <p>Obligatorios según regulación laboral vigente para restaurantes, hoteles, hospitales y cualquier instalación con freidoras y equipos de cocción con aceites. El acetato de potasio en solución acuosa crea reacción de saponificación al contacto con aceites calientes, sellando la superficie y previniendo reignición. El agente se degrada con humedad ambiental, requiriendo reposición cada 12 meses.</p>
           <p>Disponible 24/7 para establecimientos que no pueden interrumpir operaciones. Cada unidad tipo K procesada recibe verificación de la boquilla deflectora especial diseñada para aplicar el agente en forma de lluvia suave sobre la superficie del aceite, evitando salpicaduras peligrosas.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20Tipo%20K" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Tipo K</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20Tipo%20K" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Tipo K</a>
         </div>
       </div>
 
@@ -243,7 +288,7 @@ import SectionHeader from '../components/SectionHeader.astro';
           <h2>Extintores de Agua Presurizada</h2>
           <p>Unidades clase A económicas y efectivas para fuegos de materiales sólidos: madera, papel, textiles y cartón en almacenes y bodegas sin riesgo eléctrico. Utilizamos agua destilada tratada con aditivos anticongelantes y anticorrosivos. El rellenado incluye purga total del cilindro, tratamiento anticorrosivo interno y presurización con nitrógeno seco para asegurar expulsión uniforme.</p>
           <p>Aunque el agua no caduca, la reposición es necesaria porque el cilindro acumula contaminantes internos, la presión se reduce por micro fugas y pueden formarse depósitos minerales que obstruyen la boquilla. <strong>Importante:</strong> Nunca usar en fuegos eléctricos ni aceites.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20de%20agua" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agua</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20de%20agua" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agua</a>
         </div>
       </div>
 
@@ -267,7 +312,7 @@ import SectionHeader from '../components/SectionHeader.astro';
       <div class="faq-cot-layout">
 
         <div class="faq-cot-left">
-          <p class="faq-cot-desc">Preguntas frecuentes sobre <strong>recarga de extintores</strong> en CDMX. ¿Tienes otra duda? <a href="https://wa.me/5215570081816" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos al instante.</p>
+          <p class="faq-cot-desc">Preguntas frecuentes sobre <strong>recarga de extintores</strong> en CDMX. ¿Tienes otra duda? <a href="https://wa.me/5215614612594" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos al instante.</p>
           <div class="faq-grid">
 
             <div class="faq-item">
@@ -549,7 +594,7 @@ import SectionHeader from '../components/SectionHeader.astro';
       text += '*Teléfono:* ' + telefono + '\n';
       text += '*Tipo de extintor:* ' + servicio + '\n';
       if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-      window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
     });
   })();
   </script>

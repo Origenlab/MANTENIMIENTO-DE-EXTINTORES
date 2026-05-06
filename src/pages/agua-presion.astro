@@ -16,6 +16,30 @@ const schema = JSON.stringify({
     "areaServed": "MX"
   }
 });
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
+    { "@type": "ListItem", "position": 2, "name": "Agua a Presión", "item": "https://mantenimientodeextintores.mx/agua-presion" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Por qué el agua es técnicamente superior al PQS para fuegos Clase A?", "acceptedAnswer": { "@type": "Answer", "text": "El PQS apaga la llama por interrupción química pero no extrae calor del material. El agua tiene capacidad calorífica de 4.18 kJ/kg·°C y calor latente de vaporización de 2,257 kJ/kg, absorbiendo hasta 6 veces más energía térmica por unidad de masa. Adicionalmente penetra por capilaridad la madera, papel y textil hasta las brasas internas, eliminando el riesgo de re-ignición." }},
+    { "@type": "Question", "name": "¿Qué materiales apaga y dónde está prohibido usarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Apaga: madera, papel, cartón, textiles y plásticos termoestables (Clase A). Prohibido en Clase B (gasolina, diésel, aceites) porque el agua se hunde bajo el hidrocarburo y expande el incendio. Prohibido en Clase C (equipos eléctricos energizados) por riesgo de electrocución. Prohibido en Clase K (aceites de cocina) por explosión de vapor." }},
+    { "@type": "Question", "name": "¿Qué es un fuego de interior profundo (deep-seated fire)?", "acceptedAnswer": { "@type": "Answer", "text": "Combustión interna en materiales porosos (madera, papel apilado, pacas de fibra) que mantiene brasas a más de 200 °C aunque la superficie parezca extinta. Al disiparse el agente extintor, el oxígeno reactiva la combustión, a veces horas después. El agua es el único agente portátil que penetra por capilaridad y elimina ese calor residual; los modelos con humectante triplican la velocidad de penetración." }},
+    { "@type": "Question", "name": "¿Cuántos extintores necesito según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "La distancia máxima de recorrido en riesgo ordinario Clase A es 23 m; en riesgo alto se reduce a 15 m. Como referencia, una bodega de 500 m² en riesgo ordinario requiere mínimo 5 unidades de 9 L; una carpintería de 300 m² en riesgo alto puede requerir 8 unidades de 9 L. MANEXT realiza análisis de distribución sin costo." }},
+    { "@type": "Question", "name": "¿Qué capacidad de extintor de agua elegir?", "acceptedAnswer": { "@type": "Answer", "text": "Regla práctica: 6 L para oficinas y comercios pequeños (~60 m²), 9 L para bodegas y carpinterías medianas (~100 m²), 20 L para naves de producción textil o papelera (~200 m²) y carrito de 50 L para grandes depósitos de papel o aserrín (~500 m²). El factor decisivo es la densidad de carga combustible, no solo el área." }},
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor de agua?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. La revisión incluye reposición del agente humectante (en modelos especializados) y verificación del cilindro de N₂. Prueba hidrostática del cilindro cada 5 años." }},
+    { "@type": "Question", "name": "¿El extintor de agua tiene el menor costo operativo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Costo de adquisición y de recarga consistentemente entre los más bajos del mercado, sin químicos delicados ni residuos que limpiar tras descarga. Para bodegas, carpinterías e industria textil con flota amplia, es la opción con menor costo operativo anual entre todas las soluciones de supresión Clase A." }},
+    { "@type": "Question", "name": "¿Qué documentación entrega MANEXT con cada extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Certificación NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección, comprobante de instalación, señalización NOM-026 con indicación de restricciones de uso y bitácora de servicio para auditorías de Protección Civil y STPS." }}
+  ]
+});
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -31,29 +55,35 @@ const currentSlug = 'agua-presion';
 ---
 
 <Layout
-  title="Extintores de Agua a Presión Clase A | NOM-154-SCFI — MANEXT"
-  description="Extintores de agua presurizada certificados NOM-154-SCFI para fuegos Clase A en bodegas, carpinterías e industria textil. Enfriamiento profundo que elimina brasas internas. Entrega 48h CDMX. Cotiza gratis."
+  title="Extintor de Agua a Presión Clase A para Bodegas y Carpinterías en CDMX | MANEXT"
+  description="Extintores de agua presurizada con N₂ certificados NOM-154-SCFI: enfriamiento profundo que elimina brasas internas en madera, papel y textil. Modelos de 6 a 50 L para bodegas, carpinterías y plantas papeleras. Entrega en 48 h en CDMX."
   canonical="https://mantenimientodeextintores.mx/agua-presion"
-  schemas={[schema]}
+  ogTitle="Extintor de Agua a Presión Clase A | MANEXT CDMX"
+  ogDescription="El agente extintor con mayor capacidad calorífica del mercado. Penetra brasas internas en madera, papel y textil que el polvo PQS no alcanza. Certificado NOM-154-SCFI con instalación y entrega en 48 h en CDMX."
+  breadcrumbs={[
+    { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
+    { name: 'Agua a Presión', url: 'https://mantenimientodeextintores.mx/agua-presion' }
+  ]}
+  schemas={[schema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
   <!-- 1. HERO -->
   <Hero
     variant="page"
-    title="Extintores de Agua a Presión"
-    subtitle="El único agente con enfriamiento profundo para fuegos Clase A"
-    description="Agua presurizada con nitrógeno seco — el agente con mayor capacidad calorífica del mercado. Penetra hasta el núcleo del material en combustión eliminando brasas internas que otros agentes no alcanzan. Certificado NOM-154-SCFI. Para bodegas, carpinterías e industria textil y papelera."
-    eyebrow="Extintores · Agua a Presión"
+    title="Extintor de Agua a Presión — Clase A"
+    subtitle="El único agente extintor que entra al corazón del material y apaga la brasa que nadie más alcanza"
+    description="Distribuidor autorizado en CDMX desde hace más de 80 años. Modelos de 6 a 50 L con agente humectante opcional, instalación profesional y la documentación lista para Protección Civil. Entrega en 48 horas."
+    eyebrow="Extintores · Agua a Presión · Clase A"
     services={[
-      { href: '/agua-presion#bodegas', title: 'Bodegas y Almacenes', description: 'Protección Clase A para alta carga combustible', icon: 'building' },
-      { href: '/agua-presion#carpinterias', title: 'Carpinterías', description: 'Aserrín, maderas y restos sólidos', icon: 'settings' },
-      { href: '/agua-presion#textil', title: 'Industria Textil', description: 'Pacas de fibra y rollos de papel', icon: 'layers' },
-      { href: '/contacto', title: 'Cotización Gratuita', description: 'Respuesta en menos de 24h', icon: 'phone', featured: true },
+      { href: '/agua-presion#bodegas', title: 'Bodegas y almacenes', description: 'Protección Clase A para alta carga combustible', icon: 'building' },
+      { href: '/agua-presion#carpinterias', title: 'Carpinterías', description: 'Aserrín, virutas y maderas sólidas', icon: 'shield' },
+      { href: '/agua-presion#textil', title: 'Industria textil y papelera', description: 'Pacas de fibra y rollos de papel', icon: 'leaf' },
+      { href: '/contacto', title: 'Cotización gratuita', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
     ]}
     paragraphs={[
-      'El agua presurizada tiene la <strong>mayor capacidad calorífica (4.18 kJ/kg·°C)</strong> y el más alto calor latente de vaporización <strong>(2,257 kJ/kg)</strong> de cualquier agente extintor portátil. Esto no es marketing: es termodinámica. Ningún agente seco, ningún gas ni ninguna espuma extrae calor de un material sólido ardiente tan eficientemente como el agua. Para fuegos Clase A en madera, papel, cartón y textiles, el extintor de agua a presión es la solución técnicamente superior.',
-      'En MANEXT suministramos extintores de agua presurizada certificados <strong>NOM-154-SCFI</strong> en capacidades de 6 a 50 litros, con modelos que incluyen agente humectante para supresión de fuegos de interior profundo. Cada equipo incluye instalación, señalización NOM-002-STPS y documentación completa para Protección Civil. <strong>Entrega e instalación en 48 horas</strong> en CDMX y zona metropolitana.'
+      'El agua presurizada con nitrógeno seco tiene la <strong>mayor capacidad calorífica (4.18 kJ/kg·°C)</strong> y el calor latente de vaporización más alto <strong>(2,257 kJ/kg)</strong> de cualquier agente extintor portátil. No es marketing: es termodinámica básica. Por cada litro de agua descargada se extraen hasta <strong>2,600 kJ</strong> de energía térmica del material en combustión — varias veces lo que logra cualquier polvo, gas o espuma. Para fuegos Clase A en madera, papel, cartón y textiles, el extintor de agua es la solución técnicamente superior y, además, la más económica a largo plazo.',
+      'En <strong>MANEXT</strong> suministramos extintores de agua presurizada certificados <strong>NOM-154-SCFI</strong> en capacidades de 6 a 50 L, con modelos que incluyen <strong>agente humectante</strong> para penetrar pacas densas y vetas de madera. Cada equipo se entrega con instalación profesional, soporte de pared, señalización NOM-026 con indicación clara de restricciones de uso y la documentación oficial completa. <strong>Entrega e instalación en 48 horas</strong> en CDMX y zona metropolitana.'
     ]}
   />
 
@@ -162,7 +192,7 @@ const currentSlug = 'agua-presion';
           <span class="rd-badge">Sólidos Combustibles</span>&nbsp;
           <span class="rd-badge">⚠ NO eléctrico · NO Clase B · NO Clase K</span>
           </p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+informaci%C3%B3n+t%C3%A9cnica+y+cotizaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+informaci%C3%B3n+t%C3%A9cnica+y+cotizaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
         </div>
       </div>
 
@@ -191,7 +221,7 @@ const currentSlug = 'agua-presion';
             </tbody>
           </table>
           <p>Regla práctica: una bodega de 500 m² con riesgo ordinario requiere mínimo <strong>5 unidades de 9 litros</strong> distribuidas para que ningún punto supere 23 m de recorrido. En zonas de corte de madera con aserrín acumulado (riesgo alto) la distancia se reduce a 15 m y el cálculo puede requerir 8–10 unidades. En MANEXT realizamos el análisis de distribución sin costo como parte del servicio.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+cotizaci%C3%B3n+y+c%C3%A1lculo+de+distribuci%C3%B3n+NOM." class="btn btn-primary" target="_blank" rel="noopener">Calcular Distribución de mi Instalación</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+cotizaci%C3%B3n+y+c%C3%A1lculo+de+distribuci%C3%B3n+NOM." class="btn btn-primary" target="_blank" rel="noopener">Calcular Distribución de mi Instalación</a>
         </div>
       </div>
 
@@ -204,7 +234,7 @@ const currentSlug = 'agua-presion';
           <h2>Sectores de Aplicación: Cuándo el Agua es la Respuesta Correcta</h2>
           <p><strong>Carpinterías y madereras:</strong> el aserrín tiene una superficie de contacto enorme y se inflama a bajas temperaturas. Una vez iniciado el fuego, se introduce en la veta de los tablones. El PQS extingue la llama visible pero no enfría la madera; el fuego resurge al dispersarse el polvo. El agua penetra la veta y elimina el calor residual. En talleres con madera verde (alto contenido de humedad) el agua es aún más eficaz porque la humedad del material actúa como reserva térmica adicional.</p>
           <p><strong>Industria textil y papelera:</strong> las pacas de algodón comprimido son el material Clase A con mayor riesgo de re-ignición del mercado. La compresión crea un entorno sin oxígeno en el interior que preserva las brasas durante horas. Los modelos con agente humectante penetran incluso en pacas densas. Para rollos de papel en rotativas o almacenes editoriales, el extintor de 20 litros o el carrito de 50 litros es el equipo estándar. <strong>Lo que el agua NO cubre:</strong> si el área incluye transformadores, tableros eléctricos o equipos energizados, debe complementarse con <a href="/co2">extintores de CO₂</a>. Si hay solventes o líquidos inflamables, se requiere <a href="/espuma-afff">AFFF clase B</a>.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+asesor%C3%ADa+para+mi+instalaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Asesoría de Aplicación</a>
+          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+asesor%C3%ADa+para+mi+instalaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Asesoría de Aplicación</a>
         </div>
       </div>
 
@@ -214,43 +244,43 @@ const currentSlug = 'agua-presion';
           <img src="/img/img-ventas-de-extintores/extintores-de-agua-presurizada-clase-a.avif" alt="MANEXT — distribuidor certificado de extintores de agua a presión con documentación NOM-002-STPS" width="600" height="400" loading="lazy" />
         </div>
         <div class="service-detail-content">
-          <h2>Por Qué MANEXT para tus Extintores de Agua a Presión</h2>
-          <p>El extintor de agua es el equipo con <strong>menor costo de adquisición y recarga</strong> del mercado. Su mantenimiento es sencillo: recarga anual con agua tratada (o con agente humectante en modelos especializados) y revisión del cilindro de nitrógeno. Sin residuos que limpiar, sin químicos delicados, sin riesgo de daño a materiales por el agente extintor. El costo operativo anual de una flota de extintores de agua en una bodega mediana es consistentemente el más bajo entre todas las opciones de supresión Clase A.</p>
-          <p>Lo que MANEXT incluye en cada venta: <strong>análisis de riesgo por zona</strong> (identificación de áreas mixtas donde el agua debe complementarse), <strong>cálculo de distribución NOM-002-STPS</strong> (número de equipos, ubicaciones exactas, distancias de recorrido), instalación profesional con soportes de pared, <strong>señalización reglamentaria</strong> con indicación de restricciones de uso (NO eléctrico, NO Clase B), y documentación completa para auditorías de Protección Civil. Recarga y mantenimiento preventivo anual disponibles con visita a domicilio.</p>
-          <a href="https://wa.me/5215570081816?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Quiero+cotizaci%C3%B3n+completa+con+an%C3%A1lisis+de+riesgo." class="btn btn-primary" target="_blank" rel="noopener">Cotización con Análisis de Riesgo Gratis</a>
+          <h2>Por qué te conviene MANEXT para tus extintores de agua a presión</h2>
+          <p>El extintor de agua es el equipo con <strong>menor costo de adquisición y de recarga</strong> del mercado. Su mantenimiento es sencillo: recarga anual con agua tratada (o con agente humectante en modelos especializados) y verificación del cilindro de nitrógeno. Sin químicos delicados, sin residuos que limpiar, sin daños colaterales a los materiales protegidos. En una bodega mediana o una carpintería, el costo operativo anual de una flota de extintores de agua es consistentemente <strong>el más bajo</strong> entre todas las opciones de supresión Clase A.</p>
+          <p>Lo que MANEXT incluye en cada venta: <strong>análisis de riesgo por zona</strong> para identificar áreas mixtas donde el agua debe complementarse con CO₂ o AFFF, <strong>cálculo de distribución NOM-002-STPS</strong> (número de equipos, ubicaciones exactas, distancias de recorrido), instalación profesional con soporte de pared anclado, <strong>señalización fotoluminiscente NOM-026</strong> con indicación clara de restricciones (NO eléctrico, NO Clase B, NO Clase K), y documentación oficial para Protección Civil y la STPS. Recarga y mantenimiento anual a domicilio.</p>
+          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Quiero+cotizaci%C3%B3n+completa+con+an%C3%A1lisis+de+riesgo." class="btn btn-primary" target="_blank" rel="noopener">Cotización con análisis de riesgo sin costo</a>
         </div>
       </div>
 
 
       <SectionHeader
-        eyebrow="Catálogo Completo"
-        title="Todos los Tipos de Extintores MANEXT"
-        subtitle="Elige el agente correcto para cada clase de fuego"
-        paragraphs={{[
-          'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Usar el agente incorrecto puede ser ineficaz o incluso <strong>peligroso</strong>: el agua en fuegos eléctricos, el PQS en aceites a alta temperatura, el CO₂ en espacios ocupados. Esta guía te ayuda a identificar el equipo correcto para cada zona de tu instalación.',
-          'Todos los extintores MANEXT incluyen <strong>certificación NOM-154-SCFI</strong>, instalación profesional, señalamiento reglamentario y documentación válida para Protección Civil. Nuestros ingenieros realizan <strong>análisis de riesgo gratuito</strong> antes de cualquier cotización. <a href="/extintores">Ver catálogo completo →</a>'
-        ]}}
+        eyebrow="Catálogo completo"
+        title="Cada Riesgo Tiene Su Extintor: Elige el Correcto"
+        subtitle="Seis agentes extintores, una sola lógica — el equipo adecuado para cada clase de fuego"
+        paragraphs={[
+          'Equipar un negocio con el extintor incorrecto no solo es ineficaz: puede agravar el incendio. El agua sobre tableros eléctricos, el PQS dentro de una freidora, el CO₂ en un cuarto pequeño y ocupado — son errores que aparecen en 7 de cada 10 inspecciones de Protección Civil. Esta guía resume, en una sola vista, qué agente corresponde a cada espacio.',
+          'Todos los extintores MANEXT cumplen <strong>NOM-154-SCFI vigente</strong>, llegan con instalación profesional, señalización fotoluminiscente NOM-026 y la documentación que solicita Protección Civil y la STPS. Si dudas qué combinación necesita tu giro, nuestros ingenieros realizan un <strong>análisis de riesgo gratuito y sin compromiso</strong>. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}
       />
 
       <div class="ext-tipos-grid">
-        {{extTipos.map(t => (
-          <a href={{`/${{t.slug}}`}} class={{`ext-tipo-card${{t.slug === currentSlug ? ' ext-tipo-card--current' : ''}}`}}>
-            <img src={{t.img}} alt={{t.alt}} width="400" height="240" loading="lazy" />
+        {extTipos.map(t => (
+          <a href={`/${t.slug}`} class={`ext-tipo-card${t.slug === currentSlug ? ' ext-tipo-card--current' : ''}`}>
+            <img src={t.img} alt={t.alt} width="400" height="240" loading="lazy" />
             <div class="ext-tipo-card__body">
-              <p class="ext-tipo-card__title">{{t.title}}</p>
+              <p class="ext-tipo-card__title">{t.title}</p>
               <div class="ext-tipo-card__badges">
-                {{t.classes.map(c => (
-                  <span class={{`ext-tipo-card__badge ${{classBadge[c]}}`}}>Clase {{c}}</span>
-                ))}}
-                {{t.slug === currentSlug && (
+                {t.classes.map(c => (
+                  <span class={`ext-tipo-card__badge ${classBadge[c]}`}>Clase {c}</span>
+                ))}
+                {t.slug === currentSlug && (
                   <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
-                )}}
+                )}
               </div>
-              <p class="ext-tipo-card__desc">{{t.desc}}</p>
-              <span class="ext-tipo-card__link">{{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}}</span>
+              <p class="ext-tipo-card__desc">{t.desc}</p>
+              <span class="ext-tipo-card__link">{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}</span>
             </div>
           </a>
-        ))}}
+        ))}
       </div>
 
     </div>
@@ -273,7 +303,7 @@ const currentSlug = 'agua-presion';
       <div class="faq-cot-layout">
 
         <div class="faq-cot-left">
-          <p class="faq-cot-desc">Preguntas técnicas y operativas sobre extintores de agua a presión. Para casos específicos de tu instalación, <a href="https://wa.me/5215570081816?text=Hola%2C+tengo+una+consulta+sobre+extintores+de+agua+a+presi%C3%B3n." target="_blank" rel="noopener">escríbenos por WhatsApp</a> — respondemos en minutos.</p>
+          <p class="faq-cot-desc">Preguntas técnicas y operativas sobre extintores de agua a presión. Para casos específicos de tu instalación, <a href="https://wa.me/5215614612594?text=Hola%2C+tengo+una+consulta+sobre+extintores+de+agua+a+presi%C3%B3n." target="_blank" rel="noopener">escríbenos por WhatsApp</a> — respondemos en minutos.</p>
           <div class="faq-grid">
 
             <div class="faq-item">
@@ -558,7 +588,7 @@ const currentSlug = 'agua-presion';
       text += '*Teléfono:* ' + telefono + '\n';
       text += '*Servicio:* ' + servicio + '\n';
       if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-      window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
     });
   })();
   </script>

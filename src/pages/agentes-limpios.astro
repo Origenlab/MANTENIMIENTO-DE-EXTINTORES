@@ -29,6 +29,21 @@ const breadcrumbSchema = JSON.stringify({
     { "@type": "ListItem", "position": 2, "name": "Agentes Limpios — Áreas Críticas", "item": "https://mantenimientodeextintores.mx/agentes-limpios" }
   ]
 });
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué es un agente limpio y en qué se diferencia del CO₂?", "acceptedAnswer": { "@type": "Answer", "text": "El CO₂ extingue por desplazamiento de oxígeno y reduce O₂ a niveles incompatibles con la vida humana, exigiendo evacuación previa. Los agentes limpios FM-200 y Novec 1230 extinguen por absorción de calor a concentraciones de 5–7%, muy por debajo del NOAEL — pueden descargarse con personas presentes sin riesgo de asfixia. Ambos dejan cero residuo, pero el agente limpio cubre Clase A además de B y C." }},
+    { "@type": "Question", "name": "¿Son seguros los agentes limpios si hay personas en el espacio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, dentro de parámetros de diseño. FM-200: NOAEL 9%, concentración de extinción 7%. Novec 1230: NOAEL 10%, concentración 5.6%. La concentración de trabajo está por debajo del umbral de efecto adverso, lo que elimina riesgo de incapacitación durante la descarga. La evacuación post-descarga sigue siendo el protocolo estándar como buena práctica." }},
+    { "@type": "Question", "name": "¿FM-200 o Novec 1230: cuál elijo para mi instalación?", "acceptedAnswer": { "@type": "Answer", "text": "Ambos son técnicamente excelentes. La elección depende de tres factores: presupuesto (FM-200 es más accesible), requerimientos ambientales (Novec 1230 tiene GWP=1 vs ~3,220 del FM-200, relevante con ISO 14001) y regulación sectorial (banca, salud y dependencias públicas a veces tienen preferencias específicas). Asesoría sin costo." }},
+    { "@type": "Question", "name": "¿Los agentes limpios cumplen NOM-154-SCFI y NFPA 2001?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los extintores que distribuye MANEXT cumplen NOM-154-SCFI y los lineamientos de NFPA 2001 (Standard on Clean Agent Fire Extinguishing Systems). Adicionalmente, ambos agentes tienen ODP (Potencial de Destrucción del Ozono) cero y no son sustancias controladas bajo el Protocolo de Montreal." }},
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor de agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. La verificación se hace por pesaje del cilindro contra peso de tara. Adicionalmente, prueba hidrostática cada 5 años. La recarga de FM-200 y Novec 1230 requiere equipo especializado y agente original certificado por el fabricante." }},
+    { "@type": "Question", "name": "¿Puedo cambiar mis extintores CO₂ actuales por agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, y en muchos casos es la decisión correcta cuando hay personal de guardia 24/7 en la sala protegida. La migración requiere recalcular la concentración de diseño según el volumen del recinto y verificar la integridad estructural (la concentración de agente limpio es menor pero requiere selladura adecuada). MANEXT realiza la evaluación sin costo." }},
+    { "@type": "Question", "name": "¿Qué documentación entregan con un extintor de agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Cada equipo se entrega con certificado NOM-154-SCFI vigente, ficha técnica del agente con datos de NOAEL/GWP/ODP, declaración de cumplimiento NFPA 2001, etiqueta de fabricante con trazabilidad, tarjeta de inspección, señalización fotoluminiscente y bitácora de servicio para auditorías de continuidad y pólizas de infraestructura crítica." }},
+    { "@type": "Question", "name": "¿Por qué MANEXT y no cualquier proveedor?", "acceptedAnswer": { "@type": "Answer", "text": "Los agentes limpios requieren asesoría técnica especializada: dimensionamiento, compatibilidad con sistemas fijos existentes, integridad de recinto, agente original con cadena de custodia y recarga con equipo certificado. MANEXT tiene más de 80 años de operación, balanzas calibradas, recarga con agente original FM-200 y Novec 1230, y soporte para auditorías ISO 27001, ISO 14001 y NFPA 75." }}
+  ]
+});
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -44,35 +59,35 @@ const currentSlug = 'agentes-limpios';
 ---
 
 <Layout
-  title="Extintor de Agente Limpio FM-200 y Novec 1230 | Salas de Cómputo y Áreas Críticas | MANEXT"
-  description="Extintores de agente limpio FM-200 y Novec 1230 certificados NOM-154-SCFI. Cero residuo, no daña equipos ni documentos, seguro en espacios ocupados. Para salas de cómputo, archivos, museos y centros de control. Entrega 48 h CDMX."
+  title="Extintor de Agente Limpio FM-200 y Novec 1230 para Áreas Críticas | MANEXT CDMX"
+  description="Extintores de agente limpio FM-200 y Novec 1230 certificados NOM-154-SCFI y NFPA 2001. Cero residuo, seguros en espacios ocupados, no dañan servidores ni patrimonio documental. Para salas de cómputo, archivos, museos y centros de control en CDMX."
   canonical="https://mantenimientodeextintores.mx/agentes-limpios"
-  ogTitle="Extintor de Agente Limpio FM-200 / Novec 1230 — Áreas Críticas | MANEXT CDMX"
-  ogDescription="Protección sin consecuencias. Agentes limpios FM-200 y Novec 1230 certificados NOM. Cero residuo, seguros en espacios con personas, no dañan equipos ni documentos irreemplazables. Para salas de cómputo, archivos, museos y centros de control."
+  ogTitle="Extintor FM-200 y Novec 1230 para Data Centers y Patrimonio | MANEXT CDMX"
+  ogDescription="La protección que no daña lo que protege. Agente limpio FM-200 y Novec 1230 certificado NOM y NFPA 2001 — cero residuo, seguro en espacios ocupados, ideal para salas de cómputo, archivos y museos."
   ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'Agentes Limpios — Áreas Críticas', url: 'https://mantenimientodeextintores.mx/agentes-limpios' }
   ]}
-  schemas={[productSchema, breadcrumbSchema]}
+  schemas={[productSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
 <Hero
   variant="page"
   title="Extintor de Agente Limpio — FM-200 y Novec 1230"
-  subtitle="Cuando el daño del agente extintor sería tan costoso como el incendio mismo — la única opción es un agente limpio"
-  description="Distribuidor autorizado de extintores FM-200 y Novec 1230 certificados NOM-154-SCFI en CDMX. Cero residuo, seguros en espacios ocupados, no dañan equipos ni patrimonio documental. Entrega en 48 horas."
-  eyebrow="Extintores · Agentes Limpios · FM-200 · Novec 1230"
+  subtitle="La única protección que apaga el fuego sin dañar lo que estaba protegiendo"
+  description="Distribuidor autorizado en CDMX desde hace más de 80 años. Recarga con agente original, balanzas calibradas, declaración NFPA 2001 y la documentación lista para auditorías ISO. Entrega en 48 horas."
+  eyebrow="Extintores · Agentes limpios · FM-200 · Novec 1230"
   services={[
-    { href: '/co2', title: 'Dióxido de Carbono CO₂', description: 'Alternativa económica para electrónica', icon: 'zap' },
-    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase A, B y C — usos generales', icon: 'fire' },
-    { href: '/mantenimiento-preventivo', title: 'Mantenimiento Preventivo', description: 'Programas anuales certificados', icon: 'settings' },
-    { href: '/contacto', title: 'Cotizar Agente Limpio', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
+    { href: '/co2', title: 'Dióxido de Carbono CO₂', description: 'Alternativa económica para espacios sin personal', icon: 'zap' },
+    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase ABC para áreas comunes complementarias', icon: 'fire' },
+    { href: '/mantenimiento-preventivo', title: 'Mantenimiento preventivo', description: 'Programas anuales certificados con bitácora', icon: 'shield' },
+    { href: '/contacto', title: 'Cotizar agente limpio', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'Un extintor convencional actúa sobre el fuego. Un <strong>extintor de agente limpio</strong> actúa sobre el fuego sin generar ningún daño secundario — sin residuo, sin humedad, sin corrosión y sin riesgo de electrocución. En espacios donde el contenido tiene un valor que supera ampliamente el del contenedor — servidores con datos críticos, expedientes legales irrecuperables, piezas de museo, centros de control de infraestructura vital — la pregunta no es si usar un agente limpio, sino <strong>qué agente limpio es el adecuado</strong>.',
-    'En <strong>MANEXT</strong> somos distribuidores autorizados de extintores de agente limpio <strong>FM-200 (HFC-227ea)</strong> y <strong>Novec 1230</strong>, los dos estándares internacionales más utilizados en instalaciones de alta criticidad. Cada equipo está certificado bajo <strong>NOM-154-SCFI</strong> y cumple con los lineamientos de la <strong>NFPA 2001</strong> para sistemas de agente limpio. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana.'
+    'Un extintor convencional actúa sobre el fuego. Un <strong>extintor de agente limpio</strong> actúa sobre el fuego <strong>sin generar daño colateral</strong>: sin residuo, sin humedad, sin corrosión, sin riesgo de electrocución y sin desplazar oxígeno a niveles peligrosos para personas. En espacios donde el contenido vale órdenes de magnitud más que el contenedor — servidores con datos críticos, expedientes notariales, piezas de museo, centros de control de infraestructura vital — la pregunta no es si usar agente limpio, sino <strong>qué agente limpio</strong>.',
+    'En <strong>MANEXT</strong> somos distribuidores autorizados de extintores de agente limpio <strong>FM-200 (HFC-227ea)</strong> y <strong>Novec 1230 (FK-5-1-12)</strong>, los dos estándares globales para protección de áreas críticas. Cada equipo cumple <strong>NOM-154-SCFI</strong> y los lineamientos de la <strong>NFPA 2001</strong>; recargamos con agente original certificado por el fabricante, balanzas calibradas y trazabilidad documentada. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana.'
   ]}
 />
 
@@ -212,7 +227,7 @@ const currentSlug = 'agentes-limpios';
           </span>
         </div>
 
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20me%20interesa%20un%20extintor%20de%20agente%20limpio.%20¿Me%20pueden%20asesorar%20entre%20FM-200%20y%20Novec%201230%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría FM-200 vs Novec</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20me%20interesa%20un%20extintor%20de%20agente%20limpio.%20¿Me%20pueden%20asesorar%20entre%20FM-200%20y%20Novec%201230%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría FM-200 vs Novec</a>
       </div>
     </div>
 
@@ -225,7 +240,7 @@ const currentSlug = 'agentes-limpios';
         <h2>Agente Limpio vs CO₂: La Diferencia que Importa en Espacios con Personas</h2>
         <p>El CO₂ extingue reduciendo el oxígeno del ambiente por debajo del umbral de combustión (~12-15 %). Para una persona, ese nivel significa inconsciencia inmediata y muerte en minutos sin evacuación. El CO₂ exige que el espacio esté <strong>completamente desocupado</strong> antes o durante su descarga — en una sala de servidores con operadores de guardia convierte su uso en una decisión con consecuencias potencialmente fatales.</p>
         <p>El FM-200 actúa a una concentración de diseño del <strong>7 %</strong>, por debajo de su NOAEL del 9 %. Puede descargarse con personas presentes sin riesgo de asfixia. Para el Novec 1230, la concentración típica de diseño es del 5.6 %, con NOAEL del 10 %. Esta diferencia no es solo técnica — es operacional: <strong>permite actuar sin elegir entre salvar los equipos y proteger a las personas</strong>. Adicionalmente, ninguno de los dos deja residuo sobre los equipos protegidos — mientras que el CO₂, aunque limpio en teoría, puede generar condensación y choque térmico en componentes electrónicos calientes al momento de la descarga.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20CO2%20en%20mi%20sala%20de%20servidores%20y%20quiero%20evaluar%20si%20debería%20cambiar%20a%20agente%20limpio.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Evaluar el Cambio de CO₂ a Agente Limpio</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20CO2%20en%20mi%20sala%20de%20servidores%20y%20quiero%20evaluar%20si%20debería%20cambiar%20a%20agente%20limpio.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Evaluar el Cambio de CO₂ a Agente Limpio</a>
       </div>
     </div>
 
@@ -238,7 +253,7 @@ const currentSlug = 'agentes-limpios';
         <h2>Dónde el Agente Limpio es la Única Opción Técnicamente Correcta</h2>
         <p><strong>Salas de servidores y data centers:</strong> hardware de alto valor con operadores presentes — FM-200 por su seguridad en espacios ocupados. <strong>Archivos notariales y registros civiles:</strong> documentos con valor legal irrecuperable — Novec 1230 por su perfil ambiental y cero residuo absoluto. <strong>Museos, galerías y bibliotecas históricas:</strong> obras únicas donde cualquier agente residual, por mínimo que sea, es inaceptable. <strong>Telecomunicaciones y sistemas SCADA:</strong> equipos activos 24/7 donde la interrupción post-siniestro debe ser cero. <strong>Laboratorios y salas limpias:</strong> instrumentos de precisión calibrados cuya recalibración post-exposición a residuos tiene costos que pueden superar su valor de reposición.</p>
         <p>En todos estos espacios hay un denominador común: el costo del daño secundario causado por el extintor inadecuado supera al del incendio original. El agente limpio elimina ese factor — actúa, se evapora y el espacio queda operativo sin limpieza, sin demora y sin daños sobre los activos protegidos.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20extintores%20de%20agente%20limpio%20para%20mi%20instalación%20crítica.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar para Mi Instalación Crítica</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20de%20agente%20limpio%20para%20mi%20instalación%20crítica.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar para Mi Instalación Crítica</a>
       </div>
     </div>
 
@@ -248,43 +263,43 @@ const currentSlug = 'agentes-limpios';
         <img src="/img/img-ventas-de-extintores/extintores-con-agetes-limpios.avif" alt="MANEXT distribuidor autorizado de extintores de agente limpio FM-200 y Novec 1230 certificados NOM en CDMX" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Por Qué Elegir MANEXT para tu Extintor de Agente Limpio</h2>
-        <p>Los extintores de agente limpio requieren un nivel de asesoría técnica que va más allá de entregar un equipo. La selección entre FM-200 y Novec 1230, el dimensionamiento correcto según el volumen del espacio, la verificación de compatibilidad con sistemas automáticos existentes, y la documentación requerida para auditorías de continuidad de negocio y pólizas de infraestructura crítica — todo eso forma parte del servicio que MANEXT ofrece desde hace <strong>más de 80 años</strong>.</p>
-        <p>Cada extintor de agente limpio de MANEXT incluye: certificado NOM-154-SCFI vigente, ficha técnica del agente con datos de NOAEL, GWP y cumplimiento NFPA 2001, señalamiento fotoluminiscente, instalación profesional, bitácora de servicio y soporte para recarga y mantenimiento anual. Para clientes con múltiples instalaciones o requerimientos de continuidad, ofrecemos también <strong>programas de mantenimiento preventivo</strong> con visitas programadas y reporte de cumplimiento.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20extintores%20de%20agente%20limpio%20con%20MANEXT.%20¿Pueden%20darme%20una%20propuesta%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización por WhatsApp</a>
+        <h2>Por qué te conviene elegir MANEXT para tu extintor de agente limpio</h2>
+        <p>El agente limpio requiere un nivel de asesoría que va mucho más allá de entregar un cilindro. Hablamos de elegir entre FM-200 y Novec 1230 según presupuesto, perfil ambiental y regulación sectorial; dimensionar la concentración de diseño según el volumen y selladura del recinto; verificar compatibilidad con sistemas fijos y de detección preexistentes; y emitir la documentación que pide tu auditoría ISO 27001, ISO 14001 o NFPA 75. Todo eso forma parte del servicio MANEXT desde hace <strong>más de 80 años</strong>.</p>
+        <p>Cada extintor de agente limpio se entrega con: <strong>certificado NOM-154-SCFI</strong> vigente, ficha técnica del agente con NOAEL/GWP/ODP, declaración de cumplimiento <strong>NFPA 2001</strong>, etiqueta de fabricante con trazabilidad, señalización fotoluminiscente NOM-026, instalación profesional con soporte metálico y bitácora de servicio para auditorías de continuidad. Para clientes con múltiples instalaciones, ofrecemos <strong>programas de mantenimiento preventivo</strong> con visitas programadas, reporte fotográfico y dashboard de cumplimiento.</p>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20extintores%20de%20agente%20limpio%20con%20MANEXT.%20¿Pueden%20darme%20una%20propuesta%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
 
       <SectionHeader
-        eyebrow="Catálogo Completo"
-        title="Todos los Tipos de Extintores MANEXT"
-        subtitle="Elige el agente correcto para cada clase de fuego"
-        paragraphs={{[
-          'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Usar el agente incorrecto puede ser ineficaz o incluso <strong>peligroso</strong>: el agua en fuegos eléctricos, el PQS en aceites a alta temperatura, el CO₂ en espacios ocupados. Esta guía te ayuda a identificar el equipo correcto para cada zona de tu instalación.',
-          'Todos los extintores MANEXT incluyen <strong>certificación NOM-154-SCFI</strong>, instalación profesional, señalamiento reglamentario y documentación válida para Protección Civil. Nuestros ingenieros realizan <strong>análisis de riesgo gratuito</strong> antes de cualquier cotización. <a href="/extintores">Ver catálogo completo →</a>'
-        ]}}
+        eyebrow="Catálogo completo"
+        title="Cada Riesgo Tiene Su Extintor: Elige el Correcto"
+        subtitle="Seis agentes extintores, una sola lógica — el equipo adecuado para cada clase de fuego"
+        paragraphs={[
+          'Equipar un negocio con el extintor incorrecto no solo es ineficaz: puede agravar el incendio. El agua sobre tableros eléctricos, el PQS dentro de una freidora, el CO₂ en un cuarto pequeño y ocupado — son errores que aparecen en 7 de cada 10 inspecciones de Protección Civil. Esta guía resume, en una sola vista, qué agente corresponde a cada espacio.',
+          'Todos los extintores MANEXT cumplen <strong>NOM-154-SCFI vigente</strong>, llegan con instalación profesional, señalización fotoluminiscente NOM-026 y la documentación que solicita Protección Civil y la STPS. Si dudas qué combinación necesita tu giro, nuestros ingenieros realizan un <strong>análisis de riesgo gratuito y sin compromiso</strong>. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}
       />
 
       <div class="ext-tipos-grid">
-        {{extTipos.map(t => (
-          <a href={{`/${{t.slug}}`}} class={{`ext-tipo-card${{t.slug === currentSlug ? ' ext-tipo-card--current' : ''}}`}}>
-            <img src={{t.img}} alt={{t.alt}} width="400" height="240" loading="lazy" />
+        {extTipos.map(t => (
+          <a href={`/${t.slug}`} class={`ext-tipo-card${t.slug === currentSlug ? ' ext-tipo-card--current' : ''}`}>
+            <img src={t.img} alt={t.alt} width="400" height="240" loading="lazy" />
             <div class="ext-tipo-card__body">
-              <p class="ext-tipo-card__title">{{t.title}}</p>
+              <p class="ext-tipo-card__title">{t.title}</p>
               <div class="ext-tipo-card__badges">
-                {{t.classes.map(c => (
-                  <span class={{`ext-tipo-card__badge ${{classBadge[c]}}`}}>Clase {{c}}</span>
-                ))}}
-                {{t.slug === currentSlug && (
+                {t.classes.map(c => (
+                  <span class={`ext-tipo-card__badge ${classBadge[c]}`}>Clase {c}</span>
+                ))}
+                {t.slug === currentSlug && (
                   <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
-                )}}
+                )}
               </div>
-              <p class="ext-tipo-card__desc">{{t.desc}}</p>
-              <span class="ext-tipo-card__link">{{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}}</span>
+              <p class="ext-tipo-card__desc">{t.desc}</p>
+              <span class="ext-tipo-card__link">{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}</span>
             </div>
           </a>
-        ))}}
+        ))}
       </div>
 
   </div>
@@ -311,7 +326,7 @@ const currentSlug = 'agentes-limpios';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre agentes limpios. ¿Tienes una instalación específica que evaluar?
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
         </p>
         <div class="faq-grid">
 
@@ -601,7 +616,7 @@ const currentSlug = 'agentes-limpios';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

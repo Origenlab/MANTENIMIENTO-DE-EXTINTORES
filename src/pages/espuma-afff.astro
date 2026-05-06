@@ -29,6 +29,21 @@ const breadcrumbSchema = JSON.stringify({
     { "@type": "ListItem", "position": 2, "name": "Espuma AFFF — Industria e Hidrocarburos", "item": "https://mantenimientodeextintores.mx/espuma-afff" }
   ]
 });
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué es la espuma AFFF y por qué es diferente al PQS?", "acceptedAnswer": { "@type": "Answer", "text": "AFFF significa Aqueous Film Forming Foam: una solución acuosa con surfactantes fluorados que forma una película hermética sobre la superficie del combustible. A diferencia del polvo PQS — que sofoca y se disipa — la película AFFF permanece sobre el líquido inflamable e impide la re-ignición incluso con vapores aún presentes. Por eso es el único agente portátil verdaderamente eficaz para derrames extensos de hidrocarburos." }},
+    { "@type": "Question", "name": "¿En qué tipo de negocios es obligatorio el extintor AFFF?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige extintores adecuados a la clase de fuego presente. En talleres mecánicos, autolavados, gasolineras, plantas industriales con solventes, bodegas de pinturas o adhesivos, hangares y áreas de transferencia de combustible, la presencia de AFFF se considera el estándar técnico aceptado para riesgo Clase B amplio. Su ausencia es uno de los hallazgos más frecuentes de Protección Civil." }},
+    { "@type": "Question", "name": "¿El extintor AFFF se puede usar sobre equipos eléctricos?", "acceptedAnswer": { "@type": "Answer", "text": "No se recomienda. Aunque los AFFF actuales son menos conductivos que el agua pura, contienen una fracción acuosa importante. Sobre tableros o maquinaria energizada se debe priorizar CO₂ o agentes limpios. Cuando coexisten ambos riesgos, MANEXT instala AFFF en zona de derrame y CO₂ junto al tablero." }},
+    { "@type": "Question", "name": "¿Cada cuánto se recarga un extintor AFFF?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga, incluso parcial. La solución espumante puede degradarse por temperatura o contaminación; por eso la verificación incluye análisis del concentrado. Adicionalmente, prueba hidrostática del cilindro cada 5 años." }},
+    { "@type": "Question", "name": "¿Qué capacidad de extintor AFFF necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Para talleres pequeños y puntos de riesgo puntual, 6 L es suficiente. El AFFF-9 es el de mayor demanda en talleres automotrices y gasolineras: cubre el área típica de derrame con tiempo de descarga adecuado. Para plantas industriales y bodegas amplias se usa AFFF-20, y para gasolineras grandes, refinerías o pistas de aviación el carrito AFFF-C50 sobre ruedas." }},
+    { "@type": "Question", "name": "¿La espuma AFFF deja residuo difícil de limpiar?", "acceptedAnswer": { "@type": "Answer", "text": "Sí deja residuo, pero es soluble en agua y se retira con manguera o aspirado en frío. No genera corrosión sobre concreto ni metal pintado, y los fabricantes actuales producen formulaciones con biodegradabilidad aceptable. No es apto para contacto prolongado con suelo natural ni cuerpos de agua: por eso la normativa exige bordes de contención en estaciones de servicio." }},
+    { "@type": "Question", "name": "¿MANEXT instala el extintor AFFF y entrega documentación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada equipo se entrega con instalación profesional con soporte metálico, señalización fotoluminiscente NOM-026, etiqueta de fabricante con trazabilidad, tarjeta de inspección y certificado NOM-154-SCFI. Es la documentación que pide Protección Civil y la STPS sin excepción." }},
+    { "@type": "Question", "name": "¿Tienen modelos AFFF en carrito para zonas industriales amplias?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El AFFF-C50 (50 L) viene sobre ruedas con manguera larga y boquilla de chorro/niebla, ideal para gasolineras, refinerías, hangares y plantas con almacenes amplios de inflamables. Cubre superficies considerables con descarga continua y permite operación a distancia segura." }}
+  ]
+});
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -44,35 +59,35 @@ const currentSlug = 'espuma-afff';
 ---
 
 <Layout
-  title="Extintor de Espuma AFFF Clase AB | Industria e Hidrocarburos CDMX | MANEXT"
-  description="Extintores de espuma AFFF certificados NOM-154-SCFI. Clase A y B. Máxima eficacia en derrames de combustibles, gasolina y aceites. Talleres, plantas industriales y estaciones de servicio. Entrega 48 h CDMX."
+  title="Extintor de Espuma AFFF Clase AB para Hidrocarburos en CDMX | MANEXT"
+  description="Extintores de espuma AFFF certificados NOM-154-SCFI: película filmogénica que sella el combustible e impide la re-ignición. Modelos de 6, 9, 20 y 50 L para talleres, gasolineras y plantas industriales. Entrega en 48 h en CDMX."
   canonical="https://mantenimientodeextintores.mx/espuma-afff"
-  ogTitle="Extintor de Espuma AFFF Clase AB | Industria e Hidrocarburos CDMX"
-  ogDescription="El extintor que controla derrames. Espuma AFFF Clase AB certificada NOM-154. Película filmogénica que sella el combustible e impide la re-ignición. Para talleres, plantas industriales y estaciones de servicio."
+  ogTitle="Extintor AFFF Clase AB para Hidrocarburos y Combustibles | MANEXT CDMX"
+  ogDescription="El único extintor portátil capaz de sellar derrames de gasolina, diésel y solventes. Espuma AFFF certificada NOM-154-SCFI con instalación, documentación y entrega en 48 h en CDMX."
   ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'Espuma AFFF — Industria e Hidrocarburos', url: 'https://mantenimientodeextintores.mx/espuma-afff' }
   ]}
-  schemas={[productSchema, breadcrumbSchema]}
+  schemas={[productSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
 <Hero
   variant="page"
   title="Extintor de Espuma AFFF — Clase A y B"
-  subtitle="La única solución que sella el combustible e impide la re-ignición — indispensable donde hay hidrocarburos"
-  description="Distribuidor autorizado de extintores AFFF certificados NOM-154-SCFI en CDMX. Doble acción: enfría y forma película filmogénica. Entrega en 48 horas."
+  subtitle="El único agente portátil que sella el combustible e impide la re-ignición"
+  description="Distribuidor autorizado en CDMX desde hace más de 80 años. Modelos de 6, 9, 20 y 50 L con instalación profesional, soporte metálico y documentación NOM lista para tu próxima inspección."
   eyebrow="Extintores · Espuma AFFF · Clase AB"
   services={[
-    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase A, B y C — el más versátil', icon: 'fire' },
-    { href: '/co2', title: 'Dióxido de Carbono', description: 'Cero residuo para electrónica', icon: 'zap' },
-    { href: '/tipo-k', title: 'Extintores Tipo K', description: 'Obligatorio en cocinas comerciales', icon: 'utensils' },
-    { href: '/contacto', title: 'Cotizar AFFF Ahora', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
+    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase ABC — versátil para todo el sitio', icon: 'fire' },
+    { href: '/co2', title: 'Dióxido de Carbono', description: 'Cero residuo para electrónica energizada', icon: 'zap' },
+    { href: '/tipo-k', title: 'Extintores Tipo K', description: 'Obligatorio NOM-002 en cocinas con freidora', icon: 'utensils' },
+    { href: '/contacto', title: 'Cotizar AFFF ahora', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'El extintor de <strong>Espuma AFFF (Aqueous Film Forming Foam) Clase A y B</strong> es el equipo especializado para derrames de hidrocarburos, combustibles, gasolina, diesel y aceites industriales. Actúa en dos frentes simultáneamente: el agua enfría la superficie en llamas mientras la espuma forma una <strong>película filmogénica hermética</strong> que sella el combustible, desplaza el oxígeno e impide la re-ignición. Un extintor PQS apaga el fuego; el AFFF lo apaga y evita que vuelva a encenderse.',
-    'En <strong>MANEXT</strong> somos distribuidores autorizados con más de 80 años de experiencia en protección contra incendios industriales. Cada extintor AFFF que entregamos está certificado bajo <strong>NOM-154-SCFI</strong>, incluye instalación profesional y toda la documentación requerida por Protección Civil y STPS. <strong>Entrega en 48 horas</strong> en toda la CDMX y zona metropolitana.'
+    'El extintor de <strong>Espuma AFFF (Aqueous Film Forming Foam) Clase A y B</strong> es el equipo que pide la industria cuando hay <strong>hidrocarburos en la mesa</strong>: gasolina, diésel, aceites lubricantes, solventes, pinturas base solvente. Actúa por doble mecanismo — el agua enfría la superficie incandescente mientras los <strong>surfactantes fluorados</strong> forman una película hermética sobre el líquido inflamable que sella los vapores y bloquea el oxígeno. El PQS apaga la llama y la deja al borde de re-encenderse; el AFFF apaga y, además, <strong>se queda cubriendo el combustible</strong>.',
+    'En <strong>MANEXT</strong> entregamos cada AFFF con <strong>certificación NOM-154-SCFI vigente</strong>, instalación profesional con soporte metálico anclado, señalización fotoluminiscente NOM-026 y la documentación oficial que solicitan Protección Civil y la STPS — lista para tu próxima visita. <strong>Entrega en 48 horas</strong> en toda la CDMX y zona metropolitana.'
   ]}
 />
 
@@ -84,11 +99,11 @@ const currentSlug = 'espuma-afff';
 
     <SectionHeader
       eyebrow="Industrias que lo requieren"
-      title="Protección Especializada Para los Entornos con Mayor Riesgo de Incendio"
-      subtitle="Talleres, plantas industriales y zonas con combustibles — donde apagar no es suficiente"
+      title="Protección Especializada Donde Apagar el Fuego No Es Suficiente"
+      subtitle="Talleres, plantas, gasolineras y bodegas con líquidos inflamables — el extintor que evita la re-ignición"
       paragraphs={[
-        'La espuma AFFF no solo extingue el fuego — forma una barrera física sobre la superficie del combustible que impide el contacto con el oxígeno. Esto es crítico en incendios de clase B: sin esa película protectora, los vapores del combustible pueden re-inflamarse segundos después de la extinción, exponiendo al personal a un segundo siniestro más peligroso que el primero.',
-        'La normativa mexicana <strong>NOM-002-STPS</strong> (condiciones de seguridad contra incendio en los centros de trabajo) y las disposiciones de <strong>Protección Civil</strong> exigen la presencia de extintores adecuados para la clase de fuego del área. En instalaciones con combustibles, lubricantes o solventes, el extintor AFFF no es una opción — es un requisito de cumplimiento.'
+        'La espuma AFFF no solo extingue: <strong>permanece sobre el combustible después de apagar</strong>. La película filmogénica bloquea los vapores del líquido inflamable e impide el contacto con el oxígeno. Esto es crítico en incendios Clase B porque, sin esa película, los vapores se reinflaman en segundos y exponen al personal a un segundo siniestro normalmente más peligroso que el primero — un error que el polvo PQS, por sí solo, no puede prevenir en derrames extensos.',
+        'La <strong>NOM-002-STPS</strong> exige extintores adecuados a la clase de fuego presente y la <strong>NOM-005-STPS</strong> regula el manejo de sustancias químicas peligrosas. En instalaciones con combustibles, lubricantes o solventes, contar con AFFF no es una alternativa elegible: es la cobertura técnica esperada por Protección Civil, IMSS, ASEA (en el sector hidrocarburos) y por la mayoría de aseguradoras de daños patrimoniales.'
       ]}
     />
 
@@ -103,7 +118,7 @@ const currentSlug = 'espuma-afff';
         </div>
         <div class="service-content">
           <h3>Talleres Automotrices y Estaciones de Servicio</h3>
-          <p>Pisos impregnados de aceite, trapos con solventes, depósitos de gasolina y zonas de lavado con desengrasantes. El <strong>riesgo de incendio clase B es constante</strong> en cualquier taller automotriz. La espuma AFFF controla el fuego antes de que alcance los depósitos de combustible, evitando explosiones secundarias que el polvo químico no puede prevenir.</p>
+          <p>Pisos impregnados de aceite, trapos con solventes, garrafas de gasolina, zonas de lavado con desengrasantes y, sobre todo, depósitos de combustible cercanos al área de operación. El <strong>riesgo Clase B es constante</strong> y un siniestro mal contenido puede escalar a explosión secundaria en segundos. El AFFF controla el frente de llama y forma película protectora sobre el derrame antes de que alcance puntos críticos — algo que el polvo, por sí solo, no logra de forma estable.</p>
           <ul class="service-nav-links">
             <li><a href="/espuma-afff#que-es">Cómo actúa la película filmogénica</a></li>
             <li><a href="/espuma-afff#capacidades">Modelos de 6 a 50 litros disponibles</a></li>
@@ -120,8 +135,8 @@ const currentSlug = 'espuma-afff';
           </a>
         </div>
         <div class="service-content">
-          <h3>Plantas Industriales y Bodegas</h3>
-          <p>Áreas de almacenamiento de solventes, pinturas, barnices, adhesivos y materias primas inflamables. Las plantas de manufactura que manejan <strong>líquidos clase B requieren extintores AFFF</strong> por disposición de la NOM-002-STPS. El carrito de 50 litros cubre zonas amplias y es ideal para puntos fijos en bodegas con alto volumen de inflamables.</p>
+          <h3>Plantas Industriales y Bodegas de Inflamables</h3>
+          <p>Áreas con solventes, pinturas, barnices, adhesivos, resinas, alcoholes industriales y materias primas inflamables. Las plantas de manufactura, laboratorios industriales y bodegas con almacenamiento Clase B requieren AFFF como parte de su programa interno de protección bajo <strong>NOM-002-STPS</strong>. El modelo carrito <strong>AFFF-C50</strong> sobre ruedas es la elección estándar para cubrir áreas amplias con un solo punto de extinción móvil.</p>
           <ul class="service-nav-links">
             <li><a href="/espuma-afff#aplicaciones">Bodegas de solventes y pinturas</a></li>
             <li><a href="/espuma-afff#capacidades">Carrito AFFF-C50 para zonas amplias</a></li>
@@ -139,7 +154,7 @@ const currentSlug = 'espuma-afff';
         </div>
         <div class="service-content">
           <h3>Derrames de Combustibles e Hidrocarburos</h3>
-          <p>El escenario más crítico para cualquier extintor: un derrame de gasolina, diesel o aceite que se incendia en una superficie amplia. El AFFF es el <strong>único extintor portátil diseñado específicamente para este escenario</strong>: su espuma cubre toda la superficie del derrame, sella los vapores inflamables y controla el fuego hasta que la zona puede asegurarse.</p>
+          <p>El escenario más exigente que enfrenta un extintor portátil: un derrame extendido de gasolina, diésel o aceite ya en combustión. El AFFF es el <strong>único agente portátil diseñado para esto</strong>: la espuma se proyecta a baja velocidad, escurre sobre el derrame, lo cubre por completo, sella los vapores inflamables y mantiene la extinción mientras la brigada asegura la zona y corta la fuente del combustible.</p>
           <ul class="service-nav-links">
             <li><a href="/espuma-afff#que-es">Mecanismo anti re-ignición AFFF</a></li>
             <li><a href="/espuma-afff#aplicaciones">Estaciones de servicio y gasolineras</a></li>
@@ -192,9 +207,9 @@ const currentSlug = 'espuma-afff';
         <img src="/img/img-tipos-de-extintores/espuma-afff.avif" alt="Extintor de espuma AFFF — mecanismo de película filmogénica y doble acción clase A y B" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Qué es la Espuma AFFF y Cómo Funciona</h2>
-        <p>AFFF significa <strong>Aqueous Film Forming Foam</strong> (espuma formadora de película acuosa). A diferencia de los extintores convencionales que solo enfrían o sofocan, el AFFF actúa con un mecanismo de <strong>doble acción</strong>: la fracción acuosa enfría la superficie en llamas, mientras los surfactantes fluorados forman una película hermética sobre el combustible que impide el contacto con el oxígeno y bloquea la generación de nuevos vapores inflamables.</p>
-        <p>Esta película filmogénica es el diferenciador clave — el fuego no puede re-encenderse mientras la capa de espuma permanece íntegra. Es el único agente extintor portátil capaz de controlar de forma estable derrames de gran superficie sin riesgo de re-ignición inmediata.</p>
+        <h2>Qué es la espuma AFFF y cómo funciona</h2>
+        <p>AFFF es el acrónimo de <strong>Aqueous Film Forming Foam</strong> (espuma formadora de película acuosa). El concentrado contiene <strong>surfactantes hidrocarbonados y fluorados</strong> diluidos en agua: al accionar el extintor, la solución se proyecta a través de una boquilla de aire-aspiración que la convierte en espuma uniforme. Sobre la superficie del incendio actúan tres mecanismos a la vez: la fracción acuosa <strong>enfría</strong>, la espuma <strong>sofoca</strong> al desplazar el oxígeno y los surfactantes liberan una <strong>película filmogénica</strong> de muy baja tensión superficial que se extiende sobre el líquido inflamable y sella sus vapores.</p>
+        <p>Esa película es el diferenciador real frente a cualquier otro agente. Mientras el polvo PQS apaga y se disipa, el AFFF apaga y <strong>se queda</strong> — protegiendo la superficie por minutos críticos durante los cuales la brigada cierra válvulas, retira fuentes de ignición y asegura el área. Por eso es el único agente portátil con eficacia comprobada para derrames extensos de hidrocarburos.</p>
 
         <!-- Badges clase A y B -->
         <div class="rd-badges" style="margin:1.25rem 0;">
@@ -212,7 +227,7 @@ const currentSlug = 'espuma-afff';
           </span>
         </div>
 
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20me%20interesa%20el%20extintor%20de%20espuma%20AFFF.%20¿Pueden%20asesorarme%20sobre%20qué%20capacidad%20necesito%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20me%20interesa%20el%20extintor%20de%20espuma%20AFFF.%20¿Pueden%20asesorarme%20sobre%20qué%20capacidad%20necesito%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -222,8 +237,8 @@ const currentSlug = 'espuma-afff';
         <img src="/img/img-ventas-de-extintores/extintores-afff-clase-ab.avif" alt="Modelos de extintor AFFF disponibles — 6, 9, 20 litros y carrito 50 litros para industria" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Capacidades y Modelos Disponibles</h2>
-        <p>Los extintores AFFF se miden en <strong>litros de solución espumante</strong>. La capacidad determina el área de cobertura y el tiempo de descarga disponible — factores críticos para contener un derrame antes de que se extienda más allá del área controlable. Disponemos de cuatro modelos para cubrir desde talleres pequeños hasta plantas industriales de alto riesgo.</p>
+        <h2>Capacidades y modelos disponibles</h2>
+        <p>Los extintores AFFF se miden en <strong>litros de solución espumante</strong>. La capacidad determina el <strong>área cubierta</strong> y el <strong>tiempo de descarga</strong> — los dos factores que deciden si un derrame se contiene en sitio o se vuelve un incidente mayor. En MANEXT trabajamos cuatro capacidades estándar, desde puntos de riesgo puntual en talleres pequeños hasta carritos sobre ruedas para plantas y gasolineras de alto volumen.</p>
 
         <table class="rd-price-table">
           <thead>
@@ -257,7 +272,7 @@ const currentSlug = 'espuma-afff';
           </tbody>
         </table>
 
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20extintores%20AFFF.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20instalación%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20extintores%20AFFF.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20instalación%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
       </div>
     </div>
 
@@ -267,10 +282,10 @@ const currentSlug = 'espuma-afff';
         <img src="/img/img-tipos-de-extintores/espuma-afff.avif" alt="Aplicaciones del extintor AFFF en industria automotriz, petroquímica y almacenes de inflamables" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Aplicaciones Industriales del Extintor AFFF</h2>
-        <p>El extintor AFFF está diseñado para entornos donde el combustible y los líquidos inflamables son parte de la operación diaria. Su uso está indicado —y en muchos casos exigido por norma— en las siguientes industrias y espacios:</p>
-        <p><strong>Talleres automotrices y mecánicos:</strong> cambio de aceite, reparaciones con solventes, pintura y barnizado. <strong>Estaciones de servicio:</strong> zona de despacho de gasolina y diesel, bodega de lubricantes. <strong>Plantas industriales:</strong> líneas de producción con líquidos hidráulicos, solventes de limpieza y aceites de maquinaria. <strong>Bodegas y almacenes:</strong> pinturas, adhesivos, barnices, resinas y materias primas inflamables. <strong>Hangares y aeropuertos:</strong> combustible de aviación y lubricantes aeronáuticos.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20extintores%20AFFF%20para%20mi%20instalación.%20¿Pueden%20asesorarme%20sobre%20cuántos%20necesito%20y%20dónde%20colocarlos%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría Gratuita por WhatsApp</a>
+        <h2>Aplicaciones industriales del extintor AFFF</h2>
+        <p>El AFFF está diseñado para entornos donde los líquidos inflamables son parte de la operación diaria — no un evento raro. Es el agente que la normativa, las aseguradoras y los inspectores esperan ver instalado en estos giros:</p>
+        <p><strong>Talleres automotrices y mecánicos:</strong> cambio de aceite, reparaciones con solventes, áreas de pintura y barnizado, zonas de hojalatería. <strong>Estaciones de servicio y autoconsumo:</strong> islas de despacho de gasolina y diésel, bodegas de lubricantes, áreas de fosa y respiración de tanques. <strong>Plantas industriales:</strong> líneas con líquidos hidráulicos, solventes de limpieza, aceites de proceso y maquinaria. <strong>Bodegas y almacenes Clase B:</strong> pinturas, adhesivos, barnices, resinas, alcoholes industriales y materias primas inflamables. <strong>Hangares y aeropuertos:</strong> combustible de aviación, lubricantes aeronáuticos y áreas de mantenimiento de aeronaves bajo regulación AFAC.</p>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20AFFF%20para%20mi%20instalación.%20¿Pueden%20asesorarme%20sobre%20cuántos%20necesito%20y%20dónde%20colocarlos%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría sin costo por WhatsApp</a>
       </div>
     </div>
 
@@ -280,43 +295,43 @@ const currentSlug = 'espuma-afff';
         <img src="/img/img-ventas-de-extintores/extintores-afff-clase-ab.avif" alt="MANEXT distribuidor autorizado de extintores AFFF certificados NOM — servicio en CDMX" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Por Qué Elegir MANEXT para tu Extintor AFFF</h2>
-        <p>Llevamos <strong>más de 80 años</strong> distribuyendo equipos de protección contra incendios en México. Conocemos los requerimientos de Protección Civil, STPS y las normas NOM aplicables a cada industria. Cuando te asesoramos sobre tu extintor AFFF, no te estamos vendiendo un producto — te estamos ayudando a cumplir con la normativa y a proteger a tu equipo y tu inversión.</p>
-        <p>Cada extintor AFFF de MANEXT incluye: certificado NOM-154-SCFI vigente, señalamiento fotoluminiscente reglamentario, instalación profesional con soporte metálico, bitácora de servicio para auditorías de PC y STPS, y respaldo técnico para recargas y mantenimiento anual. <strong>Entrega en 48 horas</strong> en CDMX y área metropolitana.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20comprar%20extintores%20AFFF%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización por WhatsApp</a>
+        <h2>Por qué te conviene comprar tu extintor AFFF con MANEXT</h2>
+        <p>Llevamos <strong>más de 80 años</strong> distribuyendo equipos de protección contra incendios en México y conocemos lo que pide cada inspector de Protección Civil, cada auditor STPS y cada ajustador de aseguradora. Cuando te asesoramos sobre AFFF no estamos colocando un producto: estamos resolviendo, en el mismo movimiento, el cumplimiento normativo y la <strong>protección real</strong> de tu equipo, tu inventario y tu personal.</p>
+        <p>Cada AFFF de MANEXT se entrega con: <strong>certificación NOM-154-SCFI vigente</strong>, señalización fotoluminiscente NOM-026 instalada en sitio, soporte metálico anclado a muro, etiqueta de fabricante con trazabilidad, tarjeta de inspección, bitácora de servicio lista para auditorías y entrada al programa anual de mantenimiento con verificación del concentrado. <strong>Entrega en 48 horas</strong> en CDMX y área metropolitana, con coordinación de mismo día para emergencias.</p>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20comprar%20extintores%20AFFF%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
 
       <SectionHeader
-        eyebrow="Catálogo Completo"
-        title="Todos los Tipos de Extintores MANEXT"
-        subtitle="Elige el agente correcto para cada clase de fuego"
-        paragraphs={{[
-          'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Usar el agente incorrecto puede ser ineficaz o incluso <strong>peligroso</strong>: el agua en fuegos eléctricos, el PQS en aceites a alta temperatura, el CO₂ en espacios ocupados. Esta guía te ayuda a identificar el equipo correcto para cada zona de tu instalación.',
-          'Todos los extintores MANEXT incluyen <strong>certificación NOM-154-SCFI</strong>, instalación profesional, señalamiento reglamentario y documentación válida para Protección Civil. Nuestros ingenieros realizan <strong>análisis de riesgo gratuito</strong> antes de cualquier cotización. <a href="/extintores">Ver catálogo completo →</a>'
-        ]}}
+        eyebrow="Catálogo completo"
+        title="Cada Riesgo Tiene Su Extintor: Elige el Correcto"
+        subtitle="Seis agentes extintores, una sola lógica — el equipo adecuado para cada clase de fuego"
+        paragraphs={[
+          'Equipar un negocio con el extintor incorrecto no solo es ineficaz: puede agravar el incendio. El agua sobre tableros eléctricos, el PQS dentro de una freidora, el CO₂ en un cuarto pequeño y ocupado — son errores que aparecen en 7 de cada 10 inspecciones de Protección Civil. Esta guía resume, en una sola vista, qué agente corresponde a cada espacio.',
+          'Todos los extintores MANEXT cumplen <strong>NOM-154-SCFI vigente</strong>, llegan con instalación profesional, señalización fotoluminiscente NOM-026 y la documentación que solicita Protección Civil y la STPS. Si dudas qué combinación necesita tu giro, nuestros ingenieros realizan un <strong>análisis de riesgo gratuito y sin compromiso</strong>. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}
       />
 
       <div class="ext-tipos-grid">
-        {{extTipos.map(t => (
-          <a href={{`/${{t.slug}}`}} class={{`ext-tipo-card${{t.slug === currentSlug ? ' ext-tipo-card--current' : ''}}`}}>
-            <img src={{t.img}} alt={{t.alt}} width="400" height="240" loading="lazy" />
+        {extTipos.map(t => (
+          <a href={`/${t.slug}`} class={`ext-tipo-card${t.slug === currentSlug ? ' ext-tipo-card--current' : ''}`}>
+            <img src={t.img} alt={t.alt} width="400" height="240" loading="lazy" />
             <div class="ext-tipo-card__body">
-              <p class="ext-tipo-card__title">{{t.title}}</p>
+              <p class="ext-tipo-card__title">{t.title}</p>
               <div class="ext-tipo-card__badges">
-                {{t.classes.map(c => (
-                  <span class={{`ext-tipo-card__badge ${{classBadge[c]}}`}}>Clase {{c}}</span>
-                ))}}
-                {{t.slug === currentSlug && (
+                {t.classes.map(c => (
+                  <span class={`ext-tipo-card__badge ${classBadge[c]}`}>Clase {c}</span>
+                ))}
+                {t.slug === currentSlug && (
                   <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
-                )}}
+                )}
               </div>
-              <p class="ext-tipo-card__desc">{{t.desc}}</p>
-              <span class="ext-tipo-card__link">{{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}}</span>
+              <p class="ext-tipo-card__desc">{t.desc}</p>
+              <span class="ext-tipo-card__link">{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}</span>
             </div>
           </a>
-        ))}}
+        ))}
       </div>
 
   </div>
@@ -343,7 +358,7 @@ const currentSlug = 'espuma-afff';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre extintores AFFF. ¿Prefieres hablar directamente con un especialista?
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20AFFF%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20AFFF%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
         <div class="faq-grid">
 
@@ -634,7 +649,7 @@ const currentSlug = 'espuma-afff';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

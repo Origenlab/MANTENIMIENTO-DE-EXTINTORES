@@ -1,6 +1,6 @@
 ---
 title: "Clases de Fuego A B C D K: Guía Técnica Completa"
-description: "Clases de fuego A B C D K explicadas por expertos. Identifica tipos de fuego y extintor correcto según NOM-154-SCFI. Asesoría técnica MANEXT: 55 7008 1816"
+description: "Clases de fuego A B C D K explicadas por expertos. Identifica tipos de fuego y extintor correcto según NOM-154-SCFI. Asesoría técnica MANEXT: 56 1461 2594"
 pubDate: "2026-07-19"
 heroRight:
   - "No todos los extintores apagan todos los fuegos: el <strong>tipo de extintor correcto depende de la clase de fuego</strong>. Usar agua en aceite ardiendo provoca una bola de fuego; usar CO2 en un incendio de magnesio puede empeorar la situación. La normativa mexicana <strong>NOM-002-STPS</strong> clasifica los fuegos en 5 categorías (A, B, C, D y K) y exige que cada espacio cuente con el extintor adecuado al riesgo específico."
@@ -181,8 +181,8 @@ heroRight:
     <h3>Evaluación Profesional sin Costo</h3>
     <p>Nuestros ingenieros certificados evalúan tus instalaciones identificando las clases de fuego presentes, calculan la capacidad requerida según normativa, y entregan un reporte detallado con recomendaciones específicas por área.</p>
     <div class="cta-inline-buttons">
-      <a href="tel:5570081816" class="btn-primary">Llamar: 55 7008 1816</a>
-      <a href="https://wa.me/5215570081816" class="btn-whatsapp">WhatsApp Directo</a>
+      <a href="tel:5614612594" class="btn-primary">Llamar: 56 1461 2594</a>
+      <a href="https://wa.me/5215614612594" class="btn-whatsapp">WhatsApp Directo</a>
     </div>
   </div>
 </div>
@@ -254,7 +254,7 @@ heroRight:
     <div class="faq-item">
 <button class="faq-question" aria-expanded="false" aria-controls="faq-clases3-6">¿Por qué elegir MANEXT para sistemas contra incendios por clases de fuego?</button>
 <div class="faq-answer" id="faq-clases3-6">
-        <p>MANEXT cuenta con más de 80 años de experiencia especializada en clasificación e instalación de sistemas contra incendios, habiendo atendido +15,000 empresas con 98% de satisfacción. Nuestros técnicos poseen certificación STPS y experiencia específica en cada clase de fuego. Ofrecemos evaluación gratuita de riesgos, documentación completa para Protección Civil, garantía de cumplimiento normativo, y soporte técnico permanente. Contacto: 55 7008 1816. Cobertura completa en CDMX y Zona Metropolitana incluyendo Centro Histórico, Roma Norte, Condesa, y zonas industriales. Único proveedor que garantiza correspondencia exacta entre clase de riesgo y capacidad de extinción instalada.</p>
+        <p>MANEXT cuenta con más de 80 años de experiencia especializada en clasificación e instalación de sistemas contra incendios, habiendo atendido +15,000 empresas con 98% de satisfacción. Nuestros técnicos poseen certificación STPS y experiencia específica en cada clase de fuego. Ofrecemos evaluación gratuita de riesgos, documentación completa para Protección Civil, garantía de cumplimiento normativo, y soporte técnico permanente. Contacto: 56 1461 2594. Cobertura completa en CDMX y Zona Metropolitana incluyendo Centro Histórico, Roma Norte, Condesa, y zonas industriales. Único proveedor que garantiza correspondencia exacta entre clase de riesgo y capacidad de extinción instalada.</p>
       </div>
 </div>
   </div>
@@ -264,7 +264,7 @@ heroRight:
   <h2>Resumen y Siguientes Pasos</h2>
   <p>Las clases de fuego A B C D K representan el fundamento técnico para seleccionar sistemas de extinción efectivos, donde cada clase requiere agentes específicos con mecanismos de supresión diferentes. La identificación correcta del riesgo predominante, el cálculo preciso de capacidades según normativa NOM-154-SCFI, y la instalación profesional con documentación completa garantizan protección efectiva y cumplimiento legal. Los errores más costosos incluyen incompatibilidad entre riesgo y agente extintor, posicionamiento inadecuado y mantenimiento deficiente que puede resultar en multas hasta $586,950 MXN y responsabilidad penal.</p>
   <p>Solicite una evaluación profesional inmediata de sus instalaciones para identificar clases de fuego presentes, verificar cumplimiento normativo y recibir recomendaciones específicas por área. Nuestros ingenieros certificados entregarán un diagnóstico detallado sin costo adicional.</p>
-  <p><strong>Contacto directo MANEXT:</strong> Teléfono 55 7008 1816 | WhatsApp disponible | Cobertura: CDMX y Zona Metropolitana (Centro Histórico, Roma Norte, Condesa, Zona Industrial Tlalnepantla)</p>
+  <p><strong>Contacto directo MANEXT:</strong> Teléfono 56 1461 2594 | WhatsApp disponible | Cobertura: CDMX y Zona Metropolitana (Centro Histórico, Roma Norte, Condesa, Zona Industrial Tlalnepantla)</p>
 </section>
                     </div>
                 </div>
@@ -284,13 +284,13 @@ heroRight:
                     <div class="sidebar-widget cta-widget">
                         <h3 class="widget-title">Necesitas Asesoria?</h3>
                         <p>Nuestros expertos estan listos para ayudarte con cualquier duda sobre extintores y proteccion contra incendios.</p>
-                        <a href="tel:5570081816" class="widget-cta-btn">
+                        <a href="tel:5614612594" class="widget-cta-btn">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                             Llamar Ahora
                         </a>
-                        <a href="https://wa.me/5215570081816" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
+                        <a href="https://wa.me/5215614612594" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                             </svg>

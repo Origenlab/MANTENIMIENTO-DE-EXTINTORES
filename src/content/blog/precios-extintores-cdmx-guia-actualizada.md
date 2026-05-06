@@ -292,7 +292,7 @@ La decisión entre invertir en mantenimiento o reemplazar el extintor depende de
 </button>
 <div class="faq-answer" id="faq-answer-4" aria-hidden="true">
 <div class="faq-answer-content">
-<p>Sí. MANEXT ofrece cotización sin costo y sin compromiso para cualquier proyecto: desde un extintor para hogar hasta el equipamiento completo de una planta industrial. El proceso es: describes el tipo de inmueble y zona, te asesoramos sobre qué tipo y cuántos extintores necesitas según la normativa aplicable, y recibes una cotización detallada en menos de 2 horas hábiles. Contáctanos al 55 7008 1816 o por WhatsApp.</p>
+<p>Sí. MANEXT ofrece cotización sin costo y sin compromiso para cualquier proyecto: desde un extintor para hogar hasta el equipamiento completo de una planta industrial. El proceso es: describes el tipo de inmueble y zona, te asesoramos sobre qué tipo y cuántos extintores necesitas según la normativa aplicable, y recibes una cotización detallada en menos de 2 horas hábiles. Contáctanos al 56 1461 2594 o por WhatsApp.</p>
 </div>
 </div>
 </div>

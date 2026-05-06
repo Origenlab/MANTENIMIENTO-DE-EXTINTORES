@@ -5,6 +5,29 @@ import SectionHeader from '../components/SectionHeader.astro';
 
 const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "287"}});
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuántos tipos de extintores existen y cuál necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Seis tipos principales: PQS Clase ABC para uso general, CO₂ Clase BC para electrónica, Agua a Presión Clase A para sólidos combustibles, Espuma AFFF Clase AB para hidrocarburos, Tipo K para cocinas comerciales y Agentes Limpios FM-200/Novec 1230 para áreas críticas. La elección depende de la clase de fuego presente en tu espacio." }},
+    { "@type": "Question", "name": "¿Qué clase de fuego cubre cada extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Clase A (sólidos: madera, papel, textiles), Clase B (líquidos inflamables: gasolina, aceites), Clase C (eléctricos energizados), Clase K (aceites y grasas de cocina). PQS cubre ABC, CO₂ cubre BC, AFFF cubre AB, Tipo K solo K, agentes limpios ABC, agua solo A. Usar el agente equivocado puede agravar el incendio." }},
+    { "@type": "Question", "name": "¿Cuántos extintores requiere mi negocio según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "Mínimo 1 extintor por cada 300 m² en riesgo ordinario con distancia máxima de recorrido de 23 m, o cada 200 m² con 15 m en riesgo alto. La selección debe considerar clases de fuego presentes y características del giro. MANEXT realiza análisis de riesgo gratuito y entrega plano de distribución oficial." }},
+    { "@type": "Question", "name": "¿Cuál es el extintor más vendido en México?", "acceptedAnswer": { "@type": "Answer", "text": "El PQS Clase ABC de 4.5 kg es el más vendido por una razón clara: cubre los tres riesgos más comunes (sólidos, líquidos, eléctricos) con un solo equipo y cumple NOM-002-STPS para la mayoría de comercios y oficinas de hasta 300 m². Para cocinas se complementa con Tipo K, para data centers con CO₂ o agentes limpios." }},
+    { "@type": "Question", "name": "¿Todos los extintores MANEXT cumplen NOM-154-SCFI?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todo el catálogo está certificado NOM-154-SCFI vigente y se entrega con etiqueta de fabricante con trazabilidad, tarjeta de inspección, certificado oficial, factura fiscal CFDI 4.0 y bitácora oficial — la documentación que solicita Protección Civil, STPS, COFEPRIS y aseguradoras." }},
+    { "@type": "Question", "name": "¿Qué incluye la venta de extintores con MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cada equipo incluye sin costo adicional: instalación profesional con soporte metálico anclado, señalización fotoluminiscente NOM-026, etiqueta y documentación oficial, factura fiscal, plano de ubicación y acceso al programa anual de mantenimiento. Para flotas amplias ofrecemos descuentos por volumen y financiamiento empresarial sin intereses." }},
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o tras cualquier descarga, aunque sea parcial. Adicionalmente, prueba hidrostática del cilindro cada 5 años. MANEXT ofrece recarga a domicilio con préstamo de equipo durante el proceso para mantener cobertura continua." }},
+    { "@type": "Question", "name": "¿En qué tiempo entregan los extintores en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Entrega estándar en 48 horas con instalación incluida en CDMX y zona metropolitana. Para urgencias o inspección al día siguiente coordinamos entrega el mismo día con recargo del 25%. Cobertura en las 16 alcaldías de CDMX, Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli y municipios conurbados." }}
+  ]
+});
+
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -19,7 +42,7 @@ const currentSlug = '';
 
 <Layout
   title="Venta de Extintores en CDMX | Precios y Equipos Certificados NOM"
-  description="Venta de extintores avalados NOM en CDMX. PQS, CO2, clase K y espuma. Recarga, mantenimiento e instalación. Asesoría gratuita. Llama 55 7008 1816"
+  description="Venta de extintores avalados NOM en CDMX. PQS, CO2, clase K y espuma. Recarga, mantenimiento e instalación. Asesoría gratuita. Llama 56 1461 2594"
   canonical="https://mantenimientodeextintores.mx/extintores"
   ogTitle="Venta de Extintores en CDMX | Precios y Equipos Certificados NOM"
   ogDescription="Venta de extintores avalados NOM en CDMX. Recarga, mantenimiento e instalación. Asesoría gratuita."
@@ -27,7 +50,7 @@ const currentSlug = '';
   breadcrumbs={[
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' }
   ]}
-  schemas={[productSchema]}
+  schemas={[productSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
@@ -194,7 +217,7 @@ const currentSlug = '';
         <h2>Extintor de Polvo Químico Seco (PQS) — Clase ABC</h2>
         <p>El <strong>extintor PQS</strong> es el más versátil y el más utilizado en México: combate fuegos clase A (sólidos como madera, papel y plásticos), clase B (líquidos inflamables como gasolina y aceites) y clase C (equipos eléctricos energizados). Certificado bajo <strong>NOM-154-SCFI</strong>, es ideal para oficinas, comercios, bodegas, talleres y cualquier giro de negocio que requiera protección general. Disponible en capacidades de 4.5 kg, 6 kg, 9 kg y 20 kg con instalación, señalamiento reglamentario y documentación oficial incluidos.</p>
         <p>En <strong>MANEXT</strong> contamos con stock permanente de extintores PQS para entrega e instalación en <strong>menos de 48 horas</strong> en toda la CDMX y zona metropolitana. Cada equipo incluye análisis de riesgos gratuito, herrajes de pared, collar de garantía inviolable, etiquetado NOM completo y capacitación básica de uso para tu personal. Con más de 80 años como distribuidores autorizados, ofrecemos los <strong>mejores precios del mercado</strong> con descuentos por volumen para empresas y condominios.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Polvo%20Qu%C3%ADmico%20Seco%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Polvo%20Qu%C3%ADmico%20Seco%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -208,7 +231,7 @@ const currentSlug = '';
         <h2>Extintor de Dióxido de Carbono (CO2) — Equipos Electrónicos</h2>
         <p>El <strong>extintor de CO2</strong> es la solución ideal para proteger equipos electrónicos, servidores, data centers, telecomunicaciones y áreas donde los residuos del agente extintor causarían daños irreparables. Al ser un gas, el CO2 <strong>no conduce electricidad, no deja residuos y no daña los equipos</strong> tras la descarga, permitiendo reanudar operaciones de inmediato. Combate fuegos clase B y C con alta eficacia. Disponible en capacidades de 5 lb, 10 lb y 20 lb con gabinete metálico opcional incluido.</p>
         <p>Nuestros extintores de CO2 están certificados bajo <strong>NOM-154-SCFI</strong> e incluyen programa de <strong>recarga anual obligatoria</strong> con servicio a domicilio en CDMX. En MANEXT realizamos análisis gratuito del área a proteger para determinar la capacidad y cantidad correcta. Entregamos con instalación profesional, señalamiento reglamentario y documentación oficial válida ante Protección Civil. Descuentos especiales para paquetes de 5 equipos o más.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20CO2%20para%20equipos%20electr%C3%B3nicos" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20CO2%20para%20equipos%20electr%C3%B3nicos" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -222,7 +245,7 @@ const currentSlug = '';
         <h2>Extintor de Espuma AFFF — Industria e Hidrocarburos</h2>
         <p>El <strong>extintor de espuma AFFF</strong> (Aqueous Film Forming Foam) es el equipo especializado para fuegos que involucran hidrocarburos, combustibles, gasolina, diesel y aceites industriales. Su mecanismo actúa en dos frentes: enfría la superficie con agua y forma una <strong>película filmogénica</strong> que sella el combustible e impide la re-ignición. Combate fuegos clase A y clase B con alta eficacia, siendo indispensable en talleres automotrices, plantas industriales, estaciones de servicio y bodegas de materiales inflamables.</p>
         <p>En <strong>MANEXT</strong> distribuimos extintores AFFF certificados bajo <strong>NOM-154-SCFI</strong> en capacidades de 9 a 50 litros para instalaciones industriales de cualquier tamaño. El servicio incluye análisis de riesgo por ingeniero certificado, instalación con señalamiento NOM-026-STPS, capacitación específica para manejo de derrames y documentación oficial. Ofrecemos <strong>planes de mantenimiento anual</strong> con visitas programadas y equipos de préstamo durante el servicio.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Espuma%20AFFF%20para%20industria" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Espuma%20AFFF%20para%20industria" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -236,7 +259,7 @@ const currentSlug = '';
         <h2>Extintor Tipo K — Cocinas Comerciales y Restaurantes</h2>
         <p>El <strong>extintor Tipo K</strong> es <strong>obligatorio según la NOM-002-STPS</strong> en cocinas comerciales, restaurantes, hoteles, comedores industriales y cualquier establecimiento con freidoras o equipos de cocción a altas temperaturas. Su agente húmedo especializado — solución acuosa de acetato de potasio — está formulado para combatir fuegos de aceites y grasas vegetales o animales que alcanzan temperaturas superiores a los 300°C, donde los extintores convencionales son ineficaces e incluso peligrosos por el efecto "bola de fuego".</p>
         <p>En MANEXT somos especialistas en la <strong>instalación y certificación</strong> de extintores Tipo K en cocinas comerciales de toda la CDMX. El servicio incluye inspección previa del área de cocción, determinación de la capacidad correcta según el volumen de la freidora, instalación a distancia reglamentaria, señalamiento NOM y capacitación al personal de cocina. Entregamos constancia de cumplimiento NOM-002-STPS para presentar ante Protección Civil. <strong>Recarga anual obligatoria</strong> con servicio a domicilio disponible.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintor%20Tipo%20K%20para%20cocina%20comercial" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintor%20Tipo%20K%20para%20cocina%20comercial" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -250,7 +273,7 @@ const currentSlug = '';
         <h2>Extintores de Agentes Limpios — Áreas Críticas</h2>
         <p>Los <strong>extintores de agentes limpios</strong> representan la tecnología más avanzada en supresión de incendios para espacios donde los residuos o daños colaterales son inaceptables: salas de cómputo, centros de datos, archivos históricos, museos, laboratorios, cuartos de control y centros de mando. Utilizan agentes gaseosos halogenados (como FM-200, Novec 1230 o INERGEN) que <strong>suprimen el fuego en segundos sin dejar residuo alguno</strong>, sin dañar equipos electrónicos, documentos o materiales sensibles.</p>
         <p>En <strong>MANEXT</strong> asesoramos en la selección del agente limpio correcto según el tipo de riesgo, volumen del área y normativa aplicable. Realizamos <strong>cálculo de concentración</strong> de diseño, instalación de sistemas fijos o extintores portátiles, y toda la documentación técnica requerida. Estos equipos cumplen con la norma NFPA 2001 y son compatibles con los requerimientos de las aseguradoras para instalaciones de alto valor. Ofrecemos mantenimiento semestral certificado con reporte técnico completo.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Agentes%20Limpios%20para%20%C3%A1reas%20cr%C3%ADticas" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Agentes%20Limpios%20para%20%C3%A1reas%20cr%C3%ADticas" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -264,7 +287,7 @@ const currentSlug = '';
         <h2>Extintor de Agua a Presión — Materiales Sólidos Clase A</h2>
         <p>El <strong>extintor de agua a presión</strong> es el equipo más efectivo para fuegos clase A que involucran materiales sólidos combustibles: madera, papel, cartón, telas, plásticos y fibras naturales. Su mecanismo de enfriamiento profundo penetra hasta el núcleo del material en combustión, eliminando el calor residual que podría causar re-ignición. Es el extintor indicado para bodegas, carpinterías, papeleras, fábricas textiles, librerías, archivos en papel y cualquier instalación con alta carga de materiales sólidos.</p>
         <p>Los extintores de agua a presión de <strong>MANEXT</strong> están certificados bajo <strong>NOM-154-SCFI</strong> y disponibles en capacidades de 9 a 50 litros para protección proporcional al área y nivel de riesgo. <strong>Importante:</strong> nunca deben usarse en fuegos eléctricos o de líquidos inflamables. En MANEXT realizamos análisis de riesgo gratuito para determinar si el extintor de agua es la opción correcta para tu instalación, o si se requiere combinación con otros tipos. Incluye instalación, señalamiento y documentación completa para Protección Civil.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Agua%20a%20Presi%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Agua%20a%20Presi%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -335,7 +358,7 @@ const currentSlug = '';
           </tbody>
         </table>
         <p><strong>✓✓</strong> = Agente óptimo &nbsp;·&nbsp; <strong>✓</strong> = Eficaz &nbsp;·&nbsp; <strong>✗</strong> = Ineficaz &nbsp;·&nbsp; <strong>✗ ⚠</strong> = Contraindicado — puede agravar el incendio o crear riesgo para el operador</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C+necesito+asesor%C3%ADa+para+elegir+el+extintor+correcto+para+mi+instalaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Asesoría Gratuita de Selección</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C+necesito+asesor%C3%ADa+para+elegir+el+extintor+correcto+para+mi+instalaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Asesoría Gratuita de Selección</a>
       </div>
     </div>
 
@@ -387,7 +410,7 @@ const currentSlug = '';
     <div class="faq-cot-layout">
 
       <div class="faq-cot-left">
-        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215570081816" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
+        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
         <div class="faq-grid">
 
           <div class="faq-item">
@@ -396,7 +419,7 @@ const currentSlug = '';
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Varía según tipo y capacidad. Un dispositivo PQS de 4.5 kg incluye colocación, señalamiento y aval oficial. Los modelos CO2 y clase K tienen valores distintos por la tecnología del agente. Cotiza al 55 7008 1816 para recibir precios exactos según tu necesidad. Descuentos por volumen disponibles para compras al mayoreo.</p>
+              <p>Varía según tipo y capacidad. Un dispositivo PQS de 4.5 kg incluye colocación, señalamiento y aval oficial. Los modelos CO2 y clase K tienen valores distintos por la tecnología del agente. Cotiza al 56 1461 2594 para recibir precios exactos según tu necesidad. Descuentos por volumen disponibles para compras al mayoreo.</p>
             </div>
           </div>
 
@@ -675,7 +698,7 @@ const currentSlug = '';
     text += '*Tipo de extintor:* ' + tipoExtintor + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
 
-    var whatsappUrl = 'https://wa.me/5215570081816?text=' + encodeURIComponent(text);
+    var whatsappUrl = 'https://wa.me/5215614612594?text=' + encodeURIComponent(text);
     window.open(whatsappUrl, '_blank');
   });
 })();

@@ -29,6 +29,21 @@ const breadcrumbSchema = JSON.stringify({
     { "@type": "ListItem", "position": 2, "name": "Extintor Tipo K — Cocinas Comerciales", "item": "https://mantenimientodeextintores.mx/tipo-k" }
   ]
 });
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Por qué no puedo usar un extintor PQS o de agua en mi cocina?", "acceptedAnswer": { "@type": "Answer", "text": "El agua sobre aceite por encima de los 300 °C se vaporiza violentamente y proyecta el aceite en llamas en todas direcciones — la conocida explosión de grasa. El polvo PQS apaga la llama momentáneamente pero no enfría el aceite, que vuelve a encenderse al disiparse el polvo, y deja residuo difícil de retirar. El agente húmedo Tipo K es el único que reacciona de forma segura con grasa caliente por saponificación." }},
+    { "@type": "Question", "name": "¿Qué es la saponificación y por qué es importante?", "acceptedAnswer": { "@type": "Answer", "text": "Es la reacción química en que una grasa reacciona con una base alcalina (acetato o carbonato de potasio) para formar jabón y glicerol. Sobre la superficie del aceite caliente se forma una capa de jabón que sella el oxígeno, enfría la superficie y deja un residuo no inflamable. Esta capa permanece sobre el aceite tras la descarga e impide la re-ignición hasta que la temperatura baja." }},
+    { "@type": "Question", "name": "¿Es obligatorio tener un extintor Tipo K en cocinas comerciales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La NOM-002-STPS exige que los extintores sean adecuados a la clase de fuego del área. En cocinas comerciales con freidoras, planchas u otros equipos de cocción con aceite, la clase K es la categoría aplicable y se considera obligatoria. Adicionalmente, COFEPRIS y muchas pólizas de aseguradoras exigen el Tipo K como condición de operación o cobertura." }},
+    { "@type": "Question", "name": "¿Qué capacidad de extintor Tipo K necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Para fondas y cocinas con 1–2 freidoras pequeñas, el modelo de 1.5 L. Para restaurantes medianos con 2–4 puntos de cocción más freidoras, el de 3 L (el más vendido). Para hoteles, comedores industriales y cocinas de alta producción, el de 6 L. La distancia máxima desde la zona de cocción al extintor no debe exceder los 10 metros." }},
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor Tipo K?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. Adicionalmente, los componentes de la cocina (aceite vaporizado, partículas grasas) pueden afectar el sello del cilindro, por lo que se recomienda inspección visual semestral. Prueba hidrostática del cilindro cada 5 años." }},
+    { "@type": "Question", "name": "¿El extintor Tipo K también sirve para fuegos eléctricos en la cocina?", "acceptedAnswer": { "@type": "Answer", "text": "No directamente. El Tipo K está clasificado solo para Clase K. La NOM-002-STPS exige que el extintor sea adecuado a la clase de fuego presente. Para riesgos eléctricos en la cocina (planchas, hornos, refrigeración) se complementa con un extintor PQS Clase ABC o CO₂. La instalación combinada es la más común en restaurantes." }},
+    { "@type": "Question", "name": "¿Qué documentación me entrega MANEXT con el Tipo K?", "acceptedAnswer": { "@type": "Answer", "text": "Cada extintor incluye certificado NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial, comprobante de instalación, señalización fotoluminiscente NOM-026 y factura fiscal — la documentación que pide Protección Civil, COFEPRIS, STPS y aseguradoras." }},
+    { "@type": "Question", "name": "¿Puede MANEXT instalar el Tipo K en una cocina ya operando?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Coordinamos la visita en horario de baja operación (mañanas tempranas o cierre) para no interrumpir el servicio. La instalación toma 30–45 minutos por punto, incluye anclaje del soporte y colocación de la señalización. Para grupos restauranteros con múltiples sucursales, ofrecemos plan de instalación coordinado." }}
+  ]
+});
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -44,35 +59,35 @@ const currentSlug = 'tipo-k';
 ---
 
 <Layout
-  title="Extintor Tipo K Agente Húmedo para Cocinas Comerciales | NOM-002-STPS | MANEXT"
-  description="Extintor Tipo K certificado NOM-154-SCFI. Obligatorio en restaurantes, hoteles y comedores industriales. Agente húmedo de saponificación para fuegos de aceites y grasas a altas temperaturas. Entrega 48 h CDMX."
+  title="Extintor Tipo K Agente Húmedo para Cocinas Comerciales en CDMX | MANEXT"
+  description="Extintor Tipo K certificado NOM-154-SCFI: agente húmedo de saponificación obligatorio por NOM-002-STPS en restaurantes, hoteles, hospitales y comedores industriales. Modelos 1.5, 3 y 6 L con instalación, señalización y entrega en 48 h en CDMX."
   canonical="https://mantenimientodeextintores.mx/tipo-k"
-  ogTitle="Extintor Tipo K Agente Húmedo — Cocinas Comerciales | MANEXT CDMX"
-  ogDescription="El único extintor diseñado para tu cocina. Tipo K Clase K certificado NOM. Saponificación instantánea que sella el aceite caliente e impide la re-ignición. Obligatorio por NOM-002-STPS en restaurantes, hoteles y comedores."
+  ogTitle="Extintor Tipo K para Restaurantes y Hoteles | MANEXT CDMX"
+  ogDescription="El único extintor que apaga aceite caliente sin explosión de grasa. Tipo K certificado NOM-154-SCFI con saponificación instantánea, anti re-ignición y documentación válida ante COFEPRIS, Protección Civil y aseguradoras."
   ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'Extintor Tipo K — Cocinas Comerciales', url: 'https://mantenimientodeextintores.mx/tipo-k' }
   ]}
-  schemas={[productSchema, breadcrumbSchema]}
+  schemas={[productSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
 <Hero
   variant="page"
   title="Extintor Tipo K — Agente Húmedo para Cocinas Comerciales"
-  subtitle="El único extintor autorizado para fuegos de aceites y grasas — obligatorio por NOM-002-STPS en toda cocina comercial"
-  description="Distribuidor autorizado de extintores Tipo K certificados NOM-154-SCFI en CDMX. Saponificación instantánea: sella el aceite caliente e impide la re-ignición. Entrega en 48 horas."
-  eyebrow="Extintores · Tipo K · Clase K · Cocinas Comerciales"
+  subtitle="El único agente que detiene un incendio de aceite caliente sin provocar explosión de grasa"
+  description="Distribuidor autorizado en CDMX desde hace más de 80 años. Saponificación instantánea, modelos de 1.5 a 6 L y la documentación lista para Protección Civil, COFEPRIS y aseguradoras. Entrega en 48 horas."
+  eyebrow="Extintores · Tipo K · Clase K · Cocinas comerciales"
   services={[
-    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase A, B y C — usos generales', icon: 'fire' },
-    { href: '/co2', title: 'Dióxido de Carbono', description: 'Cero residuo para electrónica', icon: 'zap' },
-    { href: '/espuma-afff', title: 'Espuma AFFF', description: 'Industria e hidrocarburos', icon: 'droplets' },
-    { href: '/contacto', title: 'Cotizar Tipo K Ahora', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
+    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase ABC para salón y áreas comunes', icon: 'fire' },
+    { href: '/co2', title: 'Dióxido de Carbono', description: 'Cero residuo para tableros y refrigeración', icon: 'zap' },
+    { href: '/espuma-afff', title: 'Espuma AFFF', description: 'Industria, hidrocarburos y bodegas Clase B', icon: 'foam' },
+    { href: '/contacto', title: 'Cotizar Tipo K ahora', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'El <strong>extintor Tipo K de agente húmedo</strong> es el único equipo diseñado específicamente para fuegos de <strong>clase K</strong>: aceites y grasas vegetales o animales a temperaturas extremas (por encima de 300 °C). A estas temperaturas, un aceite en llamas no puede controlarse con agua (provoca explosión de vapor) ni con polvo químico seco (contamina toda la cocina). El agente húmedo reacciona químicamente con el aceite caliente en un proceso de <strong>saponificación</strong> que forma una capa jabonosa hermética sobre la superficie, sofoca el fuego y bloquea los vapores inflamables de forma permanente.',
-    'En <strong>MANEXT</strong> somos distribuidores autorizados con más de 80 años de experiencia. La <strong>NOM-002-STPS</strong> exige la presencia de extintores Tipo K en toda cocina comercial — su ausencia puede derivar en multas, clausura temporal o rechazo de cobertura por aseguradora. Cada extintor Tipo K que entregamos incluye certificado NOM-154-SCFI vigente, documentación para inspecciones de Protección Civil y COFEPRIS, e instalación profesional. <strong>Entrega en 48 horas</strong> en toda la CDMX y zona metropolitana.'
+    'El <strong>extintor Tipo K de agente húmedo</strong> es el único equipo diseñado para fuegos <strong>Clase K</strong>: aceites vegetales o animales por encima de los <strong>300 °C</strong>, exactamente lo que tienes en una freidora o una plancha en plena operación. A esas temperaturas, el agua se vaporiza con violencia y proyecta el aceite en llamas; el polvo PQS apaga la llama un instante pero deja el aceite caliente y reignición casi inmediata. El agente Tipo K, en cambio, reacciona con la grasa por <strong>saponificación</strong>: forma una capa de jabón espeso que sella la superficie, enfría el aceite y deja un residuo que <strong>ya no es inflamable</strong>.',
+    'En <strong>MANEXT</strong> conocemos el sector restaurantero desde adentro. Cada Tipo K se entrega con certificado <strong>NOM-154-SCFI</strong> vigente, instalación profesional con soporte anclado a la distancia normativa de la zona de cocción, señalización fotoluminiscente NOM-026 y la documentación que solicitan <strong>Protección Civil, COFEPRIS, STPS y aseguradoras</strong>. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana — sin interrumpir la operación de tu cocina.'
   ]}
 />
 
@@ -192,9 +207,9 @@ const currentSlug = 'tipo-k';
         <img src="/img/img-tipos-de-extintores/agente-humedo-tipo-k.avif" alt="Extintor Tipo K de agente húmedo — mecanismo de saponificación para fuegos clase K en cocinas comerciales" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Qué es el Agente Húmedo y Por Qué es el Único Válido en Cocinas</h2>
-        <p>El agente húmedo es una solución acuosa alcalina a base de <strong>acetato de potasio, carbonato de potasio o citrato de potasio</strong>. Cuando entra en contacto con aceite o grasa a alta temperatura, desencadena una reacción de <strong>saponificación</strong>: el agente y la grasa reaccionan para formar una capa de jabón densa que cubre la superficie del combustible, sofoca el fuego por privación de oxígeno y enfría el aceite por debajo del punto de re-ignición sin generar vapor explosivo.</p>
-        <p>Esto es lo que ningún otro extintor puede hacer: el PQS no reacciona con la grasa y deja el aceite caliente expuesto; el agua provoca una explosión de vapor que puede proyectar aceite en llamas a metros de distancia; el CO₂ no tiene capacidad de enfriamiento suficiente para bajar el aceite por debajo de los 300 °C y el fuego se reinicia al disiparse el gas. El Tipo K es el único agente que <strong>transforma el combustible</strong> en lugar de solo interrumpir la combustión.</p>
+        <h2>Qué es el agente húmedo y por qué es el único válido en cocinas</h2>
+        <p>El agente húmedo es una solución acuosa alcalina formulada con <strong>acetato de potasio, carbonato de potasio o citrato de potasio</strong>. Cuando entra en contacto con aceite o grasa por encima de los 300 °C desencadena una reacción de <strong>saponificación</strong> en la superficie: la base alcalina reacciona con los ácidos grasos del aceite y forma una capa densa de jabón que cubre el combustible, sofoca por privación de oxígeno y enfría el aceite por debajo del punto de auto-ignición — todo sin generar vapor explosivo ni proyecciones.</p>
+        <p>Eso es lo que ningún otro extintor logra. El PQS sofoca por un instante pero no reacciona con la grasa ni la enfría: el aceite sigue caliente y vuelve a encenderse al disiparse el polvo. El agua a 300 °C se transforma instantáneamente en vapor a altísima presión y proyecta el aceite en todas direcciones — la temida <strong>explosión de grasa</strong>. El CO₂ baja oxígeno momentáneamente pero no tiene capacidad de enfriamiento suficiente. El Tipo K es el único agente que <strong>modifica químicamente el combustible</strong> y deja la cocina a salvo de la reignición.</p>
 
         <!-- Badge clase K -->
         <div class="rd-badges" style="margin:1.25rem 0;">
@@ -206,7 +221,7 @@ const currentSlug = 'tipo-k';
           </span>
         </div>
 
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20un%20extintor%20Tipo%20K%20para%20mi%20cocina%20comercial.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20un%20extintor%20Tipo%20K%20para%20mi%20cocina%20comercial.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -248,7 +263,7 @@ const currentSlug = 'tipo-k';
 
         <p style="font-size:0.9rem;color:var(--clr-text-muted);margin-top:0.75rem;">La NOM-002-STPS establece que el extintor debe ubicarse a no más de 10 metros de la zona de cocción, a una altura accesible y fuera de la línea directa de calor de los quemadores.</p>
 
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20un%20extintor%20Tipo%20K.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20cocina%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20un%20extintor%20Tipo%20K.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20cocina%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
       </div>
     </div>
 
@@ -261,7 +276,7 @@ const currentSlug = 'tipo-k';
         <h2>NOM-002-STPS, COFEPRIS y Aseguradoras — Lo Que Revisan en tu Cocina</h2>
         <p>Tres autoridades distintas tienen facultad para inspeccionar el cumplimiento de medidas contra incendio en tu cocina, y las tres revisan el extintor Tipo K. La <strong>STPS</strong> verifica condiciones de seguridad bajo NOM-002-STPS; <strong>Protección Civil</strong> municipal revisa la vigencia del extintor, la certificación NOM y el señalamiento; <strong>COFEPRIS</strong> incluye la protección contra incendio en sus verificaciones a establecimientos de alimentos y bebidas.</p>
         <p>Adicionalmente, las pólizas de seguro para inmuebles comerciales con cocinas normalmente exigen extintores adecuados para la clase de fuego del área como condición de cobertura. En caso de siniestro, el ajustador verificará si el extintor presente era del tipo correcto — un extintor PQS en una cocina clase K puede ser motivo de rechazo parcial o total de la reclamación. El extintor Tipo K de MANEXT incluye toda la <strong>documentación necesaria</strong>: certificado NOM-154-SCFI, bitácora de servicio y factura que acredita la adquisición.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20el%20extintor%20Tipo%20K%20con%20documentación%20válida%20para%20Protección%20Civil%20y%20COFEPRIS.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar con Documentación Completa</a>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20el%20extintor%20Tipo%20K%20con%20documentación%20válida%20para%20Protección%20Civil%20y%20COFEPRIS.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar con Documentación Completa</a>
       </div>
     </div>
 
@@ -271,43 +286,43 @@ const currentSlug = 'tipo-k';
         <img src="/img/img-ventas-de-extintores/extintores-tipo-k-para-cocinas-comerciales-clase-k.avif" alt="MANEXT distribuidor autorizado de extintores Tipo K con más de 80 años de experiencia en CDMX" width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
-        <h2>Por Qué Elegir MANEXT para tu Extintor Tipo K</h2>
-        <p>Conocemos el sector restaurantero y hotelero desde adentro. Hemos equipado cocinas de fondas familiares, cadenas de comida rápida, restaurantes de hotel cinco estrellas y cocinas hospitalarias. Sabemos que en este sector el cumplimiento normativo no es opcional — una inspección negativa puede paralizar la operación. Por eso cada equipo que entregamos viene <strong>listo para cualquier verificación</strong>.</p>
-        <p>El servicio MANEXT para extintores Tipo K incluye: extintor certificado NOM-154-SCFI, señalamiento fotoluminiscente reglamentario, instalación en el punto correcto según NOM-002-STPS, bitácora de servicio y factura oficial. Ofrecemos también el <strong>servicio de recarga anual</strong> con visita a domicilio para que tu cocina nunca esté fuera de cumplimiento. Más de 80 años protegiendo cocinas comerciales en CDMX.</p>
-        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20comprar%20extintores%20Tipo%20K%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización por WhatsApp</a>
+        <h2>Por qué te conviene elegir MANEXT para tu extintor Tipo K</h2>
+        <p>Conocemos el sector restaurantero y hotelero desde adentro. Hemos equipado fondas familiares, cadenas de comida rápida, restaurantes de hotel cinco estrellas, comedores industriales y cocinas hospitalarias. En este giro el cumplimiento normativo no es opcional — una inspección con extintor incorrecto puede traducirse en clausura el mismo día. Por eso cada equipo MANEXT se entrega <strong>listo para cualquier verificación</strong>: PC, STPS, COFEPRIS o ajustador de aseguradora.</p>
+        <p>El servicio incluye: extintor certificado <strong>NOM-154-SCFI</strong>, señalización fotoluminiscente NOM-026, soporte metálico anclado a la distancia normativa de la zona de cocción, etiqueta de fabricante con trazabilidad, tarjeta de inspección, factura fiscal y bitácora lista para auditoría. Cada Tipo K entra automáticamente al programa de <strong>recarga anual a domicilio</strong> para que tu cocina nunca quede fuera de norma. Más de 80 años protegiendo cocinas comerciales en CDMX — eso es lo que respalda cada equipo.</p>
+        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20comprar%20extintores%20Tipo%20K%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
 
       <SectionHeader
-        eyebrow="Catálogo Completo"
-        title="Todos los Tipos de Extintores MANEXT"
-        subtitle="Elige el agente correcto para cada clase de fuego"
-        paragraphs={{[
-          'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Usar el agente incorrecto puede ser ineficaz o incluso <strong>peligroso</strong>: el agua en fuegos eléctricos, el PQS en aceites a alta temperatura, el CO₂ en espacios ocupados. Esta guía te ayuda a identificar el equipo correcto para cada zona de tu instalación.',
-          'Todos los extintores MANEXT incluyen <strong>certificación NOM-154-SCFI</strong>, instalación profesional, señalamiento reglamentario y documentación válida para Protección Civil. Nuestros ingenieros realizan <strong>análisis de riesgo gratuito</strong> antes de cualquier cotización. <a href="/extintores">Ver catálogo completo →</a>'
-        ]}}
+        eyebrow="Catálogo completo"
+        title="Cada Riesgo Tiene Su Extintor: Elige el Correcto"
+        subtitle="Seis agentes extintores, una sola lógica — el equipo adecuado para cada clase de fuego"
+        paragraphs={[
+          'Equipar un negocio con el extintor incorrecto no solo es ineficaz: puede agravar el incendio. El agua sobre tableros eléctricos, el PQS dentro de una freidora, el CO₂ en un cuarto pequeño y ocupado — son errores que aparecen en 7 de cada 10 inspecciones de Protección Civil. Esta guía resume, en una sola vista, qué agente corresponde a cada espacio.',
+          'Todos los extintores MANEXT cumplen <strong>NOM-154-SCFI vigente</strong>, llegan con instalación profesional, señalización fotoluminiscente NOM-026 y la documentación que solicita Protección Civil y la STPS. Si dudas qué combinación necesita tu giro, nuestros ingenieros realizan un <strong>análisis de riesgo gratuito y sin compromiso</strong>. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}
       />
 
       <div class="ext-tipos-grid">
-        {{extTipos.map(t => (
-          <a href={{`/${{t.slug}}`}} class={{`ext-tipo-card${{t.slug === currentSlug ? ' ext-tipo-card--current' : ''}}`}}>
-            <img src={{t.img}} alt={{t.alt}} width="400" height="240" loading="lazy" />
+        {extTipos.map(t => (
+          <a href={`/${t.slug}`} class={`ext-tipo-card${t.slug === currentSlug ? ' ext-tipo-card--current' : ''}`}>
+            <img src={t.img} alt={t.alt} width="400" height="240" loading="lazy" />
             <div class="ext-tipo-card__body">
-              <p class="ext-tipo-card__title">{{t.title}}</p>
+              <p class="ext-tipo-card__title">{t.title}</p>
               <div class="ext-tipo-card__badges">
-                {{t.classes.map(c => (
-                  <span class={{`ext-tipo-card__badge ${{classBadge[c]}}`}}>Clase {{c}}</span>
-                ))}}
-                {{t.slug === currentSlug && (
+                {t.classes.map(c => (
+                  <span class={`ext-tipo-card__badge ${classBadge[c]}`}>Clase {c}</span>
+                ))}
+                {t.slug === currentSlug && (
                   <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
-                )}}
+                )}
               </div>
-              <p class="ext-tipo-card__desc">{{t.desc}}</p>
-              <span class="ext-tipo-card__link">{{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}}</span>
+              <p class="ext-tipo-card__desc">{t.desc}</p>
+              <span class="ext-tipo-card__link">{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}</span>
             </div>
           </a>
-        ))}}
+        ))}
       </div>
 
   </div>
@@ -334,7 +349,7 @@ const currentSlug = 'tipo-k';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre extintores Tipo K. ¿Prefieres hablar con un especialista?
-          <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20Tipo%20K%20para%20mi%20cocina" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
+          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20Tipo%20K%20para%20mi%20cocina" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
         <div class="faq-grid">
 
@@ -626,7 +641,7 @@ const currentSlug = 'tipo-k';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

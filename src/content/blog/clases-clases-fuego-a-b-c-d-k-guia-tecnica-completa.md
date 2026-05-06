@@ -201,8 +201,8 @@ heroRight:
     <h3>Evaluación Profesional de Clases de Fuego</h3>
     <p>Nuestros ingenieros certificados realizan análisis exhaustivos de combustibles presentes, evalúan escenarios de propagación y diseñan sistemas de extinción optimizados para cada clase de riesgo específica en tus instalaciones.</p>
     <div class="cta-inline-buttons">
-      <a href="tel:5570081816" class="btn-primary">Llamar: 55 7008 1816</a>
-      <a href="https://wa.me/5215570081816" class="btn-whatsapp">WhatsApp Consulta</a>
+      <a href="tel:5614612594" class="btn-primary">Llamar: 56 1461 2594</a>
+      <a href="https://wa.me/5215614612594" class="btn-whatsapp">WhatsApp Consulta</a>
     </div>
   </div>
 </div>
@@ -301,7 +301,7 @@ heroRight:
     <div class="faq-item">
 <button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-6">¿Cómo contacto a MANEXT para evaluación de clases de fuego en mi empresa?</button>
 <div class="faq-answer" id="faq-clases4-6">
-        <p>MANEXT ofrece evaluación profesional sin costo para empresas en CDMX y zona metropolitana incluyendo Coyoacán, Naucalpan, San Ángel y Parque Industrial Vallejo. Nuestros ingenieros certificados realizan auditorías exhaustivas identificando todas las clases de fuego presentes, evalúan compatibilidades de agentes extintores y diseñan sistemas integrales de protección. El servicio incluye memoria técnica, planos ejecutivos, especificaciones de equipos y capacitación de brigadas. Contacta directamente al 55 7008 1816 para programar visita técnica, o envía mensaje WhatsApp al 52-155-3968-9272 con ubicación y giro de tu empresa. Tiempo de respuesta: 24-48 horas para evaluaciones urgentes, entrega de propuesta técnica en 5-7 días hábiles. Cobertura garantizada en toda la zona metropolitana con más de 80 años de experiencia atendiendo +15,000 empresas.</p>
+        <p>MANEXT ofrece evaluación profesional sin costo para empresas en CDMX y zona metropolitana incluyendo Coyoacán, Naucalpan, San Ángel y Parque Industrial Vallejo. Nuestros ingenieros certificados realizan auditorías exhaustivas identificando todas las clases de fuego presentes, evalúan compatibilidades de agentes extintores y diseñan sistemas integrales de protección. El servicio incluye memoria técnica, planos ejecutivos, especificaciones de equipos y capacitación de brigadas. Contacta directamente al 56 1461 2594 para programar visita técnica, o envía mensaje WhatsApp al 52-155-3968-9272 con ubicación y giro de tu empresa. Tiempo de respuesta: 24-48 horas para evaluaciones urgentes, entrega de propuesta técnica en 5-7 días hábiles. Cobertura garantizada en toda la zona metropolitana con más de 80 años de experiencia atendiendo +15,000 empresas.</p>
       </div>
 </div>
   </div>
@@ -311,7 +311,7 @@ heroRight:
   <h2>Resumen y Siguientes Pasos</h2>
   <p>La identificación precisa de las clases de fuego A B C D K constituye la base fundamental para seleccionar sistemas de extinción efectivos y cumplir con las normativas mexicanas NOM-154-SCFI y NOM-002-STPS. Cada clase requiere agentes extintores específicos: Clase A necesita enfriamiento profundo, Clase B requiere sofocación superficial, Clase C demanda agentes no conductivos, Clase D exige químicos especializados no reactivos, y Clase K utiliza saponificación alcalina. La evaluación profesional considera no solo combustibles evidentes sino escenarios de propagación, compatibilidad de agentes y factores económicos de costo total de propiedad.</p>
   <p>El siguiente paso crítico es realizar una auditoría técnica completa de tus instalaciones para identificar todas las clases de fuego presentes, evaluar la adecuación de sistemas existentes y diseñar mejoras que garanticen protección integral. Esta evaluación debe realizarla personal certificado con experiencia en análisis de riesgos y conocimiento actualizado de tecnologías de extinción disponibles en el mercado mexicano.</p>
-  <p><strong>Contacto directo MANEXT:</strong> Teléfono 55 7008 1816 | WhatsApp disponible 24/7 | Cobertura completa: CDMX y Zona Metropolitana incluyendo Coyoacán, Naucalpan, San Ángel y todas las zonas industriales de Vallejo y Tultitlán</p>
+  <p><strong>Contacto directo MANEXT:</strong> Teléfono 56 1461 2594 | WhatsApp disponible 24/7 | Cobertura completa: CDMX y Zona Metropolitana incluyendo Coyoacán, Naucalpan, San Ángel y todas las zonas industriales de Vallejo y Tultitlán</p>
 </section>
                     </div>
                 </div>
@@ -331,13 +331,13 @@ heroRight:
                     <div class="sidebar-widget cta-widget">
                         <h3 class="widget-title">Necesitas Asesoria?</h3>
                         <p>Nuestros expertos estan listos para ayudarte con cualquier duda sobre extintores y proteccion contra incendios.</p>
-                        <a href="tel:5570081816" class="widget-cta-btn">
+                        <a href="tel:5614612594" class="widget-cta-btn">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                             Llamar Ahora
                         </a>
-                        <a href="https://wa.me/5215570081816" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
+                        <a href="https://wa.me/5215614612594" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                             </svg>
