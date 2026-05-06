@@ -3,7 +3,7 @@ title: "Extintores para Naves Industriales: Capacidades, Distribución y NOM 202
 description: "Compra de extintores para nave industrial CDMX y Edo. Mex.: cálculo por carga combustible, sectorización, PQS rodante vs portátil, sistemas complementarios y casos reales."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
-  - "Las naves industriales son <strong>la categoría más compleja de proteger contra incendios</strong>. Carga combustible elevada, alturas de almacenaje de 6–12 metros, maquinaria con líquidos inflamables, tableros eléctricos de alto amperaje y operación 24/7. La diferencia entre cumplir NOM-002-STPS y solo "tener extintores" puede ser la diferencia entre extinguir un conato en 90 segundos o perder la nave completa en 8 minutos."
+  - "Las naves industriales son <strong>la categoría más compleja de proteger contra incendios</strong>. Carga combustible elevada, alturas de almacenaje de 6–12 metros, maquinaria con líquidos inflamables, tableros eléctricos de alto amperaje y operación 24/7. La diferencia entre cumplir NOM-002-STPS y solo tener extintores nominales puede ser la diferencia entre extinguir un conato en 90 segundos o perder la nave completa en 8 minutos."
   - "Esta guía 2026 cubre el cálculo industrial real: <strong>sectorización</strong>, criterios de carga combustible, distribución por zonas (producción, almacenaje, oficina anexa, patios), <strong>PQS rodante 50/68 kg como complemento de los portátiles</strong>, sistemas fijos complementarios, y casos por giro industrial — manufactura, química, alimentos, metalurgia."
 ---
 
