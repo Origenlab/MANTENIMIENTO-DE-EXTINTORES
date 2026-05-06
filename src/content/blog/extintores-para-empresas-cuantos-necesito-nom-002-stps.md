@@ -1,6 +1,10 @@
 ---
-title: "¿Cuántos Extintores Necesita tu Empresa? Guía NOM-002-STPS"
+title: "¿Cuántos Extintores Necesita tu Empresa? Cálculo NOM-002-STPS 2026"
 description: "Descubre cuántos extintores necesita tu empresa según NOM-002-STPS: cálculo por m², tipos de riesgo, distancias máximas y dónde instalarlos. MANEXT asesora sin costo en CDMX."
+pubDate: "2026-06-09"
+heroRight:
+  - "La NOM-002-STPS no establece un número fijo de extintores para todos los negocios: el cálculo correcto combina el nivel de riesgo de la actividad, la superficie y las distancias máximas de recorrido. Instalar uno de menos puede derivar en multas, clausura y un incendio que no puedes controlar."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años realizando diagnósticos gratuitos para empresas en CDMX. Calculamos el número correcto de extintores por zona, entregamos plano de distribución sugerida y cotización personalizada sin compromiso."
 ---
 <div class="article-intro">
   <p>Saber exactamente <strong>cuántos extintores necesita tu empresa</strong> no es una suposición ni una decisión arbitraria: es un cálculo técnico regulado por la <strong>NOM-002-STPS</strong>, la norma que Protección Civil usa para auditar tu negocio. Instalar un extintor de más no es problema; instalar uno de menos puede derivar en multas, clausura y, en el peor caso, en un incendio que no puedes controlar.</p>
@@ -9,8 +13,8 @@ description: "Descubre cuántos extintores necesita tu empresa según NOM-002-ST
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-dice-la-nom">Qué Dice la NOM-002-STPS</a></li>
     <li><a href="#niveles-riesgo">Niveles de Riesgo por Actividad</a></li>
     <li><a href="#calculo-extintores">Cómo Calcular Cuántos Necesitas</a></li>
@@ -20,7 +24,7 @@ description: "Descubre cuántos extintores necesita tu empresa según NOM-002-ST
     <li><a href="#errores-comunes">Errores Comunes a Evitar</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita tu Diagnóstico Gratuito</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-dice-la-nom">Qué Dice la NOM-002-STPS sobre Extintores</h2>
@@ -126,7 +130,7 @@ description: "Descubre cuántos extintores necesita tu empresa según NOM-002-ST
 
 <p>Resultado: <strong>4 a 5 extintores mínimos</strong> para un restaurante de ese tamaño, distribuidos correctamente por tipo de riesgo en cada zona.</p>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Regla Práctica para Hacer el Cálculo</h4>
   <p>Divide la superficie total del inmueble entre el área máxima de cobertura según tu nivel de riesgo. Redondea siempre hacia arriba. Luego traza el plano de tu local e identifica si desde cualquier punto interior puedes alcanzar el extintor más cercano sin superar la distancia máxima. Si no, agrega equipos hasta cumplir ambos criterios simultáneamente.</p>
 </div>
@@ -236,34 +240,27 @@ description: "Descubre cuántos extintores necesita tu empresa según NOM-002-ST
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Cuántos extintores necesito para una oficina de 200 m²?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Para una oficina de 200 m² con riesgo ordinario bajo, el cálculo por área da 200 ÷ 300 = 0.67, que se redondea a <strong>1 extintor mínimo</strong>. Sin embargo, también debes verificar que desde cualquier punto de la oficina no se superen los 23 metros de recorrido hasta ese extintor. Si la distribución de espacios lo exige, puedes necesitar 2. Adicionalmente, si hay un cuarto de servidores o cocineta, esas zonas requieren su equipo específico independiente.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-1">¿Cuántos extintores necesito para una oficina de 200 m²?</button>
+    <div class="faq-answer" id="faq-empresas-1"><p>Para una oficina de 200 m² con riesgo ordinario bajo, el cálculo por área da 200 ÷ 300 = 0.67, que se redondea a <strong>1 extintor mínimo</strong>. Sin embargo, también debes verificar que desde cualquier punto de la oficina no se superen los 23 metros de recorrido hasta ese extintor. Si la distribución de espacios lo exige, puedes necesitar 2. Adicionalmente, si hay un cuarto de servidores o cocineta, esas zonas requieren su equipo específico independiente.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si mi negocio tiene diferentes niveles de riesgo en distintas áreas?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Es completamente normal y muy frecuente. En ese caso, cada zona se calcula de forma independiente según su nivel de riesgo. Por ejemplo, en una bodega con área administrativa: el almacén (riesgo alto) se calcula a 200 m² por extintor, mientras que las oficinas (riesgo bajo) se calculan a 300 m² por extintor. Los extintores de la bodega no "cubren" el área de oficinas y viceversa.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-2">¿Qué pasa si mi negocio tiene diferentes niveles de riesgo en distintas áreas?</button>
+    <div class="faq-answer" id="faq-empresas-2"><p>Es completamente normal y muy frecuente. En ese caso, cada zona se calcula de forma independiente según su nivel de riesgo. Por ejemplo, en una bodega con área administrativa: el almacén (riesgo alto) se calcula a 200 m² por extintor, mientras que las oficinas (riesgo bajo) se calculan a 300 m² por extintor. Los extintores de la bodega no "cubren" el área de oficinas y viceversa.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Necesito extintores en estacionamientos y áreas exteriores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Los estacionamientos techados, talleres al aire libre con techo y bodegas con cubierta sí requieren extintores propios. Los estacionamientos a cielo abierto sin actividades de mantenimiento generalmente no los requieren, pero si hay bombas de gasolina, aceites o mantenimiento vehicular, sí aplica la NOM. En caso de duda, consulta directamente con un técnico certificado que evalúe la configuración específica de tu espacio.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-3">¿Necesito extintores en estacionamientos y áreas exteriores?</button>
+    <div class="faq-answer" id="faq-empresas-3"><p>Los estacionamientos techados, talleres al aire libre con techo y bodegas con cubierta sí requieren extintores propios. Los estacionamientos a cielo abierto sin actividades de mantenimiento generalmente no los requieren, pero si hay bombas de gasolina, aceites o mantenimiento vehicular, sí aplica la NOM. En caso de duda, consulta directamente con un técnico certificado que evalúe la configuración específica de tu espacio.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué sucede si Protección Civil encuentra que faltan extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Las sanciones van desde multas económicas que oscilan entre 50 y 5,000 UMAs hasta la clausura temporal del establecimiento. Protección Civil CDMX puede exigir regularización inmediata como condición para reabrir. Además, en caso de un incendio donde se compruebe que había menos extintores de los requeridos, el propietario puede enfrentar responsabilidad civil e incluso penal si hay víctimas. La regularización preventiva siempre es menos costosa que la sanción.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-4">¿Qué sucede si Protección Civil encuentra que faltan extintores?</button>
+    <div class="faq-answer" id="faq-empresas-4"><p>Las sanciones van desde multas económicas que oscilan entre 50 y 5,000 UMAs hasta la clausura temporal del establecimiento. Protección Civil CDMX puede exigir regularización inmediata como condición para reabrir. Además, en caso de un incendio donde se compruebe que había menos extintores de los requeridos, el propietario puede enfrentar responsabilidad civil e incluso penal si hay víctimas. La regularización preventiva siempre es menos costosa que la sanción.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Puedo hacer el cálculo yo mismo o necesito un técnico?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La fórmula básica es accesible, pero la verificación de distancias de recorrido en plantas complejas, la identificación correcta del nivel de riesgo por actividad y la selección del tipo de agente extintor para cada zona son aspectos técnicos que frecuentemente se realizan de forma incorrecta sin experiencia. Un error en la evaluación puede resultar en incumplimiento normativo o, peor, en un sistema de protección insuficiente ante una emergencia real. MANEXT realiza este diagnóstico sin costo con entrega de plano de distribución sugerida.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-5">¿Puedo hacer el cálculo yo mismo o necesito un técnico?</button>
+    <div class="faq-answer" id="faq-empresas-5"><p>La fórmula básica es accesible, pero la verificación de distancias de recorrido en plantas complejas, la identificación correcta del nivel de riesgo por actividad y la selección del tipo de agente extintor para cada zona son aspectos técnicos que frecuentemente se realizan de forma incorrecta sin experiencia. Un error en la evaluación puede resultar en incumplimiento normativo o, peor, en un sistema de protección insuficiente ante una emergencia real. MANEXT realiza este diagnóstico sin costo con entrega de plano de distribución sugerida.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Los extintores deben ser todos del mismo tipo?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No necesariamente. Lo correcto es que cada extintor sea del tipo adecuado para las clases de fuego presentes en su zona de cobertura. En muchos establecimientos coexisten distintos tipos: PQS ABC en áreas generales, CO2 en cuartos de cómputo y Tipo K en cocinas. Esta distribución heterogénea es la correcta; instalar todos del mismo tipo para "simplificar" puede dejar zonas desprotegidas frente a riesgos específicos.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-empresas-6">¿Los extintores deben ser todos del mismo tipo?</button>
+    <div class="faq-answer" id="faq-empresas-6"><p>No necesariamente. Lo correcto es que cada extintor sea del tipo adecuado para las clases de fuego presentes en su zona de cobertura. En muchos establecimientos coexisten distintos tipos: PQS ABC en áreas generales, CO2 en cuartos de cómputo y Tipo K en cocinas. Esta distribución heterogénea es la correcta; instalar todos del mismo tipo para "simplificar" puede dejar zonas desprotegidas frente a riesgos específicos.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Diagnóstico Gratuito para tu Empresa</h3>
-  <p>En MANEXT realizamos el cálculo técnico de extintores requeridos para tu negocio sin costo: evaluamos superficie, nivel de riesgo, distancias de recorrido y tipo de agente necesario por zona. Te entregamos un plano de distribución sugerida y cotización personalizada. Atendemos toda la CDMX y zona metropolitana con técnicos certificados NOM-002-STPS.</p>
-  <a href="https://wa.me/5215570081816?text=Hola,%20necesito%20un%20diagnóstico%20gratuito%20para%20saber%20cuántos%20extintores%20necesita%20mi%20empresa" class="btn-cta">Solicitar Diagnóstico por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>

@@ -1,6 +1,10 @@
 ---
-title: "¿Cuándo Recargar y Cuándo Reemplazar un Extintor?"
+title: "¿Cuándo Recargar y Cuándo Reemplazar un Extintor? Criterios Técnicos 2026"
 description: "Criterios técnicos para decidir entre recargar o reemplazar un extintor: vida útil por tipo, señales de deterioro irrecuperable y qué dice la NOM-154-SCFI. Guía MANEXT."
+pubDate: "2026-05-05"
+heroRight:
+  - "Reemplazar prematuramente extintores recuperables es un gasto innecesario; continuar usando extintores que deben darse de baja es un riesgo real. La decisión depende de factores técnicos —vida útil del tipo, resultado de la prueba hidrostática, costo de rehabilitación— que un técnico certificado puede evaluar."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años evaluando extintores en CDMX. Ofrecemos dictamen técnico gratuito que determina qué equipos pueden recargarse y cuáles deben reemplazarse, con transparencia total antes de realizar ningún servicio."
 ---
 <div class="article-intro">
   <p>Una de las preguntas más frecuentes que recibimos en MANEXT es: "¿vale la pena recargar este extintor o mejor compro uno nuevo?" La respuesta no es siempre obvia y depende de factores técnicos que van más allá de la edad del equipo o el costo de la recarga. Hay extintores de 15 años que pueden recargarse válidamente; hay extintores de 5 años que deben darse de baja definitivamente.</p>
@@ -9,8 +13,8 @@ description: "Criterios técnicos para decidir entre recargar o reemplazar un ex
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#diferencia-fundamental">La Diferencia Fundamental: Recarga vs Reemplazo</a></li>
     <li><a href="#vida-util-por-tipo">Vida Útil por Tipo de Extintor</a></li>
     <li><a href="#cuando-si-recargar">Cuándo Sí Recargarlo</a></li>
@@ -20,7 +24,7 @@ description: "Criterios técnicos para decidir entre recargar o reemplazar un ex
     <li><a href="#documentacion-baja">Documentación al Dar de Baja un Extintor</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Evaluación Técnica Gratuita MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="diferencia-fundamental">La Diferencia Fundamental: Recarga vs Reemplazo</h2>
@@ -112,7 +116,7 @@ description: "Criterios técnicos para decidir entre recargar o reemplazar un ex
   <li><strong>El costo de rehabilitar supera el 75% del costo de equipo nuevo:</strong> Aunque el extintor técnicamente podría recargarse, si necesita reemplazo de válvula, manguera, boquilla y recarga completa, el costo total puede aproximarse al de un extintor nuevo. En ese caso, el reemplazo es la decisión económicamente correcta, y además garantiza un equipo con vida útil completa por delante.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>La Regla de los 15 Años para PQS</h4>
   <p>Aunque la vida útil oficial de los extintores PQS es 20 años, en MANEXT recomendamos evaluar seriamente el reemplazo de extintores PQS que superan los 15 años, especialmente si estuvieron en ambientes industriales, húmedos o con vibración. El costo de un PQS nuevo es relativamente bajo, y el margen de seguridad de tener un equipo con 15 años de vida útil por delante en lugar de 5 tiene un valor real.</p>
 </div>
@@ -166,26 +170,19 @@ description: "Criterios técnicos para decidir entre recargar o reemplazar un ex
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Puedo seguir usando un extintor cuya etiqueta de mantenimiento venció hace 2 meses?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El extintor probablemente siga funcionando, pero está fuera de norma. Un extintor con mantenimiento vencido no es válido ante Protección Civil y en caso de incendio, su uso no estará respaldado por documentación de que estaba en condiciones operativas. Programa el mantenimiento con urgencia. No necesitas reemplazarlo; solo ponerlo al corriente con el servicio anual.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recargar-1">¿Puedo seguir usando un extintor cuya etiqueta de mantenimiento venció hace 2 meses?</button>
+    <div class="faq-answer" id="faq-recargar-1"><p>El extintor probablemente siga funcionando, pero está fuera de norma. Un extintor con mantenimiento vencido no es válido ante Protección Civil y en caso de incendio, su uso no estará respaldado por documentación de que estaba en condiciones operativas. Programa el mantenimiento con urgencia. No necesitas reemplazarlo; solo ponerlo al corriente con el servicio anual.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">Mi extintor tiene 10 años pero nunca lo han usado — ¿necesita recarga?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí. Los agentes extintores tienen vida útil independientemente del uso. El polvo químico seco se aglomera con el tiempo; el agua se contamina; el agente de extintores Tipo K se degrada. Además, los sellos y empaques envejecen y pueden perder hermeticidad. Un extintor de 10 años que nunca fue usado pero tampoco tuvo mantenimiento tiene el mismo riesgo de falla que uno que fue poco usado. Las recargas periódicas son obligatorias por normativa, no solo cuando el extintor se usa.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recargar-2">Mi extintor tiene 10 años pero nunca lo han usado — ¿necesita recarga?</button>
+    <div class="faq-answer" id="faq-recargar-2"><p>Sí. Los agentes extintores tienen vida útil independientemente del uso. El polvo químico seco se aglomera con el tiempo; el agua se contamina; el agente de extintores Tipo K se degrada. Además, los sellos y empaques envejecen y pueden perder hermeticidad. Un extintor de 10 años que nunca fue usado pero tampoco tuvo mantenimiento tiene el mismo riesgo de falla que uno que fue poco usado. Las recargas periódicas son obligatorias por normativa, no solo cuando el extintor se usa.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Cuándo debo solicitar la prueba hidrostática además de la recarga?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La prueba hidrostática se requiere cada 5 años independientemente de las recargas anuales. Si el extintor cumple 5, 10, 15 años, debe hacerse la prueba. En una recarga, el técnico verificará si la prueba hidrostática está vigente o vencida. Si está vencida, primero se realiza la prueba y si el cilindro la aprueba, entonces procede la recarga. Si la reprueba, se da de baja y se recomienda el reemplazo.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recargar-3">¿Cuándo debo solicitar la prueba hidrostática además de la recarga?</button>
+    <div class="faq-answer" id="faq-recargar-3"><p>La prueba hidrostática se requiere cada 5 años independientemente de las recargas anuales. Si el extintor cumple 5, 10, 15 años, debe hacerse la prueba. En una recarga, el técnico verificará si la prueba hidrostática está vigente o vencida. Si está vencida, primero se realiza la prueba y si el cilindro la aprueba, entonces procede la recarga. Si la reprueba, se da de baja y se recomienda el reemplazo.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Existe alguna forma de saber si mi extintor necesita reemplazo sin llevarlo a un técnico?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Algunas señales externas indican alta probabilidad de que el equipo deba darse de baja: corrosión visible que descascarilla la pintura y expone el metal, abolladuras profundas en el cuerpo del cilindro, base deformada que hace que el extintor no quede derecho, rosca del cuello de válvula visiblemente dañada, o fecha de fabricación que excede la vida útil máxima para su tipo. Sin embargo, la evaluación definitiva siempre la hace el técnico: hay deterioro interno que no es visible desde afuera.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recargar-4">¿Existe alguna forma de saber si mi extintor necesita reemplazo sin llevarlo a un técnico?</button>
+    <div class="faq-answer" id="faq-recargar-4"><p>Algunas señales externas indican alta probabilidad de que el equipo deba darse de baja: corrosión visible que descascarilla la pintura y expone el metal, abolladuras profundas en el cuerpo del cilindro, base deformada que hace que el extintor no quede derecho, rosca del cuello de válvula visiblemente dañada, o fecha de fabricación que excede la vida útil máxima para su tipo. Sin embargo, la evaluación definitiva siempre la hace el técnico: hay deterioro interno que no es visible desde afuera.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Evaluación Técnica Gratuita de tus Extintores</h3>
-  <p>En MANEXT realizamos evaluación técnica gratuita para determinar qué extintores pueden recargarse y cuáles deben reemplazarse. Nuestros técnicos certificados inspeccionan cada equipo y te presentan un dictamen técnico claro con opciones y costos antes de realizar ningún servicio. Sin compromisos, con transparencia total. Atendemos toda la CDMX y zona metropolitana.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20quisiera%20una%20evaluación%20técnica%20de%20mis%20extintores%20para%20saber%20cuáles%20recargar%20y%20cuáles%20reemplazar" class="btn-cta">Solicitar Evaluación Gratuita por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

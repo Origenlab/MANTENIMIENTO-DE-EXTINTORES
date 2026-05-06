@@ -1,6 +1,10 @@
 ---
-title: "Prueba Hidrostática vs Mantenimiento Preventivo: Diferencias Clave"
+title: "Prueba Hidrostática vs Mantenimiento Preventivo de Extintores: Diferencias 2026"
 description: "Explica las diferencias entre prueba hidrostática y mantenimiento preventivo de extintores: qué evalúa cada una, frecuencia, costo y por qué ambas son obligatorias según NOM-154-SCFI."
+pubDate: "2026-05-10"
+heroRight:
+  - "Un extintor con mantenimiento preventivo vigente pero prueba hidrostática vencida incumple la NOM-154-SCFI. Ambos servicios son obligatorios e independientes: el mantenimiento anual verifica que el extintor funciona; la prueba hidrostática verifica que el cilindro puede soportar la presión con seguridad."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años realizando ambos servicios en CDMX. Monitoreamos las fechas de mantenimiento preventivo y prueba hidrostática de cada extintor y te avisamos con anticipación para que nunca estés fuera de norma."
 ---
 <div class="article-intro">
   <p>Cuando un técnico te dice que tu extintor necesita "prueba hidrostática" y otro te habla del "mantenimiento preventivo anual", muchos propietarios de negocio asumen que están hablando de lo mismo o que son servicios intercambiables. No lo son. Son dos evaluaciones completamente distintas que cumplen propósitos diferentes, tienen frecuencias distintas y se realizan con equipos distintos.</p>
@@ -9,8 +13,8 @@ description: "Explica las diferencias entre prueba hidrostática y mantenimiento
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-evalua-cada-uno">Qué Evalúa Cada Servicio</a></li>
     <li><a href="#frecuencia-comparativa">Frecuencia: Anual vs Quinquenal</a></li>
     <li><a href="#proceso-mantenimiento">Proceso del Mantenimiento Preventivo</a></li>
@@ -21,7 +25,7 @@ description: "Explica las diferencias entre prueba hidrostática y mantenimiento
     <li><a href="#calendario-combinado">Cómo Crear tu Calendario Combinado</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Programa tus Servicios con MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-evalua-cada-uno">Qué Evalúa Cada Servicio</h2>
@@ -189,22 +193,15 @@ description: "Explica las diferencias entre prueba hidrostática y mantenimiento
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Puedo hacer la prueba hidrostática y el mantenimiento en el mismo año en cualquier momento?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí, y es lo que se hace en práctica. En el año que corresponde la prueba hidrostática, el extintor va al taller donde primero se realiza la prueba. Si la aprueba, el mismo servicio incluye mantenimiento a fondo y recarga. Si la reprueba, el extintor se da de baja y el técnico te informa que necesitas reemplazarlo. No son dos citas separadas; se hacen en el mismo proceso, aunque el tiempo total es mayor (3-5 días) que el mantenimiento preventivo normal.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica-1">¿Puedo hacer la prueba hidrostática y el mantenimiento en el mismo año en cualquier momento?</button>
+    <div class="faq-answer" id="faq-hidrostatica-1"><p>Sí, y es lo que se hace en práctica. En el año que corresponde la prueba hidrostática, el extintor va al taller donde primero se realiza la prueba. Si la aprueba, el mismo servicio incluye mantenimiento a fondo y recarga. Si la reprueba, el extintor se da de baja y el técnico te informa que necesitas reemplazarlo. No son dos citas separadas; se hacen en el mismo proceso, aunque el tiempo total es mayor (3-5 días) que el mantenimiento preventivo normal.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si hago el mantenimiento anual pero me olvido de la prueba hidrostática?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El extintor tendrá mantenimiento preventivo vigente pero la prueba hidrostática vencida. Ante una inspección de Protección Civil, el inspector puede verificar la fecha de la prueba hidrostática en la etiqueta correspondiente. Si está vencida, el extintor se considera fuera de norma aunque tenga el mantenimiento anual al día. En MANEXT monitoreamos ambas fechas por ti y te notificamos cuando se acerca el año de la prueba hidrostática para que no se te pase.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica-2">¿Qué pasa si hago el mantenimiento anual pero me olvido de la prueba hidrostática?</button>
+    <div class="faq-answer" id="faq-hidrostatica-2"><p>El extintor tendrá mantenimiento preventivo vigente pero la prueba hidrostática vencida. Ante una inspección de Protección Civil, el inspector puede verificar la fecha de la prueba hidrostática en la etiqueta correspondiente. Si está vencida, el extintor se considera fuera de norma aunque tenga el mantenimiento anual al día. En MANEXT monitoreamos ambas fechas por ti y te notificamos cuando se acerca el año de la prueba hidrostática para que no se te pase.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Los extintores nuevos necesitan prueba hidrostática?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No inmediatamente. Los extintores nuevos ya pasaron pruebas de presión en el proceso de fabricación y certificación. Su primera prueba hidrostática se realizará cuando cumplan 5 años desde su fecha de fabricación. Lo que sí requieren al año de su puesta en servicio es el primer mantenimiento preventivo anual.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica-3">¿Los extintores nuevos necesitan prueba hidrostática?</button>
+    <div class="faq-answer" id="faq-hidrostatica-3"><p>No inmediatamente. Los extintores nuevos ya pasaron pruebas de presión en el proceso de fabricación y certificación. Su primera prueba hidrostática se realizará cuando cumplan 5 años desde su fecha de fabricación. Lo que sí requieren al año de su puesta en servicio es el primer mantenimiento preventivo anual.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Mantén Ambos Servicios al Día con MANEXT</h3>
-  <p>En MANEXT monitoreamos las fechas de mantenimiento preventivo y prueba hidrostática de cada extintor de tu empresa y te avisamos con anticipación. Realizamos ambos servicios con técnicos certificados y entregamos la documentación completa que requiere Protección Civil. Más de 80 años atendiendo empresas en CDMX y zona metropolitana.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20quisiera%20información%20sobre%20mantenimiento%20preventivo%20y%20prueba%20hidrostática%20de%20mis%20extintores" class="btn-cta">Consultar Mis Servicios por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

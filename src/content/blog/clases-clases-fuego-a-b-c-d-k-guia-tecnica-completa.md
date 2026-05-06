@@ -1,6 +1,10 @@
 ---
 title: "Clases de Fuego A B C D K: Guía Técnica Completa 2024"
-description: "Clases de fuego A B C D K explicadas por ingenieros expertos. Identifica el extintor correcto según material combustible. Normativas NOM-154-SCFI. ☎️ 55-3968-9272"
+description: "Clases de fuego A B C D K explicadas por ingenieros expertos. Identifica el extintor correcto según material combustible. Normativas NOM-154-SCFI."
+pubDate: "2026-07-24"
+heroRight:
+  - "No todos los extintores apagan todos los fuegos: el <strong>tipo de extintor correcto depende de la clase de fuego</strong>. Usar agua en aceite ardiendo provoca una bola de fuego; usar CO2 en un incendio de magnesio puede empeorar la situación. La normativa mexicana <strong>NOM-002-STPS</strong> clasifica los fuegos en 5 categorías (A, B, C, D y K) y exige que cada espacio cuente con el extintor adecuado al riesgo específico."
+  - "MANEXT asesora a empresas, restaurantes e industrias en la <strong>selección técnica del extintor correcto</strong> para cada clase de fuego, con más de 80 años de experiencia y técnicos certificados NOM-154-SCFI. Evita multas de Protección Civil y protege tu instalación con los equipos correctos. Solicita asesoría sin costo por WhatsApp."
 ---
 <div class="article-intro">
   <p class="article-lead"><strong>Clases de fuego A B C D K</strong> representan la clasificación técnica fundamental para seleccionar el sistema de extinción correcto en cualquier emergencia. La NOM-154-SCFI establece que usar un extintor inadecuado reduce la eficacia en 85% y puede agravar el siniestro. Esta guía técnica te permitirá identificar con precisión el tipo de combustible y elegir la tecnología de supresión más efectiva.</p>
@@ -8,9 +12,9 @@ description: "Clases de fuego A B C D K explicadas por ingenieros expertos. Iden
   <p>En este artículo técnico descubrirás: clasificación científica de combustibles según temperatura de ignición y comportamiento químico, especificaciones técnicas de cada agente extintor por clase de fuego, tabla comparativa de eficacia y compatibilidad entre agentes extintores, marco normativo NOM-154-SCFI y requisitos de cumplimiento obligatorio, metodología profesional para evaluar riesgos y seleccionar equipos.</p>
 </div>
 
-<div class="table-of-contents">
-  <h3>Contenido del Artículo</h3>
-  <ol>
+<nav class="toc">
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué son las Clases de Fuego - Definición Técnica</a></li>
     <li><a href="#especificaciones">Especificaciones Técnicas por Clase de Fuego</a></li>
     <li><a href="#comparativa">Tabla Comparativa de Agentes Extintores</a></li>
@@ -20,8 +24,8 @@ description: "Clases de fuego A B C D K explicadas por ingenieros expertos. Iden
     <li><a href="#proceso">Proceso Profesional de Evaluación</a></li>
     <li><a href="#costos">Costos de Extintores por Clase en CDMX</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
-  </ol>
-</div>
+  </ul>
+</nav>
 
 <section id="que-es" class="content-section">
   <h2>Qué son las Clases de Fuego: Definición Técnica Completa</h2>
@@ -264,42 +268,42 @@ description: "Clases de fuego A B C D K explicadas por ingenieros expertos. Iden
   <h2>Preguntas Frecuentes sobre Clases de Fuego</h2>
   
   <div class="faq-accordion">
-    <details class="faq-item">
-      <summary class="faq-question">¿Cómo identifico qué clase de fuego tengo en mi negocio?</summary>
-      <div class="faq-answer">
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-1">¿Cómo identifico qué clase de fuego tengo en mi negocio?</button>
+<div class="faq-answer" id="faq-clases4-1">
         <p>La identificación correcta requiere inventario exhaustivo de materiales combustibles presentes. Clase A incluye materiales sólidos como madera, papel, cartón, textiles y plásticos ordinarios que dejan cenizas carbonosas. Clase B comprende líquidos inflamables como gasolina, diesel, alcoholes, aceites hidráulicos y gases licuados (propano, butano). Clase C abarca equipos eléctricos que permanecen energizados: computadoras, tableros eléctricos, motores, UPS y sistemas de control. Clase D involucra metales combustibles como magnesio, titanio, sodio, potasio y sus aleaciones. Clase K específicamente aceites vegetales y grasas animales en cocinas comerciales que operan sobre 350°C. Un negocio típicamente presenta múltiples clases: una oficina tiene Clase A (mobiliario), Clase C (computadoras) y potencialmente Clase B (combustibles de vehículos en estacionamiento).</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cuánto cuesta un extintor según la clase de fuego en CDMX?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-2">¿Cuánto cuesta un extintor según la clase de fuego en CDMX?</button>
+<div class="faq-answer" id="faq-clases4-2">
         <p>Los precios varían significativamente según la tecnología del agente extintor. Extintores básicos Clase A (agua 6L) cuestan $600-$900 MXN. Clase B-C con CO₂ de 3.5kg van de $2,200-$2,800 MXN. Agentes limpios para Clase C (FM-200) cuestan $8,500-$15,000 MXN pero evitan daños por residuos. Clase D especializada (Met-L-X 9kg) cuesta $3,500-$4,500 MXN. Clase K para cocinas (Wet Chemical 6L) va de $4,500-$6,000 MXN. El mantenimiento anual representa 15-25% del costo inicial: $120-$1,200 MXN según complejidad. La inversión debe evaluarse versus el costo potencial de no tener protección adecuada: un incendio no controlado genera pérdidas 100-1000 veces superiores al costo del equipo apropiado.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Qué normas mexicanas regulan las clases de fuego y extintores?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-3">¿Qué normas mexicanas regulan las clases de fuego y extintores?</button>
+<div class="faq-answer" id="faq-clases4-3">
         <p>La NOM-154-SCFI establece especificaciones técnicas para extintores, incluyendo pictogramas obligatorios por clase de fuego, capacidades mínimas certificadas y etiquetado de seguridad. Exige símbolos estandarizados: triángulo verde (Clase A), cuadrado rojo (Clase B), círculo azul (Clase C), estrella amarilla (Clase D), hexágono negro (Clase K). La NOM-002-STPS regula obligaciones patronales en centros de trabajo: evaluación de riesgos específicos por clase, capacitación diferenciada de brigadas (8 horas anuales), mantenimiento preventivo documentado y planes de emergencia específicos por tipo de fuego. Incumplimiento genera multas de $8,745-$87,450 MXN más clausura temporal. La certificación de extintores debe realizarse en laboratorios acreditados por EMA con renovación trienal obligatoria.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cada cuánto debo revisar y mantener extintores por clase de fuego?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-4">¿Cada cuánto debo revisar y mantener extintores por clase de fuego?</button>
+<div class="faq-answer" id="faq-clases4-4">
         <p>La NOM-154-SCFI establece frecuencias específicas de mantenimiento. Inspección visual mensual obligatoria verificando presión, señalización, accesibilidad y estado físico general. Mantenimiento preventivo anual incluyendo pesaje, revisión de componentes, recarga si es necesario y actualización de etiquetas de servicio. Prueba hidrostática quinquenal para cilindros a presión, verificando integridad estructural a 1.5 veces la presión de trabajo (262-292 psi para extintores estándar). Extintores especializados Clase D y K requieren verificación semestral adicional por degradación acelerada de agentes químicos. El incumplimiento de frecuencias de mantenimiento anula la garantía del fabricante y genera responsabilidad legal en caso de falla durante emergencia. Documentación completa es obligatoria para auditorías de Protección Civil y renovación de licencias de funcionamiento.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Puedo usar un extintor ABC para todas las clases de fuego?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-5">¿Puedo usar un extintor ABC para todas las clases de fuego?</button>
+<div class="faq-answer" id="faq-clases4-5">
         <p>Los extintores ABC NO cubren todas las clases de fuego y su uso incorrecto puede ser contraproducente. Son efectivos únicamente para Clase A (sólidos), B (líquidos inflamables) y C (eléctricos desenergizados), pero fallan en Clase D (metales combustibles) donde pueden causar reacciones exotérmicas peligrosas, y en Clase K (aceites de cocina a alta temperatura) donde el reavivamiento es inmediato. Adicionalmente, el polvo químico seco ABC es abrasivo y corrosivo, causando daños permanentes a equipos electrónicos sensibles valorados hasta $1,000,000 MXN en centros de cómputo. En equipos médicos críticos o instrumentación de precisión, los residuos de polvo generan fallas posteriores costosas. La estrategia técnica óptima combina agentes específicos: CO₂ o agentes limpios para riesgos eléctricos, agentes especializados para metales y sistemas Clase K para cocinas comerciales.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cómo contacto a MANEXT para evaluación de clases de fuego en mi empresa?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases4-6">¿Cómo contacto a MANEXT para evaluación de clases de fuego en mi empresa?</button>
+<div class="faq-answer" id="faq-clases4-6">
         <p>MANEXT ofrece evaluación profesional sin costo para empresas en CDMX y zona metropolitana incluyendo Coyoacán, Naucalpan, San Ángel y Parque Industrial Vallejo. Nuestros ingenieros certificados realizan auditorías exhaustivas identificando todas las clases de fuego presentes, evalúan compatibilidades de agentes extintores y diseñan sistemas integrales de protección. El servicio incluye memoria técnica, planos ejecutivos, especificaciones de equipos y capacitación de brigadas. Contacta directamente al 55 7008 1816 para programar visita técnica, o envía mensaje WhatsApp al 52-155-3968-9272 con ubicación y giro de tu empresa. Tiempo de respuesta: 24-48 horas para evaluaciones urgentes, entrega de propuesta técnica en 5-7 días hábiles. Cobertura garantizada en toda la zona metropolitana con más de 80 años de experiencia atendiendo +15,000 empresas.</p>
       </div>
-    </details>
+</div>
   </div>
 </section>
 

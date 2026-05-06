@@ -1,8 +1,11 @@
 ---
-title: "Brigadas Contra Incendio: Cómo Organizarlas en tu Empresa"
+title: "Brigadas Contra Incendio: Cómo Organizarlas en tu Empresa según NOM-002-STPS 2026"
 description: "Guía completa para integrar y organizar brigadas contra incendio en tu empresa según NOM-002-STPS y STPS: estructura, roles, requisitos legales, capacitación y documentación."
+pubDate: "2026-05-15"
+heroRight:
+  - "La NOM-002-STPS obliga a los centros de trabajo a contar con brigadas contra incendio capacitadas y documentadas. Sin una brigada bien estructurada con roles claros y capacitación real, los primeros minutos de una emergencia son caos — exactamente cuando más importa la coordinación."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años apoyando a empresas en CDMX a integrar brigadas contra incendio. Impartimos capacitación práctica con extintores reales, entregamos constancias DC-3 registradas ante STPS y apoyamos la estructuración del plan de emergencia."
 ---
-
 <div class="article-intro">
   <p>La NOM-002-STPS-2010 no solo exige extintores en buen estado —también obliga a los centros de trabajo a contar con brigadas contra incendio capacitadas y documentadas. Sin embargo, la mayoría de las empresas desconoce cómo estructurar correctamente estas brigadas, quiénes deben integrarlas, cuántos brigadistas se necesitan y qué documentación debe estar disponible durante una verificación de Protección Civil o de la STPS.</p>
   <p>Una brigada contra incendio bien organizada puede marcar la diferencia entre una emergencia contenida y una catástrofe. No se trata solo de cumplir en papel —se trata de que su personal sepa qué hacer exactamente en los primeros minutos, cuando el tiempo y la respuesta coordinada son críticos.</p>
@@ -10,8 +13,8 @@ description: "Guía completa para integrar y organizar brigadas contra incendio 
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es-brigada">Qué es una Brigada Contra Incendio y Por Qué es Obligatoria</a></li>
     <li><a href="#requisitos-legales">Requisitos Legales: NOM-002-STPS y STPS</a></li>
     <li><a href="#estructura">Estructura de la Brigada: Roles y Responsabilidades</a></li>
@@ -20,7 +23,7 @@ description: "Guía completa para integrar y organizar brigadas contra incendio 
     <li><a href="#plan-emergencia">Integración con el Plan de Emergencia</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Capacita tu Brigada con MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es-brigada">Qué es una Brigada Contra Incendio y Por Qué es Obligatoria</h2>
@@ -47,7 +50,7 @@ description: "Guía completa para integrar y organizar brigadas contra incendio 
   <li><strong>Listado actualizado de brigadistas:</strong> El listado de brigadistas activos, sus roles y turnos debe mantenerse actualizado y estar disponible para verificación.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>¿Qué pide Protección Civil además de la STPS?</h4>
   <p>Las autoridades de Protección Civil del estado o municipio pueden tener requisitos adicionales para el Programa Interno de Protección Civil (PIPC). En el caso de la Ciudad de México, la Ley de Gestión Integral del Riesgo y Protección Civil establece la obligación de contar con PIPC para establecimientos de aforo mayor a 50 personas o que manejen materiales peligrosos. Las brigadas son un componente central de ese programa.</p>
 </div>
@@ -112,7 +115,7 @@ description: "Guía completa para integrar y organizar brigadas contra incendio 
   <li><strong>Turnos nocturnos o fin de semana:</strong> Debe garantizarse que en todos los turnos exista al menos un brigadista capacitado presente. La brigada no puede ser solo de turno matutino si el establecimiento opera las 24 horas.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Rotación y bajas de brigadistas</h4>
   <p>Es recomendable que entre el 20% y 30% de los brigadistas sean "suplentes" capacitados que puedan cubrir ausencias. Las altas y bajas de personal afectan la brigada: cada vez que un brigadista sale de la empresa o cambia de área, su reemplazo debe capacitarse y documentarse antes de asumir el rol.</p>
 </div>
@@ -162,54 +165,45 @@ description: "Guía completa para integrar y organizar brigadas contra incendio 
 </ul>
 
 <div id="faq" class="faq-section">
-  <h2>Preguntas Frecuentes</h2>
-
   <div class="faq-item">
-    <div class="faq-question">¿Es obligatorio tener brigada si mi empresa tiene menos de 10 trabajadores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-1">¿Es obligatorio tener brigada si mi empresa tiene menos de 10 trabajadores?</button>
+    <div class="faq-answer" id="faq-brigadas-1">
       <p>La NOM-002-STPS aplica a todos los centros de trabajo independientemente del número de trabajadores, aunque los requisitos se gradúan por nivel de riesgo. Incluso en una microempresa, la norma exige que haya al menos un trabajador capacitado para actuar en caso de incendio. En la práctica, para establecimientos muy pequeños, la "brigada" puede ser de 1 o 2 personas con capacitación básica documentada.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Los brigadistas reciben algún beneficio o compensación adicional?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-2">¿Los brigadistas reciben algún beneficio o compensación adicional?</button>
+    <div class="faq-answer" id="faq-brigadas-2">
       <p>La normativa no establece compensación económica obligatoria para los brigadistas. Sin embargo, la función de brigadista implica responsabilidades adicionales y ciertos riesgos, por lo que muchas empresas implementan reconocimientos, días de permiso o beneficios menores como incentivo. Lo que sí es indispensable es el nombramiento formal por escrito y la constancia de aceptación voluntaria del cargo.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Un trabajador puede negarse a ser brigadista?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-3">¿Un trabajador puede negarse a ser brigadista?</button>
+    <div class="faq-answer" id="faq-brigadas-3">
       <p>Sí. El nombramiento como brigadista requiere la aceptación voluntaria del trabajador —esto es precisamente por lo que debe documentarse con una constancia de aceptación. La empresa puede promover la participación voluntaria, pero no puede obligar a un trabajador a asumir el rol si no desea hacerlo. Esto es importante tenerlo en cuenta al momento de integrar la brigada.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Con qué frecuencia se debe recapacitar a los brigadistas?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-4">¿Con qué frecuencia se debe recapacitar a los brigadistas?</button>
+    <div class="faq-answer" id="faq-brigadas-4">
       <p>La normativa exige capacitación periódica sin especificar un intervalo exacto. La práctica estándar aceptada por la STPS y Protección Civil es un refrescamiento anual. Sin embargo, si hay cambios en el plan de emergencia, nueva instalación de equipos, cambios en la estructura del edificio o ingreso de nuevos brigadistas, se requiere capacitación específica sin esperar el ciclo anual.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Cuántos simulacros debo hacer al año?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-5">¿Cuántos simulacros debo hacer al año?</button>
+    <div class="faq-answer" id="faq-brigadas-5">
       <p>La NOM-002-STPS exige al menos un simulacro al año. Protección Civil de algunas jurisdicciones puede requerir más. En establecimientos de alto riesgo o con aforo elevado, la recomendación es realizar 2 simulacros al año: uno anunciado y uno sorpresa, para evaluar la respuesta real del personal. Todos deben documentarse con el reporte correspondiente.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿La capacitación de brigadistas puede hacerse en línea?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-brigadas-6">¿La capacitación de brigadistas puede hacerse en línea?</button>
+    <div class="faq-answer" id="faq-brigadas-6">
       <p>La parte teórica puede realizarse en modalidad mixta o en línea, pero la práctica con extintores y evacuación no puede sustituirse por formación virtual. Las autoridades son claras en que la constancia DC-3 de capacitación en manejo de extintores debe corresponder a capacitación con práctica real. MANEXT ofrece sesiones presenciales in situ para hacer la práctica directamente en las instalaciones de su empresa.</p>
     </div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Forma y Capacita tu Brigada con MANEXT</h3>
-  <p>Impartimos capacitación práctica con extintores reales, entregamos constancias DC-3 registradas ante STPS y apoyamos la estructuración de su plan de emergencia. Su brigada lista para cumplimiento y emergencias reales.</p>
-  <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20capacitaci%C3%B3n%20para%20brigada%20contra%20incendio%20en%20mi%20empresa" class="btn-cta">Solicitar Capacitación de Brigada</a>
-  <p>O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

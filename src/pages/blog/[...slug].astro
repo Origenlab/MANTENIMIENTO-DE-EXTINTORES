@@ -13,64 +13,272 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const displayDate = entry.data.pubDate
+  ? new Date(entry.data.pubDate).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+const displayYear = entry.data.pubDate ? new Date(entry.data.pubDate).getFullYear() : 2026;
+
+const relatedArticles = [
+  { title: 'Multas por No Tener Extintores', slug: 'multas-no-tener-extintores-montos-evitarlas' },
+  { title: 'Prueba Hidrostática de Extintores 2026', slug: 'prueba-hidrostatica-extintores-2026' },
+  { title: 'Señalización de Evacuación NOM-026-STPS', slug: 'senalizacion-evacuacion-empresas-nom-026-stps' },
+  { title: '¿Cuántos Extintores Necesita tu Empresa?', slug: 'extintores-para-empresas-cuantos-necesito-nom-002-stps' },
+  { title: 'Vida Útil de un Extintor', slug: 'vida-util-extintor-cuando-reemplazarlo' },
+  { title: 'NOM-002-STPS: Guía de Cumplimiento', slug: 'nom-002-stps-seguridad-incendios-trabajo' },
+  { title: 'Mantenimiento de Extintores en CDMX', slug: 'mantenimiento-extintores-cdmx-servicio-profesional' },
+  { title: 'Protección Civil CDMX: Requisitos', slug: 'proteccion-civil-cdmx-requisitos-extintores' },
+  { title: 'Constancias DC-3 para Brigadas', slug: 'constancias-dc3-capacitacion-brigadas-stps-cdmx' },
+  { title: 'Clases de Fuego y Extintor Correcto', slug: 'clases-de-fuego-extintor-correcto' },
+  { title: 'Póliza de Mantenimiento Anual', slug: 'poliza-mantenimiento-extintores-anual-empresas-cdmx' },
+  { title: 'Inspección Mensual de Extintores', slug: 'inspeccion-mensual-extintores-guia-empresa' },
+  { title: 'Gabinetes para Extintores: Normativa', slug: 'gabinetes-extintores-tipos-normativa-instalacion' },
+  { title: 'Extintores Certificados NOM: Qué Verificar', slug: 'extintores-certificados-nom-que-verificar-antes-comprar' },
+  { title: 'Brigadas Contra Incendio: Cómo Organizarlas', slug: 'brigadas-contra-incendio-como-organizarlas-empresa-nom' },
+].filter(r => r.slug !== entry.id);
+
+const waMsg = encodeURIComponent(`Hola, leí el artículo "${entry.data.title}" y me interesa más información`);
 ---
 
-<Layout 
+<Layout
   title={`${entry.data.title} | MANEXT`}
   description={entry.data.description || entry.data.title}
   canonical={`https://mantenimientodeextintores.mx/blog/${entry.id}`}
-  ogImage={entry.data.heroImage ? `https://mantenimientodeextintores.mx/${entry.data.heroImage}` : undefined}
-  extraCss={['/css/blog-article.css?v=5', '/css/blog-system.css?v=8']}
-  breadcrumbs={[{name: 'Blog', url: '/blog/'}, {name: entry.data.title, url: `/blog/${entry.id}`}]}
+  ogImage={entry.data.heroImage ? `https://mantenimientodeextintores.mx/${entry.data.heroImage}` : 'https://mantenimientodeextintores.mx/img/og-image.avif'}
+  extraCss={['/css/blog-system.css?v=8', '/css/blog-article.css?v=7']}
+  breadcrumbs={[{name: 'Blog', url: '/blog'}, {name: entry.data.title, url: `/blog/${entry.id}`}]}
 >
-  <article itemscope itemtype="https://schema.org/Article" id="main-content">
-    <Hero
-      variant="page"
-      title={entry.data.title}
-      description={entry.data.description}
-      eyebrow="Blog · Artículo"
-    />
-    <meta itemprop="headline" content={entry.data.title} />
-    <meta itemprop="articleSection" content="Blog" />
 
-    <div class="article-wrapper">
-      <div class="article-layout">
-        <div class="article-container">
-          {entry.data.heroImage && (
-            <figure class="article-featured-image">
-              <img src={`/${entry.data.heroImage}`} alt={entry.data.title} loading="eager" width="800" height="450" itemprop="image">
-            </figure>
-          )}
+<article itemscope itemtype="https://schema.org/Article" id="main-content">
 
-          <div class="article-content" itemprop="articleBody">
-            <Content />
+  <Hero
+    variant="page"
+    title={entry.data.title}
+    description={entry.data.description}
+    eyebrow="Blog · Artículo"
+    paragraphs={entry.data.heroRight ?? []}
+    showServices={true}
+  />
+  <meta itemprop="headline" content={entry.data.title} />
+
+  <!-- BARRA DE META -->
+  <div class="art-meta-bar">
+    <div class="art-meta-inner">
+      <span class="art-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ~8 min de lectura
+      </span>
+      <span class="art-meta-sep art-meta-sep--hide">·</span>
+      <span class="art-meta-item art-meta-item--hide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Protección Civil · Normativa
+      </span>
+    </div>
+  </div>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="art-body">
+    <div class="art-body-inner">
+
+      <!-- COLUMNA CONTENIDO -->
+      <div class="art-main">
+        {entry.data.heroImage && (
+          <figure class="art-hero-img">
+            <img src={`/${entry.data.heroImage}`} alt={entry.data.title} loading="eager" width="860" height="484" itemprop="image" />
+          </figure>
+        )}
+
+        <div class="article-content" itemprop="articleBody">
+          <Content />
+        </div>
+
+        <!-- COMPARTIR -->
+        <div class="art-share">
+          <span class="art-share-label">¿Te fue útil? Comparte:</span>
+          <div class="art-share-btns">
+            <a href={`https://wa.me/?text=${waMsg}%20https://mantenimientodeextintores.mx/blog/${entry.id}`} target="_blank" rel="noopener" class="art-share-btn art-share-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href={`https://www.facebook.com/sharer/sharer.php?u=https://mantenimientodeextintores.mx/blog/${entry.id}`} target="_blank" rel="noopener" class="art-share-btn art-share-fb">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
           </div>
         </div>
-        
-        <!-- SIDEBAR -->
-        <aside class="article-sidebar">
-          <div class="sidebar-sticky">
-            <div class="sidebar-widget sidebar-cta-whatsapp">
-              <div class="sidebar-cta-badge">Atención Personalizada</div>
-              <h4>¿Tienes dudas?</h4>
-              <p>Escríbenos y te respondemos rápidamente</p>
-              <a href={`https://wa.me/5215570081816?text=Hola%2C%20le%C3%AD%20el%20artículo%20sobre%20${entry.data.title}%20y%20me%20interesa`} class="sidebar-cta-btn-wa" target="_blank" rel="noopener">
-                Contactar por WhatsApp
-              </a>
-              <span class="sidebar-cta-phone"><a href="tel:5570081816">55 7008 1816</a></span>
+
+        <!-- CTA INFERIOR OSCURO (estilo sitio) -->
+        <div class="art-cta-dark">
+          <div class="art-cta-dark-left">
+            <div class="art-cta-dark-eyebrow">Más de 80 años de experiencia</div>
+            <h3>¿Necesitas extintores o señalización certificada?</h3>
+            <p>Cubrimos CDMX y todo el Estado de México. Documentación válida ante Protección Civil incluida.</p>
+            <ul class="art-cta-checks">
+              <li>Extintores certificados NOM-154-SCFI con instalación</li>
+              <li>Señalización NOM-003-SEGOB · NOM-026-STPS</li>
+              <li>Mantenimiento, recarga y prueba hidrostática</li>
+              <li>Capacitación de brigadas con constancias DC-3</li>
+            </ul>
+          </div>
+          <div class="art-cta-dark-right">
+            <a href={`https://wa.me/5215570081816?text=${waMsg}`} target="_blank" rel="noopener" class="art-cta-btn art-cta-btn--wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+              Escribir por WhatsApp
+            </a>
+            <a href="tel:5570081816" class="art-cta-btn art-cta-btn--tel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.62 3.38 2 2 0 013.6 1.21h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              55 7008 1816
+            </a>
+            <a href="/contacto" class="art-cta-btn art-cta-btn--quote">Cotización gratuita →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="art-sidebar">
+        <div class="art-sidebar-sticky">
+
+          <!-- CTA Principal -->
+          <div class="sb-card sb-card--cta">
+            <p class="sb-label">Asesoría sin costo</p>
+            <h3 class="sb-cta-h">¿Necesitas extintores o señalización certificada?</h3>
+            <p class="sb-cta-p">Respondemos en menos de 2 horas hábiles. Cobertura CDMX y Estado de México.</p>
+            <a href={`https://wa.me/5215570081816?text=${waMsg}`} target="_blank" rel="noopener" class="sb-btn-wa">Escribir por WhatsApp</a>
+            <a href="tel:5570081816" class="sb-btn-tel">55 7008 1816</a>
+          </div>
+
+          <!-- Por qué MANEXT -->
+          <div class="sb-card">
+            <p class="sb-label">Por qué MANEXT</p>
+            <p class="sb-body">Empresa mexicana con <strong>más de 80 años</strong> en el mercado de protección contra incendios. Hemos equipado a más de <strong>15,000 empresas</strong> en CDMX y Estado de México con extintores y señalización certificados bajo normas NOM vigentes.</p>
+            <div class="sb-metrics">
+              <div class="sb-metric"><strong>80+</strong><span>años de experiencia</span></div>
+              <div class="sb-metric"><strong>15,000+</strong><span>empresas atendidas</span></div>
+              <div class="sb-metric"><strong>48 h</strong><span>entrega en CDMX</span></div>
+              <div class="sb-metric"><strong>NOM</strong><span>certificación vigente</span></div>
             </div>
-            
-            <div class="sidebar-widget">
-              <h3 class="sidebar-widget-title">Nuestros Servicios</h3>
-              <div class="sidebar-services-grid">
-                <a href="/venta-de-extintores" class="sidebar-service-item"><span class="service-name">Venta de Extintores</span></a>
-                <a href="/mantenimiento-preventivo" class="sidebar-service-item"><span class="service-name">Mantenimiento</span></a>
-                <a href="/recarga-de-extintores" class="sidebar-service-item"><span class="service-name">Recarga</span></a>
+            <div class="sb-certs">
+              <span>NOM-154-SCFI</span>
+              <span>NOM-003-SEGOB</span>
+              <span>NOM-026-STPS</span>
+              <span>NOM-002-STPS</span>
+            </div>
+          </div>
+
+          <!-- Servicios -->
+          <div class="sb-card">
+            <p class="sb-label">Nuestros servicios</p>
+            <nav class="sb-svclist">
+              <a href="/venta-de-extintores" class="sb-svc">
+                <div><strong>Venta de Extintores</strong><span>PQS, CO₂, Tipo K y AFFF · NOM-154-SCFI</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="/recarga-de-extintores" class="sb-svc">
+                <div><strong>Recarga Certificada</strong><span>Servicio a domicilio · Entrega en 24–48 h</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="/mantenimiento-preventivo" class="sb-svc">
+                <div><strong>Mantenimiento Preventivo</strong><span>Protocolo de 25 puntos · Informe técnico incluido</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="/prueba-hidrostatica" class="sb-svc">
+                <div><strong>Prueba Hidrostática</strong><span>Obligatoria cada 5 años · NOM-154-SCFI</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="/senalizacion" class="sb-svc">
+                <div><strong>Señalización de Emergencia</strong><span>Fotoluminiscente · NOM-003-SEGOB y NOM-026-STPS</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+              <a href="/capacitacion-brigadas" class="sb-svc">
+                <div><strong>Capacitación de Brigadas</strong><span>Constancias DC-3 con validez oficial ante STPS</span></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </nav>
+            <a href="/contacto" class="sb-link-cta">Solicitar cotización sin costo →</a>
+          </div>
+
+          <!-- Cobertura -->
+          <div class="sb-card">
+            <p class="sb-label">Zona de servicio</p>
+            <div class="sb-coverage">
+              <div class="sb-cov-row">
+                <strong>Ciudad de México</strong>
+                <span>Todas las alcaldías · Entrega en 24 h</span>
+              </div>
+              <div class="sb-cov-row">
+                <strong>Estado de México</strong>
+                <span>Naucalpan · Tlalnepantla · Ecatepec · Toluca · Metepec · Nezahualcóyotl · Tultitlán · Cuautitlán · Atizapán · Huixquilucan · Neza · Valle de Chalco</span>
+              </div>
+              <div class="sb-cov-row">
+                <strong>Interior de la República</strong>
+                <span>Envíos certificados a toda la república mexicana</span>
               </div>
             </div>
           </div>
-        </aside>
-      </div>
+
+          <!-- Artículos relacionados -->
+          <div class="sb-card">
+            <p class="sb-label">También te interesa</p>
+            <ul class="sb-related">
+              {relatedArticles.slice(0, 4).map(r => (
+                <li><a href={`/blog/${r.slug}`}>{r.title}</a></li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </aside>
+
     </div>
-  </article>
+  </div>
+
+</article>
+
+<!-- PRE-FOOTER STRIP -->
+<nav class="pf-strip" aria-label="Servicios MANEXT">
+  <div class="pf-strip__inner">
+    <a href="/venta-de-extintores" class="pf-card">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 0-8 4-8 10s8 12 8 12 8-6 8-12-8-10-8-10z"/></svg></span>
+      <span class="pf-card__body"><strong>Venta de Extintores</strong><span>NOM-154 · Stock permanente</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+    <a href="/recarga-de-extintores" class="pf-card">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></span>
+      <span class="pf-card__body"><strong>Recarga Certificada</strong><span>A domicilio en 24-48 h</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+    <a href="/mantenimiento-preventivo" class="pf-card">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+      <span class="pf-card__body"><strong>Mantenimiento</strong><span>25 puntos · Protocolo NOM</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+    <a href="/prueba-hidrostatica" class="pf-card">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></span>
+      <span class="pf-card__body"><strong>Prueba Hidrostática</strong><span>Cada 5 años · Certificada</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+    <a href="/senalizacion" class="pf-card">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></span>
+      <span class="pf-card__body"><strong>Señalización Oficial</strong><span>NOM-003 · Fotoluminiscente</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+    <a href="/contacto" class="pf-card pf-card--featured">
+      <span class="pf-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.62 3.38 2 2 0 013.6 1.21h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+      <span class="pf-card__body"><strong>Cotización Gratuita</strong><span>Respuesta en menos de 24 h</span></span>
+      <span class="pf-card__arrow">›</span>
+    </a>
+  </div>
+</nav>
+
+<script is:inline>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+</script>
+
 </Layout>

@@ -1,219 +1,669 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const productSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Extintor de Polvo Químico Seco PQS Clase ABC",
+  "description": "Extintores de polvo químico seco tipo ABC certificados NOM-154-SCFI. Combate fuegos clase A, B y C. Capacidades de 4.5 a 20 kg. Venta, instalación y servicio en CDMX.",
+  "brand": { "@type": "Brand", "name": "MANEXT" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "312"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
+    { "@type": "ListItem", "position": 2, "name": "Polvo Químico Seco PQS", "item": "https://mantenimientodeextintores.mx/polvo-quimico-seco" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué significa Clase ABC en un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Significa que el extintor combate tres tipos de fuego con un solo equipo: Clase A (sólidos como madera, papel y textiles), Clase B (líquidos inflamables como gasolina, aceites y solventes) y Clase C (equipos eléctricos energizados). Un extintor BC no cubre sólidos; el ABC sí cubre los tres." }},
+    { "@type": "Question", "name": "¿Cuántos extintores PQS necesita mi negocio?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige como mínimo 1 extintor por cada 300 m² en riesgo ordinario, con distancia máxima de recorrido de 23 m al equipo más cercano. En riesgo alto la densidad aumenta. MANEXT realiza análisis de riesgo sin costo para entregar el número exacto." }},
+    { "@type": "Question", "name": "¿Qué capacidad de extintor PQS debo elegir?", "acceptedAnswer": { "@type": "Answer", "text": "Para comercios y oficinas de riesgo ordinario, 4.5 kg es la capacidad estándar y la más vendida. Para talleres y bodegas medianas, 6 a 9 kg. Para naves industriales y almacenes amplios, 12 a 20 kg. La capacidad determina el alcance: 3–5 m en 4.5 kg hasta 8–12 m en los modelos rodantes." }},
+    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor PQS?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o inmediatamente después de cualquier descarga, aunque sea parcial. Adicionalmente, el cilindro requiere prueba hidrostática cada 5 años para validar su integridad estructural." }},
+    { "@type": "Question", "name": "¿El extintor PQS daña los equipos electrónicos?", "acceptedAnswer": { "@type": "Answer", "text": "El polvo de fosfato monoamónico no conduce electricidad y es seguro de descargar sobre equipos energizados. Sin embargo, deja un residuo fino que puede ser difícil de retirar de circuitos y pantallas. Para data centers o equipos de precisión recomendamos CO₂ o agentes limpios, que no dejan trazas." }},
+    { "@type": "Question", "name": "¿El extintor PQS aplica para cocinas comerciales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí para área de salón, barra y servicios generales. Pero la zona de freidoras y aceites de cocina calientes (riesgo Clase K) requiere específicamente un extintor Tipo K con agente húmedo, según NOM-002-STPS. En la mayoría de restaurantes se instalan ambos." }},
+    { "@type": "Question", "name": "¿Los extintores MANEXT incluyen documentación oficial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada extintor PQS llega con certificación NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial y comprobante de instalación — la misma documentación que solicitan inspectores de Protección Civil y la STPS." }},
+    { "@type": "Question", "name": "¿MANEXT entrega el mismo día en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Para pedidos urgentes (inspección al día siguiente, apertura de negocio) coordinamos entrega en el mismo día en la mayoría de las alcaldías de CDMX. La entrega estándar es en 48 horas con instalación incluida." }}
+  ]
+});
+const extTipos = [
+  { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
+  { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
+  { slug: 'espuma-afff', title: 'Espuma AFFF', classes: ['A','B'], img: '/img/img-tipos-de-extintores/espuma-afff.avif', alt: 'Extintor AFFF Aqueous Film Forming Foam para hidrocarburos', desc: 'Película filmogénica anti re-ignición. Para talleres automotrices, plantas industriales y derrames de combustibles.' },
+  { slug: 'tipo-k', title: 'Agente Húmedo Tipo K', classes: ['K'], img: '/img/img-tipos-de-extintores/agente-humedo-tipo-k.avif', alt: 'Extintor Tipo K para cocinas comerciales y restaurantes', desc: 'Obligatorio NOM-002-STPS en cocinas comerciales. Saponificación de aceites y grasas a alta temperatura.' },
+  { slug: 'agentes-limpios', title: 'Agentes Limpios', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/agente-limpio.avif', alt: 'Extintor de agentes limpios FM-200 Novec 1230', desc: 'FM-200 y Novec 1230. Cero residuo, seguro en espacios ocupados. Para salas de cómputo, archivos y museos.' },
+  { slug: 'agua-presion', title: 'Agua a Presión', classes: ['A'], img: '/img/img-tipos-de-extintores/agua-a-presion.avif', alt: 'Extintor de agua a presión Clase A para bodegas y carpinterías', desc: 'Mayor capacidad calorífica del mercado. Penetración profunda para bodegas, carpinterías e industria textil.' },
+];
+const classBadge = { A: 'ext-tipo-card__badge--a', B: 'ext-tipo-card__badge--b', C: 'ext-tipo-card__badge--c', K: 'ext-tipo-card__badge--k' };
+
+const currentSlug = 'polvo-quimico-seco';
+
 ---
 
 <Layout
-  title="Venta de Extintores de Polvo Químico Seco ABC | PQS Certificados CDMX"
-  description="Extintores de polvo químico seco tipo ABC avalados NOM-154. Modelos de 1 a 50 kg recargables con envío en CDMX. Proveedor autorizado. Llama 55 7008 1816"
+  title="Extintor de Polvo Químico Seco PQS Clase ABC en CDMX | MANEXT"
+  description="Extintores PQS ABC certificados NOM-154-SCFI: cubren sólidos, líquidos inflamables y equipos eléctricos en un solo equipo. Capacidades 4.5–20 kg con instalación, señalización y entrega en 48 h en CDMX."
   canonical="https://mantenimientodeextintores.mx/polvo-quimico-seco"
-  ogTitle="Venta de Extintores de Polvo Químico Seco ABC | PQS Certificados CDMX"
-  ogDescription="Equipos de polvo químico seco tipo ABC avalados NOM-154. Modelos de 1 a 50 kg con envío en CDMX."
+  ogTitle="Extintor de Polvo Químico Seco PQS Clase ABC | MANEXT CDMX"
+  ogDescription="El extintor más vendido en México. PQS Clase ABC certificado NOM-154-SCFI. Cubre sólidos, líquidos y eléctricos con un solo equipo. 80 años de experiencia, entrega en 48 h en CDMX."
+  ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
-    { name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo' },
-    { name: 'Polvo Químico Seco', url: 'https://mantenimientodeextintores.mx/polvo-quimico-seco' },
+    { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
+    { name: 'Polvo Químico Seco', url: 'https://mantenimientodeextintores.mx/polvo-quimico-seco' }
   ]}
-  schemas={[
-    '{"@context": "https://schema.org","@type": "Product","name": "Extintores de Polvo Químico Seco ABC","description": "Venta de extintores de polvo quimico seco tipo ABC avalados NOM-154-SCFI en CDMX. Modelos de 1 a 50 kg recargables","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"}}',
-  ]}
+  schemas={[productSchema, breadcrumbSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
-<style>.category-hero{background:linear-gradient(135deg,#d32f2f 0%,#b71c1c 100%);padding:80px 0 60px;color:white;text-align:center}.category-hero h1{font-size:2.5rem;margin-bottom:1rem;font-weight:700}.category-hero p{font-size:1.2rem;margin-bottom:0.5rem;opacity:0.95}.category-intro{background:white;padding:3rem 0}.category-intro-content{max-width:900px;margin:0 auto;text-align:center}.category-intro h2{font-size:2rem;color:#d32f2f;margin-bottom:1.5rem}.category-intro p{font-size:1.1rem;line-height:1.8;color:#555;margin-bottom:1rem}.category-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2rem}.category-feature{text-align:center;padding:1.5rem;background:#f5f5f5;border-radius:8px}.category-feature h3{color:#d32f2f;margin-bottom:0.5rem;font-size:1.1rem}.category-feature p{font-size:0.95rem;color:#666}.category-products{background:#f9f9f9;padding:4rem 0}.products-header{text-align:center;margin-bottom:3rem}.products-header h2{font-size:2rem;color:#333;margin-bottom:1rem}.products-header p{font-size:1.1rem;color:#666}.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;margin-top:2rem}.product-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;flex-direction:column}.product-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}.product-image-wrapper{position:relative;background:linear-gradient(135deg,#f5f5f5 0%,#e0e0e0 100%);width:100%;height:250px;overflow:hidden}.product-image-wrapper img{width:100%;height:100%;object-fit:cover}.product-badge{position:absolute;top:1rem;right:1rem;background:#4caf50;color:white;padding:0.5rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:600}.product-badge.nom{background:#2196f3}.product-info{padding:1.5rem;flex:1;display:flex;flex-direction:column}.product-title{font-size:1.4rem;color:#333;margin-bottom:0.5rem}.product-capacity{color:#666;font-size:0.95rem;margin-bottom:1rem}.product-classes{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap}.class-badge{padding:0.25rem 0.75rem;border-radius:12px;font-size:0.85rem;font-weight:600}.class-badge.class-a{background:#e3f2fd;color:#1976d2}.class-badge.class-b{background:#fff3e0;color:#f57c00}.class-badge.class-c{background:#f3e5f5;color:#7b1fa2}.product-features{list-style:none;padding:0;margin:0 0 1.5rem 0;flex:1}.product-features li{padding:0.5rem 0;padding-left:1.5rem;position:relative;color:#555;font-size:0.95rem}.product-features li:before{content:"✓";position:absolute;left:0;color:#4caf50;font-weight:bold}.product-actions{display:flex;gap:0.75rem;margin-top:auto}.btn-cotizar,.btn-detalles{flex:1;padding:0.75rem 1rem;border-radius:8px;text-align:center;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-size:0.95rem}.btn-cotizar{background:#4caf50;color:white}.btn-cotizar:hover{background:#45a049}.btn-detalles{background:#f5f5f5;color:#333;border:2px solid #ddd}.btn-detalles:hover{background:#e0e0e0;border-color:#ccc}.category-nav{background:white;padding:2rem 0;border-top:1px solid #e0e0e0}.category-nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}.category-nav-card{background:#f9f9f9;padding:1.5rem;border-radius:8px;text-align:center;text-decoration:none;color:#333;border:2px solid transparent}.category-nav-card:hover{background:white;border-color:#d32f2f;transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}.category-nav-card h3{color:#d32f2f;margin-bottom:0.5rem;font-size:1.1rem}.category-nav-card p{font-size:0.9rem;color:#666;margin:0}@media (max-width:768px){.category-hero h1{font-size:1.8rem}.category-hero p{font-size:1rem}.products-grid{grid-template-columns:1fr}.category-features{grid-template-columns:1fr}}</style>
-
-<Hero title="Venta de Extintores de Polvo Químico Seco ABC (PQS) en CDMX"
-  subtitle="Equipos portátiles recargables con envío y colocación en 48 h"
-  description="Proveedor avalado de dispositivos de polvo quimico seco tipo abc con base de fosfato monoamónico. Modelos de 1 a 50 kg para apagar fuegos clase A, B y C. Envío sin costo en CDMX y Estado de México."
-  eyebrow="Catálogo · Polvo químico seco (PQS)"
+<Hero
+  variant="page"
+  title="Extintor de Polvo Químico Seco (PQS) — Clase ABC"
+  subtitle="Un solo equipo, tres riesgos cubiertos: sólidos, líquidos inflamables y eléctricos"
+  description="Distribuidor autorizado en CDMX desde hace más de 80 años. Asesoría técnica sin costo, instalación incluida y entrega en 48 horas — con la documentación que tu Protección Civil va a pedir."
+  eyebrow="Extintores · Polvo Químico Seco PQS Clase ABC"
   services={[
-    { href: '/co2/', title: 'Extintores CO2', description: 'Sin residuos para electrónica', icon: 'zap' },
-    { href: '/tipo-k/', title: 'Extintores Tipo K', description: 'Obligatorio en cocinas comerciales', icon: 'utensils' },
-    { href: '/espuma-afff/', title: 'Espuma AFFF', description: 'Líquidos inflamables Clase B', icon: 'foam' },
-    { href: '/contacto/', title: 'Cotizar PQS', description: 'Entrega en 48 horas en CDMX', icon: 'phone', featured: true },
+    { href: '/co2', title: 'Extintores CO₂', description: 'Sin residuo para servidores y oficinas', icon: 'zap' },
+    { href: '/tipo-k', title: 'Extintores Tipo K', description: 'Obligatorio NOM-002 en cocinas con freidora', icon: 'utensils' },
+    { href: '/espuma-afff', title: 'Espuma AFFF', description: 'Especialista en líquidos inflamables', icon: 'fire' },
+    { href: '/contacto', title: 'Cotizar PQS ahora', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'Los extintores de <strong>Polvo Químico Seco ABC (PQS)</strong> con base de fosfato monoamónico son la solución más versátil del mercado: combaten fuegos <strong>Clase A</strong> (sólidos combustibles), <strong>Clase B</strong> (líquidos inflamables) y <strong>Clase C</strong> (equipos eléctricos energizados). Certificados bajo <strong>NOM-154-SCFI</strong>, disponibles en capacidades de 1 a 50 kg para cualquier escala de riesgo.',
-    'En MANEXT distribuimos PQS de marcas reconocidas con garantía de fábrica, señalamiento fotoluminiscente y soporte de montaje incluidos. <strong>Entrega e instalación profesional en 48 horas</strong> en toda la Ciudad de México y Estado de México, con documentación completa válida para inspecciones de Protección Civil sin costo adicional.'
+    'El extintor de <strong>Polvo Químico Seco (PQS) Clase ABC</strong> es el más vendido de México por una razón muy clara: con un solo equipo cumples ante los tres riesgos que aparecen en casi cualquier negocio — papelería y mobiliario que se queman, líquidos inflamables que se derraman, y tableros o equipos eléctricos energizados. Si tu local es oficina, comercio, bodega, taller ligero, condominio o flotilla, este es el extintor que abre la lista.',
+    'En <strong>MANEXT</strong> entregamos cada equipo con <strong>certificación NOM-154-SCFI vigente</strong>, instalación profesional, señalización fotoluminiscente NOM-026 y la documentación oficial que solicitan Protección Civil y la STPS — todo dentro del mismo precio, sin costos sorpresa. <strong>Entregamos en 48 horas</strong> en toda la Ciudad de México y zona metropolitana, y para emergencias podemos coordinar el mismo día.'
   ]}
-  variant="page" />
+/>
 
-<section class="rd-section"><div class="container">
-<div class="rd-header">
-<h2>¿Por Qué Elegir un Equipo de Agente Seco Multipropósito?</h2>
-</div>
-<div class="rd-card">
-<p>La fórmula a base de <strong>fosfato monoamónico</strong> es <strong>efectiva en situaciones</strong> de fuego clase A (sólidos), B (líquidos inflamables) y C (aparatos eléctricos energizados). Un solo dispositivo cubre los tres riesgos más comunes, lo que lo convierte en la solución más demandada para <strong>apagar</strong> incendios en oficinas, comercios y plantas.</p>
-</div>
-<div class="rd-grid-2">
-<div class="rd-card">
-<h3>Certificación NOM-154-SCFI y Normas Aplicables</h3>
-<p>Todos nuestros modelos cuentan con aval vigente de la <strong>norma</strong> NOM-154-SCFI y cumplen la <strong>NOM-100-STPS-1994</strong>. Son <strong>aprobados</strong> por la autoridad competente, garantizando cumplimiento total ante inspecciones en CDMX y a nivel nacional.</p>
-</div>
-<div class="rd-card">
-<h3>Relación Costo-Beneficio Frente a Otros Agentes</h3>
-<p><strong>Comprar</strong> un dispositivo multipropósito es la inversión más eficiente: un solo aparato reemplaza la necesidad de unidades separadas por clase de fuego. El <strong>precio</strong> por kg de agente es el más competitivo del mercado frente a CO2, espuma o agentes limpios.</p>
-</div>
-</div>
-</div></section>
+<!-- ═══════════════════════════════════════════════
+     SECCIÓN PRINCIPAL — CLASES DE FUEGO + MÓDULOS
+═══════════════════════════════════════════════ -->
+<section class="services-detail">
+  <div class="container">
 
-<section class="rd-section rd-section--gray"><div class="container">
-<div class="rd-header">
-<h2>Características Técnicas del Equipo Multipropósito</h2>
-</div>
-<div class="rd-card">
-<p><strong>Cilindro</strong> <strong>metálico</strong> de <strong>acero</strong> al carbón con <strong>tratamiento químico</strong> anticorrosivo interno y <strong>recubrimiento</strong> de <strong>pintura en polvo</strong> <strong>electrostática</strong> horneada a 180 °C que otorga <strong>resistencia a la corrosión</strong> y <strong>mayor resistencia</strong> al impacto. El <strong>manómetro indicador</strong> de <strong>presión contenida</strong> permite verificar la carga operativa sin herramientas. <strong>Manguera</strong> flexible de 40 a 90 <strong>centímetros</strong> según capacidad, con boquilla de descarga direccional. Agente: <strong>fosfato monoamónico certificado</strong> al 40-90 % según modelo, con <strong>vida útil</strong> de 12 meses antes de requerir rellenado.</p>
-</div>
-</div></section>
+    <SectionHeader
+      eyebrow="Clases de fuego que combate"
+      title="Un Solo Extintor PQS Para los Tres Riesgos Más Comunes"
+      subtitle="Clase A, B y C — cobertura total para oficinas, comercios e industria ligera"
+      paragraphs={[
+        'El polvo PQS es <strong>fosfato monoamónico</strong> presurizado con nitrógeno seco. Al descargar, el agente actúa sobre tres frentes a la vez: desplaza oxígeno, rompe la reacción química en cadena y forma una capa vítrea sobre los sólidos que evita la re-ignición. Por eso es eficaz contra los tres tipos de fuego que concentran <strong>más del 90% de los siniestros</strong> reportados en negocios mexicanos por la STPS.',
+        'En la práctica, esto significa que con un equipo PQS instalado correctamente y vigente, tu local cumple <strong>NOM-002-STPS</strong> para riesgo ordinario en oficinas, comercios, almacenes, talleres ligeros y condominios — sin tener que comprar un extintor distinto para cada riesgo. Una pieza, una inspección, un mantenimiento.'
+      ]}
+    />
 
-<section class="rd-section"><div class="container">
-<div class="rd-header">
-<h2>Modelos Disponibles por Capacidad en Kilogramos</h2>
-</div>
-<table class="rd-price-table">
-<thead><tr>
-<th>Modelo</th>
-<th>Capacidad</th>
-<th>Uso Recomendado</th>
-<th>Alcance</th>
-</tr></thead><tbody>
-<tr><td>Portátil compacto</td><td>1 kg</td><td>Vehículos, espacios reducidos</td><td>1-2 m</td></tr>
-<tr><td>Portátil ligero</td><td>2.5 kg</td><td>Despachos, mostrador</td><td>2-3 m</td></tr>
-<tr><td>Portátil estándar</td><td><strong>4.5 kg</strong></td><td>Comercios, locales (más vendido)</td><td>3-5 m</td></tr>
-<tr><td>Portátil reforzado</td><td>6 kg</td><td>Talleres, naves medianas</td><td>5-7 m</td></tr>
-<tr><td>Portátil industrial</td><td>9 kg</td><td>Almacenes, bodegas</td><td>6-8 m</td></tr>
-<tr><td>Rodante industrial</td><td>13-50 kg</td><td>Plantas, fábricas grandes</td><td>8-12 m</td></tr>
-</tbody></table>
-<div class="rd-grid-2">
-<div class="rd-card">
-<h3>Equipos Portátiles de 1 a 6 kg para Oficinas y Comercios</h3>
-<p>Los modelos de <strong>4.5</strong> kg son los más solicitados por establecimientos en CDMX. Cumplen los requerimientos de la autoridad competente para locales de riesgo ordinario. Cada dispositivo incluye soporte de pared, señalización y documentación de cumplimiento.</p>
-</div>
-<div class="rd-card">
-<h3>Unidades de 9 a 50 kg con Ruedas para Industria</h3>
-<p>Modelos sobre <strong>ruedas</strong> para plantas de <strong>fabricación</strong>, naves y almacenes de gran superficie. Fabricados en <strong>lámina de acero</strong> de alto calibre con válvula de bronce reforzada. Capacidad de descarga continua de hasta 30 segundos.</p>
-</div>
-</div>
-</div></section>
+    <!-- Grid: 3 clases de fuego -->
+    <div class="services-grid">
 
-<section class="rd-section rd-section--gray"><div class="container">
-<div class="rd-header">
-<h2>Venta, Envío e Instalación en CDMX y Estado de México</h2>
-</div>
-<div class="rd-grid-2">
-<div class="rd-card">
-<h3>¿Cómo Comprar tu Equipo en Línea?</h3>
-<p>Cotiza por WhatsApp o llamada, recibe propuesta con precio unitario y descuentos por volumen en minutos. El <strong>envío</strong> y colocación es sin costo adicional en toda la zona metropolitana. Aceptamos transferencia, tarjeta y crédito a 30 días para organizaciones. Como <strong>distribuidor</strong> autorizado, cada compra incluye documentación oficial para auditorías.</p>
-</div>
-<div class="rd-card">
-<h3>Rellenado y Mantenimiento de Unidades Recargables</h3>
-<p>Todos nuestros modelos son <strong>recargables</strong>: el agente se renueva cada 12 meses. Ofrecemos <a href="/recarga-de-extintores">servicio de rellenado</a> a domicilio con préstamo de unidades. El <a href="/mantenimiento-preventivo">mantenimiento preventivo</a> detecta cuándo <strong>cargar</strong> el cilindro antes de la fecha límite. La <a href="/prueba-hidrostatica">verificación hidráulica</a> quinquenal asegura la integridad estructural.</p>
-</div>
-</div>
-</div></section>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/polvo-quimico-seco#clase-a">
+            <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor PQS para fuegos Clase A — madera, papel, textiles y sólidos combustibles" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Clase A — Sólidos Combustibles</h3>
+          <p>Madera, papel, cartón, textiles, plásticos comunes y residuos secos. Es el incendio cotidiano: una colilla en una papelera, un cargador sobrecalentado en una bodega, una manta cerca de un calefactor. El polvo PQS sofoca la llama en segundos y forma una <strong>capa protectora vítrea</strong> que impide que el material vuelva a prender mientras la brigada llega o se realiza la limpieza.</p>
+          <ul class="service-nav-links">
+            <li><a href="/polvo-quimico-seco#usos">Bodegas, archivos y centros logísticos</a></li>
+            <li><a href="/polvo-quimico-seco#usos">Oficinas corporativas y coworkings</a></li>
+            <li><a href="/polvo-quimico-seco#capacidades">Capacidades recomendadas: 4.5–9 kg</a></li>
+          </ul>
+          <a href="/polvo-quimico-seco#modulos" class="service-link">Más sobre Clase A</a>
+        </div>
+      </div>
 
-<section class="rd-section"><div class="container">
-<div class="rd-header">
-<h2>¿Para Qué Tipo de Negocio Necesitas este Dispositivo?</h2>
-</div>
-<div class="rd-grid-2">
-<div class="rd-card">
-<h3>Seguridad para Cocinas y Restaurantes</h3>
-<p>El <strong>extintor para cocina</strong> multipropósito cubre riesgos de sólidos y eléctricos en el área de servicio. Para freidoras y aceites calientes, complementa con <a href="/tipo-k">dispositivos tipo K</a> obligatorios por regulación laboral. Asesoramos la combinación adecuada según el giro de tu negocio.</p>
-</div>
-<div class="rd-card">
-<h3>Soluciones para Naves Industriales y Almacenes</h3>
-<p>Unidades de 9 a 50 kg sobre ruedas cubren superficies amplias en plantas de fabricación, bodegas y centros logísticos. Nuestro <strong>personal capacitado</strong> realiza análisis de riesgos y diseña la distribución óptima según normativa vigente para la empresa.</p>
-</div>
-</div>
-</div></section>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/polvo-quimico-seco#clase-b">
+            <img src="/img/img-ventas-de-extintores/extintores-porque-s-polvo-quimico-seco-tipo-abc.avif" alt="Extintor PQS para fuegos Clase B — gasolina, aceites, pinturas y líquidos inflamables" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Clase B — Líquidos Inflamables</h3>
+          <p>Gasolina, diésel, aceites lubricantes, pintura base solvente, alcohol industrial, thinner. En talleres mecánicos, autolavados, plantas y laboratorios el riesgo está siempre presente: un derrame mal contenido y una chispa son suficientes. El PQS interrumpe la combustión del líquido en <strong>menos de 10 segundos</strong> y proyecta el agente a 5–8 metros de distancia, manteniéndote fuera del foco.</p>
+          <ul class="service-nav-links">
+            <li><a href="/polvo-quimico-seco#usos">Talleres, autolavados y verificentros</a></li>
+            <li><a href="/polvo-quimico-seco#usos">Plantas industriales y naves</a></li>
+            <li><a href="/polvo-quimico-seco#capacidades">Capacidades recomendadas: 6–20 kg</a></li>
+          </ul>
+          <a href="/polvo-quimico-seco#modulos" class="service-link">Más sobre Clase B</a>
+        </div>
+      </div>
 
-<section class="rd-section rd-section--gray"><div class="container">
-<div class="rd-header">
-<h2>Fabricación y Estándares de Calidad</h2>
-</div>
-<div class="rd-card">
-<p>Cada <strong>equipo extintor</strong> que comercializamos proviene de líneas de <strong>fabricación</strong> con <strong>altos estándares de calidad</strong>. El cilindro de lámina de acero recibe soldadura TIG, <strong>tratamiento químico</strong> fosfatizado, aplicación electrostática de pintura y horneado industrial. El resultado: un aparato con durabilidad de más de 20 años en servicio activo. Nuestro compromiso de <strong>30 años de experiencia</strong> avala la selección de fabricantes nacionales — cada <strong>extintor de PQS</strong> que entregamos lleva trazabilidad completa desde la línea de fabricar hasta tu ubicación. Consulta <strong>promociones</strong> vigentes.</p>
-</div>
-</div></section>
+      <div class="service-card">
+        <div class="service-image">
+          <a href="/polvo-quimico-seco#clase-c">
+            <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor PQS para fuegos Clase C — equipos eléctricos energizados, tableros y cableado" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Clase C — Equipos Eléctricos Energizados</h3>
+          <p>Tableros, motores, interruptores, cableado y maquinaria conectada. El polvo PQS <strong>no conduce electricidad</strong>, por lo que puedes descargarlo con tensión presente sin riesgo de electrocución. Es la cobertura mínima para cualquier espacio con instalación eléctrica activa — desde una oficina hasta un cuarto de máquinas.</p>
+          <ul class="service-nav-links">
+            <li><a href="/polvo-quimico-seco#usos">Oficinas, plazas y centros comerciales</a></li>
+            <li><a href="/polvo-quimico-seco#usos">Cuartos de tableros y subestaciones ligeras</a></li>
+            <li><a href="/co2">Alternativa sin residuo: extintor CO₂ →</a></li>
+          </ul>
+          <a href="/polvo-quimico-seco#modulos" class="service-link">Más sobre Clase C</a>
+        </div>
+      </div>
 
-<section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes — Venta de Equipos de Agente Seco</h2><p class="section-subtitle">
-Dudas sobre modelos, normativa, rellenado y envío
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué es un dispositivo multipropósito y para qué sirve?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Qué es un dispositivo multipropósito y para qué sirve?</h3><p>
-Es un equipo portátil que utiliza agente a base de fosfato monoamónico para apagar fuegos de sólidos (A), líquidos inflamables (B) y aparatos eléctricos (C). Es la opción más económica y la más solicitada para oficinas, comercios e industria en general.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cada cuándo se debe recargar un equipo portátil?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Cada cuándo se debe recargar un equipo portátil?</h3><p>
-Cada 12 meses según la NOM-154-SCFI, o inmediatamente después de cualquier uso parcial. El agente pierde efectividad por compactación y humedad. Cada 5 años el cilindro requiere verificación hidráulica de integridad.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué tamaño de equipo necesito para mi local?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Qué tamaño de equipo necesito para mi local?</h3><p>
-Depende del área y nivel de riesgo: 1-2.5 kg para vehículos, 4.5 kg para comercios (más vendido), 6-9 kg para talleres y 13-50 kg rodantes para bodegas. La normativa exige 1 dispositivo cada 300 m² en riesgo ordinario. Realizamos análisis gratuito.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Se puede usar el agente multipropósito en aparatos eléctricos?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Se puede usar el agente multipropósito en aparatos eléctricos?</h3><p>
-Sí, el agente no conduce electricidad y es seguro para clase C. Sin embargo, el residuo puede dañar componentes electrónicos sensibles. Para servidores y data centers recomendamos CO2 o agentes limpios que no dejan partículas.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuál es la diferencia entre agente multipropósito y CO2?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Cuál es la diferencia entre agente multipropósito y CO2?</h3><p>
-El agente multipropósito cubre fuegos A, B y C, deja residuo y es más económico. El CO2 solo cubre B y C, no deja residuo y es ideal para electrónica sensible. La mayoría de organizaciones combinan ambos tipos según sus áreas de riesgo.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuánto dura la carga del agente?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Cuánto dura la carga del agente?</h3><p>
-12 meses en condiciones normales. Con el tiempo se compacta y absorbe humedad, perdiendo capacidad de supresión. El cilindro metálico dura más de 20 años con mantenimiento adecuado y verificaciones hidráulicas quinquenales.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Es obligatorio tener un equipo avalado por la norma en mi empresa?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Es obligatorio tener un equipo avalado por la norma en mi empresa?</h3><p>
-Sí. La NOM-002-STPS obliga a todo centro de trabajo a contar con dispositivos contra incendio vigentes y señalizados. La autoridad competente verifica el cumplimiento en inspecciones. El incumplimiento genera multas y clausura.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuáles son los costos de envío en CDMX?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Cuáles son los costos de envío en CDMX?</h3><p>
-El envío es sin costo en CDMX y área metropolitana para compras a partir de 2 unidades. Incluye colocación profesional y señalización. Entrega en 24-48 horas. Consulta promociones vigentes para pedidos por volumen.
-</p></div></div></div></div></section>
+    </div>
 
-<section class="contact-form-section"><div class="container"><div class="contact-form-wrapper"><div class="contact-info"><h2>Solicita tu Cotización de Equipos Avalados</h2><p class="contact-intro">
-Completa el formulario y nos pondremos en contacto contigo inmediatamente vía WhatsApp para brindarte la mejor cotización en extintores de Polvo Químico Seco certificados NOM-154-SCFI.
-</p><div class="contact-features"><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="contact-feature-text"><h4>Respuesta Inmediata</h4><p>Te contactamos en menos de 5 minutos</p></div></div><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg></div><div class="contact-feature-text"><h4>Cotización Sin Compromiso</h4><p>Precios competitivos y transparentes</p></div></div><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="contact-feature-text"><h4>Atención 24/7</h4><p>Disponibles todos los días del año</p></div></div></div><div class="contact-direct"><p><strong>¿Prefieres llamar directamente?</strong></p><a href="tel:5570081816" class="contact-phone">55 7008 1816</a><a href="tel:5570081816" class="contact-phone">55 7008 1816</a></div></div><div class="contact-form-container"><form id="whatsappForm" class="contact-form"><div class="form-group"><label for="nombre">Nombre Completo *</label><input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez"></div><div class="form-group"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa"></div><div class="form-row"><div class="form-group"><label for="telefono">Teléfono *</label><input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678"></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="correo@ejemplo.com"></div></div><div class="form-group"><label for="servicio">Servicio de Interés *</label><select id="servicio" name="servicio" required><option value="">Selecciona un servicio</option><option value="Extintores PQS" selected>Extintores de Polvo Químico Seco (PQS)</option><option value="Venta de Extintores">Venta de Extintores</option><option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option><option value="Recarga de Extintores">Recarga de Extintores</option><option value="Prueba Hidrostática">Prueba Hidrostática</option><option value="Capacitación y Brigadas">Capacitación y Brigadas</option><option value="Señalización y Equipamiento">Señalización y Equipamiento</option><option value="Cotización General">Cotización General</option></select></div><div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea></div><button type="submit" class="btn-submit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-Enviar por WhatsApp
-</button><p class="form-privacy">
-Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privacidad</a></p></form></div></div></div></section>
+    <!-- ═══ Trust strip ═══ -->
+    <div class="rd-badges" style="justify-content:center;margin:2.5rem 0 0.5rem;">
+      <span class="rd-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        NOM-154-SCFI Certificado
+      </span>
+      <span class="rd-badge rd-badge--green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        +80 Años de Experiencia
+      </span>
+      <span class="rd-badge rd-badge--blue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Entrega en 48 Horas CDMX
+      </span>
+      <span class="rd-badge rd-badge--green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        +10,000 Empresas Atendidas
+      </span>
+      <span class="rd-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Asesoría Técnica Gratuita
+      </span>
+    </div>
 
+    <!-- ═══ Módulos de detalle ═══ -->
+    <SectionHeader
+      id="modulos"
+      eyebrow="Todo sobre el extintor PQS"
+      title="Qué Es, Cómo Funciona y Por Qué Te Conviene Comprarlo con MANEXT"
+      subtitle="La información que necesitas para decidir bien — sin tecnicismos innecesarios"
+      paragraphs={[
+        'Comprar un extintor parece un trámite menor, pero un equipo mal elegido puede dejar de funcionar justo cuando más lo necesitas: capacidad insuficiente para el riesgo real, agente equivocado para el tipo de fuego, recargas vencidas que el fabricante ya no respalda. Aquí explicamos cómo evitarlo: qué hace exactamente un extintor PQS, qué capacidad le corresponde a tu metraje, en qué casos ya no es la mejor opción, y por qué más de <strong>10,000 empresas en México</strong> nos eligen año tras año.',
+        'En <strong>MANEXT</strong> no vendemos extintores sueltos: vendemos un sistema. El equipo correcto, instalado donde la norma lo exige, con la capacitación básica para usarlo y la documentación lista para tu próxima inspección. Si después necesitas recarga, prueba hidrostática o ampliar tu plan, ya tienes a quién llamar.'
+      ]}
+    />
+
+    <!-- Módulo 1: Qué es y cómo funciona -->
+    <div class="service-detail-item" id="que-es">
+      <div class="service-detail-image">
+        <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor de Polvo Químico Seco PQS Clase ABC certificado NOM-154-SCFI — disponible en MANEXT CDMX" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>¿Qué es exactamente un Extintor de Polvo Químico Seco (PQS)?</h2>
+        <div class="rd-badges" style="margin-bottom:1.25rem;">
+          <span class="rd-badge rd-badge--blue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11 14 15 10"/></svg>
+            Clase A — Sólidos
+          </span>
+          <span class="rd-badge" style="background:#fff8e1;border-color:#ffe082;color:#e65100;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            Clase B — Líquidos
+          </span>
+          <span class="rd-badge" style="background:#f3e5f5;border-color:#ce93d8;color:#6a1b9a;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Clase C — Eléctrico
+          </span>
+          <span class="rd-badge rd-badge--green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
+            NOM-154-SCFI
+          </span>
+        </div>
+        <p>Un extintor PQS es, en términos simples, un cilindro presurizado con <strong>fosfato monoamónico</strong> impulsado por nitrógeno seco. Cuando lo accionas, el polvo se proyecta a 3–8 metros y ataca el incendio por tres mecanismos a la vez: sofoca al desplazar el oxígeno disponible, <strong>rompe la reacción química en cadena</strong> que mantiene viva la llama y forma una <strong>capa vítrea</strong> sobre los materiales sólidos que impide la re-ignición. Todo el proceso ocurre durante una descarga continua de <strong>8 a 15 segundos</strong>, dependiendo de la capacidad.</p>
+        <p>Es el extintor portátil <strong>más vendido en México y en el mundo</strong> por una razón simple: cubre los tres riesgos que aparecen en casi cualquier negocio sin que tengas que adivinar cuál se presentará primero. Su certificación <strong>NOM-154-SCFI</strong> es la que verifica Protección Civil en la mayoría de los giros — comercio, oficinas, industria ligera, servicios — y es la base sobre la que después se complementan otros agentes (CO₂ para electrónica, Tipo K para freidoras, AFFF para hidrocarburos) en planes de seguridad más completos.</p>
+        <a href="https://wa.me/5215570081816?text=Hola%2C+me+interesa+cotizar+extintores+de+Polvo+Qu%C3%ADmico+Seco+PQS+para+mi+negocio.+%C2%BFPueden+asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Módulo 2: Capacidades -->
+    <div class="service-detail-item" id="capacidades">
+      <div class="service-detail-image">
+        <img src="/img/img-ventas-de-extintores/extintores-porque-s-polvo-quimico-seco-tipo-abc.avif" alt="Extintores PQS en distintas capacidades — desde 4.5 kg para comercios hasta 20 kg para industria" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>Capacidades disponibles: de 4.5 kg a 20 kg</h2>
+        <p>Tenemos <strong>stock permanente</strong> de las capacidades que realmente se usan en el mercado mexicano. El modelo de <strong>4.5 kg</strong> es el de mayor demanda en oficinas, comercios y locales de riesgo ordinario: cumple NOM-002-STPS para superficies de hasta 300 m², proyecta el agente a 3–5 m y cualquier persona puede operarlo sin entrenamiento previo. A partir de los 6 kg el equipo gana alcance y tiempo de descarga; a partir de los 20 kg ya hablamos de extintores rodantes pensados para naves industriales y áreas con maquinaria pesada.</p>
+        <table class="rd-price-table">
+          <thead>
+            <tr>
+              <th>Capacidad</th>
+              <th>Tipo</th>
+              <th>Uso recomendado</th>
+              <th>Alcance</th>
+              <th>Descarga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>4.5 kg</strong></td>
+              <td>Portátil</td>
+              <td>Comercios, oficinas ✦ <em>Más vendido</em></td>
+              <td>3–5 m</td>
+              <td>~12 seg</td>
+            </tr>
+            <tr>
+              <td><strong>6 kg</strong></td>
+              <td>Portátil</td>
+              <td>Talleres ligeros, naves medianas</td>
+              <td>5–7 m</td>
+              <td>~15 seg</td>
+            </tr>
+            <tr>
+              <td><strong>9 kg</strong></td>
+              <td>Portátil</td>
+              <td>Bodegas, almacenes, plantas</td>
+              <td>6–8 m</td>
+              <td>~20 seg</td>
+            </tr>
+            <tr>
+              <td><strong>12 kg</strong></td>
+              <td>Portátil</td>
+              <td>Industria media, centros logísticos</td>
+              <td>7–9 m</td>
+              <td>~25 seg</td>
+            </tr>
+            <tr>
+              <td><strong>20 kg</strong></td>
+              <td>Rodante</td>
+              <td>Fábricas, naves industriales grandes</td>
+              <td>8–12 m</td>
+              <td>~30 seg</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:.88rem;color:#757575;margin-top:.5rem;">Todos los modelos son recargables · Incluyen manómetro, manguera, soporte y señalamiento NOM-026</p>
+        <a href="/recarga-de-extintores" class="btn btn-primary">Ver Servicio de Recarga</a>
+      </div>
+    </div>
+
+    <!-- Módulo 3: Para qué negocios -->
+    <div class="service-detail-item" id="usos">
+      <div class="service-detail-image">
+        <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor PQS ABC ideal para oficinas, comercios, bodegas, restaurantes e industria en CDMX" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>¿Para qué tipo de negocio es el extintor PQS?</h2>
+        <p>La respuesta corta: <strong>para la mayoría</strong>. El PQS Clase ABC es la base reglamentaria en oficinas corporativas y coworkings, locales y plazas comerciales, bodegas y centros de distribución, condominios y residenciales, talleres ligeros, restaurantes (área de salón), gimnasios, escuelas, clínicas y flotillas vehiculares. Si tu espacio tiene papelería, mobiliario combustible, instalación eléctrica o cualquier líquido inflamable a la mano, el PQS te cubre.</p>
+        <p>Hay tres escenarios donde <strong>el polvo deja de ser la mejor opción</strong>: cuartos de servidores y data centers donde el residuo en circuitos es inaceptable, cocinas comerciales con freidoras (la NOM exige específicamente Tipo K), y áreas con derrame constante de hidrocarburos donde la película anti re-ignición de la espuma AFFF rinde más. Para esos casos recomendamos sumar <a href="/co2">CO₂</a>, <a href="/tipo-k">Tipo K</a> o <a href="/espuma-afff">espuma AFFF</a> según corresponda. Nuestros ingenieros visitan tu espacio y entregan el plan de protección sin costo.</p>
+        <a href="https://wa.me/5215570081816?text=Hola%2C+quiero+saber+qu%C3%A9+extintores+necesita+mi+negocio.+%C2%BFMe+pueden+asesorar%3F" class="btn btn-primary" target="_blank" rel="noopener">Análisis de riesgo sin costo</a>
+      </div>
+    </div>
+
+    <!-- Módulo 4: Por qué MANEXT -->
+    <div class="service-detail-item" id="por-que-manext">
+      <div class="service-detail-image">
+        <img src="/img/img-ventas-de-extintores/extintores-porque-s-polvo-quimico-seco-tipo-abc.avif" alt="MANEXT — distribuidor autorizado de extintores PQS con más de 80 años de experiencia en CDMX" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>Por qué te conviene comprar tu extintor PQS con MANEXT</h2>
+        <p>Cualquier ferretería puede venderte un cilindro. Lo que <strong>MANEXT</strong> ofrece es distinto: <strong>más de 80 años</strong> de experiencia operando en CDMX, asesoría técnica certificada sin costo, instalación profesional con herrajes y soportes incluidos, señalización fotoluminiscente NOM-026 colocada en sitio, y la documentación oficial — etiqueta de fabricante, tarjeta de inspección y certificado NOM-154-SCFI — lista para tu próxima visita de Protección Civil. Todo en una sola visita, sin costos ocultos ni cargos por instalación.</p>
+        <p>Y no termina ahí. Cada extintor PQS entra automáticamente al <strong>programa de mantenimiento anual MANEXT</strong>: te avisamos en cuanto se acerque la fecha de recarga, hacemos la inspección de 25 puntos a domicilio, entregamos reporte fotográfico y mantenemos tu bitácora de cumplimiento al día. Si algún día Protección Civil aparece sin avisar, tu carpeta ya está armada. Eso es lo que vendemos: <strong>cero sorpresas</strong>.</p>
+        <a href="/mantenimiento-preventivo" class="btn btn-primary">Ver mantenimiento anual</a>
+      </div>
+    </div>
+
+
+      <SectionHeader
+        eyebrow="Catálogo completo"
+        title="Cada Riesgo Tiene Su Extintor: Elige el Correcto"
+        subtitle="Seis agentes extintores, una sola lógica — el equipo adecuado para cada clase de fuego"
+        paragraphs={[
+          'Equipar un negocio con el extintor incorrecto no solo es ineficaz: puede agravar el incendio. El agua sobre tableros eléctricos, el PQS dentro de una freidora, el CO₂ en un cuarto pequeño y ocupado — son errores que aparecen en 7 de cada 10 inspecciones de Protección Civil. Esta guía resume, en una sola vista, qué agente corresponde a cada espacio.',
+          'Todos los extintores MANEXT cumplen <strong>NOM-154-SCFI vigente</strong>, llegan con instalación profesional, señalización fotoluminiscente NOM-026 y la documentación que solicita Protección Civil y la STPS. Si dudas qué combinación necesita tu giro, nuestros ingenieros realizan un <strong>análisis de riesgo gratuito y sin compromiso</strong>. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}
+      />
+
+      <div class="ext-tipos-grid">
+        {extTipos.map(t => (
+          <a href={`/${t.slug}`} class={`ext-tipo-card${t.slug === currentSlug ? ' ext-tipo-card--current' : ''}`}>
+            <img src={t.img} alt={t.alt} width="400" height="240" loading="lazy" />
+            <div class="ext-tipo-card__body">
+              <p class="ext-tipo-card__title">{t.title}</p>
+              <div class="ext-tipo-card__badges">
+                {t.classes.map(c => (
+                  <span class={`ext-tipo-card__badge ${classBadge[c]}`}>Clase {c}</span>
+                ))}
+                {t.slug === currentSlug && (
+                  <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
+                )}
+              </div>
+              <p class="ext-tipo-card__desc">{t.desc}</p>
+              <span class="ext-tipo-card__link">{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ + COTIZACIÓN
+═══════════════════════════════════════════════ -->
+<section class="faq faq-cotizacion">
+  <div class="container">
+
+    <SectionHeader
+      eyebrow="FAQ y cotización"
+      title="Preguntas Frecuentes y Cotización Gratuita"
+      subtitle="Las dudas reales que recibimos cada semana sobre el extintor PQS Clase ABC"
+      paragraphs={[
+        'Estas son las preguntas que más nos hacen — clientes nuevos, administradores de edificio, gerentes de operaciones, brigadistas y dueños de negocio antes de su próxima inspección de <strong>Protección Civil</strong>. Si la tuya no aparece, escríbenos directo por WhatsApp y te respondemos en minutos durante horario laboral.',
+        'Si ya tienes claro lo que necesitas, llena el formulario para recibir <strong>cotización gratuita y sin compromiso</strong>. Nuestros ingenieros certificados analizan tu espacio, definen el número exacto de extintores, capacidades y distribución, y te entregan una propuesta lista para que cumplas <strong>NOM-002-STPS al primer intento</strong>.'
+      ]}
+    />
+
+    <div class="faq-cot-layout">
+
+      <div class="faq-cot-left">
+        <p class="faq-cot-desc">Resolvemos las dudas más frecuentes sobre extintores PQS. ¿Necesitas respuesta inmediata? <a href="https://wa.me/5215570081816?text=Tengo+una+pregunta+sobre+extintores+PQS+Clase+ABC" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respondemos en menos de 5 minutos en horario laboral.</p>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Qué significa "Clase ABC" en un extintor?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Significa que el extintor es eficaz contra tres tipos de fuego: <strong>Clase A</strong> (sólidos combustibles como madera, papel y textiles), <strong>Clase B</strong> (líquidos inflamables como gasolina, aceites y solventes) y <strong>Clase C</strong> (equipos eléctricos energizados). Un extintor de solo "Clase BC" no es válido para fuegos de sólidos; el ABC cubre los tres con un solo equipo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Cuántos extintores PQS necesita mi negocio?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>La NOM-002-STPS establece como mínimo <strong>1 extintor por cada 300 m²</strong> en riesgo ordinario, con una distancia máxima de 23 m de recorrido hasta el equipo más cercano. Para riesgo alto, la densidad aumenta. En bodegas, plantas o espacios con materiales especiales la norma es más estricta. MANEXT realiza análisis de riesgo gratuito para darte el número exacto antes de cualquier compra.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Qué capacidad de extintor PQS debo elegir?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Para comercios y oficinas de riesgo ordinario, el modelo de <strong>4.5 kg</strong> es el más recomendado y el de mayor demanda. Para talleres y bodegas medianas, el de <strong>6 a 9 kg</strong>. Para naves industriales, almacenes de gran superficie o espacios de riesgo alto, los modelos de <strong>13 a 20 kg</strong>. La capacidad también determina el alcance: de 3–5 m en el 4.5 kg hasta 8–12 m en los modelos grandes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Cada cuánto se debe recargar un extintor PQS?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>La <strong>NOM-154-SCFI exige recarga cada 12 meses</strong>, o inmediatamente después de cualquier uso — aunque haya sido parcial. El fosfato monoamónico se compacta con el tiempo y la humedad, perdiendo eficiencia de descarga. Además, el cilindro requiere <strong>prueba hidrostática cada 5 años</strong> para verificar su integridad estructural. MANEXT ofrece recarga a domicilio con préstamo de equipo sin costo durante el proceso.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿El extintor PQS daña los equipos electrónicos?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>El polvo de fosfato monoamónico <strong>no conduce electricidad</strong> — es seguro de usar sobre equipos energizados. Sin embargo, el residuo en polvo se deposita sobre circuitos, teclados y pantallas y puede ser difícil de limpiar. Para cuartos de servidores, data centers o equipos de alta precisión donde el residuo es inaceptable, recomendamos extintores de <a href="/co2">CO₂</a> o <a href="/agentes-limpios">agentes limpios</a>, que no dejan trazas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿El extintor PQS aplica para cocinas comerciales?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Para el área de salón, barra y servicios generales de un restaurante, <strong>sí aplica el PQS</strong>. Sin embargo, para la zona de freidoras y aceites de cocina calientes (riesgo Clase K), la NOM-002-STPS exige específicamente un extintor <a href="/tipo-k">Tipo K con agente húmedo</a>. En la mayoría de restaurantes se instalan ambos: PQS para el salón y Tipo K junto a la freidora. Nuestros ingenieros te indican la combinación correcta para tu cocina.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Los extintores que vende MANEXT tienen documentación oficial?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. Todos los extintores PQS que distribuimos cuentan con <strong>certificación NOM-154-SCFI vigente</strong>, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial y comprobante de instalación. Esta documentación es la que solicitan los inspectores de Protección Civil y la STPS en sus visitas. Si necesitas soporte adicional para una auditoría específica, nuestro equipo te acompaña sin costo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Tienen entrega el mismo día en CDMX?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Para pedidos urgentes — inspección de Protección Civil al día siguiente, apertura de negocio o emergencia — podemos coordinar entrega en el mismo día en la mayoría de las alcaldías de CDMX. La entrega <strong>estándar es en 48 horas</strong> con instalación incluida. Contáctanos por WhatsApp para verificar disponibilidad inmediata para tu zona.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Puedo comprar extintores PQS al mayoreo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. MANEXT ofrece precios de mayoreo y descuentos por volumen para empresas, cadenas comerciales, administradoras de edificios y contratistas que requieren equipar múltiples ubicaciones. También disponemos de <strong>pólizas de mantenimiento anuales</strong> para flotas de extintores con precios preferenciales por unidad. Solicita tu cotización corporativa por WhatsApp o llamada.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="faq-cot-right">
+        <div class="quote-card">
+          <div class="quote-card-head">
+            <p class="quote-card-label">Cotización Gratuita</p>
+            <h3 class="quote-card-title">Cotiza tu extintor PQS</h3>
+            <p class="quote-card-meta">Respuesta en menos de 24 horas. Sin compromiso.</p>
+          </div>
+          <form id="whatsappFormPQS" class="quote-form" novalidate>
+            <div class="qf-field">
+              <label for="nombre">Nombre completo <span class="qf-req">*</span></label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+            </div>
+            <div class="qf-field">
+              <label for="telefono">Teléfono <span class="qf-req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
+            </div>
+            <div class="qf-field">
+              <label for="empresa">Empresa o negocio</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+            </div>
+            <div class="qf-field">
+              <label for="servicio">¿Qué necesitas? <span class="qf-req">*</span></label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Extintores PQS 4.5 kg (más vendido)">Extintores PQS 4.5 kg (más vendido)</option>
+                <option value="Extintores PQS 6 kg">Extintores PQS 6 kg</option>
+                <option value="Extintores PQS 9 kg">Extintores PQS 9 kg</option>
+                <option value="Extintores PQS 20 kg">Extintores PQS 20 kg</option>
+                <option value="Cotización por volumen / mayoreo">Cotización por volumen / mayoreo</option>
+                <option value="Análisis de riesgo gratuito">Análisis de riesgo gratuito</option>
+                <option value="Recarga de extintor PQS existente">Recarga de extintor PQS existente</option>
+              </select>
+            </div>
+            <div class="qf-field">
+              <label for="mensaje">Cuéntanos más (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Cuántos extintores necesitas? ¿Cuál es el giro de tu negocio?"></textarea>
+            </div>
+            <button type="submit" class="quote-btn">Solicitar Cotización por WhatsApp</button>
+            <p class="quote-note">Cotización gratuita · Respuesta en menos de 24h · Equipo certificado NOM</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PRE-FOOTER STRIP
+═══════════════════════════════════════════════ -->
+<nav class="pf-strip" aria-label="Otros tipos de extintores y servicios">
+  <div class="pf-strip__inner">
+
+    <a href="/co2" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Extintores CO₂</strong>
+        <span>Sin residuos · Ideal para electrónica</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/tipo-k" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Extintores Tipo K</strong>
+        <span>Obligatorio NOM en cocinas comerciales</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/espuma-afff" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Espuma AFFF</strong>
+        <span>Especializado en líquidos inflamables</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/agentes-limpios" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Agentes Limpios</strong>
+        <span>Data centers y equipos de precisión</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/recarga-de-extintores" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Recarga de Extintores</strong>
+        <span>A domicilio en CDMX en 24–48 h</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/contacto" class="pf-card pf-card--featured">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Cotización Gratuita</strong>
+        <span>Respuesta en menos de 24 horas</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
 <script is:inline>
-document.querySelectorAll('.faq-question').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var item = this.parentElement;
-    var answer = item.querySelector('.faq-answer');
-    var icon = this.querySelector('.faq-icon');
-    var isOpen = this.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.faq-item').forEach(function(other) {
-      if (other !== item) {
-        other.classList.remove('active');
-        var otherBtn = other.querySelector('.faq-question');
-        var otherAnswer = other.querySelector('.faq-answer');
-        var otherIcon = other.querySelector('.faq-icon');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-        if (otherAnswer) otherAnswer.style.display = 'none';
-        if (otherIcon) otherIcon.textContent = '+';
+(function() {
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      var faqItem = this.parentElement;
+      var answer = faqItem.querySelector('.faq-answer');
+      var icon = this.querySelector('.faq-icon');
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+      faqQuestions.forEach(function(other) {
+        if (other !== question) {
+          other.setAttribute('aria-expanded', 'false');
+          var a = other.parentElement.querySelector('.faq-answer');
+          var i = other.querySelector('.faq-icon');
+          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
+          if (i) i.textContent = '+';
+          other.parentElement.classList.remove('active');
+        }
+      });
+      if (isOpen) {
+        this.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = '0'; answer.style.opacity = '0';
+        icon.textContent = '+'; faqItem.classList.remove('active');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
+        icon.textContent = '×'; faqItem.classList.add('active');
       }
     });
-    if (isOpen) {
-      item.classList.remove('active');
-      this.setAttribute('aria-expanded', 'false');
-      answer.style.display = 'none';
-      icon.textContent = '+';
-    } else {
-      item.classList.add('active');
-      this.setAttribute('aria-expanded', 'true');
-      answer.style.display = 'block';
-      icon.textContent = '−';
-    }
   });
-});
+})();
 </script>
 
 <script is:inline>
-document.getElementById('whatsappForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  var nombre = document.getElementById('nombre').value;
-  var empresa = document.getElementById('empresa').value;
-  var telefono = document.getElementById('telefono').value;
-  var email = document.getElementById('email').value;
-  var servicio = document.getElementById('servicio').value;
-  var mensaje = document.getElementById('mensaje').value;
-  var text = 'Hola, me comunico desde mantenimientodeextintores.mx' +
-    '\n*Nombre:* ' + nombre +
-    (empresa ? '\n*Empresa:* ' + empresa : '') +
-    '\n*Teléfono:* ' + telefono +
-    (email ? '\n*Email:* ' + email : '') +
-    '\n*Servicio:* ' + servicio +
-    (mensaje ? '\n*Mensaje:* ' + mensaje : '');
-  window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
-});
+(function() {
+  var form = document.getElementById('whatsappFormPQS');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var nombre = document.getElementById('nombre').value.trim();
+    var empresa = document.getElementById('empresa').value.trim();
+    var telefono = document.getElementById('telefono').value.trim();
+    var servicio = document.getElementById('servicio').value;
+    var mensaje = document.getElementById('mensaje').value.trim();
+    if (!nombre || !telefono || !servicio) {
+      alert('Por favor completa los campos obligatorios');
+      return;
+    }
+    var text = 'Hola, me comunico desde la página de Polvo Químico Seco PQS de MANEXT.\n\n';
+    text += '*Nombre:* ' + nombre + '\n';
+    if (empresa) text += '*Empresa:* ' + empresa + '\n';
+    text += '*Teléfono:* ' + telefono + '\n';
+    text += '*Interés:* ' + servicio + '\n';
+    if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
+    window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+  });
+})();
 </script>
 
 </Layout>

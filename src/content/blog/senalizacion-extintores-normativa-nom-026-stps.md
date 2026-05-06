@@ -1,94 +1,351 @@
 ---
-title: "Senalizacion Extintores y Normativa NOM-026-STPS"
-description: "Senalizacion extintores: cumpla NOM-026-STPS. Conozca equipos, normativas y seleccione el adecuado. Llame ahora para evaluacion."
+title: "Señalización de Extintores según NOM-026-STPS: Guía Completa 2026"
+description: "Guía completa de señalización de extintores: requisitos NOM-026-STPS, tipos de señales, alturas, colores normativos, materiales fotoluminiscentes y errores que llevan a multas en CDMX."
+pubDate: "2026-04-10"
+heroRight:
+  - "Tener extintores no es suficiente si nadie puede encontrarlos durante una emergencia. La NOM-026-STPS establece requisitos exactos de señalización: altura, color, tamaño mínimo, distancia de visibilidad y materiales fotoluminiscentes. Incumplir estas especificaciones durante una inspección de Protección Civil equivale a no tener señalización en absoluto."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años instalando extintores con señalización completa en CDMX y Estado de México. Suministramos señales certificadas NOM-026-STPS, las instalamos a la altura correcta y entregamos el expediente completo para Protección Civil."
 ---
-<div class="article-intro"><p class="article-lead"><strong>Senalizacion Extintores</strong> es crucial para la seguridad y cumplimiento normativo. La NOM-026-STPS regula la senalizacion en empresas. Aprendera sobre su aplicacion y seleccion de equipos adecuados.</p><p>En MANEXT, con mas de 80 anos atendiendo a +15,000 empresas en la Ciudad de Mexico y Zona Metropolitana, hemos perfeccionado el proceso de implementacion de senalizacion de seguridad contra incendios. Esta guia condensa ese conocimiento para que su empresa cumpla con los requerimientos legales y de seguridad.</p><p>En este articulo tecnico descubriras: la definicion tecnica de senalizacion de extintores, especificaciones tecnicas, comparativas de equipos, normativas aplicables, errores comunes a evitar y como seleccionar el equipo adecuado.</p></div><div class="table-of-contents"><h3>Contenido del Articulo</h3><ol><li><a href="#que-es">Que es Senalizacion de Extintores: Definicion Tecnica</a></li><li><a href="#especificaciones">Especificaciones Tecnicas y Capacidades</a></li><li><a href="#comparativa">Tabla Comparativa de Opciones</a></li><li><a href="#normativa">Marco Normativo NOM Aplicable</a></li><li><a href="#seleccion">Como Seleccionar el Adecuado</a></li><li><a href="#errores">7 Errores Criticos a Evitar</a></li><li><a href="#proceso">Proceso Profesional de Servicio</a></li><li><a href="#costos">Costos y Presupuesto en CDMX</a></li><li><a href="#faq">Preguntas Frecuentes</a></li></ol></div><section id="que-es" class="content-section"><h2>Que es Senalizacion de Extintores: Definicion Tecnica Completa</h2><p>La senalizacion de extintores consiste en el uso de senales estandarizadas para indicar la ubicacion y el tipo de extintor disponible en un area. Estas senales son esenciales para una rapida identificacion en caso de emergencia, permitiendo una respuesta efectiva.</p><p>La necesidad de una senalizacion adecuada surge del requerimiento de garantizar que los equipos contra incendio sean facilmente accesibles y visibles, especialmente en situaciones criticas. Dentro de esta senalizacion, se incluyen indicaciones como la clase de fuego que el extintor puede combatir y las instrucciones de uso.</p><h3>Componentes y Funcionamiento Interno</h3><p>El sistema de senalizacion de extintores se compone principalmente de senales fotoluminiscentes, pictogramas y etiquetas informativas, cada uno con una funcion especifica. Las senales fotoluminiscentes son visibles incluso en condiciones de oscuridad total, gracias a su capacidad de almacenar luz y emitirla durante largos periodos.</p><ul><li><strong>Senales Fotoluminiscentes:</strong> Capturan y emiten luz para ser visibles en la oscuridad, esenciales en situaciones de humo denso.</li><li><strong>Pictogramas:</strong> Simbolos estandarizados que indican el tipo de extintor y las clases de fuego que combate.</li><li><strong>Etiquetas Informativas:</strong> Proporcionan instrucciones de uso rapido y seguro del extintor.</li><li><strong>Colores Normativos:</strong> Rojo para indicar peligro o prohibicion, verde para acciones de evacuacion y seguridad.</li><li><strong>Materiales Resistentes:</strong> Fabricados para soportar condiciones ambientales adversas, como humedad y calor.</li></ul><h3>Clases de Fuego que Combate</h3><p>Las senales de extintores indican las clases de fuego que el equipo puede combatir, clasificadas como A, B, C, D y K. Clase A cubre materiales solidos como madera y papel, clase B incluye liquidos inflamables, clase C es para equipos electricos, clase D para metales combustibles, y clase K para aceites y grasas de cocina.</p></section><section id="especificaciones" class="content-section"><h2>Especificaciones Tecnicas Detalladas</h2><p>Las especificaciones tecnicas de la senalizacion de extintores son fundamentales para asegurar su visibilidad y efectividad en situaciones de emergencia. Estas especificaciones deben ser evaluadas al seleccionar el equipo adecuado para cada entorno.</p><h3>Capacidades Disponibles en Mexico</h3><ul><li><strong>Capacidad 1:</strong> Ideal para oficinas. Peso total: 2 kg. Alcance: 3 metros.</li><li><strong>Capacidad 2:</strong> Recomendado para comercios. Peso total: 4 kg. Alcance: 5 metros.</li><li><strong>Capacidad 3:</strong> Uso en industrias. Peso total: 6 kg. Alcance: 6 metros.</li></ul><h3>Parametros de Operacion</h3><p>Los parametros tecnicos que definen el rendimiento incluyen:</p><ul><li><strong>Presion de operacion:</strong> 175-195 psi</li><li><strong>Alcance efectivo:</strong> 3-6 metros</li><li><strong>Tiempo de descarga:</strong> 10-30 segundos</li><li><strong>Rango de temperatura:</strong> -20 a 60 grados C</li><li><strong>Vida util del cilindro:</strong> 15-20 anos</li></ul></section><section id="comparativa" class="content-section"><h2>Tabla Comparativa: Senalizacion Extintores vs Alternativas</h2><p>Comparar diferentes tipos de extintores es vital para seleccionar el equipo adecuado para cada situacion. Factores como la clase de fuego, capacidad, precio y mantenimiento anual deben ser considerados para una decision informada.</p><div class="table-responsive"><table class="comparison-table"><thead><tr><th>Caracteristica</th><th>PQS</th><th>CO2</th><th>Agua</th></tr></thead><tbody><tr><td>Clases de Fuego</td><td>A, B, C</td><td>B, C</td><td>A</td></tr><tr><td>Capacidades Disponibles</td><td>1-13 kg</td><td>2-10 kg</td><td>6-50 L</td></tr><tr><td>Precio Promedio CDMX</td><td>$800-$2,500 MXN</td><td>$2,000-$5,000 MXN</td><td>$600-$1,800 MXN</td></tr><tr><td>Alcance de Descarga</td><td>4-6 metros</td><td>1-3 metros</td><td>6-10 metros</td></tr><tr><td>Tiempo de Descarga</td><td>10-25 seg</td><td>8-30 seg</td><td>40-120 seg</td></tr><tr><td>Deja Residuos</td><td>Si - polvo</td><td>No</td><td>Si - agua</td></tr><tr><td>Uso en Equipos Electricos</td><td>No recomendado</td><td>Ideal</td><td>Prohibido</td></tr><tr><td>Mantenimiento Anual</td><td>$150-$300 MXN</td><td>$200-$400 MXN</td><td>$100-$250 MXN</td></tr><tr><td>Aplicacion Recomendada</td><td>Oficinas, comercios</td><td>Data centers, labs</td><td>Bodegas madera/papel</td></tr></tbody></table></div><p>Al analizar la tabla, es evidente que cada tipo de extintor tiene sus ventajas y desventajas. Los extintores de PQS son versatiles pero dejan residuos, los de CO2 son ideales para equipos electricos por no dejar residuos, y los de agua son economicos pero limitados a ciertos tipos de fuego. La seleccion debe basarse en las necesidades especificas de cada entorno y las caracteristicas del lugar a proteger.</p></section><div class="info-box"><div class="info-box-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg></div><div class="info-box-content"><h4>Dato Tecnico Clave</h4><p>Conforme a la NOM-026-STPS, las senales de seguridad deben ser visibles a una distancia minima de 15 metros en condiciones normales de iluminacion, y las senales fotoluminiscentes deben ser visibles por minimo 90 minutos en ausencia de luz.</p></div></div><section id="normativa" class="content-section"><h2>Marco Normativo: NOM-154-SCFI y NOM-002-STPS</h2><p>El marco normativo mexicano establece regulaciones para la senalizacion de seguridad contra incendios, asegurando que las empresas cumplan con estandares de seguridad que protejan a sus empleados y activos. Las principales normas aplicables son la NOM-154-SCFI, que regula la calidad de los extintores, y la NOM-002-STPS, que establece condiciones de seguridad en los centros de trabajo.</p><h3>Requisitos de la NOM-154-SCFI</h3><p>La NOM-154-SCFI dicta que los extintores deben ser fabricados y etiquetados de acuerdo con especificaciones que aseguren su eficiencia. Los requisitos incluyen:</p><ul><li>Verificacion de la presion de operacion y capacidad de descarga.</li><li>Certificacion de que los materiales son resistentes a impactos y corrosivos.</li><li>Etiquetas que detallan el tipo de agente extintor y clase de fuego aplicable.</li></ul><h3>Obligaciones segun NOM-002-STPS</h3><p>La NOM-002-STPS establece los requisitos para la prevencion y proteccion contra incendios en los centros de trabajo. Esto incluye la ubicacion estrategica de extintores, la senalizacion adecuada de rutas de evacuacion, y la capacitacion del personal en el uso de equipos contra incendio.</p><h3>Que Revisa Proteccion Civil en Inspecciones</h3><ol><li>Condiciones de los extintores: ubicacion, senalizacion y mantenimiento.</li><li>Rutas de evacuacion: senalizacion y accesibilidad.</li><li>Equipos de alarma: funcionamiento y cobertura.</li><li>Capacitacion del personal: brigadas internas y simulacros.</li><li>Documentacion: cumplimiento con normativas vigentes.</li></ol></section><div class="warning-box"><div class="warning-box-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg></div><div class="warning-box-content"><h4>Sanciones por Incumplimiento</h4><p>La Ley Federal del Trabajo y el Reglamento de Proteccion Civil establecen multas de <strong>$5,869 a $586,950 MXN</strong> (50 a 5000 UMAs) por incumplimiento en equipos contra incendio. Adicionalmente: clausura temporal de 3 a 90 dias, clausura definitiva en caso de reincidencia, y responsabilidad penal si ocurre un siniestro con lesiones o decesos.</p></div></div><section id="seleccion" class="content-section"><h2>Como Seleccionar Senalizacion de Extintores Correctamente: Guia de 5 Pasos</h2><p>Seleccionar adecuadamente la senalizacion de extintores es crucial para garantizar la seguridad y el cumplimiento normativo en cualquier entorno laboral.</p><h3>Paso 1: Identificar el Riesgo Predominante</h3><p>Realizar una evaluacion de riesgos para identificar las clases de fuego mas probables en el entorno de trabajo y asegurarse de que los extintores seleccionados sean compatibles.</p><h3>Paso 2: Calcular la Capacidad Necesaria</h3><p>Determinar la capacidad de extintor necesaria en funcion de la superficie a cubrir y el tipo de riesgo presente, calculando aproximadamente 1 kg de agente extintor por cada 10 m2.</p><h3>Paso 3: Verificar Compatibilidad con el Entorno</h3><p>Considerar factores ambientales como temperatura, humedad y presencia de equipos sensibles al seleccionar el tipo de extintor y su senalizacion.</p><h3>Paso 4: Evaluar Accesibilidad y Ubicacion</h3><p>Asegurar que los extintores esten ubicados a una altura accesible y claramente senalizados, conforme a la NOM-002-STPS, que indica un maximo de 1.5 metros del suelo y a no mas de 15 metros de distancia en areas de riesgo alto.</p><h3>Paso 5: Confirmar Certificaciones y Garantias</h3><p>Verificar que el proveedor de equipos y senalizacion cuente con las certificaciones adecuadas y ofrezca garantias de cumplimiento normativo.</p><p>Para una evaluacion personalizada de tu empresa, consulta con nuestros especialistas en <a href="/blog/proteccion-civil-cdmx-requisitos-extintores.html">Proteccion Civil</a> o conoce nuestro servicio de <a href="/blog/sistemas-proteccion-integral-empresas-cdmx.html">Sistemas Proteccion</a>.</p></section><section id="errores" class="content-section"><h2>7 Errores Criticos que Cometen las Empresas</h2><p>En mas de 80 anos atendiendo empresas en Santa Fe y Centro Historico, hemos identificado errores recurrentes que ponen en riesgo tanto la seguridad como el cumplimiento normativo:</p><h3>Error 1: Ignorar la Evaluacion de Riesgos</h3><p>No realizar una evaluacion adecuada de los riesgos de incendio en el entorno puede llevar a seleccionar equipos inadecuados, exponiendo a la empresa a sanciones y peligros.</p><h3>Error 2: Ubicacion Inadecuada de Extintores</h3><p>Colocar extintores en lugares de dificil acceso o sin senalizacion visible puede retrasar la respuesta en caso de incendio.</p><h3>Error 3: Falta de Mantenimiento Regular</h3><p>Descuidar el mantenimiento anual requerido por la NOM-154-SCFI incrementa el riesgo de fallas mecanicas en los extintores durante una emergencia.</p><h3>Error 4: Senalizacion Deficiente</h3><p>No cumplir con los estandares de senalizacion segun la NOM-026-STPS puede llevar a confusiones y errores en situaciones de emergencia.</p><h3>Error 5: Capacitar Inadecuadamente al Personal</h3><p>No entrenar al personal en el uso correcto de los equipos contra incendio es un error critico que disminuye la efectividad de la respuesta ante un siniestro.</p><h3>Error 6: No Actualizarse con Normativas</h3><p>No mantenerse al dia con las normativas vigentes puede resultar en incumplimientos legales y multas significativas.</p><h3>Error 7: Seleccionar Proveedores No Certificados</h3><p>Elegir proveedores que no cuenten con las certificaciones necesarias puede comprometer la calidad y el cumplimiento normativo de los equipos adquiridos.</p></section><div class="cta-inline"><div class="cta-inline-content"><h3>Evaluacion Profesional sin Costo</h3><p>Nuestros ingenieros certificados evaluan tus instalaciones, identifican brechas de cumplimiento y entregan un reporte detallado con recomendaciones especificas.</p><div class="cta-inline-buttons"><a href="tel:5570081816" class="btn-primary">Llamar: 55 7008 1816</a><a href="https://wa.me/5215570081816" class="btn-whatsapp">WhatsApp Directo</a></div></div></div><section id="proceso" class="content-section"><h2>Proceso Profesional de Servicio MANEXT</h2><p>El proceso profesional de servicio garantiza que los equipos instalados cumplan con todas las normativas de seguridad y esten optimizados para su efectividad.</p><ol><li><strong>Diagnostico Inicial (Visita tecnica):</strong> Evaluacion completa del sitio para identificar riesgos y necesidades especificas.</li><li><strong>Propuesta Tecnica Documentada:</strong> Documento detallado con recomendaciones de equipos y senalizacion.</li><li><strong>Ejecucion del Servicio:</strong> Instalacion y senalizacion realizada por tecnicos certificados, asegurando cumplimiento normativo.</li><li><strong>Documentacion para Proteccion Civil:</strong> Entrega de certificados y documentos requeridos para inspecciones.</li><li><strong>Seguimiento y Recordatorios:</strong> Servicio post-venta que incluye recordatorios de mantenimiento y actualizaciones normativas.</li></ol><p>Conoce mas sobre nuestro servicio de <a href="/venta-de-extintores.html">Venta de Extintores</a> y como podemos ayudar a tu empresa.</p></section><section id="costos" class="content-section"><h2>Costos y Presupuesto en CDMX: Guia de Precios</h2><p>Los costos asociados con la senalizacion de extintores pueden variar segun la capacidad del extintor, tipo de senalizacion y servicios adicionales requeridos.</p><h3>Rangos de Precio por Capacidad</h3><ul><li><strong>Capacidad 1:</strong> $800 - $1,200 MXN</li><li><strong>Capacidad 2:</strong> $1,500 - $2,500 MXN</li><li><strong>Capacidad 3:</strong> $2,800 - $4,000 MXN</li></ul><h3>Que Incluye el Precio</h3><p>El precio generalmente incluye el equipo, instalacion, senalizacion, capacitacion basica para el personal y documentacion necesaria para inspecciones de Proteccion Civil.</p><h3>Costos Ocultos a Considerar</h3><p>Ademas del costo inicial, es importante considerar el mantenimiento anual, recargas de extintores, reemplazos de senales desgastadas y posibles actualizaciones para cumplir con nuevas normativas.</p></section><section id="faq" class="content-section faq-section"><h2>Preguntas Frecuentes sobre Senalizacion de Extintores</h2><div class="faq-accordion"><details class="faq-item"><summary class="faq-question">¿Que tipos de extintores requieren senalizacion?</summary><div class="faq-answer"><p>Todos los tipos de extintores requieren senalizacion adecuada segun la NOM-026-STPS. Esto incluye extintores de PQS, CO2, agua y otros agentes especiales. La senalizacion debe indicar claramente el tipo de extintor, las clases de fuego que combate y las instrucciones basicas de uso. La visibilidad de estas senales es crucial para asegurar una respuesta eficaz en caso de emergencia.</p></div></details><details class="faq-item"><summary class="faq-question">¿Cuanto cuesta instalar senalizacion de extintores en CDMX?</summary><div class="faq-answer"><p>El costo de instalar senalizacion de extintores en la CDMX varía de $200 a $500 MXN por unidad, dependiendo del tipo de senal y la cantidad requerida. Factores como la complejidad del sitio, el tipo de senalizacion (fotoluminiscente u ordinaria) y necesidades de instalacion adicionales pueden influir en el costo total del proyecto.</p></div></details><details class="faq-item"><summary class="faq-question">¿Cual es la normativa que regula la senalizacion de extintores?</summary><div class="faq-answer"><p>La senalizacion de extintores en Mexico esta regulada principalmente por la NOM-026-STPS, que establece los requisitos para la senalizacion y el color de seguridad, y la NOM-154-SCFI, que regula las especificaciones de los extintores. Estas normativas garantizan que los equipos sean facilmente identificables y accesibles, reduciendo el riesgo de errores en situaciones de emergencia.</p></div></details><details class="faq-item"><summary class="faq-question">¿Con que frecuencia se debe revisar la senalizacion de extintores?</summary><div class="faq-answer"><p>La senalizacion de extintores debe revisarse al menos una vez al ano, de acuerdo con la NOM-154-SCFI y la NOM-002-STPS. Asimismo, se recomienda una inspeccion visual mensual para asegurar que las senales esten en buen estado, visibles y correctamente posicionadas. Cualquier daño o desgaste debe ser corregido de inmediato para asegurar su efectividad.</p></div></details><details class="faq-item"><summary class="faq-question">¿Como elegir el extintor adecuado para mi negocio?</summary><div class="faq-answer"><p>Para elegir el extintor adecuado, debe considerarse el tipo de riesgo presente en el negocio, las clases de fuego mas probables, y el area a cubrir. Los extintores deben estar certificados segun la NOM-154-SCFI y contar con senalizacion conforme a la NOM-026-STPS. La ubicacion y accesibilidad del extintor tambien son factores criticos en la seleccion.</p></div></details><details class="faq-item"><summary class="faq-question">¿Que servicios ofrece MANEXT en senalizacion de extintores?</summary><div class="faq-answer"><p>MANEXT ofrece un servicio integral que incluye la evaluacion de riesgos, instalacion de extintores y senalizacion conforme a la NOM-026-STPS, capacitacion del personal, y documentacion para inspecciones de Proteccion Civil. Para consultas, puede contactarnos al telefono 55 7008 1816 o via WhatsApp para obtener asesoramiento personalizado.</p></div></details></div></section><section id="conclusion" class="content-section conclusion"><h2>Resumen y Siguientes Pasos</h2><p>La senalizacion adecuada de extintores es esencial para la seguridad y cumplimiento normativo. Este articulo ha cubierto aspectos clave como la normativa aplicable, especificaciones tecnicas y errores comunes a evitar. Al implementar estas recomendaciones, las empresas pueden mejorar significativamente su preparacion ante incendios.</p><p>Recomendamos que las empresas realicen una evaluacion de riesgos y actualicen su senalizacion y equipos segun sea necesario. Contacte a MANEXT para una evaluacion profesional y asegurese de que su empresa cumpla con todos los requisitos normativos.</p><p><strong>Contacto directo MANEXT:</strong> Telefono 55 7008 1816 | WhatsApp disponible | Cobertura: CDMX y Zona Metropolitana (Santa Fe, Centro Historico, Roma Norte, Zona Industrial Tlalnepantla)</p></section>
-                    </div>
-                </div>
 
-                <aside class="blog-post-sidebar">
-                    <div class="sidebar-widget sticky-toc">
-                        <h3 class="widget-title">Indice del Articulo</h3>
-                        <ul class="toc-list">
-                            <li><a href="#que-es">Que es</a></li>
-                            <li><a href="#beneficios">Beneficios</a></li>
-                            <li><a href="#como-funciona">Como Funciona</a></li>
-                            <li><a href="#normativa">Normativa</a></li>
-                            <li><a href="#errores">Errores Comunes</a></li>
-                        </ul>
-                    </div>
+<p class="article-lead">
+La <strong>señalización de extintores</strong> es un requisito legal tan importante como tener los extintores mismos. Un extintor escondido detrás de un mostrador, sin señal visible, o con la etiqueta colocada a 2.5 metros de altura, puede resultar en la misma multa que no tener extintor. La NOM-026-STPS-2008 establece con precisión cómo, dónde y con qué materiales debe señalizarse cada extintor en un centro de trabajo. Esta guía te explica todo lo que debes cumplir.
+</p>
 
-                    <div class="sidebar-widget cta-widget">
-                        <h3 class="widget-title">Necesitas Asesoria?</h3>
-                        <p>Nuestros expertos estan listos para ayudarte con cualquier duda sobre extintores y proteccion contra incendios.</p>
-                        <a href="tel:5570081816" class="widget-cta-btn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            Llamar Ahora
-                        </a>
-                        <a href="https://wa.me/5215570081816" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                            </svg>
-                            WhatsApp
-                        </a>
-                    </div>
+<nav class="toc">
+<p class="toc-title">Contenido del artículo</p>
+<ul>
+<li><a href="#por-que-importante">¿Por Qué es Obligatoria la Señalización?</a></li>
+<li><a href="#nom-026-stps">La NOM-026-STPS: Qué Establece</a></li>
+<li><a href="#tipos-senales">Tipos de Señales para Extintores</a></li>
+<li><a href="#colores">Colores Normativos y su Significado</a></li>
+<li><a href="#especificaciones">Especificaciones Técnicas por Señal</a></li>
+<li><a href="#altura-ubicacion">Altura y Ubicación Correcta</a></li>
+<li><a href="#materiales">Materiales: Rígida, Vinilo, Fotoluminiscente</a></li>
+<li><a href="#errores">Errores Comunes que Causan Multas</a></li>
+<li><a href="#precios">Costos de Señalización en CDMX 2026</a></li>
+<li><a href="#faq">Preguntas Frecuentes</a></li>
+</ul>
+</nav>
 
-                    <div class="sidebar-widget products-widget">
-                        <h3 class="widget-title">Servicios Destacados</h3>
-                        <div class="sidebar-products-grid">
-                            <article class="sidebar-product-card">
-                                <div class="sidebar-product-image">
-                                    <img src="../img/img-index/venta-de-extintores.avif" alt="Venta de Extintores" loading="lazy">
-                                    <span class="sidebar-product-badge">Certificado</span>
-                                </div>
-                                <div class="sidebar-product-content">
-                                    <h4><a href="../venta-de-extintores.html">Venta de Extintores</a></h4>
-                                    <p class="sidebar-product-desc">Todos los tipos certificados NOM</p>
-                                    <a href="../venta-de-extintores.html" class="sidebar-product-btn">Ver Catalogo</a>
-                                </div>
-                            </article>
-                            <article class="sidebar-product-card">
-                                <div class="sidebar-product-image">
-                                    <img src="../img/img-index/recarga-de-extintores.avif" alt="Recarga de Extintores" loading="lazy">
-                                    <span class="sidebar-product-badge">Servicio</span>
-                                </div>
-                                <div class="sidebar-product-content">
-                                    <h4><a href="../recarga-de-extintores.html">Recarga de Extintores</a></h4>
-                                    <p class="sidebar-product-desc">Servicio profesional certificado</p>
-                                    <a href="../recarga-de-extintores.html" class="sidebar-product-btn">Ver Servicio</a>
-                                </div>
-                            </article>
-                            <article class="sidebar-product-card">
-                                <div class="sidebar-product-image">
-                                    <img src="../img/img-index/capacitacion-y-brigadas.avif" alt="Capacitacion" loading="lazy">
-                                    <span class="sidebar-product-badge">Obligatorio</span>
-                                </div>
-                                <div class="sidebar-product-content">
-                                    <h4><a href="../capacitacion-brigadas.html">Capacitacion Brigadas</a></h4>
-                                    <p class="sidebar-product-desc">Cumplimiento NOM-002-STPS</p>
-                                    <a href="../capacitacion-brigadas.html" class="sidebar-product-btn">Ver Cursos</a>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+<section id="por-que-importante" class="content-section">
+<h2>¿Por Qué es Obligatoria la Señalización de Extintores?</h2>
+<p>
+Durante un incendio, los primeros 30 segundos son críticos. Una persona bajo estrés, con humo y ruido, no puede "recordar" dónde está el extintor — necesita verlo inmediatamente. La señalización es el sistema que hace posible esta identificación rápida.
+</p>
+<p>
+Desde una perspectiva legal, la NOM-002-STPS-2010 exige que los extintores estén "debidamente identificados y señalizados", y remite a la NOM-026-STPS para los requisitos específicos de señalización. Esto significa que la falta de señalización adecuada viola simultáneamente dos normas oficiales.
+</p>
 
-                    <div class="sidebar-widget share-widget">
-                        <h3 class="widget-title">Compartir Articulo</h3>
-                        <div class="share-buttons">
-                            <a href="#" class="share-btn facebook" aria-label="Compartir en Facebook">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="share-btn twitter" aria-label="Compartir en Twitter">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="share-btn whatsapp" aria-label="Compartir por WhatsApp">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                                </svg>
-                            </a>
+<h3>Lo que Verifica Protección Civil</h3>
+<ul>
+<li>Presencia de señal de ubicación de extintor en cada equipo</li>
+<li>Altura de instalación de la señal (entre 1.8 y 2.5 m del piso)</li>
+<li>Visibilidad desde al menos 10 metros sin obstrucciones</li>
+<li>Compatibilidad del material con el ambiente (zonas húmedas, oscuras, exteriores)</li>
+<li>Estado de conservación: señales deterioradas, decoloradas o ilegibles se consideran ausentes</li>
+</ul>
+
+<div class="highlight-box">
+<h4>Multa por Señalización Incorrecta</h4>
+<p>La Ley Federal del Trabajo y el Reglamento de Protección Civil CDMX establecen multas de <strong>$5,869 a $586,950 MXN</strong> (50 a 5,000 UMAs) por incumplimiento en materia de señalización. Una señal fuera de la altura normativa o con material no fotoluminiscente en zona oscura es suficiente para levantar un acta de infracción.</p>
+</div>
+</section>
+
+<section id="nom-026-stps" class="content-section">
+<h2>La NOM-026-STPS: Qué Establece sobre Señalización</h2>
+<p>
+La <strong>NOM-026-STPS-2008</strong> (Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías) es la norma que regula todos los aspectos visuales de la señalización de seguridad en centros de trabajo, incluyendo la señalización de extintores.
+</p>
+
+<h3>Principios Fundamentales</h3>
+<ul>
+<li><strong>Estandarización:</strong> Todos los centros de trabajo deben usar el mismo sistema de colores y formas para las mismas categorías de señales.</li>
+<li><strong>Visibilidad mínima:</strong> Las señales deben ser distinguibles a distancias establecidas según su tamaño.</li>
+<li><strong>Contraste:</strong> Cada señal debe tener colores que contrasten suficientemente para ser legibles en condiciones normales.</li>
+<li><strong>Fotoluminiscencia en zonas críticas:</strong> En áreas sin iluminación de emergencia, las señales deben ser fotoluminiscentes.</li>
+</ul>
+
+<h3>Categorías de Señales</h3>
+<table>
+<thead>
+<tr><th>Categoría</th><th>Forma</th><th>Color de fondo</th><th>Color del símbolo</th></tr>
+</thead>
+<tbody>
+<tr><td>Prohibición</td><td>Circular</td><td>Blanco</td><td>Rojo y negro</td></tr>
+<tr><td>Precaución / Advertencia</td><td>Triangular</td><td>Amarillo</td><td>Negro</td></tr>
+<tr><td>Obligación</td><td>Circular</td><td>Azul</td><td>Blanco</td></tr>
+<tr><td>Condición segura / Evacuación</td><td>Rectangular o cuadrada</td><td>Verde</td><td>Blanco</td></tr>
+<tr><td>Equipo contra incendio</td><td>Rectangular o cuadrada</td><td>Rojo</td><td>Blanco</td></tr>
+</tbody>
+</table>
+
+<p>
+Las señales de extintores pertenecen a la categoría de <strong>equipo contra incendio</strong>: fondo rojo, símbolo blanco.
+</p>
+</section>
+
+<section id="tipos-senales" class="content-section">
+<h2>Tipos de Señales para Extintores</h2>
+<p>
+Para un extintor correctamente señalizado según la NOM-026-STPS, generalmente se instalan dos tipos de señales complementarias:
+</p>
+
+<h3>1. Señal de Ubicación (Alta, en Pared o Techo)</h3>
+<p>
+Es la señal principal. Se instala a <strong>entre 1.8 y 2.5 metros de altura</strong> (medidos al borde inferior de la señal). Su función es indicar la ubicación del extintor desde lejos, incluso cuando hay obstáculos visuales como mobiliario, personas o humo bajo.
+</p>
+<ul>
+<li><strong>Forma:</strong> Rectangular o cuadrada</li>
+<li><strong>Fondo:</strong> Rojo</li>
+<li><strong>Símbolo:</strong> Extintor blanco (pictograma ISO 7010-F001)</li>
+<li><strong>Texto opcional:</strong> "EXTINTOR" en blanco</li>
+<li><strong>Tamaño mínimo:</strong> 20×20 cm para visibilidad hasta 10 m; 30×30 cm para hasta 15 m</li>
+</ul>
+
+<h3>2. Señal de Identificación (Junto al Extintor)</h3>
+<p>
+Va colocada directamente sobre o junto al extintor, a la altura del propio equipo. Proporciona información operativa adicional:
+</p>
+<ul>
+<li>Clase de fuego que combate (A, B, C, K)</li>
+<li>Instrucciones básicas de uso (PASS: Jalar, Apuntar, Apretar, Barrer)</li>
+<li>Agente extintor</li>
+</ul>
+
+<h3>3. Señal de Flecha Direccional (Pasillo largo o Curva)</h3>
+<p>
+Cuando el extintor no es visible desde el punto de acceso al área (por ejemplo, al final de un pasillo largo o al doblar una esquina), se requiere instalar señales de flecha direccional que guíen hacia él. Mismo esquema cromático: fondo rojo, flecha blanca.
+</p>
+
+<div class="highlight-box">
+<h4>¿Necesitas Señal de Piso También?</h4>
+<p>La NOM-026-STPS no exige señalización en el piso para extintores, pero algunas empresas de zonas de alto tránsito (bodegas, plantas de manufactura) la instalan voluntariamente para reforzar la visibilidad. Protección Civil lo ve favorablemente aunque no es un requisito. Lo que SÍ es obligatorio es la señalización en pared o techo.</p>
+</div>
+</section>
+
+<section id="colores" class="content-section">
+<h2>Colores Normativos y su Significado</h2>
+<p>
+Los colores de seguridad en la NOM-026-STPS están definidos con precisión usando referencias Munsell (sistema estándar de color). No es suficiente con usar "rojo" genérico — debe ser el rojo específico de seguridad.
+</p>
+
+<table>
+<thead>
+<tr><th>Color de Seguridad</th><th>Referencia Munsell</th><th>Significado</th><th>Color de Contraste</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Rojo</strong></td><td>7.5 R 4/14</td><td>Peligro · Equipo contra incendio</td><td>Blanco</td></tr>
+<tr><td><strong>Amarillo</strong></td><td>5 Y 8/12</td><td>Precaución · Advertencia</td><td>Negro</td></tr>
+<tr><td><strong>Verde</strong></td><td>2.5 G 5/8</td><td>Condición segura · Evacuación</td><td>Blanco</td></tr>
+<tr><td><strong>Azul</strong></td><td>2.5 PB 4/10</td><td>Obligación</td><td>Blanco</td></tr>
+<tr><td><strong>Blanco</strong></td><td>N 9.5</td><td>Color de contraste</td><td>Negro o Rojo</td></tr>
+</tbody>
+</table>
+
+<p>
+Para las señales de extintores: el <strong>rojo NOM</strong> (7.5 R 4/14) es el fondo y el blanco (N 9.5) el color del símbolo y texto. Señales con rojo incorrecto (más oscuro, más brillante o anaranjado) técnicamente no cumplen con la norma.
+</p>
+</section>
+
+<section id="especificaciones" class="content-section">
+<h2>Especificaciones Técnicas por Señal</h2>
+<p>
+La NOM-026-STPS establece que el tamaño de una señal debe calcularse en función de la distancia máxima de observación. La fórmula básica es:
+</p>
+<p>
+<strong>Área mínima de la señal (m²) = Distancia de observación (m) / 500</strong>
+</p>
+<p>
+En la práctica, esto se traduce en los siguientes tamaños para señales de extintores:
+</p>
+
+<table>
+<thead>
+<tr><th>Distancia máxima de visibilidad</th><th>Área mínima de señal</th><th>Tamaño equivalente</th></tr>
+</thead>
+<tbody>
+<tr><td>Hasta 5 metros</td><td>50 cm²</td><td>7×7 cm (señal pequeña)</td></tr>
+<tr><td>Hasta 10 metros</td><td>200 cm²</td><td>14×14 cm mínimo</td></tr>
+<tr><td>Hasta 15 metros</td><td>450 cm²</td><td>21×21 cm</td></tr>
+<tr><td>Hasta 20 metros</td><td>800 cm²</td><td>28×28 cm</td></tr>
+<tr><td>Hasta 30 metros</td><td>1,800 cm²</td><td>42×42 cm</td></tr>
+</tbody>
+</table>
+
+<p>
+Para la mayoría de los locales comerciales con pasillos de 5–15 metros, la señal estándar de <strong>20×20 cm</strong> (400 cm²) es adecuada. Para bodegas industriales o naves con más de 15 metros de visibilidad, se recomienda 30×30 cm o mayor.
+</p>
+</section>
+
+<section id="altura-ubicacion" class="content-section">
+<h2>Altura y Ubicación Correcta de las Señales</h2>
+<p>
+Este es el punto de mayor incumplimiento que encontramos en MANEXT durante las evaluaciones: señales instaladas demasiado bajo (junto al extintor) o demasiado alto (en el techo), perdiendo efectividad visual.
+</p>
+
+<h3>Altura de la Señal de Ubicación</h3>
+<ul>
+<li><strong>Borde inferior de la señal:</strong> entre 1.80 m y 2.50 m del piso</li>
+<li><strong>Señal en pared:</strong> instalada sobre el extintor, con la señal apuntando hacia él o con flecha si hay desplazamiento lateral</li>
+<li><strong>Señal en techo suspendido:</strong> cuando las paredes no son visibles (naves industriales), se puede instalar en techo colgante, visible desde múltiples ángulos</li>
+</ul>
+
+<h3>Reglas de Ubicación</h3>
+<ul>
+<li>La señal debe ser visible sin desplazarse de la ruta normal de tránsito</li>
+<li>No debe haber obstáculos (columnas, anaqueles, maquinaria) entre el observador y la señal en el eje de visión normal</li>
+<li>En pasillos largos (más de 10 m), instalar señales en ambas direcciones</li>
+<li>Si el extintor está en un cuarto cerrado (cuarto eléctrico, bodega), instalar señal también en la puerta exterior</li>
+</ul>
+
+<div class="highlight-box">
+<h4>Error Frecuente: Señal Tapada por la Puerta</h4>
+<p>Si instalas la señal justo detrás de donde se abre la puerta, quedará oculta cada vez que alguien entre al local. En la inspección de Protección Civil esto se considera señalización inexistente para quienes ingresan por esa entrada. La señal debe ser visible tanto con la puerta abierta como cerrada, o instalar una segunda señal para el ángulo de entrada.</p>
+</div>
+</section>
+
+<section id="materiales" class="content-section">
+<h2>Materiales: Rígida, Vinilo y Fotoluminiscente</h2>
+<p>
+La elección del material de la señal depende de las condiciones del área donde se instalará. La NOM-026-STPS especifica que en ciertas condiciones se requieren materiales fotoluminiscentes.
+</p>
+
+<h3>Señal Rígida (PVC o Aluminio)</h3>
+<ul>
+<li><strong>Material:</strong> PVC de 2–3 mm o aluminio anodizado</li>
+<li><strong>Uso recomendado:</strong> Áreas secas, interiores, bien iluminadas</li>
+<li><strong>Ventaja:</strong> Durabilidad, resistencia a golpes</li>
+<li><strong>Precio aprox.:</strong> $80–$150 MXN por pieza</li>
+</ul>
+
+<h3>Señal de Vinilo Adhesivo</h3>
+<ul>
+<li><strong>Material:</strong> Vinilo con adhesivo permanente</li>
+<li><strong>Uso recomendado:</strong> Sobre superficies lisas (metal, vidrio, PVC)</li>
+<li><strong>Ventaja:</strong> Económica, fácil instalación</li>
+<li><strong>Desventaja:</strong> Menor durabilidad en exteriores o zonas húmedas</li>
+<li><strong>Precio aprox.:</strong> $40–$80 MXN por pieza</li>
+</ul>
+
+<h3>Señal Fotoluminiscente</h3>
+<ul>
+<li><strong>Material:</strong> Compuesto fotoluminiscente (aluminio o rígido con recubrimiento especial)</li>
+<li><strong>Uso recomendado:</strong> Obligatoria en áreas sin iluminación de emergencia, cuartos sin ventanas, estacionamientos, bodegas cerradas</li>
+<li><strong>Norma aplicable:</strong> NOM-026-STPS exige que la señal sea visible por al menos <strong>90 minutos</strong> después de un corte de luz</li>
+<li><strong>Precio aprox.:</strong> $150–$300 MXN por pieza</li>
+</ul>
+
+<h3>¿Cuándo es Obligatoria la Fotoluminiscencia?</h3>
+<p>
+Según la NOM-026-STPS, las señales fotoluminiscentes son obligatorias en:
+</p>
+<ul>
+<li>Áreas donde un corte de luz dejaría la zona en oscuridad total</li>
+<li>Pasillos de evacuación sin ventanas exteriores</li>
+<li>Cuartos de servidores, cuartos eléctricos y sótanos</li>
+<li>Estacionamientos subterráneos</li>
+<li>Bodegas cerradas sin iluminación natural</li>
+</ul>
+</section>
+
+<section id="errores" class="content-section">
+<h2>Errores Comunes que Causan Multas en Inspecciones</h2>
+<p>
+Estos son los incumplimientos en señalización que con mayor frecuencia registra Protección Civil CDMX durante verificaciones:
+</p>
+
+<h3>1. Señal Instalada Demasiado Baja</h3>
+<p>Muchas empresas instalan la señal a la altura del extintor (1.0–1.5 m), cuando debería estar entre 1.8 y 2.5 m. La señal baja queda oculta por mobiliario y personas.</p>
+
+<h3>2. Señal Demasiado Pequeña para la Distancia de Visión</h3>
+<p>Una señal de 10×10 cm en una bodega de 20 metros de fondo no cumple con los requisitos de la fórmula de visibilidad. El tamaño debe ser proporcional a la distancia máxima desde donde debe verse.</p>
+
+<h3>3. Color Incorrecto o Decolorado</h3>
+<p>Las señales que han perdido brillo con el tiempo, expuestas al sol directo o al polvo, ya no cumplen con la especificación de color NOM-026-STPS. Deben reemplazarse.</p>
+
+<h3>4. Material No Fotoluminiscente en Área Oscura</h3>
+<p>Instalar señales de vinilo ordinario en zonas que requieren fotoluminiscencia (bodegas, cuartos técnicos) es un incumplimiento directo.</p>
+
+<h3>5. Señal sin Pictograma o con Símbolo Genérico</h3>
+<p>La NOM-026-STPS establece el pictograma específico de extintor (ISO 7010-F001). Una señal con el texto "EXTINTOR" sin el pictograma, o con un símbolo de diseño propio, puede ser rechazada.</p>
+
+<h3>6. Extintor sin Señal (Solo Señal sin Extintor)</h3>
+<p>Extrañamente frecuente: la señal quedó en la pared después de mover el extintor a otra ubicación. La señal apunta a un espacio vacío, lo que genera confusión y puede causar una multa doble.</p>
+
+<h3>7. No Señalizar Extintores en Cuartos de Acceso Restringido</h3>
+<p>Si el extintor está en un cuarto eléctrico o de comunicaciones de acceso restringido, debe haber señal tanto dentro del cuarto (sobre el extintor) como en la puerta exterior indicando que hay un extintor adentro.</p>
+</section>
+
+<section id="precios" class="content-section">
+<h2>Costos de Señalización de Extintores en CDMX 2026</h2>
+
+<table>
+<thead>
+<tr><th>Producto/Servicio</th><th>Precio Aprox.</th><th>Notas</th></tr>
+</thead>
+<tbody>
+<tr><td>Señal rígida PVC 20×20 cm</td><td>$80–$130 MXN c/u</td><td>Para áreas interiores iluminadas</td></tr>
+<tr><td>Señal rígida PVC 30×30 cm</td><td>$120–$180 MXN c/u</td><td>Para áreas grandes, distancia &gt;10 m</td></tr>
+<tr><td>Señal fotoluminiscente 20×20 cm</td><td>$150–$220 MXN c/u</td><td>Obligatoria en zonas sin luz de emergencia</td></tr>
+<tr><td>Señal fotoluminiscente 30×30 cm</td><td>$200–$300 MXN c/u</td><td>Para bodegas e instalaciones industriales</td></tr>
+<tr><td>Señal direccional (flecha) PVC</td><td>$90–$150 MXN c/u</td><td>Para pasillos largos y esquinas</td></tr>
+<tr><td>Instalación profesional por señal</td><td>$80–$150 MXN</td><td>Incluye anclaje, sellado y verificación de altura</td></tr>
+<tr><td>Señalización completa (extintor + señal + instalación)</td><td>$250–$450 MXN adicionales</td><td>Al comprar el extintor con MANEXT</td></tr>
+</tbody>
+</table>
+
+<p>
+En MANEXT incluimos la señalización básica (señal de ubicación + soporte de extintor) en todas las compras. La instalación adicional de señales en rutas de evacuación, salidas de emergencia y puntos de reunión se cotiza por separado según las dimensiones y características del espacio.
+</p>
+
+<div class="highlight-box">
+<h4>Paquete Señalización Completa para Protección Civil</h4>
+<p>Para negocios que necesitan regularizarse antes de una inspección, MANEXT ofrece un paquete de señalización completa que incluye: evaluación de todas las áreas, suministro e instalación de señales NOM-026-STPS, señales de evacuación, salidas de emergencia y puntos de reunión, más el expediente técnico para presentar ante Protección Civil. <a href="/contacto">Solicita cotización gratuita →</a></p>
+</div>
+</section>
+
+<section id="faq" class="content-section">
+<h2>Preguntas Frecuentes sobre Señalización de Extintores</h2>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-1">¿A qué altura se instala la señal de extintor según la NOM?</button>
+<div class="faq-answer" id="faq-se-1">
+<p>El borde inferior de la señal de ubicación debe estar entre <strong>1.80 y 2.50 metros del piso</strong>. Esta altura permite que la señal sea visible por encima del mobiliario y de las personas, y que se vea incluso con humo bajo acumulado en el suelo. Instalar la señal a la misma altura que el extintor (1.0–1.5 m) es uno de los errores más comunes y es motivo de infracción en inspecciones de Protección Civil.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-2">¿Cuál es la diferencia entre señal fotoluminiscente y señal normal?</button>
+<div class="faq-answer" id="faq-se-2">
+<p>Las señales <strong>fotoluminiscentes</strong> absorben la luz ambiental y la emiten en la oscuridad durante al menos 90 minutos, siendo visibles cuando se va la luz eléctrica. Las señales normales (vinilo o PVC sin tratamiento especial) solo son visibles con iluminación activa. La NOM-026-STPS exige fotoluminiscencia en zonas que quedan en oscuridad total durante una emergencia, como bodegas cerradas, cuartos técnicos y estacionamientos subterráneos.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-3">¿Con qué frecuencia debo reemplazar las señales?</button>
+<div class="faq-answer" id="faq-se-3">
+<p>No hay un período fijo establecido por la norma, pero las señales deben reemplazarse cuando presenten: decoloración (el rojo pierde intensidad con exposición UV), daño físico (grietas, roturas, marcas), texto o símbolo ilegible, o cuando el extintor se mueve de lugar y la señal queda apuntando al vacío. Como práctica recomendada, revisa el estado de todas las señales durante el mantenimiento anual del extintor.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-4">¿Necesito señalización especial para extintores CO2 o Tipo K?</button>
+<div class="faq-answer" id="faq-se-4">
+<p>La señal de ubicación es la misma para todos los tipos de extintor (fondo rojo, pictograma de extintor). Sin embargo, es recomendable (y en algunos casos exigido por Protección Civil) que la señal de identificación pegada junto al equipo indique claramente la <strong>clase de fuego</strong> que combate y el tipo de agente. Para el extintor Tipo K en cocinas, esto es especialmente importante para que el personal use el equipo correcto y no intente apagar el aceite con el PQS de otro sector.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-5">¿La señal de extintor se puede imprimir en casa?</button>
+<div class="faq-answer" id="faq-se-5">
+<p>Técnicamente la NOM-026-STPS no exige un sello de fabricante en cada señal, pero sí especifica con precisión el color NOM (referencia Munsell), el tamaño mínimo según distancia, el pictograma estandarizado y el material. Una impresión casera generalmente no reproduce el rojo NOM correcto (que es muy específico), no tiene el grosor mínimo de material y se deteriora rápido. Durante una inspección, si el inspector considera que la señal no cumple con las especificaciones técnicas de la norma, la multa procede. Lo más seguro es usar señales fabricadas expresamente para NOM-026-STPS.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-se-6">¿MANEXT incluye señalización al comprar extintores?</button>
+<div class="faq-answer" id="faq-se-6">
+<p>Sí. En todas las compras de extintores con MANEXT incluimos la señal de ubicación NOM-026-STPS y su instalación a la altura correcta. Para negocios que necesitan señalización completa (rutas de evacuación, salidas de emergencia, puntos de reunión), ofrecemos paquetes integrales con cotización gratuita según las dimensiones de tu local. Llamar al <strong>55 7008 1816</strong> o escribir por WhatsApp para agendar evaluación.</p>
+</div>
+</div>
+</section>

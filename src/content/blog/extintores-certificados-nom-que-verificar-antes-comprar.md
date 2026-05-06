@@ -1,6 +1,10 @@
 ---
-title: "Extintores Certificados NOM: Qué Verificar Antes de Comprar"
+title: "Extintores Certificados NOM: Qué Verificar Antes de Comprar en 2026"
 description: "Guía para verificar que un extintor esté certificado NOM-154-SCFI antes de comprarlo. Cómo leer la etiqueta, detectar extintores falsos y qué exigir al proveedor en México."
+pubDate: "2026-04-25"
+heroRight:
+  - "En México circulan miles de extintores sin certificación visualmente idénticos a los certificados. La NOM-154-SCFI-2005 establece qué debe cumplir todo extintor en México — y un equipo que no la tiene puede fallar exactamente cuando más lo necesitas."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años distribuyendo extintores en CDMX. Todos nuestros equipos cuentan con certificación NOM-154-SCFI vigente y entregamos documentación completa: certificados de lote, fichas técnicas y factura CFDI."
 ---
 <div class="article-intro">
   <p>En México circulan miles de extintores sin certificación que se venden a precios atractivos en tianguis, plataformas de comercio electrónico y ferreterías informales. Visualmente son idénticos a los certificados: mismo color rojo, misma forma cilíndrica, misma etiqueta de instrucciones. La diferencia está en el interior, en los materiales, en la presión real del cilindro y, sobre todo, en si funcionarán cuando los necesites.</p>
@@ -9,8 +13,8 @@ description: "Guía para verificar que un extintor esté certificado NOM-154-SCF
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es-certificacion">Qué es la Certificación NOM-154-SCFI</a></li>
     <li><a href="#como-leer-etiqueta">Cómo Leer la Etiqueta de un Extintor</a></li>
     <li><a href="#senales-certificado">Señales de que un Extintor Está Certificado</a></li>
@@ -20,7 +24,7 @@ description: "Guía para verificar que un extintor esté certificado NOM-154-SCF
     <li><a href="#verificacion-lote">Cómo Verificar un Lote Completo</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Cotiza Extintores Certificados MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es-certificacion">Qué es la Certificación NOM-154-SCFI</h2>
@@ -109,7 +113,7 @@ description: "Guía para verificar que un extintor esté certificado NOM-154-SCF
   <li><strong>Imposibilidad de dar mantenimiento certificado:</strong> Los talleres certificados para mantenimiento de extintores según NOM-154-SCFI generalmente no pueden certificar el mantenimiento de equipos sin número de certificado, ya que no pueden garantizar que el cilindro cumple con las especificaciones de seguridad requeridas para las pruebas de presión.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>El Costo Real de los Extintores Baratos</h4>
   <p>Un extintor PQS sin certificación puede costar $250 MXN vs $650 de uno certificado. La diferencia es $400. Una multa de Protección Civil por equipos deficientes puede ir de 50 a 5,000 UMAs (aproximadamente $5,500 a $550,000 MXN en 2026). La aritmética no favorece al ahorro.</p>
 </div>
@@ -143,30 +147,23 @@ description: "Guía para verificar que un extintor esté certificado NOM-154-SCF
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Puedo verificar en línea si un extintor está certificado?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La Secretaría de Economía mantiene un directorio de productos certificados consultable, aunque no siempre está actualizado en tiempo real. La forma más confiable es revisar directamente la etiqueta del extintor para el número de certificado y el organismo certificador, luego contactar a ese organismo para confirmar que el certificado está vigente. Los organismos como ANCE y NYCE tienen líneas de consulta para esto.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cert-1">¿Puedo verificar en línea si un extintor está certificado?</button>
+    <div class="faq-answer" id="faq-cert-1"><p>La Secretaría de Economía mantiene un directorio de productos certificados consultable, aunque no siempre está actualizado en tiempo real. La forma más confiable es revisar directamente la etiqueta del extintor para el número de certificado y el organismo certificador, luego contactar a ese organismo para confirmar que el certificado está vigente. Los organismos como ANCE y NYCE tienen líneas de consulta para esto.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Un extintor comprado en línea puede ser certificado?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí, pero el riesgo es mayor porque no puedes revisar la etiqueta física antes de comprar. Si compras en línea, exige al vendedor que te envíe una foto clara de la etiqueta del producto antes de pagar. También verifica que el vendedor emita CFDI y tenga razón social verificable. En general, para compras de extintores para uso empresarial con requisitos de Protección Civil, se recomienda comprar directamente a distribuidores especializados que puedan entregar documentación completa.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cert-2">¿Un extintor comprado en línea puede ser certificado?</button>
+    <div class="faq-answer" id="faq-cert-2"><p>Sí, pero el riesgo es mayor porque no puedes revisar la etiqueta física antes de comprar. Si compras en línea, exige al vendedor que te envíe una foto clara de la etiqueta del producto antes de pagar. También verifica que el vendedor emita CFDI y tenga razón social verificable. En general, para compras de extintores para uso empresarial con requisitos de Protección Civil, se recomienda comprar directamente a distribuidores especializados que puedan entregar documentación completa.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Cada cuánto tiempo se renueva la certificación NOM de un extintor?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La certificación NOM aplica al modelo de extintor, no a cada unidad individual. El fabricante o importador debe renovar la certificación periódicamente (generalmente cada 2-5 años) o cuando hace cambios en el diseño o materiales del producto. Como usuario, lo que importa es que el extintor que compraste tenga número de certificado válido en su etiqueta en el momento de la compra. El mantenimiento anual posterior es independiente de la certificación del modelo.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cert-3">¿Cada cuánto tiempo se renueva la certificación NOM de un extintor?</button>
+    <div class="faq-answer" id="faq-cert-3"><p>La certificación NOM aplica al modelo de extintor, no a cada unidad individual. El fabricante o importador debe renovar la certificación periódicamente (generalmente cada 2-5 años) o cuando hace cambios en el diseño o materiales del producto. Como usuario, lo que importa es que el extintor que compraste tenga número de certificado válido en su etiqueta en el momento de la compra. El mantenimiento anual posterior es independiente de la certificación del modelo.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué hago si ya compré extintores sin certificación?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Primero evalúa si puedes obtener la documentación de certificación del proveedor retroactivamente. Si no es posible, tienes dos opciones: reemplazar los equipos con extintores certificados (lo más seguro), o continuar usándolos asumiendo el riesgo de que no pasen inspecciones de Protección Civil y potencialmente fallen en emergencias. En MANEXT podemos evaluar los equipos que ya tienes y orientarte sobre cuáles es prioritario reemplazar y cuáles pueden seguir en servicio mientras se planea la regularización.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cert-4">¿Qué hago si ya compré extintores sin certificación?</button>
+    <div class="faq-answer" id="faq-cert-4"><p>Primero evalúa si puedes obtener la documentación de certificación del proveedor retroactivamente. Si no es posible, tienes dos opciones: reemplazar los equipos con extintores certificados (lo más seguro), o continuar usándolos asumiendo el riesgo de que no pasen inspecciones de Protección Civil y potencialmente fallen en emergencias. En MANEXT podemos evaluar los equipos que ya tienes y orientarte sobre cuáles es prioritario reemplazar y cuáles pueden seguir en servicio mientras se planea la regularización.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Los extintores importados de Estados Unidos están certificados en México?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No automáticamente. Los extintores certificados UL en Estados Unidos cumplen estándares de ese país, que son reconocidos técnicamente pero no equivalen a la certificación NOM-154-SCFI. Para que un extintor de fabricación estadounidense sea legal en México, el importador debe haberlo sometido a proceso de certificación ante un organismo acreditado en México. La presencia de la marca UL en la etiqueta es una buena señal de calidad, pero no reemplaza al número de certificado NOM.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cert-5">¿Los extintores importados de Estados Unidos están certificados en México?</button>
+    <div class="faq-answer" id="faq-cert-5"><p>No automáticamente. Los extintores certificados UL en Estados Unidos cumplen estándares de ese país, que son reconocidos técnicamente pero no equivalen a la certificación NOM-154-SCFI. Para que un extintor de fabricación estadounidense sea legal en México, el importador debe haberlo sometido a proceso de certificación ante un organismo acreditado en México. La presencia de la marca UL en la etiqueta es una buena señal de calidad, pero no reemplaza al número de certificado NOM.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Extintores Certificados NOM con Documentación Completa</h3>
-  <p>En MANEXT todos nuestros extintores cuentan con certificación NOM-154-SCFI vigente y entregamos documentación completa: certificados de lote, fichas técnicas y factura CFDI. Con más de 80 años distribuyendo extintores en CDMX, cada equipo que vendemos puede ser verificado y pasa inspecciones de Protección Civil sin contratiempos. Solicita cotización sin compromiso.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20necesito%20cotización%20de%20extintores%20certificados%20NOM%20con%20documentación%20completa" class="btn-cta">Cotizar Extintores Certificados por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

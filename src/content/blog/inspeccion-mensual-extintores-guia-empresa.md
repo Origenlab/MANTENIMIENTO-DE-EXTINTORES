@@ -1,6 +1,10 @@
 ---
-title: "Inspección Mensual de Extintores: Guía para Empresas"
+title: "Inspección Mensual de Extintores: Guía Completa para Empresas 2026"
 description: "Cómo realizar la inspección mensual de extintores obligatoria según NOM-002-STPS. Checklist de 10 puntos, quién debe hacerla y cómo documentarla correctamente en tu empresa."
+pubDate: "2026-04-15"
+heroRight:
+  - "La inspección mensual de extintores es obligatoria por la NOM-002-STPS y puede realizarla el personal interno de tu empresa. Una verificación bien hecha detecta pérdidas de presión, daños físicos y obstrucciones antes de que se conviertan en emergencias reales."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando a empresas en CDMX sobre el mantenimiento correcto de sus sistemas de protección. Te ofrecemos formatos de registro, capacitación al responsable designado y soporte inmediato cuando detectas un problema."
 ---
 <div class="article-intro">
   <p>La <strong>inspección mensual de extintores</strong> es la única verificación que puede realizarla el personal interno de tu empresa sin necesitar un técnico certificado externo. Sin embargo, "inspección mensual" no significa "echarle un vistazo rápido al extintor". La NOM-002-STPS define qué debe revisarse, quién debe hacerlo, cómo documentarlo y qué hacer cuando se detecta un problema.</p>
@@ -9,8 +13,8 @@ description: "Cómo realizar la inspección mensual de extintores obligatoria se
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es-inspeccion">Qué es la Inspección Mensual y Por Qué es Obligatoria</a></li>
     <li><a href="#quien-la-realiza">Quién Debe Realizarla</a></li>
     <li><a href="#checklist-10-puntos">Checklist: Los 10 Puntos a Verificar</a></li>
@@ -20,7 +24,7 @@ description: "Cómo realizar la inspección mensual de extintores obligatoria se
     <li><a href="#errores-comunes">Errores Más Comunes en la Inspección</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Soporte Técnico MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es-inspeccion">Qué es la Inspección Mensual y Por Qué es Obligatoria</h2>
@@ -121,37 +125,30 @@ description: "Cómo realizar la inspección mensual de extintores obligatoria se
 
 <h2 id="diferencia-mantenimiento">Diferencia con el Mantenimiento Preventivo Anual</h2>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Lo Que No Puedes Evaluar en la Inspección Mensual</h4>
   <p>La inspección mensual es visual y no invasiva. No puedes verificar: la calidad o cantidad real del agente extintor interior, el estado de los sellos y empaques internos, el funcionamiento real del mecanismo de descarga sin accionarlo, ni la integridad interna del cilindro. Esas evaluaciones las realiza el técnico certificado en el mantenimiento preventivo anual. La inspección mensual detecta problemas externos evidentes; el mantenimiento anual evalúa lo que no ves.</p>
 </div>
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si me salto la inspección mensual un mes?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Una inspección mensual faltante en el registro no es una infracción aislada que tenga sanción inmediata, pero es evidencia de falta de control en el sistema de protección. Si Protección Civil realiza una inspección y nota que hay meses sin registros, puede emitir observaciones que si no se corrijan derivan en sanciones. Lo más importante es el patrón: uno o dos meses faltantes en años de registros completos es comprensible; un registro sistemáticamente incompleto es una infracción documentada.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-inspeccion-1">¿Qué pasa si me salto la inspección mensual un mes?</button>
+    <div class="faq-answer" id="faq-inspeccion-1"><p>Una inspección mensual faltante en el registro no es una infracción aislada que tenga sanción inmediata, pero es evidencia de falta de control en el sistema de protección. Si Protección Civil realiza una inspección y nota que hay meses sin registros, puede emitir observaciones que si no se corrijan derivan en sanciones. Lo más importante es el patrón: uno o dos meses faltantes en años de registros completos es comprensible; un registro sistemáticamente incompleto es una infracción documentada.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿La inspección mensual puede hacerse de forma digital?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí. La NOM-002-STPS no especifica que el registro deba ser en papel. Un formulario digital, una hoja de cálculo compartida o una aplicación de gestión de mantenimiento son igualmente válidos siempre que el registro sea fechado, firmado electrónicamente o atribuible a una persona identificable, y pueda imprimirse o presentarse durante una inspección. Lo que importa es que el registro exista, sea fechado y sea verificable.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-inspeccion-2">¿La inspección mensual puede hacerse de forma digital?</button>
+    <div class="faq-answer" id="faq-inspeccion-2"><p>Sí. La NOM-002-STPS no especifica que el registro deba ser en papel. Un formulario digital, una hoja de cálculo compartida o una aplicación de gestión de mantenimiento son igualmente válidos siempre que el registro sea fechado, firmado electrónicamente o atribuible a una persona identificable, y pueda imprimirse o presentarse durante una inspección. Lo que importa es que el registro exista, sea fechado y sea verificable.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Cuánto tiempo toma hacer la inspección mensual?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Una inspección mensual de los 10 puntos para un extintor bien ubicado y accesible toma entre 2 y 4 minutos. Para una empresa con 20 extintores, la inspección completa no debería tomar más de 60-80 minutos, incluyendo el tiempo de desplazamiento entre equipos y el registro. En instalaciones grandes donde los extintores están en múltiples pisos, distribuir la responsabilidad por zonas reduce el tiempo individual de cada inspector.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-inspeccion-3">¿Cuánto tiempo toma hacer la inspección mensual?</button>
+    <div class="faq-answer" id="faq-inspeccion-3"><p>Una inspección mensual de los 10 puntos para un extintor bien ubicado y accesible toma entre 2 y 4 minutos. Para una empresa con 20 extintores, la inspección completa no debería tomar más de 60-80 minutos, incluyendo el tiempo de desplazamiento entre equipos y el registro. En instalaciones grandes donde los extintores están en múltiples pisos, distribuir la responsabilidad por zonas reduce el tiempo individual de cada inspector.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Necesito capacitación especial para hacer la inspección mensual?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No se requiere certificación técnica, pero sí es recomendable una capacitación básica de 1-2 horas donde el técnico de mantenimiento le explique al responsable designado qué buscar en cada punto de la checklist. MANEXT incluye esta orientación al inicio de cada contrato de póliza anual de mantenimiento. También puedes solicitar que el técnico que hace el mantenimiento anual muestre al responsable los puntos a revisar mensualmente durante su próxima visita.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-inspeccion-4">¿Necesito capacitación especial para hacer la inspección mensual?</button>
+    <div class="faq-answer" id="faq-inspeccion-4"><p>No se requiere certificación técnica, pero sí es recomendable una capacitación básica de 1-2 horas donde el técnico de mantenimiento le explique al responsable designado qué buscar en cada punto de la checklist. MANEXT incluye esta orientación al inicio de cada contrato de póliza anual de mantenimiento. También puedes solicitar que el técnico que hace el mantenimiento anual muestre al responsable los puntos a revisar mensualmente durante su próxima visita.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué hago si un extintor reprueba la inspección mensual y no tengo repuesto?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Si tienes una póliza de mantenimiento con MANEXT, llama inmediatamente para reportar el equipo deficiente. Enviamos un extintor de préstamo certificado para que no quedes desprotegido mientras atendemos el equipo que falló. Si no tienes póliza, comunícate al 55 3968 9272 o WhatsApp para servicio de emergencia; también podemos dejar un extintor en préstamo durante el tiempo que tarde el servicio. Nunca dejes un punto desprotegido solo porque el extintor falló — eso es exactamente el escenario que más preocupa a Protección Civil.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-inspeccion-5">¿Qué hago si un extintor reprueba la inspección mensual y no tengo repuesto?</button>
+    <div class="faq-answer" id="faq-inspeccion-5"><p>Si tienes una póliza de mantenimiento con MANEXT, llama inmediatamente para reportar el equipo deficiente. Enviamos un extintor de préstamo certificado para que no quedes desprotegido mientras atendemos el equipo que falló. Si no tienes póliza, comunícate al 55 3968 9272 o WhatsApp para servicio de emergencia; también podemos dejar un extintor en préstamo durante el tiempo que tarde el servicio. Nunca dejes un punto desprotegido solo porque el extintor falló — eso es exactamente el escenario que más preocupa a Protección Civil.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Mantén tus Extintores Siempre en Norma</h3>
-  <p>En MANEXT te ayudamos a establecer el programa de inspección mensual de tu empresa: formatos de registro, capacitación al responsable designado y soporte inmediato cuando detectes un problema. Nuestras pólizas anuales incluyen asesoría continua para que tu sistema de protección cumpla la NOM-002-STPS en todo momento. Atendemos toda la CDMX y zona metropolitana.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20necesito%20ayuda%20para%20establecer%20el%20programa%20de%20inspección%20mensual%20de%20extintores%20en%20mi%20empresa" class="btn-cta">Solicitar Asesoría por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

@@ -1,8 +1,11 @@
 ---
-title: "Gabinetes para Extintores: Tipos, Normativa e Instalación Correcta"
+title: "Gabinetes para Extintores: Tipos, Normativa e Instalación Correcta 2026"
 description: "Guía técnica sobre gabinetes para extintores: tipos disponibles, cuándo son obligatorios, requisitos de instalación según normativa mexicana y errores comunes que generan observaciones."
+pubDate: "2026-05-30"
+heroRight:
+  - "El gabinete para extintor tiene requisitos técnicos y normativos específicos. Instalarlo mal, elegir el tipo incorrecto o no señalizarlo adecuadamente puede dificultar el acceso al extintor en emergencia — y generar observaciones de Protección Civil durante verificaciones."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando a empresas en CDMX sobre el tipo correcto de gabinete para cada ambiente. Suministramos e instalamos gabinetes con señalización NOM y documentación completa para Protección Civil."
 ---
-
 <div class="article-intro">
   <p>El gabinete para extintor es más que un mueble —es un componente del sistema de protección contra incendios que tiene requisitos técnicos y normativos específicos. Instalarlo mal, elegir el tipo incorrecto o ubicarlo sin señalización adecuada puede generar observaciones durante verificaciones de Protección Civil y, más importante, puede dificultar el acceso al extintor precisamente cuando más se necesita.</p>
   <p>Muchas empresas compran gabinetes sin considerar el tipo de extintor que van a albergar, el ambiente de instalación o los requisitos de señalización. El resultado suele ser gabinetes con candado que nadie puede abrir en emergencia, equipos oxidados por humedad dentro de gabinetes no ventilados o extintores sin señalización visible que nadie encuentra en una situación de estrés.</p>
@@ -10,8 +13,8 @@ description: "Guía técnica sobre gabinetes para extintores: tipos disponibles,
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#funcion-gabinete">Función del Gabinete en el Sistema de Protección</a></li>
     <li><a href="#tipos-gabinetes">Tipos de Gabinetes: Características y Usos</a></li>
     <li><a href="#cuando-obligatorio">¿Cuándo es Obligatorio un Gabinete?</a></li>
@@ -21,7 +24,7 @@ description: "Guía técnica sobre gabinetes para extintores: tipos disponibles,
     <li><a href="#errores-comunes">Errores Comunes en Gabinetes de Extintores</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita Asesoría de Señalización con MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="funcion-gabinete">Función del Gabinete en el Sistema de Protección</h2>
@@ -105,7 +108,7 @@ description: "Guía técnica sobre gabinetes para extintores: tipos disponibles,
   <li><strong>Requisito del Programa Interno de Protección Civil:</strong> Algunas jurisdicciones o tipos de inmuebles tienen requisitos específicos de gabinetes en su reglamento de Protección Civil que van más allá de la norma federal.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Cuando el gabinete NO es recomendable</h4>
   <p>En interiores secos, con acceso controlado y sin riesgo de daño físico al extintor, el soporte mural simple sin gabinete es frecuentemente mejor opción porque garantiza el acceso más rápido posible. Añadir un gabinete en estos contextos solo agrega un paso entre la persona y el extintor en una emergencia.</p>
 </div>
@@ -200,54 +203,45 @@ description: "Guía técnica sobre gabinetes para extintores: tipos disponibles,
 </ul>
 
 <div id="faq" class="faq-section">
-  <h2>Preguntas Frecuentes</h2>
-
   <div class="faq-item">
-    <div class="faq-question">¿El color del gabinete debe ser rojo obligatoriamente?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-1">¿El color del gabinete debe ser rojo obligatoriamente?</button>
+    <div class="faq-answer" id="faq-gabinetes-1">
       <p>La normativa mexicana no especifica que el gabinete deba ser rojo, aunque el rojo es el color estándar y más reconocido para extintores. Lo que sí es obligatorio es la señalización adecuada que identifique el contenido como extintor. En edificios con diseño de interiores específico, se admiten gabinetes en otros colores siempre que la señalización normativa esté presente y visible.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Puedo instalar un gabinete con llave en mi empresa?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-2">¿Puedo instalar un gabinete con llave en mi empresa?</button>
+    <div class="faq-answer" id="faq-gabinetes-2">
       <p>Sí, pero con condiciones muy estrictas. La llave debe estar accesible inmediatamente —por ejemplo, en un portallaves junto al gabinete, rompiendo un vidrio o jalando un cordón. Jamás debe requerirse ir a buscar la llave a otro lugar. Durante verificaciones, el inspector puede evaluar si el sistema de llave garantiza acceso inmediato. Si hay cualquier duda, un sistema de panel rompible es más seguro y aceptado.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿El gabinete afecta la fecha de la próxima revisión del extintor?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-3">¿El gabinete afecta la fecha de la próxima revisión del extintor?</button>
+    <div class="faq-answer" id="faq-gabinetes-3">
       <p>No directamente —las fechas de mantenimiento dependen de la norma NOM-154-SCFI-2005 y son independientes del gabinete. Sin embargo, un gabinete en malas condiciones (oxidado, con humedad interior, mal sellado) puede acelerar el deterioro del extintor y generar necesidad de mantenimiento preventivo adicional. El gabinete debe revisarse durante la inspección mensual del extintor.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Puedo instalar el gabinete en un nicho de yeso cartón?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-4">¿Puedo instalar el gabinete en un nicho de yeso cartón?</button>
+    <div class="faq-answer" id="faq-gabinetes-4">
       <p>Sí, siempre que la instalación sea estructuralmente firme y el gabinete quede correctamente fijado. El yeso cartón por sí solo no es suficiente soporte —se requieren anclas de placa o fijación a la estructura metálica detrás del panel. Verifique que la instalación pueda soportar el peso del gabinete más el extintor lleno con margen de seguridad.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Cuántos extintores puede albergar un gabinete?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-5">¿Cuántos extintores puede albergar un gabinete?</button>
+    <div class="faq-answer" id="faq-gabinetes-5">
       <p>La mayoría de los gabinetes estándar están diseñados para un extintor. Existen gabinetes dobles para dos extintores medianos, y algunos diseños especiales para instalaciones industriales pueden alojar tres. Lo importante es que cada extintor sea claramente identificable y accesible individualmente, sin tener que mover uno para llegar al otro.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Necesito un gabinete especial para extintores de CO₂?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-gabinetes-6">¿Necesito un gabinete especial para extintores de CO₂?</button>
+    <div class="faq-answer" id="faq-gabinetes-6">
       <p>Los extintores de CO₂ tienen cilindros de alta presión y son más pesados que los de PQS de capacidad equivalente. Asegúrese de que el gabinete tenga el soporte adecuado para el peso. Además, si el extintor de CO₂ está en área climatizada o con cambios bruscos de temperatura, el gabinete debe estar ventilado para evitar condensación que pueda generar corrosión en el cilindro de alta presión.</p>
     </div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Señalización y Gabinetes para tu Empresa</h3>
-  <p>MANEXT suministra e instala gabinetes para extintor según el ambiente y normativa de cada instalación. Asesoramos en el tipo correcto, señalización NOM y documentación para Protección Civil.</p>
-  <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20gabinetes%20y%20se%C3%B1alizaci%C3%B3n%20para%20extintores%20en%20mi%20empresa" class="btn-cta">Solicitar Asesoría de Señalización</a>
-  <p>O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

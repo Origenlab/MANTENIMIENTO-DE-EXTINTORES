@@ -1,6 +1,10 @@
 ---
 title: "Clases de Fuego A B C D K: Guía Completa para Elegir Extintor"
 description: "Clases de fuego A B C D K explicadas por ingenieros. Identifica el extintor correcto para cada tipo de fuego. Normativa NOM-154-SCFI. Consulta: 55 7008 1816"
+pubDate: "2026-07-14"
+heroRight:
+  - "No todos los extintores apagan todos los fuegos: el <strong>tipo de extintor correcto depende de la clase de fuego</strong>. Usar agua en aceite ardiendo provoca una bola de fuego; usar CO2 en un incendio de magnesio puede empeorar la situación. La normativa mexicana <strong>NOM-002-STPS</strong> clasifica los fuegos en 5 categorías (A, B, C, D y K) y exige que cada espacio cuente con el extintor adecuado al riesgo específico."
+  - "MANEXT asesora a empresas, restaurantes e industrias en la <strong>selección técnica del extintor correcto</strong> para cada clase de fuego, con más de 80 años de experiencia y técnicos certificados NOM-154-SCFI. Evita multas de Protección Civil y protege tu instalación con los equipos correctos. Solicita asesoría sin costo por WhatsApp."
 ---
 <div class="article-intro">
   <p class="article-lead"><strong>Clases de fuego A B C D K</strong> representan la clasificación técnica que determina qué agente extintor usar en cada emergencia. Un extintor inadecuado puede expandir el incendio hasta 300% en situaciones eléctricas o químicas. Dominar esta clasificación salva vidas y protege patrimonio empresarial.</p>
@@ -8,9 +12,9 @@ description: "Clases de fuego A B C D K explicadas por ingenieros. Identifica el
   <p>En este artículo técnico descubrirás: las 5 clases de fuego según NOM-154-SCFI con ejemplos específicos, tabla comparativa de extintores por clase, criterios de selección profesional, errores críticos que cometen las empresas, y presupuesto actualizado en CDMX.</p>
 </div>
 
-<div class="table-of-contents">
-  <h3>Contenido del Artículo</h3>
-  <ol>
+<nav class="toc">
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué son las Clases de Fuego - Definición Técnica</a></li>
     <li><a href="#especificaciones">Especificaciones Técnicas y Capacidades</a></li>
     <li><a href="#comparativa">Tabla Comparativa de Extintores por Clase</a></li>
@@ -20,8 +24,8 @@ description: "Clases de fuego A B C D K explicadas por ingenieros. Identifica el
     <li><a href="#proceso">Proceso Profesional de Servicio</a></li>
     <li><a href="#costos">Costos y Presupuesto en CDMX</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
-  </ol>
-</div>
+  </ul>
+</nav>
 
 <section id="que-es" class="content-section">
   <h2>Qué son las Clases de Fuego: Definición Técnica Completa</h2>
@@ -220,42 +224,42 @@ description: "Clases de fuego A B C D K explicadas por ingenieros. Identifica el
   <h2>Preguntas Frecuentes sobre Clases de Fuego</h2>
   
   <div class="faq-accordion">
-    <details class="faq-item">
-      <summary class="faq-question">¿Cómo identifico qué clase de fuego tengo en mi empresa?</summary>
-      <div class="faq-answer">
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-1">¿Cómo identifico qué clase de fuego tengo en mi empresa?</button>
+<div class="faq-answer" id="faq-clases2-1">
         <p>La identificación requiere inventario completo de combustibles presentes. Clase A: materiales sólidos como papel, madera, textiles, plásticos que dejan brasas (temperatura ignición 230-480°C). Clase B: líquidos inflamables como gasolina, aceites, solventes con punto inflamación inferior 93°C. Clase C: equipos eléctricos energizados con voltaje superior 50V. Clase D: metales como magnesio, aluminio en polvo, titanio. Clase K: aceites vegetales de cocina comercial que operan sobre 180°C. Un técnico certificado debe realizar análisis de riesgo documentado según NOM-002-STPS para determinar capacidades y ubicaciones correctas.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cuánto cuesta un extintor para cada clase de fuego en CDMX?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-2">¿Cuánto cuesta un extintor para cada clase de fuego en CDMX?</button>
+<div class="faq-answer" id="faq-clases2-2">
         <p>Los precios varían significativamente por tipo y capacidad. PQS 4.5 kg (ABC): $800-$1,400 MXN. CO₂ 5 kg (BC): $2,200-$3,800 MXN. Agua 9L (A): $650-$1,200 MXN. Clase K 6L: $3,800-$6,200 MXN. Clase D 18 kg: $8,500-$15,000 MXN. El costo incluye extintor certificado NOM-154-SCFI, instalación, señalización y capacitación básica. Mantenimiento anual adicional: $150-$520 MXN según tipo. Factores que afectan precio: marca (nacional vs importada), certificaciones UL/FM, capacidad, y servicios incluidos.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Qué dice la normativa NOM sobre clases de fuego y extintores?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-3">¿Qué dice la normativa NOM sobre clases de fuego y extintores?</button>
+<div class="faq-answer" id="faq-clases2-3">
         <p>NOM-154-SCFI establece que extintores deben indicar clases de fuego mediante pictogramas normalizados y certificación por organismo acreditado EMA. NOM-002-STPS requiere análisis de riesgo por especialista identificando clases presentes, capacitación anual brigadas 8 horas, mantenimiento por técnico certificado, y bitácora foliada. Distancias máximas: 23 metros Clase A, 15 metros Clase B. Multas incumplimiento: $5,869-$586,950 MXN (50-5000 UMAs). Sanciones adicionales: clausura temporal 3-90 días, clausura definitiva reincidencia, responsabilidad penal en siniestros con lesiones.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Con qué frecuencia debo dar mantenimiento a extintores por clase?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-4">¿Con qué frecuencia debo dar mantenimiento a extintores por clase?</button>
+<div class="faq-answer" id="faq-clases2-4">
         <p>NOM-154-SCFI establece mantenimiento anual obligatorio independiente de la clase de fuego. Inspección mensual visual: presión manómetro, integridad física, accesibilidad. Mantenimiento anual: verificación presión operativa 175-195 psi, pesaje agente extintor, prueba mecanismo descarga, reemplazo sellos deteriorados. Prueba hidrostática quinquenal: 2.5 veces presión trabajo para verificar integridad cilindro. Recarga inmediata post-uso parcial o total. Reemplazo cilindro: 15-20 años según fabricante. El servicio debe realizarse por técnico certificado con registro en bitácora sellada para validez ante Protección Civil.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Puedo usar el mismo extintor para diferentes clases de fuego?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-5">¿Puedo usar el mismo extintor para diferentes clases de fuego?</button>
+<div class="faq-answer" id="faq-clases2-5">
         <p>Sí, extintores multiclase cubren combinaciones específicas. PQS ABC es efectivo para fuegos sólidos, líquidos y eléctricos con limitaciones: deja residuo abrasivo dañino para equipos sensibles. CO₂ cubre BC (líquidos y eléctricos) pero ineficaz en Clase A porque no enfría suficiente para evitar reignición. Agua únicamente Clase A, prohibida en B y C por dispersar combustible y conducir electricidad. Espuma AFFF cubre AB pero no debe usarse en equipos eléctricos energizados. Clase K es específica para grasas cocina, no intercambiable con otros tipos. La selección correcta requiere análisis de riesgo predominante por área.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cómo puede MANEXT ayudarme con extintores por clase de fuego?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-clases2-6">¿Cómo puede MANEXT ayudarme con extintores por clase de fuego?</button>
+<div class="faq-answer" id="faq-clases2-6">
         <p>MANEXT ofrece servicio integral con 80 años experiencia y +15,000 empresas atendidas en CDMX. Realizamos análisis de riesgo identificando clases de fuego presentes, calculamos capacidades según NOM-154-SCFI, instalamos equipos certificados con garantía cumplimiento normativo. Incluimos capacitación brigadas, documentación Protección Civil, mantenimiento preventivo con recordatorios automáticos. Técnicos certificados STPS, cobertura Condesa, Roma Norte, Centro Histórico, Interlomas. Consulta gratuita: 55 7008 1816. WhatsApp: wa.me/5215570081816. Garantizamos cumplimiento normativo 100% con respaldo técnico para auditorías oficiales.</p>
       </div>
-    </details>
+</div>
   </div>
 </section>
 

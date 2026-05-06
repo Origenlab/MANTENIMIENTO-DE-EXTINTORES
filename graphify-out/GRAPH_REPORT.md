@@ -9,20 +9,108 @@
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
-## Componentes Astro — Añadidos 2026-05-05
+## Design System MANEXT — Actualizado 2026-05-05
+
+### Niveles de página
+- **L1** → `index.astro` — página principal, diseño de referencia ✅
+- **L2** → 17 páginas internas — deben homologarse contra L1
+
+---
+
+### Componentes Astro del Design System
 
 | Nodo | Archivo | Relaciones |
 |------|---------|------------|
-| `SectionHeader.astro` | `src/components/SectionHeader.astro` | importado por `index.astro` |
+| `SectionHeader.astro` | `src/components/SectionHeader.astro` | importado por todas las L2 |
 | `SectionHeader CSS (.sh)` | `public/css/section-redesign.css` | usado por `SectionHeader.astro` |
-| `index.astro` | `src/pages/index.astro` | importa `SectionHeader.astro`, `Hero.astro` |
+| `Hero.astro` | `src/components/Hero.astro` | variant="page" en L2, variant="home" en L1 |
+| `Layout.astro` | `src/layouts/Layout.astro` | wrapper de todas las páginas |
+| `index.astro` | `src/pages/index.astro` | L1 — referencia de diseño |
+| `servicios.astro` | `src/pages/servicios.astro` | L2 ✅ primera homologada |
+
+---
 
 ### SectionHeader.astro — Ficha técnica
 - **Props:** `title` (req), `subtitle`, `eyebrow`, `paragraphs[]`
 - **Layout sin paragraphs:** `.sh--center` — una columna centrada
 - **Layout con paragraphs:** `.sh--split` — grid 1fr 1fr, borde rojo izquierdo, badge rojo subtitle, columna derecha con borde vertical
-- **CSS override:** usa `!important` en `.sh__title` para ganar especificidad a `.services h2` y `.extinguishers h2`
-- **Aplicado en index.astro:** sección `.services` y sección `.extinguishers`
+- **REGLA L2:** SIEMPRE usar `paragraphs={[...]}` — `.sh--center` NO aceptado en páginas internas
+- **Margen:** `clamp(3rem, 5vw, 5rem)` top y bottom
+- **CSS override:** usa `!important` en `.sh__title` para ganar especificidad
+
+---
+
+### Pre-footer strip (.pf-strip)
+- **CSS:** `public/css/section-redesign.css` — bloque `.pf-strip / .pf-card`
+- **Estructura card correcta:** `.pf-card__icon` (SVG 22px) + `.pf-card__body` (`<strong>` + `<span>`) + `.pf-card__arrow`
+- **NUNCA:** `pf-card__eyebrow` / `pf-card__title` — clases sin CSS, estructura vieja
+- **Última card:** `.pf-card--featured` (fondo rojo, siempre Cotización/Contacto)
+- **Grid:** 6 cols desktop → 3 tablet → 2 móvil
+
+---
+
+### FAQ + Cotización unificado (.faq.faq-cotizacion)
+- **Patrón:** `<section class="faq faq-cotizacion">` con `SectionHeader` + `faq-cot-layout`
+- **Left:** `.faq-cot-left` — 9 items accordion (`.faq-item` > `.faq-question` + `.faq-answer`)
+- **Right:** `.faq-cot-right` > `.quote-card` > `form#whatsappForm[NombrePagina].quote-form`
+- **ID del form:** único por página (`#whatsappFormServicios`, `#whatsappFormExtintores`, etc.)
+
+---
+
+### Anatomía L2 canónica (orden de secciones)
+```
+<Layout>
+  <Hero variant="page" paragraphs={[...]} />
+  [sección principal con SectionHeader + content]
+  [secciones secundarias con SectionHeader + content]
+  <section class="faq faq-cotizacion">
+    <SectionHeader eyebrow="FAQ y Cotización" paragraphs={[...]} />
+    <div class="faq-cot-layout">
+      <div class="faq-cot-left"> 9 FAQs </div>
+      <div class="faq-cot-right"> quote-card form </div>
+    </div>
+  </section>
+  <nav class="pf-strip"> 6 cards </nav>
+  <script is:inline> FAQ accordion </script>
+  <script is:inline> WhatsApp form </script>
+</Layout>
+```
+
+---
+
+### Checklist L2 (8 pasos)
+1. `import SectionHeader` en frontmatter
+2. Trailing slashes — `grep href` y eliminar TODAS en links internos
+3. Hero `variant="page"` con `paragraphs` y `services` sin trailing slash
+4. `section.services-detail` → SectionHeader + `services-grid` (cards) + SectionHeader separador + módulos `service-detail-item`
+5. `section.faq.faq-cotizacion` → SectionHeader + 9 FAQs izq + quote-card form der (ID único por página)
+6. `nav.pf-strip` → 6 cards con `pf-card__icon` SVG + `pf-card__body` (NUNCA `pf-card__eyebrow`/`pf-card__title`)
+7. Scripts inline — FAQ accordion + WhatsApp form con ID `#whatsappForm[NombrePagina]`
+8. Eliminar todo patrón legacy (ver tabla de prohibidos en memory)
+
+---
+
+### Estado de homologación L2 (17 páginas)
+
+| Página | Archivo | Estado |
+|--------|---------|--------|
+| Servicios | `servicios.astro` | ✅ 2026-05-05 |
+| Extintores | `extintores.astro` | ✅ 2026-05-05 |
+| Recarga de Extintores | `recarga-de-extintores.astro` | ✅ 2026-05-05 |
+| Mantenimiento Preventivo | `mantenimiento-preventivo.astro` | ⏳ |
+| Prueba Hidrostática | `prueba-hidrostatica.astro` | ⏳ |
+| Capacitación Brigadas | `capacitacion-brigadas.astro` | ⏳ |
+| Señalización | `senalizacion.astro` | ⏳ |
+| Venta de Extintores | `venta-de-extintores.astro` | ⏳ |
+| PQS / Polvo Químico | `polvo-quimico-seco.astro` | ⏳ |
+| CO₂ | `co2.astro` | ⏳ |
+| Espuma AFFF | `espuma-afff.astro` | ⏳ |
+| Tipo K | `tipo-k.astro` | ⏳ |
+| Agentes Limpios | `agentes-limpios.astro` | ⏳ |
+| Agua a Presión | `agua-presion.astro` | ⏳ |
+| Catálogo | `catalogo.astro` | ⏳ |
+| Nosotros | `nosotros.astro` | ⏳ |
+| Contacto | `contacto.astro` | ⏳ |
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]

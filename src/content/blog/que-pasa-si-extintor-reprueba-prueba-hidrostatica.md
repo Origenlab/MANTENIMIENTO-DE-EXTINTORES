@@ -1,8 +1,11 @@
 ---
-title: "Qué Pasa si tu Extintor No Pasa la Prueba Hidrostática"
+title: "Qué Pasa si tu Extintor No Pasa la Prueba Hidrostática: Guía 2026"
 description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostática: criterios de rechazo, opciones disponibles, implicaciones legales y cómo evitar llegar a ese punto."
+pubDate: "2026-05-25"
+heroRight:
+  - "Cuando un extintor falla la prueba hidrostática las consecuencias son definitivas: el equipo no puede seguir en servicio. Ninguna reparación de un cilindro rechazado es admisible bajo la NOM-154-SCFI. Entender los criterios de rechazo ayuda a planificar el reemplazo sin brechas de cobertura."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años realizando pruebas hidrostáticas en CDMX. Si un extintor requiere reemplazo tras el rechazo, lo resolvemos el mismo día para que tu empresa no quede desprotegida."
 ---
-
 <div class="article-intro">
   <p>La prueba hidrostática es el examen más riguroso al que se somete un extintor a lo largo de su vida útil. Somete el cilindro a presiones que duplican o triplican su presión de operación normal para detectar debilidades estructurales que no son visibles a simple vista. Cuando un extintor falla esta prueba, las consecuencias son definitivas: el equipo no puede seguir en servicio.</p>
   <p>Entender qué pasa exactamente cuando un extintor reprueba —y qué opciones tiene su empresa— es fundamental para no cometer errores costosos ni, peor aún, mantener en servicio un equipo comprometido que podría fallar o incluso explotar en una emergencia real.</p>
@@ -10,8 +13,8 @@ description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostát
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#criterios-rechazo">Criterios de Rechazo en la Prueba Hidrostática</a></li>
     <li><a href="#proceso-fallo">Qué Ocurre Durante y Después del Fallo</a></li>
     <li><a href="#opciones-disponibles">Opciones Disponibles Tras el Rechazo</a></li>
@@ -20,7 +23,7 @@ description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostát
     <li><a href="#prevencion">Cómo Evitar Llegar a Este Punto</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita Prueba Hidrostática con MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="criterios-rechazo">Criterios de Rechazo en la Prueba Hidrostática</h2>
@@ -43,7 +46,7 @@ description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostát
   <li><strong>Cilindro con fecha de prueba ilegible o inexistente:</strong> Sin trazabilidad del historial de pruebas, técnicamente no puede certificarse —aunque esto es un rechazo administrativo, no estructural.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Distinción importante: rechazo en prueba vs rechazo previo a prueba</h4>
   <p>No todos los extintores llegan al momento de presurización. Un técnico certificado puede dictaminar rechazo antes de iniciar la prueba si detecta daño estructural evidente, corrosión severa o deformaciones que representen riesgo para el operador que realiza la prueba. Este rechazo previo tiene el mismo efecto legal: el equipo queda fuera de servicio.</p>
 </div>
@@ -135,7 +138,7 @@ description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostát
   <li><strong>Documentación incompleta:</strong> La ausencia del reporte de rechazo y del registro de reemplazo en el expediente de seguridad del centro de trabajo es en sí misma una irregularidad durante auditorías.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Plazo para reemplazar un extintor rechazado</h4>
   <p>La normativa no establece un "plazo de gracia" explícito para el reemplazo tras un fallo de prueba hidrostática. La interpretación estricta es que el equipo debe salir de servicio de inmediato. En la práctica, contar con el reporte de rechazo en mano y un pedido de reemplazo documentado puede demostrar diligencia ante una verificación, pero no elimina la obligación de tener la cobertura completa de extintores activos.</p>
 </div>
@@ -213,54 +216,45 @@ description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostát
 </ol>
 
 <div id="faq" class="faq-section">
-  <h2>Preguntas Frecuentes</h2>
-
   <div class="faq-item">
-    <div class="faq-question">¿Puedo solicitar una segunda opinión si mi extintor fue rechazado?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-1">¿Puedo solicitar una segunda opinión si mi extintor fue rechazado?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-1">
       <p>Técnicamente sí, puede llevar el extintor con otro laboratorio o empresa certificada para una segunda evaluación. Sin embargo, si el fallo fue por deformación permanente medible o fugas visibles, el resultado será el mismo. Lo que sí puede hacer es solicitar ver el proceso de prueba o pedir explicación detallada del motivo de rechazo si tiene dudas sobre el dictamen.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿El fabricante tiene alguna responsabilidad si un extintor relativamente nuevo falla la prueba?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-2">¿El fabricante tiene alguna responsabilidad si un extintor relativamente nuevo falla la prueba?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-2">
       <p>Depende de la antigüedad y las circunstancias. Si el extintor es relativamente nuevo y falló por un defecto de fabricación, el fabricante o proveedor podría tener responsabilidad de garantía. Sin embargo, si el fallo se debe a mal manejo, almacenamiento inadecuado o ausencia de mantenimiento, la responsabilidad recae en quien administra el equipo. El reporte técnico de rechazo es evidencia clave en cualquier reclamación.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Cuánto tiempo tarda el proceso de prueba hidrostática completo?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-3">¿Cuánto tiempo tarda el proceso de prueba hidrostática completo?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-3">
       <p>Dependiendo del volumen de equipos y la logística, una prueba hidrostática completa (incluyendo traslado, inspección previa, prueba, recarga si aplica, y regreso) puede tomar entre 1 y 3 días hábiles. MANEXT ofrece opciones de servicio en sitio para minimizar el tiempo sin cobertura.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa con el agente extintor del equipo rechazado?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-4">¿Qué pasa con el agente extintor del equipo rechazado?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-4">
       <p>Si el agente extintor (PQS, CO₂, Tipo K, etc.) no está contaminado ni degradado, puede recuperarse y utilizarse para recargar el extintor de reemplazo. MANEXT evalúa el estado del agente en cada caso para determinar si es viable su recuperación, lo que reduce el costo total del reemplazo.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Con qué frecuencia debo hacer la prueba hidrostática?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-5">¿Con qué frecuencia debo hacer la prueba hidrostática?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-5">
       <p>La NOM-154-SCFI-2005 establece prueba hidrostática cada 5 años para la mayoría de extintores portátiles (PQS, agua, espuma). Para extintores de CO₂ de alta presión, la frecuencia puede variar y debe consultarse con el técnico certificado. Extintores que han sufrido daño físico severo o exposición a condiciones extremas pueden requerir prueba antes de cumplir el período quinquenal.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Puedo continuar operando si uno de mis extintores es rechazado y aún no tengo el reemplazo?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-hidrostatica2-6">¿Puedo continuar operando si uno de mis extintores es rechazado y aún no tengo el reemplazo?</button>
+    <div class="faq-answer" id="faq-hidrostatica2-6">
       <p>Legalmente, la cobertura de extintores debe mantenerse completa. Si un extintor es rechazado, la práctica recomendada es tener el reemplazo disponible lo antes posible. MANEXT puede coordinar el reemplazo el mismo día para evitar brechas de cobertura en su centro de trabajo.</p>
     </div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Programa tu Prueba Hidrostática con MANEXT</h3>
-  <p>Técnicos certificados, equipos de prueba calibrados y reporte oficial incluido. Si un extintor requiere reemplazo, lo resolvemos el mismo día para que su empresa no tenga brechas de cobertura.</p>
-  <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20agendar%20prueba%20hidrost%C3%A1tica%20para%20mis%20extintores" class="btn-cta">Agendar Prueba Hidrostática</a>
-  <p>O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

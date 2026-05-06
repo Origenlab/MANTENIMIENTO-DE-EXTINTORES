@@ -1,172 +1,609 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const productSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Extintor de Agente Limpio FM-200 / Novec 1230 — Áreas Críticas",
+  "description": "Extintores de agente limpio certificados NOM-154-SCFI. FM-200 y Novec 1230 para salas de cómputo, archivos, museos y centros de control. Cero residuo, no conduce electricidad, seguro en espacios ocupados. CDMX.",
+  "brand": { "@type": "Brand", "name": "MANEXT" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "143"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
+    { "@type": "ListItem", "position": 2, "name": "Agentes Limpios — Áreas Críticas", "item": "https://mantenimientodeextintores.mx/agentes-limpios" }
+  ]
+});
+const extTipos = [
+  { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
+  { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
+  { slug: 'espuma-afff', title: 'Espuma AFFF', classes: ['A','B'], img: '/img/img-tipos-de-extintores/espuma-afff.avif', alt: 'Extintor AFFF Aqueous Film Forming Foam para hidrocarburos', desc: 'Película filmogénica anti re-ignición. Para talleres automotrices, plantas industriales y derrames de combustibles.' },
+  { slug: 'tipo-k', title: 'Agente Húmedo Tipo K', classes: ['K'], img: '/img/img-tipos-de-extintores/agente-humedo-tipo-k.avif', alt: 'Extintor Tipo K para cocinas comerciales y restaurantes', desc: 'Obligatorio NOM-002-STPS en cocinas comerciales. Saponificación de aceites y grasas a alta temperatura.' },
+  { slug: 'agentes-limpios', title: 'Agentes Limpios', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/agente-limpio.avif', alt: 'Extintor de agentes limpios FM-200 Novec 1230', desc: 'FM-200 y Novec 1230. Cero residuo, seguro en espacios ocupados. Para salas de cómputo, archivos y museos.' },
+  { slug: 'agua-presion', title: 'Agua a Presión', classes: ['A'], img: '/img/img-tipos-de-extintores/agua-a-presion.avif', alt: 'Extintor de agua a presión Clase A para bodegas y carpinterías', desc: 'Mayor capacidad calorífica del mercado. Penetración profunda para bodegas, carpinterías e industria textil.' },
+];
+const classBadge = { A: 'ext-tipo-card__badge--a', B: 'ext-tipo-card__badge--b', C: 'ext-tipo-card__badge--c', K: 'ext-tipo-card__badge--k' };
+
+const currentSlug = 'agentes-limpios';
+
 ---
 
 <Layout
-  title="Extintores Agentes Limpios FM-200 Novec Halotron | CDMX"
-  description="Venta de extintores Agentes Limpios FM-200, Novec, Halotron. Mantenimiento de extintores incluido. Cero residuos. Entrega CDMX."
+  title="Extintor de Agente Limpio FM-200 y Novec 1230 | Salas de Cómputo y Áreas Críticas | MANEXT"
+  description="Extintores de agente limpio FM-200 y Novec 1230 certificados NOM-154-SCFI. Cero residuo, no daña equipos ni documentos, seguro en espacios ocupados. Para salas de cómputo, archivos, museos y centros de control. Entrega 48 h CDMX."
   canonical="https://mantenimientodeextintores.mx/agentes-limpios"
-  ogTitle="Extintores de Agentes Limpios - MANEXT"
-  ogDescription="Extintores de Agentes Limpios FM-200, Novec 1230, Halotron I. Cero residuos para equipos críticos. 5 modelos disponibles. Entrega CDMX."
+  ogTitle="Extintor de Agente Limpio FM-200 / Novec 1230 — Áreas Críticas | MANEXT CDMX"
+  ogDescription="Protección sin consecuencias. Agentes limpios FM-200 y Novec 1230 certificados NOM. Cero residuo, seguros en espacios con personas, no dañan equipos ni documentos irreemplazables. Para salas de cómputo, archivos, museos y centros de control."
+  ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
   breadcrumbs={[
-    { name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo' },
-    { name: 'Agentes Limpios', url: 'https://mantenimientodeextintores.mx/agentes-limpios' },
+    { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
+    { name: 'Agentes Limpios — Áreas Críticas', url: 'https://mantenimientodeextintores.mx/agentes-limpios' }
   ]}
-  schemas={[
-    '{"@context": "https://schema.org","@type": "CollectionPage","name": "Extintores de Agentes Limpios","description": "Extintores de Agentes Limpios FM-200, Novec 1230, Halotron I certificados NOM-154-SCFI","provider": {"@type": "Organization","name": "MANEXT","url": "https://mantenimientodeextintores.mx"}}',
-  ]}
-  extraCss={[]}
+  schemas={[productSchema, breadcrumbSchema]}
+  extraCss={['/css/section-redesign.css?v=4']}
 >
 
 <Hero
-  title="Extintores de Agentes Limpios — HFC y FK | CDMX"
-  description="Distribuidor de agentes limpios HFC-227ea y FK-5-1-12 para protección de equipos electrónicos sensibles, salas de servidores y obras de arte. Sin residuos ni daño post-descarga."
-  eyebrow="Catálogo · Agentes limpios"
+  variant="page"
+  title="Extintor de Agente Limpio — FM-200 y Novec 1230"
+  subtitle="Cuando el daño del agente extintor sería tan costoso como el incendio mismo — la única opción es un agente limpio"
+  description="Distribuidor autorizado de extintores FM-200 y Novec 1230 certificados NOM-154-SCFI en CDMX. Cero residuo, seguros en espacios ocupados, no dañan equipos ni patrimonio documental. Entrega en 48 horas."
+  eyebrow="Extintores · Agentes Limpios · FM-200 · Novec 1230"
   services={[
-    { href: '/co2/', title: 'Extintores CO2', description: 'Sin residuos para electrónica', icon: 'zap' },
-    { href: '/polvo-quimico-seco/', title: 'Extintores PQS', description: 'Clase A, B y C — el más versátil', icon: 'fire' },
-    { href: '/espuma-afff/', title: 'Espuma AFFF', description: 'Líquidos inflamables Clase B', icon: 'foam' },
-    { href: '/contacto/', title: 'Cotizar Agentes Limpios', description: 'Entrega en 48 horas en CDMX', icon: 'phone', featured: true },
+    { href: '/co2', title: 'Dióxido de Carbono CO₂', description: 'Alternativa económica para electrónica', icon: 'zap' },
+    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: 'Clase A, B y C — usos generales', icon: 'fire' },
+    { href: '/mantenimiento-preventivo', title: 'Mantenimiento Preventivo', description: 'Programas anuales certificados', icon: 'settings' },
+    { href: '/contacto', title: 'Cotizar Agente Limpio', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'Los extintores de <strong>agentes limpios</strong> — Halotron, <strong>HFC-227ea</strong> y <strong>FK-5-1-12 (Novec 1230)</strong> — representan la tecnología más avanzada en protección contra incendios para activos de alto valor. Se vaporizan completamente sin dejar residuos, sin dañar componentes electrónicos, sin corrosión y sin contaminar archivos, obras de arte o equipos de precisión. Ideales para data centers, quirófanos, salas de cómputo y museos.',
-    'MANEXT es distribuidor autorizado de agentes limpios certificados bajo <strong>NOM-154-SCFI</strong> con la más alta pureza del mercado. Ofrecemos asesoría técnica especializada para determinar la variante y concentración adecuada según el volumen del espacio protegido. <strong>Instalación profesional</strong> con documentación completa y servicio de recarga certificada con garantía de efectividad.'
+    'Un extintor convencional actúa sobre el fuego. Un <strong>extintor de agente limpio</strong> actúa sobre el fuego sin generar ningún daño secundario — sin residuo, sin humedad, sin corrosión y sin riesgo de electrocución. En espacios donde el contenido tiene un valor que supera ampliamente el del contenedor — servidores con datos críticos, expedientes legales irrecuperables, piezas de museo, centros de control de infraestructura vital — la pregunta no es si usar un agente limpio, sino <strong>qué agente limpio es el adecuado</strong>.',
+    'En <strong>MANEXT</strong> somos distribuidores autorizados de extintores de agente limpio <strong>FM-200 (HFC-227ea)</strong> y <strong>Novec 1230</strong>, los dos estándares internacionales más utilizados en instalaciones de alta criticidad. Cada equipo está certificado bajo <strong>NOM-154-SCFI</strong> y cumple con los lineamientos de la <strong>NFPA 2001</strong> para sistemas de agente limpio. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana.'
   ]}
-  variant="page" />
+/>
 
-<style>.category-hero{background:linear-gradient(135deg,#673ab7 0%,#512da8 100%);padding:80px 0 60px;color:white;text-align:center}.category-hero h1{font-size:2.5rem;margin-bottom:1rem;font-weight:700}.category-hero p{font-size:1.2rem;margin-bottom:0.5rem;opacity:0.95}.category-intro{background:white;padding:3rem 0}.category-intro-content{max-width:900px;margin:0 auto;text-align:center}.category-intro h2{font-size:2rem;color:#673ab7;margin-bottom:1.5rem}.category-intro p{font-size:1.1rem;line-height:1.8;color:#555;margin-bottom:1rem}.category-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2rem}.category-feature{text-align:center;padding:1.5rem;background:#f5f5f5;border-radius:8px}.category-feature h3{color:#673ab7;margin-bottom:0.5rem;font-size:1.1rem}.category-feature p{font-size:0.95rem;color:#666}.category-products{background:#f9f9f9;padding:4rem 0}.products-header{text-align:center;margin-bottom:3rem}.products-header h2{font-size:2rem;color:#333;margin-bottom:1rem}.products-header p{font-size:1.1rem;color:#666}.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;margin-top:2rem}.product-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;flex-direction:column}.product-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}.product-image-wrapper{position:relative;background:linear-gradient(135deg,#f5f5f5 0%,#e0e0e0 100%);width:100%;height:250px;overflow:hidden}.product-image-wrapper img{width:100%;height:100%;object-fit:cover}.product-badge{position:absolute;top:1rem;right:1rem;background:#4caf50;color:white;padding:0.5rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:600}.product-badge.nom{background:#673ab7}.product-info{padding:1.5rem;flex:1;display:flex;flex-direction:column}.product-title{font-size:1.4rem;color:#333;margin-bottom:0.5rem}.product-capacity{color:#666;font-size:0.95rem;margin-bottom:1rem}.product-classes{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap}.class-badge{padding:0.25rem 0.75rem;border-radius:12px;font-size:0.85rem;font-weight:600}.class-badge.class-a{background:#e3f2fd;color:#1976d2}.class-badge.class-b{background:#fff3e0;color:#f57c00}.class-badge.class-c{background:#f3e5f5;color:#7b1fa2}.product-features{list-style:none;padding:0;margin:0 0 1.5rem 0;flex:1}.product-features li{padding:0.5rem 0;padding-left:1.5rem;position:relative;color:#555;font-size:0.95rem}.product-features li:before{content:"✓";position:absolute;left:0;color:#4caf50;font-weight:bold}.product-actions{display:flex;gap:0.75rem;margin-top:auto}.btn-cotizar,.btn-detalles{flex:1;padding:0.75rem 1rem;border-radius:8px;text-align:center;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-size:0.95rem}.btn-cotizar{background:#4caf50;color:white}.btn-cotizar:hover{background:#45a049}.btn-detalles{background:#f5f5f5;color:#333;border:2px solid #ddd}.btn-detalles:hover{background:#e0e0e0;border-color:#ccc}@media (max-width:768px){.category-hero h1{font-size:1.8rem}.category-hero p{font-size:1rem}.products-grid{grid-template-columns:1fr}.category-features{grid-template-columns:1fr}}</style>
+<!-- ═══════════════════════════════════════════════
+     SECCIÓN PRINCIPAL
+═══════════════════════════════════════════════ -->
+<section class="services-detail">
+  <div class="container">
 
-<section class="category-hero"><div class="container"><h1>Extintores de Agentes Limpios</h1><p>Tecnología premium sin residuos • Ecológicos certificados • Clases A, B y C</p><p><strong>6 modelos disponibles • Certificación NOM-154-SCFI • Entrega inmediata CDMX</strong></p></div></section><section class="category-intro"><div class="container"><div class="category-intro-content"><h2>¿Por qué elegir extintores de Agentes Limpios?</h2><p>
-Los <strong>extintores de Agentes Limpios</strong> representan la tecnología más avanzada en protección contra incendios.
-Con agentes extintores de última generación como <strong>FM-200, Novec 1230 y Halotron I</strong>, estos sistemas ofrecen
-<strong>cero residuos post-descarga</strong>, protección sin daños a equipos sensibles y <strong>cero potencial de agotamiento de ozono</strong>.
-Son efectivos contra fuegos <strong>Clase A (sólidos)</strong>, <strong>Clase B (líquidos inflamables)</strong> y <strong>Clase C (equipos eléctricos)</strong>.
-</p><p>
-Diseñados específicamente para <strong>museos, archivos históricos, bibliotecas, salas blancas, equipos médicos de precisión,
-instrumentos científicos, galerías de arte y equipos de alta tecnología</strong>. Son dieléctricos (no conductores),
-certificados <strong>EPA/SNAP</strong> y cumplen con los más altos estándares ambientales internacionales. Compara con otras opciones en nuestra <a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas">guía completa de extintores</a>.
-</p><div class="category-features"><div class="category-feature"><h3>Cero Residuos</h3><p>No deja residuos, perfecto para equipos delicados</p></div><div class="category-feature"><h3>Certificación NOM</h3><p>Certificados NOM-154-SCFI vigente</p></div><div class="category-feature"><h3>Ecológico</h3><p>Potencial cero de agotamiento de ozono, EPA/SNAP</p></div><div class="category-feature"><h3>Tecnología Premium</h3><p>FM-200, Novec 1230 y Halotron I de última generación</p></div></div></div></div></section><section class="category-products"><div class="container"><div class="products-header"><h2>Modelos Disponibles de Extintores de Agentes Limpios</h2><p>Encuentra el extintor perfecto para equipos de alta precisión</p></div><div class="products-grid"><div class="product-card"><div class="product-image-wrapper"><span class="product-badge nom">NOM-154-SCFI</span><img src="productos/agentes-limpios/img-agente-limpio/extintor-agente-limpio-2-5kg-venta..webp" alt="Extintor portátil de agente limpio de 2.5 kg con válvula cromada sobre fondo blanco" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Agente Limpio 2.5 kg</h3><p class="product-capacity">Capacidad: 2.5 kg | Alcance: 2-4 metros</p><div class="product-classes"><span class="class-badge class-a">Clase A</span><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Tecnología Novec 1230 de última generación</li><li>Cero residuos post-descarga</li><li>No daña equipos delicados ni sensibles</li><li>Amigable con medio ambiente, EPA/SNAP</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%202.5%20kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-2-7kg" class="btn-detalles">Detalles</a></div></div></div><div class="product-card"><div class="product-image-wrapper"><span class="product-badge">Premium</span><img src="productos/agentes-limpios/img-agente-limpio/extintores-agente-limpio-4-5kg-para-negocios.webp" alt="Extintor de agente limpio FM-200 de 4.5 kg color rojo para negocios" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Agente Limpio 4.5 kg</h3><p class="product-capacity">Capacidad: 4.5 kg | Alcance: 4-6 metros</p><div class="product-classes"><span class="class-badge class-a">Clase A</span><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Ideal para salas de control y archivos</li><li>Agente FM-200 de última generación</li><li>Dieléctrico no conductor de electricidad</li><li>Certificación EPA/SNAP internacional</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%204.5%20kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-4-5kg" class="btn-detalles">Detalles</a></div></div></div><div class="product-card"><div class="product-image-wrapper"><span class="product-badge nom">NOM-154-SCFI</span><img src="productos/agentes-limpios/img-agente-limpio/extintor-agente-limpio-6kg-venta.webp" alt="Extintor de agente limpio de 6 kg con manómetro y manguera de descarga" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Agente Limpio 6 kg</h3><p class="product-capacity">Capacidad: 6 kg | Alcance: 6-8 metros</p><div class="product-classes"><span class="class-badge class-a">Clase A</span><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Protección para museos y archivos históricos</li><li>No deja residuos corrosivos ni manchas</li><li>Potencial cero de agotamiento de ozono</li><li>Descarga limpia y rápida, segura</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%206%20kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-5-4kg" class="btn-detalles">Detalles</a></div></div></div><div class="product-card"><div class="product-image-wrapper"><span class="product-badge nom">NOM-154-SCFI</span><img src="productos/agentes-limpios/img-agente-limpio/extintor-agente-limpio-9kg-servicio.webp" alt="Extintor de agente limpio Halotron de 9 kg listo para servicio profesional" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Agente Limpio 9 kg</h3><p class="product-capacity">Capacidad: 9 kg | Alcance: 8-10 metros</p><div class="product-classes"><span class="class-badge class-a">Clase A</span><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Gran capacidad para áreas críticas</li><li>Tecnología Halotron I avanzada</li><li>Válvula de latón cromado premium</li><li>Ideal para centros de cómputo y salas limpias</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%209%20kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-6-8kg" class="btn-detalles">Detalles</a></div></div></div><div class="product-card"><div class="product-image-wrapper"><span class="product-badge">Premium</span><img src="productos/agentes-limpios/img-agente-limpio/extintor-agente-limpio-13kg-venta.webp" alt="Extintor de agente limpio de 13 kg con carrito de ruedas para uso industrial" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Agente Limpio 13 kg</h3><p class="product-capacity">Capacidad: 13 kg | Alcance: 10-15 metros</p><div class="product-classes"><span class="class-badge class-a">Clase A</span><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Máxima capacidad premium profesional</li><li>Protección para salas blancas y laboratorios</li><li>Con carrito de ruedas incluido</li><li>Certificación internacional EPA/SNAP</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Agente%20Limpio%2013%20kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-9kg" class="btn-detalles">Detalles</a></div></div></div><div class="product-card"><div class="product-image-wrapper"><span class="product-badge" style="background: #4caf50;">EPA Certified</span><img src="productos/agentes-limpios/img-agente-limpio/extintor-agente-limpio-11kg-venta.webp" alt="Extintor Novec 1230 de 11 kg con certificación EPA sobre fondo blanco" width="600" height="400" loading="lazy" /></div><div class="product-info"><h3 class="product-title">Extintor Novec 1230 11kg</h3><p class="product-capacity">Capacidad: 11kg | Alcance: 5-6 metros</p><div class="product-classes"><span class="class-badge class-b">Clase B</span><span class="class-badge class-c">Clase C</span></div><ul class="product-features"><li>Agente limpio de última generación</li><li>Certificación EPA y UL más reciente</li><li>Cero impacto ambiental ODP=0, GWP=1</li><li>Ideal para archivos históricos y museos</li></ul><div class="product-actions"><a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20Extintor%20Novec%201230%2011kg" class="btn-cotizar" target="_blank" rel="noopener">Cotizar Ahora</a><a href="/productos/agentes-limpios/producto-extintor-agente-limpio-11kg" class="btn-detalles">Detalles</a></div></div></div></div></div></section><section class="contact-form-section"><div class="container"><div class="contact-form-wrapper"><div class="contact-info"><h2>Solicita una Cotización de Agentes Limpios</h2><p class="contact-intro">
-Completa el formulario y nos pondremos en contacto contigo inmediatamente vía WhatsApp para brindarte la mejor cotización en extintores de agentes limpios FM-200 y Novec certificados NOM-154-SCFI.
-</p><div class="contact-features"><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="contact-feature-text"><h4>Respuesta Inmediata</h4><p>Te contactamos en menos de 5 minutos</p></div></div><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg></div><div class="contact-feature-text"><h4>Cotización Sin Compromiso</h4><p>Precios competitivos y transparentes</p></div></div><div class="contact-feature-item"><div class="contact-feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="contact-feature-text"><h4>Atención 24/7</h4><p>Disponibles todos los días del año</p></div></div></div><div class="contact-direct"><p><strong>¿Prefieres llamar directamente?</strong></p><a href="tel:5570081816" class="contact-phone">55 7008 1816</a><a href="tel:5570081816" class="contact-phone">55 7008 1816</a></div></div><div class="contact-form-container"><form id="whatsappForm" class="contact-form"><div class="form-group"><label for="nombre">Nombre Completo *</label><input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez"></div><div class="form-group"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa"></div><div class="form-row"><div class="form-group"><label for="telefono">Teléfono *</label><input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678"></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="correo@ejemplo.com"></div></div><div class="form-group"><label for="servicio">Servicio de Interés *</label><select id="servicio" name="servicio" required><option value="">Selecciona un servicio</option><option value="Extintores Agentes Limpios" selected>Extintores Agentes Limpios</option><option value="Venta de Extintores">Venta de Extintores</option><option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option><option value="Recarga de Extintores">Recarga de Extintores</option><option value="Prueba Hidrostática">Prueba Hidrostática</option><option value="Capacitación y Brigadas">Capacitación y Brigadas</option><option value="Señalización y Equipamiento">Señalización y Equipamiento</option><option value="Cotización General">Cotización General</option></select></div><div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea></div><button type="submit" class="btn-submit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-Enviar por WhatsApp
-</button><p class="form-privacy">
-Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privacidad</a></p></form></div></div></div></section><section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes sobre Extintores de Agentes Limpios</h2><p class="section-subtitle">
-Resolvemos tus dudas sobre los extintores de tecnología premium FM-200, Novec 1230 y Halotron I
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué son los agentes limpios FM-200, Novec 1230 y Halotron I?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Los agentes limpios son compuestos químicos avanzados de última generación diseñados para extinguir fuegos sin dejar residuos. <strong>FM-200 (HFC-227ea):</strong> Gas halogenado que actúa por inhibición química del fuego, aprobado EPA/SNAP. <strong>Novec 1230:</strong> Tecnología más moderna de 3M, con menor impacto ambiental y tiempo de vida atmosférico de solo 5 días. <strong>Halotron I:</strong> HCFC limpio, sustituto del Halon 1211, efectivo y con baja toxicidad. Los tres <strong>no dejan residuos, no dañan equipos electrónicos, no son conductores de electricidad</strong> y son seguros para usar en áreas ocupadas según protocolos. Son los más avanzados del mercado.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuál es la diferencia entre agentes limpios y CO2?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Aunque ambos no dejan residuos, tienen diferencias importantes: <strong>Agentes Limpios (FM-200/Novec/Halotron):</strong> Tipo ABC (sólidos, líquidos y eléctricos), actúan por inhibición química rápida, no desplazan oxígeno significativamente, seguros en espacios ocupados, más costosos, ideales para áreas con personal. <strong>CO2:</strong> Solo tipo BC (líquidos y eléctricos), NO funciona en sólidos tipo A, actúa por desplazamiento de oxígeno (riesgo de asfixia), no recomendado con personas presentes, más económico. Los <strong>agentes limpios son superiores</strong> en protección, seguridad y versatilidad, especialmente para equipos de alta precisión y áreas críticas con personal.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Por qué son más caros los extintores de agentes limpios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>El costo elevado se justifica por múltiples factores: <strong>1) Agente extintor premium:</strong> FM-200, Novec 1230 y Halotron I son compuestos químicos de alta tecnología, mucho más costosos que PQS o CO2. <strong>2) Certificaciones ambientales:</strong> Cumplen EPA/SNAP, pruebas de impacto ambiental y seguridad exhaustivas. <strong>3) Componentes especializados:</strong> Válvulas de precisión, cilindros de alta calidad. <strong>4) Investigación y desarrollo:</strong> Tecnología patentada en constante evolución. Sin embargo, el <strong>valor se recupera</strong> al proteger equipos de millones de pesos (servidores, obras de arte, instrumentos médicos) que serían dañados irreparablemente por PQS o agua. Una sola obra de arte o servidor protegido justifica la inversión.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Los agentes limpios son realmente ecológicos y seguros?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Sí, son los más seguros y ecológicos disponibles actualmente. <strong>FM-200:</strong> Potencial cero de agotamiento de ozono (ODP=0), bajo potencial de calentamiento global comparado con alternativas, aprobado EPA/SNAP. <strong>Novec 1230:</strong> El más ecológico, tiempo de vida atmosférico de solo 5 días (vs 3200 años del CO2), GWP=1 (mínimo impacto climático). <strong>Halotron I:</strong> Sustituto aprobado del Halon, bajo ODP. Los tres son <strong>seguros para uso en áreas ocupadas</strong> en concentraciones de diseño, no tóxicos a niveles normales de descarga, no corrosivos, no dejan residuos químicos. Certificados internacionalmente NFPA, UL, FM, EPA. Son la opción más responsable ambientalmente disponible.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué tipo de equipos protegen los agentes limpios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Los agentes limpios están diseñados específicamente para proteger <strong>activos de alto valor y equipos sensibles</strong> donde cualquier residuo causaría daños irreparables: <strong>Archivos y museos:</strong> Documentos históricos, obras de arte, manuscritos, colecciones valiosas. <strong>Equipos médicos:</strong> Resonancias magnéticas, equipos quirúrgicos de precisión, instrumentos de diagnóstico. <strong>Salas limpias:</strong> Fabricación de semiconductores, industria farmacéutica, biotecnología. <strong>Centros de datos:</strong> Servidores críticos, mainframes, equipos de telecomunicaciones. <strong>Laboratorios:</strong> Instrumentos de investigación, microscopios electrónicos, equipos de análisis. <strong>Galerías de arte:</strong> Pinturas, esculturas, instalaciones. Cualquier área donde PQS o agua causarían más daño que el fuego mismo.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuánto cuesta el mantenimiento y recarga de agentes limpios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>El mantenimiento y recarga de agentes limpios es más costoso que extintores convencionales debido al precio del agente: <strong>Mantenimiento anual:</strong> Similar al de otros extintores, incluye inspección, verificación de presión, revisión de componentes según NOM-154-SCFI. <strong>Recarga:</strong> Significativamente más cara, el agente FM-200/Novec/Halotron cuesta entre 5-10 veces más que PQS o CO2, requiere técnicos especializados y equipo de precisión. <strong>Frecuencia:</strong> Recarga obligatoria anual o después de cualquier descarga, prueba hidrostática cada 5 años. En MANEXT ofrecemos <strong>pólizas de mantenimiento especializadas</strong> con precios preferenciales para agentes limpios, incluyendo inspecciones trimestrales, documentación completa y recarga programada. Contáctanos para cotización personalizada según tu capacidad y cantidad.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿De verdad no dejan absolutamente ningún residuo?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p><strong>Sí, cero residuos absolutos</strong>. A diferencia del PQS que deja polvo corrosivo o el agua que moja y daña, los agentes limpios se <strong>evaporan completamente</strong> después de la descarga sin dejar rastro alguno: ninguna mancha, ningún polvo, ningún líquido, ninguna película, ningún residuo químico. Los equipos electrónicos, obras de arte, documentos y superficies quedan <strong>exactamente como estaban antes</strong> del incendio (excepto por el daño directo del fuego). Esto permite que <strong>los equipos puedan operar inmediatamente</strong> después de la descarga sin necesidad de limpieza, minimizando tiempo de inactividad. Por esto son obligatorios o altamente recomendados en data centers críticos, salas de operaciones, archivos históricos y cualquier área donde la continuidad operativa es vital. Es la máxima protección sin daño colateral.</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuándo son obligatorios o recomendados los agentes limpios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Aunque la <strong>NOM-002-STPS</strong> no especifica obligatoriedad de agentes limpios, son <strong>fuertemente recomendados o requeridos</strong> en: <strong>Normas internacionales:</strong> NFPA 2001 recomienda agentes limpios para protección de equipos electrónicos sensibles y áreas críticas. <strong>Aseguradoras:</strong> Muchas pólizas de seguros de alto valor requieren agentes limpios como condición para cobertura de equipos de millones de pesos. <strong>Certificaciones:</strong> ISO 14001, certificaciones de salas limpias y normas GMP farmacéuticas frecuentemente especifican agentes limpios. <strong>Mejores prácticas:</strong> Data centers Tier III/IV, museos certificados, hospitales de alta especialidad, centros de investigación. <strong>Protección Civil en CDMX</strong> reconoce agentes limpios como mejor práctica para áreas críticas. Si tu instalación tiene equipos de alto valor o áreas sensibles, la inversión en agentes limpios es obligada.</p></div></div></div></div></section><section class="blog-articles-section"><div class="container"><div class="section-header"><h2>Artículos Relacionados sobre Extintores de Alta Tecnología</h2><p class="section-subtitle">
-Aprende más sobre protección de activos críticos, equipos electrónicos y normativas
-</p></div><div class="blog-articles-grid"><article class="blog-article-card"><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-image"><img src="img/img-index/señalizaion-y-equipamiento.avif" alt="Señalización y equipamiento de seguridad contra incendios instalado en una empresa" width="1200" height="675" loading="lazy"><span class="blog-article-category">Equipos</span></a><div class="blog-article-content"><h3><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025">Sistemas de Protección Integral para Empresas CDMX 2025</a></h3><p>Sistemas completos con agentes limpios para data centers, salas de operaciones y activos de alto valor. ROI y costos.</p><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-link">Leer artículo completo →</a></div></article><article class="blog-article-card"><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-image"><img src="img/img-index/extintor.avif" alt="Extintor rojo portátil sobre fondo neutro para comparativa de tipos" width="1200" height="675" loading="lazy"><span class="blog-article-category">Seguridad</span></a><div class="blog-article-content"><h3><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx">Cómo Elegir el Extintor Correcto para tu Tipo de Negocio</a></h3><p>Cuándo invertir en agentes limpios FM-200 o Novec. Comparativa vs PQS y CO2 para instalaciones críticas.</p><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-link">Leer artículo completo →</a></div></article><article class="blog-article-card"><a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa" class="blog-article-image"><img src="img/img-index/recarga-de-extintores.avif" alt="Técnico realizando la recarga de un extintor en taller especializado" width="1200" height="675" loading="lazy"><span class="blog-article-category">Mantenimiento</span></a><div class="blog-article-content"><h3><a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa">¿Cuándo Recargar tu Extintor? Señales, Frecuencia y Normativa</a></h3><p>Mantenimiento especializado para agentes limpios. Verificación de presión, pesaje y recarga con agentes certificados.</p><a href="/blog/cuando-recargar-extintor-senales-frecuencia-normativa" class="blog-article-link">Leer artículo completo →</a></div></article><article class="blog-article-card"><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-image"><img src="img/img-index/prueba-hidrostatica.avif" alt="Prueba hidrostática aplicada a un cilindro de extintor según normativa NOM-154" width="1200" height="675" loading="lazy"><span class="blog-article-category">Normativas</span></a><div class="blog-article-content"><h3><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores">NOM-154-SCFI: Guía Completa de Cumplimiento para Extintores</a></h3><p>Certificación y requisitos especiales para extintores de agentes limpios. Estándares internacionales y normativa mexicana.</p><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-link">Leer artículo completo →</a></div></article></div><div class="blog-articles-cta"><a href="/blog/" class="btn-view-all-articles">Ver Todos los Artículos del Blog →</a></div></div></section>
-<style>.blog-articles-section{background:#f9f9f9;padding:4rem 0}.blog-articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}.blog-article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column}.blog-article-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.12)}.blog-article-image{position:relative;width:100%;height:200px;overflow:hidden;display:block}.blog-article-image img{width:100%;height:100%;object-fit:cover}.blog-article-card:hover .blog-article-image img{transform:scale(1.05)}.blog-article-category{position:absolute;top:1rem;left:1rem;background:#9c27b0;color:white;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}.blog-article-content{padding:1.5rem;flex:1;display:flex;flex-direction:column}.blog-article-content h3{font-size:1.15rem;margin:0 0 0.75rem 0;line-height:1.4}.blog-article-content h3 a{color:#333;text-decoration:none}.blog-article-content h3 a:hover{color:#9c27b0}.blog-article-content p{color:#666;font-size:0.9rem;line-height:1.6;margin:0 0 1rem 0;flex:1}.blog-article-link{color:#9c27b0;text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block}.blog-article-link:hover{color:#7b1fa2;transform:translateX(5px)}.blog-articles-cta{text-align:center;margin-top:3rem}.btn-view-all-articles{display:inline-block;background:#9c27b0;color:white;padding:1rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:1.05rem;box-shadow:0 4px 12px rgba(156,39,176,0.3)}.btn-view-all-articles:hover{background:#7b1fa2;transform:translateY(-2px);box-shadow:0 6px 16px rgba(156,39,176,0.4)}@media (max-width:768px){.blog-articles-grid{grid-template-columns:1fr;gap:1.5rem}.blog-article-image{height:180px}}</style>
-<section class="related-products-section"><div class="container"><div class="section-header"><h2>Otros Extintores que Podrían Interesarte</h2><p class="section-subtitle">Explora nuestra línea completa de extintores certificados para diferentes aplicaciones</p></div><div class="related-products-grid"><article class="related-product-card"><a href="/co2" class="related-product-image"><img src="img/img-index/dioxido-de-carbono-co2.avif" alt="Extintor de dióxido de carbono CO2 con corneta de descarga color negro" width="600" height="400" loading="lazy"><span class="related-product-badge">Electrónica</span></a><div class="related-product-content"><div class="related-product-classes"><span class="class-badge class-b">B</span><span class="class-badge class-c">C</span></div><h3><a href="/co2">Extintor de CO2</a></h3><p>Sin residuos, ideal para equipos electrónicos, servidores y centros de cómputo. No conduce electricidad.</p><div class="related-product-price"><span class="price-label">Desde</span><span class="price-amount">$1,450 MXN</span></div><a href="/co2" class="related-product-btn">Ver Detalles →</a></div></article><article class="related-product-card"><a href="/polvo-quimico-seco" class="related-product-image"><img src="img/img-index/venta-de-extintores.avif" alt="Extintor de polvo químico seco rojo con etiqueta de clasificación ABC" width="600" height="400" loading="lazy"><span class="related-product-badge">Más Vendido</span></a><div class="related-product-content"><div class="related-product-classes"><span class="class-badge class-a">A</span><span class="class-badge class-b">B</span><span class="class-badge class-c">C</span></div><h3><a href="/polvo-quimico-seco">Extintor PQS (Polvo Químico Seco)</a></h3><p>Extintor multiuso ABC, ideal para oficinas, comercios e industrias. Protección versátil contra fuegos clase A, B y C.</p><div class="related-product-price"><span class="price-label">Desde</span><span class="price-amount">$850 MXN</span></div><a href="/polvo-quimico-seco" class="related-product-btn">Ver Detalles →</a></div></article><article class="related-product-card"><a href="/tipo-k" class="related-product-image"><img src="img/img-index/agente-humedo-tipo-k.avif" alt="Extintor de agente húmedo tipo K plateado para cocinas comerciales" width="600" height="400" loading="lazy"><span class="related-product-badge">Cocinas</span></a><div class="related-product-content"><div class="related-product-classes"><span class="class-badge class-k">K</span></div><h3><a href="/tipo-k">Extintor Tipo K (Agente Húmedo)</a></h3><p>Obligatorio para cocinas comerciales. Tecnología de saponificación para aceites y grasas a altas temperaturas.</p><div class="related-product-price"><span class="price-label">Desde</span><span class="price-amount">$2,150 MXN</span></div><a href="/tipo-k" class="related-product-btn">Ver Detalles →</a></div></article><article class="related-product-card"><a href="/agua-presion" class="related-product-image"><img src="img/img-index/agua-a-presion.avif" alt="Extintor de agua a presión rojo con manómetro para uso en bodegas" width="600" height="400" loading="lazy"><span class="related-product-badge">Económico</span></a><div class="related-product-content"><div class="related-product-classes"><span class="class-badge class-a">A</span></div><h3><a href="/agua-presion">Extintor de Agua a Presión</a></h3><p>Ideal para fuegos clase A (madera, papel, textiles). Solución económica y ecológica para bodegas y áreas de almacenamiento.</p><div class="related-product-price"><span class="price-label">Desde</span><span class="price-amount">$650 MXN</span></div><a href="/agua-presion" class="related-product-btn">Ver Detalles →</a></div></article></div><div style="text-align: center; margin-top: 3rem;"><a href="/extintores" class="btn-view-all-products">Ver Catálogo Completo de Extintores</a></div></div></section>
-<style>.related-products-section{background:#fff;padding:4rem 0;border-top:1px solid #eee}.related-products-section .container{max-width:1200px;margin:0 auto;padding:0 2rem}.related-products-section .section-header{text-align:center;margin-bottom:1rem}.related-products-section .section-header h2{color:#1a1a1a;font-size:2.2rem;font-weight:700;margin-bottom:0.8rem}.related-products-section .section-subtitle{color:#666;font-size:1.1rem;max-width:700px;margin:0 auto;line-height:1.6}.related-products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;margin-top:2.5rem}.related-product-card{background:white;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}.related-product-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,0.12);border-color:#d32f2f}.related-product-image{position:relative;overflow:hidden;display:block;aspect-ratio:4/3;background:#f5f5f5}.related-product-image img{width:100%;height:100%;object-fit:contain;padding:1rem}.related-product-card:hover .related-product-image img{transform:scale(1.08)}.related-product-badge{position:absolute;top:12px;right:12px;background:#d32f2f;color:white;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}.related-product-content{padding:1.5rem;flex:1;display:flex;flex-direction:column}.related-product-classes{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap}.class-badge{display:inline-block;width:32px;height:32px;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:0.85rem;color:white}.class-badge.class-a{background:#4caf50}.class-badge.class-b{background:#d32f2f}.class-badge.class-c{background:#2196f3}.class-badge.class-k{background:#9c27b0}.related-product-content h3{font-size:1.2rem;font-weight:700;margin-bottom:0.8rem;line-height:1.3}.related-product-content h3 a{color:#1a1a1a;text-decoration:none}.related-product-content h3 a:hover{color:#d32f2f}.related-product-content p{color:#666;font-size:0.9rem;line-height:1.6;margin-bottom:1.2rem;flex:1}.related-product-price{display:flex;align-items:baseline;gap:0.5rem;margin-bottom:1.2rem}.price-label{color:#999;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px}.price-amount{color:#d32f2f;font-size:1.4rem;font-weight:700}.related-product-btn{display:inline-block;background:#d32f2f;color:white;padding:0.8rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;text-align:center}.related-product-btn:hover{background:#b71c1c;transform:translateX(3px)}.btn-view-all-products{display:inline-block;background:#1a1a1a;color:white;padding:1rem 2.5rem;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.05rem;box-shadow:0 4px 12px rgba(0,0,0,0.2)}.btn-view-all-products:hover{background:#d32f2f;transform:translateY(-2px);box-shadow:0 6px 16px rgba(211,47,47,0.4)}@media (max-width:768px){.related-products-section{padding:3rem 0}.related-products-section .section-header h2{font-size:1.8rem}.related-products-grid{grid-template-columns:1fr;gap:1.5rem}.related-product-content{padding:1.2rem}.btn-view-all-products{padding:0.9rem 2rem;font-size:1rem}}</style>
-<section class="services"><div class="container"><div class="section-header"><h2 class="section-title">Explora Otras Categorías de Extintores</h2><p class="section-subtitle">
-Encuentra el extintor específico para cada tipo de riesgo
-</p></div><div class="services-grid"><div class="service-card"><div class="service-image"><a href="/polvo-quimico-seco"><img
-src="productos/polvo-quimico-seco/Extintor-para-oficinas-4kg.webp"
-alt="Extintor rojo de polvo químico seco de 4 kg para uso en oficinas"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores de Polvo Químico Seco (PQS)</h3><p>
-El PQS es económico pero su polvo corrosivo arruina obras de arte, documentos y equipos médicos. Para activos valiosos, agentes limpios son la única opción.
-</p><ul class="service-features"><li>Polvo corrosivo permanente</li><li>Arruina arte y documentos</li><li>Limpieza costosa imposible</li><li>No apto para patrimonio</li></ul><a href="/polvo-quimico-seco" class="service-link">Ver Extintores PQS</a></div></div><div class="service-card"><div class="service-image"><a href="/co2"><img
-src="productos/co2/img-extintores-co2/extintor-portatil-co2-30lbs.webp"
-alt="Extintor portátil de CO2 de 30 libras con corneta de descarga negra"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores de CO2</h3><p>
-El CO2 no deja residuos pero puede causar asfixia en espacios cerrados como bóvedas. Los agentes limpios son más seguros para personas.
-</p><ul class="service-features"><li>Riesgo de asfixia</li><li>Desplaza oxígeno</li><li>Peligro en espacios cerrados</li><li>Agentes limpios más seguros</li></ul><a href="/co2" class="service-link">Ver Extintores CO2</a></div></div><div class="service-card"><div class="service-image"><a href="/agua-presion"><img
-src="productos/agua-presion/img-agua-presion/extintor-portatil-agua-6lt.webp"
-alt="Extintor portátil de agua a presión de 6 litros color rojo"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores de Agua a Presión</h3><p>
-El agua destruye documentos históricos, arte, archivos y electrónica. Para museos y bibliotecas, los agentes limpios son la única solución.
-</p><ul class="service-features"><li>Destruye documentos</li><li>Daño irreversible</li><li>Arruina obras de arte</li><li>Totalmente inadecuada</li></ul><a href="/agua-presion" class="service-link">Ver Extintores de Agua</a></div></div><div class="service-card"><div class="service-image"><a href="/tipo-k"><img
-src="productos/tipo-k/img-tipo-k/extintor-para-aceites-y-grasas-6lt.webp"
-alt="Extintor tipo K de 6 litros plateado para protección contra aceites y grasas"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores Tipo K (Agente Húmedo)</h3><p>
-El Tipo K es solo para cocinas comerciales con aceites. Los agentes limpios protegen salas de control, quirófanos y centros de datos.
-</p><ul class="service-features"><li>Aplicación muy específica</li><li>Solo para cocinas</li><li>No para áreas críticas</li><li>Uso completamente diferente</li></ul><a href="/tipo-k" class="service-link">Ver Extintores Tipo K</a></div></div><div class="service-card"><div class="service-image"><a href="/espuma-afff"><img
-src="productos/espuma-afff/img-espuma-afff/equipo-contra-incendio-espuma-afff-20lt.webp"
-alt="Extintor de espuma AFFF de 20 litros rojo para uso contra incendios industriales"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores de Espuma (AFFF)</h3><p>
-La espuma deja residuos líquidos y es para combustibles industriales. Los agentes limpios son para proteger equipos de precisión y áreas limpias.
-</p><ul class="service-features"><li>Deja residuos mojados</li><li>No para equipos delicados</li><li>Uso industrial</li><li>Agentes limpios superiores</li></ul><a href="/espuma-afff" class="service-link">Ver Extintores de Espuma</a></div></div><div class="service-card"><div class="service-image"><a href="/agentes-limpios"><img
-src="productos/agentes-limpios/img-agente-limpio/equipo-contra-incendio-agente-limpio-9kg.webp"
-alt="Extintor de agente limpio de 9 kg con válvula de latón y manómetro de presión"
-width="600" height="400"
-loading="lazy"
-/></a></div><div class="service-content"><h3>Extintores de Agentes Limpios</h3><p>
-Estás viendo esta categoría. Los agentes limpios FM-200 y Novec ofrecen máxima protección sin residuos para activos críticos de alto valor.
-</p><ul class="service-features"><li>Tecnología premium actual</li><li>Cero residuos garantizado</li><li>Protección patrimonio</li><li>Inversión inteligente</li></ul><a href="/agentes-limpios" class="service-link">Ver Agentes Limpios</a></div></div></div></div></section><section class="cta-b2b"><div class="container"><div class="cta-b2b-content"><div class="cta-b2b-text"><span class="cta-b2b-badge">Agentes Limpios FM-200 y Novec Certificados</span><h2>Tecnología Premium Zero-Residue: Máxima Protección para Activos Críticos de Alto Valor</h2><p class="cta-b2b-description">
-Los <strong>extintores de agentes limpios halogenados</strong> representan la <strong>inversión más inteligente</strong> para <strong>museos, galerías de arte, archivos históricos, bancos, laboratorios y salas de control</strong> donde el daño por residuos supera el costo del fuego. Gases FM-200 y Novec extinguen sin dejar rastro, permitiendo <strong>operación inmediata sin limpieza</strong>. Son el reemplazo ecológico del Halón con <strong>cero impacto en capa de ozono</strong>. MANEXT certifica instalación premium con documentación para pólizas de seguro de activos.
-</p><div class="cta-b2b-benefits"><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><div><strong>Cero Residuos Absolutamente Garantizado</strong><p>No requiere limpieza post-descarga - Reinicio inmediato protegiendo patrimonio invaluable</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><div><strong>Tecnología Ecológica Certificada EPA</strong><p>Sin daño a capa de ozono ni efecto invernadero - Cumplimiento ambiental internacional</p></div></div><div class="cta-b2b-benefit"><svg class="benefit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><div><strong>Documentación para Pólizas de Seguro</strong><p>Certificación completa que aseguradoras exigen para proteger activos millonarios</p></div></div></div><div class="cta-b2b-stats"><div class="cta-stat"><span class="stat-number">0% Residuos</span><span class="stat-label">Descarga Limpia</span></div><div class="cta-stat"><span class="stat-number">EPA Certified</span><span class="stat-label">Ecológico</span></div><div class="cta-stat"><span class="stat-number">Premium Tech</span><span class="stat-label">Máxima Protección</span></div></div></div><div class="cta-b2b-actions"><div class="cta-action-card"><h3>Invierte en Agentes Limpios Premium</h3><p>Cotización especializada para activos críticos con certificación internacional y documentación para compañías aseguradoras</p><div class="cta-buttons"><a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20cotización%20para%20extintores%20de%20Agentes%20Limpios%20FM-200%2FNovec%20certificados%20para%20protección%20de%20activos%20críticos"
-class="cta-btn cta-btn-whatsapp"
-target="_blank"
-rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-Cotizar Agentes Limpios por WhatsApp
-</a><a href="tel:5570081816" class="cta-btn cta-btn-phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-Llamar: 55 7008 1816
-</a></div><div class="cta-alternative"><p><strong>Incluye:</strong> Extintor premium + Instalación especializada + Certificación EPA + Documentación seguros + Garantía extendida</p><p class="cta-email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><a href="mailto:[email protected]">[email protected]</a></p></div><div class="cta-urgency"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Inversión premium en protección de patrimonio - Instalación certificada internacional</span></div></div></div></div></div></section><section class="emergency-cta"><div class="container"><div class="emergency-cta-content"><div class="emergency-header"><h2>¿Necesitas Extintores Urgente?</h2><p>Atención inmediata para empresas en CDMX y Estado de México</p></div><div class="emergency-actions"><a href="tel:5570081816" class="emergency-action-card emergency-phone"><div class="emergency-action-info"><span class="emergency-label">Llamar Ahora</span><span class="emergency-contact">55 7008 1816</span><span class="emergency-desc">Respuesta inmediata</span></div></a><a href="https://wa.me/5215570081816?text=Necesito%20cotización%20de%20extintores%20de%20Agentes%20Limpios" class="emergency-action-card emergency-whatsapp" target="_blank" rel="noopener"><div class="emergency-action-info"><span class="emergency-label">WhatsApp</span><span class="emergency-contact">Cotización Express</span><span class="emergency-desc">Atención prioritaria 24/7</span></div></a></div></div></div>
-<style>.emergency-cta{background:#f5f5f5;padding:4rem 0}.emergency-cta-content{max-width:900px;margin:0 auto}.emergency-header{text-align:center;margin-bottom:3rem}.emergency-header h2{font-size:2.2rem;font-weight:800;color:#212121;margin:0 0 0.75rem 0;letter-spacing:-0.02em}.emergency-header p{font-size:1.1rem;color:#616161;margin:0;font-weight:400}.emergency-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.emergency-action-card{background:#ffffff;border:2px solid #e0e0e0;border-radius:12px;padding:2.5rem 2rem;text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center}.emergency-action-card:hover{border-color:var(--primary-color);box-shadow:0 6px 20px rgba(211,47,47,0.12)}.emergency-action-info{display:flex;flex-direction:column;gap:0.5rem}.emergency-label{font-size:0.875rem;font-weight:600;color:#757575;text-transform:uppercase;letter-spacing:0.05em}.emergency-contact{font-size:1.75rem;font-weight:800;color:#212121;letter-spacing:-0.01em;margin:0.25rem 0}.emergency-desc{font-size:0.95rem;color:#616161;font-weight:500}.emergency-phone:hover .emergency-contact{color:var(--primary-color)}.emergency-whatsapp:hover .emergency-contact{color:#25d366}@media (max-width:768px){.emergency-cta{padding:3rem 0});.emergency-header h2{font-size:1.75rem});.emergency-header p{font-size:1rem});.emergency-header{margin-bottom:2rem});.emergency-actions{grid-template-columns:1fr;gap:1rem});.emergency-action-card{padding:2rem 1.5rem});.emergency-contact{font-size:1.5rem})}@media (max-width:480px){.emergency-header h2{font-size:1.5rem});.emergency-contact{font-size:1.3rem})}</style>
+    <SectionHeader
+      eyebrow="¿Dónde son indispensables?"
+      title="Tres Tipos de Espacios Donde Ningún Otro Extintor es Aceptable"
+      subtitle="Salas de cómputo, patrimonio documental y centros de control — donde el error no tiene segunda oportunidad"
+      paragraphs={[
+        'Hay una distinción fundamental entre un incendio en un almacén y un incendio en una sala de servidores: en el primer caso, el activo puede reponerse. En el segundo, la pérdida de datos, la interrupción de servicio y la destrucción del hardware puede representar daños diez veces superiores al valor físico del equipo. Un extintor PQS que "controla el fuego" e inutiliza 40 servidores en el proceso no ha resuelto el problema — lo ha ampliado.',
+        'El agente limpio fue desarrollado para este escenario: extinguir el fuego en su fase incipiente, antes de que el calor alcance los sistemas críticos, sin generar ningún agente secundario que dañe lo que estaba protegiendo. No es un lujo — es la única protección que tiene sentido económico cuando el contenido del espacio es órdenes de magnitud más valioso que el espacio mismo.'
+      ]}
+    />
+
+    <!-- Grid: 3 aplicaciones críticas con IDs requeridos por extintores.astro -->
+    <div class="services-grid">
+
+      <div class="service-card" id="computo">
+        <div class="service-image">
+          <a href="/agentes-limpios#que-es">
+            <img src="/img/img-tipos-de-extintores/agente-limpio.avif" alt="Extintor de agente limpio FM-200 para salas de cómputo, data centers y racks de servidores — cero residuo ni daño" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Salas de Cómputo y Data Centers</h3>
+          <p>Un rack de servidores puede alojar petabytes de datos y representar inversiones de cientos de miles de pesos en hardware. El CO₂ extingue sin residuo, pero reduce el oxígeno a niveles potencialmente letales — requiere evacuación total antes de activarse. El <strong>FM-200 actúa a concentraciones del 7 %</strong>, por debajo de su NOAEL (nivel sin efecto adverso, 9 %), lo que lo hace seguro en salas con personal sin necesidad de evacuación inmediata previa a la descarga.</p>
+          <ul class="service-nav-links">
+            <li><a href="/agentes-limpios#vs-co2">FM-200 vs CO₂ — diferencia en espacios ocupados</a></li>
+            <li><a href="/agentes-limpios#que-es">Novec 1230: GWP=1, la opción más sustentable</a></li>
+            <li><a href="/agentes-limpios#aplicaciones">Cumplimiento NFPA 2001 y NOM-154-SCFI</a></li>
+          </ul>
+          <a href="/agentes-limpios#que-es" class="service-link">Ver detalles para salas de cómputo</a>
+        </div>
+      </div>
+
+      <div class="service-card" id="archivos">
+        <div class="service-image">
+          <a href="/agentes-limpios#aplicaciones">
+            <img src="/img/img-ventas-de-extintores/extintores-con-agetes-limpios.avif" alt="Extintor agente limpio para archivos históricos, museos, bibliotecas y patrimonio documental irreemplazable" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Archivos, Museos y Patrimonio Documental</h3>
+          <p>Un expediente legal de décadas, una colección de fotografías históricas, un cuadro, un manuscrito — ninguno tiene precio de reposición porque son únicos. El agua los destruye. El polvo químico los impregna irreversiblemente. Solo el agente limpio puede controlar un incendio incipiente en este tipo de espacios <strong>sin dejar ningún rastro material</strong> sobre lo que estaba protegiendo.</p>
+          <ul class="service-nav-links">
+            <li><a href="/agentes-limpios#aplicaciones">Archivos notariales y registros civiles</a></li>
+            <li><a href="/agentes-limpios#aplicaciones">Bibliotecas históricas y museos</a></li>
+            <li><a href="/agentes-limpios#que-es">Por qué Novec 1230 es el preferido en museos</a></li>
+          </ul>
+          <a href="/agentes-limpios#aplicaciones" class="service-link">Ver detalles para archivos y museos</a>
+        </div>
+      </div>
+
+      <div class="service-card" id="control">
+        <div class="service-image">
+          <a href="/agentes-limpios#aplicaciones">
+            <img src="/img/img-tipos-de-extintores/agente-limpio.avif" alt="Extintor agente limpio para centros de control, telecomunicaciones y salas de operaciones críticas" width="640" height="380" loading="lazy" />
+          </a>
+        </div>
+        <div class="service-content">
+          <h3>Centros de Control e Infraestructura Crítica</h3>
+          <p>Salas de operaciones, centros de monitoreo, equipos de telecomunicaciones y sistemas SCADA operan las 24 horas sin posibilidad de apagado preventivo. Una interrupción por incendio — o por un agente extintor mal elegido — puede tener consecuencias en cascada. El agente limpio actúa en <strong>menos de 10 segundos</strong>, en la fase incipiente, antes de que la temperatura alcance los componentes críticos, y el sistema vuelve a operar inmediatamente tras la descarga.</p>
+          <ul class="service-nav-links">
+            <li><a href="/agentes-limpios#vs-co2">Activación sin interrupción del servicio</a></li>
+            <li><a href="/agentes-limpios#aplicaciones">Telecomunicaciones y equipos SCADA</a></li>
+            <li><a href="/agentes-limpios#que-es">No conduce electricidad — seguro Clase C</a></li>
+          </ul>
+          <a href="/agentes-limpios#aplicaciones" class="service-link">Ver detalles para centros de control</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══ Trust strip ═══ -->
+    <div class="rd-badges" style="justify-content:center;margin:2.5rem 0 0.5rem;">
+      <span class="rd-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        NOM-154-SCFI · NFPA 2001
+      </span>
+      <span class="rd-badge rd-badge--green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Seguro en Espacios Ocupados
+      </span>
+      <span class="rd-badge rd-badge--blue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        Cero Residuo · Cero Daño
+      </span>
+      <span class="rd-badge rd-badge--orange">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        No Conduce Electricidad
+      </span>
+      <span class="rd-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Entrega 48h CDMX
+      </span>
+    </div>
+
+    <!-- ═══ Separador módulos ═══ -->
+    <SectionHeader
+      eyebrow="Guía técnica completa"
+      title="FM-200, Novec 1230 y Por Qué la Elección del Agente Correcto Importa"
+      subtitle="Mecanismo de acción, comparativa con CO₂, aplicaciones y estándares internacionales"
+      paragraphs={[
+        'Los extintores de agente limpio son el segmento más técnico del mercado — y también el más malentendido. Muchos compradores los equiparan con el CO₂ asumiendo que son equivalentes. No lo son: el CO₂ extingue por desplazamiento de oxígeno; el agente limpio extingue por absorción de calor, a concentraciones seguras para personas. La diferencia no es de grado — es de categoría.',
+        'A continuación explicamos cómo funcionan, cuándo elegir FM-200 vs Novec 1230, en qué espacios son la única opción técnicamente correcta, y qué estándares internacionales los regulan. Si ya tienes CO₂ en tu sala de servidores y no estás seguro de que sea la mejor decisión, esta sección es para ti.'
+      ]}
+    />
+
+    <!-- Módulo 1: Qué son FM-200 y Novec + clases A/B/C -->
+    <div class="service-detail-item" id="que-es">
+      <div class="service-detail-image">
+        <img src="/img/img-tipos-de-extintores/agente-limpio.avif" alt="Extintor de agente limpio FM-200 HFC-227ea y Novec 1230 — mecanismo de absorción de calor y cero residuo" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>FM-200 y Novec 1230: Qué Son y Cómo Actúan</h2>
+        <p>Un agente limpio es cualquier agente extintor que se evapora completamente sin dejar residuo sólido, acuoso ni conductor. Los dos estándares del mercado son el <strong>FM-200 (HFC-227ea, heptafluoropropano)</strong> y el <strong>Novec 1230 (FK-5-1-12, fluorocetona)</strong>. Ambos actúan por <strong>absorción de calor</strong>: al descargarse, el agente absorbe energía del fuego a una tasa que supera la velocidad de propagación, interrumpiendo la reacción de combustión sin eliminar el oxígeno del ambiente.</p>
+        <p>La diferencia entre ambos está en dos factores clave. El <strong>FM-200</strong> tiene un GWP (Potencial de Calentamiento Global) de ~3,220 y lleva décadas en el mercado con historial técnico extenso — es la opción más probada y accesible. El <strong>Novec 1230</strong> tiene un GWP de apenas 1 (comparable al vapor de agua), se degrada en la atmósfera en 5 días y es el agente preferido donde hay requerimientos ambientales estrictos o certificaciones ISO 14001. Ambos tienen ODP (Potencial de Destrucción del Ozono) de cero — no son sustancias controladas bajo el Protocolo de Montreal.</p>
+
+        <!-- Badges clase A/B/C -->
+        <div class="rd-badges" style="margin:1.25rem 0;">
+          <span class="rd-badge rd-badge--green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Clase A — Sólidos
+          </span>
+          <span class="rd-badge rd-badge--orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z"/></svg>
+            Clase B — Líquidos
+          </span>
+          <span class="rd-badge rd-badge--blue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Clase C — Equipos energizados
+          </span>
+        </div>
+
+        <a href="https://wa.me/5215570081816?text=Hola%2C%20me%20interesa%20un%20extintor%20de%20agente%20limpio.%20¿Me%20pueden%20asesorar%20entre%20FM-200%20y%20Novec%201230%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría FM-200 vs Novec</a>
+      </div>
+    </div>
+
+    <!-- Módulo 2: Agente limpio vs CO2 — la diferencia crítica -->
+    <div class="service-detail-item" id="vs-co2">
+      <div class="service-detail-image">
+        <img src="/img/img-ventas-de-extintores/extintores-con-agetes-limpios.avif" alt="Comparativa extintor agente limpio FM-200 vs CO2 — seguridad en espacios ocupados y protección de equipos" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>Agente Limpio vs CO₂: La Diferencia que Importa en Espacios con Personas</h2>
+        <p>El CO₂ extingue reduciendo el oxígeno del ambiente por debajo del umbral de combustión (~12-15 %). Para una persona, ese nivel significa inconsciencia inmediata y muerte en minutos sin evacuación. El CO₂ exige que el espacio esté <strong>completamente desocupado</strong> antes o durante su descarga — en una sala de servidores con operadores de guardia convierte su uso en una decisión con consecuencias potencialmente fatales.</p>
+        <p>El FM-200 actúa a una concentración de diseño del <strong>7 %</strong>, por debajo de su NOAEL del 9 %. Puede descargarse con personas presentes sin riesgo de asfixia. Para el Novec 1230, la concentración típica de diseño es del 5.6 %, con NOAEL del 10 %. Esta diferencia no es solo técnica — es operacional: <strong>permite actuar sin elegir entre salvar los equipos y proteger a las personas</strong>. Adicionalmente, ninguno de los dos deja residuo sobre los equipos protegidos — mientras que el CO₂, aunque limpio en teoría, puede generar condensación y choque térmico en componentes electrónicos calientes al momento de la descarga.</p>
+        <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20CO2%20en%20mi%20sala%20de%20servidores%20y%20quiero%20evaluar%20si%20debería%20cambiar%20a%20agente%20limpio.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Evaluar el Cambio de CO₂ a Agente Limpio</a>
+      </div>
+    </div>
+
+    <!-- Módulo 3: Aplicaciones específicas -->
+    <div class="service-detail-item" id="aplicaciones">
+      <div class="service-detail-image">
+        <img src="/img/img-tipos-de-extintores/agente-limpio.avif" alt="Aplicaciones de agente limpio — archivos notariales, museos, centros de datos y centros de control industrial" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>Dónde el Agente Limpio es la Única Opción Técnicamente Correcta</h2>
+        <p><strong>Salas de servidores y data centers:</strong> hardware de alto valor con operadores presentes — FM-200 por su seguridad en espacios ocupados. <strong>Archivos notariales y registros civiles:</strong> documentos con valor legal irrecuperable — Novec 1230 por su perfil ambiental y cero residuo absoluto. <strong>Museos, galerías y bibliotecas históricas:</strong> obras únicas donde cualquier agente residual, por mínimo que sea, es inaceptable. <strong>Telecomunicaciones y sistemas SCADA:</strong> equipos activos 24/7 donde la interrupción post-siniestro debe ser cero. <strong>Laboratorios y salas limpias:</strong> instrumentos de precisión calibrados cuya recalibración post-exposición a residuos tiene costos que pueden superar su valor de reposición.</p>
+        <p>En todos estos espacios hay un denominador común: el costo del daño secundario causado por el extintor inadecuado supera al del incendio original. El agente limpio elimina ese factor — actúa, se evapora y el espacio queda operativo sin limpieza, sin demora y sin daños sobre los activos protegidos.</p>
+        <a href="https://wa.me/5215570081816?text=Hola%2C%20necesito%20extintores%20de%20agente%20limpio%20para%20mi%20instalación%20crítica.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar para Mi Instalación Crítica</a>
+      </div>
+    </div>
+
+    <!-- Módulo 4: Por qué MANEXT -->
+    <div class="service-detail-item" id="por-que-manext">
+      <div class="service-detail-image">
+        <img src="/img/img-ventas-de-extintores/extintores-con-agetes-limpios.avif" alt="MANEXT distribuidor autorizado de extintores de agente limpio FM-200 y Novec 1230 certificados NOM en CDMX" width="600" height="400" loading="lazy" />
+      </div>
+      <div class="service-detail-content">
+        <h2>Por Qué Elegir MANEXT para tu Extintor de Agente Limpio</h2>
+        <p>Los extintores de agente limpio requieren un nivel de asesoría técnica que va más allá de entregar un equipo. La selección entre FM-200 y Novec 1230, el dimensionamiento correcto según el volumen del espacio, la verificación de compatibilidad con sistemas automáticos existentes, y la documentación requerida para auditorías de continuidad de negocio y pólizas de infraestructura crítica — todo eso forma parte del servicio que MANEXT ofrece desde hace <strong>más de 80 años</strong>.</p>
+        <p>Cada extintor de agente limpio de MANEXT incluye: certificado NOM-154-SCFI vigente, ficha técnica del agente con datos de NOAEL, GWP y cumplimiento NFPA 2001, señalamiento fotoluminiscente, instalación profesional, bitácora de servicio y soporte para recarga y mantenimiento anual. Para clientes con múltiples instalaciones o requerimientos de continuidad, ofrecemos también <strong>programas de mantenimiento preventivo</strong> con visitas programadas y reporte de cumplimiento.</p>
+        <a href="https://wa.me/5215570081816?text=Hola%2C%20quiero%20cotizar%20extintores%20de%20agente%20limpio%20con%20MANEXT.%20¿Pueden%20darme%20una%20propuesta%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización por WhatsApp</a>
+      </div>
+    </div>
+
+
+      <SectionHeader
+        eyebrow="Catálogo Completo"
+        title="Todos los Tipos de Extintores MANEXT"
+        subtitle="Elige el agente correcto para cada clase de fuego"
+        paragraphs={{[
+          'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Usar el agente incorrecto puede ser ineficaz o incluso <strong>peligroso</strong>: el agua en fuegos eléctricos, el PQS en aceites a alta temperatura, el CO₂ en espacios ocupados. Esta guía te ayuda a identificar el equipo correcto para cada zona de tu instalación.',
+          'Todos los extintores MANEXT incluyen <strong>certificación NOM-154-SCFI</strong>, instalación profesional, señalamiento reglamentario y documentación válida para Protección Civil. Nuestros ingenieros realizan <strong>análisis de riesgo gratuito</strong> antes de cualquier cotización. <a href="/extintores">Ver catálogo completo →</a>'
+        ]}}
+      />
+
+      <div class="ext-tipos-grid">
+        {{extTipos.map(t => (
+          <a href={{`/${{t.slug}}`}} class={{`ext-tipo-card${{t.slug === currentSlug ? ' ext-tipo-card--current' : ''}}`}}>
+            <img src={{t.img}} alt={{t.alt}} width="400" height="240" loading="lazy" />
+            <div class="ext-tipo-card__body">
+              <p class="ext-tipo-card__title">{{t.title}}</p>
+              <div class="ext-tipo-card__badges">
+                {{t.classes.map(c => (
+                  <span class={{`ext-tipo-card__badge ${{classBadge[c]}}`}}>Clase {{c}}</span>
+                ))}}
+                {{t.slug === currentSlug && (
+                  <span class="ext-tipo-card__badge ext-tipo-card__badge--current">Estás aquí</span>
+                )}}
+              </div>
+              <p class="ext-tipo-card__desc">{{t.desc}}</p>
+              <span class="ext-tipo-card__link">{{t.slug === currentSlug ? 'Página actual' : 'Ver detalles →'}}</span>
+            </div>
+          </a>
+        ))}}
+      </div>
+
+  </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════
+     FAQ + COTIZACIÓN
+═══════════════════════════════════════════════ -->
+<section class="faq faq-cotizacion">
+  <div class="container">
+
+    <SectionHeader
+      eyebrow="FAQ y Cotización"
+      title="Preguntas Frecuentes y Cotización Gratuita"
+      subtitle="Resolvemos tus dudas sobre extintores de agente limpio para instalaciones críticas"
+      paragraphs={[
+        'Aquí encontrarás respuesta a las preguntas más comunes sobre <strong>extintores de agente limpio FM-200 y Novec 1230, seguridad en espacios ocupados, diferencias frente al CO₂ y estándares aplicables</strong> para salas de cómputo, archivos, museos y centros de control.',
+        'Si no encuentras lo que buscas, solicita tu <strong>cotización gratuita sin compromiso</strong> — nuestro equipo técnico evaluará tu instalación y responderá con una propuesta personalizada en menos de 24 horas.'
+      ]}
+    />
+
+    <div class="faq-cot-layout">
+
+      <div class="faq-cot-left">
+        <p class="faq-cot-desc">
+          Respondemos las dudas más frecuentes sobre agentes limpios. ¿Tienes una instalación específica que evaluar?
+          <a href="https://wa.me/5215570081816?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
+        </p>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Qué es un agente limpio y en qué se diferencia del CO₂?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>El CO₂ extingue desplazando el oxígeno del ambiente, lo cual también afecta a las personas presentes. Los agentes limpios (FM-200, Novec 1230) extinguen por <strong>absorción de calor</strong>, interrumpiendo la reacción de combustión a concentraciones del 5–7 %, muy por debajo del umbral de efecto adverso para personas. Ambos dejan cero residuo, pero el agente limpio puede usarse en espacios con personas sin el riesgo de asfixia que caracteriza al CO₂. También protegen clase A (sólidos), mientras el CO₂ es solo clase BC.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Son seguros los agentes limpios si hay personas en el espacio?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, dentro de los parámetros de diseño. El FM-200 tiene un NOAEL (nivel sin efecto adverso observable) del 9 % y se usa a concentraciones de diseño del 7 %. El Novec 1230 tiene un NOAEL del 10 % y se usa al 5.6 %. En ambos casos, la concentración de extinción está por debajo del umbral de efecto adverso. Esto no significa que sea recomendable permanecer en el espacio — la evacuación post-descarga sigue siendo el protocolo estándar — pero elimina el riesgo de incapacitación o muerte durante la propia descarga.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿FM-200 o Novec 1230: cuál es mejor para mi instalación?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ambos son técnicamente excelentes. La elección depende de tres factores: <strong>presupuesto</strong> (el FM-200 es más accesible), <strong>requerimientos ambientales</strong> (el Novec 1230 tiene GWP de 1 vs ~3,220 del FM-200 — relevante con ISO 14001 o políticas de sustentabilidad) y <strong>regulaciones del sector</strong> (banca, salud e instituciones públicas a veces tienen preferencias específicas). Nuestro equipo puede orientarte sin costo en la elección correcta para tu caso.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿El agente limpio daña los equipos electrónicos o documentos?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Tanto el FM-200 como el Novec 1230 se evaporan completamente sin dejar residuo sólido, líquido ni conductor. No generan humedad, no producen corrosión, no dejan polvo sobre circuitos, pantallas ni documentos. Tras una descarga, el espacio puede volver a operaciones normales después de ventilación estándar, sin necesidad de limpieza de equipos ni descarte de materiales expuestos — a diferencia del PQS, que puede inutilizar equipos por su residuo corrosivo y penetrante.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Para qué clases de fuego sirven los agentes limpios?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Los agentes limpios son efectivos en fuegos <strong>Clase A</strong> (sólidos: papel, plástico, madera — común en archivos y oficinas), <strong>Clase B</strong> (líquidos inflamables) y <strong>Clase C</strong> (equipos eléctricos energizados — crítico en salas de servidores). No conducen electricidad, por lo que pueden aplicarse sobre equipos activos sin riesgo de arco eléctrico. Esta cobertura ABC los diferencia del CO₂, que no es efectivo en clase A.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Con qué frecuencia se recarga un extintor de agente limpio?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>La recarga debe realizarse <strong>anualmente</strong> como parte del mantenimiento preventivo, o inmediatamente después de cualquier descarga. Los extintores de agente limpio se verifican por peso, no por manómetro — si el cilindro ha perdido más del 5 % del peso nominal del agente, debe recargarse aunque no haya sido activado. La NOM-154-SCFI establece también la prueba hidrostática del cilindro cada 5 años.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Cuánto cuestan comparados con un extintor convencional?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Los extintores de agente limpio tienen un costo significativamente mayor — el FM-200 puede costar entre 3 y 6 veces el precio de un extintor PQS equivalente; el Novec 1230 puede ser más elevado aún. Sin embargo, el análisis correcto no es comparar el costo del extintor sino el costo de la alternativa: si el espacio protegido contiene activos cuya pérdida costaría 10 o 100 veces más, el diferencial de precio es marginal. Para instalaciones críticas, el agente limpio no es una decisión de presupuesto — es una decisión de gestión de riesgo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿Necesito agente limpio si ya tengo un sistema de supresión fijo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Los sistemas de supresión fija cubren espacios delimitados. Los extintores portátiles de agente limpio cubren escenarios distintos: incendios en zonas adyacentes al sistema fijo, actuación manual antes de que el sistema automático se active, o respuesta en áreas sin cobertura fija. En instalaciones críticas, ambos sistemas son complementarios — un extintor portátil de agente limpio junto a la puerta de acceso es práctica estándar incluso en salas con supresión automática instalada.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">¿El agente limpio cumple con normativa ambiental mexicana?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. Tanto el FM-200 como el Novec 1230 tienen <strong>ODP de cero</strong> — no son sustancias controladas bajo el Protocolo de Montreal, por lo que SEMARNAT no los incluye en listas de eliminación progresiva. El Novec 1230 tiene adicionalmente un GWP de 1, equivalente al vapor de agua, lo que lo posiciona como el agente limpio más sustentable disponible. Ambos cumplen con NOM-154-SCFI para extintores portátiles y con los lineamientos de NFPA 2001 para sistemas de agente limpio.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="faq-cot-right">
+        <div class="quote-card">
+          <div class="quote-card-head">
+            <p class="quote-card-label">Cotización Gratuita</p>
+            <h3 class="quote-card-title">Solicita tu cotización</h3>
+            <p class="quote-card-meta">Asesoría técnica incluida. Sin compromiso.</p>
+          </div>
+          <form id="whatsappFormAgentesLimpios" class="quote-form" novalidate>
+            <div class="qf-field">
+              <label for="nombre">Nombre completo <span class="qf-req">*</span></label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+            </div>
+            <div class="qf-field">
+              <label for="telefono">Teléfono <span class="qf-req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
+            </div>
+            <div class="qf-field">
+              <label for="empresa">Empresa u organización</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa u organización" />
+            </div>
+            <div class="qf-field">
+              <label for="servicio">¿Qué necesitas? <span class="qf-req">*</span></label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Extintor agente limpio FM-200 (HFC-227ea)">Extintor agente limpio FM-200 (HFC-227ea)</option>
+                <option value="Extintor agente limpio Novec 1230">Extintor agente limpio Novec 1230</option>
+                <option value="Cotización para sala de cómputo o data center">Cotización para sala de cómputo o data center</option>
+                <option value="Cotización para archivo o museo">Cotización para archivo o museo</option>
+                <option value="Cotización para centro de control o telecomunicaciones">Cotización para centro de control o telecomunicaciones</option>
+                <option value="Asesoría técnica FM-200 vs Novec 1230">Asesoría técnica FM-200 vs Novec 1230</option>
+                <option value="Recarga o mantenimiento de extintor agente limpio">Recarga o mantenimiento de extintor agente limpio</option>
+                <option value="Programa de mantenimiento preventivo anual">Programa de mantenimiento preventivo anual</option>
+                <option value="Otro / tengo dudas">Otro / tengo dudas</option>
+              </select>
+            </div>
+            <div class="qf-field">
+              <label for="mensaje">Cuéntanos más (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Qué tipo de espacio necesitas proteger? ¿Cuántos m² tiene la sala?"></textarea>
+            </div>
+            <button type="submit" class="quote-btn">Solicitar Cotización por WhatsApp</button>
+            <p class="quote-note">Cotización gratuita · Asesoría técnica incluida · Equipo certificado NOM</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PRE-FOOTER STRIP
+═══════════════════════════════════════════════ -->
+<nav class="pf-strip" aria-label="Servicios relacionados">
+  <div class="pf-strip__inner">
+
+    <a href="/co2" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Dióxido de Carbono CO₂</strong>
+        <span>Alternativa económica sin residuo</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/polvo-quimico-seco" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2c0 6-6 8-6 14a6 6 0 0 0 12 0c0-6-6-8-6-14z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Polvo Químico Seco</strong>
+        <span>Clase A, B y C — usos generales</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/espuma-afff" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Espuma AFFF</strong>
+        <span>Industria e hidrocarburos</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/tipo-k" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 2h18v6H3zM3 10h18v6H3zM3 18h18v4H3z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Agente Húmedo Tipo K</strong>
+        <span>Obligatorio en cocinas comerciales</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/mantenimiento-preventivo" class="pf-card">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Mantenimiento Preventivo</strong>
+        <span>Programas anuales certificados NOM</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+    <a href="/contacto" class="pf-card pf-card--featured">
+      <span class="pf-card__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+        </svg>
+      </span>
+      <span class="pf-card__body">
+        <strong>Cotización Gratuita</strong>
+        <span>Asesoría técnica · Respuesta 24 h</span>
+      </span>
+      <span class="pf-card__arrow">→</span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
 <script is:inline>
-document.querySelectorAll('.faq-question').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var item = this.parentElement;
-    var answer = item.querySelector('.faq-answer');
-    var icon = this.querySelector('.faq-icon');
-    var isOpen = this.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.faq-item').forEach(function(other) {
-      if (other !== item) {
-        other.classList.remove('active');
-        var otherBtn = other.querySelector('.faq-question');
-        var otherAnswer = other.querySelector('.faq-answer');
-        var otherIcon = other.querySelector('.faq-icon');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-        if (otherAnswer) otherAnswer.style.display = 'none';
-        if (otherIcon) otherIcon.textContent = '+';
+(function() {
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      var faqItem = this.parentElement;
+      var answer = faqItem.querySelector('.faq-answer');
+      var icon = this.querySelector('.faq-icon');
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+      faqQuestions.forEach(function(other) {
+        if (other !== question) {
+          other.setAttribute('aria-expanded', 'false');
+          var a = other.parentElement.querySelector('.faq-answer');
+          var i = other.querySelector('.faq-icon');
+          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
+          if (i) i.textContent = '+';
+          other.parentElement.classList.remove('active');
+        }
+      });
+      if (isOpen) {
+        this.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = '0'; answer.style.opacity = '0';
+        icon.textContent = '+'; faqItem.classList.remove('active');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
+        icon.textContent = '×'; faqItem.classList.add('active');
       }
     });
-    if (isOpen) {
-      item.classList.remove('active');
-      this.setAttribute('aria-expanded', 'false');
-      answer.style.display = 'none';
-      icon.textContent = '+';
-    } else {
-      item.classList.add('active');
-      this.setAttribute('aria-expanded', 'true');
-      answer.style.display = 'block';
-      icon.textContent = '−';
-    }
   });
-});
+})();
 </script>
 
 <script is:inline>
-document.getElementById('whatsappForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  var nombre = document.getElementById('nombre').value;
-  var empresa = document.getElementById('empresa').value;
-  var telefono = document.getElementById('telefono').value;
-  var email = document.getElementById('email').value;
-  var servicio = document.getElementById('servicio').value;
-  var mensaje = document.getElementById('mensaje').value;
-  var text = 'Hola, me comunico desde mantenimientodeextintores.mx' +
-    '\n*Nombre:* ' + nombre +
-    (empresa ? '\n*Empresa:* ' + empresa : '') +
-    '\n*Teléfono:* ' + telefono +
-    (email ? '\n*Email:* ' + email : '') +
-    '\n*Servicio:* ' + servicio +
-    (mensaje ? '\n*Mensaje:* ' + mensaje : '');
-  window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
-});
+(function() {
+  var form = document.getElementById('whatsappFormAgentesLimpios');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var nombre = document.getElementById('nombre').value.trim();
+    var empresa = document.getElementById('empresa').value.trim();
+    var telefono = document.getElementById('telefono').value.trim();
+    var servicio = document.getElementById('servicio').value;
+    var mensaje = document.getElementById('mensaje').value.trim();
+    if (!nombre || !telefono || !servicio) {
+      alert('Por favor completa los campos obligatorios');
+      return;
+    }
+    var text = 'Hola, me comunico desde la página de Agentes Limpios de MANEXT.\n\n';
+    text += '*Nombre:* ' + nombre + '\n';
+    if (empresa) text += '*Empresa:* ' + empresa + '\n';
+    text += '*Teléfono:* ' + telefono + '\n';
+    text += '*Servicio:* ' + servicio + '\n';
+    if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
+    window.open('https://wa.me/5215570081816?text=' + encodeURIComponent(text), '_blank');
+  });
+})();
 </script>
 
 </Layout>

@@ -1,6 +1,10 @@
 ---
-title: "Capacitación de Brigadas Contra Incendio Certificada CDMX"
-description: "Capacitación profesional de brigadas contra incendio con certificación NOM. Cursos especializados en uso de extintores para empresas en CDMX. Cotización WhatsApp"
+title: "Capacitación de Brigadas Contra Incendio Certificada en CDMX 2026"
+description: "Capacitación profesional de brigadas contra incendio con certificación NOM-002-STPS. Cursos en uso de extintores para empresas en CDMX con constancias DC-3 reconocidas ante la STPS."
+pubDate: "2026-04-30"
+heroRight:
+  - "Los primeros 3 minutos son críticos para controlar un conato de incendio. Una brigada bien capacitada puede reducir hasta 80% las víctimas — pero solo si sabe exactamente qué extintor usar y cómo actuar ante cada clase de fuego."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años capacitando brigadas en CDMX. Ofrecemos cursos con constancias DC-3 reconocidas ante la STPS, desde capacitación básica empresarial hasta programas avanzados para industrias de alto riesgo."
 ---
 <div class="article-intro">
   <p>Los incendios representan una de las principales amenazas para las empresas mexicanas, con pérdidas anuales superiores a los 2 mil millones de pesos según datos de Protección Civil. La <strong>capacitación de brigadas contra incendio</strong> se convierte en el primer escudo de protección para salvaguardar vidas humanas y patrimonio empresarial, especialmente en zonas de alta densidad comercial como Polanco, Santa Fe y Reforma.</p>
@@ -9,8 +13,8 @@ description: "Capacitación profesional de brigadas contra incendio con certific
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué es y Cómo Funciona</a></li>
     <li><a href="#importancia">Por Qué es Indispensable</a></li>
     <li><a href="#tipos">Tipos y Clasificación</a></li>
@@ -20,7 +24,7 @@ description: "Capacitación profesional de brigadas contra incendio con certific
     <li><a href="#consejos">Consejos de Expertos</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita Tu Cotización</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es">Qué es la Capacitación de Brigadas Contra Incendio</h2>
@@ -127,7 +131,7 @@ description: "Capacitación profesional de brigadas contra incendio con certific
 
 <h2 id="normativa">Normativa y Requisitos Legales</h2>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Importante: Requisitos Legales</h4>
   <p>La NOM-002-STPS establece que centros de trabajo con más de 100 trabajadores deben contar con brigadas de emergencia capacitadas y certificadas. El incumplimiento puede resultar en multas de 250 a 2,500 veces la UMA, clausura temporal y responsabilidad civil en caso de accidentes. La capacitación debe renovarse anualmente con instructores certificados.</p>
 </div>
@@ -178,3 +182,30 @@ description: "Capacitación profesional de brigadas contra incendio con certific
 <p>La documentación exhaustiva de todas las actividades de capacitación no solo cumple requisitos normativos, sino que proporciona evidencia valiosa para análisis de tendencias, identificación de necesidades de reforzamiento y demostración de debida diligencia ante autoridades regulatorias. Mantener registros actualizados de participación, calificaciones y certificaciones facilita auditorías y renovaciones de licencias.</p>
 
 <p>La integración de tecnología moderna como aplicaciones móviles para reportes de emergencia, sistemas de comunicación por radiofrecuencia y detectores inteligentes de humo potencia significativamente las capacidades de las brigadas tradicionales. La capacitación debe incluir familiarización con estas herramientas tecnológicas para maximizar su efectividad durante situaciones críticas.</p>
+
+<div id="faq" class="faq-section">
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-1">¿La capacitación de brigadas es obligatoria para todas las empresas?</button>
+    <div class="faq-answer" id="faq-cap-1"><p>La NOM-002-STPS obliga a empresas con más de 100 trabajadores a contar con brigadas capacitadas y certificadas. El Reglamento de Construcciones de CDMX la requiere además para obtener visto bueno de Protección Civil, independientemente del tamaño. El incumplimiento puede resultar en multas de 250 a 2,500 veces la UMA (aproximadamente $27,000 a $275,000 MXN en 2026) y clausura temporal de operaciones.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-2">¿Cuánto tiempo dura la capacitación básica de brigadas?</button>
+    <div class="faq-answer" id="faq-cap-2"><p>La capacitación básica empresarial tiene duración de 8 horas, generalmente divididas en una o dos sesiones en tus instalaciones. Incluye teoría sobre clases de fuego, manejo práctico de extintores y simulacro de evacuación. La recertificación anual obligatoria tiene duración de 4 horas para mantener la vigencia ante la STPS y Protección Civil.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-3">¿Las constancias son reconocidas por Protección Civil CDMX?</button>
+    <div class="faq-answer" id="faq-cap-3"><p>Sí, siempre que el curso sea impartido por instructores certificados ante la STPS. Las constancias DC-3 (Constancia de Competencias o de Habilidades Laborales) son el documento oficial aceptado por los inspectores de Protección Civil durante verificaciones. En MANEXT emitimos constancias DC-3 válidas que cumplen todos los requisitos normativos para pasar inspecciones sin contratiempos.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-4">¿Cuántos brigadistas necesita mi empresa?</button>
+    <div class="faq-answer" id="faq-cap-4"><p>La práctica general es 1 brigadista por cada 15-20 empleados en el turno de mayor ocupación, con al menos 1 por cada piso o zona de riesgo. Para mantener cobertura ante ausencias y vacaciones, se recomienda capacitar 30% más brigadistas del cálculo básico. En empresas con múltiples turnos, cada turno debe tener brigadistas asignados. Un especialista MANEXT puede calcular el número correcto según tu configuración.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-5">¿La capacitación puede hacerse en mis instalaciones?</button>
+    <div class="faq-answer" id="faq-cap-5"><p>Sí. MANEXT ofrece capacitación in situ, lo que tiene ventajas importantes: los brigadistas aprenden en su entorno real, se practican las rutas de evacuación específicas y se utilizan los extintores propios de la empresa durante los ejercicios. Solo se requiere un espacio abierto —estacionamiento, patio o área exterior— para los ejercicios prácticos de descarga con extintores de práctica.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-6">¿Cada cuánto hay que renovar la capacitación de brigadas?</button>
+    <div class="faq-answer" id="faq-cap-6"><p>La NOM-002-STPS requiere actualización anual de 4 horas para mantener la vigencia. También se recomienda renovar antes si hay cambios significativos en las instalaciones, entrada de nueva normativa o después de un incidente real. Algunas aseguradoras exigen recertificación semestral para industrias de alto riesgo. MANEXT te avisa cuando se acerca la fecha de vencimiento de las constancias de tu empresa.</p></div>
+  </div>
+</div>

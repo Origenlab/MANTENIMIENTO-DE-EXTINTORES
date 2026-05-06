@@ -1,6 +1,10 @@
 ---
-title: "Recarga de Extintores en Restaurantes y Cocinas Comerciales"
+title: "Recarga de Extintores en Restaurantes y Cocinas Comerciales 2026"
 description: "Guía completa de recarga de extintores para restaurantes: extintor Tipo K obligatorio, NOM-002-STPS para cocinas, frecuencias de servicio y requisitos de Protección Civil CDMX."
+pubDate: "2026-04-20"
+heroRight:
+  - "Las cocinas comerciales son el entorno con mayor riesgo de incendio en establecimientos comerciales. El extintor Tipo K con acetato de potasio es el único equipo portátil diseñado para fuegos Clase K en aceites y grasas — y su recarga requiere proceso especializado."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años atendiendo restaurantes y cocinas comerciales en CDMX. Ofrecemos extintores Tipo K y PQS certificados, recarga con agentes de grado profesional y documentación completa para Protección Civil."
 ---
 <div class="article-intro">
   <p>Los restaurantes y cocinas comerciales son, estadísticamente, uno de los entornos con mayor riesgo de incendio en establecimientos comerciales. El aceite de cocina hirviendo, las llamas abiertas, los extractores cargados de grasa y la proximidad de materiales combustibles crean condiciones que hacen del fuego una amenaza constante. Y sin embargo, los extintores de estos establecimientos son frecuentemente los que reciben peor mantenimiento.</p>
@@ -9,8 +13,8 @@ description: "Guía completa de recarga de extintores para restaurantes: extinto
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#por-que-cocinas-son-riesgo">Por Qué las Cocinas Comerciales Son Riesgo Especial</a></li>
     <li><a href="#extintor-tipo-k">El Extintor Tipo K: Obligatorio en Cocinas</a></li>
     <li><a href="#distribucion-extintores">Distribución Correcta de Extintores en Restaurante</a></li>
@@ -20,7 +24,7 @@ description: "Guía completa de recarga de extintores para restaurantes: extinto
     <li><a href="#errores-frecuentes">Errores Frecuentes en Restaurantes</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Cotiza Servicio para tu Restaurante</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="por-que-cocinas-son-riesgo">Por Qué las Cocinas Comerciales Son Riesgo Especial</h2>
@@ -136,26 +140,19 @@ description: "Guía completa de recarga de extintores para restaurantes: extinto
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿El extintor Tipo K puede usarse en fuegos distintos al de aceite?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El extintor Tipo K está diseñado y certificado exclusivamente para fuegos Clase K (aceites y grasas de cocina). No debe usarse en fuegos Clase A (papel, madera), B (líquidos inflamables) o C (eléctricos). Usarlo en un fuego de otro tipo puede ser ineficaz o contraproducente. Por eso, en cocinas comerciales siempre se requieren TAMBIÉN extintores PQS ABC para los otros tipos de fuego posibles en el área.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga-1">¿El extintor Tipo K puede usarse en fuegos distintos al de aceite?</button>
+    <div class="faq-answer" id="faq-recarga-1"><p>El extintor Tipo K está diseñado y certificado exclusivamente para fuegos Clase K (aceites y grasas de cocina). No debe usarse en fuegos Clase A (papel, madera), B (líquidos inflamables) o C (eléctricos). Usarlo en un fuego de otro tipo puede ser ineficaz o contraproducente. Por eso, en cocinas comerciales siempre se requieren TAMBIÉN extintores PQS ABC para los otros tipos de fuego posibles en el área.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Cuántos extintores Tipo K necesita mi restaurante?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La NOM-002-STPS requiere al menos <strong>1 extintor Tipo K por zona de cocción con aceite</strong>. Si tienes una línea de freidoras en un extremo y una plancha de asados con aceite en otro extremo de la cocina, necesitas 2 Tipo K. La regla es que el extintor debe estar accesible desde cualquier punto de cocción sin tener que cruzar la zona de fuego activo para alcanzarlo. Un técnico especializado puede ayudarte a determinar la distribución correcta según la configuración de tu cocina.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga-2">¿Cuántos extintores Tipo K necesita mi restaurante?</button>
+    <div class="faq-answer" id="faq-recarga-2"><p>La NOM-002-STPS requiere al menos <strong>1 extintor Tipo K por zona de cocción con aceite</strong>. Si tienes una línea de freidoras en un extremo y una plancha de asados con aceite en otro extremo de la cocina, necesitas 2 Tipo K. La regla es que el extintor debe estar accesible desde cualquier punto de cocción sin tener que cruzar la zona de fuego activo para alcanzarlo. Un técnico especializado puede ayudarte a determinar la distribución correcta según la configuración de tu cocina.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿El sistema de campana con supresión automática reemplaza al extintor Tipo K portátil?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No los reemplaza, pero los complementa. Los sistemas de supresión automática en campanas (sistemas Ansul u equivalentes) actúan cuando se detecta temperatura o llama en el área de la campana. El extintor Tipo K portátil es necesario para situaciones donde el fuego se origina fuera del área de la campana, o como respaldo en caso de falla del sistema automático. Ambos son requeridos en cocinas comerciales de alta producción; el sistema automático no exime del extintor portátil.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga-3">¿El sistema de campana con supresión automática reemplaza al extintor Tipo K portátil?</button>
+    <div class="faq-answer" id="faq-recarga-3"><p>No los reemplaza, pero los complementa. Los sistemas de supresión automática en campanas (sistemas Ansul u equivalentes) actúan cuando se detecta temperatura o llama en el área de la campana. El extintor Tipo K portátil es necesario para situaciones donde el fuego se origina fuera del área de la campana, o como respaldo en caso de falla del sistema automático. Ambos son requeridos en cocinas comerciales de alta producción; el sistema automático no exime del extintor portátil.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Cada cuánto se recarga el extintor Tipo K si no se usa?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El mantenimiento preventivo anual es obligatorio según NOM-154-SCFI, y en ese servicio el técnico evalúa si el agente extintor requiere reemplazo. En extintores Tipo K en cocinas de alta actividad, es frecuente que el agente se contamine con vapores de grasa y deba reemplazarse antes del período normal de 5 años de mantenimiento a fondo. La inspección mensual interna debe incluir verificar que la boquilla no tenga obstrucciones por grasa.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga-4">¿Cada cuánto se recarga el extintor Tipo K si no se usa?</button>
+    <div class="faq-answer" id="faq-recarga-4"><p>El mantenimiento preventivo anual es obligatorio según NOM-154-SCFI, y en ese servicio el técnico evalúa si el agente extintor requiere reemplazo. En extintores Tipo K en cocinas de alta actividad, es frecuente que el agente se contamine con vapores de grasa y deba reemplazarse antes del período normal de 5 años de mantenimiento a fondo. La inspección mensual interna debe incluir verificar que la boquilla no tenga obstrucciones por grasa.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Servicio de Extintores para tu Restaurante en CDMX</h3>
-  <p>MANEXT ofrece servicio integral de extintores especializado para restaurantes y cocinas comerciales: extintores Tipo K y PQS certificados, recarga con agentes de grado profesional, mantenimiento a domicilio y documentación completa para Protección Civil. Con más de 80 años atendiendo establecimientos de la industria restaurantera en CDMX. Cotiza sin compromiso.</p>
-  <a href="https://wa.me/5215539689272?text=Hola,%20necesito%20servicio%20de%20extintores%20para%20mi%20restaurante%2C%20incluyendo%20extintor%20Tipo%20K" class="btn-cta">Cotizar para mi Restaurante por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

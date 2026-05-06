@@ -1,31 +1,347 @@
 ---
-title: "Vida Útil de un Extintor"
-description: "Descubre la vida util de un extintor y cuando reemplazarlo. Guia completa con senales de desgaste, normativa NOM-154 y consejos de MANEXT."
+title: "Vida Útil de un Extintor: Cuándo Reemplazarlo Según la NOM-154-SCFI"
+description: "¿Cuánto dura un extintor? Guía técnica completa: vida útil por tipo, señales de deterioro, criterios de reemplazo según NOM-154-SCFI y cuándo reparar vs. reemplazar."
+pubDate: "2026-02-05"
+heroRight:
+  - "La mayoría de los extintores que fallan en emergencias no están rotos — simplemente <strong>nadie los revisó a tiempo</strong>. La NOM-154-SCFI establece tres niveles de vigencia: el servicio anual, la prueba hidrostática cada 5 años y el límite de vida del cilindro. Conocer la diferencia puede significar la diferencia entre un extintor que funciona y uno que no."
+  - "En <strong>MANEXT</strong> llevamos más de 80 años evaluando, recargando y reemplazando extintores en CDMX y Estado de México. Diagnosticamos si tu equipo sigue siendo viable o necesita sustitución — sin cobrarte la visita de inspección. Más de <strong>15,000 empresas</strong> confían en nuestro criterio técnico."
 ---
-<p class="article-lead"><strong>Sabias que un extintor puede salvar vidas?</strong> Sin embargo, conocer la <strong>vida util de un extintor</strong> es esencial para garantizar que funcione correctamente en caso de emergencia. No todos los extintores duran lo mismo; su duracion depende del tipo y del mantenimiento adecuado.
-</p><p>
-En MANEXT contamos con mas de <strong>80 anos de experiencia</strong> en proteccion contra incendios. Ofrecemos servicios de inspeccion, mantenimiento y asesoria para que tus extintores esten siempre en optimas condiciones, asegurando que cumplan con las normativas mexicanas como la <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>.
-</p><nav class="table-of-contents" aria-label="Tabla de contenidos del articulo"><h2>Contenido del Articulo</h2><ol><li><a href="#cuanto-dura">Cuanto Dura un Extintor?</a></li><li><a href="#fecha-caducidad">Los Extintores Tienen Fecha de Caducidad?</a></li><li><a href="#cuando-reemplazar">Como Saber Cuando Reemplazar un Extintor</a></li><li><a href="#extender-vida">Se Puede Extender la Vida Util?</a></li><li><a href="#extintores-viejos">Que Hacer con Extintores Viejos</a></li><li><a href="#preguntas-frecuentes">Preguntas Frecuentes</a></li></ol></nav><section id="cuanto-dura" class="content-section"><h2>Cuanto Dura un Extintor?</h2><p>
-La <strong>duracion de un extintor</strong> puede variar considerablemente segun el tipo, la marca y las condiciones de almacenamiento. En Mexico, la normativa NOM-154-SCFI establece pautas generales, pero el mantenimiento regular es la clave para maximizar la vida util.
-</p><h3>Duracion Estandar por Tipo de Extintor</h3><ul class="location-list"><li><strong>Extintor de Polvo Quimico Seco (PQS):</strong> 10-12 anos con mantenimiento adecuado</li><li><strong>Extintor de CO2:</strong> 15-20 anos debido a su construccion robusta</li><li><strong>Extintor de Agua:</strong> 5-10 anos, requiere revision frecuente por corrosion</li><li><strong>Extintor Tipo K:</strong> 10-12 anos con recargas periodicas</li><li><strong>Extintores de Agente Limpio:</strong> 12-15 anos</li></ul><div class="info-box"><div class="info-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></div><div class="info-box-content"><h4>Dato Clave de MANEXT</h4><p>Un extintor bien mantenido puede durar hasta 20 anos, pero la falta de mantenimiento reduce drasticamente su efectividad. Realizar inspecciones mensuales y mantenimientos anuales es obligatorio segun la normativa mexicana.</p></div></div><h3>Factores que Afectan la Duracion</h3><p>
-La vida util de tu extintor depende de varios factores:
-</p><ul class="location-list"><li><strong>Ambiente de instalacion:</strong> Humedad, temperatura extrema y exposicion al sol aceleran el deterioro</li><li><strong>Frecuencia de inspecciones:</strong> Las revisiones mensuales detectan problemas a tiempo</li><li><strong>Calidad del equipo:</strong> Extintores certificados NOM duran mas que los genericos</li><li><strong>Uso o descarga parcial:</strong> Un extintor usado debe recargarse inmediatamente</li></ul></section><section id="fecha-caducidad" class="content-section"><h2>Los Extintores Tienen Fecha de Caducidad?</h2><p>
-La idea de que los extintores <strong>caducan</strong> es un concepto que requiere clarificacion. A diferencia de los alimentos, los extintores no tienen una fecha de caducidad impresa, pero si requieren mantenimiento periodico obligatorio.
-</p><h3>Vigencia vs. Vida Util</h3><p>
-Es importante distinguir entre dos conceptos:
-</p><ul class="location-list"><li><strong>Vigencia del servicio:</strong> 1 ano desde el ultimo mantenimiento (etiqueta de servicio)</li><li><strong>Vida util del cilindro:</strong> Hasta 20 anos con pruebas hidrostaticas cada 5 anos</li><li><strong>Vigencia del agente extintor:</strong> Varia segun el tipo, generalmente 5-6 anos</li></ul><div class="warning-box"><div class="warning-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div><div class="warning-box-content"><h4>IMPORTANTE: Verificacion Obligatoria</h4><p>Aunque no tienen fecha de caducidad exacta, los extintores deben ser inspeccionados mensualmente y recibir mantenimiento anual por un tecnico certificado. Un extintor sin mantenimiento vigente puede fallar cuando mas lo necesitas.</p></div></div><h3>Como Verificar la Vigencia</h3><p>
-Revisa siempre la <strong>etiqueta de servicio</strong> adherida al cilindro. Esta debe mostrar:
-</p><ul class="location-list"><li>Fecha del ultimo mantenimiento</li><li>Fecha de la proxima revision</li><li>Nombre y certificacion de la empresa que realizo el servicio</li><li>Numero de registro ante la STPS</li></ul></section><section id="cuando-reemplazar" class="content-section"><h2>Como Saber Cuando Reemplazar un Extintor</h2><p>
-Reemplazar un extintor a tiempo es esencial para mantener la seguridad de tu negocio. Aqui te explicamos las <strong>senales claras</strong> de que es momento de cambiar tu equipo.
-</p><h3>Senales Visuales de Deterioro</h3><ul class="location-list"><li><strong>Corrosion visible:</strong> Oxido en el cilindro, manija o boquilla</li><li><strong>Abolladuras o danos:</strong> Golpes que comprometen la integridad estructural</li><li><strong>Manguera agrietada:</strong> Senales de envejecimiento en el caucho</li><li><strong>Pintura descascarada:</strong> Indica exposicion a condiciones adversas</li><li><strong>Etiquetas ilegibles:</strong> No se puede verificar la informacion del equipo</li></ul><h3>Indicadores del Manometro</h3><div class="info-box"><div class="info-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></div><div class="info-box-content"><h4>Lectura del Manometro</h4><p>El manometro debe estar siempre en la <strong>zona verde</strong>. Si la aguja esta en rojo (baja presion) o sobre la zona amarilla (sobre-presion), el extintor requiere servicio inmediato o reemplazo.</p></div></div><h3>Criterios de Reemplazo Obligatorio</h3><p>
-Segun la normativa mexicana, debes reemplazar un extintor cuando:
-</p><ul class="location-list"><li>Ha sido usado (aunque sea parcialmente) y no puede recargarse</li><li>Fallo la prueba hidrostatica</li><li>El cilindro tiene mas de 20 anos</li><li>Presenta danos estructurales irreparables</li><li>El modelo ya no tiene refacciones disponibles</li></ul></section><section id="extender-vida" class="content-section"><h2>Se Puede Extender la Vida Util de un Extintor?</h2><p><strong>Si, es posible</strong> maximizar la vida util de tus extintores mediante un programa de mantenimiento preventivo adecuado. En MANEXT ayudamos a nuestros clientes a proteger su inversion con servicios profesionales.
-</p><h3>Programa de Mantenimiento Preventivo</h3><h4>Inspeccion Mensual (Usuario)</h4><ul class="location-list"><li>Verificar que el extintor este en su lugar designado</li><li>Revisar que el manometro este en zona verde</li><li>Confirmar que el sello de seguridad este intacto</li><li>Inspeccionar visualmente el estado general</li></ul><h4>Mantenimiento Anual (Tecnico Certificado)</h4><ul class="location-list"><li>Inspeccion interna del cilindro</li><li>Verificacion de presion con equipos calibrados</li><li>Revision de componentes mecanicos</li><li>Recarga del agente extintor si es necesario</li><li>Actualizacion de etiquetas de servicio</li></ul><h4>Prueba Hidrostatica (Cada 5 Anos)</h4><ul class="location-list"><li>Prueba de presion del cilindro</li><li>Verificacion de integridad estructural</li><li>Certificacion de aptitud para continuar en servicio</li></ul><div class="recommendation-box"><div class="recommendation-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="recommendation-box-content"><h4>Recomendacion MANEXT</h4><p>Contrata un servicio de mantenimiento programado. En MANEXT ofrecemos planes anuales que incluyen inspecciones, mantenimiento preventivo y respuesta prioritaria, asegurando que tus extintores siempre esten listos para protegerte.</p></div></div></section><section id="extintores-viejos" class="content-section"><h2>Que Hacer con Extintores Viejos</h2><p>
-Una vez que un extintor ha alcanzado el final de su vida util, es importante <strong>disponer de el correctamente</strong>. Los extintores contienen materiales que requieren manejo especial.
-</p><h3>Opciones de Disposicion</h3><ul class="location-list"><li><strong>Reciclaje profesional:</strong> La opcion mas responsable ambientalmente</li><li><strong>Devolucion al proveedor:</strong> Muchas empresas aceptan equipos viejos</li><li><strong>Centros de acopio autorizados:</strong> Manejan residuos especiales</li></ul><div class="warning-box"><div class="warning-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div><div class="warning-box-content"><h4>NUNCA Hagas Esto</h4><p>No tires un extintor a la basura comun. Los cilindros presurizados pueden explotar en camiones compactadores. Ademas, los agentes quimicos pueden contaminar el medio ambiente.</p></div></div><h3>Servicio de Recoleccion MANEXT</h3><p>
-En MANEXT ofrecemos <strong>servicio de recoleccion gratuito</strong> de extintores viejos cuando adquieres equipos nuevos con nosotros. Nos encargamos de:
-</p><ul class="location-list"><li>Recoleccion en tu domicilio o negocio</li><li>Despresurizacion segura</li><li>Separacion de materiales reciclables</li><li>Disposicion final conforme a normativas ambientales</li><li>Certificado de disposicion (si lo requieres)</li></ul></section><section id="preguntas-frecuentes" class="faq-section"><h2>Preguntas Frecuentes</h2><div class="faq-container"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">Cuanto dura un extintor?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>La vida util de un extintor puede oscilar entre 5 y 20 anos, dependiendo del tipo y del mantenimiento regular que reciba. Es crucial seguir las recomendaciones de la NOM-154 en cuanto a inspecciones periodicas para asegurar su eficacia.</p></div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">Los extintores tienen fecha de caducidad?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>No tienen una fecha de caducidad exacta, pero requieren revisiones anuales para garantizar su operatividad. La normativa mexicana exige que se mantengan en buen estado para su uso en emergencias.</p></div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">Como se cuando reemplazar mi extintor?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>Debes considerar reemplazarlo si muestra signos de desgaste como fugas, corrosion, o si el manometro indica presion baja. Tambien si ha pasado mas de 5 anos sin una revision profesional.</p></div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">Se puede extender la vida util?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>Si, mediante el mantenimiento preventivo regular. Inspecciones mensuales y mantenimientos anuales son esenciales para mantener los extintores en buen estado por mas tiempo.</p></div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">Que hacer con extintores viejos?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>Es importante disponer de ellos correctamente llevandolos a un centro de reciclaje certificado. MANEXT ofrece servicios de recoleccion de extintores para reciclaje seguro.</p></div></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-icon"><svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><span class="faq-question-text">MANEXT recoge extintores para reciclaje?</span></button><div class="faq-answer"><div class="faq-answer-content"><p>Si, MANEXT ofrece servicios de recoleccion para asegurar que los extintores viejos se manejen de acuerdo con las normativas ambientales y se reciclen adecuadamente.</p></div></div></div></div></section><div class="recommendation-box"><div class="recommendation-box-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="recommendation-box-content"><h4>Necesitas Ayuda con tus Extintores?</h4><p>No dejes la seguridad al azar. Contacta a MANEXT para una evaluacion profesional de tus extintores. Nuestros tecnicos certificados pueden determinar si tus equipos estan en condiciones optimas o si es momento de reemplazarlos.</p><div class="cta-buttons"><a href="tel:5570081816" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-Llamar Ahora
-</a><a href="https://wa.me/5215570081816?text=Hola!%20Me%20interesa%20una%20evaluacion%20de%20mis%20extintores" class="btn btn-whatsapp" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-WhatsApp
-</a></div></div></div><div class="blog-tags"><span class="blog-tag">vida util de un extintor</span><span class="blog-tag">vida util extintor</span><span class="blog-tag">duracion extintor</span><span class="blog-tag">cuando cambiar extintor</span>
+
+<p class="article-lead">Un extintor con 8 años de antigüedad puede estar en perfectas condiciones. Uno de 3 años sin mantenimiento puede ser un riesgo. La <strong>vida útil de un extintor</strong> no depende del tiempo cronológico sino de tres factores precisos que la NOM-154-SCFI regula con criterios técnicos claros: el estado del cilindro, la vigencia del servicio y la integridad del agente extintor. Esta guía explica exactamente cuándo debes reemplazar tu equipo y cuándo el mantenimiento es suficiente.</p>
+
+<nav class="toc" aria-label="Tabla de contenidos">
+  <p class="toc-title">Contenido del artículo</p>
+  <ol>
+    <li><a href="#vida-util-por-tipo">Vida útil por tipo de extintor</a></li>
+    <li><a href="#tres-vigencias">Los tres conceptos de vigencia que debes conocer</a></li>
+    <li><a href="#senales-reemplazo">Señales de que el extintor debe reemplazarse ya</a></li>
+    <li><a href="#reparar-vs-reemplazar">Reparar vs. reemplazar: criterio técnico y económico</a></li>
+    <li><a href="#nom-criterios">Lo que dice la NOM-154-SCFI sobre fin de vida útil</a></li>
+    <li><a href="#extender-vida">Cómo maximizar la vida útil</a></li>
+    <li><a href="#disposicion">Disposición correcta de extintores dados de baja</a></li>
+    <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+  </ol>
+</nav>
+
+---
+
+<section id="vida-util-por-tipo">
+
+## Vida útil por tipo de extintor
+
+La vida útil de un extintor depende principalmente del material del cilindro, el agente que contiene y las condiciones de instalación. La siguiente tabla muestra los rangos realistas — no los ideales de marketing, sino los que se observan en condiciones mexicanas de uso.
+
+| Tipo de extintor | Agente extintor | Vida útil cilindro | Vida útil agente | Ambiente que acelera deterioro |
+|---|---|---|---|---|
+| **PQS (Polvo Químico Seco) ABC** | Bicarbonato de sodio o monoamónico | 12–20 años | 5–6 años | Humedad, vibraciones |
+| **CO₂** | Dióxido de carbono | 15–25 años | No aplica (gas puro) | Corrosión externa |
+| **Tipo K** | Acetato de potasio acuoso | 10–15 años | 5 años | Temperaturas extremas |
+| **Agua presurizada** | Agua con aditivos | 8–12 años | 1–2 años | Clima frío, cal en agua |
+| **Agente limpio (Halotron, FM-200)** | Gas halogenado | 15–20 años | 10–12 años | Calor continuo |
+| **Clase D (polvo metálico)** | Grafito o cloruro de sodio | 10–15 años | 5 años | Humedad |
+
+### Por qué el CO₂ dura más
+
+El cilindro de CO₂ es de acero de alta resistencia porque opera a presiones de 850–900 psi (vs. 150–175 psi del PQS). Esa robustez estructural le da mayor longevidad. Además, el agente es gas puro — no se degrada químicamente. La única amenaza real es la corrosión externa por ambientes salinos o húmedos.
+
+### Por qué el PQS se deteriora más rápido
+
+El polvo químico seco absorbe humedad del ambiente aunque esté sellado. Con el tiempo, el polvo se apelmaza y no fluye correctamente por la manguera. Un extintor PQS con 6+ años sin recarga puede tener el polvo tan compactado que al accionarlo sale un chorrito débil o nada. La recarga anual no es opcional — es la razón por la que el agente sigue siendo efectivo.
+
+<div class="highlight-box">
+  <h4>Cilindro vs. agente: son dos vidas útiles distintas</h4>
+  <p>Un extintor PQS con cilindro de 15 años puede seguir funcionando si se recarga cada año y pasa las pruebas hidrostáticas cada 5. Pero si lleva 4 años sin recarga, el polvo ya está degradado aunque el cilindro esté perfecto. Reemplazar el cilindro por uno nuevo pero poner agente viejo es el mismo error al revés.</p>
+</div>
+
+</section>
+
+---
+
+<section id="tres-vigencias">
+
+## Los tres conceptos de vigencia que debes conocer
+
+La NOM-154-SCFI establece tres capas de vigencia que se miden por separado. Confundirlas es el error más común que lleva a extintores que "parecen buenos" pero son inservibles.
+
+### 1. Vigencia del servicio (1 año)
+
+Cada extintor debe recibir **mantenimiento anual** por una empresa certificada NOM-154. Al terminar el servicio, se coloca una etiqueta con la fecha y el sello de la empresa. Si esa etiqueta tiene más de 12 meses, el extintor no está vigente — sin importar si el manómetro marca verde y no ha sido usado.
+
+En una inspección de Protección Civil o STPS, un extintor con etiqueta vencida es equivalente a no tener extintor.
+
+### 2. Vigencia de la prueba hidrostática (5 años)
+
+Cada 5 años, el cilindro debe ser sometido a una **prueba hidrostática**: se llena de agua a presión para verificar que no tiene micro-fisuras o deformaciones internas. Si pasa, se estampa el año en el cilindro y vuelve al servicio. Si falla, el cilindro se da de baja.
+
+La prueba hidrostática no reemplaza al servicio anual — ambos son obligatorios. Año 1: servicio. Año 2: servicio. Año 3: servicio. Año 4: servicio. Año 5: servicio + prueba hidrostática.
+
+### 3. Vida útil del cilindro (12–25 años según tipo)
+
+Independientemente de cuántas pruebas hidrostáticas pase, todo cilindro tiene un límite de ciclos de presurización. El fabricante establece este límite en la placa de datos (normalmente entre 12 y 25 años desde la fecha de fabricación grabada en el cilindro). Al llegar a ese límite, el cilindro se retira sin importar su estado visual.
+
+| Vigencia | Frecuencia | Consecuencia de incumplimiento |
+|---|---|---|
+| Servicio anual | Cada 12 meses | Extintor no aceptado en inspecciones |
+| Prueba hidrostática | Cada 5 años | Extintor retirado de servicio hasta realizarla |
+| Fin de vida del cilindro | 12–25 años desde fabricación | Reemplazo obligatorio del cilindro |
+
+</section>
+
+---
+
+<section id="senales-reemplazo">
+
+## Señales de que el extintor debe reemplazarse ya
+
+Algunas condiciones no admiten reparación. Si detectas cualquiera de estas, el extintor debe salir de servicio inmediatamente y ser reemplazado:
+
+### Señales visuales críticas
+
+**Corrosión estructural avanzada.** Óxido puntual superficial en la pintura es reparable. Óxido que penetra el metal del cilindro, especialmente en la base o el cuello (donde se rosca la válvula), es motivo de baja inmediata. El cilindro corroído puede fallar catastróficamente bajo presión.
+
+**Abolladuras o deformaciones.** Cualquier abolladura que profundice más de 1 cm o que esté en el cuerpo principal del cilindro invalida el equipo. Las abolladuras crean zonas de estrés concentrado que pueden ceder durante la descarga.
+
+**Válvula o manija dañada sin refacciones disponibles.** Los modelos descontinuados sin repuestos disponibles en México deben darse de baja aunque el cilindro esté intacto.
+
+**Manguera con grietas o porosidad.** Una manguera agrietada puede obstruir la descarga justo cuando más se necesita o fallar en la dirección del operador.
+
+**Cilindro con año de fabricación fuera del límite.** Si la fecha grabada en el cilindro supera los años de vida útil del tipo (ver tabla anterior), el reemplazo es obligatorio.
+
+### Señales funcionales críticas
+
+**Manómetro fuera de zona verde de forma recurrente.** Un manómetro que baja aunque el extintor se recargue puede indicar fuga en la válvula o en el cuerpo del cilindro. Dos recargas seguidas sin mantener presión = reemplazo.
+
+**Falla en prueba hidrostática.** Si el cilindro no soporta la presión de prueba o muestra deformación permanente, la baja es definitiva.
+
+**Polvo compactado irreversiblemente (PQS).** Se detecta agitando el extintor — si no se siente el movimiento del polvo, está solidificado. En ese estado no puede recargarse de forma efectiva.
+
+<div class="highlight-box">
+  <h4>El pasador roto no es solo un defecto estético</h4>
+  <p>El pasador (pin de seguridad) evita accionamientos accidentales. Si está roto o doblado, el extintor puede descargarse solo o ser accionado por accidente. Adicionalmente, en una inspección de Protección Civil el extintor sin pasador íntegro se cuenta como equipo no apto. Costo del pasador: menos de $30 pesos. Multa por extintor no apto: hasta $555,000 MXN.</p>
+</div>
+
+</section>
+
+---
+
+<section id="reparar-vs-reemplazar">
+
+## Reparar vs. reemplazar: criterio técnico y económico
+
+Esta es la pregunta que más nos hacen los gerentes de mantenimiento. La respuesta honesta depende de tres variables:
+
+### Cuándo reparar (mantenimiento) es la decisión correcta
+
+- El cilindro tiene menos de 10 años desde fabricación
+- Pasa o puede pasar la próxima prueba hidrostática sin problemas
+- El daño es superficial: pintura, manguera, pasador, señalización
+- El modelo tiene refacciones disponibles
+- El costo del servicio es menor al 30% del precio de un equipo nuevo equivalente
+
+### Cuándo reemplazar es más inteligente
+
+- El cilindro tiene más de 15 años y la próxima prueba hidrostática costaría más que el 40% del equipo nuevo
+- El modelo es descontinuado y las refacciones escasean
+- Ha sido dado de baja en prueba hidrostática
+- El daño estructural hace inviable la reparación
+- El costo acumulado de mantenimiento de los últimos 3 años supera el precio de un equipo nuevo
+
+### Análisis de costo real
+
+| Escenario | Costo estimado CDMX |
+|---|---|
+| Servicio anual + recarga PQS 4.5 kg | $350–$600 MXN |
+| Prueba hidrostática + servicio | $600–$1,200 MXN |
+| Extintor PQS ABC 4.5 kg nuevo (NOM certificado) | $800–$1,400 MXN |
+| Extintor CO₂ 2.3 kg nuevo | $1,500–$2,500 MXN |
+| Extintor Tipo K 1.9 L nuevo | $2,500–$4,500 MXN |
+
+Un extintor PQS de 14 años al que le quedan 2 ciclos de hidrostática y que necesita recarga + válvula nueva puede costar $900–$1,200 MXN en servicios — cerca del precio de uno nuevo que vendrá con 20 años de vida útil por delante.
+
+</section>
+
+---
+
+<section id="nom-criterios">
+
+## Lo que dice la NOM-154-SCFI sobre fin de vida útil
+
+La **NOM-154-SCFI-2005** (Extintores contra incendio — Agentes extinguidores — Especificaciones) establece en su sección de mantenimiento los criterios precisos para retiro de servicio:
+
+**Artículo de retiro obligatorio según NOM-154-SCFI:**
+
+1. Cilindros con deformación permanente tras prueba hidrostática
+2. Equipos cuyo fabricante no tenga respaldo técnico activo en México
+3. Extintores que no puedan ser identificados con número de serie y datos del fabricante
+4. Cilindros que presenten corrosión que comprometa el espesor mínimo de pared
+5. Equipos que hayan estado expuestos a fuego directo (no solo calor ambiental — fuego real que afectó el cilindro)
+
+**Lo que la norma NO dice (mito común):** La NOM-154-SCFI no establece una "vida útil de 10 años" para todos los extintores como regla fija. Ese dato circula en internet como si fuera normativo pero no lo es. Lo que establece la norma son las condiciones de retiro técnico — que pueden ocurrir a los 8 años en condiciones adversas o no ocurrir hasta los 22 en condiciones ideales.
+
+<div class="highlight-box">
+  <h4>Fecha de fabricación grabada en el cilindro: cómo leerla</h4>
+  <p>En el cuerpo del cilindro, cerca de la base, verás una estampa metálica con formato: mes/año (ej. "03/12" = marzo de 2012). Esa es la fecha de fabricación y el punto de partida para calcular la vida útil del cilindro. Si la etiqueta del servicio tiene fecha pero no encuentras la estampa en el metal, el equipo probablemente no es de fabricación certificada.</p>
+</div>
+
+</section>
+
+---
+
+<section id="extender-vida">
+
+## Cómo maximizar la vida útil
+
+El mantenimiento preventivo sistemático no es burocracia — es la diferencia entre un cilindro que dura 12 años y uno que dura 22. Estas son las acciones con mayor impacto:
+
+### Instalación correcta desde el inicio
+
+La mayoría del deterioro prematuro ocurre por instalación inadecuada:
+
+- **No instalar en el suelo**: la humedad del piso corroe la base del cilindro. Mínimo 10 cm de separación con soporte o gabinete.
+- **No instalar en exterior sin protección**: el sol directo degrada la pintura y calienta el agente, generando ciclos de presurización que fatigan la válvula.
+- **No instalar junto a fuentes de calor**: una cocina o un horno emiten calor continuo que oxida los sellos de la válvula.
+- **No instalar en zonas de vibraciones mecánicas**: las vibraciones apelmazan el polvo PQS y fatigan la soldadura del cilindro.
+
+### Inspección mensual del operador
+
+Un checklist de 2 minutos que puede detectar el 80% de los problemas antes de que sean graves:
+
+- Manómetro en zona verde ✓
+- Pasador y precinto intactos ✓
+- Sin golpes, oxidación ni deformaciones nuevas ✓
+- Manguera sin obstrucciones ✓
+- Señal NOM-026 visible y legible ✓
+- Acceso despejado (sin objetos bloqueando) ✓
+
+### Servicio anual sin demora
+
+Cada mes de retraso en el servicio anual es un mes más en el que el polvo absorbe humedad, los sellos de la válvula se resecan y el precinto pierde integridad. El servicio a tiempo es la mejor inversión para extender la vida del equipo.
+
+</section>
+
+---
+
+<section id="disposicion">
+
+## Disposición correcta de extintores dados de baja
+
+Un extintor dado de baja es un residuo de manejo especial — no basura ordinaria. El cilindro está presurizado y el agente químico puede ser tóxico o contaminante.
+
+**Lo que no debes hacer:**
+- Tirar el extintor en la basura común (el cilindro puede explotar en el camión compactador)
+- Abandionar el extintor en bodega indefinidamente
+- Intentar despresurizar tú mismo disparando el equipo (el polvo o gas disperso puede ser dañino)
+- Vender o regalar extintores dados de baja sin declarar su estado
+
+**Las opciones correctas:**
+
+**Devolución al proveedor de servicio.** La opción más práctica. La empresa certificada que hace el último servicio puede llevarse el equipo dado de baja junto con los equipos nuevos que entrega.
+
+**Centro de acopio de residuos especiales.** El Gobierno de CDMX opera el programa ECOLEC y puntos de acopio de residuos de manejo especial donde se reciben cilindros metálicos.
+
+**Chatarrerías especializadas en metales.** Deben despresiurizar el cilindro correctamente antes de reciclarlo como chatarra. Asegúrate de que el cilindro llegue vacío y sin presión.
+
+En MANEXT retiramos extintores dados de baja cuando entregamos equipos nuevos — sin costo adicional cuando se trata de sustitución 1:1.
+
+</section>
+
+---
+
+<section id="preguntas-frecuentes" class="faq-section">
+
+## Preguntas frecuentes
+
+<div class="faq-container">
+
+<div class="faq-item" data-faq="0">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-0">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿Cuánto dura un extintor de polvo ABC?</span>
+</button>
+<div class="faq-answer" id="faq-answer-0" aria-hidden="true">
+<div class="faq-answer-content">
+<p>Un extintor PQS ABC con mantenimiento anual y prueba hidrostática cada 5 años puede durar entre 12 y 20 años. El límite real lo da el estado del cilindro en cada prueba hidrostática y la fecha de fabricación estampada en el metal. Sin mantenimiento, el polvo se apelmaza en 3-5 años y el extintor deja de funcionar correctamente aunque el cilindro esté intacto. El servicio anual no es opcional — es lo que mantiene vivo al equipo.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item" data-faq="1">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿Los extintores tienen fecha de caducidad?</span>
+</button>
+<div class="faq-answer" id="faq-answer-1" aria-hidden="true">
+<div class="faq-answer-content">
+<p>No exactamente — no hay una fecha impresa como en un alimento. Pero existen tres límites independientes: la vigencia del servicio anual (etiqueta), la prueba hidrostática cada 5 años, y el límite de vida del cilindro calculado desde la fecha de fabricación grabada en el metal. Un extintor que supera cualquiera de estos tres límites está técnicamente fuera de servicio aunque visualmente parezca en buen estado.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item" data-faq="2">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿Si el manómetro marca verde, el extintor está bien?</span>
+</button>
+<div class="faq-answer" id="faq-answer-2" aria-hidden="true">
+<div class="faq-answer-content">
+<p>El manómetro en verde indica que hay presión — no que el extintor está listo para usarse. El agente extintor puede estar degradado (polvo PQS apelmazado), la manguera puede estar obstruida, la válvula puede tener sellos desgastados, o el servicio anual puede estar vencido. Un extintor con manómetro verde pero sin etiqueta de servicio vigente no es aceptado en inspecciones de Protección Civil o STPS. El manómetro es un indicador básico, no un certificado de funcionamiento.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item" data-faq="3">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿Qué pasa si un extintor falla la prueba hidrostática?</span>
+</button>
+<div class="faq-answer" id="faq-answer-3" aria-hidden="true">
+<div class="faq-answer-content">
+<p>Si el cilindro falla la prueba hidrostática — ya sea porque no soporta la presión de prueba o porque muestra deformación permanente — es dado de baja definitiva. El cilindro no puede seguir en servicio bajo ninguna condición. Si el equipo es relativamente nuevo y tiene valor, se puede estudiar si la válvula, manguera o accesorios pueden salvarse para otro cilindro, pero el cilindro en sí se descarta. La empresa certificada que realiza la prueba debe emitir un dictamen de baja.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item" data-faq="4">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿Cuánto cuesta reemplazar un extintor vs. darle mantenimiento?</span>
+</button>
+<div class="faq-answer" id="faq-answer-4" aria-hidden="true">
+<div class="faq-answer-content">
+<p>En CDMX, el servicio anual de un extintor PQS 4.5 kg cuesta aproximadamente $350–$600 MXN. Un equipo nuevo certificado NOM-154 equivalente cuesta $800–$1,400 MXN. Si el extintor tiene menos de 10 años y el costo del servicio (recarga + mantenimiento + posible válvula) no supera el 40% del equipo nuevo, mantenerlo es la decisión económicamente correcta. Si tiene 15+ años y la próxima prueba hidrostática sumada al servicio se acerca al precio de uno nuevo, reemplazar es más inteligente.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item" data-faq="5">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+<span class="faq-icon">
+<svg class="icon-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+<svg class="icon-minus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+</span>
+<span class="faq-question-text">¿MANEXT puede evaluar si mis extintores siguen siendo viables?</span>
+</button>
+<div class="faq-answer" id="faq-answer-5" aria-hidden="true">
+<div class="faq-answer-content">
+<p>Sí. MANEXT ofrece inspección técnica de extintores para empresas en CDMX y Estado de México. Revisamos fecha de fabricación, estado del cilindro, vigencia del servicio, estado del agente extintor y proximidad a prueba hidrostática — y te entregamos un dictamen por escrito sobre cada equipo: continuar con mantenimiento, dar de baja o reemplazar. Contáctanos al 55 7008 1816 o por WhatsApp. La visita de inspección no tiene costo cuando contratas el servicio posterior con nosotros.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>

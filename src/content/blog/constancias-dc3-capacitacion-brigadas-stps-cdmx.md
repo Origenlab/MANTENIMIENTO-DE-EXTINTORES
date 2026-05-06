@@ -1,8 +1,11 @@
 ---
-title: "Constancias DC-3 para Brigadas Contra Incendio: Guía Completa"
+title: "Constancias DC-3 para Brigadas Contra Incendio: Guía Completa 2026"
 description: "Todo sobre las constancias DC-3 para capacitación de brigadas contra incendio: qué son, cuándo son obligatorias, cómo registrarlas ante la STPS y qué pasa si no las tienes."
+pubDate: "2026-05-20"
+heroRight:
+  - "La constancia DC-3 es el documento que cierra legalmente el ciclo de capacitación de brigadas. Sin ella, la capacitación no existe para efectos de una verificación de la STPS o Protección Civil — aunque los brigadistas hayan recibido el curso y hecho las prácticas."
+  - "En <strong>MANEXT</strong> somos agente capacitador registrado ante la STPS. Llevamos más de 80 años gestionando toda la documentación DC-3 para que tu empresa quede completamente en regla, sin riesgo de observaciones durante verificaciones."
 ---
-
 <div class="article-intro">
   <p>La constancia DC-3 es el documento oficial que acredita que un trabajador recibió capacitación laboral en México. Para brigadas contra incendio, este documento es la diferencia entre tener una brigada "en papel" y una brigada legalmente reconocida por la STPS. Sin DC-3, la capacitación no existe para efectos de una verificación laboral o de Protección Civil.</p>
   <p>Muchas empresas invierten en capacitar a sus brigadistas, hacen prácticas con extintores, realizan simulacros —y luego descubren que toda esa inversión no es válida ante la STPS porque la constancia DC-3 nunca se tramitó o se tramitó de manera incorrecta. El resultado: multas, observaciones durante verificaciones y la necesidad de repetir el proceso.</p>
@@ -10,8 +13,8 @@ description: "Todo sobre las constancias DC-3 para capacitación de brigadas con
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es-dc3">Qué es la Constancia DC-3 y Por Qué es Obligatoria</a></li>
     <li><a href="#cuando-aplica">Cuándo es Obligatoria para Brigadas Contra Incendio</a></li>
     <li><a href="#informacion-contenida">Qué Información Debe Contener la DC-3 de Brigadas</a></li>
@@ -21,7 +24,7 @@ description: "Todo sobre las constancias DC-3 para capacitación de brigadas con
     <li><a href="#consecuencias">Consecuencias de No Tener DC-3 en Regla</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Obtén tu DC-3 con MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es-dc3">Qué es la Constancia DC-3 y Por Qué es Obligatoria</h2>
@@ -48,7 +51,7 @@ description: "Todo sobre las constancias DC-3 para capacitación de brigadas con
   <li><strong>Capacitación en primeros auxilios:</strong> Si los brigadistas de primeros auxilios reciben capacitación específica, esta también requiere DC-3.</li>
 </ul>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>¿Qué pasa con los simulacros?</h4>
   <p>Los simulacros no generan DC-3 —son ejercicios prácticos de aplicación, no eventos de capacitación formal. Sin embargo, sí deben documentarse con un reporte de simulacro que incluya fecha, participantes, escenario y resultados. Ese reporte es igualmente requerido durante verificaciones.</p>
 </div>
@@ -194,54 +197,45 @@ description: "Todo sobre las constancias DC-3 para capacitación de brigadas con
 </ul>
 
 <div id="faq" class="faq-section">
-  <h2>Preguntas Frecuentes</h2>
-
   <div class="faq-item">
-    <div class="faq-question">¿Tiene vigencia la DC-3? ¿Cuándo caduca?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-1">¿Tiene vigencia la DC-3? ¿Cuándo caduca?</button>
+    <div class="faq-answer" id="faq-dc3-1">
       <p>La DC-3 en sí misma no tiene una fecha de caducidad impresa —documenta que una capacitación ocurrió en una fecha determinada. Sin embargo, dado que la normativa exige capacitación periódica (refrescamientos anuales), una DC-3 de hace 3 años sin constancias de refrescamiento puede considerarse insuficiente. En la práctica, los inspectores verifican que la capacitación sea reciente y periódica, no solo que alguna vez ocurrió.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Puedo emitir la DC-3 yo mismo como empresa?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-2">¿Puedo emitir la DC-3 yo mismo como empresa?</button>
+    <div class="faq-answer" id="faq-dc3-2">
       <p>Sí, si la capacitación fue impartida por un instructor interno correctamente designado y que cumple los requisitos de competencia. En ese caso, el patrón es quien emite la DC-3 y firma como tal. Sin embargo, para capacitación técnica especializada como incendios, es más común y más seguro desde el punto de vista de validez contratar a un agente externo registrado que lleva el proceso completo.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Cuánto tiempo tengo para registrar la DC-3 después de la capacitación?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-3">¿Cuánto tiempo tengo para registrar la DC-3 después de la capacitación?</button>
+    <div class="faq-answer" id="faq-dc3-3">
       <p>La Ley Federal del Trabajo no especifica un plazo exacto posterior a la capacitación para el registro. La práctica recomendada es registrarlas dentro de los 30 días siguientes a la impartición del curso. Retrasos excesivos pueden generar inconsistencias que compliquen el registro y la validez del documento.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si un brigadista capacitado se va de la empresa? ¿Pierdo la DC-3?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-4">¿Qué pasa si un brigadista capacitado se va de la empresa? ¿Pierdo la DC-3?</button>
+    <div class="faq-answer" id="faq-dc3-4">
       <p>La DC-3 pertenece al trabajador —es su acreditamiento personal. Al salir de la empresa, tiene derecho a llevarse una copia de sus constancias. La empresa debe conservar copia en el expediente del trabajador. Lo que sí pierde la empresa es un brigadista capacitado, por lo que debe incorporar y capacitar a su reemplazo con la correspondiente DC-3 nueva.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿La capacitación en línea genera DC-3 válida para brigadas?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-5">¿La capacitación en línea genera DC-3 válida para brigadas?</button>
+    <div class="faq-answer" id="faq-dc3-5">
       <p>La parte teórica puede impartirse en modalidad en línea y generar DC-3, siempre que el agente capacitador esté registrado ante STPS. Sin embargo, para la capacitación en uso y manejo de extintores, las autoridades esperan evidencia de práctica presencial. Una DC-3 que cubra solo la parte teórica puede ser cuestionada si no hay evidencia de la práctica con equipos reales.</p>
     </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-question">¿Cuántas DC-3 necesito por brigadista?<span class="faq-icon">+</span></div>
-    <div class="faq-answer">
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-dc3-6">¿Cuántas DC-3 necesito por brigadista?</button>
+    <div class="faq-answer" id="faq-dc3-6">
       <p>Al menos una DC-3 por cada evento de capacitación formal. En la práctica, un brigadista completo puede tener: DC-3 de capacitación inicial (teoría y práctica), DC-3 de primeros auxilios si aplica a su rol, y DC-3 de cada refrescamiento anual. Cada evento de capacitación distinto genera su propia constancia.</p>
     </div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Capacitación con DC-3 Válida ante STPS</h3>
-  <p>MANEXT es agente capacitador registrado ante la STPS. Impartimos capacitación práctica para brigadas contra incendio y gestionamos toda la documentación DC-3 para que su empresa quede completamente en regla.</p>
-  <a href="https://wa.me/5215539689272?text=Hola%2C%20necesito%20capacitaci%C3%B3n%20de%20brigadas%20con%20constancias%20DC-3%20registradas%20ante%20STPS" class="btn-cta">Solicitar Capacitación con DC-3</a>
-  <p>O llámanos: <a href="tel:5539689272">55 3968 9272</a></p>
 </div>

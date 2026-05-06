@@ -1,6 +1,10 @@
 ---
 title: "Recarga de Extintores Certificada NOM-154"
 description: "Servicio profesional de recarga de extintores certificada NOM-154-SCFI en CDMX. Técnicos especializados, garantía total. Solicita cotización WhatsApp."
+pubDate: "2026-06-19"
+heroRight:
+  - "La <strong>NOM-154-SCFI</strong> obliga a que todos los extintores sean recargados por técnicos certificados. Un extintor vencido o con baja presión equivale a no tener protección: falla exactamente cuando más se necesita. La recarga certificada restaura el agente extintor, verifica la integridad del cilindro y garantiza que el equipo estará operativo al 100% ante cualquier emergencia."
+  - "MANEXT realiza recargas certificadas NOM-154-SCFI con <strong>más de 80 años de experiencia</strong> en CDMX y Estado de México. Nuestros técnicos se desplazan a tu instalación, dejamos extintores de reemplazo mientras los tuyos están en servicio y entregamos certificados individuales válidos ante Protección Civil. Solicita cotización sin costo por WhatsApp."
 ---
 <div class="article-intro">
   <p>Los extintores descargados o vencidos representan un riesgo crítico para la seguridad de cualquier establecimiento. El <strong>servicio de recarga de extintores certificada</strong> garantiza que tus equipos contra incendio mantengan su efectividad al 100% según las normativas mexicanas vigentes. En México, el 73% de los incendios industriales podrían haberse controlado con extintores en óptimas condiciones.</p>
@@ -9,8 +13,8 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué es la Recarga Certificada</a></li>
     <li><a href="#importancia">Por Qué es Indispensable</a></li>
     <li><a href="#tipos">Tipos de Recarga por Extintor</a></li>
@@ -20,7 +24,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
     <li><a href="#consejos">Consejos de Expertos</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita Tu Cotización</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es">Qué es la Recarga de Extintores Certificada</h2>
@@ -132,7 +136,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 
 <h2 id="normativa">Normativa y Requisitos Legales</h2>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Importante: Requisitos Legales</h4>
   <p>La NOM-154-SCFI establece que todos los extintores deben recargarse según frecuencias específicas por tipo de agente extintor. El incumplimiento genera sanciones de hasta 2,000 UMAS y puede resultar en clausura temporal del establecimiento por parte de Protección Civil CDMX.</p>
 </div>
@@ -182,39 +186,32 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 
 <div class="faq-section" id="faq">
   <div class="faq-item">
-    <div class="faq-question">¿Qué incluye el servicio de recarga de extintores certificada?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El servicio incluye desmontaje completo del extintor, limpieza de componentes internos, verificación de válvulas y manómetro, recarga con agente extintor nuevo certificado, pruebas de presión y funcionamiento, certificado de servicio NOM-154-SCFI, etiqueta de identificación actualizada y reporte técnico detallado. Garantizamos la efectividad del equipo por 12 meses.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-1">¿Qué incluye el servicio de recarga de extintores certificada?</button>
+    <div class="faq-answer" id="faq-recarga2-1"><p>El servicio incluye desmontaje completo del extintor, limpieza de componentes internos, verificación de válvulas y manómetro, recarga con agente extintor nuevo certificado, pruebas de presión y funcionamiento, certificado de servicio NOM-154-SCFI, etiqueta de identificación actualizada y reporte técnico detallado. Garantizamos la efectividad del equipo por 12 meses.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Cada cuánto tiempo debo recargar mis extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La frecuencia depende del tipo de extintor: polvo químico seco cada 12 meses, CO2 cada 60 meses con verificación anual de peso, agua a presión cada 12 meses, tipo K cada 12 meses y agente limpio cada 60 meses. Los extintores descargados parcial o totalmente requieren recarga inmediata independientemente del tiempo transcurrido.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-2">¿Cada cuánto tiempo debo recargar mis extintores?</button>
+    <div class="faq-answer" id="faq-recarga2-2"><p>La frecuencia depende del tipo de extintor: polvo químico seco cada 12 meses, CO2 cada 60 meses con verificación anual de peso, agua a presión cada 12 meses, tipo K cada 12 meses y agente limpio cada 60 meses. Los extintores descargados parcial o totalmente requieren recarga inmediata independientemente del tiempo transcurrido.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Atienden en Condesa, Del Valle, Azcapotzalco y Tlalpan?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí, MANEXT brinda servicio de recarga certificada en toda la Ciudad de México y zona metropolitana, incluyendo Condesa, Del Valle, Azcapotzalco, Tlalpan y todas las delegaciones. Contamos con técnicos especializados que se desplazan a tu ubicación para recolección y entrega de extintores recargados con certificación completa.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-3">¿Atienden en Condesa, Del Valle, Azcapotzalco y Tlalpan?</button>
+    <div class="faq-answer" id="faq-recarga2-3"><p>Sí, MANEXT brinda servicio de recarga certificada en toda la Ciudad de México y zona metropolitana, incluyendo Condesa, Del Valle, Azcapotzalco, Tlalpan y todas las delegaciones. Contamos con técnicos especializados que se desplazan a tu ubicación para recolección y entrega de extintores recargados con certificación completa.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Cómo solicito una cotización para recarga de extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Solicita tu cotización personalizada contactando por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Proporciónanos información sobre cantidad y tipos de extintores, ubicación de tu establecimiento y frecuencia de servicio requerida. Programamos visita técnica gratuita para evaluación y elaboración de propuesta detallada sin compromiso.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-4">¿Cómo solicito una cotización para recarga de extintores?</button>
+    <div class="faq-answer" id="faq-recarga2-4"><p>Solicita tu cotización personalizada contactando por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Proporciónanos información sobre cantidad y tipos de extintores, ubicación de tu establecimiento y frecuencia de servicio requerida. Programamos visita técnica gratuita para evaluación y elaboración de propuesta detallada sin compromiso.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Qué normativas aplican para la recarga de extintores en México?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Las normativas principales son NOM-154-SCFI que establece especificaciones técnicas para extintores portátiles, NOM-002-STPS sobre condiciones de seguridad en centros de trabajo, y reglamentos de Protección Civil CDMX para licencias de funcionamiento. Todos nuestros servicios cumplen estrictamente estas normativas con certificación oficial.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-5">¿Qué normativas aplican para la recarga de extintores en México?</button>
+    <div class="faq-answer" id="faq-recarga2-5"><p>Las normativas principales son NOM-154-SCFI que establece especificaciones técnicas para extintores portátiles, NOM-002-STPS sobre condiciones de seguridad en centros de trabajo, y reglamentos de Protección Civil CDMX para licencias de funcionamiento. Todos nuestros servicios cumplen estrictamente estas normativas con certificación oficial.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si mi extintor no se puede recargar?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Si durante la inspección técnica detectamos que el extintor presenta daños estructurales, corrosión severa o componentes defectuosos que comprometan la seguridad, recomendamos su reemplazo por un equipo nuevo. Ofrecemos opciones de intercambio y financiamiento para renovación completa de sistemas de protección contra incendio con garantía total.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga2-6">¿Qué pasa si mi extintor no se puede recargar?</button>
+    <div class="faq-answer" id="faq-recarga2-6"><p>Si durante la inspección técnica detectamos que el extintor presenta daños estructurales, corrosión severa o componentes defectuosos que comprometan la seguridad, recomendamos su reemplazo por un equipo nuevo. Ofrecemos opciones de intercambio y financiamiento para renovación completa de sistemas de protección contra incendio con garantía total.</p></div>
   </div>
-</div>
-
-<div class="article-cta" id="contacto">
-  <h3>Protege Tu Negocio con Recarga Certificada</h3>
-  <p>En MANEXT somos especialistas certificados en recarga de extintores con más de una década de experiencia. Atendemos Condesa, Del Valle, Azcapotzalco, Tlalpan y toda la CDMX con técnicos certificados NOM-154-SCFI. Garantizamos la efectividad de tus equipos contra incendio con certificación oficial y documentación completa.</p>
-  <a href="https://wa.me/5215570081816?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>

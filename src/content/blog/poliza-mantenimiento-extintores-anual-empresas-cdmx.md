@@ -1,6 +1,10 @@
 ---
 title: "Póliza de Mantenimiento de Extintores para Empresas en CDMX"
 description: "Qué es una póliza de mantenimiento de extintores, qué incluye, cuánto cuesta y cómo elegir el mejor proveedor certificado en CDMX. MANEXT: 80 años de experiencia."
+pubDate: "2026-06-14"
+heroRight:
+  - "La <strong>NOM-154-SCFI</strong> exige mantenimiento preventivo anual en todos los extintores de un centro de trabajo. Para empresas con 5 o más equipos, gestionar ese mantenimiento equipo por equipo es ineficiente y propenso a omisiones que terminan en multas de Protección Civil. Una <strong>póliza anual</strong> consolida todo bajo un solo contrato: fechas conocidas, documentación completa y costo predecible."
+  - "MANEXT ofrece pólizas de mantenimiento para empresas de todos los tamaños en CDMX y Estado de México. Con <strong>más de 80 años de experiencia</strong>, técnicos certificados NOM-154-SCFI, extintores de reemplazo incluidos y bitácora completa para Protección Civil, somos el aliado que tu empresa necesita para mantener sus equipos siempre en regla."
 ---
 <div class="article-intro">
   <p>Para empresas con múltiples extintores, gestionar el mantenimiento equipo por equipo es ineficiente, costoso y propenso a omisiones que pueden terminar en multas de Protección Civil. La solución profesional es contratar una <strong>póliza anual de mantenimiento de extintores</strong>: un contrato de servicio que cubre todos tus equipos durante doce meses, con visitas programadas, documentación oficial y atención de emergencias incluida.</p>
@@ -9,8 +13,8 @@ description: "Qué es una póliza de mantenimiento de extintores, qué incluye, 
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es-poliza">Qué es una Póliza de Mantenimiento</a></li>
     <li><a href="#que-incluye">Qué Debe Incluir una Póliza Profesional</a></li>
     <li><a href="#ventajas-poliza">Ventajas vs Servicio Individual</a></li>
@@ -20,7 +24,7 @@ description: "Qué es una póliza de mantenimiento de extintores, qué incluye, 
     <li><a href="#senales-alerta">Señales de Alerta en un Proveedor</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita tu Póliza MANEXT</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es-poliza">Qué es una Póliza de Mantenimiento de Extintores</h2>
@@ -121,7 +125,7 @@ description: "Qué es una póliza de mantenimiento de extintores, qué incluye, 
   <li><strong>Lee el contrato antes de firmar</strong><p>Verifica que todos los servicios ofrecidos verbalmente estén escritos en el contrato. Revisa las cláusulas de exclusiones, penalizaciones por incumplimiento del proveedor, condiciones de renovación y qué cubre exactamente el precio pactado. Si algo no está en el contrato, no existe.</p></li>
 </ol>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Pregunta Clave que Distingue Proveedores</h4>
   <p>Pregunta al proveedor: "¿Qué pasa si Protección Civil llega a inspeccionarme mientras mis extintores están en su taller?" Si la respuesta es "no nos ha pasado" o "coordinas tú eso", no es el proveedor correcto. La respuesta correcta es: "Dejamos extintores certificados en préstamo en cada punto desde que recogemos los tuyos hasta que los regresamos."</p>
 </div>
@@ -199,34 +203,27 @@ description: "Qué es una póliza de mantenimiento de extintores, qué incluye, 
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Cuándo es el momento ideal para contratar una póliza anual?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El mejor momento es <strong>antes de que venzan los extintores actuales</strong>, idealmente con al menos 30 días de anticipación. Esto da tiempo para que el proveedor realice un inventario completo de tus equipos, programe las fechas de servicio y prepare los extintores de reemplazo. Si ya tienes equipos vencidos, el inicio de la póliza debe ser inmediato. Contratar preventivamente también te permite negociar mejores condiciones que cuando estás bajo presión de un vencimiento inminente o una inspección anunciada.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-1">¿Cuándo es el momento ideal para contratar una póliza anual?</button>
+    <div class="faq-answer" id="faq-poliza-1"><p>El mejor momento es <strong>antes de que venzan los extintores actuales</strong>, idealmente con al menos 30 días de anticipación. Esto da tiempo para que el proveedor realice un inventario completo de tus equipos, programe las fechas de servicio y prepare los extintores de reemplazo. Si ya tienes equipos vencidos, el inicio de la póliza debe ser inmediato. Contratar preventivamente también te permite negociar mejores condiciones que cuando estás bajo presión de un vencimiento inminente o una inspección anunciada.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿La póliza cubre la prueba hidrostática quinquenal?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Depende de lo que incluya el contrato. Algunos proveedores incluyen la prueba hidrostática cuando corresponde durante la vigencia de la póliza; otros la cobran por separado. Es importante aclarar este punto antes de firmar, especialmente si tienes equipos que cumplen 5 años durante la vigencia del contrato. MANEXT incluye notificación con anticipación cuando algún equipo está próximo a requerir prueba hidrostática y puede integrarla en el esquema de mantenimiento con condiciones preferenciales para clientes con póliza.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-2">¿La póliza cubre la prueba hidrostática quinquenal?</button>
+    <div class="faq-answer" id="faq-poliza-2"><p>Depende de lo que incluya el contrato. Algunos proveedores incluyen la prueba hidrostática cuando corresponde durante la vigencia de la póliza; otros la cobran por separado. Es importante aclarar este punto antes de firmar, especialmente si tienes equipos que cumplen 5 años durante la vigencia del contrato. MANEXT incluye notificación con anticipación cuando algún equipo está próximo a requerir prueba hidrostática y puede integrarla en el esquema de mantenimiento con condiciones preferenciales para clientes con póliza.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué pasa si necesito agregar extintores nuevos durante la vigencia de la póliza?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Un buen contrato debe tener una cláusula de modificación que permita agregar equipos al inventario cubierto, generalmente con un ajuste proporcional al costo. Si adquieres extintores nuevos o cambias de local durante la vigencia de la póliza, debes notificar al proveedor para que los integre al programa de mantenimiento. Los equipos nuevos generalmente tienen su primer mantenimiento al año de compra, pero deben quedar registrados en la bitácora desde el primer día.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-3">¿Qué pasa si necesito agregar extintores nuevos durante la vigencia de la póliza?</button>
+    <div class="faq-answer" id="faq-poliza-3"><p>Un buen contrato debe tener una cláusula de modificación que permita agregar equipos al inventario cubierto, generalmente con un ajuste proporcional al costo. Si adquieres extintores nuevos o cambias de local durante la vigencia de la póliza, debes notificar al proveedor para que los integre al programa de mantenimiento. Los equipos nuevos generalmente tienen su primer mantenimiento al año de compra, pero deben quedar registrados en la bitácora desde el primer día.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Una póliza sirve también para múltiples sucursales?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí, y es uno de los casos donde más valor aporta. Una póliza multi-sucursal centraliza todo el mantenimiento bajo un solo contrato, con una sola fecha de renovación y un único reporte consolidado. El proveedor programa las visitas a cada ubicación de forma coordinada. Para empresas con cadenas de sucursales, restaurantes o tiendas, esto elimina el riesgo de que alguna ubicación quede sin cobertura por falta de seguimiento administrativo local.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-4">¿Una póliza sirve también para múltiples sucursales?</button>
+    <div class="faq-answer" id="faq-poliza-4"><p>Sí, y es uno de los casos donde más valor aporta. Una póliza multi-sucursal centraliza todo el mantenimiento bajo un solo contrato, con una sola fecha de renovación y un único reporte consolidado. El proveedor programa las visitas a cada ubicación de forma coordinada. Para empresas con cadenas de sucursales, restaurantes o tiendas, esto elimina el riesgo de que alguna ubicación quede sin cobertura por falta de seguimiento administrativo local.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿Qué diferencia hay entre una póliza de mantenimiento y un contrato de mantenimiento?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>En la práctica son términos equivalentes. Algunos proveedores llaman "póliza" a contratos que incluyen servicios más amplios (como cobertura de emergencias 24/7 similar a un seguro de servicio), mientras que "contrato de mantenimiento" puede referirse a un compromiso más básico de realizar el servicio en fechas pactadas. Lo importante no es el nombre sino el contenido: qué servicios incluye, qué documentación entrega y qué garantías ofrece. Lee siempre el documento antes de llamarlo de cualquier manera.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-5">¿Qué diferencia hay entre una póliza de mantenimiento y un contrato de mantenimiento?</button>
+    <div class="faq-answer" id="faq-poliza-5"><p>En la práctica son términos equivalentes. Algunos proveedores llaman "póliza" a contratos que incluyen servicios más amplios (como cobertura de emergencias 24/7 similar a un seguro de servicio), mientras que "contrato de mantenimiento" puede referirse a un compromiso más básico de realizar el servicio en fechas pactadas. Lo importante no es el nombre sino el contenido: qué servicios incluye, qué documentación entrega y qué garantías ofrece. Lee siempre el documento antes de llamarlo de cualquier manera.</p></div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">¿La póliza tiene alguna validez ante Protección Civil?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Indirectamente, sí. Protección Civil no "valida" pólizas como documentos en sí mismos, pero la póliza garantiza que se generará toda la documentación que sí tienen validez oficial: certificados individuales NOM-154-SCFI por equipo, etiquetas de servicio actualizadas en cada extintor y bitácora de mantenimiento conforme a NOM-002-STPS. Esos documentos son los que el inspector revisa. Una póliza bien ejecutada garantiza que todos esos documentos estén presentes y vigentes en todo momento.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-poliza-6">¿La póliza tiene alguna validez ante Protección Civil?</button>
+    <div class="faq-answer" id="faq-poliza-6"><p>Indirectamente, sí. Protección Civil no "valida" pólizas como documentos en sí mismos, pero la póliza garantiza que se generará toda la documentación que sí tienen validez oficial: certificados individuales NOM-154-SCFI por equipo, etiquetas de servicio actualizadas en cada extintor y bitácora de mantenimiento conforme a NOM-002-STPS. Esos documentos son los que el inspector revisa. Una póliza bien ejecutada garantiza que todos esos documentos estén presentes y vigentes en todo momento.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Póliza de Mantenimiento MANEXT para tu Empresa</h3>
-  <p>MANEXT ofrece pólizas anuales de mantenimiento de extintores para empresas de todos los tamaños en CDMX y zona metropolitana. Más de 80 años de experiencia, técnicos certificados NOM-154-SCFI, extintores de reemplazo incluidos y documentación completa para Protección Civil. Solicita tu cotización sin compromiso y recibe un diagnóstico gratuito del estado actual de tus equipos.</p>
-  <a href="https://wa.me/5215570081816?text=Hola,%20me%20interesa%20una%20póliza%20de%20mantenimiento%20anual%20de%20extintores%20para%20mi%20empresa" class="btn-cta">Solicitar Póliza por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>

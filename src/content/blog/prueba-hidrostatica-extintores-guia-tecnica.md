@@ -1,6 +1,10 @@
 ---
 title: "Prueba Hidrostática de Extintores: Guía Técnica 2024"
-description: "La prueba hidrostática de extintores es obligatoria cada 5 años según NOM-154-SCFI. Conoce el procedimiento, costos $800-2500 MXN y requisitos. Tel: 55 7008 1816"
+description: "La prueba hidrostática de extintores es obligatoria cada 5 años según NOM-154-SCFI. Conoce el procedimiento, costos y requisitos. Tel: 55 7008 1816"
+pubDate: "2026-08-03"
+heroRight:
+  - "La <strong>NOM-154-SCFI</strong> exige que todo extintor pase una prueba hidrostática cada 5 años: un ensayo de presión que verifica la integridad estructural del cilindro. Un extintor que falla esta prueba puede explotar durante un incendio real. No es opcional ni negociable — es un requisito legal y de seguridad."
+  - "MANEXT realiza pruebas hidrostáticas certificadas con <strong>más de 80 años de experiencia</strong> y laboratorio acreditado. Emitimos el certificado oficial NOM-154-SCFI requerido por Protección Civil, con entrega en 48 horas en CDMX y Estado de México. Solicita cotización sin costo por WhatsApp."
 ---
 <div class="article-intro">
   <p class="article-lead"><strong>Prueba hidrostática de extintores</strong> es el procedimiento técnico obligatorio cada cinco años para verificar la integridad estructural del cilindro bajo presión controlada. Un 23% de extintores fallan esta prueba por corrosión interna no detectada en inspecciones visuales. Esta evaluación determina si el recipiente puede seguir operando de manera segura o requiere reemplazo inmediato.</p>
@@ -8,9 +12,9 @@ description: "La prueba hidrostática de extintores es obligatoria cada 5 años 
   <p>En este artículo técnico descubrirás: procedimiento paso a paso de la prueba hidrostática, presiones de ensayo según tipo de extintor, interpretación de resultados y criterios de aprobación, costos reales en CDMX (2024), y cómo evitar los 7 errores más comunes que invalidan la certificación.</p>
 </div>
 
-<div class="table-of-contents">
-  <h3>Contenido del Artículo</h3>
-  <ol>
+<nav class="toc">
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué es la Prueba Hidrostática - Definición Técnica</a></li>
     <li><a href="#especificaciones">Especificaciones Técnicas y Presiones de Ensayo</a></li>
     <li><a href="#comparativa">Tabla Comparativa por Tipo de Extintor</a></li>
@@ -20,8 +24,8 @@ description: "La prueba hidrostática de extintores es obligatoria cada 5 años 
     <li><a href="#proceso">Proceso Profesional de Certificación</a></li>
     <li><a href="#costos">Costos y Presupuesto en CDMX</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
-  </ol>
-</div>
+  </ul>
+</nav>
 
 <section id="que-es" class="content-section">
   <h2>Qué es la Prueba Hidrostática: Definición Técnica Completa</h2>
@@ -216,42 +220,42 @@ description: "La prueba hidrostática de extintores es obligatoria cada 5 años 
   <h2>Preguntas Frecuentes sobre Prueba Hidrostática de Extintores</h2>
   
   <div class="faq-accordion">
-    <details class="faq-item">
-      <summary class="faq-question">¿Cada cuánto tiempo debo realizar la prueba hidrostática a mis extintores?</summary>
-      <div class="faq-answer">
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-1">¿Cada cuánto tiempo debo realizar la prueba hidrostática a mis extintores?</button>
+<div class="faq-answer" id="faq-hidro2-1">
         <p>La NOM-154-SCFI establece periodicidad quinquenal (cada 5 años) para la prueba hidrostática de extintores portátiles. Sin embargo, extintores ubicados en ambientes agresivos como plantas químicas, refinerías o zonas marinas requieren verificación cada 3 años debido a la aceleración del proceso de corrosión. Los extintores que han sido recargados más de 3 veces desde la última prueba hidrostática deben someterse a verificación antes de la siguiente recarga, independientemente del tiempo transcurrido. Cualquier extintor que haya perdido presión repetidamente sin causa identificada requiere evaluación estructural inmediata. El incumplimiento de esta periodicidad genera multas de $5,869 a $586,950 MXN según la gravedad de la infracción.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cuánto cuesta la prueba hidrostática de extintores en CDMX?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-2">¿Cuánto cuesta la prueba hidrostática de extintores en CDMX?</button>
+<div class="faq-answer" id="faq-hidro2-2">
         <p>Los costos varían según tipo y capacidad del extintor. Extintores PQS de 4.5-6 kg cuestan $800-1,200 MXN, mientras que unidades de 9-13 kg cuestan $1,000-1,500 MXN. Los extintores de CO₂ requieren equipo especializado para alta presión, costando $2,000-3,500 MXN por unidad. Extintores de agua/espuma son más económicos: $600-900 MXN. Sistemas móviles de 25-50 kg cuestan $3,500-6,000 MXN por la complejidad del equipo requerido. Factores adicionales incluyen: ubicación (traslado $500-1500 MXN fuera de CDMX), urgencia (50-100% adicional fuera de horario), lotes pequeños (precio unitario superior), y documentación especializada ($200-400 MXN por certificaciones específicas). El precio incluye mano de obra técnica certificada, uso de equipos calibrados, consumibles, certificación oficial y documentación legal.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Qué pasa si mi extintor no aprueba la prueba hidrostática?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-3">¿Qué pasa si mi extintor no aprueba la prueba hidrostática?</button>
+<div class="faq-answer" id="faq-hidro2-3">
         <p>Los extintores que reprueban la prueba hidrostática deben retirarse inmediatamente del servicio y marcarse como "DESECHO" para evitar uso accidental. Según NOM-154-SCFI, los cilindros reprobados no pueden repararse, recargarse o reacondicionarse bajo ninguna circunstancia. El protocolo incluye perforación controlada del cilindro en presencia del cliente y emisión de certificado de destrucción para documentar la disposición final. Las causas comunes de rechazo incluyen: deformación permanente superior al 10% del diámetro original, presencia de fisuras o grietas, corrosión interna severa, pérdida de presión durante el ensayo superior al 2%, y soldaduras no autorizadas. Los estadísticas MANEXT indican que 18% de extintores con más de 8 años reprueban la prueba, incrementándose a 35% para equipos con más de 12 años. El costo de reemplazo debe considerarse en la planificación del mantenimiento preventivo.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Puedo usar un extintor que está vencido para prueba hidrostática?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-4">¿Puedo usar un extintor que está vencido para prueba hidrostática?</button>
+<div class="faq-answer" id="faq-hidro2-4">
         <p>No. Los extintores con prueba hidrostática vencida (más de 5 años) deben retirarse inmediatamente del servicio hasta completar la verificación correspondiente. La NOM-002-STPS prohíbe categóricamente mantener en servicio equipos de seguridad sin certificación vigente. Un extintor vencido presenta riesgo de falla catastrófica durante operación, pudiendo explotar y convertirse en proyectil letal de 15-25 kg. Las estadísticas técnicas indican que cilindros sin verificación quinquenal tienen 40% mayor probabilidad de falla mecánica y 60% de pérdida de eficacia del agente extintor. Protección Civil sanciona con multas de $50,000-500,000 MXN y clausura temporal por mantener equipos vencidos. Durante emergencias reales, los seguros pueden negar cobertura si el siniestro se agrava por equipos de seguridad no certificados. La única excepción temporal es para extintores en proceso de programación de prueba (máximo 30 días) con documentación del prestador de servicios que acredite la cita programada.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cómo selecciono una empresa confiable para la prueba hidrostática?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-5">¿Cómo selecciono una empresa confiable para la prueba hidrostática?</button>
+<div class="faq-answer" id="faq-hidro2-5">
         <p>Verifique que la empresa cuente con certificaciones vigentes ante autoridades competentes: registro STPS para servicios de seguridad, certificación de técnicos en protección contra incendios, y acreditación como unidad verificadora. Solicite evidencia de calibración anual de equipos por laboratorios acreditados ante EMA (Entidad Mexicana de Acreditación). Confirme que utilizan procedimientos documentados conforme a NOM-154-SCFI y mantienen seguros de responsabilidad civil vigentes. Revise referencias de clientes corporativos y historial de cumplimiento en auditorías de Protección Civil. La empresa debe entregar documentación completa: certificados individuales por extintor, registros fotográficos del proceso, credenciales del técnico responsable, y cronograma de próximas verificaciones. Desconfíe de precios excesivamente bajos (inferior a $600 MXN por extintor PQS) que generalmente indican servicios deficientes o personal no certificado. MANEXT cuenta con 80+ años de experiencia, más de 15,000 empresas atendidas y certificación de cumplimiento normativo garantizada.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿MANEXT ofrece servicio de prueba hidrostática en toda la CDMX?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-hidro2-6">¿MANEXT ofrece servicio de prueba hidrostática en toda la CDMX?</button>
+<div class="faq-answer" id="faq-hidro2-6">
         <p>Sí. MANEXT brinda servicio completo de prueba hidrostática en Ciudad de México y Zona Metropolitana, incluyendo Polanco, Naucalpan, Condesa, Tlalnepantla y Zona Industrial Vallejo. Contamos con unidades móviles equipadas con bombas hidráulicas calibradas, manómetros certificados y sistemas de contención para realizar el servicio directamente en sus instalaciones. Nuestros técnicos poseen certificación STPS vigente y más de 10 años de experiencia en protección contra incendios. El servicio incluye: inspección previa sin costo, prueba hidrostática con equipos calibrados, certificación oficial válida ante Protección Civil, documentación fotográfica del proceso, garantía de cumplimiento normativo, y seguimiento automatizado de vencimientos. Atendemos desde oficinas pequeñas hasta complejos industriales de gran escala. Para programar evaluación gratuita y cotización personalizada, contacte al 55 7008 1816 o vía WhatsApp. Tiempo de respuesta: 24-48 horas para servicios programados, disponibilidad de urgencias los 365 días del año.</p>
       </div>
-    </details>
+</div>
   </div>
 </section>
 

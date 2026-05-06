@@ -1,6 +1,10 @@
 ---
 title: "Recarga de Extintores Certificada NOM-154 CDMX"
 description: "Servicio profesional de recarga de extintores certificada NOM-154-SCFI en CDMX. Atendemos Ecatepec, Condesa, Iztapalapa. Cotización WhatsApp gratis."
+pubDate: "2026-06-24"
+heroRight:
+  - "La <strong>NOM-154-SCFI</strong> obliga a que todos los extintores sean recargados por técnicos certificados. Un extintor vencido o con baja presión equivale a no tener protección: falla exactamente cuando más se necesita. La recarga certificada restaura el agente extintor, verifica la integridad del cilindro y garantiza que el equipo estará operativo al 100% ante cualquier emergencia."
+  - "MANEXT realiza recargas certificadas NOM-154-SCFI con <strong>más de 80 años de experiencia</strong> en CDMX y Estado de México. Nuestros técnicos se desplazan a tu instalación, dejamos extintores de reemplazo mientras los tuyos están en servicio y entregamos certificados individuales válidos ante Protección Civil. Solicita cotización sin costo por WhatsApp."
 ---
 <div class="article-intro">
   <p>Los extintores descargados o vencidos representan un riesgo mortal para cualquier establecimiento. La <strong>recarga de extintores</strong> certificada según NOM-154-SCFI es el único proceso que garantiza la efectividad de estos equipos salvavidas cuando más los necesitas. En México, el 73% de los incendios comerciales podrían controlarse en sus primeros minutos con extintores en condiciones óptimas.</p>
@@ -9,8 +13,8 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 </div>
 
 <nav class="toc">
-  <h4>En Este Artículo</h4>
-  <ol>
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Qué es y Cómo Funciona</a></li>
     <li><a href="#importancia">Por Qué es Indispensable</a></li>
     <li><a href="#tipos">Tipos y Clasificación</a></li>
@@ -20,7 +24,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
     <li><a href="#consejos">Consejos de Expertos</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
     <li><a href="#contacto">Solicita Tu Cotización</a></li>
-  </ol>
+  </ul>
 </nav>
 
 <h2 id="que-es">Qué es la Recarga de Extintores Certificada</h2>
@@ -119,7 +123,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 
 <h2 id="normativa">Normativa y Requisitos Legales</h2>
 
-<div class="tips-box">
+<div class="highlight-box">
   <h4>Importante: Requisitos Legales</h4>
   <p>La NOM-154-SCFI establece que solo personal certificado puede realizar recargas de extintores. Además, la NOM-002-STPS obliga a los centros de trabajo a mantener registros de mantenimiento y recarga. El incumplimiento puede resultar en multas de hasta 5,000 UMAS y clausura temporal del establecimiento.</p>
 </div>
@@ -165,39 +169,32 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 
 <div id="faq" class="faq-section">
   <div class="faq-item">
-    <div class="faq-question">¿Qué incluye exactamente el servicio de recarga de extintores certificada?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>El servicio completo incluye inspección técnica del extintor, desmontaje y limpieza de componentes, pruebas de presión del cilindro, reemplazo de sellos deteriorados, recarga con agente extintor certificado, pruebas funcionales, etiquetado con fecha de servicio, certificado NOM-154-SCFI y registro en bitácora de mantenimiento. También incluye recomendaciones para el siguiente servicio y capacitación básica sobre uso correcto.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-1">¿Qué incluye exactamente el servicio de recarga de extintores certificada?</button>
+    <div class="faq-answer" id="faq-recarga3-1"><p>El servicio completo incluye inspección técnica del extintor, desmontaje y limpieza de componentes, pruebas de presión del cilindro, reemplazo de sellos deteriorados, recarga con agente extintor certificado, pruebas funcionales, etiquetado con fecha de servicio, certificado NOM-154-SCFI y registro en bitácora de mantenimiento. También incluye recomendaciones para el siguiente servicio y capacitación básica sobre uso correcto.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Cada cuánto tiempo debo recargar mis extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Los extintores deben recargarse inmediatamente después de cualquier uso, sin importar la cantidad descargada. Para mantenimiento preventivo, los extintores de polvo químico seco requieren recarga cada 5 años, los de CO2 cada 5 años, y los de agua o espuma anualmente. Sin embargo, si el manómetro indica baja presión o hay signos de deterioro, la recarga debe realizarse inmediatamente independientemente del tiempo transcurrido.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-2">¿Cada cuánto tiempo debo recargar mis extintores?</button>
+    <div class="faq-answer" id="faq-recarga3-2"><p>Los extintores deben recargarse inmediatamente después de cualquier uso, sin importar la cantidad descargada. Para mantenimiento preventivo, los extintores de polvo químico seco requieren recarga cada 5 años, los de CO2 cada 5 años, y los de agua o espuma anualmente. Sin embargo, si el manómetro indica baja presión o hay signos de deterioro, la recarga debe realizarse inmediatamente independientemente del tiempo transcurrido.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Atienden en Ecatepec, Condesa, Iztapalapa y Coyoacán?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Sí, MANEXT brinda servicio completo de recarga de extintores en toda la CDMX y área metropolitana, incluyendo Ecatepec, Condesa, Iztapalapa, Coyoacán y todas las delegaciones. Contamos con unidades móviles para recolección y entrega, minimizando el tiempo que tus instalaciones permanecen sin protección. El servicio incluye transporte seguro de los equipos a nuestras instalaciones certificadas.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-3">¿Atienden en Ecatepec, Condesa, Iztapalapa y Coyoacán?</button>
+    <div class="faq-answer" id="faq-recarga3-3"><p>Sí, MANEXT brinda servicio completo de recarga de extintores en toda la CDMX y área metropolitana, incluyendo Ecatepec, Condesa, Iztapalapa, Coyoacán y todas las delegaciones. Contamos con unidades móviles para recolección y entrega, minimizando el tiempo que tus instalaciones permanecen sin protección. El servicio incluye transporte seguro de los equipos a nuestras instalaciones certificadas.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Cómo puedo solicitar una cotización para recarga de extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-4">¿Cómo puedo solicitar una cotización para recarga de extintores?</button>
+    <div class="faq-answer" id="faq-recarga3-4"><p>Puedes solicitar tu cotización gratuita contactándonos por WhatsApp al 5215570081816 o llamando al 55 7008 1816. Un técnico especializado visitará tus instalaciones para evaluar tus extintores sin costo, identificar cuáles necesitan recarga o mantenimiento, y entregarte una propuesta personalizada con precios transparentes y cronograma de trabajo. La evaluación incluye recomendaciones para optimizar tu sistema de protección.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Qué normativas mexicanas regulan la recarga de extintores?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>La recarga de extintores está regulada principalmente por la NOM-154-SCFI-2005, que establece especificaciones técnicas y procedimientos obligatorios. La NOM-002-STPS-2010 complementa estos requisitos desde la perspectiva de seguridad laboral. Adicionalmente, los reglamentos de Protección Civil locales exigen certificados de recarga vigentes para licencias de funcionamiento. Solo personal certificado puede realizar estos servicios legalmente.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-5">¿Qué normativas mexicanas regulan la recarga de extintores?</button>
+    <div class="faq-answer" id="faq-recarga3-5"><p>La recarga de extintores está regulada principalmente por la NOM-154-SCFI-2005, que establece especificaciones técnicas y procedimientos obligatorios. La NOM-002-STPS-2010 complementa estos requisitos desde la perspectiva de seguridad laboral. Adicionalmente, los reglamentos de Protección Civil locales exigen certificados de recarga vigentes para licencias de funcionamiento. Solo personal certificado puede realizar estos servicios legalmente.</p></div>
   </div>
   
   <div class="faq-item">
-    <div class="faq-question">¿Puedo usar mi extintor mientras otros están en proceso de recarga?<span class="faq-icon">+</span></div>
-    <div class="faq-answer"><p>No debes dejar tus instalaciones desprotegidas durante el proceso de recarga. MANEXT ofrece servicio de extintores de reemplazo temporal sin costo adicional, garantizando protección continua mientras tus equipos principales están en mantenimiento. Estos extintores temporales cumplen las mismas especificaciones técnicas y normativas, manteniendo el nivel de seguridad requerido hasta la entrega de tus equipos recargados.</p></div>
+    <button class="faq-question" aria-expanded="false" aria-controls="faq-recarga3-6">¿Puedo usar mi extintor mientras otros están en proceso de recarga?</button>
+    <div class="faq-answer" id="faq-recarga3-6"><p>No debes dejar tus instalaciones desprotegidas durante el proceso de recarga. MANEXT ofrece servicio de extintores de reemplazo temporal sin costo adicional, garantizando protección continua mientras tus equipos principales están en mantenimiento. Estos extintores temporales cumplen las mismas especificaciones técnicas y normativas, manteniendo el nivel de seguridad requerido hasta la entrega de tus equipos recargados.</p></div>
   </div>
-</div>
-
-<div id="contacto" class="article-cta">
-  <h3>Protege Tu Negocio Hoy</h3>
-  <p>En MANEXT somos especialistas certificados en recarga de extintores con más de una década de experiencia. Atendemos toda la CDMX y área metropolitana con técnicos certificados NOM-154-SCFI. Nuestro servicio incluye evaluación gratuita, extintores de reemplazo y certificación completa.</p>
-  <a href="https://wa.me/5215570081816?text=Hola,%20me%20interesa%20una%20cotización%20para%20recarga%20de%20extintores%20certificada" class="btn-cta">Solicitar Cotización por WhatsApp</a>
-  <p style="margin-top:10px;">O llámanos: <a href="tel:5570081816">55 7008 1816</a></p>
 </div>

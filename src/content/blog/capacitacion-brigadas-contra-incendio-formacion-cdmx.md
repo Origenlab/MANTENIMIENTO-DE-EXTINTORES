@@ -1,6 +1,10 @@
 ---
 title: "Capacitación Brigadas Contra Incendio: Formación CDMX"
 description: "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. Cursos certificados para empresas CDMX. Cumplimiento normativo garantizado. Consulta: 55 7008 1816"
+pubDate: "2026-07-29"
+heroRight:
+  - "La <strong>NOM-002-STPS</strong> obliga a toda empresa a conformar brigadas contra incendio con personal capacitado y certificado. Sin esta formación, el extintor más moderno es inútil: nadie sabe usarlo correctamente bajo presión. La capacitación incluye reconocimiento de clases de fuego, uso técnico de extintores, activación de alarmas y coordinación de evacuación."
+  - "MANEXT imparte capacitación certificada de brigadas contra incendio en instalaciones o en nuestras propias sedes en CDMX. Con <strong>más de 80 años de experiencia</strong>, entregamos constancias DC-3 válidas ante STPS y documentación completa para Protección Civil. Solicita tu cotización por WhatsApp."
 ---
 <div class="article-intro">
   <p class="article-lead"><strong>Capacitación brigadas contra incendio</strong> representa la diferencia entre un conato controlado en 30 segundos y un siniestro devastador. La NOM-002-STPS establece que 85% de empresas sancionadas presentan deficiencias en capacitación de personal. Esta guía técnica te enseña cómo implementar programas de formación que cumplan normativas y salven vidas.</p>
@@ -8,9 +12,9 @@ description: "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. C
   <p>En este articulo tecnico descubriras: metodología de capacitación por competencias, análisis de riesgos específicos por giro comercial, protocolos de actuación certificados bajo NOM-002-STPS, técnicas de manejo de extintores con presiones 175-195 psi, simulacros de evacuación estructurados.</p>
 </div>
 
-<div class="table-of-contents">
-  <h3>Contenido del Articulo</h3>
-  <ol>
+<nav class="toc">
+  <p class="toc-title">Contenido del artículo</p>
+  <ul>
     <li><a href="#que-es">Que es Capacitación Brigadas - Definicion Tecnica</a></li>
     <li><a href="#especificaciones">Especificaciones Tecnicas y Capacidades</a></li>
     <li><a href="#comparativa">Tabla Comparativa de Modalidades</a></li>
@@ -20,8 +24,8 @@ description: "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. C
     <li><a href="#proceso">Proceso Profesional de Capacitación</a></li>
     <li><a href="#costos">Costos y Presupuesto en CDMX</a></li>
     <li><a href="#faq">Preguntas Frecuentes</a></li>
-  </ol>
-</div>
+  </ul>
+</nav>
 
 <section id="que-es" class="content-section">
   <h2>Que es Capacitación Brigadas Contra Incendio: Definicion Tecnica Completa</h2>
@@ -207,42 +211,42 @@ description: "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. C
   <h2>Preguntas Frecuentes sobre Capacitación de Brigadas Contra Incendio</h2>
   
   <div class="faq-accordion">
-    <details class="faq-item">
-      <summary class="faq-question">¿Cuántos brigadistas necesita mi empresa según la NOM-002-STPS?</summary>
-      <div class="faq-answer">
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-1">¿Cuántos brigadistas necesita mi empresa según la NOM-002-STPS?</button>
+<div class="faq-answer" id="faq-cap2-1">
         <p>La NOM-002-STPS establece mínimo 10% del personal total como brigadistas para centros de trabajo con 50 o más empleados. Para oficinas administrativas calcula 1 brigadista por cada 200 m2, mientras industrias requieren 1 brigadista por turno por cada 100 trabajadores. Empresas con operación 24/7 necesitan brigadistas en todos los turnos para garantizar cobertura continua. El cálculo debe considerar rotación laboral, vacaciones y licencias médicas para mantener el mínimo normativo permanentemente.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Cuánto cuesta capacitar brigadas contra incendio en CDMX?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-2">¿Cuánto cuesta capacitar brigadas contra incendio en CDMX?</button>
+<div class="faq-answer" id="faq-cap2-2">
         <p>La capacitación básica (16 horas) cuesta $1,200-$1,800 MXN por persona, modalidad intermedia $2,200-$3,200 MXN, y avanzada $4,500-$6,500 MXN. Los precios incluyen instructor certificado STPS, materiales didácticos, prácticas con fuego real, y constancias oficiales. Descuentos por volumen de 15-25% aplican para grupos mayores a 20 personas. Empresas en Polanco, Condesa e Interlomas acceden a precios preferenciales por proximidad geográfica.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Con qué frecuencia debo recertificar a mis brigadistas?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-3">¿Con qué frecuencia debo recertificar a mis brigadistas?</button>
+<div class="faq-answer" id="faq-cap2-3">
         <p>La NOM-002-STPS exige recertificación anual obligatoria para mantener vigencia de competencias. Adicionalmente, recomendamos entrenamientos de refuerzo trimestrales para mantener habilidades psicomotrices en manejo de extintores. Brigadas de alto riesgo como industrias químicas o hospitales requieren práctica mensual con equipos especializados. La recertificación incluye evaluación teórica actualizada, práctica con fuego real, y actualización de protocolos por cambios normativos o modificaciones en instalaciones.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Qué documentos necesito para comprobar capacitación ante Protección Civil?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-4">¿Qué documentos necesito para comprobar capacitación ante Protección Civil?</button>
+<div class="faq-answer" id="faq-cap2-4">
         <p>Protección Civil requiere registro actualizado de brigadistas con datos personales y fechas de certificación, constancias de capacitación firmadas por instructor certificado DGN-STPS, bitácora de simulacros con tiempos registrados, evidencias de prácticas periódicas, y programa anual aprobado por comisión de seguridad e higiene. La documentación debe incluir fotografías de prácticas, listas de asistencia firmadas, y evaluaciones individuales de desempeño. MANEXT proporciona carpeta completa de evidencias que satisface todos los requisitos de auditoría.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿Puedo capacitar brigadas internamente sin instructor externo?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-5">¿Puedo capacitar brigadas internamente sin instructor externo?</button>
+<div class="faq-answer" id="faq-cap2-5">
         <p>La capacitación interna es posible únicamente si cuentas con instructor certificado DGN-STPS en nómina, instalaciones adecuadas para prácticas con fuego real, y extintores de entrenamiento. El instructor interno debe mantener certificación vigente, experiencia mínima 2 años en protección contra incendios, y conocimiento actualizado de normatividad. Las constancias emitidas internamente deben incluir registro del instructor ante STPS y sello institucional reconocido. La mayoría de empresas encuentra más económico y eficiente contratar servicios especializados que desarrollar capacidades internas.</p>
       </div>
-    </details>
-    <details class="faq-item">
-      <summary class="faq-question">¿MANEXT proporciona capacitación en instalaciones del cliente?</summary>
-      <div class="faq-answer">
+</div>
+    <div class="faq-item">
+<button class="faq-question" aria-expanded="false" aria-controls="faq-cap2-6">¿MANEXT proporciona capacitación en instalaciones del cliente?</button>
+<div class="faq-answer" id="faq-cap2-6">
         <p>MANEXT imparte capacitación directamente en instalaciones del cliente en toda la CDMX y Zona Metropolitana, incluyendo Polanco, Condesa, Interlomas y Parque Industrial Vallejo. Nuestros instructores certificados transportan equipos de entrenamiento, extintores de práctica, y materiales didácticos necesarios. El servicio incluye evaluación previa de espacios disponibles, recomendaciones de seguridad para prácticas, y adaptación de contenidos a riesgos específicos del cliente. Para agendar evaluación sin costo, contacta al 55 7008 1816 o WhatsApp disponible las 24 horas.</p>
       </div>
-    </details>
+</div>
   </div>
 </section>
 
