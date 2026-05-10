@@ -1,7 +1,6 @@
 ---
-title: "Extintor Tipo K: Guía Completa para Cocinas Comerciales en México 2026"
+title: "Extintor Tipo K: Guía Completa para Cocinas Comerciales en México"
 description: "Todo sobre el extintor Tipo K: qué es, cómo funciona la saponificación, quién lo necesita, requisitos NOM-002-STPS, dónde instalarlo y cuánto cuesta en CDMX y Estado de México."
-pubDate: "2026-03-25"
 heroRight:
   - "El aceite de cocina a 400°C no se apaga con un extintor PQS — se <strong>explota</strong>. El polvo químico reacciona violentamente con las grasas hirviendo, dispersando fuego líquido. El extintor Tipo K con agente húmedo es el único equipo certificado para cocinas comerciales, y la NOM-002-STPS lo exige en todo establecimiento con cocción de alimentos."
   - "En <strong>MANEXT</strong> llevamos más de 80 años equipando cocinas comerciales en CDMX y Estado de México. Vendemos extintores Tipo K certificados NOM-154-SCFI con instalación profesional, señalización y capacitación para tu brigada. Respuesta en menos de 48 horas."
@@ -22,7 +21,7 @@ El <strong>extintor Tipo K</strong> es el dispositivo de protección contra ince
 <li><a href="#donde-instalar">Dónde y Cómo Instalarlo</a></li>
 <li><a href="#especificaciones">Especificaciones Técnicas y Modelos</a></li>
 <li><a href="#mantenimiento">Mantenimiento y Vida Útil</a></li>
-<li><a href="#precios">Precios en CDMX 2026</a></li>
+<li><a href="#precios">Precios en CDMX</a></li>
 <li><a href="#faq">Preguntas Frecuentes</a></li>
 </ul>
 </nav>
@@ -119,7 +118,7 @@ Durante inspecciones de Protección Civil CDMX, la ausencia de extintor Tipo K e
 
 <div class="highlight-box">
 <h4>Inspecciones Sorpresa en Restaurantes CDMX</h4>
-<p>Protección Civil CDMX intensificó las inspecciones a restaurantes a partir de 2024. En zonas de alta densidad gastronómica como <strong>Condesa, Roma, Polanco y Centro Histórico</strong>, las verificaciones son más frecuentes. Los inspectores revisan específicamente la presencia, ubicación y vigencia del mantenimiento del extintor Tipo K. No esperes a recibir la visita.</p>
+<p>Protección Civil CDMX intensificó las inspecciones a restaurantes recientemente. En zonas de alta densidad gastronómica como <strong>Condesa, Roma, Polanco y Centro Histórico</strong>, las verificaciones son más frecuentes. Los inspectores revisan específicamente la presencia, ubicación y vigencia del mantenimiento del extintor Tipo K. No esperes a recibir la visita.</p>
 </div>
 </section>
 
@@ -246,7 +245,7 @@ La NOM-154-SCFI establece una vida útil máxima de <strong>12 años</strong> pa
 </section>
 
 <section id="precios" class="content-section">
-<h2>Precios de Extintores Tipo K en CDMX 2026</h2>
+<h2>Precios de Extintores Tipo K en CDMX</h2>
 <p>
 Los extintores Tipo K tienen un costo mayor que los PQS debido al agente húmedo especializado y la tecnología de boquilla de neblina.
 </p>

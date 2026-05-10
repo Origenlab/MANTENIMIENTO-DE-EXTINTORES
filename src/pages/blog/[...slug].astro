@@ -14,14 +14,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const displayDate = entry.data.pubDate
-  ? new Date(entry.data.pubDate).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })
-  : null;
-const displayYear = entry.data.pubDate ? new Date(entry.data.pubDate).getFullYear() : 2026;
 
 const relatedArticles = [
   { title: 'Multas por No Tener Extintores', slug: 'multas-no-tener-extintores-montos-evitarlas' },
-  { title: 'Prueba Hidrostática de Extintores 2026', slug: 'prueba-hidrostatica-extintores-2026' },
+  { title: 'Prueba Hidrostática de Extintores', slug: 'prueba-hidrostatica-extintores-2026' },
   { title: 'Señalización de Evacuación NOM-026-STPS', slug: 'senalizacion-evacuacion-empresas-nom-026-stps' },
   { title: '¿Cuántos Extintores Necesita tu Empresa?', slug: 'extintores-para-empresas-cuantos-necesito-nom-002-stps' },
   { title: 'Vida Útil de un Extintor', slug: 'vida-util-extintor-cuando-reemplazarlo' },

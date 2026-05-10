@@ -1,7 +1,6 @@
 ---
 title: "Señalización Contra Incendios NOM: Equipamiento de Seguridad"
 description: "Señalización contra incendios NOM-154-SCFI y NOM-002-STPS en CDMX. Servicio certificado para Azcapotzalco, Tlalpan, Condesa y toda el área metropolitana."
-pubDate: "2026-07-04"
 heroRight:
   - "La <strong>señalización contra incendios</strong> es obligatoria en todo centro de trabajo según la NOM-002-STPS y los reglamentos de Protección Civil. Señales fotoluminiscentes en rutas de evacuación, placas identificativas en extintores y puntos de reunión correctamente indicados son requisitos que los inspectores verifican en cada visita — y cuya ausencia puede derivar en clausura temporal del establecimiento."
   - "MANEXT suministra e instala señalización certificada NOM con <strong>más de 80 años de experiencia</strong> en CDMX y Estado de México. Nuestros técnicos realizan el levantamiento técnico, diseñan el plan de señalización y entregan la documentación completa válida ante Protección Civil. Solicita tu cotización sin costo por WhatsApp."

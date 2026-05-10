@@ -1,16 +1,16 @@
 ---
-title: "Comprar Extintores en CDMX 2026: Guía Completa para Empresas"
+title: "Comprar Extintores en CDMX: Guía Completa para Empresas"
 description: "Cómo comprar extintores en CDMX cumpliendo NOM-154-SCFI y NOM-002-STPS: tipos, capacidades, precios referencia, documentos obligatorios y proveedor certificado."
 heroImage: "img/img-index/venta-de-extintores.avif"
 heroRight:
   - "Comprar extintores parece sencillo hasta que <strong>Protección Civil te audita</strong> y descubre que el equipo no está certificado, falta un manómetro NOM-045 o el proveedor no entregó la carta de corresponsabilidad. La diferencia entre un extintor que cumple y uno que te genera multa puede ser de $5,000 a $50,000 pesos por unidad fuera de norma."
-  - "<strong>MANEXT</strong> lleva más de 80 años vendiendo extintores certificados en CDMX y Estado de México. Esta guía 2026 condensa el criterio técnico que un comprador empresarial necesita para elegir tipo, capacidad y proveedor sin equivocarse, con la documentación que exige una auditoría seria."
+  - "<strong>MANEXT</strong> lleva más de 80 años vendiendo extintores certificados en CDMX y Estado de México. Esta guía condensa el criterio técnico que un comprador empresarial necesita para elegir tipo, capacidad y proveedor sin equivocarse, con la documentación que exige una auditoría seria."
 ---
 
 <div class="article-intro">
-  <p class="article-lead">Comprar extintores en CDMX en 2026 ya no es una decisión de catálogo. Es una decisión <strong>normativa, técnica y operativa</strong> que tu empresa tiene que tomar bien la primera vez. Esta guía te lleva por los seis criterios que separan una compra que cumple de una compra que te va a costar el doble cuando llegue Protección Civil.</p>
+  <p class="article-lead">Comprar extintores en CDMX ya no es una decisión de catálogo. Es una decisión <strong>normativa, técnica y operativa</strong> que tu empresa tiene que tomar bien la primera vez. Esta guía te lleva por los seis criterios que separan una compra que cumple de una compra que te va a costar el doble cuando llegue Protección Civil.</p>
   <p>En MANEXT hemos equipado a más de 15,000 empresas en CDMX y Zona Metropolitana en sectores tan distintos como hospitales, restaurantes, parques industriales, corporativos y escuelas. La constante en todas las auditorías exitosas no es la marca del extintor: es el conjunto de decisiones tomadas antes de pagar la factura.</p>
-  <p>En esta guía vas a encontrar: el marco normativo NOM vigente para 2026, los seis tipos de extintor con su clase de fuego, capacidades reales disponibles en el mercado mexicano, rangos de precio referencia, qué documentos obligatorios debe entregarte tu proveedor y los siete errores más frecuentes al comprar.</p>
+  <p>En esta guía vas a encontrar: el marco normativo NOM vigente, los seis tipos de extintor con su clase de fuego, capacidades reales disponibles en el mercado mexicano, rangos de precio referencia, qué documentos obligatorios debe entregarte tu proveedor y los siete errores más frecuentes al comprar.</p>
 </div>
 
 <nav class="toc">
@@ -28,7 +28,7 @@ heroRight:
 </nav>
 
 <section id="marco-normativo" class="content-section">
-  <h2>1. Marco normativo NOM vigente para comprar extintores en 2026</h2>
+  <h2>1. Marco normativo NOM vigente para comprar extintores</h2>
   <p>Antes de cotizar, necesitas saber qué normas rigen tu compra. En México, comprar un extintor sin cumplir estas seis NOM es comprar un equipo que no servirá ante una auditoría real, sin importar lo barato que te lo hayan vendido.</p>
 
   <h3>NOM-154-SCFI-2005</h3>
@@ -71,10 +71,10 @@ heroRight:
 </section>
 
 <section id="capacidades-precios" class="content-section">
-  <h2>3. Capacidades disponibles y precios referencia en CDMX 2026</h2>
+  <h2>3. Capacidades disponibles y precios referencia en CDMX</h2>
   <p>Los precios de extintores certificados en CDMX se mueven dentro de un rango predecible. Si te ofrecen muy por debajo de estos rangos, el equipo probablemente no cumple NOM-154 (collar genérico, manómetro sin certificar, polvo con concentración menor al 75%).</p>
 
-  <h3>Tabla de referencia de precios 2026 — extintor nuevo certificado</h3>
+  <h3>Tabla de referencia de precios — extintor nuevo certificado</h3>
   <table>
     <thead>
       <tr><th>Tipo</th><th>Capacidad</th><th>Rango referencia</th><th>Aplicación típica</th></tr>
@@ -92,7 +92,7 @@ heroRight:
       <tr><td>Agente limpio</td><td>5.4 kg</td><td>$8,500 – $13,000</td><td>Data centers, museos</td></tr>
     </tbody>
   </table>
-  <p><em>Precios referencia 2026 — incluyen IVA, soporte de pared, etiqueta NOM-154 vigente y carta de corresponsabilidad. Los precios MANEXT se ajustan según volumen y zona de entrega; cotización formal sin costo por WhatsApp.</em></p>
+  <p><em>Precios referencia — incluyen IVA, soporte de pared, etiqueta NOM-154 vigente y carta de corresponsabilidad. Los precios MANEXT se ajustan según volumen y zona de entrega; cotización formal sin costo por WhatsApp.</em></p>
 
   <h3>Qué NO debe pasar con los precios</h3>
   <p>Si una empresa te ofrece un PQS de 6 kg "certificado" por $700 pesos, está cobrando solo el cilindro. El precio real con todos los componentes en norma (manómetro NOM-045, polvo NOM-104 al 75%, válvula con disco de ruptura, soporte, etiquetado, factura CFDI) no baja de $1,300. Cualquier oferta drásticamente por debajo del rango está omitiendo algún componente normativo, y eso lo descubrirás cuando Protección Civil revise.</p>

@@ -1,7 +1,6 @@
 ---
 title: "Vida Útil de un Extintor: Cuándo Reemplazarlo Según la NOM-154-SCFI"
 description: "¿Cuánto dura un extintor? Guía técnica completa: vida útil por tipo, señales de deterioro, criterios de reemplazo según NOM-154-SCFI y cuándo reparar vs. reemplazar."
-pubDate: "2026-02-05"
 heroRight:
   - "La mayoría de los extintores que fallan en emergencias no están rotos — simplemente <strong>nadie los revisó a tiempo</strong>. La NOM-154-SCFI establece tres niveles de vigencia: el servicio anual, la prueba hidrostática cada 5 años y el límite de vida del cilindro. Conocer la diferencia puede significar la diferencia entre un extintor que funciona y uno que no."
   - "En <strong>MANEXT</strong> llevamos más de 80 años evaluando, recargando y reemplazando extintores en CDMX y Estado de México. Diagnosticamos si tu equipo sigue siendo viable o necesita sustitución — sin cobrarte la visita de inspección. Más de <strong>15,000 empresas</strong> confían en nuestro criterio técnico."
@@ -180,7 +179,7 @@ La **NOM-154-SCFI-2005** (Extintores contra incendio — Agentes extinguidores �
 
 <div class="highlight-box">
   <h4>Fecha de fabricación grabada en el cilindro: cómo leerla</h4>
-  <p>En el cuerpo del cilindro, cerca de la base, verás una estampa metálica con formato: mes/año (ej. "03/12" = marzo de 2012). Esa es la fecha de fabricación y el punto de partida para calcular la vida útil del cilindro. Si la etiqueta del servicio tiene fecha pero no encuentras la estampa en el metal, el equipo probablemente no es de fabricación certificada.</p>
+  <p>En el cuerpo del cilindro, cerca de la base, verás una estampa metálica con formato mes/año (ej. "03/12" indica marzo del año cuyas dos últimas cifras son "12"). Esa es la fecha de fabricación y el punto de partida para calcular la vida útil del cilindro. Si la etiqueta del servicio tiene fecha pero no encuentras la estampa en el metal, el equipo probablemente no es de fabricación certificada.</p>
 </div>
 
 </section>

@@ -1,7 +1,6 @@
 ---
-title: "¿Cuándo Recargar y Cuándo Reemplazar un Extintor? Criterios Técnicos 2026"
+title: "¿Cuándo Recargar y Cuándo Reemplazar un Extintor? Criterios Técnicos"
 description: "Criterios técnicos para decidir entre recargar o reemplazar un extintor: vida útil por tipo, señales de deterioro irrecuperable y qué dice la NOM-154-SCFI. Guía MANEXT."
-pubDate: "2026-05-05"
 heroRight:
   - "Reemplazar prematuramente extintores recuperables es un gasto innecesario; continuar usando extintores que deben darse de baja es un riesgo real. La decisión depende de factores técnicos —vida útil del tipo, resultado de la prueba hidrostática, costo de rehabilitación— que un técnico certificado puede evaluar."
   - "En <strong>MANEXT</strong> llevamos más de 80 años evaluando extintores en CDMX. Ofrecemos dictamen técnico gratuito que determina qué equipos pueden recargarse y cuáles deben reemplazarse, con transparencia total antes de realizar ningún servicio."

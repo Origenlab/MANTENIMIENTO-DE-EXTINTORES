@@ -1,7 +1,6 @@
 ---
-title: "Prueba Hidrostática de Extintores: Guía Técnica 2024"
+title: "Prueba Hidrostática de Extintores: Guía Técnica"
 description: "La prueba hidrostática de extintores es obligatoria cada 5 años según NOM-154-SCFI. Conoce el procedimiento, costos y requisitos. Tel: 56 1461 2594"
-pubDate: "2026-08-03"
 heroRight:
   - "La <strong>NOM-154-SCFI</strong> exige que todo extintor pase una prueba hidrostática cada 5 años: un ensayo de presión que verifica la integridad estructural del cilindro. Un extintor que falla esta prueba puede explotar durante un incendio real. No es opcional ni negociable — es un requisito legal y de seguridad."
   - "MANEXT realiza pruebas hidrostáticas certificadas con <strong>más de 80 años de experiencia</strong> y laboratorio acreditado. Emitimos el certificado oficial NOM-154-SCFI requerido por Protección Civil, con entrega en 48 horas en CDMX y Estado de México. Solicita cotización sin costo por WhatsApp."
@@ -9,7 +8,7 @@ heroRight:
 <div class="article-intro">
   <p class="article-lead"><strong>Prueba hidrostática de extintores</strong> es el procedimiento técnico obligatorio cada cinco años para verificar la integridad estructural del cilindro bajo presión controlada. Un 23% de extintores fallan esta prueba por corrosión interna no detectada en inspecciones visuales. Esta evaluación determina si el recipiente puede seguir operando de manera segura o requiere reemplazo inmediato.</p>
   <p>En MANEXT, con más de 80 años atendiendo a +15,000 empresas en la Ciudad de México y Zona Metropolitana, hemos realizado más de 45,000 pruebas hidrostáticas, identificando patrones de falla que previenen accidentes. Esta guía condensa ese conocimiento para que comprendas el proceso técnico, requisitos normativos y criterios de evaluación profesional.</p>
-  <p>En este artículo técnico descubrirás: procedimiento paso a paso de la prueba hidrostática, presiones de ensayo según tipo de extintor, interpretación de resultados y criterios de aprobación, costos reales en CDMX (2024), y cómo evitar los 7 errores más comunes que invalidan la certificación.</p>
+  <p>En este artículo técnico descubrirás: procedimiento paso a paso de la prueba hidrostática, presiones de ensayo según tipo de extintor, interpretación de resultados y criterios de aprobación, costos reales en CDMX, y cómo evitar los 7 errores más comunes que invalidan la certificación.</p>
 </div>
 
 <nav class="toc">
@@ -198,7 +197,7 @@ heroRight:
 </section>
 
 <section id="costos" class="content-section">
-  <h2>Costos y Presupuesto en CDMX: Guía de Precios 2024</h2>
+  <h2>Costos y Presupuesto en CDMX: Guía de Precios</h2>
   <p>Los costos de prueba hidrostática varían significativamente según el tipo de extintor, complejidad del procedimiento y prestador de servicios seleccionado. Una evaluación económica completa debe considerar no solo el precio unitario de la prueba, sino los costos asociados, multas por incumplimiento y valor de reposición de equipos reprobados.</p>
   <h3>Rangos de Precio por Tipo y Capacidad</h3>
   <ul>

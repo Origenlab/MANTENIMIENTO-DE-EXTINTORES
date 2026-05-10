@@ -1,7 +1,6 @@
 ---
 title: "Extintores para Restaurantes en CDMX: Requisitos, Normativa y Tipo K"
-description: "Guía completa sobre extintores obligatorios en restaurantes CDMX. Extintor Tipo K, NOM-002-STPS, cantidades por zona, Protección Civil y multas 2026."
-pubDate: "2026-01-30"
+description: "Guía completa sobre extintores obligatorios en restaurantes CDMX. Extintor Tipo K, NOM-002-STPS, cantidades por zona, Protección Civil y multas."
 heroRight:
   - "Los restaurantes son el giro comercial con <strong>mayor incidencia de incendios en México</strong>. Aceites a 370°C, campanas cargadas de grasa, gas LP y personal bajo presión: una combinación que la NOM-002-STPS regula con requisitos específicos — incluyendo el <strong>extintor Tipo K obligatorio</strong> en toda cocina comercial."
   - "En <strong>MANEXT</strong> llevamos más de 80 años equipando restaurantes, hoteles y cocinas industriales en CDMX y Estado de México. Conocemos cada requisito de Protección Civil, cada renglón de la NOM, y te entregamos con equipos certificados en <strong>menos de 48 horas</strong>."
@@ -19,7 +18,7 @@ heroRight:
     <li><a href="#altura-colocacion">Altura y colocación reglamentaria</a></li>
     <li><a href="#proteccion-civil">Requisitos de Protección Civil CDMX</a></li>
     <li><a href="#mantenimiento">Calendario de mantenimiento obligatorio</a></li>
-    <li><a href="#multas">Multas y sanciones 2026</a></li>
+    <li><a href="#multas">Multas y sanciones</a></li>
     <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
   </ol>
 </nav>
@@ -258,7 +257,7 @@ El Tipo K tiene particularidades que el PQS ABC no tiene:
 
 <section id="multas">
 
-## Multas y sanciones 2026
+## Multas y sanciones
 
 El incumplimiento con los requisitos de extintores en restaurantes puede derivar en sanciones de tres autoridades distintas, cada una con sus propias facultades:
 

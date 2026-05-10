@@ -1,7 +1,6 @@
 ---
-title: "Venta de Extintores en CDMX 2026: Guía de Compra para Empresas"
+title: "Venta de Extintores en CDMX: Guía de Compra para Empresas"
 description: "Guía completa de venta de extintores en CDMX: precios actualizados por tipo y capacidad, certificaciones NOM obligatorias, zonas de entrega y 6 errores que evitar. MANEXT: 80 años de experiencia."
-pubDate: "2026-03-15"
 heroRight:
   - "En CDMX existen cientos de proveedores de extintores — desde ferreterías hasta distribuidores especializados. La diferencia es crítica: un extintor sin certificación NOM-154-SCFI no solo es inútil en una emergencia, también te expone a multas de hasta $500,000 MXN y clausura por Protección Civil."
   - "En <strong>MANEXT</strong> llevamos más de 80 años vendiendo extintores certificados en Ciudad de México. Solo comercializamos equipos con NOM-154-SCFI vigente, entregamos en 24–48 h sin costo y te acompañamos con mantenimiento anual. Tu seguridad no es negociable."

@@ -1,7 +1,6 @@
 ---
-title: "Prueba Hidrostática de Extintores 2026: Guía Completa"
+title: "Prueba Hidrostática de Extintores: Guía Completa"
 description: "Prueba hidrostática de extintores: obligatoria cada 5 años según NOM-154-SCFI. Procedimiento técnico, costos ($800–$3,500 MXN), criterios de aprobación y cómo cumplir con Protección Civil en CDMX."
-pubDate: "2026-01-20"
 heroRight:
   - "La prueba hidrostática es obligatoria cada 5 años para <strong>todos los extintores</strong> según la NOM-154-SCFI. Un cilindro sin esta certificación se considera no apto —sin importar que esté cargado y en aparente buen estado. Protección Civil lo sanciona igual que no tener extintor: multas de hasta <strong>$1,085,700 MXN</strong> y clausura temporal."
   - "En <strong>MANEXT</strong> llevamos más de 80 años realizando pruebas hidrostáticas certificadas en CDMX y Zona Metropolitana. Equipos calibrados, técnicos con certificación STPS vigente y documentación válida ante Protección Civil. Más de 45,000 pruebas realizadas. <strong>Evaluación sin costo en 24 horas.</strong>"
@@ -22,7 +21,7 @@ heroRight:
     <li><a href="#cuando-necesitas">¿Cuándo necesitas la prueba?</a></li>
     <li><a href="#errores">7 errores críticos que cometen las empresas</a></li>
     <li><a href="#proceso">Proceso de certificación MANEXT paso a paso</a></li>
-    <li><a href="#costos">Costos en CDMX 2026</a></li>
+    <li><a href="#costos">Costos en CDMX</a></li>
     <li><a href="#faq">Preguntas frecuentes</a></li>
   </ul>
 </nav>
@@ -216,7 +215,7 @@ heroRight:
 
 ---
 
-<h2 id="costos">Costos en CDMX 2026: Guía de Precios</h2>
+<h2 id="costos">Costos en CDMX: Guía de Precios</h2>
 
 <p>Los precios varían según tipo de extintor, acceso a las instalaciones y volumen del servicio:</p>
 

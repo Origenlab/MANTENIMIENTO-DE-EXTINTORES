@@ -1,7 +1,6 @@
 ---
-title: "Constancias DC-3 para Brigadas Contra Incendio: Guía Completa 2026"
+title: "Constancias DC-3 para Brigadas Contra Incendio: Guía Completa"
 description: "Todo sobre las constancias DC-3 para capacitación de brigadas contra incendio: qué son, cuándo son obligatorias, cómo registrarlas ante la STPS y qué pasa si no las tienes."
-pubDate: "2026-05-20"
 heroRight:
   - "La constancia DC-3 es el documento que cierra legalmente el ciclo de capacitación de brigadas. Sin ella, la capacitación no existe para efectos de una verificación de la STPS o Protección Civil — aunque los brigadistas hayan recibido el curso y hecho las prácticas."
   - "En <strong>MANEXT</strong> somos agente capacitador registrado ante la STPS. Llevamos más de 80 años gestionando toda la documentación DC-3 para que tu empresa quede completamente en regla, sin riesgo de observaciones durante verificaciones."

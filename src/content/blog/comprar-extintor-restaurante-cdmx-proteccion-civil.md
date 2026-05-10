@@ -1,22 +1,22 @@
 ---
-title: "Comprar Extintor para Restaurante en CDMX 2026: Lo Que Exige Protección Civil"
+title: "Comprar Extintor para Restaurante en CDMX: Lo Que Exige Protección Civil"
 description: "Guía completa para comprar extintores de restaurante en CDMX: Tipo K obligatorio, NOM-002-STPS, NFPA 96, anatomía de cocina, casos sancionados y checklist de inspección."
 heroImage: "img/img-blog/extintores-restaurantes-requisitos-normativa-cdmx-hero-1765932951476.avif"
 heroRight:
   - "Los <strong>restaurantes son el giro #1 sancionado por Protección Civil CDMX</strong> en materia de extintores. La razón es siempre la misma: ausencia o ubicación incorrecta del extintor Tipo K en cocinas con freidoras. Una sola observación en un acta puede significar suspensión temporal de operaciones, multa de $10,000 a $50,000 pesos y obligación de regularización inmediata."
-  - "Esta guía 2026 condensa lo que un restaurantero necesita saber para comprar extintores que cumplan NOM-002-STPS, NFPA 96 y los requisitos específicos de Protección Civil CDMX. Incluye anatomía visual de cocina, casos reales sancionados (anonimizados), tabla por tamaño de operación y el checklist exacto que la inspección revisa."
+  - "Esta guía condensa lo que un restaurantero necesita saber para comprar extintores que cumplan NOM-002-STPS, NFPA 96 y los requisitos específicos de Protección Civil CDMX. Incluye anatomía visual de cocina, casos reales sancionados (anonimizados), tabla por tamaño de operación y el checklist exacto que la inspección revisa."
 ---
 
 <div class="article-intro">
   <p class="article-lead">Comprar extintores para restaurante en CDMX no es la misma decisión que para una oficina. Los restaurantes operan bajo <strong>tres normativas simultáneas</strong> — NOM-002-STPS, NFPA 96 y Reglamento de Protección Civil CDMX — que exigen extintor Tipo K obligatorio, distribución específica por tipo de cocina y documentación lista para auditorías sin previo aviso.</p>
   <p>En MANEXT atendemos a más de 800 restaurantes en CDMX y Estado de México, desde fondas de barrio hasta cadenas con múltiples sucursales. La constante en cada inspección de Protección Civil es la misma pregunta: <strong>¿hay un Tipo K instalado a no más de 9 metros de la freidora más alejada, con etiqueta NOM-154 vigente y carta de corresponsabilidad firmada?</strong> Si la respuesta es no en cualquiera de los tres puntos, el restaurante recibe observación grave.</p>
-  <p>En esta guía vas a encontrar: marco normativo restaurantes CDMX 2026, anatomía de cocina con ubicación correcta de extintores, tabla por tamaño de operación (cocina chica, mediana, grande, cadena), casos reales sancionados, checklist Protección Civil paso a paso y FAQ con casos reales.</p>
+  <p>En esta guía vas a encontrar: marco normativo restaurantes CDMX, anatomía de cocina con ubicación correcta de extintores, tabla por tamaño de operación (cocina chica, mediana, grande, cadena), casos reales sancionados, checklist Protección Civil paso a paso y FAQ con casos reales.</p>
 </div>
 
 <nav class="toc">
   <p class="toc-title">Contenido del artículo</p>
   <ul>
-    <li><a href="#marco-restaurantes">1. Marco normativo restaurantes CDMX 2026</a></li>
+    <li><a href="#marco-restaurantes">1. Marco normativo restaurantes CDMX</a></li>
     <li><a href="#tipo-k-obligatorio">2. El Tipo K — qué es y por qué es obligatorio</a></li>
     <li><a href="#anatomia-cocina">3. Anatomía de cocina: dónde va cada extintor</a></li>
     <li><a href="#tabla-tamano">4. Tabla de extintores por tamaño de operación</a></li>
@@ -29,7 +29,7 @@ heroRight:
 </nav>
 
 <section id="marco-restaurantes" class="content-section">
-  <h2>1. Marco normativo para extintores en restaurantes CDMX 2026</h2>
+  <h2>1. Marco normativo para extintores en restaurantes CDMX</h2>
   <p>Tres normativas operan al mismo tiempo en cualquier restaurante de CDMX. Cada inspector revisa un set distinto, así que el cumplimiento debe ser simultáneo.</p>
 
   <h3>NOM-002-STPS-2010 — Condiciones de seguridad en centros de trabajo</h3>
@@ -58,7 +58,7 @@ heroRight:
   <h3>Capacidades comunes de Tipo K en CDMX</h3>
   <table>
     <thead>
-      <tr><th>Capacidad</th><th>Cocina recomendada</th><th>Precio referencia 2026</th></tr>
+      <tr><th>Capacidad</th><th>Cocina recomendada</th><th>Precio referencia</th></tr>
     </thead>
     <tbody>
       <tr><td>2.5 L</td><td>Cocina pequeña 1 freidora chica</td><td>$2,400 – $3,000</td></tr>
@@ -160,19 +160,19 @@ heroRight:
 
 <section id="casos-sancionados" class="content-section">
   <h2>5. Cuatro casos reales sancionados (anonimizados)</h2>
-  <p>Estos casos provienen de regularizaciones que MANEXT atendió en CDMX entre 2024 y 2026. Los nombres y direcciones son omitidos, los hechos son reales.</p>
+  <p>Estos casos provienen de regularizaciones que MANEXT atendió en CDMX en años recientes. Los nombres y direcciones son omitidos, los hechos son reales.</p>
 
   <h3>Caso 1 — Restaurante de mariscos en Roma Norte</h3>
-  <p>Cocina con 3 freidoras y 2 planchas. Solo tenía 2 extintores PQS de 6 kg, ninguno Tipo K. Inspección 2025: <strong>multa de $25,000 + 7 días de suspensión</strong> hasta regularizar. Costo de regularización (Tipo K 6 L + capacitación DC-3 + señalización): $5,800 pesos. Costo total del error por no haber comprado el Tipo K a tiempo: <strong>$30,800 + lucro cesante 7 días.</strong></p>
+  <p>Cocina con 3 freidoras y 2 planchas. Solo tenía 2 extintores PQS de 6 kg, ninguno Tipo K. Inspección: <strong>multa de $25,000 + 7 días de suspensión</strong> hasta regularizar. Costo de regularización (Tipo K 6 L + capacitación DC-3 + señalización): $5,800 pesos. Costo total del error por no haber comprado el Tipo K a tiempo: <strong>$30,800 + lucro cesante 7 días.</strong></p>
 
   <h3>Caso 2 — Cadena de tacos en Iztapalapa</h3>
-  <p>Cinco sucursales. Tres tenían el Tipo K caducado de recarga (pasados 18 meses sin servicio anual). Inspección coordinada 2026: <strong>multa de $12,000 por sucursal × 3 = $36,000</strong>. La cadena ahora opera con póliza anual MANEXT que automatiza recargas y previene caducidad. Costo de la póliza: $3,500/sucursal/año. ROI: 12× en un solo ciclo.</p>
+  <p>Cinco sucursales. Tres tenían el Tipo K caducado de recarga (pasados 18 meses sin servicio anual). Inspección coordinada: <strong>multa de $12,000 por sucursal × 3 = $36,000</strong>. La cadena ahora opera con póliza anual MANEXT que automatiza recargas y previene caducidad. Costo de la póliza: $3,500/sucursal/año. ROI: 12× en un solo ciclo.</p>
 
   <h3>Caso 3 — Hotel boutique en Polanco</h3>
-  <p>Restaurante interior del hotel, 220 m². Tenía Tipo K correcto en cocina, pero <strong>el extintor estaba a 11 m de la freidora</strong> más alejada (excedía los 9 m de NFPA 96). Inspección 2025: observación con plazo de 30 días. Solución: instalar segundo Tipo K de 6 L en lado opuesto de la cocina por $4,000 pesos. Caso resuelto sin multa por respuesta dentro del plazo.</p>
+  <p>Restaurante interior del hotel, 220 m². Tenía Tipo K correcto en cocina, pero <strong>el extintor estaba a 11 m de la freidora</strong> más alejada (excedía los 9 m de NFPA 96). Inspección: observación con plazo de 30 días. Solución: instalar segundo Tipo K de 6 L en lado opuesto de la cocina por $4,000 pesos. Caso resuelto sin multa por respuesta dentro del plazo.</p>
 
   <h3>Caso 4 — Cocina industrial de banquetes</h3>
-  <p>Empresa de catering con cocina de 180 m² y 6 freidoras. Tenía 1 Tipo K de 6 L para toda la cocina. Inspección Bomberos 2026: <strong>requirieron 2 Tipo K mínimos</strong> por cantidad de freidoras (NFPA 96 obliga 1 Tipo K cada 3 freidoras como guía operativa). Costo de regularización: 1 Tipo K adicional + redistribución de los existentes = $4,800. Sin multa por cumplir plazo de 15 días.</p>
+  <p>Empresa de catering con cocina de 180 m² y 6 freidoras. Tenía 1 Tipo K de 6 L para toda la cocina. Inspección Bomberos: <strong>requirieron 2 Tipo K mínimos</strong> por cantidad de freidoras (NFPA 96 obliga 1 Tipo K cada 3 freidoras como guía operativa). Costo de regularización: 1 Tipo K adicional + redistribución de los existentes = $4,800. Sin multa por cumplir plazo de 15 días.</p>
 </section>
 
 <section id="checklist-pc" class="content-section">
@@ -234,7 +234,7 @@ heroRight:
     <li>Bitácora de eventos y simulacros archivada en sitio</li>
   </ul>
 
-  <h3>Costos de capacitación DC-3 en CDMX 2026</h3>
+  <h3>Costos de capacitación DC-3 en CDMX</h3>
   <ul>
     <li>Curso individual: $2,000–$3,500/persona</li>
     <li>Curso in-situ para grupo (5–15 personas): $12,000–$22,000</li>

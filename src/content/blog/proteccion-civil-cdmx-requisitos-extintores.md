@@ -1,7 +1,6 @@
 ---
 title: "Protección Civil CDMX: Requisitos de Extintores para tu Licencia de Funcionamiento"
-description: "Requisitos de Protección Civil CDMX para extintores 2026: cantidades por m², tipos obligatorios por giro, documentación, proceso de dictaminación y errores que niegan tu licencia."
-pubDate: "2026-02-15"
+description: "Requisitos de Protección Civil CDMX para extintores: cantidades por m², tipos obligatorios por giro, documentación, proceso de dictaminación y errores que niegan tu licencia."
 heroRight:
   - "Sin el dictamen favorable de Protección Civil, tu negocio no puede operar legalmente en la Ciudad de México. Los extintores son el elemento que los verificadores revisan con mayor rigor — un equipo con mantenimiento vencido, mal ubicado o del tipo incorrecto puede <strong>condicionar o negar tu licencia</strong> y costarte semanas de retraso."
   - "En <strong>MANEXT</strong> llevamos más de 80 años acompañando negocios en CDMX a través del proceso de dictaminación. Conocemos cada requisito por alcaldía, por giro y por m². Te entregamos equipos certificados <strong>NOM-154-SCFI</strong>, instalados con señalización correcta y con toda la documentación lista para el verificador."

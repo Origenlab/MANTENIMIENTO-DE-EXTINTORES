@@ -1,7 +1,6 @@
 ---
-title: "Señalamientos NOM-003 Estado de México: Guía Completa 2026"
+title: "Señalamientos NOM-003 Estado de México: Guía Completa"
 description: "Todo lo que necesitas saber sobre los señalamientos obligatorios según la NOM-003-SEGOB en Estado de México: tipos, medidas, colores, instalación y cómo cumplir con Protección Civil sin contratiempos."
-pubDate: "2026-01-10"
 heroRight:
   - "En el Estado de México, la <strong>NOM-003-SEGOB-2011</strong> no es opcional: define exactamente qué señales debes tener, dónde instalarlas y bajo qué especificaciones técnicas. Las verificaciones de Protección Civil —municipal y estatal— la usan como referencia directa. Una sola deficiencia puede traducirse en multa, suspensión o clausura temporal de tu inmueble o negocio."
   - "En <strong>MANEXT</strong> llevamos más de 80 años suministrando señalización certificada a empresas, industrias y edificios en CDMX y todo el Estado de México. Nuestros productos cumplen NOM-003-SEGOB y NOM-026-STPS, incluyen documentación válida ante Protección Civil y los instalamos en sitio. <strong>Cotización sin costo en menos de 24 horas.</strong>"

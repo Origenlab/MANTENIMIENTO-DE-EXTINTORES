@@ -1,5 +1,5 @@
 ---
-title: "Lo Que NO Te Dicen al Comprar Extintores Baratos en CDMX 2026"
+title: "Lo Que NO Te Dicen al Comprar Extintores Baratos en CDMX"
 description: "Las 9 prácticas que vendedores de extintores baratos NO mencionan: polvo no certificado, etiquetas falsas, manómetros sin NOM, válvulas de mercado libre. Cómo detectarlas."
 heroImage: "img/img-index/extintor.avif"
 heroRight:
@@ -8,7 +8,7 @@ heroRight:
 ---
 
 <div class="article-intro">
-  <p class="article-lead">El precio de un extintor PQS de 6 kg certificado en CDMX en 2026 está entre $1,300 y $1,800 pesos. Cuando alguien te ofrece "el mismo extintor" a $700 pesos, el truco no es eficiencia operativa — es que <strong>el equipo no es el mismo</strong>. Esta guía expone las nueve prácticas más documentadas en el mercado paralelo de extintores baratos en la Zona Metropolitana, y cómo detectarlas antes de comprar.</p>
+  <p class="article-lead">El precio de un extintor PQS de 6 kg certificado en CDMX está entre $1,300 y $1,800 pesos. Cuando alguien te ofrece "el mismo extintor" a $700 pesos, el truco no es eficiencia operativa — es que <strong>el equipo no es el mismo</strong>. Esta guía expone las nueve prácticas más documentadas en el mercado paralelo de extintores baratos en la Zona Metropolitana, y cómo detectarlas antes de comprar.</p>
   <p>El propósito no es asustar — es informar. Comprar barato sin saber qué evitas pagar te expone a tres riesgos concretos: multa de Protección Civil de hasta $50,000 por unidad fuera de norma, equipo que no funciona en emergencia real, y responsabilidad legal del representante de la empresa si hay un siniestro.</p>
   <p>Vas a encontrar: las 9 prácticas más usadas por vendedores no certificados, cómo verificarlas en el equipo físico, qué deberías ver en una factura legítima, casos reales detectados en clientes que migraron a MANEXT desde otros proveedores, y cómo proteger tu inversión.</p>
 </div>
@@ -121,7 +121,7 @@ heroRight:
   </ul>
 
   <h3>Cómo detectarlo</h3>
-  <p>Cada cilindro tiene <strong>fecha de fabricación grabada</strong> en la base o en el cuello, debajo del cuerpo cilíndrico. Si la fecha es de hace 18-25 años pero la etiqueta dice "primer servicio 2025", es cilindro reciclado. La pintura nueva sobre cilindro viejo a veces deja marcas: bordes irregulares en zonas grabadas, color desigual sobre relieves antiguos.</p>
+  <p>Cada cilindro tiene <strong>fecha de fabricación grabada</strong> en la base o en el cuello, debajo del cuerpo cilíndrico. Si la fecha es de hace 18-25 años pero la etiqueta dice "primer servicio", es cilindro reciclado. La pintura nueva sobre cilindro viejo a veces deja marcas: bordes irregulares en zonas grabadas, color desigual sobre relieves antiguos.</p>
 </section>
 
 <section id="practica-6" class="content-section">

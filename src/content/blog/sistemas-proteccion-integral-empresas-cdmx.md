@@ -1,7 +1,6 @@
 ---
 title: "Sistemas de Protección Contra Incendios"
 description: "Sistemas de protección contra incendios: extintores, detección, supresión, rociadores y señalización. Soluciones certificadas CDMX."
-pubDate: "2026-08-08"
 heroRight:
   - "Un sistema de protección contra incendios va más allá de tener extintores: incluye detección automática, supresión activa, rociadores, señalización normalizada y brigadas capacitadas. La <strong>NOM-002-STPS</strong> exige que cada elemento esté correctamente seleccionado según el riesgo específico de cada instalación, integrado y con mantenimiento documentado."
   - "MANEXT diseña e implementa sistemas integrales de protección contra incendios para empresas de todos los sectores en CDMX y Estado de México. Con <strong>más de 80 años de experiencia</strong>, ofrecemos diagnóstico técnico gratuito, equipos certificados NOM y acompañamiento completo para Protección Civil. Solicita tu cotización por WhatsApp."

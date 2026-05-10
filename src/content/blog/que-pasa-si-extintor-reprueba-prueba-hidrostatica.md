@@ -1,7 +1,6 @@
 ---
-title: "Qué Pasa si tu Extintor No Pasa la Prueba Hidrostática: Guía 2026"
+title: "Qué Pasa si tu Extintor No Pasa la Prueba Hidrostática"
 description: "Descubre qué ocurre cuando un extintor falla la prueba hidrostática: criterios de rechazo, opciones disponibles, implicaciones legales y cómo evitar llegar a ese punto."
-pubDate: "2026-05-25"
 heroRight:
   - "Cuando un extintor falla la prueba hidrostática las consecuencias son definitivas: el equipo no puede seguir en servicio. Ninguna reparación de un cilindro rechazado es admisible bajo la NOM-154-SCFI. Entender los criterios de rechazo ayuda a planificar el reemplazo sin brechas de cobertura."
   - "En <strong>MANEXT</strong> llevamos más de 80 años realizando pruebas hidrostáticas en CDMX. Si un extintor requiere reemplazo tras el rechazo, lo resolvemos el mismo día para que tu empresa no quede desprotegida."

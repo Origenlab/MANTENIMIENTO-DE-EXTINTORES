@@ -1,13 +1,12 @@
 ---
-title: "Precios de Extintores en CDMX 2026: Guía Actualizada por Tipo y Capacidad"
-description: "Precios reales de extintores en CDMX 2026: PQS ABC, CO₂, Tipo K, agentes limpios. Tablas por capacidad, costo total de propiedad, mantenimiento y qué distingue un extintor barato de uno certificado."
-pubDate: "2026-03-01"
+title: "Precios de Extintores en CDMX: Guía Actualizada por Tipo y Capacidad"
+description: "Precios reales de extintores en CDMX: PQS ABC, CO₂, Tipo K, agentes limpios. Tablas por capacidad, costo total de propiedad, mantenimiento y qué distingue un extintor barato de uno certificado."
 heroRight:
   - "Un extintor PQS 4.5 kg certificado NOM en CDMX cuesta entre <strong>$800 y $1,400 MXN</strong>. Uno en tienda de autoservicio puede costar $400. La diferencia no es el extintor — es si funciona cuando lo necesitas. Esta guía muestra precios reales por tipo y capacidad, más el costo total de propiedad a 5 años que la mayoría de proveedores nunca te dice."
   - "En <strong>MANEXT</strong> llevamos más de 80 años vendiendo extintores certificados en CDMX y Estado de México. Sin letra chica: todos nuestros equipos incluyen certificación NOM-154-SCFI, etiqueta de primer servicio y entrega en <strong>24-48 horas</strong>. Cotización sin costo con asesoría sobre qué tipo y cuántos necesitas por zona."
 ---
 
-<p class="article-lead">El precio de un extintor en CDMX varía de <strong>$400 a $18,000 MXN</strong> según el tipo, la capacidad y si incluye o no certificación NOM. Comprar el más barato puede salirte más caro: un extintor que no pasa inspección de Protección Civil equivale a no tenerlo, y las multas arrancan en $27,000 MXN. Esta guía te da precios reales de mercado 2026, explica qué afecta el precio y cómo calcular el costo total a 5 años.</p>
+<p class="article-lead">El precio de un extintor en CDMX varía de <strong>$400 a $18,000 MXN</strong> según el tipo, la capacidad y si incluye o no certificación NOM. Comprar el más barato puede salirte más caro: un extintor que no pasa inspección de Protección Civil equivale a no tenerlo, y las multas arrancan en $27,000 MXN. Esta guía te da precios reales de mercado, explica qué afecta el precio y cómo calcular el costo total a 5 años.</p>
 
 <nav class="toc" aria-label="Tabla de contenidos">
   <p class="toc-title">Contenido del artículo</p>
@@ -26,7 +25,7 @@ heroRight:
 
 <section id="precios-por-tipo">
 
-## Precios por tipo de extintor en CDMX (2026)
+## Precios por tipo de extintor en CDMX
 
 Los siguientes rangos corresponden a equipos **nuevos con certificación NOM-154-SCFI** entregados en CDMX y zona metropolitana. Precios de referencia — varían según proveedor, cantidad y si incluye instalación.
 
@@ -177,7 +176,7 @@ Si es para uso doméstico personal (no un negocio) y no necesitas que pase inspe
 
 <section id="precios-mantenimiento">
 
-## Precios de mantenimiento y recarga en CDMX (2026)
+## Precios de mantenimiento y recarga en CDMX
 
 El mantenimiento es obligatorio por NOM-154-SCFI. Estos son los costos de referencia para servicios en CDMX y zona metropolitana:
 

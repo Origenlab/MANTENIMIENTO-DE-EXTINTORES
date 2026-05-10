@@ -1,5 +1,5 @@
 ---
-title: "Comprar Extintor a Domicilio en CDMX 2026: Entrega en 48 Horas con Certificación NOM"
+title: "Comprar Extintor a Domicilio en CDMX: Entrega en 48 Horas con Certificación NOM"
 description: "Cómo comprar extintor a domicilio en CDMX con entrega 24-48 h, certificación NOM-154, instalación incluida y carta de corresponsabilidad. Cobertura por alcaldía y municipio."
 heroImage: "img/img-index/recarga-de-extintores.avif"
 heroRight:

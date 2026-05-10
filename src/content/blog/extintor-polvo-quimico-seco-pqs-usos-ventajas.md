@@ -1,7 +1,6 @@
 ---
-title: "Extintor de Polvo Químico Seco (PQS): Guía Técnica Completa 2026"
+title: "Extintor de Polvo Químico Seco (PQS): Guía Técnica Completa"
 description: "Guía técnica completa sobre extintores PQS: cómo funcionan, clases de fuego A-B-C, capacidades, precios en México y calendario de mantenimiento obligatorio según NOM-154-SCFI."
-pubDate: "2026-03-05"
 heroRight:
   - "El extintor PQS es el más vendido en México: combate fuegos clase A, B y C, no conduce electricidad y su precio accesible lo hace la primera opción para hogares, comercios e industrias. Sin embargo, no todos son iguales — un extintor sin certificación NOM puede fallar cuando más lo necesitas."
   - "En <strong>MANEXT</strong> llevamos más de 80 años comercializando extintores PQS certificados NOM-154-SCFI. Te orientamos sobre la capacidad correcta para tu espacio, instalamos a la altura reglamentaria y programamos tu mantenimiento anual. Cobertura en toda la CDMX y Estado de México."

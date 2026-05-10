@@ -1,7 +1,6 @@
 ---
-title: "Multas por No Tener Extintores: Montos 2026 y Cómo Evitarlas"
+title: "Multas por No Tener Extintores: Montos y Cómo Evitarlas"
 description: "Conoce los montos exactos de multas por no tener extintores en CDMX y Estado de México (hasta $1,085,700 MXN). Guía completa: qué revisa Protección Civil, cómo cumplir la NOM-002-STPS y evitar sanciones."
-pubDate: "2026-01-15"
 heroRight:
   - "No tener extintores —o tenerlos vencidos, mal ubicados o sin mantenimiento— puede costarte hasta <strong>$1,085,700 pesos en multas</strong> y la clausura inmediata de tu negocio. La Secretaría del Trabajo y Protección Civil aplican sanciones sin previo aviso. Conocer exactamente qué revisan y cuánto cobran es tu primera línea de defensa."
   - "En <strong>MANEXT</strong> llevamos más de 80 años ayudando a negocios en CDMX y Estado de México a cumplir con la NOM-002-STPS y la normativa de Protección Civil. Extintores certificados, mantenimiento con documentación válida y asesoría para que ninguna inspección te tome por sorpresa. <strong>Cotización sin costo en menos de 24 horas.</strong>"

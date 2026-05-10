@@ -1,7 +1,6 @@
 ---
-title: "Cómo Elegir el Extintor Correcto para tu Negocio en CDMX 2026"
+title: "Cómo Elegir el Extintor Correcto para tu Negocio en CDMX"
 description: "Guía definitiva para elegir extintores según tipo de negocio: oficinas, restaurantes, comercios, industrias, hospitales. Requisitos NOM por m², tipos recomendados por giro y normativa CDMX."
-pubDate: "2026-03-20"
 heroRight:
   - "El 67% de los negocios que atendemos en CDMX tienen extintores incorrectos para su tipo de riesgo. No es solo incumplimiento: un extintor de agua en un incendio eléctrico puede electrocutar al usuario. Cada giro comercial necesita una solución distinta — oficinas, restaurantes, industrias y hospitales tienen riesgos radicalmente diferentes."
   - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando empresas en Ciudad de México. Realizamos evaluaciones de riesgo gratuitas en tu local, identificamos el tipo y cantidad exacta de extintores que necesitas, e instalamos con certificación NOM. Sin compromiso, con respaldo para Protección Civil."

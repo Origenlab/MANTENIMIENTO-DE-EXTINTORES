@@ -1,10 +1,10 @@
 ---
-title: "Extintor Nuevo vs Recargado: Cuál Comprar y Cuándo Conviene Cada Uno 2026"
+title: "Extintor Nuevo vs Recargado: Cuál Comprar y Cuándo Conviene Cada Uno"
 description: "Análisis financiero y técnico extintor nuevo vs recargado en CDMX. Cuándo recargar, cuándo reemplazar, criterios NOM-154-SCFI, prueba hidrostática y costo total a 20 años."
 heroImage: "img/img-index/recarga-de-extintores.avif"
 heroRight:
   - "La pregunta no es <strong>cuál es mejor</strong> — es <strong>cuándo conviene cada uno</strong>. Un extintor PQS bien mantenido puede durar 20 años con recargas anuales y prueba hidrostática quinquenal. Pero hay tres escenarios donde la recarga deja de tener sentido financiero o técnico, y reemplazar por uno nuevo es la decisión correcta."
-  - "Esta guía 2026 te da el análisis financiero a 20 años de cada opción, los criterios técnicos NOM-154-SCFI para decidir, casos por antigüedad del cilindro y la lógica de cuándo recargar conviene incluso si parece más barato comprar nuevo. Si tienes extintores de 5, 10 o 18 años y no sabes qué hacer con ellos, esta guía resuelve la decisión."
+  - "Esta guía te da el análisis financiero a 20 años de cada opción, los criterios técnicos NOM-154-SCFI para decidir, casos por antigüedad del cilindro y la lógica de cuándo recargar conviene incluso si parece más barato comprar nuevo. Si tienes extintores de 5, 10 o 18 años y no sabes qué hacer con ellos, esta guía resuelve la decisión."
 ---
 
 <div class="article-intro">
@@ -57,7 +57,7 @@ heroRight:
 
 <section id="financiero" class="content-section">
   <h2>2. Análisis financiero a 20 años: nuevo vs recargado</h2>
-  <p>Comparemos dos escenarios reales para un extintor PQS de 6 kg en CDMX 2026 (precios referencia):</p>
+  <p>Comparemos dos escenarios reales para un extintor PQS de 6 kg en CDMX (precios referencia):</p>
 
   <h3>Escenario A — Comprar nuevo en año 0, recargar anualmente, vida útil 20 años</h3>
   <table>
@@ -163,7 +163,7 @@ heroRight:
   </ul>
 
   <h3>Costo y dónde se hace</h3>
-  <p>Costo en CDMX 2026: $350-$500 por unidad (PQS, agua), $500-$800 (CO₂), $800-$1,400 (rodantes 50/68 kg). Solo empresas certificadas con equipo especializado pueden hacerla — no es un servicio que cualquier proveedor ofrezca. MANEXT hace prueba hidrostática en taller propio en CDMX con equipo certificado y técnicos capacitados.</p>
+  <p>Costo en CDMX: $350-$500 por unidad (PQS, agua), $500-$800 (CO₂), $800-$1,400 (rodantes 50/68 kg). Solo empresas certificadas con equipo especializado pueden hacerla — no es un servicio que cualquier proveedor ofrezca. MANEXT hace prueba hidrostática en taller propio en CDMX con equipo certificado y técnicos capacitados.</p>
 
   <h3>Cuándo reprueba un cilindro (estadísticas reales)</h3>
   <p>De cada 100 cilindros que llegan a prueba hidrostática en CDMX: ~85 aprueban sin problema, ~10 aprueban con observaciones reparables, ~5 reprueban definitivamente. Los que reprueban son típicamente cilindros expuestos a corrosión por humedad (estacionamientos descubiertos, bodegas con techos en mal estado), golpes por mal manejo, o cilindros muy antiguos.</p>

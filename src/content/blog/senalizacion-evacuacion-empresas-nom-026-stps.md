@@ -1,7 +1,6 @@
 ---
-title: "Señalización de Evacuación en Empresas: Requisitos NOM-026-STPS 2026"
+title: "Señalización de Evacuación en Empresas: Requisitos NOM-026-STPS"
 description: "Guía completa sobre señalización de evacuación en centros de trabajo: qué exige la NOM-026-STPS, colores obligatorios, tipos de señales, dónde instalarlas y cómo pasar una verificación."
-pubDate: "2026-06-04"
 heroRight:
   - "Una señal de evacuación mal colocada o ausente puede ser la diferencia entre una evacuación exitosa y una tragedia. La NOM-026-STPS y la NOM-003-SEGOB exigen señalización específica en todos los centros de trabajo — y Protección Civil la verifica explícitamente durante inspecciones."
   - "En <strong>MANEXT</strong> llevamos más de 80 años suministrando e instalando señalización en CDMX. Ofrecemos diagnóstico gratuito de señalización en tu instalación y suministro de señales certificadas NOM-026-STPS."

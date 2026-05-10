@@ -1,7 +1,6 @@
 ---
-title: "Señalización de Extintores según NOM-026-STPS: Guía Completa 2026"
+title: "Señalización de Extintores según NOM-026-STPS: Guía Completa"
 description: "Guía completa de señalización de extintores: requisitos NOM-026-STPS, tipos de señales, alturas, colores normativos, materiales fotoluminiscentes y errores que llevan a multas en CDMX."
-pubDate: "2026-04-10"
 heroRight:
   - "Tener extintores no es suficiente si nadie puede encontrarlos durante una emergencia. La NOM-026-STPS establece requisitos exactos de señalización: altura, color, tamaño mínimo, distancia de visibilidad y materiales fotoluminiscentes. Incumplir estas especificaciones durante una inspección de Protección Civil equivale a no tener señalización en absoluto."
   - "En <strong>MANEXT</strong> llevamos más de 80 años instalando extintores con señalización completa en CDMX y Estado de México. Suministramos señales certificadas NOM-026-STPS, las instalamos a la altura correcta y entregamos el expediente completo para Protección Civil."
@@ -22,7 +21,7 @@ La <strong>señalización de extintores</strong> es un requisito legal tan impor
 <li><a href="#altura-ubicacion">Altura y Ubicación Correcta</a></li>
 <li><a href="#materiales">Materiales: Rígida, Vinilo, Fotoluminiscente</a></li>
 <li><a href="#errores">Errores Comunes que Causan Multas</a></li>
-<li><a href="#precios">Costos de Señalización en CDMX 2026</a></li>
+<li><a href="#precios">Costos de Señalización en CDMX</a></li>
 <li><a href="#faq">Preguntas Frecuentes</a></li>
 </ul>
 </nav>
@@ -277,7 +276,7 @@ Estos son los incumplimientos en señalización que con mayor frecuencia registr
 </section>
 
 <section id="precios" class="content-section">
-<h2>Costos de Señalización de Extintores en CDMX 2026</h2>
+<h2>Costos de Señalización de Extintores en CDMX</h2>
 
 <table>
 <thead>

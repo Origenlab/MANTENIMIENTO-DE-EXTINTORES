@@ -1,7 +1,6 @@
 ---
 title: "Capacitación Brigadas Contra Incendio: Formación CDMX"
 description: "Capacitación brigadas contra incendio obligatoria NOM-002-STPS. Cursos certificados para empresas CDMX. Cumplimiento normativo garantizado. Consulta: 56 1461 2594"
-pubDate: "2026-07-29"
 heroRight:
   - "La <strong>NOM-002-STPS</strong> obliga a toda empresa a conformar brigadas contra incendio con personal capacitado y certificado. Sin esta formación, el extintor más moderno es inútil: nadie sabe usarlo correctamente bajo presión. La capacitación incluye reconocimiento de clases de fuego, uso técnico de extintores, activación de alarmas y coordinación de evacuación."
   - "MANEXT imparte capacitación certificada de brigadas contra incendio en instalaciones o en nuestras propias sedes en CDMX. Con <strong>más de 80 años de experiencia</strong>, entregamos constancias DC-3 válidas ante STPS y documentación completa para Protección Civil. Solicita tu cotización por WhatsApp."

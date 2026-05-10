@@ -1,10 +1,10 @@
 ---
-title: "Extintores para Naves Industriales: Capacidades, Distribución y NOM 2026"
+title: "Extintores para Naves Industriales: Capacidades, Distribución y NOM"
 description: "Compra de extintores para nave industrial CDMX y Edo. Mex.: cálculo por carga combustible, sectorización, PQS rodante vs portátil, sistemas complementarios y casos reales."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
   - "Las naves industriales son <strong>la categoría más compleja de proteger contra incendios</strong>. Carga combustible elevada, alturas de almacenaje de 6–12 metros, maquinaria con líquidos inflamables, tableros eléctricos de alto amperaje y operación 24/7. La diferencia entre cumplir NOM-002-STPS y solo tener extintores nominales puede ser la diferencia entre extinguir un conato en 90 segundos o perder la nave completa en 8 minutos."
-  - "Esta guía 2026 cubre el cálculo industrial real: <strong>sectorización</strong>, criterios de carga combustible, distribución por zonas (producción, almacenaje, oficina anexa, patios), <strong>PQS rodante 50/68 kg como complemento de los portátiles</strong>, sistemas fijos complementarios, y casos por giro industrial — manufactura, química, alimentos, metalurgia."
+  - "Esta guía cubre el cálculo industrial real: <strong>sectorización</strong>, criterios de carga combustible, distribución por zonas (producción, almacenaje, oficina anexa, patios), <strong>PQS rodante 50/68 kg como complemento de los portátiles</strong>, sistemas fijos complementarios, y casos por giro industrial — manufactura, química, alimentos, metalurgia."
 ---
 
 <div class="article-intro">
@@ -29,7 +29,7 @@ heroRight:
 </nav>
 
 <section id="marco-industrial" class="content-section">
-  <h2>1. Marco normativo industrial CDMX y Estado de México 2026</h2>
+  <h2>1. Marco normativo industrial CDMX y Estado de México</h2>
   <p>Para una nave industrial aplican simultáneamente cuatro capas normativas. La inspección típica de Protección Civil + STPS revisa el cumplimiento de las cuatro al mismo tiempo.</p>
 
   <h3>NOM-002-STPS-2010 — Riesgo alto</h3>
@@ -193,7 +193,7 @@ heroRight:
   <h3>Ubicación correcta del rodante</h3>
   <p>El rodante NO sustituye los portátiles distribuidos — los <strong>complementa</strong>. Se ubica en acceso principal de cada sector (bodega, planta, etc.) a máximo 30 m de cualquier punto del sector. Su rol es atacar fuegos mayores que los portátiles no pueden controlar, mientras se evacúa al personal y llegan bomberos.</p>
 
-  <h3>Precio referencia 2026</h3>
+  <h3>Precio referencia</h3>
   <ul>
     <li>PQS rodante 50 kg: $11,000 – $16,000 pesos</li>
     <li>PQS rodante 68 kg: $14,500 – $21,000 pesos</li>

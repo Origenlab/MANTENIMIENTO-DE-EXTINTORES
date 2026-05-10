@@ -1,7 +1,6 @@
 ---
-title: "Prevención de Incendios en Empresas: Protocolo Completo para CDMX 2026"
+title: "Prevención de Incendios en Empresas: Protocolo Completo para CDMX"
 description: "Protocolo completo de prevención de incendios para empresas en CDMX: auditoría de riesgos, causas principales, cultura de seguridad, brigadas y plan de emergencia. NOM-002-STPS."
-pubDate: "2026-02-20"
 heroRight:
   - "El <strong>90% de los incendios empresariales son evitables</strong>. Sin embargo, en México solo el 35% de las empresas tiene un programa formal de prevención más allá del mínimo legal. Los datos de Protección Civil CDMX son claros: 2,800-3,200 incendios en centros de trabajo al año, con una pérdida promedio de <strong>$850,000 MXN por siniestro</strong> — y el 40% de las empresas no reabre después de un incendio mayor."
   - "En <strong>MANEXT</strong> llevamos más de 80 años ayudando a empresas en CDMX y zona metropolitana a construir programas de prevención que realmente funcionan. No solo cumplimiento normativo: protección real que reduce el riesgo hasta en un <strong>92%</strong>. Auditorías, capacitación con fuego real, equipamiento certificado y documentación lista para inspección."

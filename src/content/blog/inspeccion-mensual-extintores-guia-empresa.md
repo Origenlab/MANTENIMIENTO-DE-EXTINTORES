@@ -1,7 +1,6 @@
 ---
-title: "Inspección Mensual de Extintores: Guía Completa para Empresas 2026"
+title: "Inspección Mensual de Extintores: Guía Completa para Empresas"
 description: "Cómo realizar la inspección mensual de extintores obligatoria según NOM-002-STPS. Checklist de 10 puntos, quién debe hacerla y cómo documentarla correctamente en tu empresa."
-pubDate: "2026-04-15"
 heroRight:
   - "La inspección mensual de extintores es obligatoria por la NOM-002-STPS y puede realizarla el personal interno de tu empresa. Una verificación bien hecha detecta pérdidas de presión, daños físicos y obstrucciones antes de que se conviertan en emergencias reales."
   - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando a empresas en CDMX sobre el mantenimiento correcto de sus sistemas de protección. Te ofrecemos formatos de registro, capacitación al responsable designado y soporte inmediato cuando detectas un problema."

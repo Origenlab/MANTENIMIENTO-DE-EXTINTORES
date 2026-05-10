@@ -1,7 +1,6 @@
 ---
-title: "Mantenimiento de Extintores en CDMX: Servicio Profesional NOM-154-SCFI 2026"
+title: "Mantenimiento de Extintores en CDMX: Servicio Profesional NOM-154-SCFI"
 description: "Servicio profesional de mantenimiento de extintores en CDMX. Protocolo de 15 puntos, técnicos certificados, certificados para Protección Civil y factura CFDI. MANEXT: 80 años de experiencia."
-pubDate: "2026-03-10"
 heroRight:
   - "El 40% de los extintores en empresas de la CDMX fallan durante emergencias reales por falta de mantenimiento. La NOM-154-SCFI exige servicio profesional anual — y Protección Civil realiza verificaciones sorpresa. Un mantenimiento vencido no solo es ilegal: es un riesgo real para tu personal y tu patrimonio."
   - "En <strong>MANEXT</strong> llevamos más de 80 años manteniendo extintores en la CDMX. Técnicos certificados, protocolo de 15 puntos, certificados oficiales y factura CFDI. Servicio a domicilio sin costo en todas las alcaldías y zona metropolitana."

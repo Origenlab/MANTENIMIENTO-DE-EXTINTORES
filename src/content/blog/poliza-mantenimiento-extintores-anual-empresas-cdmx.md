@@ -1,7 +1,6 @@
 ---
 title: "Póliza de Mantenimiento de Extintores para Empresas en CDMX"
 description: "Qué es una póliza de mantenimiento de extintores, qué incluye, cuánto cuesta y cómo elegir el mejor proveedor certificado en CDMX. MANEXT: 80 años de experiencia."
-pubDate: "2026-06-14"
 heroRight:
   - "La <strong>NOM-154-SCFI</strong> exige mantenimiento preventivo anual en todos los extintores de un centro de trabajo. Para empresas con 5 o más equipos, gestionar ese mantenimiento equipo por equipo es ineficiente y propenso a omisiones que terminan en multas de Protección Civil. Una <strong>póliza anual</strong> consolida todo bajo un solo contrato: fechas conocidas, documentación completa y costo predecible."
   - "MANEXT ofrece pólizas de mantenimiento para empresas de todos los tamaños en CDMX y Estado de México. Con <strong>más de 80 años de experiencia</strong>, técnicos certificados NOM-154-SCFI, extintores de reemplazo incluidos y bitácora completa para Protección Civil, somos el aliado que tu empresa necesita para mantener sus equipos siempre en regla."

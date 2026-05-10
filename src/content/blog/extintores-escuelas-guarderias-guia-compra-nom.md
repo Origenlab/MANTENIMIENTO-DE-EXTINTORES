@@ -1,22 +1,22 @@
 ---
-title: "Extintores para Escuelas y Guarderías en CDMX 2026: Guía Completa de Compra y NOM"
+title: "Extintores para Escuelas y Guarderías en CDMX: Guía Completa de Compra y NOM"
 description: "Compra de extintores para escuelas, guarderías y universidades en CDMX: SEP + NOM-002, distribución por nivel educativo, laboratorios, cocinas escolares y casos reales."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
   - "Las <strong>escuelas son el segundo giro más auditado en CDMX</strong> después de restaurantes. Protección Civil, SEP y CONAFE coordinan revisiones bianuales y los criterios son más estrictos por la presencia de menores: distancias máximas reducidas, capacidades específicas por aula, capacitación obligatoria del personal docente y simulacros documentados."
-  - "Esta guía 2026 cubre lo que un director, dueño o coordinador de protección civil escolar necesita para comprar extintores que cumplan simultáneamente <strong>NOM-002-STPS, lineamientos SEP de seguridad escolar, reglamento PC CDMX y normativa específica de guarderías IMSS / ISSSTE</strong>. Incluye distribución por nivel educativo, laboratorios, cocinas escolares y comedores."
+  - "Esta guía cubre lo que un director, dueño o coordinador de protección civil escolar necesita para comprar extintores que cumplan simultáneamente <strong>NOM-002-STPS, lineamientos SEP de seguridad escolar, reglamento PC CDMX y normativa específica de guarderías IMSS / ISSSTE</strong>. Incluye distribución por nivel educativo, laboratorios, cocinas escolares y comedores."
 ---
 
 <div class="article-intro">
   <p class="article-lead">Comprar extintores para escuela o guardería en CDMX es una decisión con triple capa normativa. Aplica la NOM-002-STPS-2010 federal, los <strong>lineamientos generales de seguridad escolar de la SEP</strong>, y el reglamento de Protección Civil CDMX que para planteles educativos exige distancias menores y capacidades reforzadas. Las guarderías incorporadas a IMSS o ISSSTE tienen además normativa específica del sector.</p>
   <p>En MANEXT atendemos a más de 400 instituciones educativas en CDMX: jardines de niños, primarias, secundarias, prepas, universidades y guarderías. La constante en cada inspección es la misma: la presencia de menores eleva los estándares — la distancia máxima de recorrido se reduce a 12 metros (vs 15 m de centros de trabajo ordinarios), las capacidades por aula se calculan más conservadoras, y la <strong>capacitación obligatoria de personal docente</strong> se documenta con bitácora de simulacros.</p>
-  <p>Vas a encontrar: marco normativo escolar CDMX 2026, distribución por nivel educativo (guardería a universidad), zonas críticas (laboratorios, cocinas escolares, comedores, talleres), tabla por tamaño de plantel, casos sancionados anonimizados, checklist Protección Civil escolar y FAQ con casos reales.</p>
+  <p>Vas a encontrar: marco normativo escolar CDMX, distribución por nivel educativo (guardería a universidad), zonas críticas (laboratorios, cocinas escolares, comedores, talleres), tabla por tamaño de plantel, casos sancionados anonimizados, checklist Protección Civil escolar y FAQ con casos reales.</p>
 </div>
 
 <nav class="toc">
   <p class="toc-title">Contenido del artículo</p>
   <ul>
-    <li><a href="#marco-escolar">1. Marco normativo escolar CDMX 2026</a></li>
+    <li><a href="#marco-escolar">1. Marco normativo escolar CDMX</a></li>
     <li><a href="#por-nivel">2. Distribución por nivel educativo</a></li>
     <li><a href="#zonas-criticas">3. Zonas críticas: laboratorios, cocinas, comedores</a></li>
     <li><a href="#tabla-plantel">4. Tabla de extintores por tamaño de plantel</a></li>
@@ -29,7 +29,7 @@ heroRight:
 </nav>
 
 <section id="marco-escolar" class="content-section">
-  <h2>1. Marco normativo escolar CDMX 2026</h2>
+  <h2>1. Marco normativo escolar CDMX</h2>
   <p>Cuatro normativas operan simultáneamente sobre cualquier plantel educativo en CDMX. La diferencia con un centro de trabajo ordinario son los criterios reforzados por la presencia de menores y la responsabilidad institucional ante padres de familia.</p>
 
   <h3>NOM-002-STPS-2010 — Centros de trabajo</h3>
@@ -215,13 +215,13 @@ heroRight:
   <h2>6. Tres casos reales escolares sancionados</h2>
 
   <h3>Caso 1 — Primaria privada en Coyoacán</h3>
-  <p>800 alumnos. Tenía extintores en cantidad correcta pero <strong>caducados de recarga</strong> (último servicio hace 14 meses). Inspección SEP coordinada con Protección Civil 2025: <strong>observación grave + plazo de 10 días</strong>. Costo de regularización (recarga de 18 unidades + nueva carta de corresponsabilidad): $9,400 pesos. Sin multa por cumplir plazo, pero la observación quedó en expediente del plantel.</p>
+  <p>800 alumnos. Tenía extintores en cantidad correcta pero <strong>caducados de recarga</strong> (último servicio hace 14 meses). Inspección SEP coordinada con Protección Civil: <strong>observación grave + plazo de 10 días</strong>. Costo de regularización (recarga de 18 unidades + nueva carta de corresponsabilidad): $9,400 pesos. Sin multa por cumplir plazo, pero la observación quedó en expediente del plantel.</p>
 
   <h3>Caso 2 — Secundaria pública en Iztapalapa</h3>
-  <p>Laboratorio de química con un solo extintor PQS 6 kg. Inspección 2026: <strong>observación grave por insuficiencia en zona de riesgo alto</strong> — el laboratorio requería mínimo 3 agentes diferentes (PQS + CO₂ + AFFF). Costo de regularización: $5,800. Plazo de 15 días que el plantel cumplió.</p>
+  <p>Laboratorio de química con un solo extintor PQS 6 kg. Inspección: <strong>observación grave por insuficiencia en zona de riesgo alto</strong> — el laboratorio requería mínimo 3 agentes diferentes (PQS + CO₂ + AFFF). Costo de regularización: $5,800. Plazo de 15 días que el plantel cumplió.</p>
 
   <h3>Caso 3 — Guardería privada en Benito Juárez</h3>
-  <p>Cocina con freidora ocasional sin Tipo K instalado (tenían solo PQS). Inspección IMSS 2025: <strong>multa de $18,000 + 30 días de suspensión parcial</strong> (siguieron operando solo en horarios sin cocina). Costo total para la guardería: multa + lucro cesante 30 días + regularización = aproximadamente $80,000 pesos. La guardería ahora opera con póliza MANEXT que automatiza recargas y previene caducidad.</p>
+  <p>Cocina con freidora ocasional sin Tipo K instalado (tenían solo PQS). Inspección IMSS: <strong>multa de $18,000 + 30 días de suspensión parcial</strong> (siguieron operando solo en horarios sin cocina). Costo total para la guardería: multa + lucro cesante 30 días + regularización = aproximadamente $80,000 pesos. La guardería ahora opera con póliza MANEXT que automatiza recargas y previene caducidad.</p>
 </section>
 
 <section id="checklist-escolar" class="content-section">

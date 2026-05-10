@@ -1,7 +1,6 @@
 ---
-title: "Extintor CO2: Guía Técnica Completa para Equipos Electrónicos 2026"
+title: "Extintor CO2: Guía Técnica Completa para Equipos Electrónicos"
 description: "Todo sobre el extintor CO2: cómo funciona, capacidades disponibles, comparativa vs PQS y agentes limpios, normativa NOM, precios en CDMX y cuándo es la mejor opción para tu empresa."
-pubDate: "2026-04-05"
 heroRight:
   - "El extintor CO2 es la única opción que extingue fuegos eléctricos sin dejar residuos que dañen los equipos. Un extintor PQS puede salvar el servidor del incendio pero destruirlo con el polvo. Para data centers, laboratorios y cuartos eléctricos, el CO2 no es un lujo — es la decisión técnica correcta."
   - "En <strong>MANEXT</strong> llevamos más de 80 años suministrando extintores CO2 certificados NOM-154-SCFI a empresas de CDMX y Estado de México. Te asesoramos sobre la capacidad correcta para tu cuarto de servidores, instalamos y programamos el mantenimiento anual obligatorio."

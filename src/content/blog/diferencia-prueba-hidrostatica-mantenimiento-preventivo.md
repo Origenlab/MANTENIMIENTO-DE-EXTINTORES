@@ -1,7 +1,6 @@
 ---
-title: "Prueba Hidrostática vs Mantenimiento Preventivo de Extintores: Diferencias 2026"
+title: "Prueba Hidrostática vs Mantenimiento Preventivo de Extintores: Diferencias"
 description: "Explica las diferencias entre prueba hidrostática y mantenimiento preventivo de extintores: qué evalúa cada una, frecuencia, costo y por qué ambas son obligatorias según NOM-154-SCFI."
-pubDate: "2026-05-10"
 heroRight:
   - "Un extintor con mantenimiento preventivo vigente pero prueba hidrostática vencida incumple la NOM-154-SCFI. Ambos servicios son obligatorios e independientes: el mantenimiento anual verifica que el extintor funciona; la prueba hidrostática verifica que el cilindro puede soportar la presión con seguridad."
   - "En <strong>MANEXT</strong> llevamos más de 80 años realizando ambos servicios en CDMX. Monitoreamos las fechas de mantenimiento preventivo y prueba hidrostática de cada extintor y te avisamos con anticipación para que nunca estés fuera de norma."
@@ -179,16 +178,16 @@ heroRight:
 
 <h2 id="calendario-combinado">Cómo Crear tu Calendario Combinado</h2>
 
-<p>Con la fecha de fabricación de cada extintor (que aparece en la etiqueta del fabricante), puedes proyectar cuándo requerirá cada servicio a futuro. Para un extintor PQS fabricado en enero de 2020:</p>
+<p>Con la fecha de fabricación de cada extintor (que aparece en la etiqueta del fabricante), puedes proyectar cuándo requerirá cada servicio a futuro. Tomando como referencia un extintor PQS recién fabricado:</p>
 
 <ul class="check-list">
-  <li><strong>Enero 2021:</strong> Mantenimiento preventivo anual</li>
-  <li><strong>Enero 2022:</strong> Mantenimiento preventivo anual</li>
-  <li><strong>Enero 2023:</strong> Mantenimiento preventivo anual</li>
-  <li><strong>Enero 2024:</strong> Mantenimiento preventivo anual</li>
-  <li><strong>Enero 2025:</strong> Prueba hidrostática + mantenimiento a fondo + recarga (año 5)</li>
-  <li><strong>Enero 2026–2029:</strong> Mantenimiento preventivo anual cada año</li>
-  <li><strong>Enero 2030:</strong> Prueba hidrostática (año 10) + mantenimiento a fondo</li>
+  <li><strong>Año 1:</strong> Mantenimiento preventivo anual</li>
+  <li><strong>Año 2:</strong> Mantenimiento preventivo anual</li>
+  <li><strong>Año 3:</strong> Mantenimiento preventivo anual</li>
+  <li><strong>Año 4:</strong> Mantenimiento preventivo anual</li>
+  <li><strong>Año 5:</strong> Prueba hidrostática + mantenimiento a fondo + recarga</li>
+  <li><strong>Años 6 a 9:</strong> Mantenimiento preventivo anual cada año</li>
+  <li><strong>Año 10:</strong> Prueba hidrostática + mantenimiento a fondo</li>
 </ul>
 
 <div id="faq" class="faq-section">

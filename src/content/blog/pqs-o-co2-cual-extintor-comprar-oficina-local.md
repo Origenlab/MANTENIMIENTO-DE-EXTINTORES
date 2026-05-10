@@ -1,10 +1,10 @@
 ---
-title: "PQS o CO₂: Cuál Extintor Comprar para tu Oficina o Local en CDMX 2026"
+title: "PQS o CO₂: Cuál Extintor Comprar para tu Oficina o Local en CDMX"
 description: "Comparativa técnica PQS vs CO₂: química, residuo, clases de fuego, costo total a 20 años y matriz de decisión por área. Qué comprar para oficina, local, taller o servidor."
 heroImage: "img/img-index/extintor.avif"
 heroRight:
   - "PQS y CO₂ son los dos extintores más vendidos en CDMX, y los más confundidos. <strong>El PQS es versátil pero deja residuo abrasivo</strong>; el <strong>CO₂ es limpio pero solo apaga clases B y C</strong>. Comprar el equivocado para tu área significa que en una emergencia real, o no apaga el fuego, o destruye más de lo que salva."
-  - "Esta guía 2026 te da la matriz de decisión que usamos en MANEXT para asesorar a oficinas, comercios, talleres y data centers en la Zona Metropolitana. Incluye comparativa técnica completa, <strong>costo total de propiedad a 20 años</strong> (no solo precio de compra) y casos de uso por área específica."
+  - "Esta guía te da la matriz de decisión que usamos en MANEXT para asesorar a oficinas, comercios, talleres y data centers en la Zona Metropolitana. Incluye comparativa técnica completa, <strong>costo total de propiedad a 20 años</strong> (no solo precio de compra) y casos de uso por área específica."
 ---
 
 <div class="article-intro">
@@ -98,7 +98,7 @@ heroRight:
 
 <section id="costo-total" class="content-section">
   <h2>4. Costo total de propiedad a 20 años (no solo precio de compra)</h2>
-  <p>Comparar solo el precio de compra es engañoso. Un extintor vive entre 12 y 20 años. Durante ese tiempo paga recargas anuales y pruebas hidrostáticas cada 5 años. Aquí el cálculo completo para un PQS 6 kg vs un CO₂ 4.54 kg en CDMX, con precios 2026:</p>
+  <p>Comparar solo el precio de compra es engañoso. Un extintor vive entre 12 y 20 años. Durante ese tiempo paga recargas anuales y pruebas hidrostáticas cada 5 años. Aquí el cálculo completo para un PQS 6 kg vs un CO₂ 4.54 kg en CDMX, con precios:</p>
 
   <table>
     <thead>
@@ -248,5 +248,5 @@ heroRight:
 <section class="content-section">
   <h2>Próximo paso: cotización combinada PQS + CO₂</h2>
   <p>Si después de leer esto identificaste que tu empresa necesita una mezcla, lo siguiente es definir cantidades exactas. Mándanos por WhatsApp tu superficie, distribución de áreas (oficinas, servidores, almacén, etc.) y giro — en 24 horas tienes <strong>cotización formal con PQS + CO₂ asignados por zona</strong>, costo total y paquete documental NOM-154.</p>
-  <p>Si quieres profundizar antes en otros temas, revisa nuestra <a href="/blog/comprar-extintores-cdmx-guia-completa-empresas-2026">guía completa para comprar extintores en CDMX 2026</a> y nuestro <a href="/blog/cuantos-extintores-comprar-empresa-calculo-nom-002">cálculo paso a paso de cuántos extintores necesita tu empresa según NOM-002-STPS</a>.</p>
+  <p>Si quieres profundizar antes en otros temas, revisa nuestra <a href="/blog/comprar-extintores-cdmx-guia-completa-empresas-2026">guía completa para comprar extintores en CDMX</a> y nuestro <a href="/blog/cuantos-extintores-comprar-empresa-calculo-nom-002">cálculo paso a paso de cuántos extintores necesita tu empresa según NOM-002-STPS</a>.</p>
 </section>

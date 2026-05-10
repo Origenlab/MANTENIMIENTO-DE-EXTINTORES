@@ -1,7 +1,6 @@
 ---
-title: "¿Cuántos Extintores Necesita tu Empresa? Cálculo NOM-002-STPS 2026"
+title: "¿Cuántos Extintores Necesita tu Empresa? Cálculo NOM-002-STPS"
 description: "Descubre cuántos extintores necesita tu empresa según NOM-002-STPS: cálculo por m², tipos de riesgo, distancias máximas y dónde instalarlos. MANEXT asesora sin costo en CDMX."
-pubDate: "2026-06-09"
 heroRight:
   - "La NOM-002-STPS no establece un número fijo de extintores para todos los negocios: el cálculo correcto combina el nivel de riesgo de la actividad, la superficie y las distancias máximas de recorrido. Instalar uno de menos puede derivar en multas, clausura y un incendio que no puedes controlar."
   - "En <strong>MANEXT</strong> llevamos más de 80 años realizando diagnósticos gratuitos para empresas en CDMX. Calculamos el número correcto de extintores por zona, entregamos plano de distribución sugerida y cotización personalizada sin compromiso."

@@ -1,7 +1,6 @@
 ---
-title: "Capacitación de Brigadas Contra Incendio Certificada en CDMX 2026"
+title: "Capacitación de Brigadas Contra Incendio Certificada en CDMX"
 description: "Capacitación profesional de brigadas contra incendio con certificación NOM-002-STPS. Cursos en uso de extintores para empresas en CDMX con constancias DC-3 reconocidas ante la STPS."
-pubDate: "2026-04-30"
 heroRight:
   - "Los primeros 3 minutos son críticos para controlar un conato de incendio. Una brigada bien capacitada puede reducir hasta 80% las víctimas — pero solo si sabe exactamente qué extintor usar y cómo actuar ante cada clase de fuego."
   - "En <strong>MANEXT</strong> llevamos más de 80 años capacitando brigadas en CDMX. Ofrecemos cursos con constancias DC-3 reconocidas ante la STPS, desde capacitación básica empresarial hasta programas avanzados para industrias de alto riesgo."
@@ -186,7 +185,7 @@ heroRight:
 <div id="faq" class="faq-section">
   <div class="faq-item">
     <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-1">¿La capacitación de brigadas es obligatoria para todas las empresas?</button>
-    <div class="faq-answer" id="faq-cap-1"><p>La NOM-002-STPS obliga a empresas con más de 100 trabajadores a contar con brigadas capacitadas y certificadas. El Reglamento de Construcciones de CDMX la requiere además para obtener visto bueno de Protección Civil, independientemente del tamaño. El incumplimiento puede resultar en multas de 250 a 2,500 veces la UMA (aproximadamente $27,000 a $275,000 MXN en 2026) y clausura temporal de operaciones.</p></div>
+    <div class="faq-answer" id="faq-cap-1"><p>La NOM-002-STPS obliga a empresas con más de 100 trabajadores a contar con brigadas capacitadas y certificadas. El Reglamento de Construcciones de CDMX la requiere además para obtener visto bueno de Protección Civil, independientemente del tamaño. El incumplimiento puede resultar en multas de 250 a 2,500 veces la UMA (aproximadamente $27,000 a $275,000 MXN) y clausura temporal de operaciones.</p></div>
   </div>
   <div class="faq-item">
     <button class="faq-question" aria-expanded="false" aria-controls="faq-cap-2">¿Cuánto tiempo dura la capacitación básica de brigadas?</button>

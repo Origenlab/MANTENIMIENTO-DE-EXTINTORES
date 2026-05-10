@@ -25,11 +25,7 @@ function getCategory(id: string): string {
 const allPosts = await getCollection('blog');
 const posts = allPosts
   .filter(p => !CATEGORY_SLUGS.includes(p.id.replace(/\.md$/, '')))
-  .sort((a, b) => {
-    const da = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
-    const db = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
-    return db - da;
-  });
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'es'));
 
 const topics = [
   { label: 'Tipos de Extintor',   icon: 'fire',     desc: 'PQS, CO₂, Tipo K, AFFF y más' },

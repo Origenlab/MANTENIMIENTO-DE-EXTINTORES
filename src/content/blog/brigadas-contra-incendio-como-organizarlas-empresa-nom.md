@@ -1,7 +1,6 @@
 ---
-title: "Brigadas Contra Incendio: Cómo Organizarlas en tu Empresa según NOM-002-STPS 2026"
+title: "Brigadas Contra Incendio: Cómo Organizarlas en tu Empresa según NOM-002-STPS"
 description: "Guía completa para integrar y organizar brigadas contra incendio en tu empresa según NOM-002-STPS y STPS: estructura, roles, requisitos legales, capacitación y documentación."
-pubDate: "2026-05-15"
 heroRight:
   - "La NOM-002-STPS obliga a los centros de trabajo a contar con brigadas contra incendio capacitadas y documentadas. Sin una brigada bien estructurada con roles claros y capacitación real, los primeros minutos de una emergencia son caos — exactamente cuando más importa la coordinación."
   - "En <strong>MANEXT</strong> llevamos más de 80 años apoyando a empresas en CDMX a integrar brigadas contra incendio. Impartimos capacitación práctica con extintores reales, entregamos constancias DC-3 registradas ante STPS y apoyamos la estructuración del plan de emergencia."

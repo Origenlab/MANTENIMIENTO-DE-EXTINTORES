@@ -1,5 +1,5 @@
 ---
-title: "Cuántos Extintores Comprar para tu Empresa: Cálculo NOM-002-STPS Paso a Paso 2026"
+title: "Cuántos Extintores Comprar para tu Empresa: Cálculo NOM-002-STPS Paso a Paso"
 description: "Calcula cuántos extintores necesita tu empresa según NOM-002-STPS-2010. Fórmula oficial, tabla por superficie, 3 casos reales (oficina, restaurante, bodega) y errores."
 heroImage: "img/img-index/extintor.avif"
 heroRight:
@@ -9,7 +9,7 @@ heroRight:
 
 <div class="article-intro">
   <p class="article-lead">¿Cuántos extintores debe tener tu empresa? La respuesta corta es: <strong>uno por cada 200 m² o fracción</strong>, con distancia máxima de recorrido de <strong>15 metros</strong> desde cualquier punto del área protegida. La respuesta larga — la que evita multas de Protección Civil — depende del nivel de riesgo, distribución de áreas y giro del negocio. Esta guía te lleva paso a paso por el cálculo oficial NOM-002-STPS-2010.</p>
-  <p>En 2026 las inspecciones de Protección Civil CDMX y Estado de México exigen no solo la cantidad correcta, sino también la <strong>distribución</strong> documentada en plano. Tener 10 extintores juntos en bodega no cumple la norma; tener 4 bien distribuidos sí cumple. Esta guía te enseña a calcular ambas dimensiones — cuántos y dónde — antes de cotizar tu compra.</p>
+  <p>Las inspecciones de Protección Civil CDMX y Estado de México exigen no solo la cantidad correcta, sino también la <strong>distribución</strong> documentada en plano. Tener 10 extintores juntos en bodega no cumple la norma; tener 4 bien distribuidos sí cumple. Esta guía te enseña a calcular ambas dimensiones — cuántos y dónde — antes de cotizar tu compra.</p>
   <p>Vas a encontrar: la fórmula NOM-002-STPS desglosada, los tres niveles de riesgo y cómo afectan tu cálculo, tabla de referencia por superficie, tres casos reales con números, errores que invalidan el cumplimiento, y cuándo conviene comprar más equipos que el mínimo legal.</p>
 </div>
 
@@ -135,7 +135,7 @@ heroRight:
   <p><strong>Total: 4 extintores</strong> (2 PQS 6 kg + 1 PQS 4.5 kg + 1 Tipo K 6 L). Costo equipo: $1,300 × 2 + $950 + $3,400 = <strong>~$6,950 pesos</strong>. Más señalización para 4 puntos + capacitación obligatoria DC-3 para personal de cocina.</p>
 
   <h3>Lo crítico que Protección Civil revisa en restaurantes</h3>
-  <p>El extintor Tipo K en cocina <strong>no es negociable</strong>. Es la causa #1 de cierre temporal de restaurantes en CDMX en inspecciones 2024–2026. Tener PQS en cocina no sustituye Tipo K — son agentes con química distinta para fuegos distintos.</p>
+  <p>El extintor Tipo K en cocina <strong>no es negociable</strong>. Es la causa #1 de cierre temporal de restaurantes en CDMX en inspecciones recientes. Tener PQS en cocina no sustituye Tipo K — son agentes con química distinta para fuegos distintos.</p>
 </section>
 
 <section id="caso-bodega" class="content-section">
@@ -239,6 +239,6 @@ heroRight:
 
 <section class="content-section">
   <h2>Próximo paso: cálculo formal sin costo</h2>
-  <p>Si ya leíste hasta aquí, ya sabes más que el 90% de las empresas que compran extintores en CDMX. El siguiente paso lógico es aplicar el cálculo a tu caso concreto. Mándanos por WhatsApp tu superficie, giro y dirección — en menos de 24 horas tienes <strong>cotización formal con cantidad legal mínima, distribución sugerida y precio por unidad</strong>. Si necesitas guía complementaria sobre tipos de extintor y precios, revisa nuestra <a href="/blog/comprar-extintores-cdmx-guia-completa-empresas-2026">guía pillar para comprar extintores en CDMX 2026</a>.</p>
+  <p>Si ya leíste hasta aquí, ya sabes más que el 90% de las empresas que compran extintores en CDMX. El siguiente paso lógico es aplicar el cálculo a tu caso concreto. Mándanos por WhatsApp tu superficie, giro y dirección — en menos de 24 horas tienes <strong>cotización formal con cantidad legal mínima, distribución sugerida y precio por unidad</strong>. Si necesitas guía complementaria sobre tipos de extintor y precios, revisa nuestra <a href="/blog/comprar-extintores-cdmx-guia-completa-empresas-2026">guía pillar para comprar extintores en CDMX</a>.</p>
   <p>MANEXT lleva 80+ años haciendo este cálculo para empresas como la tuya. Lo hemos hecho miles de veces — cada uno distinto, cada uno con su lógica de superficie, riesgo y distribución. Hagamos el tuyo bien la primera vez.</p>
 </section>

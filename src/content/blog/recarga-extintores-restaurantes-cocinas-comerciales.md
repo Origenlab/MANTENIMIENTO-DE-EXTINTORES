@@ -1,7 +1,6 @@
 ---
-title: "Recarga de Extintores en Restaurantes y Cocinas Comerciales 2026"
+title: "Recarga de Extintores en Restaurantes y Cocinas Comerciales"
 description: "Guía completa de recarga de extintores para restaurantes: extintor Tipo K obligatorio, NOM-002-STPS para cocinas, frecuencias de servicio y requisitos de Protección Civil CDMX."
-pubDate: "2026-04-20"
 heroRight:
   - "Las cocinas comerciales son el entorno con mayor riesgo de incendio en establecimientos comerciales. El extintor Tipo K con acetato de potasio es el único equipo portátil diseñado para fuegos Clase K en aceites y grasas — y su recarga requiere proceso especializado."
   - "En <strong>MANEXT</strong> llevamos más de 80 años atendiendo restaurantes y cocinas comerciales en CDMX. Ofrecemos extintores Tipo K y PQS certificados, recarga con agentes de grado profesional y documentación completa para Protección Civil."

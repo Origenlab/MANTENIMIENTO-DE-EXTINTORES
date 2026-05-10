@@ -1,7 +1,6 @@
 ---
 title: "NOM-002-STPS: Guía Definitiva de Cumplimiento para Empresas en México"
-description: "Guía definitiva NOM-002-STPS: requisitos de extintores por nivel de riesgo, clasificación de áreas, capacitación obligatoria, documentación para inspecciones STPS y sanciones 2026."
-pubDate: "2026-02-10"
+description: "Guía definitiva NOM-002-STPS: requisitos de extintores por nivel de riesgo, clasificación de áreas, capacitación obligatoria, documentación para inspecciones STPS y sanciones."
 heroRight:
   - "La <strong>NOM-002-STPS-2010</strong> no es opcional: es la norma federal que toda empresa en México debe cumplir para prevenir incendios en el trabajo. Clasifica tu centro de trabajo en riesgo ordinario, alto o muy alto — y cada nivel exige extintores específicos, distancias de recorrido, capacitación y simulacros. La STPS puede inspeccionarte sin aviso, con multas de hasta <strong>$542,850 MXN</strong>."
   - "En <strong>MANEXT</strong> llevamos más de 80 años ayudando a empresas a cumplir la NOM-002-STPS: desde el análisis de riesgo y el equipamiento correcto hasta la documentación lista para inspección. Más de <strong>15,000 empresas</strong> en CDMX y Estado de México confían en nuestro acompañamiento normativo."

@@ -1,7 +1,6 @@
 ---
-title: "Cuándo Recargar un Extintor: Señales, Frecuencia NOM y Costos 2026"
+title: "Cuándo Recargar un Extintor: Señales, Frecuencia NOM y Costos"
 description: "Guía completa: cuándo recargar un extintor, 10 señales de alarma, frecuencia según NOM-154-SCFI, proceso certificado, costos reales CDMX y consecuencias de no hacerlo."
-pubDate: "2026-02-25"
 heroRight:
   - "Un extintor sin recarga a tiempo no es seguridad — es una <strong>falsa sensación de seguridad</strong>. El polvo PQS se apelmaza, el CO₂ pierde presión, el Tipo K se degrada. La NOM-154-SCFI establece frecuencias obligatorias de recarga por tipo de extintor: incumplirlas puede invalidar tu póliza de seguro y costar hasta <strong>$300,000 MXN en multas STPS</strong>."
   - "En <strong>MANEXT</strong> llevamos más de 80 años realizando recargas certificadas en CDMX y Estado de México. Técnicos con certificación EMA vigente, agentes certificados, básculas calibradas y garantía de 18 meses. <strong>Servicio express 24-48 horas</strong> con recolección sin costo en servicios mayores."

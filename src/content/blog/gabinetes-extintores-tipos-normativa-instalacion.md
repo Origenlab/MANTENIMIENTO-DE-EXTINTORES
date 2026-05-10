@@ -1,7 +1,6 @@
 ---
-title: "Gabinetes para Extintores: Tipos, Normativa e Instalación Correcta 2026"
+title: "Gabinetes para Extintores: Tipos, Normativa e Instalación Correcta"
 description: "Guía técnica sobre gabinetes para extintores: tipos disponibles, cuándo son obligatorios, requisitos de instalación según normativa mexicana y errores comunes que generan observaciones."
-pubDate: "2026-05-30"
 heroRight:
   - "El gabinete para extintor tiene requisitos técnicos y normativos específicos. Instalarlo mal, elegir el tipo incorrecto o no señalizarlo adecuadamente puede dificultar el acceso al extintor en emergencia — y generar observaciones de Protección Civil durante verificaciones."
   - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando a empresas en CDMX sobre el tipo correcto de gabinete para cada ambiente. Suministramos e instalamos gabinetes con señalización NOM y documentación completa para Protección Civil."

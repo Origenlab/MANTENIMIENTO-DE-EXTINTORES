@@ -1,7 +1,6 @@
 ---
-title: "Extintores Certificados NOM: Qué Verificar Antes de Comprar en 2026"
+title: "Extintores Certificados NOM: Qué Verificar Antes de Comprar"
 description: "Guía para verificar que un extintor esté certificado NOM-154-SCFI antes de comprarlo. Cómo leer la etiqueta, detectar extintores falsos y qué exigir al proveedor en México."
-pubDate: "2026-04-25"
 heroRight:
   - "En México circulan miles de extintores sin certificación visualmente idénticos a los certificados. La NOM-154-SCFI-2005 establece qué debe cumplir todo extintor en México — y un equipo que no la tiene puede fallar exactamente cuando más lo necesitas."
   - "En <strong>MANEXT</strong> llevamos más de 80 años distribuyendo extintores en CDMX. Todos nuestros equipos cuentan con certificación NOM-154-SCFI vigente y entregamos documentación completa: certificados de lote, fichas técnicas y factura CFDI."
@@ -115,7 +114,7 @@ heroRight:
 
 <div class="highlight-box">
   <h4>El Costo Real de los Extintores Baratos</h4>
-  <p>Un extintor PQS sin certificación puede costar $250 MXN vs $650 de uno certificado. La diferencia es $400. Una multa de Protección Civil por equipos deficientes puede ir de 50 a 5,000 UMAs (aproximadamente $5,500 a $550,000 MXN en 2026). La aritmética no favorece al ahorro.</p>
+  <p>Un extintor PQS sin certificación puede costar $250 MXN vs $650 de uno certificado. La diferencia es $400. Una multa de Protección Civil por equipos deficientes puede ir de 50 a 5,000 UMAs (aproximadamente $5,500 a $550,000 MXN). La aritmética no favorece al ahorro.</p>
 </div>
 
 <h2 id="que-exigir-proveedor">Qué Exigir a tu Proveedor</h2>
