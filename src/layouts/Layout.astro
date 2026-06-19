@@ -353,58 +353,5 @@ const breadcrumbSchema = {
 
 </footer>
 
-<!-- DM Champ Chat Widget -->
-<script is:inline src="https://api.dmchamp.com/v1/chat-widget/qDWqinxmn8VwPVHeQQzf"></script>
-<!-- End DM Champ Chat Widget -->
-
-<!-- Embudo MANEXT: todo lo que apuntaba a WhatsApp ahora abre primero el chat DMChamp -->
-<script is:inline>
-  (function () {
-    'use strict';
-    var WA_FALLBACK = 'https://wa.me/5215614612594?text=' + encodeURIComponent('Hola, necesito información sobre sus servicios de extintores.');
-    var WA_REGEX = /(?:^|\/\/)(?:wa\.me|api\.whatsapp\.com|whatsapp\.com\/send)/i;
-
-    function clickBubble() {
-      var bubble = document.querySelector('.wai-chat-bubble');
-      if (bubble) { bubble.click(); return true; }
-      return false;
-    }
-
-    function openDMChampChat() {
-      if (clickBubble()) return;
-      // Widget aún cargando — reintenta a 800ms; si falla, fallback a WhatsApp
-      setTimeout(function () {
-        if (!clickBubble()) window.open(WA_FALLBACK, '_blank', 'noopener');
-      }, 800);
-    }
-
-    window.openDMChampChat = openDMChampChat;
-
-    // 1) Interceptar TODOS los <a> que apuntan a WhatsApp
-    document.addEventListener('click', function (e) {
-      var link = e.target && e.target.closest && e.target.closest('a[href]');
-      if (!link) return;
-      var href = link.getAttribute('href') || '';
-      if (!WA_REGEX.test(href)) return;
-      e.preventDefault();
-      e.stopPropagation();
-      openDMChampChat();
-    }, true);
-
-    // 2) Interceptar window.open(...wa.me...) que usan los form handlers de cada página
-    var nativeOpen = window.open;
-    window.open = function (url, target, features) {
-      try {
-        if (typeof url === 'string' && WA_REGEX.test(url)) {
-          openDMChampChat();
-          return null;
-        }
-      } catch (_) { /* no-op */ }
-      return nativeOpen.apply(window, arguments);
-    };
-  })();
-</script>
-<!-- End Embudo MANEXT -->
-
 </body>
 </html>
