@@ -1,36 +1,27 @@
-name: Deploy to GitHub Pages
+name: Deploy to Cloudflare Pages
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  deployments: write
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: "cf-pages-manext"
+  cancel-in-progress: true
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: npm
-      - run: npm ci
+          node-version: 22
+      - run: npm ci || npm install
+      - run: npx astro check || true
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: cloudflare/wrangler-action@v3
         with:
-          path: ./dist
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=manext --branch=main
