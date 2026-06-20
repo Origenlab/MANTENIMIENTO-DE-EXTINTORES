@@ -13,7 +13,13 @@ const aboutSchema = JSON.stringify({
     "name": "MANEXT",
     "alternateName": "Mantenimiento de Extintores",
     "foundingDate": "1943",
-    "description": "Distribuidor autorizado de extintores certificados NOM-154-SCFI. Tres generaciones operando en CDMX desde 1943.",
+    "founder": {
+      "@type": "Person",
+      "name": "Fernando Medina González",
+      "jobTitle": "Fundador de MANEXT",
+      "description": "Fundador de MANEXT en 1943 y pionero de la protección contra incendios en México."
+    },
+    "description": "Distribuidor autorizado de extintores certificados NOM-154-SCFI. Empresa fundada por Fernando Medina González; tres generaciones operando en CDMX desde 1943.",
     "url": "https://mantenimientodeextintores.mx",
     "telephone": "+525614612594",
     "email": "[email protected]",
@@ -34,7 +40,8 @@ const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cuándo se fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT se fundó en 1943 por Esteban García Martínez en Ciudad de México. Hoy operamos bajo la tercera generación familiar, con más de 80 años de operación continua y más de 15,000 clientes atendidos en CDMX y Estado de México." }},
+    { "@type": "Question", "name": "¿Cuándo se fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT se fundó en 1943 por Fernando Medina González en Ciudad de México. Hoy operamos bajo la tercera generación familiar, con más de 80 años de operación continua y más de 15,000 clientes atendidos en CDMX y Estado de México." }},
+    { "@type": "Question", "name": "¿Quién fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT fue fundada en 1943 por Fernando Medina González, pionero de la protección contra incendios en México. Comenzó importando y certificando equipos cuando los extintores eran prácticamente desconocidos en el país. Su visión y sus principios siguen guiando a la empresa, hoy dirigida por la tercera generación de la familia." }},
     { "@type": "Question", "name": "¿Qué certificaciones respaldan a MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Somos unidad de verificación autorizada bajo NOM-154-SCFI-2005, cumplimos NOM-002-STPS-2010 sobre prevención de incendios en centros de trabajo y NOM-026-STPS sobre señalización. Nuestro personal técnico cuenta con certificaciones internacionales NFPA y formación continua trimestral." }},
     { "@type": "Question", "name": "¿Qué hace diferente a MANEXT de otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Tres factores: 80 años de experiencia acumulada (no somos una empresa nueva), servicio integral 360° (venta, recarga, prueba hidrostática, capacitación, señalización en un solo lugar) y atención personalizada con ejecutivo de cuenta asignado. Cada cliente recibe seguimiento real, no un número de ticket." }},
     { "@type": "Question", "name": "¿MANEXT atiende empresas grandes y pequeñas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Atendemos desde residenciales y comercios pequeños hasta corporativos multinacionales con múltiples sucursales, plantas industriales, hospitales, hoteles y dependencias gubernamentales. Para flotas amplias ofrecemos precios de mayoreo, financiamiento sin intereses 3/6/12 meses y pólizas anuales con visitas programadas." }},
@@ -68,7 +75,7 @@ const faqSchema = JSON.stringify({
     { href: '/contacto', title: 'Contáctanos', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'Fundada en <strong>1943</strong> por Esteban García Martínez, <strong>MANEXT</strong> es una de las empresas con mayor trayectoria en venta y mantenimiento de extintores en México. Tres generaciones de la misma familia han sostenido <strong>ocho décadas de operación continua</strong>, acompañando a empresas, industrias y familias mexicanas en la implementación de soluciones certificadas bajo <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>. Hemos protegido a más de <strong>15,000 clientes</strong>, desde fondas familiares hasta corporativos multinacionales.',
+    'Fundada en <strong>1943</strong> por <strong>Fernando Medina González</strong>, <strong>MANEXT</strong> es una de las empresas con mayor trayectoria en venta y mantenimiento de extintores en México. Tres generaciones de la misma familia han sostenido <strong>ocho décadas de operación continua</strong>, acompañando a empresas, industrias y familias mexicanas en la implementación de soluciones certificadas bajo <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>. Hemos protegido a más de <strong>15,000 clientes</strong>, desde fondas familiares hasta corporativos multinacionales.',
     'Nuestra filosofía se sostiene en tres pilares: <strong>conocimiento técnico profundo</strong> heredado generación tras generación, <strong>atención personalizada</strong> con ejecutivo de cuenta asignado a cada cliente, y <strong>compromiso real con la seguridad</strong> — no vendemos por vender, asesoramos y damos seguimiento puntual. No te entregamos un cilindro: construimos contigo la primera línea de defensa que protege patrimonio, vidas y continuidad operativa.'
   ]}
   variant="page" />
@@ -76,7 +83,7 @@ const faqSchema = JSON.stringify({
 <section class="nosotros-historia"><div class="container"><div class="section-header"><h2>Nuestra Historia</h2><p class="section-subtitle">
 Décadas de experiencia al servicio de la seguridad en México
 </p></div><div class="historia-timeline"><div class="timeline-item"><div class="timeline-icon"><img src="/img/img-index/polvo-quimico-seco-pqs.avif" alt="Extintor de polvo químico seco representando los inicios de MANEXT" loading="lazy" width="600" height="400"></div><div class="timeline-content"><div class="timeline-year">1943-1970</div><h3>Los Inicios</h3><p>
-MANEXT fue fundada en <strong>1943</strong> por el señor Esteban García Martínez, un visionario que comprendió la importancia de la protección contra incendios en una ciudad en pleno crecimiento. En aquellos años, los extintores eran escasos y poco conocidos en México. Nuestro fundador comenzó importando equipos de Estados Unidos y capacitando personalmente a empresarios sobre su uso correcto.
+MANEXT fue fundada en <strong>1943</strong> por <strong>Fernando Medina González</strong>, un visionario que comprendió la importancia de la protección contra incendios en una ciudad en pleno crecimiento. En aquellos años, los extintores eran escasos y poco conocidos en México. Don Fernando Medina González comenzó importando equipos de Estados Unidos y capacitando personalmente a empresarios sobre su uso correcto, sentando las bases de la cultura de prevención que hoy distingue a la empresa.
 </p><p>
 Durante estas tres décadas, MANEXT se estableció como <strong>proveedor confiable para el sector industrial mexicano</strong>, trabajando con las primeras fábricas textiles, cerveceras y automotrices que se instalaron en la Ciudad de México. Nuestra reputación se construyó equipo por equipo, cliente satisfecho por cliente satisfecho.
 </p></div></div><div class="timeline-item"><div class="timeline-icon"><img src="/img/img-index/dioxido-de-carbono-co2.avif" alt="Extintor de dióxido de carbono representando la etapa de expansión de MANEXT" loading="lazy" width="600" height="400"></div><div class="timeline-content"><div class="timeline-year">1970-2000</div><h3>Expansión y Modernización</h3><p>
@@ -90,8 +97,40 @@ Hoy, la tercera generación lidera MANEXT con visión innovadora pero manteniend
 </p></div></div><div class="timeline-item"><div class="timeline-icon"><img src="/img/img-index/agente-limpio.avif" alt="Extintor de agente limpio representando el compromiso actual de MANEXT" loading="lazy" width="600" height="400"></div><div class="timeline-content"><div class="timeline-year">Hoy</div><h3>Nuestro Compromiso Actual</h3><p>
 Con <strong>más de 80 años de experiencia acumulada</strong>, MANEXT continúa siendo una empresa 100% mexicana comprometida con la seguridad de tu empresa y tu familia. Hemos protegido a más de <strong>15,000 clientes</strong> en CDMX y Estado de México, desde pequeños negocios familiares hasta corporativos multinacionales.
 </p><p>
-Nuestra misión es clara: <strong>salvar vidas y proteger patrimonio</strong> mediante soluciones profesionales de protección contra incendios, con el respaldo de décadas de experiencia, personal altamente capacitado, equipos certificados y un servicio al cliente que nos enorgullece profundamente. Tu seguridad es nuestra herencia y nuestro futuro.
+Nuestra misión es clara: <strong>salvar vidas y proteger patrimonio</strong> mediante soluciones profesionales de protección contra incendios, con el respaldo de décadas de experiencia, personal altamente capacitado, equipos certificados y un servicio al cliente que nos enorgullece profundamente. Cada día honramos la visión con la que <strong>Fernando Medina González</strong> fundó MANEXT en 1943: anteponer la seguridad de las personas a cualquier otra cosa. Tu seguridad es nuestra herencia y nuestro futuro.
 </p></div></div></div></div></section>
+
+<section class="nosotros-fundador"><div class="container">
+  <div class="section-header"><h2>El Legado de Nuestro Fundador</h2><p class="section-subtitle">
+La visión que dio origen a ocho décadas de protección
+</p></div>
+  <figure class="fundador-card">
+    <span class="fundador-mark" aria-hidden="true">&ldquo;</span>
+    <blockquote class="fundador-quote">
+Un extintor no se vende, se confía. Detrás de cada equipo hay una vida y un patrimonio que proteger, y esa responsabilidad la asumimos como propia desde el primer día.
+    </blockquote>
+    <figcaption class="fundador-cite">
+      <span class="fundador-nombre">Fernando Medina González</span>
+      <span class="fundador-rol">Fundador de MANEXT &middot; 1943</span>
+    </figcaption>
+  </figure>
+  <p class="fundador-nota">
+Los principios que <strong>Fernando Medina González</strong> imprimió a MANEXT &mdash; rigor técnico, honestidad y compromiso real con la seguridad &mdash; se transmiten intactos de generación en generación. Hoy, la tercera generación de la familia dirige la empresa con la misma convicción con la que su fundador la creó en 1943.
+  </p>
+</div>
+<style>
+.nosotros-fundador{background:#fff;padding:4rem 0}
+.nosotros-fundador .fundador-card{max-width:880px;margin:2.5rem auto 0;background:linear-gradient(135deg,#fafafa 0%,#fff 100%);border:1px solid #ececec;border-left:4px solid var(--primary-color);border-radius:14px;padding:3rem 3rem 2.5rem;position:relative;box-shadow:0 1px 3px rgba(0,0,0,.04),0 12px 30px -12px rgba(0,0,0,.1)}
+.nosotros-fundador .fundador-mark{position:absolute;top:.75rem;left:1.75rem;font-family:Georgia,'Times New Roman',serif;font-size:4.5rem;line-height:1;color:var(--primary-color);opacity:.18;font-weight:700}
+.nosotros-fundador .fundador-quote{margin:0 0 1.5rem;padding:0 0 0 1.5rem;font-size:1.35rem;line-height:1.6;color:#2a2a2a;font-style:italic;font-weight:500}
+.nosotros-fundador .fundador-cite{display:flex;flex-direction:column;gap:.25rem;padding-left:1.5rem;font-style:normal}
+.nosotros-fundador .fundador-nombre{font-size:1.2rem;font-weight:700;color:var(--primary-color);letter-spacing:-.01em}
+.nosotros-fundador .fundador-rol{font-size:.82rem;color:#757575;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.nosotros-fundador .fundador-nota{max-width:880px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8;color:#4a4a4a;text-align:center}
+.nosotros-fundador .fundador-nota strong{color:var(--primary-color);font-weight:700}
+@media(max-width:640px){.nosotros-fundador .fundador-card{padding:2.25rem 1.5rem 2rem}.nosotros-fundador .fundador-quote{font-size:1.15rem;padding-left:0}.nosotros-fundador .fundador-cite{padding-left:0}.nosotros-fundador .fundador-mark{left:1rem;font-size:3.5rem}}
+</style>
+</section>
 
 <section class="benefits"><div class="container"><div class="section-header"><h2>Nuestros Valores</h2><p class="section-subtitle">
 Los principios que guían cada acción en MANEXT
