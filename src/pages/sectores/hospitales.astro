@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Extintores y Protección Contra Incendios para Hospitales e Instituciones de Salud",
+  "name": "Extintores para Hospitales y Clínicas en CDMX — NOM-154-SCFI",
+  "description": "Venta, instalación y mantenimiento de extintores certificados NOM-154-SCFI para hospitales, clínicas, consultorios y centros de salud en Ciudad de México y Estado de México. Agentes limpios CO₂ y FM-200 para áreas de equipos médicos críticos. Capacitación DC-3 para brigadas de salud.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://mantenimientodeextintores.mx/#business",
+    "name": "MANEXT — Mantenimiento de Extintores",
+    "telephone": "+52-56-1461-2594",
+    "foundingDate": "1943"
+  },
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "offers": {
+    "@type": "Offer",
+    "description": "CO₂ 4.5 kg para equipos médicos desde $1,200 MXN. Agente Limpio FM-200/Novec 1230 para áreas críticas desde $3,900 MXN. Extintor Tipo K para cocina hospitalaria desde $1,800 MXN."
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué extintores se usan en áreas de equipos médicos en un hospital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En áreas con equipos médicos críticos (quirófanos, UCI, salas de diagnóstico por imagen, centros de cómputo hospitalarios) se utilizan Agentes Limpios —FM-200 (HFC-227ea) o Novec 1230— y CO₂. Ambos apagan sin residuo sólido ni líquido, lo que protege los equipos de daño secundario. El PQS está contraindicado en estas áreas porque el polvo contamina instrumental y equipos electrónicos de precisión. MANEXT suministra CO₂ 4.5 kg desde $1,200 MXN y Agente Limpio HFC-227ea 5 kg desde $3,900 MXN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los hospitales en México están obligados a tener extintores certificados NOM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Los hospitales están sujetos a la NOM-002-STPS (condiciones contra incendio en centros de trabajo) y a los requisitos de licencia sanitaria de COFEPRIS, que exigen evidencia de cumplimiento en protección civil. La Secretaría de Salud y Protección Civil del estado supervisan que cada área cuente con extintores vigentes, señalización NOM-003-SEGOB y constancias de capacitación. MANEXT entrega la documentación completa que COFEPRIS y Protección Civil solicitan en cada inspección."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen capacitación de brigadas contra incendios para personal de salud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. MANEXT imparte cursos de capacitación para brigadas contra incendios con constancias DC-3 válidas ante la STPS, específicamente adaptados para hospitales: manejo de extintores sin interferir con pacientes, evacuación de áreas críticas con personal no deambulante, rutas de evacuación hospitalaria y comunicación de emergencia. Grupos hasta 20 personas, 4 horas, a domicilio en las instalaciones del hospital. Constancias oficiales entregadas el mismo día."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué extintor se usa en la cocina de un hospital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La cocina hospitalaria requiere extintor Tipo K (agente húmedo) en el área de cocción bajo NOM-002-STPS, igual que cualquier cocina comercial. Adicionalmente un PQS ABC en almacenes y pasillos adyacentes. MANEXT diagnostica las necesidades del área de nutrición y dietética hospitalaria con base en la superficie, equipos de cocción y riesgo específico, sin costo adicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿MANEXT puede gestionar el mantenimiento de todos los extintores de un hospital o clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Para instalaciones de salud ofrecemos pólizas anuales institucionales: inventario completo con número de serie y ubicación por área, mantenimiento preventivo según NOM-154-SCFI, recargas programadas con equipo de préstamo para mantener cobertura 100%, bitácora digital 24/7 por extintor, reportes fotográficos para auditorías, facturación CFDI consolidada y recordatorios automáticos de vencimiento. Atendemos hospitales públicos y privados, clínicas y consultorios en CDMX y Estado de México."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Extintores para Hospitales y Clínicas en CDMX — NOM-154-SCFI | MANEXT"
+  description="Extintores certificados NOM-154-SCFI para hospitales, clínicas y centros de salud en CDMX. CO₂ y Agentes Limpios para áreas médicas críticas. Capacitación DC-3 para brigadas. Pólizas anuales institucionales. Desde 1943."
+  canonical="https://mantenimientodeextintores.mx/sectores/hospitales"
+  ogTitle="Extintores para Hospitales y Clínicas en CDMX | MANEXT — Desde 1943"
+  ogDescription="CO₂ y FM-200/Novec para equipos médicos. Tipo K para cocina hospitalaria. Capacitación DC-3 para brigadas de salud. Documentación para COFEPRIS y Protección Civil incluida."
+  breadcrumbs={[
+    { name: 'Sectores', url: 'https://mantenimientodeextintores.mx/sectores' },
+    { name: 'Hospitales', url: 'https://mantenimientodeextintores.mx/sectores/hospitales' }
+  ]}
+  schemas={[serviceSchema, faqSchema]}
+>
+
+<Hero
+  title="Extintores para Hospitales e Instituciones de Salud en CDMX"
+  subtitle="Agentes limpios para áreas críticas · Tipo K para cocina · Capacitación DC-3 para brigadas de salud"
+  description="Venta, instalación y mantenimiento de extintores certificados NOM-154-SCFI para hospitales, clínicas, consultorios y centros de salud en Ciudad de México y Estado de México. Documentación completa para COFEPRIS y Protección Civil."
+  eyebrow="Sector · Hospitales e Instituciones de Salud"
+  ctaPhone="5614612594"
+  ctaWhatsApp="5614612594"
+  paragraphs={[
+    'Los hospitales y clínicas enfrentan un reto de protección contra incendios distinto al de otros sectores: deben proteger vidas vulnerables, equipos médicos de alta precisión y zonas de atención crítica —todo simultáneamente. El uso de extintores inadecuados puede apagar el fuego pero destruir el equipo médico o contaminar el área estéril. <strong>MANEXT</strong> lleva <strong>más de 80 años</strong> diseñando soluciones de protección para instalaciones de salud en <strong>Ciudad de México y Estado de México</strong>, con la documentación que solicitan <strong>COFEPRIS, STPS y Protección Civil</strong>.',
+    'Para <strong>áreas de equipos médicos críticos</strong> (quirófanos, UCI, salas de imagen, cómputo hospitalario) recomendamos <strong>CO₂</strong> o <strong>Agentes Limpios FM-200/Novec 1230</strong>: apagan sin residuo sólido ni líquido, sin temperatura extrema y sin daño a instrumental de precisión. Para <strong>cocinas hospitalarias</strong> con freidoras: <strong>Tipo K</strong> obligatorio bajo <strong>NOM-002-STPS</strong>. Para pasillos, almacenes y áreas generales: <strong>PQS ABC</strong>. MANEXT hace el diagnóstico gratuito área por área y arma la solución completa con <strong>documentación lista para auditorías institucionales</strong>.',
+  ]}
+/>
+
+<section style="padding: 4rem 0; background: #fafafa;">
+  <div class="container">
+    <SectionHeader
+      title="Extintores por área hospitalaria"
+      subtitle="Cada área del hospital requiere un agente extintor diferente"
+    />
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #d32f2f;">
+        <h3 style="color: #d32f2f; margin-bottom: 0.75rem;">Quirófanos y UCI</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>Agente Limpio FM-200 o Novec 1230.</strong> Apaga sin residuo. No daña instrumental ni equipos electromédicos. No genera temperatura extrema. Desde $3,900 MXN (5 kg HFC-227ea).</p>
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #1565c0;">
+        <h3 style="color: #1565c0; margin-bottom: 0.75rem;">Salas de imagen y diagnóstico</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>CO₂ 4.5 kg o Agente Limpio.</strong> Protege tomógrafos, resonadores y equipos de rayos X. Sin residuo que contamine el equipo o el ambiente médico. CO₂ desde $1,200 MXN.</p>
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #2e7d32;">
+        <h3 style="color: #2e7d32; margin-bottom: 0.75rem;">Cocina y área de nutrición</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>Tipo K 6 L (obligatorio NOM-002-STPS).</strong> Para freidoras, hornillas y parrillas hospitalarias. Saponificación de aceites calientes. Desde $1,800 MXN. PQS adicional en almacenes adyacentes.</p>
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #f57c00;">
+        <h3 style="color: #f57c00; margin-bottom: 0.75rem;">Pasillos y áreas generales</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>PQS ABC 4.5-9 kg.</strong> 1 extintor cada 300 m², máx 23 m de recorrido. Fuegos Clase A, B y C. El más versátil y económico para áreas de circulación general. Desde $450 MXN.</p>
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #6a1b9a;">
+        <h3 style="color: #6a1b9a; margin-bottom: 0.75rem;">Centro de cómputo y servidores</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>Agente Limpio Novec 1230 o CO₂.</strong> Sistemas de información hospitalaria y PACS de imagen médica. Sin residuo, sin humedad, sin daño a discos y servidores. Compatible con NFPA 72 y NFPA 2001.</p>
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #d32f2f;">
+        <h3 style="color: #d32f2f; margin-bottom: 0.75rem;">Almacenes y farmacias</h3>
+        <p style="color: #555; line-height: 1.7; font-size: 0.95rem;"><strong>PQS ABC 6-9 kg.</strong> Almacenes de material estéril, medicamentos y reactivos. Riesgo ordinario. Documentación para auditorías de COFEPRIS incluida con cada equipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 4rem 0; background: white;">
+  <div class="container">
+    <SectionHeader
+      title="Testimonio verificado"
+      subtitle="Experiencia de un cliente real del sector salud"
+    />
+    <div style="max-width: 700px; margin: 2rem auto 0; background: #fafafa; border-radius: 12px; padding: 2rem; border-left: 4px solid #d32f2f;">
+      <p style="color: #555; font-size: 1.05rem; line-height: 1.8; font-style: italic;">"MANEXT entiende las exigencias del sector salud. Nos suministraron los extintores correctos por área — Agentes Limpios para imagenología y quirófanos, Tipo K para cocina, PQS para el resto — con la documentación que COFEPRIS necesita. Su servicio de préstamo de equipos durante la recarga nos permite mantener cobertura al 100% en todo momento, que en un hospital no es opcional."</p>
+      <p style="margin-top: 1rem; font-weight: 600; color: #212121;">Ana Patricia Ruiz — Coordinadora de Seguridad e Higiene<br><span style="font-weight: 400; color: #757575;">Hospital San Rafael, Tlalnepantla, Estado de México</span></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 4rem 0; background: #fafafa;">
+  <div class="container">
+    <SectionHeader
+      title="Preguntas frecuentes — Hospitales y clínicas"
+    />
+    <div style="max-width: 800px; margin: 2rem auto 0;">
+      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Qué extintores se usan en áreas de equipos médicos?</summary>
+        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">FM-200 (HFC-227ea) o Novec 1230 en quirófanos, UCI y salas de imagen. CO₂ 4.5 kg para equipos de cómputo y cámaras. Ninguno deja residuo sólido ni daña el instrumental. El PQS está contraindicado en estas áreas.</p>
+      </details>
+      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Los hospitales están obligados a tener extintores certificados NOM?</summary>
+        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. NOM-002-STPS y licencia sanitaria COFEPRIS exigen evidencia de cumplimiento en protección civil. Protección Civil y COFEPRIS verifican extintores vigentes, señalización NOM-003-SEGOB y constancias de capacitación. MANEXT entrega la documentación completa para cada inspección.</p>
+      </details>
+      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Ofrecen capacitación para brigadas de personal de salud?</summary>
+        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. Cursos DC-3 STPS adaptados para hospitales: manejo de extintores sin interferir con pacientes, evacuación de áreas críticas con personal no deambulante, rutas de evacuación hospitalaria. Grupos hasta 20 personas, 4 horas, a domicilio. Constancias oficiales el mismo día.</p>
+      </details>
+      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
+        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿MANEXT maneja pólizas anuales para hospitales?</summary>
+        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. Inventario completo por área, mantenimiento NOM-154-SCFI, recargas con equipo de préstamo, bitácora digital 24/7, reportes fotográficos para auditorías, facturación CFDI consolidada y recordatorios automáticos de vencimiento. Para hospitales públicos y privados, clínicas y consultorios.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 3rem 0; background: #d32f2f; color: white; text-align: center;">
+  <div class="container">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesitas extintores y capacitación para tu hospital o clínica?</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Diagnóstico técnico gratuito por área · Documentación para COFEPRIS y Protección Civil · Pólizas anuales institucionales</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="tel:5614612594" style="background: white; color: #d32f2f; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">📞 56 1461 2594</a>
+      <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20para%20mi%20hospital%20o%20cl%C3%ADnica%20en%20CDMX" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">💬 WhatsApp</a>
+      <a href="/contacto" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">Solicitar cotización</a>
+    </div>
+  </div>
+</section>
+
+</Layout>

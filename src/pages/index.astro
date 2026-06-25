@@ -6,20 +6,31 @@ import SectionHeader from '../components/SectionHeader.astro';
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "MANEXT",
-  "description": "Empresa líder en venta, mantenimiento y recarga de extintores en Ciudad de México. Más de 80 años de experiencia. Servicio 24/7.",
+  "@id": "https://mantenimientodeextintores.mx/#business",
+  "name": "MANEXT — Mantenimiento de Extintores",
+  "alternateName": "MANEXT",
+  "description": "MANEXT es la empresa con mayor trayectoria en venta y mantenimiento de extintores en CDMX desde 1943. Unidad de verificación autorizada NOM-154-SCFI. Más de 80 años y 10,000 clientes activos en Ciudad de México y Estado de México.",
   "url": "https://mantenimientodeextintores.mx",
-  "telephone": "+525614612594",
+  "telephone": "+52-56-1461-2594",
+  "email": "contacto@mantenimientodeextintores.mx",
   "foundingDate": "1943",
+  "slogan": "80 años protegiendo empresas, comercios y familias mexicanas",
   "founder": {
     "@type": "Person",
     "name": "Fernando Medina González",
     "jobTitle": "Fundador de MANEXT"
   },
+  "knowsAbout": [
+    "NOM-154-SCFI", "NOM-002-STPS", "NOM-003-SEGOB", "NOM-026-STPS", "NOM-005-STPS",
+    "NFPA 10", "NFPA 72", "NFPA 13", "NFPA 20",
+    "Extintores contra incendios", "Prueba hidrostática", "Brigadas contra incendios",
+    "Señalización de emergencia", "Protección Civil CDMX", "Recarga de extintores"
+  ],
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Ciudad de México",
-    "addressRegion": "CDMX",
+    "streetAddress": "Av. Ayuntamiento 75",
+    "addressLocality": "Tlalnepantla de Baz",
+    "addressRegion": "Estado de México",
     "addressCountry": "MX"
   },
   "geo": {
@@ -27,7 +38,24 @@ const localBusinessSchema = JSON.stringify({
     "latitude": "19.4326",
     "longitude": "-99.1332"
   },
-  "openingHours": "Mo-Su 08:00-18:00",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "specialOpeningHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "description": "Atención a emergencias 24/7/365"
+  },
   "priceRange": "$$",
   "serviceType": [
     "Venta de Extintores",
@@ -36,7 +64,16 @@ const localBusinessSchema = JSON.stringify({
     "Prueba Hidrostática",
     "Capacitación"
   ],
-  "areaServed": ["Ciudad de México", "Estado de México"],
+  "areaServed": [
+    {"@type": "City", "name": "Ciudad de México"},
+    {"@type": "State", "name": "Estado de México"},
+    {"@type": "City", "name": "Tlalnepantla"},
+    {"@type": "City", "name": "Naucalpan"},
+    {"@type": "City", "name": "Ecatepec"},
+    {"@type": "City", "name": "Atizapán"},
+    {"@type": "City", "name": "Nezahualcóyotl"},
+    {"@type": "City", "name": "Cuautitlán Izcalli"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Catálogo de Extintores",
@@ -65,7 +102,7 @@ const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta un extintor certificado en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende del tipo de agente y capacidad. PQS ABC 4.5 kg desde $650 MXN, CO₂ 5 lb desde $1,800 MXN, Tipo K para cocinas desde $3,500 MXN. Todos los precios incluyen certificación NOM-154-SCFI, instalación profesional, soporte metálico, señalización fotoluminiscente NOM-026 y documentación oficial para Protección Civil." }},
+    { "@type": "Question", "name": "¿Cuánto cuesta un extintor certificado en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende del tipo de agente y capacidad. PQS ABC 4.5 kg desde $450 MXN con certificado NOM-154-SCFI incluido. CO₂ 4.5 kg entre $1,200 y $1,500 MXN. Tipo K 6 L para cocinas comerciales entre $1,800 y $2,400 MXN. Agente Limpio HFC-227ea 5 kg (data centers y áreas críticas) desde $3,900 MXN. Todos incluyen instalación profesional, soporte metálico, señalización fotoluminiscente NOM-026 y documentación oficial para Protección Civil." }},
     { "@type": "Question", "name": "¿Qué tipos de extintores existen y para qué sirve cada uno?", "acceptedAnswer": { "@type": "Answer", "text": "Existen seis tipos principales: PQS para Clase ABC (uso general), CO₂ para Clase BC en electrónica sin residuo, Agua a Presión para Clase A en sólidos combustibles, Espuma AFFF para Clase AB en hidrocarburos, Tipo K para Clase K en cocinas con aceites calientes, y Agentes Limpios FM-200/Novec 1230 para áreas críticas como data centers y archivos." }},
     { "@type": "Question", "name": "¿Cuántos extintores requiere mi negocio según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige mínimo 1 extintor por cada 300 m² en riesgo ordinario, con distancia máxima de recorrido de 23 m al equipo más cercano. En riesgo alto se reduce a 200 m² y 15 m. MANEXT realiza análisis de riesgo gratuito para determinar el número exacto, capacidades y distribución óptima en tu instalación." }},
     { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o inmediatamente después de cualquier descarga, aunque sea parcial. Adicionalmente, prueba hidrostática del cilindro cada 5 años. MANEXT ofrece recarga a domicilio con préstamo de equipo sin costo durante el proceso para mantener tu cobertura siempre vigente." }},
