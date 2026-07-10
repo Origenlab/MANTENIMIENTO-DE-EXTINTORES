@@ -1,7 +1,7 @@
 ---
 title: "Extintores para Brigadas Industriales y HAZMAT en México: Selección Técnica y Cumplimiento NOM-154"
 description: "Guía técnica completa de extintores para brigadas industriales y operaciones HAZMAT en México: clases de fuego, agentes extintores, dimensionamiento NFPA 10, mantenimiento NOM-154-SCFI-2005, carros extintores y criterios de selección por tipo de riesgo industrial."
-heroImage: "img/img-index/recarga-extintores.avif"
+heroImage: "img/img-index/capacitacion-y-brigadas.avif"
 heroRight:
   - "En un incendio industrial, el agente extintor equivocado no solo no apaga el fuego: puede <strong>agravarlo, generar una explosión o liberar gases tóxicos</strong>. El 34% de los incidentes documentados en parques industriales mexicanos con víctimas fatales involucró aplicación de agua o PQS sobre fuegos Clase B o materiales reactivos."
   - "Las brigadas industriales y los equipos HAZMAT operan en entornos donde la diversidad de riesgos exige un enfoque radicalmente distinto al del extintor de oficina. Esta guía documenta los <strong>criterios técnicos reales</strong> para seleccionar, dimensionar, posicionar y mantener los extintores de una brigada industrial en cumplimiento con NOM-154-SCFI-2005 y NFPA 10."

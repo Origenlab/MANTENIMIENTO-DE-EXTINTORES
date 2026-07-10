@@ -23,14 +23,6 @@ const servicesSchema = JSON.stringify({
   "areaServed": ["Ciudad de México", "Estado de México"]
 });
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" }
-  ]
-});
-
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -57,7 +49,7 @@ const faqSchema = JSON.stringify({
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' }
   ]}
-  schemas={[servicesSchema, breadcrumbSchema, faqSchema]}
+  schemas={[servicesSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 <Hero title="Venta de Extintores y Equipos Contra Incendios — Recarga y Mantenimiento"

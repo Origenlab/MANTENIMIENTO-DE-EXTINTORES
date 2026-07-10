@@ -28,14 +28,6 @@ const aboutSchema = JSON.stringify({
   }
 });
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Nosotros", "item": "https://mantenimientodeextintores.mx/nosotros" }
-  ]
-});
-
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -62,7 +54,7 @@ const faqSchema = JSON.stringify({
   breadcrumbs={[
     { name: 'Nosotros', url: 'https://mantenimientodeextintores.mx/nosotros' }
   ]}
-  schemas={[aboutSchema, breadcrumbSchema, faqSchema]}>
+  schemas={[aboutSchema, faqSchema]}>
 
 <Hero title="Más de 80 Años Protegiendo a México"
   subtitle="Tres generaciones, una misma misión: extintores certificados y cumplimiento real para empresas mexicanas"

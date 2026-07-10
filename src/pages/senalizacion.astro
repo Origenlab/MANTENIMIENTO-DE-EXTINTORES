@@ -11,7 +11,7 @@ const serviceSchema = JSON.stringify({
   "provider": {
     "@type": "LocalBusiness",
     "name": "MANEXT — Mantenimiento de Extintores",
-    "image": "https://mantenimientodeextintores.mx/img/logo.avif",
+    "image": "https://mantenimientodeextintores.mx/img/img-index/venta-y-mantenimiento-de-extintores.avif",
     "telephone": "+52-56-1461-2594",
     "address": {
       "@type": "PostalAddress",
@@ -22,15 +22,6 @@ const serviceSchema = JSON.stringify({
     }
   },
   "areaServed": ["Ciudad de México", "Estado de México"]
-});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" },
-    { "@type": "ListItem", "position": 2, "name": "Señalización", "item": "https://mantenimientodeextintores.mx/senalizacion" }
-  ]
 });
 
 const faqSchema = JSON.stringify({
@@ -55,12 +46,12 @@ const faqSchema = JSON.stringify({
   canonical="https://mantenimientodeextintores.mx/senalizacion"
   ogTitle="Señalización Fotoluminiscente y Equipamiento Contra Incendios en CDMX | MANEXT"
   ogDescription="Señalización certificada NOM con instalación profesional, plano oficial y entrega en 48 horas. Gabinetes, soportes, pictogramas y rutas de evacuación para empresas, hoteles y comercios en CDMX."
-  ogImage="https://mantenimientodeextintores.mx/img/og-senalizacion.avif"
+  ogImage="https://mantenimientodeextintores.mx/img/productos-y-servicios-de-senalizacion/senales-fotoluminiscentes-certificadas.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' },
     { name: 'Señalización', url: 'https://mantenimientodeextintores.mx/senalizacion' }
   ]}
-  schemas={[serviceSchema, breadcrumbSchema, faqSchema]}
+  schemas={[serviceSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 <Hero title="Señalización de Seguridad y Equipamiento Contra Incendios en CDMX"

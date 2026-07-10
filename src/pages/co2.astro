@@ -13,21 +13,7 @@ const productSchema = JSON.stringify({
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
     "availability": "https://schema.org/InStock"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "198"
   }
-});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
-    { "@type": "ListItem", "position": 2, "name": "CO2 — Dióxido de Carbono", "item": "https://mantenimientodeextintores.mx/co2" }
-  ]
 });
 
 const faqSchema = JSON.stringify({
@@ -69,7 +55,7 @@ const currentSlug = 'co2';
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'CO2 — Dióxido de Carbono', url: 'https://mantenimientodeextintores.mx/co2' }
   ]}
-  schemas={[productSchema, breadcrumbSchema, faqSchema]}
+  schemas={[productSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 

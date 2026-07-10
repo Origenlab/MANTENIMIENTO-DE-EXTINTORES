@@ -13,21 +13,7 @@ const productSchema = JSON.stringify({
     "@type": "AggregateOffer",
     "priceCurrency": "MXN",
     "availability": "https://schema.org/InStock"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "143"
   }
-});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
-    { "@type": "ListItem", "position": 2, "name": "Agentes Limpios — Áreas Críticas", "item": "https://mantenimientodeextintores.mx/agentes-limpios" }
-  ]
 });
 
 const faqSchema = JSON.stringify({
@@ -69,7 +55,7 @@ const currentSlug = 'agentes-limpios';
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'Agentes Limpios — Áreas Críticas', url: 'https://mantenimientodeextintores.mx/agentes-limpios' }
   ]}
-  schemas={[productSchema, breadcrumbSchema, faqSchema]}
+  schemas={[productSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 

@@ -12,7 +12,7 @@ const serviceSchema = JSON.stringify({
   "provider": {
     "@type": "LocalBusiness",
     "name": "MANEXT — Mantenimiento de Extintores",
-    "image": "https://mantenimientodeextintores.mx/img/logo.avif",
+    "image": "https://mantenimientodeextintores.mx/img/img-index/venta-y-mantenimiento-de-extintores.avif",
     "telephone": "+52-56-1461-2594",
     "address": {
       "@type": "PostalAddress",
@@ -24,15 +24,6 @@ const serviceSchema = JSON.stringify({
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
   "offers": { "@type": "Offer", "description": "Recarga anual de extintores certificada NOM-154-SCFI con verificación por pesaje y certificado individual." }
-});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" },
-    { "@type": "ListItem", "position": 2, "name": "Recarga de Extintores", "item": "https://mantenimientodeextintores.mx/recarga-de-extintores" }
-  ]
 });
 
 const faqSchema = JSON.stringify({
@@ -57,12 +48,12 @@ const faqSchema = JSON.stringify({
   canonical="https://mantenimientodeextintores.mx/recarga-de-extintores"
   ogTitle="Recarga de Extintores NOM-154 a Domicilio en 24-48 h | MANEXT CDMX"
   ogDescription="Recarga certificada NOM-154 con verificación por pesaje calibrado y extintor de préstamo durante el proceso. Cobertura total CDMX y Estado de México con +80 años de experiencia."
-  ogImage="https://mantenimientodeextintores.mx/img/og-recarga-extintores.avif"
+  ogImage="https://mantenimientodeextintores.mx/img/img-index/recarga-de-extintores.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' },
     { name: 'Recarga de Extintores', url: 'https://mantenimientodeextintores.mx/recarga-de-extintores' }
   ]}
-  schemas={[serviceSchema, breadcrumbSchema, faqSchema]}
+  schemas={[serviceSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 

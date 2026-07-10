@@ -28,4 +28,4 @@ Disallow: /img/js/
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://mantenimientodeextintores.mx/sitemap.xml
+Sitemap: https://mantenimientodeextintores.mx/sitemap-index.xml

@@ -26,14 +26,6 @@ const contactSchema = JSON.stringify({
   }
 });
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Contacto", "item": "https://mantenimientodeextintores.mx/contacto" }
-  ]
-});
-
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -59,7 +51,7 @@ const faqSchema = JSON.stringify({
   breadcrumbs={[
     { name: 'Contacto', url: 'https://mantenimientodeextintores.mx/contacto' }
   ]}
-  schemas={[contactSchema, breadcrumbSchema, faqSchema]}>
+  schemas={[contactSchema, faqSchema]}>
 
 <Hero title="Contáctanos Ahora — Atención Profesional en CDMX"
   subtitle="WhatsApp, llamada o correo: tres canales con respuesta inmediata y cotización gratuita sin compromiso"

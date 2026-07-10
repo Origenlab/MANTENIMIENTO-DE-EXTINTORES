@@ -5,14 +5,6 @@ import SectionHeader from '../components/SectionHeader.astro';
 
 const catalogSchema = JSON.stringify({"@context": "https://schema.org","@type": "ProductCatalog","name": "Catálogo de Extintores MANEXT","description": "Catálogo completo de extintores certificados NOM-154-SCFI","provider": {"@type": "Organization","name": "MANEXT","url": "https://mantenimientodeextintores.mx"}});
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Catálogo", "item": "https://mantenimientodeextintores.mx/catalogo" }
-  ]
-});
-
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -38,7 +30,7 @@ const faqSchema = JSON.stringify({
   breadcrumbs={[
     { name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo' }
   ]}
-  schemas={[catalogSchema, breadcrumbSchema, faqSchema]}
+  schemas={[catalogSchema, faqSchema]}
   extraCss={['/css/catalog-system.css?v=4', '/css/section-redesign.css?v=4']}
 >
 

@@ -23,21 +23,7 @@ const productSchema = JSON.stringify({
         "addressCountry": "MX"
       }
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "847"
   }
-});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://mantenimientodeextintores.mx/servicios" },
-    { "@type": "ListItem", "position": 2, "name": "Venta de Extintores", "item": "https://mantenimientodeextintores.mx/venta-de-extintores" }
-  ]
 });
 
 const faqSchema = JSON.stringify({
@@ -62,12 +48,12 @@ const faqSchema = JSON.stringify({
   canonical="https://mantenimientodeextintores.mx/venta-de-extintores"
   ogTitle="Venta de Extintores Certificados NOM en CDMX | Instalación Incluida | MANEXT"
   ogDescription="Extintores certificados NOM-154-SCFI con instalación, soporte, señalización y documentación incluida. Financiamiento empresarial sin intereses, entrega en 48 horas y +80 años de experiencia."
-  ogImage="https://mantenimientodeextintores.mx/img/og-venta-extintores.avif"
+  ogImage="https://mantenimientodeextintores.mx/img/img-index/venta-de-extintores.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' },
     { name: 'Venta de Extintores', url: 'https://mantenimientodeextintores.mx/venta-de-extintores' }
   ]}
-  schemas={[productSchema, breadcrumbSchema, faqSchema]}
+  schemas={[productSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 <Hero title="Venta de Extintores Certificados NOM-154-SCFI en CDMX"

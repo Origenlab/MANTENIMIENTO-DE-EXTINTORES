@@ -3,15 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
-const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"},"aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "287"}});
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" }
-  ]
-});
+const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"}});
 
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -50,7 +42,7 @@ const currentSlug = '';
   breadcrumbs={[
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' }
   ]}
-  schemas={[productSchema, breadcrumbSchema, faqSchema]}
+  schemas={[productSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 

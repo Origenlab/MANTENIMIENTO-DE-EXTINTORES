@@ -17,15 +17,6 @@ const schema = JSON.stringify({
   }
 });
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Extintores", "item": "https://mantenimientodeextintores.mx/extintores" },
-    { "@type": "ListItem", "position": 2, "name": "Agua a Presión", "item": "https://mantenimientodeextintores.mx/agua-presion" }
-  ]
-});
-
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -64,7 +55,7 @@ const currentSlug = 'agua-presion';
     { name: 'Extintores', url: 'https://mantenimientodeextintores.mx/extintores' },
     { name: 'Agua a Presión', url: 'https://mantenimientodeextintores.mx/agua-presion' }
   ]}
-  schemas={[schema, breadcrumbSchema, faqSchema]}
+  schemas={[schema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
 
