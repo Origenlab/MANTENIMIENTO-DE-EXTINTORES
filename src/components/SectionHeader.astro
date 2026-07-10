@@ -10,17 +10,18 @@
  *                When omitted the component falls back to single-column centred layout.
  */
 interface Props {
+  id?: string;
   title: string;
   subtitle?: string;
   eyebrow?: string;
   paragraphs?: string[];
 }
 
-const { title, subtitle, eyebrow, paragraphs = [] } = Astro.props;
+const { id, title, subtitle, eyebrow, paragraphs = [] } = Astro.props;
 const hasTwoCols = paragraphs.length > 0;
 ---
 
-<div class={`sh${hasTwoCols ? ' sh--split' : ' sh--center'}`}>
+<div id={id} class={`sh${hasTwoCols ? ' sh--split' : ' sh--center'}`}>
   <div class="sh__left">
     {eyebrow && <span class="sh__eyebrow">{eyebrow}</span>}
     <h2 class="sh__title">{title}</h2>

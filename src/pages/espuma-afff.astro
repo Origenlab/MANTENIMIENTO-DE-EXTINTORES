@@ -38,7 +38,7 @@ const extTipos = [
   { slug: 'agentes-limpios', title: 'Agentes Limpios', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/agente-limpio.avif', alt: 'Extintor de agentes limpios FM-200 Novec 1230', desc: 'FM-200 y Novec 1230. Cero residuo, seguro en espacios ocupados. Para salas de cómputo, archivos y museos.' },
   { slug: 'agua-presion', title: 'Agua a Presión', classes: ['A'], img: '/img/img-tipos-de-extintores/agua-a-presion.avif', alt: 'Extintor de agua a presión Clase A para bodegas y carpinterías', desc: 'Mayor capacidad calorífica del mercado. Penetración profunda para bodegas, carpinterías e industria textil.' },
 ];
-const classBadge = { A: 'ext-tipo-card__badge--a', B: 'ext-tipo-card__badge--b', C: 'ext-tipo-card__badge--c', K: 'ext-tipo-card__badge--k' };
+const classBadge: Record<string, string> = { A: 'ext-tipo-card__badge--a', B: 'ext-tipo-card__badge--b', C: 'ext-tipo-card__badge--c', K: 'ext-tipo-card__badge--k' };
 
 const currentSlug = 'espuma-afff';
 
