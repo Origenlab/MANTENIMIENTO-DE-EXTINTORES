@@ -2,428 +2,276 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import CatalogCard from '../components/catalog/CatalogCard.astro';
+import CatalogFilters from '../components/catalog/CatalogFilters.astro';
+import QuoteForm from '../components/catalog/QuoteForm.astro';
+import {
+  availabilityLabels,
+  catalogGroups,
+  catalogPackages,
+  catalogProducts,
+  fireClasses,
+  sectorOptions,
+} from '../data/catalog-products.mjs';
+import { buildCatalogSchema } from '../lib/catalog-utils.mjs';
 
-const catalogSchema = JSON.stringify({"@context": "https://schema.org","@type": "ProductCatalog","name": "Catálogo de Extintores MANEXT","description": "Catálogo completo de extintores certificados NOM-154-SCFI","provider": {"@type": "Organization","name": "MANEXT","url": "https://mantenimientodeextintores.mx"}});
+const products = [...catalogProducts].sort((a, b) => a.priority - b.priority || a.name.localeCompare(b.name, 'es'));
+const groupMap = new Map(catalogGroups.map((group) => [group.id, group.name]));
+const agents = [...new Set(products.map((product) => product.agent))].sort((a, b) => a.localeCompare(b, 'es'));
+const availabilityLabelMap: Record<string, string> = availabilityLabels;
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo elijo el extintor correcto para mi negocio?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de tres factores: clase de fuego presente (A sólidos, B líquidos, C eléctricos, K cocinas), metros cuadrados a proteger según NOM-002-STPS y giro específico. Como base, oficinas y comercios usan PQS 4.5 kg, talleres con combustibles requieren AFFF, cocinas obligan Tipo K, data centers prefieren CO₂ o agentes limpios. MANEXT realiza análisis de riesgo gratuito antes de cualquier cotización." }},
-    { "@type": "Question", "name": "¿Todos los extintores del catálogo cuentan con NOM-154-SCFI?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todos los modelos del catálogo MANEXT cumplen NOM-154-SCFI vigente y se entregan con etiqueta de fabricante con trazabilidad, tarjeta de inspección, certificado oficial y factura fiscal CFDI 4.0. Es la documentación que solicita Protección Civil, STPS, COFEPRIS y aseguradoras en cada inspección." }},
-    { "@type": "Question", "name": "¿Manejan precios de mayoreo y financiamiento?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Para empresas, cadenas comerciales, administradoras de edificios y contratistas con pedidos de volumen ofrecemos precios preferenciales. Adicionalmente, financiamiento empresarial sin intereses a 3, 6 o 12 meses con aprobación express en menos de 24 horas. Aceptamos transferencia, tarjeta empresarial, MSI bancarios y cheque certificado." }},
-    { "@type": "Question", "name": "¿La instalación está incluida en el precio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin costo adicional. Cada extintor llega con instalación profesional, soporte metálico anclado a muro, señalización fotoluminiscente NOM-026 y nivelación reglamentaria. Tiempo promedio de instalación: 30–45 minutos por punto. Coordinamos visitas en horario de baja operación para no interrumpir tu negocio." }},
-    { "@type": "Question", "name": "¿Cuánto tarda la entrega en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Entrega estándar en 48 horas con instalación incluida en CDMX y zona metropolitana (Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán Izcalli). Para urgencias o inspección al día siguiente, coordinamos entrega el mismo día con un recargo del 25%." }},
-    { "@type": "Question", "name": "¿MANEXT da seguimiento al mantenimiento después de la compra?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada equipo entra automáticamente al programa anual MANEXT: te avisamos antes de la fecha de recarga, hacemos la inspección de 25 puntos a domicilio, mantenemos tu bitácora al día, y emitimos reporte fotográfico para auditorías. Clientes con compra previa reciben 10% de descuento permanente en mantenimiento." }},
-    { "@type": "Question", "name": "¿Qué hago si no sé qué extintor necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Solicita análisis de riesgo gratuito. Un ingeniero MANEXT visita tu espacio sin costo, identifica clases de fuego presentes, mide superficie, calcula distancias NOM-002-STPS y entrega un plan completo: número de equipos, capacidades, distribución y cotización detallada — todo lista para tu próxima inspección." }}
-  ]
-});
+const faqs = [
+  {
+    question: '¿Cómo sé qué extintor necesito?',
+    answer: 'La selección depende de los combustibles presentes, la clase de fuego, el tamaño del riesgo, la distancia de recorrido y las condiciones del inmueble. MANEXT puede revisar estos datos antes de preparar la cotización.',
+  },
+  {
+    question: '¿El catálogo muestra precios?',
+    answer: 'No. Las capacidades, marcas, cantidades, instalación y documentación cambian en cada proyecto. Por eso cada familia permite solicitar una cotización contextual sin publicar un precio genérico.',
+  },
+  {
+    question: '¿Todo el catálogo está disponible para entrega inmediata?',
+    answer: 'No. Cada familia indica si normalmente se maneja como entrega rápida, bajo pedido, proyecto especial o validación técnica. La disponibilidad real se confirma en la cotización.',
+  },
+  {
+    question: '¿Un extintor clase D sirve para baterías de ion-litio?',
+    answer: 'No necesariamente. Clase D corresponde a metales combustibles. Los riesgos con baterías de ion-litio requieren revisar la química, energía, posibilidad de reignición y ensayos del agente propuesto.',
+  },
+  {
+    question: '¿Puedo incluir instalación, señalización y mantenimiento?',
+    answer: 'Sí. La solicitud permite agregar instalación, señalización, mantenimiento y capacitación para recibir una propuesta integral.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+
+const catalogSchema = buildCatalogSchema(products);
 ---
 
 <Layout
-  title="Catálogo Completo de Extintores Certificados NOM-154-SCFI en CDMX | MANEXT"
-  description="Catálogo de extintores con todas las capacidades: PQS 1–20 kg, CO₂ 5–20 lb, Agua 6–50 L, AFFF, Tipo K para cocinas y agentes limpios FM-200/Novec. Certificación NOM-154-SCFI, instalación y entrega en 48 h en CDMX."
-  canonical="https://mantenimientodeextintores.mx/catalogo"
-  ogTitle="Catálogo MANEXT — Extintores Certificados NOM-154-SCFI en CDMX"
-  ogDescription="Línea completa de extintores con instalación y documentación oficial: PQS, CO₂, Agua, AFFF, Tipo K y agentes limpios. Más de 80 años de experiencia en CDMX."
-  ogImage="https://mantenimientodeextintores.mx/img/og-image.avif"
-  breadcrumbs={[
-    { name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo' }
-  ]}
-  schemas={[catalogSchema, faqSchema]}
-  extraCss={['/css/catalog-system.css?v=4', '/css/section-redesign.css?v=4']}
+  title="Catálogo de Extintores y Equipos Contra Incendio en CDMX | MANEXT"
+  description="Cotiza extintores PQS, CO₂, agua, espuma, tipo K, agentes limpios, clase D, equipos industriales, automáticos, gabinetes, soportes y refacciones con asesoría técnica MANEXT."
+  canonical="https://mantenimientodeextintores.mx/catalogo/"
+  ogTitle="Catálogo profesional de extintores MANEXT"
+  ogDescription="Explora equipos portátiles, industriales y especializados. Solicita cotización con instalación, señalización y mantenimiento en CDMX y área metropolitana."
+  ogImage="https://mantenimientodeextintores.mx/img/img-servicios/venta-de-extintores.avif"
+  breadcrumbs={[{ name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo/' }]}
+  schemas={[JSON.stringify(catalogSchema), JSON.stringify(faqSchema)]}
+  extraCss={['/css/catalog-system.css?v=9']}
 >
+  <Hero
+    title="Catálogo profesional de extintores y equipos relacionados"
+    subtitle="Soluciones portátiles, industriales y especializadas para cada riesgo"
+    description="Explora el portafolio, compara aplicaciones y solicita una cotización con suministro, instalación, señalización y servicio posterior."
+    eyebrow="Venta de extintores · CDMX y área metropolitana"
+    services={[
+      { href: '#catalog-products', title: 'Extintores portátiles', description: 'PQS, CO₂, agua, espuma, K y especiales', icon: 'fire' },
+      { href: '/catalogo/?tipo=industriales#catalog-products', title: 'Equipos industriales', description: 'Móviles, alto flujo y aplicación especial', icon: 'building' },
+      { href: '/catalogo/?tipo=accesorios#catalog-products', title: 'Accesorios y refacciones', description: 'Gabinetes, soportes y componentes', icon: 'grid' },
+      { href: '#solicitar-cotizacion', title: 'Solicitar cotización', description: 'Cuéntanos qué necesitas proteger', icon: 'phone', featured: true },
+    ]}
+    paragraphs={[
+      'El catálogo MANEXT reúne equipos de alta rotación y soluciones bajo pedido para oficinas, comercios, restaurantes, centros de datos, hospitales, almacenes, flotillas e industria.',
+      'Cada familia indica sus <strong>clases de fuego, capacidades habituales, aplicaciones y nivel de disponibilidad</strong>. En productos especializados, la configuración final se valida antes de cotizar para evitar una selección incorrecta.',
+    ]}
+    variant="page"
+  />
 
-<Hero
-  title="Catálogo Completo de Extintores Certificados NOM-154-SCFI"
-  subtitle="Toda la línea: seis tipos de agente, capacidades de 1 kg a 68 kg rodante — con la documentación que tu inspección va a pedir"
-  description="Distribuidor autorizado en CDMX desde hace más de 80 años. Asesoría técnica gratuita, instalación incluida, financiamiento empresarial sin intereses y entrega en 48 horas."
-  eyebrow="Catálogo · Todos los productos certificados"
-  services={[
-    { href: '/polvo-quimico-seco', title: 'Extintores PQS', description: '4.5 a 20 kg — Clase ABC versátil', icon: 'fire' },
-    { href: '/co2', title: 'Extintores CO₂', description: '5 a 20 lb — data centers y servidores', icon: 'zap' },
-    { href: '/tipo-k', title: 'Tipo K para cocinas', description: 'Obligatorio NOM-002-STPS en restaurantes', icon: 'utensils' },
-    { href: '/contacto', title: 'Cotización gratuita', description: 'Respuesta en menos de 24 horas', icon: 'phone', featured: true },
-  ]}
-  paragraphs={[
-    'El catálogo <strong>MANEXT</strong> reúne la línea más completa de extintores certificados <strong>NOM-154-SCFI</strong> del mercado mexicano: <strong>polvo químico seco ABC</strong>, <strong>dióxido de carbono CO₂</strong>, <strong>agua a presión</strong>, <strong>espuma AFFF</strong>, <strong>agentes limpios FM-200 y Novec 1230</strong>, y <strong>Tipo K</strong> para cocinas comerciales. Capacidades desde 1 kg portátil para flotillas hasta 68 kg en presentación rodante para naves industriales.',
-    'Todos los equipos llegan con garantía de fábrica, instalación profesional con soporte metálico anclado, señalización fotoluminiscente NOM-026 y la documentación oficial completa para inspecciones de <strong>Protección Civil, STPS, COFEPRIS</strong> y aseguradoras. Nuestros asesores técnicos te orientan sin costo para seleccionar variante, capacidad y distribución correctas según tu giro, metros cuadrados y la normativa <strong>NOM-002-STPS</strong> aplicable a tu instalación.'
-  ]}
-  variant="page"
-/>
+  <div class="catalog-page">
+    <section class="catalog-paths section-pad" aria-labelledby="catalog-paths-title">
+      <div class="container">
+        <SectionHeader
+          id="catalog-paths-title"
+          eyebrow="Dos formas de encontrar la solución"
+          title="Busca por producto o empieza por tu riesgo"
+          subtitle="El catálogo funciona tanto para compradores técnicos como para quienes necesitan orientación."
+          paragraphs={[
+            'Si ya conoces el agente o capacidad, usa los filtros. Si sólo conoces el tipo de inmueble o combustible, entra por sector o clase de fuego y prepara una solicitud con los datos del riesgo.',
+          ]}
+        />
 
-<!-- Filtros del catálogo -->
-<section class="catalog-filters-section">
-  <div class="container">
-    <div class="category-filters" id="category-filters">
-      <button class="filter-btn active" data-category="all"><span class="filter-icon">&#x1F525;</span><span class="filter-text">Todos</span><span class="filter-count" id="count-all">0</span></button>
-      <button class="filter-btn" data-category="polvo-quimico-seco"><span class="filter-icon">&#x1F9EF;</span><span class="filter-text">PQS</span><span class="filter-count" id="count-pqs">0</span></button>
-      <button class="filter-btn" data-category="co2"><span class="filter-icon">&#x2744;&#xFE0F;</span><span class="filter-text">CO2</span><span class="filter-count" id="count-co2">0</span></button>
-      <button class="filter-btn" data-category="agua-presion"><span class="filter-icon">&#x1F4A7;</span><span class="filter-text">Agua</span><span class="filter-count" id="count-agua">0</span></button>
-      <button class="filter-btn" data-category="tipo-k"><span class="filter-icon">&#x1F373;</span><span class="filter-text">Tipo K</span><span class="filter-count" id="count-tipok">0</span></button>
-      <button class="filter-btn" data-category="espuma-afff"><span class="filter-icon">&#x1FAE7;</span><span class="filter-text">Espuma</span><span class="filter-count" id="count-espuma">0</span></button>
-      <button class="filter-btn" data-category="agentes-limpios"><span class="filter-icon">&#x2728;</span><span class="filter-text">Agentes Limpios</span><span class="filter-count" id="count-limpios">0</span></button>
-    </div>
-    <div class="search-results-info" id="search-results-info" style="display: none;">
-      <span id="results-count">0</span> productos encontrados
-      <button type="button" id="clear-filters" class="clear-filters-btn">Limpiar filtros</button>
-    </div>
-  </div>
-</section>
-
-<!-- Grid de productos + Sidebar -->
-<section class="catalog-section">
-  <div class="container">
-    <div class="catalog-layout">
-      <main id="products-container" class="products-grid">
-        <div class="products-loading">
-          <div class="loading-spinner"></div>
-          <p>Cargando productos...</p>
-        </div>
-      </main>
-      <aside class="catalog-sidebar">
-        <div class="sidebar-widget info-widget">
-          <h3 class="widget-title">Todos Certificados</h3>
-          <p>Cada extintor cuenta con:</p>
-          <ul class="cert-list">
-            <li>Certificación NOM-154-SCFI vigente</li>
-            <li>Garantía de fábrica</li>
-            <li>Señalización incluida</li>
-            <li>Instalación profesional</li>
-          </ul>
-        </div>
-        <div class="sidebar-widget">
-          <h3 class="widget-title">Clases de Fuego</h3>
-          <div class="fire-classes-info">
-            <div class="fire-class-item"><span class="fire-badge" style="background: #4caf50;">A</span><span>Sólidos (papel, madera, tela)</span></div>
-            <div class="fire-class-item"><span class="fire-badge" style="background: #ff9800;">B</span><span>Líquidos (gasolina, aceites)</span></div>
-            <div class="fire-class-item"><span class="fire-badge" style="background: #2196f3;">C</span><span>Eléctricos (equipos energizados)</span></div>
-            <div class="fire-class-item"><span class="fire-badge" style="background: #9c27b0;">K</span><span>Cocinas (grasas y aceites)</span></div>
-          </div>
-        </div>
-        <div class="sidebar-widget guide-widget">
-          <h3 class="widget-title">Guía Rápida</h3>
-          <div class="guide-items">
-            <div class="guide-item"><span class="guide-icon">&#x1F3E2;</span><div class="guide-text"><strong>Oficinas</strong><span>PQS 4.5 kg o CO2</span></div></div>
-            <div class="guide-item"><span class="guide-icon">&#x1F37D;&#xFE0F;</span><div class="guide-text"><strong>Restaurantes</strong><span>Tipo K + PQS</span></div></div>
-            <div class="guide-item"><span class="guide-icon">&#x1F3ED;</span><div class="guide-text"><strong>Industrias</strong><span>PQS 6-9 kg + Espuma</span></div></div>
-            <div class="guide-item"><span class="guide-icon">&#x1F4BB;</span><div class="guide-text"><strong>Data Centers</strong><span>CO2 o Agentes Limpios</span></div></div>
-          </div>
-        </div>
-        <div class="sidebar-widget cta-widget">
-          <h3 class="widget-title">¿Necesitas Asesoría?</h3>
-          <p>Te ayudamos a elegir el extintor correcto para tu negocio.</p>
-          <a href="tel:5614612594" class="widget-cta-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            Llamar Ahora
+        <div class="intent-grid">
+          <a href="#catalog-products" class="intent-card">
+            <span class="intent-card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3h8v4H8zM6 7h12v14H6zM9 11h6M9 15h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Sé qué equipo necesito</strong><small>Buscar por agente, capacidad o presentación</small></span>
+            <svg class="intent-card__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </a>
-          <a href="https://wa.me/5215614612594" class="widget-cta-btn whatsapp-btn" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp
+          <a href="#clases-de-fuego" class="intent-card">
+            <span class="intent-card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <span><strong>Buscar por clase de fuego</strong><small>Clases A, B, C, D y K</small></span>
+            <svg class="intent-card__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <a href="#paquetes-sector" class="intent-card">
+            <span class="intent-card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Necesito una solución por sector</strong><small>Oficina, cocina, bodega, hospital o industria</small></span>
+            <svg class="intent-card__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <a href="/catalogo/?tipo=accesorios#catalog-products" class="intent-card">
+            <span class="intent-card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 8l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-8l-3.8 3.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Accesorios y refacciones</strong><small>Gabinetes, soportes, señalización y componentes</small></span>
+            <svg class="intent-card__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </a>
         </div>
-      </aside>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- FAQ + Cotización unificado -->
-<section class="faq faq-cotizacion">
-  <div class="container">
-    <SectionHeader
-      eyebrow="FAQ y Cotización"
-      title="Preguntas Frecuentes y Cotización Gratuita"
-      subtitle="Resolvemos tus dudas sobre nuestro catálogo de extintores"
-      paragraphs={[
-        'Aquí encontrarás respuesta a las preguntas más comunes sobre <strong>tipos de extintores, capacidades, normativa NOM y precios</strong> en CDMX. Si no encuentras lo que buscas, escríbenos por WhatsApp y te respondemos ese mismo día.',
-        'Solicita tu <strong>cotización gratuita sin compromiso</strong> directamente desde el formulario. Nuestro equipo técnico certificado te contacta en menos de 24 horas con precio real, disponibilidad en stock y asesoría personalizada para tu empresa.'
-      ]}
-    />
-    <div class="faq-cot-layout">
+    <section class="catalog-browser" id="catalog-products" aria-label="Productos del catálogo">
+      <div class="container catalog-browser__container">
+        <div class="catalog-layout">
+          <CatalogFilters groups={catalogGroups} agents={agents} total={products.length} />
 
-      <div class="faq-cot-left">
-        <p class="faq-cot-desc">Las preguntas más comunes sobre nuestro catálogo de extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué tipo de extintor necesito para mi negocio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Depende del tipo de riesgo presente: <strong>PQS clase ABC</strong> para oficinas y comercios generales, <strong>CO2</strong> para equipos electrónicos y data centers, <strong>Tipo K</strong> obligatorio en cocinas comerciales, <strong>Espuma AFFF</strong> para industria con hidrocarburos, y <strong>Agentes Limpios</strong> para áreas críticas sin tolerancia a residuos. En MANEXT realizamos análisis de riesgos gratuito para recomendarte la combinación exacta según NOM-002-STPS.</p>
+          <div class="catalog-results" id="catalog-results">
+            <div class="catalog-results__header">
+              <div>
+                <p class="catalog-kicker">Portafolio MANEXT</p>
+                <p id="catalog-range" class="catalog-results__range" role="status" aria-live="polite">
+                  Mostrando 1–12 de {products.length} productos
+                </p>
+              </div>
+              <button class="catalog-filter-toggle" type="button" aria-expanded="false" aria-controls="catalog-filter-panel">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M4 6h16M7 12h10m-7 6h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Filtros
+                <span id="catalog-active-filter-count" hidden>0</span>
+              </button>
             </div>
-          </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuál es la diferencia entre PQS ABC y CO2?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El <strong>PQS ABC</strong> combate fuegos de sólidos, líquidos y eléctricos, pero deja residuo de polvo que puede dañar equipos sensibles. El <strong>CO2</strong> actúa solo en fuegos clase B y C, no deja residuo alguno y es ideal para proteger electrónica, servidores y equipos de precisión donde la limpieza post-descarga es crítica. Para espacios mixtos con equipos electrónicos valiosos, recomendamos CO2; para uso general, PQS.</p>
+            <div class="catalog-grid" id="catalog-grid">
+              {products.map((product) => (
+                <CatalogCard
+                  product={product}
+                  groupName={groupMap.get(product.group) || 'Catálogo'}
+                  availabilityLabel={availabilityLabelMap[product.availability] || product.availability}
+                />
+              ))}
             </div>
-          </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuántos extintores necesito según la NOM-002-STPS?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La norma establece: <strong>Riesgo ordinario</strong> (oficinas, escuelas): 1 extintor cada 300 m² o máximo 23 m de recorrido. <strong>Riesgo alto</strong> (industrias, bodegas): 1 cada 150 m² o 15 m. <strong>Cocinas comerciales</strong>: extintor Tipo K obligatorio en cada área de cocción. En MANEXT calculamos el número exacto y preparamos planos de distribución sin costo adicional.</p>
+            <div class="catalog-empty" id="catalog-empty" hidden>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <h3>No encontramos una coincidencia exacta</h3>
+              <p>Limpia los filtros o solicita asesoría. Podemos cotizar configuraciones que no aparezcan como una variante estándar.</p>
+              <button type="button" data-clear-catalog>Ver todo el catálogo</button>
             </div>
-          </div>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Los extintores incluyen instalación y señalamiento?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Todos los extintores que vendemos incluyen: <strong>instalación profesional</strong> con herrajes de pared, <strong>señalización fotoluminiscente</strong> reglamentaria NOM-026-STPS, collar de garantía inviolable, etiquetado NOM completo y capacitación básica de uso para tu personal. No hay cargos ocultos — el precio cotizado es el precio final con todo incluido.</p>
-            </div>
+            <nav class="catalog-pagination" id="catalog-pagination" aria-label="Paginación del catálogo"></nav>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Tienen descuentos por volumen o paquetes empresariales?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Ofrecemos <strong>descuentos progresivos por volumen</strong> desde 5 equipos, y <strong>pólizas anuales</strong> que combinan venta + mantenimiento + recarga con precio preferencial. Para condominios, corporativos e industrias con flota de 20+ extintores, diseñamos esquemas de mantenimiento integral con visitas programadas y atención prioritaria 24/7.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto tiempo tarda la entrega en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Con stock permanente de todos los modelos del catálogo, realizamos <strong>entrega e instalación en menos de 48 horas</strong> en toda la CDMX y zona metropolitana. Para pedidos urgentes o de emergencia, contamos con disponibilidad el mismo día sujeto a existencia. Área metropolitana extendida (Toluca, Puebla, Querétaro) en 3 a 5 días hábiles.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Los extintores tienen garantía de fábrica?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Todos los extintores del catálogo MANEXT incluyen <strong>garantía de fábrica vigente</strong> sobre defectos de fabricación. Adicionalmente, cada equipo cuenta con <strong>collar de garantía inviolable</strong> que certifica que fue recargado con agente nuevo y revisado en todos sus componentes. La garantía es respaldada directamente por MANEXT — no por terceros.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Proporcionan documentación para Protección Civil?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Con cada compra entregamos: <strong>factura oficial</strong>, certificado de instalación con firma de técnico certificado, constancias de cumplimiento <strong>NOM-154-SCFI</strong> y <strong>NOM-002-STPS</strong>, planos de distribución de extintores y bitácora de mantenimiento. Toda la documentación está lista para presentar en cualquier inspección de Protección Civil o auditoría IMSS/STPS.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Ofrecen mantenimiento posterior a la compra?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Ofrecemos <strong>pólizas anuales de mantenimiento</strong> con recordatorios automáticos antes del vencimiento, visitas programadas a domicilio, equipos de préstamo durante el servicio y descuentos exclusivos para clientes vigentes. La recarga anual y la prueba hidrostática cada 5 años son obligatorias — nos encargamos de todo el ciclo para que nunca te preocupes por el cumplimiento normativo.</p>
-            </div>
-          </div>
-
         </div>
       </div>
+    </section>
 
-      <div class="faq-cot-right">
-        <div class="quote-card">
-          <div class="quote-card-head">
-            <p class="quote-card-label">Cotización Gratuita</p>
-            <h3 class="quote-card-title">Solicita tu cotización</h3>
-            <p class="quote-card-meta">Respuesta en menos de 24 horas. Sin compromiso.</p>
-          </div>
-          <form id="whatsappFormCatalogo" class="quote-form" novalidate>
-            <div class="qf-field">
-              <label for="nombre">Nombre completo <span class="qf-req">*</span></label>
-              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
-            </div>
-            <div class="qf-field">
-              <label for="telefono">Teléfono <span class="qf-req">*</span></label>
-              <input type="tel" id="telefono" name="telefono" required placeholder="55 1234 5678" />
-            </div>
-            <div class="qf-field">
-              <label for="empresa">Empresa o negocio</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
-            </div>
-            <div class="qf-field">
-              <label for="tipo-extintor">Tipo de extintor <span class="qf-req">*</span></label>
-              <select id="tipo-extintor" name="tipo-extintor" required>
-                <option value="">Selecciona el tipo que necesitas</option>
-                <option value="Polvo Químico Seco (PQS)">Polvo Químico Seco (PQS)</option>
-                <option value="Dióxido de Carbono (CO2)">Dióxido de Carbono (CO2)</option>
-                <option value="Tipo K — Cocinas Comerciales">Tipo K — Cocinas Comerciales</option>
-                <option value="Espuma AFFF">Espuma AFFF</option>
-                <option value="Agentes Limpios">Agentes Limpios</option>
-                <option value="Agua a Presión">Agua a Presión</option>
-                <option value="Varios / No estoy seguro">Varios / No estoy seguro</option>
-              </select>
-            </div>
-            <div class="qf-field">
-              <label for="mensaje">Cuéntanos más (opcional)</label>
-              <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cantidad aproximada, giro de negocio, urgencia..."></textarea>
-            </div>
-            <button type="submit" class="quote-btn">
-              Solicitar Cotización por WhatsApp
-            </button>
-            <p class="quote-note">Cotización gratuita · Respuesta en menos de 24h · Equipo certificado NOM</p>
-          </form>
+    <section class="sector-packages section-pad" id="paquetes-sector" aria-labelledby="packages-title">
+      <div class="container">
+        <SectionHeader
+          id="packages-title"
+          eyebrow="Paquetes consultivos"
+          title="Soluciones por sector y tipo de riesgo"
+          subtitle="Puntos de partida para solicitar una propuesta integral."
+          paragraphs={[
+            'Los paquetes combinan equipo, accesorios y servicios habituales. La cantidad y capacidad final se determinan después de revisar superficie, recorrido, combustibles y condiciones del inmueble.',
+          ]}
+        />
+
+        <div class="package-grid">
+          {catalogPackages.map((item) => (
+            <article class="package-card">
+              <div class="package-card__number" aria-hidden="true">{String(catalogPackages.indexOf(item) + 1).padStart(2, '0')}</div>
+              <div class="package-card__content">
+                <h3>{item.name}</h3>
+                <p class="package-card__risk">{item.risk}</p>
+                <p>{item.solution}</p>
+              </div>
+              <a href="#solicitar-cotizacion" data-quote-product={`Paquete ${item.name}`}>Cotizar solución <span aria-hidden="true">→</span></a>
+            </article>
+          ))}
         </div>
       </div>
+    </section>
 
-    </div>
+    <section class="fire-guide section-pad" id="clases-de-fuego" aria-labelledby="fire-guide-title">
+      <div class="container">
+        <SectionHeader
+          id="fire-guide-title"
+          eyebrow="Guía de selección"
+          title="Las clases de fuego no son tipos de extintor"
+          subtitle="Primero se identifica el combustible; después se selecciona un agente compatible."
+          paragraphs={[
+            'La NOM-002-STPS-2010 reconoce las clases A, B, C, D y K. Un mismo agente puede cubrir varias clases, pero también puede tener limitaciones importantes por residuo, conductividad, ventilación o reignición.',
+          ]}
+        />
+
+        <div class="fire-class-grid">
+          {fireClasses.map((fireClass) => (
+            <a href={`/catalogo/?clase=${fireClass.id}#catalog-products`} class={`fire-class-card fire-class-card--${fireClass.id.toLowerCase()}`}>
+              <span class="fire-class-card__letter">{fireClass.id}</span>
+              <span><strong>{fireClass.name}</strong><small>{fireClass.description}</small></span>
+              <span class="fire-class-card__link">Ver opciones →</span>
+            </a>
+          ))}
+        </div>
+
+        <div class="technical-callout" id="guia-seleccion">
+          <div class="technical-callout__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <p class="catalog-kicker">Criterio técnico</p>
+            <h3>Clase D no significa automáticamente “baterías de litio”</h3>
+            <p>Clase D corresponde a metales combustibles. Las baterías de ion-litio presentan un riesgo distinto y requieren confirmar química, energía, ensayos del agente y protocolo de respuesta. Por eso ambas opciones aparecen separadas.</p>
+          </div>
+          <a href="#solicitar-cotizacion" data-quote-product="Evaluación de riesgo especializado">Solicitar evaluación</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manext-value section-pad" aria-labelledby="manext-value-title">
+      <div class="container">
+        <div class="manext-value__grid">
+          <div>
+            <p class="catalog-kicker">Más que un cilindro</p>
+            <h2 id="manext-value-title">Una cotización que considera todo el ciclo del equipo</h2>
+            <p>MANEXT puede integrar el suministro con instalación, señalización, identificación, programa de mantenimiento, recarga y documentación del servicio. Los alcances se detallan en cada propuesta.</p>
+            <a href="#solicitar-cotizacion" class="manext-value__cta">Preparar mi cotización <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="manext-value__steps">
+            <article><span>01</span><div><h3>Revisión del riesgo</h3><p>Combustibles, áreas, recorridos, sector y equipos sensibles.</p></div></article>
+            <article><span>02</span><div><h3>Selección y suministro</h3><p>Agente, capacidad, presentación, accesorios y disponibilidad.</p></div></article>
+            <article><span>03</span><div><h3>Instalación y continuidad</h3><p>Ubicación, señalización y programa posterior de servicio.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section section-pad" aria-labelledby="quote-section-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="quote-section-title">Solicitar cotización</h2>
+        <QuoteForm products={products} sectors={sectorOptions} />
+      </div>
+    </section>
+
+    <section class="catalog-faq section-pad" aria-labelledby="catalog-faq-title">
+      <div class="container">
+        <SectionHeader
+          id="catalog-faq-title"
+          eyebrow="Antes de cotizar"
+          title="Preguntas frecuentes del catálogo"
+          subtitle="Respuestas claras sobre selección, disponibilidad y servicios."
+        />
+        <div class="catalog-faq__list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}<span aria-hidden="true">+</span></summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
   </div>
-</section>
 
-<!-- Pre-footer interlinking strip -->
-<nav class="pf-strip" aria-label="Servicios relacionados">
-  <div class="pf-strip__inner">
-
-    <a href="/extintores" class="pf-card">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Tipos de Extintores</strong>
-        <span>PQS, CO₂, AFFF, Tipo K y más</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-    <a href="/recarga-de-extintores" class="pf-card">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Recarga de Extintores</strong>
-        <span>Recarga NOM-154 con certificado</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-    <a href="/mantenimiento-preventivo" class="pf-card">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Mantenimiento Preventivo</strong>
-        <span>Revisión y bitácora NOM-002</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-    <a href="/prueba-hidrostatica" class="pf-card">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Prueba Hidrostática</strong>
-        <span>Certificación de presión NOM-154</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-    <a href="/servicios" class="pf-card">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Todos los Servicios</strong>
-        <span>Portafolio completo MANEXT</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-    <a href="/contacto" class="pf-card pf-card--featured">
-      <span class="pf-card__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </span>
-      <span class="pf-card__body">
-        <strong>Solicitar Cotización</strong>
-        <span>Respuesta en menos de 24 horas</span>
-      </span>
-      <span class="pf-card__arrow">→</span>
-    </a>
-
-  </div>
-</nav>
-
-<!-- FAQ Accordion Script -->
-<script is:inline>
-(function() {
-  'use strict';
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
-
-<!-- WhatsApp Form Script -->
-<script is:inline>
-(function() {
-  'use strict';
-  var form = document.getElementById('whatsappFormCatalogo');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var nombre = document.getElementById('nombre').value.trim();
-    var empresa = document.getElementById('empresa').value.trim();
-    var telefono = document.getElementById('telefono').value.trim();
-    var tipoExtintor = document.getElementById('tipo-extintor').value;
-    var mensaje = document.getElementById('mensaje').value.trim();
-    if (!nombre || !telefono || !tipoExtintor) {
-      alert('Por favor completa los campos obligatorios: Nombre, Teléfono y Tipo de Extintor');
-      return;
-    }
-    var text = 'Hola, me comunico desde el Catálogo de MANEXT.\n\n';
-    text += '*Nombre:* ' + nombre + '\n';
-    if (empresa) text += '*Empresa:* ' + empresa + '\n';
-    text += '*Teléfono:* ' + telefono + '\n';
-    text += '*Tipo de extintor:* ' + tipoExtintor + '\n';
-    if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
-  });
-})();
-</script>
-
-<!-- Catalog System Script (carga productos dinámicamente) -->
-<script is:inline src="/js/catalog-system.js?v=4"></script>
-
+  <script is:inline src="/js/catalog-system.js?v=7" defer></script>
 </Layout>

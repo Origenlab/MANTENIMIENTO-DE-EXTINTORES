@@ -1,0 +1,120 @@
+---
+interface Product {
+  id: string;
+  name: string;
+  variants: string[];
+}
+
+interface Props {
+  products: Product[];
+  sectors: string[];
+  selectedProduct?: string;
+}
+
+const { products, sectors, selectedProduct = '' } = Astro.props;
+---
+
+<div class="quote-panel" id="solicitar-cotizacion">
+  <div class="quote-panel__intro">
+    <p class="catalog-kicker">Cotización técnica</p>
+    <h2>Cuéntanos qué necesitas proteger</h2>
+    <p>Recibirás orientación para confirmar agente, capacidad, cantidad, instalación y documentación. No publicamos precios porque cada configuración depende del riesgo y del volumen.</p>
+
+    <ul class="quote-panel__benefits">
+      <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Selección según riesgo y aplicación</li>
+      <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Suministro, instalación y señalización</li>
+      <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Programa de mantenimiento y recarga</li>
+    </ul>
+
+    <div class="quote-panel__contact">
+      <span>También puedes llamar</span>
+      <a href="tel:5614612594">56 1461 2594</a>
+    </div>
+  </div>
+
+  <form class="quote-form" id="catalog-quote-form" novalidate>
+    <div class="quote-form__grid">
+      <label class="quote-form__field quote-form__field--wide">
+        <span>Producto o familia *</span>
+        <select id="quote-product" name="product" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Necesito asesoría para elegir">Necesito asesoría para elegir</option>
+          {products.map((product) => <option value={product.name} selected={product.name === selectedProduct}>{product.name}</option>)}
+        </select>
+      </label>
+
+      <label class="quote-form__field">
+        <span>Capacidad o variante</span>
+        <input id="quote-variant" name="variant" type="text" placeholder="Ej. 6 kg, 10 lb…" />
+      </label>
+
+      <label class="quote-form__field">
+        <span>Cantidad estimada</span>
+        <input name="quantity" type="number" min="1" inputmode="numeric" placeholder="Ej. 4" />
+      </label>
+
+      <label class="quote-form__field">
+        <span>Sector o inmueble *</span>
+        <select name="sector" required>
+          <option value="">Selecciona el sector</option>
+          {sectors.map((sector) => <option value={sector}>{sector}</option>)}
+        </select>
+      </label>
+
+      <label class="quote-form__field">
+        <span>Ubicación *</span>
+        <input name="location" type="text" required placeholder="Alcaldía, municipio o C.P." autocomplete="postal-code" />
+      </label>
+    </div>
+
+    <fieldset class="quote-form__services">
+      <legend>¿Qué deseas incluir?</legend>
+      <label><input type="checkbox" name="services" value="Instalación" /> Instalación</label>
+      <label><input type="checkbox" name="services" value="Señalización" /> Señalización</label>
+      <label><input type="checkbox" name="services" value="Mantenimiento" /> Mantenimiento</label>
+      <label><input type="checkbox" name="services" value="Capacitación" /> Capacitación</label>
+    </fieldset>
+
+    <div class="quote-form__grid">
+      <label class="quote-form__field">
+        <span>Nombre *</span>
+        <input name="name" type="text" required autocomplete="name" />
+      </label>
+
+      <label class="quote-form__field">
+        <span>Empresa</span>
+        <input name="company" type="text" autocomplete="organization" />
+      </label>
+
+      <label class="quote-form__field">
+        <span>Teléfono o WhatsApp *</span>
+        <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" />
+      </label>
+
+      <label class="quote-form__field">
+        <span>Correo</span>
+        <input name="email" type="email" autocomplete="email" />
+      </label>
+
+      <label class="quote-form__field quote-form__field--wide">
+        <span>Describe el riesgo o requerimiento</span>
+        <textarea name="details" rows="4" placeholder="Tipo de inmueble, equipos a proteger, fecha requerida o cualquier dato técnico disponible."></textarea>
+      </label>
+    </div>
+
+    <label class="quote-form__privacy">
+      <input name="privacy" type="checkbox" required />
+      <span>Acepto el tratamiento de mis datos conforme al <a href="/privacidad">aviso de privacidad</a>.</span>
+    </label>
+
+    <p class="quote-form__error" id="quote-form-error" role="alert" hidden></p>
+
+    <button class="quote-form__submit" type="submit">
+      Solicitar cotización por WhatsApp
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.6 9.6 0 0 1-4.1-.9L3 21l1.6-4.6A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <p class="quote-form__microcopy">Al enviar, se abrirá WhatsApp con la información capturada para que puedas revisarla antes de compartirla.</p>
+    <noscript><p class="quote-form__noscript">Para cotizar sin JavaScript, escríbenos directamente por <a href="https://wa.me/5215614612594">WhatsApp</a> o llama al <a href="tel:5614612594">56 1461 2594</a>.</p></noscript>
+  </form>
+</div>

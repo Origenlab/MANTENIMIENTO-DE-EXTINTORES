@@ -1,0 +1,15 @@
+---
+import ProductDetailTemplate from '../../components/catalog/ProductDetailTemplate.astro';
+import { catalogProductDetails } from '../../data/catalog-product-details.mjs';
+
+export function getStaticPaths() {
+  return catalogProductDetails.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<ProductDetailTemplate product={product} />

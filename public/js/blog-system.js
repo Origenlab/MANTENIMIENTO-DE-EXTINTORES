@@ -224,7 +224,7 @@ function renderBlogPage(data) {
                 renderBlogPage(data);
                 var blogContent = document.querySelector('.blog-content');
                 if (blogContent) {
-                    blogContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    blogContent.scrollIntoView({ behavior: 'auto', block: 'start' });
                 }
             }
         });
@@ -454,7 +454,7 @@ function createPagination(articles, container, renderFn, categories) {
                 var newPage = parseInt(this.dataset.page);
                 if (newPage >= 1 && newPage <= totalPages) {
                     showPage(newPage);
-                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    container.scrollIntoView({ behavior: 'auto', block: 'start' });
                 }
             });
         });

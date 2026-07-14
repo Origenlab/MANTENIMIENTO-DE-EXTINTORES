@@ -23,6 +23,10 @@ const {
   extraCss = [],
 } = Astro.props;
 
+// section-redesign.css is already shared globally. Avoid downloading and parsing
+// a second copy when legacy pages still request a versioned URL explicitly.
+const pageCss = extraCss.filter((css) => !css.includes('/css/section-redesign.css'));
+
 // OG para scrapers sociales: AVIF/WebP no son soportados por Facebook/WhatsApp/LinkedIn →
 // se sirve el JPEG 1200×630 pregenerado en /images/og/ (nombre aplanado dir-a-guiones).
 const ogIsModern = /\.(avif|webp)$/i.test(ogImage);
@@ -60,15 +64,29 @@ const breadcrumbSchema = {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
-<link rel="preconnect" href="https://wa.me" crossorigin>
-<link rel="dns-prefetch" href="https://wa.me">
 <link rel="dns-prefetch" href="https://app.rybbit.io">
-<style>:root{--primary-color:#d32f2f;--secondary-color:#f44336;--dark-color:#212121;--light-color:#fafafa;--gray-color:#757575;--white:#ffffff;--shadow:0 2px 10px rgba(0,0,0,0.1)}*{margin:0;padding:0;box-sizing:border-box}html{overflow-x:hidden;color:#222;font-size:1em;line-height:1.4}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--dark-color);line-height:1.6;overflow-x:hidden;width:100%}.container{width:90%;margin:0 auto;padding:0}a{text-decoration:none;color:inherit}.header{background-color:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{display:flex;align-items:center}.logo a{display:flex;align-items:center}.logo-img{height:110px;width:auto;max-width:100%;object-fit:contain}.nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}.nav-link{color:var(--dark-color);font-weight:500;padding:0.5rem 0}.nav-phone{background-color:var(--primary-color);color:var(--white);padding:0.5rem 1.5rem;border-radius:25px}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background-color:var(--white);box-shadow:var(--shadow);list-style:none;min-width:250px;opacity:0;visibility:hidden;border-radius:8px;overflow:hidden}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible}.menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}.menu-toggle span{width:28px;height:3px;background-color:var(--dark-color);margin:4px 0;border-radius:3px;display:block}.breadcrumbs{background:#f5f5f5;padding:0.75rem 0;border-bottom:1px solid #e0e0e0}.breadcrumb-list{display:flex;align-items:center;gap:0.5rem;list-style:none;font-size:0.9rem}.breadcrumb-item{display:flex;align-items:center;gap:0.3rem;color:var(--gray-color)}.breadcrumb-item a{color:var(--gray-color);text-decoration:none;display:flex;align-items:center;gap:0.3rem}.breadcrumb-item a:hover{color:var(--primary-color)}.hero{background-color:var(--white);color:var(--dark-color);padding:3rem 0;border-bottom:1px solid #e0e0e0}.hero-content{width:100%}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.hero-left{display:flex;flex-direction:column;gap:1.5rem}.hero-title{font-size:3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;color:var(--dark-color)}.hero-subtitle{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-color);font-weight:600}.hero-description{font-size:1.1rem;margin-bottom:1.5rem;line-height:1.8;color:var(--gray-color)}.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}.hero-right{display:flex;flex-direction:column;justify-content:center}.hero-text{background-color:var(--white)}.hero-paragraph{color:var(--dark-color);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;text-align:left}.hero-paragraph strong{color:var(--primary-color);font-weight:600}.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-primary{background-color:var(--primary-color);color:var(--white);border-color:var(--primary-color)}.btn-whatsapp{background-color:#25D366;color:var(--white);border-color:#25D366}@media screen and (max-width:768px){.menu-toggle{display:flex}.nav-menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background-color:var(--white);flex-direction:column;align-items:flex-start;padding:5rem 0 2rem;box-shadow:-4px 0 20px rgba(0,0,0,0.15);gap:0;overflow-y:auto;z-index:1000}.nav-menu.active{right:0}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.2rem}.logo-img{height:104px}}.wa-float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:998;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.25);transition:transform .2s ease,box-shadow .2s ease;animation:wa-pop .4s ease both}.wa-float svg{width:34px;height:34px}.wa-float:hover,.wa-float:focus-visible{transform:scale(1.08);box-shadow:0 8px 26px rgba(0,0,0,0.32);outline:none}.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wa-pulse 2.4s ease-out infinite;pointer-events:none}@keyframes wa-pulse{0%{transform:scale(1);opacity:.6}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}@keyframes wa-pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}@media screen and (max-width:768px){.wa-float{width:54px;height:54px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom))}.wa-float svg{width:30px;height:30px}}@media (prefers-reduced-motion:reduce){.wa-float,.wa-float::after{animation:none}}</style>
+<style>:root{--primary-color:#d32f2f;--secondary-color:#f44336;--dark-color:#212121;--light-color:#fafafa;--gray-color:#757575;--white:#ffffff;--shadow:0 2px 10px rgba(0,0,0,0.1)}*{margin:0;padding:0;box-sizing:border-box}html{overflow-x:hidden;color:#222;font-size:1em;line-height:1.4}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--dark-color);line-height:1.6;overflow-x:hidden;width:100%}.container{width:90%;margin:0 auto;padding:0}a{text-decoration:none;color:inherit}.header{background-color:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.logo{display:flex;align-items:center}.logo a{display:flex;align-items:center}.logo-img{height:110px;width:auto;max-width:100%;object-fit:contain}.nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}.nav-link{color:var(--dark-color);font-weight:500;padding:0.5rem 0}.nav-phone{background-color:var(--primary-color);color:var(--white);padding:0.5rem 1.5rem;border-radius:25px}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;background-color:var(--white);box-shadow:var(--shadow);list-style:none;min-width:250px;opacity:0;visibility:hidden;border-radius:8px;overflow:hidden}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible}.menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative}.menu-toggle span{width:28px;height:3px;background-color:var(--dark-color);margin:4px 0;border-radius:3px;display:block}.breadcrumbs{background:#f5f5f5;padding:0.75rem 0;border-bottom:1px solid #e0e0e0}.breadcrumb-list{display:flex;align-items:center;gap:0.5rem;list-style:none;font-size:0.9rem}.breadcrumb-item{display:flex;align-items:center;gap:0.3rem;color:var(--gray-color)}.breadcrumb-item a{color:var(--gray-color);text-decoration:none;display:flex;align-items:center;gap:0.3rem}.breadcrumb-item a:hover{color:var(--primary-color)}.hero{background-color:var(--white);color:var(--dark-color);padding:3rem 0;border-bottom:1px solid #e0e0e0}.hero-content{width:100%}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}.hero-left{display:flex;flex-direction:column;gap:1.5rem}.hero-title{font-size:3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;color:var(--dark-color)}.hero-subtitle{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-color);font-weight:600}.hero-description{font-size:1.1rem;margin-bottom:1.5rem;line-height:1.8;color:var(--gray-color)}.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}.hero-right{display:flex;flex-direction:column;justify-content:center}.hero-text{background-color:var(--white)}.hero-paragraph{color:var(--dark-color);font-size:1.05rem;line-height:1.9;margin-bottom:1.5rem;text-align:left}.hero-paragraph strong{color:var(--primary-color);font-weight:600}.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-primary{background-color:var(--primary-color);color:var(--white);border-color:var(--primary-color)}.btn-whatsapp{background-color:#25D366;color:var(--white);border-color:#25D366}@media screen and (max-width:768px){.menu-toggle{display:flex}.nav-menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background-color:var(--white);flex-direction:column;align-items:flex-start;padding:5rem 0 2rem;box-shadow:-4px 0 20px rgba(0,0,0,0.15);gap:0;overflow-y:auto;z-index:1000}.nav-menu.active{right:0}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.2rem}.logo-img{height:104px}}.wa-float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:998;display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.25);transition:transform .16s ease,box-shadow .16s ease}.wa-float svg{width:34px;height:34px}.wa-float:hover,.wa-float:focus-visible{transform:scale(1.06);box-shadow:0 8px 26px rgba(0,0,0,0.32);outline:none}@media screen and (max-width:768px){.wa-float{width:54px;height:54px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom))}.wa-float svg{width:30px;height:30px}}</style>
 <link rel="preload" href="/css/style.css?v=24" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/css/style.css?v=24"></noscript>
 <link rel="stylesheet" href="/css/mobile-enhancements.css?v=3">
 <link rel="stylesheet" href="/css/section-redesign.css?v=5">
-{extraCss.map(css => <link rel="stylesheet" href={css} />)}
+{pageCss.map(css => <link rel="stylesheet" href={css} />)}
+<style is:inline data-motion-policy>
+  :where(*, *::before, *::after) {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  :where(button, [role='button'], input[type='button'], input[type='submit'], input[type='reset'], a.btn, a[class*='btn-'], a[class*='-btn'], a[class*='button'], a[class*='cta'], a[class*='quote'], a.nav-phone, a.wa-float) {
+    transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease !important;
+  }
+
+  :where(article, [class*='card']):hover,
+  :where(article, [class*='card']):hover :where(img, svg, [class*='icon'], [class*='arrow']) {
+    transform: none !important;
+  }
+</style>
 <meta name="description" content={description} />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="geo.region" content="MX-CMX">
@@ -90,7 +108,7 @@ const breadcrumbSchema = {
 <meta name="twitter:image" content={ogFinal}>
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="/icon.avif" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="theme-color" content="#d32f2f" />
 <script src="https://app.rybbit.io/api/script.js" data-site-id="f9641f347b5a" defer is:inline></script>
 {breadcrumbs.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
@@ -140,6 +158,7 @@ const breadcrumbSchema = {
             <li role="none"><a href="/agua-presion" role="menuitem">Agua a Presión</a></li>
           </ul>
         </li>
+        <li role="none"><a href="/catalogo" class="nav-link" role="menuitem">Catálogo</a></li>
         <li role="none"><a href="/nosotros" class="nav-link" role="menuitem">Nosotros</a></li>
         <li role="none"><a href="/blog/" class="nav-link" role="menuitem">Blog</a></li>
         <li role="none"><a href="/contacto" class="nav-link" role="menuitem">Contacto</a></li>
@@ -364,7 +383,7 @@ const breadcrumbSchema = {
       <nav class="footer-legal-nav" aria-label="Legal">
         <a href="/privacidad">Aviso de Privacidad</a>
         <a href="/terminos">Términos y Condiciones</a>
-        <a href="/sitemap.xml">Mapa del Sitio</a>
+        <a href="/sitemap-index.xml">Mapa del Sitio</a>
       </nav>
     </div>
   </div>

@@ -1,0 +1,141 @@
+---
+interface Product {
+  id: string;
+  name: string;
+  shortName: string;
+  group: string;
+  agent: string;
+  fireClasses: string[];
+  variants: string[];
+  applications: string[];
+  sectors: string[];
+  image: string;
+  imageAlt: string;
+  availability: string;
+  priority: number;
+  description: string;
+  technicalValidation: boolean;
+  detailUrl?: string;
+  productPageUrl?: string;
+}
+
+interface Props {
+  product: Product;
+  groupName: string;
+  availabilityLabel: string;
+}
+
+const { product, groupName, availabilityLabel } = Astro.props;
+const searchText = [
+  product.name,
+  product.shortName,
+  product.agent,
+  product.description,
+  ...product.variants,
+  ...product.applications,
+  ...product.sectors,
+  ...product.fireClasses,
+].join(' ');
+---
+
+<article
+  class={`catalog-card availability-${product.availability}`}
+  id={product.id}
+  data-catalog-card
+  data-group={product.group}
+  data-agent={product.agent}
+  data-fire-classes={product.fireClasses.join(',')}
+  data-availability={product.availability}
+  data-search={searchText}
+>
+  <div class="catalog-card__media">
+    <img
+      src={product.image}
+      alt={product.imageAlt}
+      width="560"
+      height="420"
+      loading={product.priority === 1 ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+    <span class={`availability-tag availability-tag--${product.availability}`}>
+      <span class="catalog-card__availability-dot" aria-hidden="true"></span>
+      {availabilityLabel}
+    </span>
+  </div>
+
+  <div class="catalog-card__body">
+    <div class="catalog-card__eyebrow">
+      <span>{groupName}</span>
+      <span aria-hidden="true">/</span>
+      <span>{product.agent}</span>
+    </div>
+
+    <div class="catalog-card__identity">
+      <h3>
+        {product.productPageUrl ? <a href={product.productPageUrl}>{product.name}</a> : product.name}
+      </h3>
+      <p>Cotización personalizada</p>
+    </div>
+
+    <div class="fire-badges" aria-label={product.fireClasses.length ? `Clases ${product.fireClasses.join(', ')}` : 'Aplicación especializada'}>
+      {product.fireClasses.length > 0 ? product.fireClasses.map((fireClass) => (
+        <span class={`fire-badge fire-badge--${fireClass.toLowerCase()}`}>Clase {fireClass}</span>
+      )) : (
+        <span class="fire-badge fire-badge--special">Aplicación especializada</span>
+      )}
+    </div>
+
+    <p class="catalog-card__description">{product.description}</p>
+
+    <div class="catalog-card__specs" aria-label="Especificaciones principales">
+      <div>
+        <span class="catalog-card__spec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18M7 6h10M5 10h14M7 10l-3 6h6l-3-6Zm10 0-3 6h6l-3-6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="catalog-card__spec-copy">
+          <span class="catalog-card__spec-label">Capacidades</span>
+          <span class="catalog-card__spec-value">{product.variants.slice(0, 3).join(' · ')}{product.variants.length > 3 ? ' · más' : ''}</span>
+        </span>
+      </div>
+      <div>
+        <span class="catalog-card__spec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M9 20v-5h6v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="catalog-card__spec-copy">
+          <span class="catalog-card__spec-label">Uso recomendado</span>
+          <span class="catalog-card__spec-value">{product.applications.slice(0, 2).join(' · ')}</span>
+        </span>
+      </div>
+    </div>
+
+    {product.technicalValidation && (
+      <p class="catalog-card__notice">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 9v4m0 4h.01M10.3 3.6 2.1 18a2 2 0 0 0 1.8 3h16.2a2 2 0 0 0 1.8-3L13.7 3.6a2 2 0 0 0-3.4 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        La selección final requiere revisión técnica.
+      </p>
+    )}
+
+    <div class="catalog-card__actions">
+      <p class="catalog-card__service-note">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        Asesoría técnica incluida
+      </p>
+      <a
+        href="#solicitar-cotizacion"
+        class="catalog-card__quote"
+        data-quote-product={product.name}
+        data-quote-variant={product.variants.join(', ')}
+      >
+        Solicitar cotización
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      {product.productPageUrl ? (
+        <a href={product.productPageUrl} class="catalog-card__details-link">Ver ficha técnica</a>
+      ) : product.detailUrl ? (
+        <a href={product.detailUrl} class="catalog-card__details-link">Información del agente</a>
+      ) : (
+        <a href="#guia-seleccion" class="catalog-card__details-link">Cómo se selecciona</a>
+      )}
+    </div>
+  </div>
+</article>

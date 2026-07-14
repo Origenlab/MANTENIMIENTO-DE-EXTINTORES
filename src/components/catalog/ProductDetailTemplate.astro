@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from './QuoteForm.astro';
+import { catalogProducts, sectorOptions } from '../../data/catalog-products.mjs';
+
+type CatalogProductDetail = (typeof import('../../data/catalog-product-details.mjs').catalogProductDetails)[number];
+
+interface Props {
+  product: CatalogProductDetail;
+}
+
+const { product } = Astro.props;
+const absoluteImage = `https://mantenimientodeextintores.mx${product.image}`;
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.name,
+  description: product.description,
+  image: [absoluteImage],
+  category: product.category,
+  url: product.seo.canonical,
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Agente extinguidor', value: product.agent },
+    { '@type': 'PropertyValue', name: 'Clases de fuego', value: product.fireClasses.join(', ') },
+    { '@type': 'PropertyValue', name: 'Capacidades habituales', value: product.variants.join(', ') },
+    { '@type': 'PropertyValue', name: 'Modalidad comercial', value: product.availability },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: product.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<Layout
+  title={product.seo.title}
+  description={product.seo.description}
+  canonical={product.seo.canonical}
+  ogTitle={product.seo.ogTitle}
+  ogDescription={product.seo.ogDescription}
+  ogImage={absoluteImage}
+  breadcrumbs={[
+    { name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo/' },
+    { name: product.name, url: product.seo.canonical },
+  ]}
+  schemas={[JSON.stringify(productSchema), JSON.stringify(faqSchema)]}
+  extraCss={['/css/catalog-product-detail.css?v=2']}
+>
+  <div class="product-detail">
+    <section class="product-detail__hero" aria-labelledby="product-title">
+      <div class="container product-detail__hero-grid">
+        <div class="product-detail__gallery">
+          <div class="product-detail__image-frame">
+            <span class="product-detail__availability">Entrega sujeta a confirmación</span>
+            <img
+              src={product.image}
+              alt={product.imageAlt}
+              width="760"
+              height="760"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <p class="product-detail__image-note">
+            Imagen de referencia. Marca, rating, dimensiones y componentes se confirman en la propuesta.
+          </p>
+        </div>
+
+        <div class="product-detail__summary">
+          <p class="product-detail__eyebrow">{product.eyebrow}</p>
+          <h1 id="product-title">{product.name} <span>para riesgos clase B y C</span></h1>
+          <p class="product-detail__lead">{product.lead}</p>
+
+          <div class="product-detail__class-row" aria-label={`Clases de fuego ${product.fireClasses.join(' y ')}`}>
+            {product.fireClasses.map((fireClass) => (
+              <span class={`product-detail__class product-detail__class--${fireClass.toLowerCase()}`}>Clase {fireClass}</span>
+            ))}
+            <span class="product-detail__clean-agent">Agente sin residuo</span>
+          </div>
+
+          <dl class="product-detail__quick-specs">
+            <div>
+              <dt>Capacidades</dt>
+              <dd>{product.variants.join(' · ')}</dd>
+            </div>
+            <div>
+              <dt>Uso recomendado</dt>
+              <dd>Tableros eléctricos · Servidores</dd>
+            </div>
+            <div>
+              <dt>Modalidad</dt>
+              <dd>{product.availability}</dd>
+            </div>
+          </dl>
+
+          <div class="product-detail__cta-panel">
+            <div>
+              <span>Precio y disponibilidad</span>
+              <strong>Cotización personalizada</strong>
+              <small>Asesoría técnica incluida</small>
+            </div>
+            <a
+              class="product-detail__primary-cta"
+              href="#solicitar-cotizacion"
+              data-quote-product={product.name}
+              data-quote-variant={product.variants.join(', ')}
+            >
+              Solicitar cotización
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="product-detail__trust-list">
+            <li>Selección según el riesgo y el inmueble</li>
+            <li>Instalación y señalización opcionales</li>
+            <li>Atención en CDMX y área metropolitana</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <nav class="product-detail__anchor-nav" aria-label="Contenido de la ficha técnica">
+      <div class="container">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#ficha-tecnica">Ficha técnica</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#aplicaciones">Aplicaciones</a>
+        <a href="#consideraciones">Seguridad</a>
+        <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+      </div>
+    </nav>
+
+    <section class="product-detail__section" id="beneficios" aria-labelledby="benefits-title">
+      <div class="container">
+        <header class="product-detail__section-heading">
+          <p>Protección especializada</p>
+          <h2 id="benefits-title">Por qué elegir un extintor de dióxido de carbono</h2>
+          <span>El CO₂ destaca cuando importa controlar un fuego incipiente sin dejar polvo sobre equipo sensible. La selección final debe equilibrar protección, ventilación, portabilidad y posibilidad de reignición.</span>
+        </header>
+
+        <div class="product-detail__benefit-grid">
+          {product.benefits.map((benefit, index) => (
+            <article class="product-detail__benefit">
+              <span class="product-detail__benefit-number">0{index + 1}</span>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail__section product-detail__section--muted" id="ficha-tecnica" aria-labelledby="spec-title">
+      <div class="container product-detail__spec-layout">
+        <div>
+          <header class="product-detail__section-heading product-detail__section-heading--left">
+            <p>Información de producto</p>
+            <h2 id="spec-title">Ficha técnica del extintor CO₂ portátil</h2>
+            <span>Datos comerciales para orientar la compra. Las especificaciones definitivas dependen de marca, modelo, rating, capacidad nominal y documentación del equipo cotizado.</span>
+          </header>
+
+          <div class="product-detail__table-wrap">
+            <table>
+              <caption class="sr-only">Especificaciones del extintor CO₂ portátil</caption>
+              <tbody>
+                {product.technicalSpecs.map(([label, value]) => (
+                  <tr>
+                    <th scope="row">{label}</th>
+                    <td>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="product-detail__compliance" aria-labelledby="compliance-title">
+          <span class="product-detail__compliance-label">Criterio técnico MANEXT</span>
+          <h3 id="compliance-title">{product.compliance.title}</h3>
+          <p>{product.compliance.text}</p>
+          <ul>
+            {product.compliance.items.map((item) => <li>{item}</li>)}
+          </ul>
+          <a href="/mantenimiento-preventivo/">Conocer el programa de mantenimiento</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="product-detail__section" id="capacidades" aria-labelledby="capacity-title">
+      <div class="container">
+        <header class="product-detail__section-heading">
+          <p>Guía de compra</p>
+          <h2 id="capacity-title">Capacidades habituales: 5, 10, 15 y 20 lb</h2>
+          <span>La capacidad por sí sola no define la cobertura. MANEXT confirma el rating del modelo, el escenario de fuego, la distancia de recorrido y la facilidad de manejo antes de recomendar una configuración.</span>
+        </header>
+
+        <div class="product-detail__capacity-grid">
+          {product.capacityGuide.map((item) => (
+            <article class="product-detail__capacity-card">
+              <span>{item.profile}</span>
+              <h3>{item.capacity}</h3>
+              <p>{item.use}</p>
+              <small>{item.note}</small>
+              <a
+                href="#solicitar-cotizacion"
+                data-quote-product={product.name}
+                data-quote-variant={item.capacity}
+              >Cotizar {item.capacity}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail__section product-detail__section--dark" id="aplicaciones" aria-labelledby="applications-title">
+      <div class="container product-detail__applications-layout">
+        <div class="product-detail__applications-copy">
+          <p class="product-detail__dark-kicker">Aplicaciones recomendadas</p>
+          <h2 id="applications-title">Protección para infraestructura eléctrica y equipo sensible</h2>
+          <p>Su ventaja comercial es clara: controla riesgos compatibles sin contaminar el área con polvo. Aun así, cada aplicación necesita revisar el combustible real y las condiciones del recinto.</p>
+          <div class="product-detail__application-list">
+            {product.recommendedUses.map((use) => (
+              <article>
+                <h3>{use.title}</h3>
+                <p>{use.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+        <figure class="product-detail__application-image">
+          <img src={product.galleryImage} alt={product.galleryImageAlt} width="720" height="860" loading="lazy" decoding="async" />
+          <figcaption>Presentación ilustrativa. La selección se confirma contra el riesgo y el rating del equipo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="product-detail__section" id="consideraciones" aria-labelledby="safety-title">
+      <div class="container product-detail__safety-layout">
+        <header class="product-detail__section-heading product-detail__section-heading--left">
+          <p>Antes de comprar</p>
+          <h2 id="safety-title">Consideraciones de seguridad y limitaciones</h2>
+          <span>Una ficha profesional también explica cuándo no conviene utilizar el producto. Estas condiciones deben incorporarse a la selección, instalación y capacitación.</span>
+        </header>
+        <ol class="product-detail__safety-list">
+          {product.limitations.map((item, index) => (
+            <li><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="product-detail__section product-detail__section--muted" aria-labelledby="quote-process-title">
+      <div class="container">
+        <header class="product-detail__section-heading">
+          <p>De la necesidad a la propuesta</p>
+          <h2 id="quote-process-title">Qué incluye tu cotización</h2>
+          <span>No te enviamos sólo un precio: organizamos la información necesaria para que la propuesta corresponda al riesgo y a la operación.</span>
+        </header>
+        <div class="product-detail__process-grid">
+          {product.quoteIncludes.map((step) => (
+            <article>
+              <span>{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail__conversion" id="preguntas-frecuentes" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="product-detail__conversion-grid">
+          <div class="product-detail__conversion-faq">
+            <header class="product-detail__section-heading product-detail__section-heading--left">
+              <p>Preguntas frecuentes</p>
+              <h2 id="faq-title">Lo esencial antes de cotizar un extintor CO₂</h2>
+              <span>Respuestas breves para comparar opciones y preparar una solicitud más precisa.</span>
+              <a class="product-detail__text-cta" href="/co2/">Ver la guía completa sobre CO₂</a>
+            </header>
+            <div class="product-detail__faqs">
+              {product.faqs.map((faq, index) => (
+                <details open={index === 0}>
+                  <summary>{faq.question}<span aria-hidden="true">+</span></summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div class="product-detail__conversion-form" aria-label="Formulario de cotización del extintor CO2">
+            <QuoteForm products={catalogProducts} sectors={sectorOptions} selectedProduct={product.name} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail__sources" aria-labelledby="sources-title">
+      <div class="container">
+        <h2 id="sources-title">Referencias técnicas consultadas</h2>
+        <p>Contenido informativo para orientar la selección. La propuesta final se determina con la información del inmueble y del equipo específico.</p>
+        <ul>
+          {product.sources.map((source) => (
+            <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="/js/catalog-system.js?v=6" defer></script>
+</Layout>

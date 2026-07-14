@@ -12,7 +12,7 @@ La solución conservará el lenguaje visual, los datos, el SEO y el flujo de cot
 
 - Mostrar 12 productos por página.
 - Usar cuatro tarjetas por fila en escritorio, tres filas visibles por página.
-- Incorporar un sidebar de filtros a la izquierda.
+- Incorporar un sidebar informativo a la derecha.
 - Usar paginación numerada con controles Anterior y Siguiente.
 - Mantener el objetivo comercial principal: solicitar cotización, no comprar en línea.
 - Adaptar la cuadrícula a dos columnas en tablet y una columna en móvil.
@@ -23,10 +23,10 @@ La solución conservará el lenguaje visual, los datos, el SEO y el flujo de cot
 La sección de catálogo tendrá tres niveles:
 
 1. Barra superior de contexto con título, total de coincidencias, orden y botón de filtros para móvil.
-2. Área principal de dos columnas: sidebar de filtros y contenido de resultados.
+2. Área principal de dos columnas: contenido de resultados y sidebar informativo a la derecha.
 3. Paginación colocada después de la cuadrícula y antes de abandonar la sección.
 
-En escritorio, el sidebar tendrá un ancho estable aproximado de 260 a 280 píxeles. El contenido restante alojará una cuadrícula de cuatro columnas. El contenedor general podrá ampliar su ancho máximo dentro de la escala existente del sitio para evitar tarjetas demasiado estrechas.
+En escritorio, el sidebar tendrá un ancho estable aproximado de 300 píxeles. El contenido restante alojará una cuadrícula de cuatro columnas. El contenedor general podrá ampliar su ancho máximo dentro de la escala existente del sitio para evitar tarjetas demasiado estrechas.
 
 ## Sidebar
 
@@ -41,7 +41,7 @@ Orden de controles:
 5. Disponibilidad.
 6. Acción para limpiar filtros.
 
-Cada grupo tendrá una etiqueta clara y estados activos visibles. El sidebar será fijo dentro de la sección en escritorio mediante posicionamiento `sticky`, sin cubrir el encabezado del sitio. En móvil se mostrará como panel desplegable controlado por un botón que también indicará la cantidad de filtros activos.
+Cada grupo tendrá una etiqueta clara y estados activos visibles. El sidebar no tendrá altura máxima, barra de desplazamiento interna ni posicionamiento fijo; avanzará naturalmente con la página. Debajo de los filtros mostrará widgets de guía por riesgo, clases de fuego, comparación de agentes y asesoría para cotizar. En móvil, los filtros se mostrarán como panel desplegable y los widgets secundarios se ocultarán para priorizar los productos.
 
 ## Cuadrícula de productos
 
