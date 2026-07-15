@@ -6,6 +6,7 @@ import {
   catalogExpansionProposals,
 } from '../src/data/catalog-expansion/index.mjs';
 import { portableExpansionProposals } from '../src/data/catalog-expansion/portables.mjs';
+import { industrialExpansionProposals } from '../src/data/catalog-expansion/industrial.mjs';
 
 const requiredStrings = [
   'id', 'parentId', 'group', 'name', 'shortName', 'slug',
@@ -64,6 +65,22 @@ test('portable expansion covers five products for every portable family', () => 
       portableExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
       5,
       `expected five portable proposals for ${parentId}`,
+    );
+  }
+});
+
+test('industrial expansion covers five products for every industrial family', () => {
+  const industrialParents = [
+    'pqs-abc-rodante', 'pqs-bc-rodante', 'purple-k-rodante', 'co2-rodante',
+    'espuma-rodante', 'clase-d-rodante', 'pqs-alto-flujo', 'operado-cartucho',
+  ];
+
+  assert.equal(industrialExpansionProposals.length, 40);
+  for (const parentId of industrialParents) {
+    assert.equal(
+      industrialExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
+      5,
+      `expected five industrial proposals for ${parentId}`,
     );
   }
 });
