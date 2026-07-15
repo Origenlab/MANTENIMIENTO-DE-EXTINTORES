@@ -9,6 +9,7 @@ import { portableExpansionProposals } from '../src/data/catalog-expansion/portab
 import { industrialExpansionProposals } from '../src/data/catalog-expansion/industrial.mjs';
 import { automaticExpansionProposals } from '../src/data/catalog-expansion/automatic.mjs';
 import { accessoryExpansionProposals } from '../src/data/catalog-expansion/accessories.mjs';
+import { partsExpansionProposals } from '../src/data/catalog-expansion/parts.mjs';
 
 const requiredStrings = [
   'id', 'parentId', 'group', 'name', 'shortName', 'slug',
@@ -116,6 +117,22 @@ test('accessory expansion covers five products for every accessory family', () =
       accessoryExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
       5,
       `expected five accessory proposals for ${parentId}`,
+    );
+  }
+});
+
+test('parts expansion covers five products for every parts family', () => {
+  const partsParents = [
+    'valvulas-accionamiento', 'manometros-extintor', 'mangueras-boquillas', 'trompeta-co2',
+    'sellos-empaques', 'ruedas-ejes', 'agentes-pqs-especiales', 'concentrados-soluciones',
+  ];
+
+  assert.equal(partsExpansionProposals.length, 40);
+  for (const parentId of partsParents) {
+    assert.equal(
+      partsExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
+      5,
+      `expected five parts proposals for ${parentId}`,
     );
   }
 });
