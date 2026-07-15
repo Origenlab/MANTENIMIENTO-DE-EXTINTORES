@@ -30,3 +30,13 @@ Actualizada: 2026-07-15
 ## Próximo producto sugerido
 
 Extintor PQS ABC portátil. Investigar clases A/B/C, capacidades, aplicaciones, limitaciones, normativa y fuentes antes de duplicar conceptualmente el objeto CO₂.
+
+## Publicación y verificación live
+
+- Cuando Frank indique **“commit y push”**, el resultado esperado no termina en subir una rama: incluye integrar los cambios aprobados en `main`, esperar el workflow de producción y comprobar el dominio live.
+- Repositorio: `Origenlab/MANTENIMIENTO-DE-EXTINTORES`; cuenta operativa de GitHub: `Origenlab`.
+- Workflow: `.github/workflows/deploy.yml` → **Deploy to Cloudflare Pages** al recibir un push en `main`.
+- Antes de publicar: ejecutar `npm run build`, `npm test`, `npx astro check` y `git diff --check`.
+- No declarar el sitio live sólo porque el deploy esté verde. Comparar el SHA de `main` con `https://mantenimientodeextintores.mx/build-id.txt`.
+- Si el build, los checks, el deploy o la huella del dominio fallan, diagnosticar y corregir; no afirmar que producción quedó actualizada.
+- Procedimiento completo: `docs/obsidian/Workflow — Subir Cambios a GitHub.md`.

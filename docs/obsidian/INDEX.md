@@ -35,7 +35,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 ### Operaciones
 - [[Rutas y Comandos Locales]] — paths macOS, npm scripts, estructura de carpetas
 - [[GitHub — Repos y Workflow]] — remote único `origin`, cuenta `Origenlab`, deploy GH Pages
-- [[Workflow — Subir Cambios a GitHub]] — flujo paso a paso
+- [[Workflow — Subir Cambios a GitHub]] — commit, integración en `main`, Cloudflare Pages y verificación del SHA live
 
 ### Estado del proyecto
 - [[Estado del Sitio — Hallazgos y Sprints]] — hallazgos, score actual y plan de trabajo
