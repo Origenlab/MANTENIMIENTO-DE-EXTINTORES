@@ -3,6 +3,7 @@ import test from 'node:test';
 import { readFile } from 'node:fs/promises';
 import { buildFaqSchema, normalizeFaqQuestion, assertFaqCollection } from '../src/lib/faq-utils.mjs';
 import { siteFaqRoutes, siteFaqs, getSiteFaqs } from '../src/data/site-faqs.mjs';
+import { catalogProductDetails } from '../src/data/catalog-product-details.mjs';
 
 const validFaqs = Array.from({ length: 8 }, (_, index) => ({
   question: `¿Pregunta contextual número ${index + 1}?`,
@@ -100,4 +101,18 @@ test('catalog page consumes the central FAQ collection and schema helper', async
   assert.match(source, /getSiteFaqs\(['"]\/catalogo['"]\)/);
   assert.match(source, /JSON\.stringify\(buildFaqSchema\(faqs\)\)/);
   assert.doesNotMatch(source, /const faqs\s*=\s*\[/);
+});
+
+test('all 46 catalog product details expose at least eight unique FAQs', () => {
+  assert.equal(catalogProductDetails.length, 46);
+  for (const product of catalogProductDetails) {
+    assert.doesNotThrow(() => assertFaqCollection(`/catalogo/${product.slug}`, product.faqs));
+  }
+});
+
+test('product detail template uses the shared FAQ renderer and schema helper', async () => {
+  const source = await readFile(new URL('../src/components/catalog/ProductDetailTemplate.astro', import.meta.url), 'utf8');
+  assert.match(source, /<FaqList\s+faqs=\{product\.faqs\}/);
+  assert.match(source, /buildFaqSchema\(product\.faqs\)/);
+  assert.doesNotMatch(source, /product\.faqs\.map/);
 });
