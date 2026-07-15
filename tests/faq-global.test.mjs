@@ -52,6 +52,22 @@ test('FaqList uses semantic details and escaped Astro interpolation', async () =
   assert.doesNotMatch(source, /set:html|innerHTML|transition|animation/);
 });
 
+test('shared FAQ components accept the immutable registry contract', async () => {
+  const faqList = await readFile(new URL('../src/components/FaqList.astro', import.meta.url), 'utf8');
+  const quoteModule = await readFile(new URL('../src/components/catalog/FaqQuoteModule.astro', import.meta.url), 'utf8');
+
+  assert.match(faqList, /faqs:\s*readonly FAQ\[\]/);
+  assert.match(quoteModule, /faqs:\s*readonly FAQ\[\]/);
+});
+
+test('legacy catalog styles never target every summary span in shared FAQs', async () => {
+  for (const file of ['catalog-system.css', 'catalog-product-detail.css']) {
+    const css = await readFile(new URL(`../public/css/${file}`, import.meta.url), 'utf8');
+    assert.doesNotMatch(css, /(?:faq-quote__list|product-detail__faqs)\s+summary\s+span\s*\{/);
+    assert.doesNotMatch(css, /(?:faq-quote__list|product-detail__faqs)\s+details\[open\]\s+summary\s+span\s*\{/);
+  }
+});
+
 test('shared layout loads the FAQ stylesheet once', async () => {
   const source = await readFile(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
   assert.equal((source.match(/\/css\/faq-system\.css\?v=1/g) || []).length, 1);

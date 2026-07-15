@@ -1,6 +1,6 @@
 # MANEXT — Memoria operativa
 
-Actualizada: 2026-07-14
+Actualizada: 2026-07-15
 
 ## Catálogo y fichas de producto
 
@@ -14,8 +14,11 @@ Actualizada: 2026-07-14
 - Para conectar una card, agregar `productPageUrl` en `src/data/catalog-products.mjs`.
 - No crear un archivo Astro individual por producto; agregar un objeto al dataset.
 - FAQ y cotización son un solo módulo: FAQ izquierda, WhatsApp derecha; una columna en móvil.
+- Toda sección FAQ existente debe publicar al menos 8 preguntas visibles, únicas y contextuales.
+- El contenido visible y el schema `FAQPage` deben provenir del mismo arreglo de datos.
+- Las 46 fichas del catálogo obtienen sus FAQs desde el perfil editorial compartido; no se editan páginas Astro individuales.
 - Comercial: **Cotización personalizada**, sin precios públicos.
-- SEO: Product + FAQPage + BreadcrumbList; no inventar Offer, price, rating, brand, stock o certificación.
+- SEO: Product + FAQPage + BreadcrumbList; no inventar Offer, price, rating, brand, stock, certificaciones, garantías, plazos ni resultados regulatorios.
 - Normativa: usar fuentes primarias y describir con exactitud el alcance de NOM-002-STPS-2010 y NOM-154-SCFI-2005.
 - Movimiento: ninguna animación o transición fuera de botones/CTA.
 - URLs internas y canonical sin trailing slash.

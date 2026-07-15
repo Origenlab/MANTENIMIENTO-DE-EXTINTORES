@@ -793,14 +793,14 @@
   display: none;
 }
 
-.product-detail__faqs summary span {
+.product-detail__faqs summary > .site-faq-list__icon {
   flex: 0 0 auto;
   color: var(--pd-red);
   font-size: 1.15rem;
 }
 
-.product-detail__faqs details[open] summary span {
-  transform: rotate(45deg);
+.product-detail__faqs details[open] summary > .site-faq-list__icon {
+  transform: none;
 }
 
 .product-detail__faqs details p {

@@ -1339,14 +1339,14 @@
   display: none;
 }
 
-.faq-quote__list summary span {
+.faq-quote__list summary > .site-faq-list__icon {
   flex: 0 0 auto;
   color: var(--catalog-red);
   font-size: 1.2rem;
 }
 
-.faq-quote__list details[open] summary span {
-  transform: rotate(45deg);
+.faq-quote__list details[open] summary > .site-faq-list__icon {
+  transform: none;
 }
 
 .faq-quote__list details p {
@@ -1854,7 +1854,7 @@
   .catalog-class-shortcuts button,
   .package-card,
   .fire-class-card,
-  .faq-quote__list summary span {
+  .faq-quote__list summary > .site-faq-list__icon {
     transition: none !important;
   }
 

@@ -3,7 +3,7 @@ source_file: MANEXT/catalog-product-template
 type: architecture
 community: Catalogo_y_Producto
 status: active
-updated: 2026-07-14
+updated: 2026-07-15
 tags:
   - graphify/architecture
   - community/Catalogo_y_Producto
@@ -30,6 +30,9 @@ La documentación canónica está en `docs/catalogo/PLANTILLA-FICHAS-PRODUCTO.md
 | `Layout.astro` | shell/SEO | genera canonical, OG, breadcrumbs y política no-motion. |
 | `catalog-product-detail.test.mjs` | contrato | protege ruta, SEO, schemas y conversión. |
 | `motion-policy.test.mjs` | contrato | protege la regla sin animaciones. |
+| `FaqList.astro` | componente compartido | renderiza el acordeón accesible desde un único arreglo de datos. |
+| `faq-utils.mjs` | contrato SEO | valida FAQs y genera `FAQPage` con paridad respecto al contenido visible. |
+| `site-faqs.mjs` | registro global | conserva FAQs contextuales para páginas generales, servicios y sectores. |
 
 ## Relaciones críticas
 
@@ -56,7 +59,11 @@ flowchart TD
 - Las páginas se crean agregando datos, no duplicando archivos Astro.
 - CO₂ es la referencia canónica.
 - FAQ y cotización forman un mismo módulo: izquierda FAQ, derecha formulario.
+- Toda sección FAQ existente contiene al menos 8 preguntas visibles, únicas y contextuales.
+- El acordeón visible y `FAQPage` se generan desde el mismo arreglo de datos.
+- Las 46 fichas dinámicas reciben sus FAQs desde el perfil editorial compartido; no se editan páginas Astro individuales.
 - No hay precios públicos ni `Offer` schema sin datos comerciales reales.
+- No se inventan precios, stock, certificaciones, garantías, plazos ni resultados regulatorios.
 - Canonical y enlaces internos no llevan diagonal final.
 - Las afirmaciones técnicas requieren fuente primaria.
 - No existen animaciones; sólo botones y CTA admiten transición.
