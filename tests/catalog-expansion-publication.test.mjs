@@ -2,7 +2,9 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import { catalogProducts } from '../src/data/catalog-products.mjs';
+import { catalogProductEditorial } from '../src/data/catalog-product-editorial.mjs';
 import { catalogExpansionProposals } from '../src/data/catalog-expansion/index.mjs';
+import { paginateCatalog } from '../src/lib/catalog-utils.mjs';
 import {
   buildPublishedExpansionProducts,
   expansionEditorialProfiles,
@@ -66,4 +68,18 @@ test('publication relationships connect every matrix with five children and ever
     assert.ok(links.some(({ url }) => url === parent.productPageUrl), `parent link missing for ${proposal.id}`);
     assert.equal(new Set(links.map(({ url }) => url)).size, 5, `duplicate family links for ${proposal.id}`);
   }
+});
+
+test('public catalog integrates 46 matrices and 230 derivatives', () => {
+  const derivatives = catalogProducts.filter(({ parentProductId }) => parentProductId);
+  const matrices = catalogProducts.filter(({ parentProductId }) => !parentProductId);
+  const pagination = paginateCatalog(catalogProducts, 1, 12);
+
+  assert.equal(catalogProducts.length, 276);
+  assert.equal(matrices.length, 46);
+  assert.equal(derivatives.length, 230);
+  assert.equal(Object.keys(catalogProductEditorial).length, 276);
+  assert.equal(new Set(catalogProducts.map(({ id }) => id)).size, 276);
+  assert.equal(new Set(catalogProducts.map(({ productPageUrl }) => productPageUrl)).size, 276);
+  assert.equal(pagination.pageCount, 23);
 });

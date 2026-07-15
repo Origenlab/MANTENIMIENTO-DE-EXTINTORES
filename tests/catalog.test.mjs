@@ -17,7 +17,8 @@ test('catalog covers every approved commercial group', () => {
     assert.ok(groups.has(group), `missing commercial group: ${group}`);
   }
 
-  assert.ok(catalogProducts.length >= 30, 'catalog must launch with at least 30 product families');
+  assert.equal(catalogProducts.length, 276, 'catalog must publish 46 matrices and 230 derivatives');
+  assert.equal(catalogProducts.filter(({ parentProductId }) => parentProductId).length, 230);
 });
 
 test('catalog entries have quote-safe required fields and no public price', () => {

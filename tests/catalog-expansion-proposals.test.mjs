@@ -62,10 +62,11 @@ test('proposal identifiers and SEO targets are globally unique', () => {
   assert.equal(new Set(seoTitles).size, 230, 'SEO titles must be unique');
 });
 
-test('proposals do not collide with the current public catalog', () => {
-  const publicIds = new Set(catalogProducts.map(({ id }) => id));
-  const publicSlugs = new Set(catalogProducts.map(({ productPageUrl }) => productPageUrl.split('/').filter(Boolean).at(-1)));
-  const publicNames = new Set(catalogProducts.map(({ name }) => name.toLocaleLowerCase('es-MX')));
+test('proposals do not collide with the 46 public matrix products', () => {
+  const matrixProducts = catalogProducts.filter(({ parentProductId }) => !parentProductId);
+  const publicIds = new Set(matrixProducts.map(({ id }) => id));
+  const publicSlugs = new Set(matrixProducts.map(({ productPageUrl }) => productPageUrl.split('/').filter(Boolean).at(-1)));
+  const publicNames = new Set(matrixProducts.map(({ name }) => name.toLocaleLowerCase('es-MX')));
 
   for (const proposal of catalogExpansionProposals) {
     assert.ok(!publicIds.has(proposal.id), `id collides with public catalog: ${proposal.id}`);
@@ -111,7 +112,9 @@ test('proposal copy remains sufficiently distinct for future product pages', () 
 });
 
 test('every existing catalog family receives exactly five proposals', () => {
-  for (const parent of catalogProducts) {
+  const matrixProducts = catalogProducts.filter(({ parentProductId }) => !parentProductId);
+
+  for (const parent of matrixProducts) {
     assert.equal(
       catalogExpansionByParent.get(parent.id)?.length,
       5,

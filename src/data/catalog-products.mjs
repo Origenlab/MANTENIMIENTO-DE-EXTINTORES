@@ -1,3 +1,5 @@
+import { buildPublishedExpansionProducts } from './catalog-expansion/publication.mjs';
+
 export const catalogGroups = [
   { id: 'portatiles', name: 'Extintores portátiles', description: 'Equipos manuales para protección general y riesgos especializados.' },
   { id: 'industriales', name: 'Móviles e industriales', description: 'Mayor capacidad y caudal para plantas, patios, hangares y procesos.' },
@@ -827,10 +829,15 @@ const catalogProductDefinitions = [
   },
 ];
 
-export const catalogProducts = catalogProductDefinitions.map((product) => ({
+const catalogMatrixProducts = catalogProductDefinitions.map((product) => ({
   ...product,
   productPageUrl: product.productPageUrl || `/catalogo/${product.id}`,
 }));
+
+export const catalogProducts = [
+  ...catalogMatrixProducts,
+  ...buildPublishedExpansionProducts(catalogMatrixProducts),
+];
 
 export const catalogPackages = [
   { id: 'vehiculo', name: 'Vehículo y flotilla', risk: 'Incidentes incipientes en transporte', solution: 'PQS compacto + soporte vehicular + identificación', icon: 'truck' },
