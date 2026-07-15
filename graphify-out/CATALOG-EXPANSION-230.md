@@ -52,4 +52,3 @@ Las 230 propuestas están en `validated` como conceptos. `editorialValidation` p
 - `docs/research/2026-07-15-expansion-230-productos-manext.md`
 - `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`
 - `tests/catalog-expansion-proposals.test.mjs`
-

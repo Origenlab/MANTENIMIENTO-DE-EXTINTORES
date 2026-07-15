@@ -1,6 +1,6 @@
 # Estudio de mercado y arquitectura SEO — expansión de 230 productos MANEXT
 
-Fecha de revisión: 2026-07-15  
+Fecha de revisión: 2026-07-15
 Estado: blueprint validado; productos todavía no publicados
 
 ## Resultado ejecutivo
@@ -86,4 +86,3 @@ El inventario URL por URL y su cobertura de propuestas está en la hoja **Fuente
 5. Refacciones: 40 propuestas.
 
 Cada lote debe pasar validación técnica, editorial, disponibilidad, recursos visuales, build, pruebas, QA visual, revisión de enlaces internos y aprobación antes de entrar a producción.
-

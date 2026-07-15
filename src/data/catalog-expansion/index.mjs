@@ -20,4 +20,3 @@ for (const proposal of catalogExpansionProposals) {
   siblings.push(proposal);
   catalogExpansionByParent.set(proposal.parentId, siblings);
 }
-

@@ -1,9 +1,9 @@
 # Expansión de 230 productos del catálogo MANEXT — Diseño aprobado
 
-**Fecha:** 15 de julio de 2026  
-**Estado:** aprobado para documentación y planeación  
-**Base actual:** 46 familias, 46 cards y 46 fichas activas  
-**Resultado previsto:** 46 páginas matriz + 230 productos derivados = 276 fichas  
+**Fecha:** 15 de julio de 2026
+**Estado:** aprobado para documentación y planeación
+**Base actual:** 46 familias, 46 cards y 46 fichas activas
+**Resultado previsto:** 46 páginas matriz + 230 productos derivados = 276 fichas
 **Modelo comercial:** cotización personalizada, sin precios públicos
 
 ## 1. Objetivo
@@ -357,4 +357,3 @@ La matriz será el registro editorial; los módulos `.mjs` serán la fuente de v
 - [ ] La política de movimiento y el diseño MANEXT se conservan.
 - [ ] Build, pruebas, revisión visual y verificación del sitio publicado pasan por lote.
 - [ ] Memoria, Graphify y Obsidian reflejan la arquitectura final.
-

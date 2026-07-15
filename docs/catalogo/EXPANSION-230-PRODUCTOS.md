@@ -74,4 +74,3 @@ git diff --check
 - Estudio: `docs/research/2026-07-15-expansion-230-productos-manext.md`
 - Excel: `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`
 - Template vigente: `docs/catalogo/PLANTILLA-FICHAS-PRODUCTO.md`
-

@@ -82,7 +82,7 @@ for (const proposal of catalogExpansionProposals) {
 
 - [ ] **Step 2: Ejecutar la prueba para confirmar el fallo**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: FAIL con `ERR_MODULE_NOT_FOUND` para `src/data/catalog-expansion/index.mjs`.
 
 - [ ] **Step 3: Implementar el validador y el agregador vacío**
@@ -108,7 +108,7 @@ for (const parent of catalogProducts) {
 
 - [ ] **Step 5: Confirmar que la prueba falla sólo por falta de datos**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: FAIL con conteo `0 !== 230`, demostrando que el contrato y el import funcionan.
 
 - [ ] **Step 6: Commit**
@@ -158,7 +158,7 @@ Cada objeto debe incluir arrays `fireClasses`, `variants`, `applications`, `sect
 
 - [ ] **Step 5: Ejecutar pruebas de contrato y originalidad**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: la cobertura portátil pasa; el conteo global continúa fallando con `75 !== 230`.
 
 - [ ] **Step 6: Commit**
@@ -191,7 +191,7 @@ assert.equal(industrialExpansionProposals.length, 40);
 
 - [ ] **Step 2: Confirmar el fallo**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: FAIL `0 !== 40`.
 
 - [ ] **Step 3: Investigar por capacidad, caudal, presurización, agente y ambiente**
@@ -200,7 +200,7 @@ Usar fichas oficiales de unidades móviles, manuales de operación y NOM-002-STP
 
 - [ ] **Step 4: Redactar y validar los 40 objetos**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: portátiles e industriales pasan; global falla con `115 !== 230`.
 
 - [ ] **Step 5: Commit**
@@ -241,7 +241,7 @@ Cada propuesta debe explicar que cobertura, activación, detección, boquillas, 
 
 - [ ] **Step 4: Redactar y validar los 25 objetos**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: los tres grupos pasan; global falla con `140 !== 230`.
 
 - [ ] **Step 5: Commit**
@@ -283,7 +283,7 @@ Documentar dimensiones/compatibilidad como datos a confirmar, salvo que una fich
 
 - [ ] **Step 4: Redactar y validar los 50 objetos**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: cuatro grupos pasan; global falla con `190 !== 230`.
 
 - [ ] **Step 5: Commit**
@@ -324,7 +324,7 @@ Cada ficha debe pedir marca/modelo, rosca, presión, dimensión, material o form
 
 - [ ] **Step 4: Redactar y validar los 40 objetos**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: PASS; 230 propuestas, 46 padres y cinco hijos por padre.
 
 - [ ] **Step 5: Commit**
@@ -356,7 +356,7 @@ Normalizar minúsculas, acentos y stopwords; calcular Jaccard sobre tokens para 
 
 - [ ] **Step 3: Ejecutar y corregir colisiones una por una**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: PASS con 230 IDs, slugs, keywords y titles únicos; ninguna pareja sobre el umbral.
 
 - [ ] **Step 4: Revisar manualmente las familias de mayor riesgo**
@@ -447,7 +447,7 @@ Añadir a `MEMORY.md` la existencia del blueprint, su ubicación, el total 230 y
 
 - [ ] **Step 5: Verificar documentación**
 
-Run: `rg -n "T[B]D|T[O]DO|por def[inir]|pendiente de redac[tar]" docs/research/2026-07-15-estudio-mercado-expansion-230-productos.md docs/catalogo/EXPANSION-230-PRODUCTOS.md graphify-out/CATALOG-EXPANSION-230.md 'docs/obsidian/Productos — Expansión 230.md' MEMORY.md`  
+Run: `rg -n "T[B]D|T[O]DO|por def[inir]|pendiente de redac[tar]" docs/research/2026-07-15-estudio-mercado-expansion-230-productos.md docs/catalogo/EXPANSION-230-PRODUCTOS.md graphify-out/CATALOG-EXPANSION-230.md 'docs/obsidian/Productos — Expansión 230.md' MEMORY.md`
 Expected: sin resultados usados como placeholders.
 
 - [ ] **Step 6: Commit**
@@ -469,25 +469,25 @@ git commit -m "docs: registra expansion de 230 productos"
 
 - [ ] **Step 1: Ejecutar la prueba específica**
 
-Run: `node --test tests/catalog-expansion-proposals.test.mjs`  
+Run: `node --test tests/catalog-expansion-proposals.test.mjs`
 Expected: 0 fallos y 230 propuestas válidas.
 
 - [ ] **Step 2: Ejecutar toda la suite**
 
-Run: `npm test`  
+Run: `npm test`
 Expected: 0 fallos.
 
 - [ ] **Step 3: Construir el sitio**
 
-Run: `npm run build`  
+Run: `npm run build`
 Expected: exit code 0 y exactamente las 46 fichas actuales; ninguna propuesta aparece todavía como ruta pública.
 
 - [ ] **Step 4: Verificar el alcance Git**
 
-Run: `git diff --check origin/main...HEAD`  
+Run: `git diff --check origin/main...HEAD`
 Expected: sin errores de whitespace.
 
-Run: `git status --short`  
+Run: `git status --short`
 Expected: working tree limpio.
 
 - [ ] **Step 5: Entregar para revisión**

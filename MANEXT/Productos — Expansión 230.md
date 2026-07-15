@@ -51,4 +51,3 @@ Cada lote se publica sólo después de revisión técnica, editorial, visual, bu
 
 - [[Productos — Catálogo y Plantilla]]
 - [[Workflow — Subir Cambios a GitHub]]
-
