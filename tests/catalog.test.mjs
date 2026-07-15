@@ -133,6 +133,21 @@ test('catalog cards use one keyword-specific product CTA and no quote button', a
   assert.match(component, /aria-label=\{`Ver información técnica: \$\{product\.name\}`\}/);
 });
 
+test('catalog uses one reusable FAQ and quote conversion module', async () => {
+  const [page, component] = await Promise.all([
+    readFile(new URL('../src/pages/catalogo.astro', import.meta.url), 'utf8'),
+    readFile(new URL('../src/components/catalog/FaqQuoteModule.astro', import.meta.url), 'utf8'),
+  ]);
+
+  assert.match(page, /import FaqQuoteModule from ['"]\.\.\/components\/catalog\/FaqQuoteModule\.astro['"]/);
+  assert.match(page, /<FaqQuoteModule[\s\S]*faqs=\{faqs\}[\s\S]*products=\{products\}[\s\S]*sectors=\{sectorOptions\}[\s\S]*\/>/);
+  assert.doesNotMatch(page, /<section class="quote-section/);
+  assert.doesNotMatch(page, /<section class="catalog-faq/);
+  assert.ok(component.indexOf('faq-quote__faq') < component.indexOf('<QuoteForm'), 'FAQ must be rendered before the form');
+  assert.match(component, /open=\{index === 0\}/);
+  assert.match(component, /<QuoteForm products=\{products\} sectors=\{sectors\}/);
+});
+
 test('built catalog exposes one keyword-specific CTA per product card', async () => {
   const html = await readFile(new URL('../dist/catalogo/index.html', import.meta.url), 'utf8');
 
@@ -156,6 +171,21 @@ test('built catalog exposes one keyword-specific CTA per product card', async ()
   ]) {
     assert.ok(html.includes(contract), `built catalog missing ${contract}`);
   }
+  for (const contract of [
+    'class="faq-quote section-pad"',
+    'class="faq-quote__grid"',
+    'class="faq-quote__faq"',
+    'class="faq-quote__form"',
+    'Preguntas frecuentes del catálogo',
+    'Cuéntanos qué necesitas proteger',
+    'Solicitar cotización por WhatsApp',
+  ]) {
+    assert.ok(html.includes(contract), `built catalog missing unified conversion contract: ${contract}`);
+  }
+  assert.equal((html.match(/class="faq-quote section-pad"/g) || []).length, 1);
+  assert.ok(html.indexOf('class="faq-quote__faq"') < html.indexOf('class="faq-quote__form"'));
+  assert.doesNotMatch(html, /class="quote-section section-pad"/);
+  assert.doesNotMatch(html, /class="catalog-faq section-pad"/);
   assert.doesNotMatch(html, /ProductCatalog/);
   assert.doesNotMatch(html, /Todos Certificados/);
   assert.doesNotMatch(html, /data\/products\.json/);
@@ -186,6 +216,16 @@ test('catalog stylesheet implements the responsive accessibility contract', asyn
     'stylesheet must expose three desktop catalog columns',
   );
   assert.match(css, /grid-template-areas:\s*'results sidebar'/, 'desktop catalog must place the sidebar on the right');
+  assert.match(
+    css,
+    /\.faq-quote__grid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*\.92fr\)\s+minmax\(0,\s*1\.08fr\)/s,
+    'unified conversion module must use the approved desktop ratio',
+  );
+  assert.match(
+    css,
+    /@media\s*\(max-width:\s*900px\)[\s\S]*\.faq-quote__grid[\s\S]*grid-template-columns:\s*1fr/s,
+    'unified conversion module must stack on tablet and mobile',
+  );
   const sidebarRule = css.match(/\.catalog-sidebar\s*\{([^}]*)\}/)?.[1] || '';
   assert.doesNotMatch(sidebarRule, /overflow-y|max-height|position:\s*sticky/, 'sidebar must not use an internal scroll area');
 });

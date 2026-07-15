@@ -26,6 +26,25 @@ test('catalog cards never move or zoom on hover', async () => {
   assert.doesNotMatch(imageHoverRule, /transform/);
 });
 
+test('unified catalog conversion module remains static', async () => {
+  const css = await readFile(new URL('../public/css/catalog-system.css', import.meta.url), 'utf8');
+  const selectors = [
+    '.faq-quote',
+    '.faq-quote__grid',
+    '.faq-quote__faq',
+    '.faq-quote__form',
+    '.faq-quote__list details',
+    '.faq-quote__list summary',
+    '.faq-quote__list summary span',
+  ];
+
+  for (const selector of selectors) {
+    const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const rule = css.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`))?.[1] || '';
+    assert.doesNotMatch(rule, /animation|transition/, `${selector} must remain static`);
+  }
+});
+
 test('catalog and blog navigation use immediate scrolling', async () => {
   const scripts = await Promise.all([
     readFile(new URL('../public/js/catalog-system.js', import.meta.url), 'utf8'),
