@@ -45,6 +45,24 @@ test('unified catalog conversion module remains static', async () => {
   }
 });
 
+test('shared FAQ system remains static', async () => {
+  const css = await readFile(new URL('../public/css/faq-system.css', import.meta.url), 'utf8');
+  const selectors = [
+    '.site-faq-list',
+    '.site-faq-list__item',
+    '.site-faq-list__question',
+    '.site-faq-list__answer',
+  ];
+
+  for (const selector of selectors) {
+    const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const rule = css.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`))?.[1] || '';
+    assert.doesNotMatch(rule, /animation|transition/, `${selector} must remain static`);
+  }
+
+  assert.doesNotMatch(css, /@keyframes|scroll-behavior:\s*smooth/);
+});
+
 test('catalog and blog navigation use immediate scrolling', async () => {
   const scripts = await Promise.all([
     readFile(new URL('../public/js/catalog-system.js', import.meta.url), 'utf8'),

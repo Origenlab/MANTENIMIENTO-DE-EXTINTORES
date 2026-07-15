@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -17,20 +20,8 @@ const schema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Por qué el agua es técnicamente superior al PQS para fuegos Clase A?", "acceptedAnswer": { "@type": "Answer", "text": "El PQS apaga la llama por interrupción química pero no extrae calor del material. El agua tiene capacidad calorífica de 4.18 kJ/kg·°C y calor latente de vaporización de 2,257 kJ/kg, absorbiendo hasta 6 veces más energía térmica por unidad de masa. Adicionalmente penetra por capilaridad la madera, papel y textil hasta las brasas internas, eliminando el riesgo de re-ignición." }},
-    { "@type": "Question", "name": "¿Qué materiales apaga y dónde está prohibido usarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Apaga: madera, papel, cartón, textiles y plásticos termoestables (Clase A). Prohibido en Clase B (gasolina, diésel, aceites) porque el agua se hunde bajo el hidrocarburo y expande el incendio. Prohibido en Clase C (equipos eléctricos energizados) por riesgo de electrocución. Prohibido en Clase K (aceites de cocina) por explosión de vapor." }},
-    { "@type": "Question", "name": "¿Qué es un fuego de interior profundo (deep-seated fire)?", "acceptedAnswer": { "@type": "Answer", "text": "Combustión interna en materiales porosos (madera, papel apilado, pacas de fibra) que mantiene brasas a más de 200 °C aunque la superficie parezca extinta. Al disiparse el agente extintor, el oxígeno reactiva la combustión, a veces horas después. El agua es el único agente portátil que penetra por capilaridad y elimina ese calor residual; los modelos con humectante triplican la velocidad de penetración." }},
-    { "@type": "Question", "name": "¿Cuántos extintores necesito según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "La distancia máxima de recorrido en riesgo ordinario Clase A es 23 m; en riesgo alto se reduce a 15 m. Como referencia, una bodega de 500 m² en riesgo ordinario requiere mínimo 5 unidades de 9 L; una carpintería de 300 m² en riesgo alto puede requerir 8 unidades de 9 L. MANEXT realiza análisis de distribución sin costo." }},
-    { "@type": "Question", "name": "¿Qué capacidad de extintor de agua elegir?", "acceptedAnswer": { "@type": "Answer", "text": "Regla práctica: 6 L para oficinas y comercios pequeños (~60 m²), 9 L para bodegas y carpinterías medianas (~100 m²), 20 L para naves de producción textil o papelera (~200 m²) y carrito de 50 L para grandes depósitos de papel o aserrín (~500 m²). El factor decisivo es la densidad de carga combustible, no solo el área." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor de agua?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. La revisión incluye reposición del agente humectante (en modelos especializados) y verificación del cilindro de N₂. Prueba hidrostática del cilindro cada 5 años." }},
-    { "@type": "Question", "name": "¿El extintor de agua tiene el menor costo operativo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Costo de adquisición y de recarga consistentemente entre los más bajos del mercado, sin químicos delicados ni residuos que limpiar tras descarga. Para bodegas, carpinterías e industria textil con flota amplia, es la opción con menor costo operativo anual entre todas las soluciones de supresión Clase A." }},
-    { "@type": "Question", "name": "¿Qué documentación entrega MANEXT con cada extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Certificación NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección, comprobante de instalación, señalización NOM-026 con indicación de restricciones de uso y bitácora de servicio para auditorías de Protección Civil y STPS." }}
-  ]
-});
+const faqs = getSiteFaqs('/agua-presion');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -295,99 +286,7 @@ const currentSlug = 'agua-presion';
 
         <div class="faq-cot-left">
           <p class="faq-cot-desc">Preguntas técnicas y operativas sobre extintores de agua a presión. Para casos específicos de tu instalación, <a href="https://wa.me/5215614612594?text=Hola%2C+tengo+una+consulta+sobre+extintores+de+agua+a+presi%C3%B3n." target="_blank" rel="noopener">escríbenos por WhatsApp</a> — respondemos en minutos.</p>
-          <div class="faq-grid">
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Por qué el agua es técnicamente superior al PQS para fuegos Clase A?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>El PQS actúa por interrupción química de la cadena de combustión: eficaz en llamas abiertas pero sin capacidad de extraer calor del material. El agua tiene una capacidad calorífica de 4.18 kJ/kg·°C y un calor latente de vaporización de 2,257 kJ/kg — absorbe hasta 6 veces más energía térmica que el polvo por unidad de masa. Además penetra en la estructura porosa de la madera, el papel y los textiles, alcanzando brasas internas donde el PQS no llega. Para fuegos Clase A, el agua es la solución termodinámicamente óptima; el PQS es un compromiso multipropósito.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué materiales apaga y en cuáles está estrictamente prohibido usar?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p><strong>Apaga:</strong> madera, papel, cartón, textiles, plásticos termoestables — cualquier material sólido Clase A. <strong>Prohibido en Clase B</strong> (gasolina, diesel, aceites, solventes): el agua es más densa que la mayoría de los hidrocarburo, se hunde bajo la superficie ardiente y desplaza el combustible, expandiendo el incendio. <strong>Prohibido en Clase C</strong> (equipos eléctricos energizados): el agua conduce electricidad y puede causar electrocución mortal al operador. <strong>Prohibido en Clase K</strong> (aceites y grasas de cocina a alta temperatura): el agua en contacto con grasa a +300°C genera expansión explosiva de vapor — las gotitas de aceite ardiente se proyectan en todas direcciones.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué es un fuego de "interior profundo" y por qué importa en bodegas?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Los materiales Clase A porosos — madera, papel apilado, pacas de fibra textil — pueden mantener combustión activa en su interior aunque la superficie parezca extinta. Las brasas internas permanecen sin oxígeno suficiente para producir llama, pero conservan temperaturas superiores a 200°C. Al dispersarse el agente extintor, el oxígeno vuelve a acceder al núcleo y el incendio resurge, a veces horas después. Esto se llama fuego de interior profundo o <em>deep-seated fire</em>. El agua es el único agente portátil que penetra en esas zonas internas por capilaridad, extrayendo el calor residual. Los modelos con agente humectante (tensioactivo) potencian esta penetración.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cuántos extintores necesito y cómo debo distribuirlos según NOM-002-STPS?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>La NOM-002-STPS-2010 establece que la distancia máxima de recorrido hasta un extintor en zonas de riesgo ordinario Clase A es 23 metros; en zonas de riesgo alto (carpinterías, depósitos de aserrín, almacenes de papel) se reduce a 15 metros. El cálculo requiere un plano de la instalación con las fuentes de riesgo identificadas. Como referencia: una bodega rectangular de 500 m² en riesgo ordinario necesita típicamente 5 unidades de 9 litros; una carpintería de 300 m² en riesgo alto puede requerir 8 unidades de 9 litros. En MANEXT realizamos el análisis de distribución sin costo adicional.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué capacidad de extintor de agua elegir para mi instalación?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Regla general: 9 litros cubre aproximadamente 100 m² en riesgo ordinario. Para carpinterías con aserrín o textiles con pacas densas (riesgo alto), el mismo 9 litros cubre ~60 m². Los modelos de 20 litros son estándar para naves de producción textil o papelera. El carrito de 50 litros aplica en grandes depósitos de papel, naves de carpintería industrial o almacenes logísticos. El factor decisivo no es solo el área sino la densidad de carga combustible: más material combustible por m² → mayor capacidad o mayor número de equipos. Solicita un análisis de riesgo gratuito para tu caso específico.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cuál es la diferencia entre un extintor de agua presurizado y uno de bomba?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>El extintor <strong>presurizado</strong> (stored pressure) almacena nitrógeno seco a ~12 bar junto con el agua en el mismo cilindro. Al abrir la válvula, la presión expulsa el agua inmediatamente sin acción manual adicional. El extintor <strong>de bomba</strong> requiere que el operador accione una palanca de bombeo para generar la presión que impulsa el agua. Los modelos presurizados son los estándar en el mercado profesional: respuesta inmediata, cero fatiga del operador, presión constante durante toda la descarga. Los de bomba son más económicos pero más lentos y dependen de la capacidad física del operador. MANEXT suministra exclusivamente modelos presurizados con nitrógeno.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Puedo usar extintores de agua en una oficina con computadoras?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>No es recomendable como equipo único. Si hay papelería y muebles (Clase A) pero también computadoras y cableado energizado (Clase C), el extintor de agua cubre el primer riesgo pero no el segundo — y aplicarlo sobre equipos eléctricos activos es peligroso. La configuración estándar para oficinas mixtas es: un extintor de agua para la zona de archivo y almacenamiento de papel, complementado con un extintor de CO₂ para el área de servidores y equipos eléctricos. Para salas de servidores sin materiales Clase A, el extintor de agua no aplica — ahí corresponde CO₂ o agente limpio.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué mantenimiento requiere un extintor de agua a presión?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Según NOM-154-SCFI: <strong>recarga anual obligatoria</strong> — el agua trata internamente puede desarrollar microorganismos y acumular sedimentos; el nitrógeno pierde carga por micro-fugas a través de la válvula. La recarga incluye vaciado, limpieza interior del cilindro, recarga con agua tratada (o con agente humectante), represurización con N₂ y revisión de válvula, manómetro y manguera. <strong>Prueba hidrostática cada 5 años</strong> — verificación de integridad estructural del cilindro bajo presión de prueba (1.5x la presión de trabajo). El extintor de agua tiene el costo de mantenimiento anual más bajo del mercado — sin químicos delicados, sin presurización especial de agente.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué son los extintores de agua con agente humectante y cuándo usarlos?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Los extintores de agua con agente humectante (tensioactivo o surfactante) contienen un aditivo que reduce la tensión superficial del agua de ~72 mN/m a aproximadamente 25 mN/m. Esto triplica la velocidad de penetración en materiales densos y porosos: tablones de madera sólida, pacas de algodón comprimido, rollos de papel industrial. Son la elección correcta cuando el riesgo de fuego de interior profundo es elevado: almacenes de material de empaque, fábricas textiles, depósitos de papel. El costo adicional frente a los modelos estándar se justifica en cualquier instalación con densidad de carga combustible alta. MANEXT los tiene disponibles a partir del modelo de 9 litros.</p>
-              </div>
-            </div>
-
-          </div>
+          <FaqList faqs={faqs} firstOpen={true} />
         </div>
 
         <div class="faq-cot-right">
@@ -525,38 +424,6 @@ const currentSlug = 'agua-presion';
   </nav>
 
   <!-- 5. SCRIPTS -->
-  <script is:inline>
-  (function() {
-    var faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(function(question) {
-      question.addEventListener('click', function() {
-        var faqItem = this.parentElement;
-        var answer = faqItem.querySelector('.faq-answer');
-        var icon = this.querySelector('.faq-icon');
-        var isOpen = this.getAttribute('aria-expanded') === 'true';
-        faqQuestions.forEach(function(other) {
-          if (other !== question) {
-            other.setAttribute('aria-expanded', 'false');
-            var a = other.parentElement.querySelector('.faq-answer');
-            var i = other.querySelector('.faq-icon');
-            if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-            if (i) i.textContent = '+';
-            other.parentElement.classList.remove('active');
-          }
-        });
-        if (isOpen) {
-          this.setAttribute('aria-expanded', 'false');
-          answer.style.maxHeight = '0'; answer.style.opacity = '0';
-          icon.textContent = '+'; faqItem.classList.remove('active');
-        } else {
-          this.setAttribute('aria-expanded', 'true');
-          answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-          icon.textContent = '×'; faqItem.classList.add('active');
-        }
-      });
-    });
-  })();
-  </script>
 
   <script is:inline>
   (function() {

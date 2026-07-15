@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,20 +28,8 @@ const serviceSchema = JSON.stringify({
   "offers": { "@type": "Offer", "description": "Mantenimiento preventivo anual por extintor con visita a domicilio, descuentos por volumen y pólizas corporativas." }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cada cuánto se debe hacer el mantenimiento preventivo de un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige inspección visual mensual (puede hacerla personal interno) y mantenimiento técnico anual obligatorio por unidad de verificación autorizada. Adicionalmente, prueba hidrostática del cilindro cada 5 años. MANEXT ofrece programa anual con visita a domicilio, recordatorios automáticos y bitácora digital." }},
-    { "@type": "Question", "name": "¿Qué incluye el protocolo de 25 puntos MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Inspección visual integral, verificación de presión manométrica, estado de manguera y boquilla, integridad de válvula y pasador de seguridad, peso del cilindro contra tara grabada, vigencia del agente extintor, soporte y altura reglamentaria, señalización fotoluminiscente NOM-026, accesibilidad reglamentaria y prueba de funcionamiento sin descarga, entre otros 15 puntos críticos." }},
-    { "@type": "Question", "name": "¿Cuánto cuesta el mantenimiento de un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Mantenimiento técnico individual desde $150–$250 MXN por unidad según tipo y capacidad. Recarga anual completa desde $300 MXN (PQS) hasta $1,200 MXN (Tipo K, agentes limpios). Pólizas anuales corporativas con descuentos del 15–25% sobre tarifas individuales, equipo de préstamo durante servicio y bitácora digital con alertas." }},
-    { "@type": "Question", "name": "¿Es obligatorio el mantenimiento aunque el extintor no se haya usado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La NOM-154-SCFI obliga a recarga anual aunque el extintor no haya sido descargado. El agente extintor (especialmente PQS y AFFF) puede degradarse, compactarse por humedad o perder presión por evaporación lenta del propelente. Sin recarga vigente, el extintor puede fallar en una emergencia real y la inspección de Protección Civil lo observa." }},
-    { "@type": "Question", "name": "¿La pólize incluye recarga y prueba hidrostática?", "acceptedAnswer": { "@type": "Answer", "text": "Las pólizas anuales MANEXT incluyen mantenimiento técnico (4 visitas trimestrales o 2 semestrales según giro), recarga anual completa por unidad y descuento preferencial en prueba hidrostática quinquenal. Para flotas con múltiples vencimientos coordinamos calendario unificado para reducir disrupción operativa." }},
-    { "@type": "Question", "name": "¿MANEXT presta extintores durante el servicio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin costo adicional. Durante recarga, prueba hidrostática o reparación, prestamos extintores de respaldo para que tu cobertura nunca se interrumpa — un requisito frecuente de aseguradoras y clientes corporativos. Garantizamos que tu sitio mantenga capacidad de respuesta contra incendios el 100% del tiempo." }},
-    { "@type": "Question", "name": "¿Qué documentación entrega MANEXT en cada visita?", "acceptedAnswer": { "@type": "Answer", "text": "En cada servicio se entrega: bitácora oficial con firma del técnico avalado, reporte fotográfico antes/después por equipo, certificado individual de recarga (cuando aplica), tarjeta de inspección actualizada con próxima fecha de servicio y, para clientes con póliza, dashboard digital con histórico completo, alertas automáticas y exportación PDF para auditorías." }},
-    { "@type": "Question", "name": "¿Cómo agendo mantenimiento sin interrumpir mi operación?", "acceptedAnswer": { "@type": "Answer", "text": "Coordinamos visitas en horario de baja operación (mañanas tempranas, cierre o fines de semana sin recargo). Para corporativos con múltiples sucursales armamos calendario rotativo que cubre todas las ubicaciones sin afectar operación. Tiempo promedio por extintor: 15–20 minutos para inspección, 30–45 para recarga." }}
-  ]
-});
+const faqs = getSiteFaqs('/mantenimiento-preventivo');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -486,101 +477,5 @@ Solicitar Propuesta por WhatsApp
 Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privacidad</a></p></form></div></div></div></section>
 <section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes sobre Revisión y Mantenimiento de Extintores</h2><p class="section-subtitle">
 Respuestas a las dudas más comunes sobre inspección, periodicidad y normativa
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><h3 class="faq-question-text">¿Cada cuánto se le debe dar mantenimiento a un extintor?</h3><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-La NOM-154-SCFI establece verificación semestral como mínimo obligatorio para todos los equipos portátiles.
-Sin embargo, la NOM-002-STPS recomienda inspección trimestral para <strong>centros de trabajo</strong> de riesgo
-medio y alto (industrias, talleres, almacenes, hoteles, restaurantes, hospitales). El calendario completo de
-un <strong>servicio de mantenimiento</strong> profesional incluye cinco niveles de revisión:
-</p><p>
-<strong>Revisión mensual interna:</strong> Verificación visual básica que puede realizar personal capacitado
-de tu empresa, confirmando que cada equipo esté en su lugar, sin daños visibles, con presión en zona verde
-y pasador de seguridad presente. <strong>Inspección trimestral especializada:</strong> Realizada
-<strong>cada tres meses</strong> por inspector avalado que aplica protocolo completo de 25 puntos con registro
-fotográfico y bitácora digital. <strong>Verificación semestral NOM:</strong> Mínimo obligatorio según normativa
-para empresas de bajo riesgo (oficinas, consultorios, comercios minoristas).
-<strong>Recarga anual obligatoria:</strong> Renovación del agente extintor cada 12 meses, independientemente
-de las inspecciones programadas. <strong>Retimbrado quinquenal:</strong> Prueba hidrostática obligatoria
-<strong>cada 5 años</strong> para validar la integridad estructural del cilindro.
-</p><p>
-En MANEXT programamos automáticamente cada visita según la periodicidad que requiera tu negocio, con alertas
-por email y SMS 60, 30 y 15 días antes de cada vencimiento.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><h3 class="faq-question-text">¿Es obligatorio el mantenimiento de extintores en México?</h3><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Sí. La <strong>norma</strong> NOM-154-SCFI y la NOM-002-STPS obligan al <strong>titular del extintor</strong>
-a mantener sus equipos en condiciones operativas permanentes. El incumplimiento en <strong>centros de trabajo</strong>
-puede generar sanciones escalonadas según la gravedad:
-</p><p>
-<strong>Observaciones menores</strong> (etiquetas ilegibles, señalización faltante, bitácora no actualizada):
-plazo de corrección de 15-30 días, multa de $5,000 a $15,000 pesos si no se corrige.
-<strong>Observaciones graves</strong> (equipos vencidos más de 12 meses sin recarga, presión baja, cantidad
-insuficiente): multa inmediata de $15,000 a $50,000 pesos más plazo de corrección obligatorio.
-<strong>Observaciones muy graves</strong> (corrosión severa, ausencia total de protección, componentes
-dañados): multa de $50,000 a $100,000 pesos, clausura parcial o total del inmueble, y posible denuncia
-penal si hay trabajadores en situación de riesgo.
-</p><p>
-Las <strong>actividades de mantenimiento</strong> deben ser realizadas por personal certificado y documentarse
-en bitácora oficial con evidencia fotográfica. Protección Civil puede solicitar esta documentación en cualquier
-momento durante inspecciones ordinarias o extraordinarias. Contratar un programa de inspección programada
-garantiza cumplimiento continuo y elimina riesgo de sanciones.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><h3 class="faq-question-text">¿Qué incluye una revisión preventiva de extintores?</h3><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Nuestro protocolo para <strong>revisar un extintor</strong> abarca <strong>25 puntos de verificación</strong>
-organizados en tres categorías:
-</p><p>
-<strong>Revisión física del equipo (10 puntos):</strong> Inspección visual 360° del cilindro detectando
-corrosión, abolladuras o golpes; medición de presión manométrica con instrumento calibrado comparando
-contra rango óptimo del fabricante; inspección de válvula de descarga; revisión de pasador de seguridad
-y sello inviolable; verificación completa de manguera buscando grietas o endurecimiento; inspección de
-boquilla difusora confirmando ausencia de obstrucciones; revisión de etiquetas de instrucciones y fechas;
-verificación de collar de garantía.
-</p><p>
-<strong>Verificación de ubicación (5 puntos):</strong> Revisión de soporte metálico y tornillos; confirmación
-de altura reglamentaria máxima 1.50m; verificación de accesibilidad sin obstrucciones; confirmación de
-señalización fotoluminiscente visible; verificación según plano oficial de colocación de extintores.
-</p><p>
-<strong>Documentación y registro (10 puntos):</strong> Inspección de componentes internos visibles, limpieza
-externa, registro fotográfico digital con evidencia de cada punto, actualización de bitácora digital
-accesible 24/7, generación de reporte ejecutivo con hallazgos y estado clasificado por semáforo
-(verde=óptimo, amarillo=atención, rojo=urgente), recomendaciones específicas de corrección si aplican,
-y cálculo automático de próxima fecha de inspección. Los <strong>procedimientos de mantenimiento</strong>
-siguen estrictamente lo establecido en la NOM-154-SCFI.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><h3 class="faq-question-text">¿Cuál es la diferencia entre mantenimiento preventivo y recarga?</h3><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Son dos procesos diferentes pero complementarios según la NOM-154-SCFI:
-</p><p>
-<strong>Mantenimiento preventivo:</strong> Es una inspección externa que verifica los
-<strong>componentes del extintor</strong> sin abrirlo: presión manométrica, estado de válvula, manguera,
-boquilla, cilindro, pasador, sello, etiquetas y señalización. Se realiza trimestral o semestralmente
-según el nivel de riesgo del centro de trabajo. No incluye reemplazo de agente. Su objetivo es detectar
-fallas tempranas, garantizar funcionamiento correcto y mantener cumplimiento documental continuo ante
-Protección Civil.
-</p><p>
-<strong>Recarga (renovación de agente):</strong> Proceso obligatorio cada 12 meses que sí abre completamente
-el dispositivo. Incluye vaciado total de la carga anterior, limpieza profunda interna del cilindro,
-llenado con agente nuevo certificado, presurización a los niveles especificados por el fabricante,
-pruebas de verificación, y documentación completa. Su objetivo es reemplazar la carga que pierde
-efectividad con el tiempo y garantizar capacidad plena de extinción.
-</p><p>
-<strong>Relación:</strong> La inspección preventiva detecta cuándo es necesaria la recarga anticipada
-(presión baja, vencimiento cumplido, componentes dañados). Ninguno sustituye al otro: ambos son
-obligatorios con periodicidades distintas. Consulta nuestro servicio de
-<a href="/recarga-de-extintores">recarga de extintores</a> para más información sobre
-<strong>mantenimiento y recarga</strong> integral.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><h3 class="faq-question-text">¿Qué pasa si no le doy mantenimiento a mis extintores?</h3><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Sin mantenimiento periódico, hasta el 40% de los equipos fallan durante una emergencia real. Los riesgos
-son graves tanto operativos como legales:
-</p><p>
-<strong>Riesgos operativos:</strong> Presión insuficiente para la <strong>extinción de incendios</strong>,
-agente caducado sin capacidad extintora efectiva, componentes deteriorados (manguera agrietada, válvula
-obstruida, boquilla tapada) que impiden la descarga cuando más se necesita, y reducción drástica de la
-<strong>vida útil</strong> del equipo por falta de atención preventiva.
-</p><p>
-<strong>Riesgos legales y económicos:</strong> Multas de Protección Civil que van desde $5,000 hasta
-$100,000 pesos según la gravedad del incumplimiento, clausura temporal o definitiva del inmueble,
-responsabilidad civil y penal del <strong>titular del extintor</strong> en caso de siniestro con daños
-a personas o propiedad, pérdida de seguros por incumplimiento de condiciones de póliza, y descalificación
-en licitaciones o certificaciones que exigen cumplimiento normativo vigente.
-</p><p>
-La <strong>importancia del mantenimiento</strong> radica en que un extintor bien mantenido es la primera
-línea de <strong>protección contra incendios</strong> en cualquier inmueble. Contratar nuestro
-<strong>servicio de mantenimiento</strong> con inspección programada elimina estos riesgos por completo
-y garantiza que cada equipo funcione correctamente cuando se necesite.
-</p></div></div></div></div></section>
+</p></div><FaqList faqs={faqs} firstOpen={true} /></div></section>
 </Layout>

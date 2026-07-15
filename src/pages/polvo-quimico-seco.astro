@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,20 +19,8 @@ const productSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué significa Clase ABC en un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Significa que el extintor combate tres tipos de fuego con un solo equipo: Clase A (sólidos como madera, papel y textiles), Clase B (líquidos inflamables como gasolina, aceites y solventes) y Clase C (equipos eléctricos energizados). Un extintor BC no cubre sólidos; el ABC sí cubre los tres." }},
-    { "@type": "Question", "name": "¿Cuántos extintores PQS necesita mi negocio?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige como mínimo 1 extintor por cada 300 m² en riesgo ordinario, con distancia máxima de recorrido de 23 m al equipo más cercano. En riesgo alto la densidad aumenta. MANEXT realiza análisis de riesgo sin costo para entregar el número exacto." }},
-    { "@type": "Question", "name": "¿Qué capacidad de extintor PQS debo elegir?", "acceptedAnswer": { "@type": "Answer", "text": "Para comercios y oficinas de riesgo ordinario, 4.5 kg es la capacidad estándar y la más vendida. Para talleres y bodegas medianas, 6 a 9 kg. Para naves industriales y almacenes amplios, 12 a 20 kg. La capacidad determina el alcance: 3–5 m en 4.5 kg hasta 8–12 m en los modelos rodantes." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor PQS?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o inmediatamente después de cualquier descarga, aunque sea parcial. Adicionalmente, el cilindro requiere prueba hidrostática cada 5 años para validar su integridad estructural." }},
-    { "@type": "Question", "name": "¿El extintor PQS daña los equipos electrónicos?", "acceptedAnswer": { "@type": "Answer", "text": "El polvo de fosfato monoamónico no conduce electricidad y es seguro de descargar sobre equipos energizados. Sin embargo, deja un residuo fino que puede ser difícil de retirar de circuitos y pantallas. Para data centers o equipos de precisión recomendamos CO₂ o agentes limpios, que no dejan trazas." }},
-    { "@type": "Question", "name": "¿El extintor PQS aplica para cocinas comerciales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí para área de salón, barra y servicios generales. Pero la zona de freidoras y aceites de cocina calientes (riesgo Clase K) requiere específicamente un extintor Tipo K con agente húmedo, según NOM-002-STPS. En la mayoría de restaurantes se instalan ambos." }},
-    { "@type": "Question", "name": "¿Los extintores MANEXT incluyen documentación oficial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada extintor PQS llega con certificación NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial y comprobante de instalación — la misma documentación que solicitan inspectores de Protección Civil y la STPS." }},
-    { "@type": "Question", "name": "¿MANEXT entrega el mismo día en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Para pedidos urgentes (inspección al día siguiente, apertura de negocio) coordinamos entrega en el mismo día en la mayoría de las alcaldías de CDMX. La entrega estándar es en 48 horas con instalación incluida." }}
-  ]
-});
+const faqs = getSiteFaqs('/polvo-quimico-seco');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -361,99 +352,7 @@ const currentSlug = 'polvo-quimico-seco';
 
       <div class="faq-cot-left">
         <p class="faq-cot-desc">Resolvemos las dudas más frecuentes sobre extintores PQS. ¿Necesitas respuesta inmediata? <a href="https://wa.me/5215614612594?text=Tengo+una+pregunta+sobre+extintores+PQS+Clase+ABC" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respondemos en menos de 5 minutos en horario laboral.</p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué significa "Clase ABC" en un extintor?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Significa que el extintor es eficaz contra tres tipos de fuego: <strong>Clase A</strong> (sólidos combustibles como madera, papel y textiles), <strong>Clase B</strong> (líquidos inflamables como gasolina, aceites y solventes) y <strong>Clase C</strong> (equipos eléctricos energizados). Un extintor de solo "Clase BC" no es válido para fuegos de sólidos; el ABC cubre los tres con un solo equipo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuántos extintores PQS necesita mi negocio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La NOM-002-STPS establece como mínimo <strong>1 extintor por cada 300 m²</strong> en riesgo ordinario, con una distancia máxima de 23 m de recorrido hasta el equipo más cercano. Para riesgo alto, la densidad aumenta. En bodegas, plantas o espacios con materiales especiales la norma es más estricta. MANEXT realiza análisis de riesgo gratuito para darte el número exacto antes de cualquier compra.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué capacidad de extintor PQS debo elegir?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Para comercios y oficinas de riesgo ordinario, el modelo de <strong>4.5 kg</strong> es el más recomendado y el de mayor demanda. Para talleres y bodegas medianas, el de <strong>6 a 9 kg</strong>. Para naves industriales, almacenes de gran superficie o espacios de riesgo alto, los modelos de <strong>13 a 20 kg</strong>. La capacidad también determina el alcance: de 3–5 m en el 4.5 kg hasta 8–12 m en los modelos grandes.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cada cuánto se debe recargar un extintor PQS?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La <strong>NOM-154-SCFI exige recarga cada 12 meses</strong>, o inmediatamente después de cualquier uso — aunque haya sido parcial. El fosfato monoamónico se compacta con el tiempo y la humedad, perdiendo eficiencia de descarga. Además, el cilindro requiere <strong>prueba hidrostática cada 5 años</strong> para verificar su integridad estructural. MANEXT ofrece recarga a domicilio con préstamo de equipo sin costo durante el proceso.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El extintor PQS daña los equipos electrónicos?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El polvo de fosfato monoamónico <strong>no conduce electricidad</strong> — es seguro de usar sobre equipos energizados. Sin embargo, el residuo en polvo se deposita sobre circuitos, teclados y pantallas y puede ser difícil de limpiar. Para cuartos de servidores, data centers o equipos de alta precisión donde el residuo es inaceptable, recomendamos extintores de <a href="/co2">CO₂</a> o <a href="/agentes-limpios">agentes limpios</a>, que no dejan trazas.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El extintor PQS aplica para cocinas comerciales?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Para el área de salón, barra y servicios generales de un restaurante, <strong>sí aplica el PQS</strong>. Sin embargo, para la zona de freidoras y aceites de cocina calientes (riesgo Clase K), la NOM-002-STPS exige específicamente un extintor <a href="/tipo-k">Tipo K con agente húmedo</a>. En la mayoría de restaurantes se instalan ambos: PQS para el salón y Tipo K junto a la freidora. Nuestros ingenieros te indican la combinación correcta para tu cocina.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Los extintores que vende MANEXT tienen documentación oficial?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Todos los extintores PQS que distribuimos cuentan con <strong>certificación NOM-154-SCFI vigente</strong>, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial y comprobante de instalación. Esta documentación es la que solicitan los inspectores de Protección Civil y la STPS en sus visitas. Si necesitas soporte adicional para una auditoría específica, nuestro equipo te acompaña sin costo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Tienen entrega el mismo día en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Para pedidos urgentes — inspección de Protección Civil al día siguiente, apertura de negocio o emergencia — podemos coordinar entrega en el mismo día en la mayoría de las alcaldías de CDMX. La entrega <strong>estándar es en 48 horas</strong> con instalación incluida. Contáctanos por WhatsApp para verificar disponibilidad inmediata para tu zona.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Puedo comprar extintores PQS al mayoreo?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. MANEXT ofrece precios de mayoreo y descuentos por volumen para empresas, cadenas comerciales, administradoras de edificios y contratistas que requieren equipar múltiples ubicaciones. También disponemos de <strong>pólizas de mantenimiento anuales</strong> para flotas de extintores con precios preferenciales por unidad. Solicita tu cotización corporativa por WhatsApp o llamada.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -593,38 +492,6 @@ const currentSlug = 'polvo-quimico-seco';
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script is:inline>
-(function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <script is:inline>
 (function() {

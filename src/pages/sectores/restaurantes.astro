@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import FaqList from '../../components/FaqList.astro';
+import { getSiteFaqs } from '../../data/site-faqs.mjs';
+import { buildFaqSchema } from '../../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,60 +26,8 @@ const serviceSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué extintor es obligatorio en cocinas comerciales según la NOM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La NOM-002-STPS exige extintor de Agente Húmedo Tipo K en toda cocina comercial con freidoras, hornillas o parrillas donde se usen aceites o grasas calientes. El extintor Tipo K actúa por saponificación: convierte la grasa ardiente en una espuma jabonosa que sella la superficie e impide la reignición. No puede sustituirse por PQS ni CO₂ en el área de cocción. MANEXT suministra Tipo K de 6 litros desde $1,800 MXN con NOM-154-SCFI y documentación para Protección Civil."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuántos extintores necesita un restaurante en CDMX?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un restaurante en CDMX requiere mínimo: 1 extintor Tipo K en o junto al área de cocción (obligatorio NOM-002-STPS), 1 extintor PQS ABC por cada 300 m² en área de comensales (máx 23 m de recorrido) y 1 CO₂ o PQS BC cerca de tableros eléctricos. MANEXT realiza diagnóstico técnico gratuito con plano de distribución y cálculo exacto por giro y superficie."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa si Protección Civil encuentra la cocina sin extintor Tipo K?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La ausencia de extintor Tipo K en cocinas comerciales con aceites calientes es una falta grave bajo la NOM-002-STPS. Puede resultar en multa de hasta 3,450 UMAS (~$350,000 MXN), clausura temporal y pérdida de licencia de funcionamiento. MANEXT atiende urgencias de inspección: entregamos Tipo K certificado el mismo día si el pedido se confirma antes de las 2 PM, con documentación lista para presentar al inspector."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué diferencia hay entre el extintor Tipo K y el PQS para cocinas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El PQS ABC no está permitido en cocinas con aceites calientes porque el polvo no puede contener fuegos Clase K: el aceite puede reignitarse inmediatamente al no existir efecto de sello. El Tipo K usa un agente húmedo alcalino que al contacto con la grasa a alta temperatura genera saponificación (espuma jabonosa), sella la superficie y elimina el calor simultáneamente. Es el único agente eficaz y NOM-conforme para fuegos en freidoras y parrillas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Con qué frecuencia se revisan los extintores de un restaurante?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La NOM-154-SCFI exige mantenimiento y recarga anual. En cocinas comerciales se recomienda además inspección visual mensual del manómetro, seguro y etiqueta. Si el extintor se descargó aunque sea parcialmente, se recarga completo de inmediato. MANEXT ofrece pólizas anuales para restaurantes con visitas programadas, recordatorios automáticos y extintor de préstamo durante el proceso de recarga."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿MANEXT atiende restaurantes y fondas pequeñas, no solo cadenas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Atendemos desde taquería familiar hasta cadena de restaurantes con múltiples sucursales. El diagnóstico técnico y la cotización son siempre sin costo. Para negocios con una sola cocina la inversión mínima es 1 Tipo K + 1 PQS; para cadenas armamos contratos anuales con visitas programadas, bitácora digital por sucursal y facturación CFDI consolidada."
-      }
-    }
-  ]
-});
+const faqs = getSiteFaqs('/sectores/restaurantes');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -165,26 +116,7 @@ const faqSchema = JSON.stringify({
       subtitle="Lo que nos preguntan los dueños de restaurantes y administradores de cocinas"
     />
     <div style="max-width: 800px; margin: 2rem auto 0;">
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Qué extintor es obligatorio en cocinas comerciales según la NOM?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">La NOM-002-STPS exige extintor de <strong>Agente Húmedo Tipo K</strong> en toda cocina comercial con freidoras, hornillas o parrillas donde se usen aceites o grasas calientes. El Tipo K actúa por saponificación: convierte la grasa ardiente en una espuma jabonosa que sella la superficie e impide la reignición. No puede sustituirse por PQS ni CO₂. MANEXT suministra Tipo K de 6 litros desde <strong>$1,800 MXN</strong> con NOM-154-SCFI y documentación para Protección Civil.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Cuántos extintores necesita mi restaurante?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Mínimo: 1 Tipo K en o junto al área de cocción (obligatorio), 1 PQS ABC por cada 300 m² en comensales y 1 CO₂ o PQS BC cerca de tableros eléctricos. MANEXT hace el diagnóstico gratuito con cálculo exacto.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Qué pasa si Protección Civil encuentra mi cocina sin Tipo K?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Falta grave bajo NOM-002-STPS: multa de hasta 3,450 UMAS (~$350,000 MXN), clausura temporal y pérdida de licencia. MANEXT atiende urgencias de inspección con entrega el mismo día (pedido antes de las 2 PM) más documentación lista para el inspector.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Qué diferencia hay entre Tipo K y PQS para cocinas?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">El PQS no puede contener fuegos Clase K: el aceite puede reignitarse de inmediato. El Tipo K genera saponificación al contacto con grasa a alta temperatura, sella la superficie y elimina calor simultáneamente. Es el único agente NOM-conforme para freidoras y parrillas.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Con qué frecuencia se revisan los extintores de un restaurante?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">NOM-154-SCFI exige mantenimiento y recarga anual. En cocinas se recomienda inspección visual mensual. Si el extintor se descargó aunque sea parcialmente, se recarga completo de inmediato. MANEXT ofrece pólizas anuales con visitas programadas y extintor de préstamo durante la recarga.</p>
-      </details>
+      <FaqList faqs={faqs} firstOpen={true} />
     </div>
   </div>
 </section>

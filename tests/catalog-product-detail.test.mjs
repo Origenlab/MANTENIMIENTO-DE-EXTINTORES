@@ -61,7 +61,7 @@ test('all 46 products have a complete, human and individual editorial profile', 
     assert.ok(editorial.humanLead.length >= 140, `thin lead for ${product.id}`);
     assert.ok(editorial.humanDescription.length >= 180, `thin description for ${product.id}`);
     assert.equal(editorial.benefitAngles.length, 4, `benefits must be authored for ${product.id}`);
-    assert.ok(editorial.faqs.length >= 5, `FAQs must be authored for ${product.id}`);
+    assert.ok(editorial.faqs.length >= 8, `FAQs must be authored for ${product.id}`);
     assert.ok(editorial.internalLinks.length >= 3, `internal links missing for ${product.id}`);
 
     const normalizedKeyword = editorial.primaryKeyword.toLocaleLowerCase('es-MX');
@@ -141,7 +141,7 @@ test('every catalog product has one unique, complete and indexable detail page',
     assert.ok(detail.capacityGuide.length >= 1, `missing variant guide for ${product.id}`);
     assert.ok(detail.recommendedUses.length >= 3, `insufficient applications for ${product.id}`);
     assert.ok(detail.limitations.length >= 3, `insufficient safety guidance for ${product.id}`);
-    assert.ok(detail.faqs.length >= 5, `insufficient FAQs for ${product.id}`);
+    assert.ok(detail.faqs.length >= 8, `insufficient FAQs for ${product.id}`);
     assert.ok(detail.sources.length >= 2, `insufficient technical sources for ${product.id}`);
 
     slugs.add(detail.slug);

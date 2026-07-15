@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,20 +19,8 @@ const productSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Por qué no puedo usar un extintor PQS o de agua en mi cocina?", "acceptedAnswer": { "@type": "Answer", "text": "El agua sobre aceite por encima de los 300 °C se vaporiza violentamente y proyecta el aceite en llamas en todas direcciones — la conocida explosión de grasa. El polvo PQS apaga la llama momentáneamente pero no enfría el aceite, que vuelve a encenderse al disiparse el polvo, y deja residuo difícil de retirar. El agente húmedo Tipo K es el único que reacciona de forma segura con grasa caliente por saponificación." }},
-    { "@type": "Question", "name": "¿Qué es la saponificación y por qué es importante?", "acceptedAnswer": { "@type": "Answer", "text": "Es la reacción química en que una grasa reacciona con una base alcalina (acetato o carbonato de potasio) para formar jabón y glicerol. Sobre la superficie del aceite caliente se forma una capa de jabón que sella el oxígeno, enfría la superficie y deja un residuo no inflamable. Esta capa permanece sobre el aceite tras la descarga e impide la re-ignición hasta que la temperatura baja." }},
-    { "@type": "Question", "name": "¿Es obligatorio tener un extintor Tipo K en cocinas comerciales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La NOM-002-STPS exige que los extintores sean adecuados a la clase de fuego del área. En cocinas comerciales con freidoras, planchas u otros equipos de cocción con aceite, la clase K es la categoría aplicable y se considera obligatoria. Adicionalmente, COFEPRIS y muchas pólizas de aseguradoras exigen el Tipo K como condición de operación o cobertura." }},
-    { "@type": "Question", "name": "¿Qué capacidad de extintor Tipo K necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Para fondas y cocinas con 1–2 freidoras pequeñas, el modelo de 1.5 L. Para restaurantes medianos con 2–4 puntos de cocción más freidoras, el de 3 L (el más vendido). Para hoteles, comedores industriales y cocinas de alta producción, el de 6 L. La distancia máxima desde la zona de cocción al extintor no debe exceder los 10 metros." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor Tipo K?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. Adicionalmente, los componentes de la cocina (aceite vaporizado, partículas grasas) pueden afectar el sello del cilindro, por lo que se recomienda inspección visual semestral. Prueba hidrostática del cilindro cada 5 años." }},
-    { "@type": "Question", "name": "¿El extintor Tipo K también sirve para fuegos eléctricos en la cocina?", "acceptedAnswer": { "@type": "Answer", "text": "No directamente. El Tipo K está clasificado solo para Clase K. La NOM-002-STPS exige que el extintor sea adecuado a la clase de fuego presente. Para riesgos eléctricos en la cocina (planchas, hornos, refrigeración) se complementa con un extintor PQS Clase ABC o CO₂. La instalación combinada es la más común en restaurantes." }},
-    { "@type": "Question", "name": "¿Qué documentación me entrega MANEXT con el Tipo K?", "acceptedAnswer": { "@type": "Answer", "text": "Cada extintor incluye certificado NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial, comprobante de instalación, señalización fotoluminiscente NOM-026 y factura fiscal — la documentación que pide Protección Civil, COFEPRIS, STPS y aseguradoras." }},
-    { "@type": "Question", "name": "¿Puede MANEXT instalar el Tipo K en una cocina ya operando?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Coordinamos la visita en horario de baja operación (mañanas tempranas o cierre) para no interrumpir el servicio. La instalación toma 30–45 minutos por punto, incluye anclaje del soporte y colocación de la señalización. Para grupos restauranteros con múltiples sucursales, ofrecemos plan de instalación coordinado." }}
-  ]
-});
+const faqs = getSiteFaqs('/tipo-k');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -337,99 +328,7 @@ const currentSlug = 'tipo-k';
           Respondemos las dudas más frecuentes sobre extintores Tipo K. ¿Prefieres hablar con un especialista?
           <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20Tipo%20K%20para%20mi%20cocina" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Por qué no puedo usar un extintor PQS o de agua en mi cocina?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El agua sobre aceite caliente (por encima de 300 °C) se convierte en vapor de forma instantánea y violenta, proyectando el aceite en llamas en todas direcciones — una explosión de grasa que puede alcanzar varios metros y causar quemaduras graves. El polvo químico seco apaga momentáneamente pero no enfría el aceite, que puede re-ignirse al disiparse el polvo; además contamina toda la cocina con residuo que requiere limpieza profesional. El agente húmedo Tipo K es el único que reacciona de forma segura con el aceite caliente.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué es la saponificación y por qué es importante?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La saponificación es una reacción química en la que una grasa reacciona con una base alcalina para formar jabón y glicerol. Cuando el agente húmedo del extintor Tipo K toca el aceite caliente, esta reacción ocurre de forma instantánea en la superficie: se forma una capa de jabón denso que sella el aceite del oxígeno, enfría la superficie y hace que el residuo sea no inflamable. A diferencia de otros agentes extintores, la capa de jabón permanece sobre el aceite incluso después de la descarga, <strong>impidiendo la re-ignición</strong> hasta que el aceite baja de temperatura.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El extintor Tipo K es obligatorio por ley en restaurantes?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. La <strong>NOM-002-STPS</strong> establece que los extintores en centros de trabajo deben ser del tipo adecuado para la clase de fuego del área. En cocinas comerciales donde se cocina con aceites y grasas, la clase de fuego es K — y solo el extintor Tipo K cumple ese requisito. Protección Civil, STPS y COFEPRIS pueden aplicar sanciones por incumplimiento, que van desde multas hasta clausura temporal del establecimiento.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El agente húmedo contamina los alimentos o la cocina?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El agente húmedo a base de acetato o carbonato de potasio es lavable con agua y no es tóxico en las concentraciones de uso. Después de una descarga, la zona afectada debe limpiarse con agua y se deben desechar los alimentos expuestos, pero el residuo <strong>no contamina superficies de forma permanente</strong> ni penetra materiales porosos. Comparado con el polvo químico seco, cuyo residuo es difícil de eliminar y puede contaminar conductos de ventilación, el agente húmedo es significativamente más limpio en un entorno de cocina.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿En qué capacidades viene el extintor Tipo K?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Disponemos de tres modelos: <strong>1.5 litros</strong> (fondas, cocinas pequeñas con una o dos freidoras), <strong>3 litros</strong> (el más solicitado, para restaurantes medianos con múltiples quemadores) y <strong>6 litros</strong> (cocinas de alta producción: hoteles, hospitales, comedores industriales). La selección correcta depende del número de equipos de cocción y del volumen estimado de aceite en operación simultánea.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Con qué frecuencia se recarga el extintor Tipo K?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La recarga debe realizarse <strong>anualmente</strong> o inmediatamente después de cualquier descarga. La NOM-154-SCFI también establece prueba hidrostática del cilindro cada 5 años. Es importante no omitir la recarga anual aunque el extintor no haya sido utilizado: el agente húmedo puede degradarse y la presión interna puede variar, comprometiendo la efectividad del equipo en caso de emergencia. MANEXT ofrece recarga a domicilio con certificado incluido.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Dónde debo colocar el extintor Tipo K en mi cocina?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La NOM-002-STPS indica que el extintor debe estar: a no más de <strong>10 metros de la zona de cocción</strong>, a una altura entre 1 y 1.5 metros del piso (accesible rápidamente), fuera del rango de calor directo de los quemadores para no comprometer el manómetro y el agente, y señalizado con señalamiento fotoluminiscente visible desde el acceso a la cocina. Nunca debe guardarse dentro de cajones, gabinetes cerrados o áreas de almacenamiento — debe estar siempre visible y accesible.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Necesito Tipo K si ya tengo sistema automático de supresión en la campana?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Los sistemas automáticos de supresión bajo campana están diseñados para actuar sobre el equipo de cocción directamente. El extintor portátil Tipo K cubre los escenarios que el sistema automático no puede alcanzar: derrames fuera de la campana, freidoras no conectadas al sistema, incendios iniciados en superficies adyacentes, o fallas en la activación automática. La normativa exige <strong>ambos sistemas</strong> en instalaciones de cierta escala — son complementarios, no sustitutos.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué inspecciones revisan el extintor Tipo K y qué documentos piden?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Las principales inspecciones que verifican el extintor son: <strong>Protección Civil municipal</strong> (vigencia, tipo, señalamiento y bitácora de servicio), <strong>STPS</strong> (cumplimiento NOM-002-STPS, tipo correcto según clase de fuego), <strong>COFEPRIS</strong> (en establecimientos de alimentos: presencia y vigencia de equipo contra incendio). Los documentos que deben estar disponibles: factura de compra, certificado NOM-154-SCFI del fabricante y bitácora de mantenimiento firmada. MANEXT entrega todos estos documentos con cada extintor.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -573,38 +472,6 @@ const currentSlug = 'tipo-k';
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script is:inline>
-(function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <script is:inline>
 (function() {

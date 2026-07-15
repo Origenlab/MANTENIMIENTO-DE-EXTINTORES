@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from './QuoteForm.astro';
+import FaqList from '../FaqList.astro';
 import { catalogProducts, sectorOptions } from '../../data/catalog-products.mjs';
+import { buildFaqSchema } from '../../lib/faq-utils.mjs';
 
 interface CatalogProductDetail {
   id: string;
@@ -86,15 +88,7 @@ const productSchema = {
   ],
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: product.faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
-};
+const faqSchema = buildFaqSchema(product.faqs);
 ---
 
 <Layout
@@ -109,7 +103,7 @@ const faqSchema = {
     { name: product.name, url: product.seo.canonical },
   ]}
   schemas={[JSON.stringify(productSchema), JSON.stringify(faqSchema)]}
-  extraCss={['/css/catalog-product-detail.css?v=2']}
+  extraCss={['/css/catalog-product-detail.css?v=3']}
 >
   <div class="product-detail">
     <section class="product-detail__hero" aria-labelledby="product-title">
@@ -345,14 +339,7 @@ const faqSchema = {
               <span>{product.detailCopy.faqIntro}</span>
               <a class="product-detail__text-cta" href={product.detailCopy.guideUrl}>{product.detailCopy.guideLabel}</a>
             </header>
-            <div class="product-detail__faqs">
-              {product.faqs.map((faq, index) => (
-                <details open={index === 0}>
-                  <summary>{faq.question}<span aria-hidden="true">+</span></summary>
-                  <p>{faq.answer}</p>
-                </details>
-              ))}
-            </div>
+            <FaqList faqs={product.faqs} firstOpen={true} className="product-detail__faqs" />
           </div>
 
           <div class="product-detail__conversion-form" aria-label={product.detailCopy.formLabel}>

@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,20 +19,8 @@ const productSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué es un agente limpio y en qué se diferencia del CO₂?", "acceptedAnswer": { "@type": "Answer", "text": "El CO₂ extingue por desplazamiento de oxígeno y reduce O₂ a niveles incompatibles con la vida humana, exigiendo evacuación previa. Los agentes limpios FM-200 y Novec 1230 extinguen por absorción de calor a concentraciones de 5–7%, muy por debajo del NOAEL — pueden descargarse con personas presentes sin riesgo de asfixia. Ambos dejan cero residuo, pero el agente limpio cubre Clase A además de B y C." }},
-    { "@type": "Question", "name": "¿Son seguros los agentes limpios si hay personas en el espacio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, dentro de parámetros de diseño. FM-200: NOAEL 9%, concentración de extinción 7%. Novec 1230: NOAEL 10%, concentración 5.6%. La concentración de trabajo está por debajo del umbral de efecto adverso, lo que elimina riesgo de incapacitación durante la descarga. La evacuación post-descarga sigue siendo el protocolo estándar como buena práctica." }},
-    { "@type": "Question", "name": "¿FM-200 o Novec 1230: cuál elijo para mi instalación?", "acceptedAnswer": { "@type": "Answer", "text": "Ambos son técnicamente excelentes. La elección depende de tres factores: presupuesto (FM-200 es más accesible), requerimientos ambientales (Novec 1230 tiene GWP=1 vs ~3,220 del FM-200, relevante con ISO 14001) y regulación sectorial (banca, salud y dependencias públicas a veces tienen preferencias específicas). Asesoría sin costo." }},
-    { "@type": "Question", "name": "¿Los agentes limpios cumplen NOM-154-SCFI y NFPA 2001?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los extintores que distribuye MANEXT cumplen NOM-154-SCFI y los lineamientos de NFPA 2001 (Standard on Clean Agent Fire Extinguishing Systems). Adicionalmente, ambos agentes tienen ODP (Potencial de Destrucción del Ozono) cero y no son sustancias controladas bajo el Protocolo de Montreal." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor de agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. La verificación se hace por pesaje del cilindro contra peso de tara. Adicionalmente, prueba hidrostática cada 5 años. La recarga de FM-200 y Novec 1230 requiere equipo especializado y agente original certificado por el fabricante." }},
-    { "@type": "Question", "name": "¿Puedo cambiar mis extintores CO₂ actuales por agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, y en muchos casos es la decisión correcta cuando hay personal de guardia 24/7 en la sala protegida. La migración requiere recalcular la concentración de diseño según el volumen del recinto y verificar la integridad estructural (la concentración de agente limpio es menor pero requiere selladura adecuada). MANEXT realiza la evaluación sin costo." }},
-    { "@type": "Question", "name": "¿Qué documentación entregan con un extintor de agente limpio?", "acceptedAnswer": { "@type": "Answer", "text": "Cada equipo se entrega con certificado NOM-154-SCFI vigente, ficha técnica del agente con datos de NOAEL/GWP/ODP, declaración de cumplimiento NFPA 2001, etiqueta de fabricante con trazabilidad, tarjeta de inspección, señalización fotoluminiscente y bitácora de servicio para auditorías de continuidad y pólizas de infraestructura crítica." }},
-    { "@type": "Question", "name": "¿Por qué MANEXT y no cualquier proveedor?", "acceptedAnswer": { "@type": "Answer", "text": "Los agentes limpios requieren asesoría técnica especializada: dimensionamiento, compatibilidad con sistemas fijos existentes, integridad de recinto, agente original con cadena de custodia y recarga con equipo certificado. MANEXT tiene más de 80 años de operación, balanzas calibradas, recarga con agente original FM-200 y Novec 1230, y soporte para auditorías ISO 27001, ISO 14001 y NFPA 75." }}
-  ]
-});
+const faqs = getSiteFaqs('/agentes-limpios');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -314,99 +305,7 @@ const currentSlug = 'agentes-limpios';
           Respondemos las dudas más frecuentes sobre agentes limpios. ¿Tienes una instalación específica que evaluar?
           <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
         </p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué es un agente limpio y en qué se diferencia del CO₂?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El CO₂ extingue desplazando el oxígeno del ambiente, lo cual también afecta a las personas presentes. Los agentes limpios (FM-200, Novec 1230) extinguen por <strong>absorción de calor</strong>, interrumpiendo la reacción de combustión a concentraciones del 5–7 %, muy por debajo del umbral de efecto adverso para personas. Ambos dejan cero residuo, pero el agente limpio puede usarse en espacios con personas sin el riesgo de asfixia que caracteriza al CO₂. También protegen clase A (sólidos), mientras el CO₂ es solo clase BC.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Son seguros los agentes limpios si hay personas en el espacio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, dentro de los parámetros de diseño. El FM-200 tiene un NOAEL (nivel sin efecto adverso observable) del 9 % y se usa a concentraciones de diseño del 7 %. El Novec 1230 tiene un NOAEL del 10 % y se usa al 5.6 %. En ambos casos, la concentración de extinción está por debajo del umbral de efecto adverso. Esto no significa que sea recomendable permanecer en el espacio — la evacuación post-descarga sigue siendo el protocolo estándar — pero elimina el riesgo de incapacitación o muerte durante la propia descarga.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿FM-200 o Novec 1230: cuál es mejor para mi instalación?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Ambos son técnicamente excelentes. La elección depende de tres factores: <strong>presupuesto</strong> (el FM-200 es más accesible), <strong>requerimientos ambientales</strong> (el Novec 1230 tiene GWP de 1 vs ~3,220 del FM-200 — relevante con ISO 14001 o políticas de sustentabilidad) y <strong>regulaciones del sector</strong> (banca, salud e instituciones públicas a veces tienen preferencias específicas). Nuestro equipo puede orientarte sin costo en la elección correcta para tu caso.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El agente limpio daña los equipos electrónicos o documentos?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>No. Tanto el FM-200 como el Novec 1230 se evaporan completamente sin dejar residuo sólido, líquido ni conductor. No generan humedad, no producen corrosión, no dejan polvo sobre circuitos, pantallas ni documentos. Tras una descarga, el espacio puede volver a operaciones normales después de ventilación estándar, sin necesidad de limpieza de equipos ni descarte de materiales expuestos — a diferencia del PQS, que puede inutilizar equipos por su residuo corrosivo y penetrante.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Para qué clases de fuego sirven los agentes limpios?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Los agentes limpios son efectivos en fuegos <strong>Clase A</strong> (sólidos: papel, plástico, madera — común en archivos y oficinas), <strong>Clase B</strong> (líquidos inflamables) y <strong>Clase C</strong> (equipos eléctricos energizados — crítico en salas de servidores). No conducen electricidad, por lo que pueden aplicarse sobre equipos activos sin riesgo de arco eléctrico. Esta cobertura ABC los diferencia del CO₂, que no es efectivo en clase A.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Con qué frecuencia se recarga un extintor de agente limpio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La recarga debe realizarse <strong>anualmente</strong> como parte del mantenimiento preventivo, o inmediatamente después de cualquier descarga. Los extintores de agente limpio se verifican por peso, no por manómetro — si el cilindro ha perdido más del 5 % del peso nominal del agente, debe recargarse aunque no haya sido activado. La NOM-154-SCFI establece también la prueba hidrostática del cilindro cada 5 años.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto cuestan comparados con un extintor convencional?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Los extintores de agente limpio tienen un costo significativamente mayor — el FM-200 puede costar entre 3 y 6 veces el precio de un extintor PQS equivalente; el Novec 1230 puede ser más elevado aún. Sin embargo, el análisis correcto no es comparar el costo del extintor sino el costo de la alternativa: si el espacio protegido contiene activos cuya pérdida costaría 10 o 100 veces más, el diferencial de precio es marginal. Para instalaciones críticas, el agente limpio no es una decisión de presupuesto — es una decisión de gestión de riesgo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Necesito agente limpio si ya tengo un sistema de supresión fijo?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Los sistemas de supresión fija cubren espacios delimitados. Los extintores portátiles de agente limpio cubren escenarios distintos: incendios en zonas adyacentes al sistema fijo, actuación manual antes de que el sistema automático se active, o respuesta en áreas sin cobertura fija. En instalaciones críticas, ambos sistemas son complementarios — un extintor portátil de agente limpio junto a la puerta de acceso es práctica estándar incluso en salas con supresión automática instalada.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El agente limpio cumple con normativa ambiental mexicana?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Tanto el FM-200 como el Novec 1230 tienen <strong>ODP de cero</strong> — no son sustancias controladas bajo el Protocolo de Montreal, por lo que SEMARNAT no los incluye en listas de eliminación progresiva. El Novec 1230 tiene adicionalmente un GWP de 1, equivalente al vapor de agua, lo que lo posiciona como el agente limpio más sustentable disponible. Ambos cumplen con NOM-154-SCFI para extintores portátiles y con los lineamientos de NFPA 2001 para sistemas de agente limpio.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -548,38 +447,6 @@ const currentSlug = 'agentes-limpios';
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script is:inline>
-(function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <script is:inline>
 (function() {

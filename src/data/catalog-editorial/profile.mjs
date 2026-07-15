@@ -54,6 +54,9 @@ export function buildEditorialProfiles(seeds) {
         { question: `¿Qué error debo evitar al comprar ${keyword}?`, answer: `${seed.avoid} Elegir sólo por precio o apariencia puede producir una configuración incompatible, difícil de operar o insuficiente para el escenario.` },
         { question: `¿Cuál es la diferencia relevante de ${keyword}?`, answer: `${seed.difference} La ventaja debe comprobarse en la ficha, rating, materiales o compatibilidad del producto que aparezca en la propuesta.` },
         { question: `¿Qué información necesita MANEXT para cotizar ${keyword}?`, answer: `Necesitamos conocer la aplicación, cantidad, ubicación y fecha requerida. También debemos confirmar ${seed.selection.toLocaleLowerCase('es-MX')} para preparar una propuesta comparable y responsable.` },
+        { question: `¿Qué limitación debo considerar antes de elegir ${keyword}?`, answer: `${seed.avoid} MANEXT compara ese límite con el combustible, el entorno y la forma de respuesta prevista antes de recomendar una configuración.` },
+        { question: `¿La propuesta de ${keyword} puede incluir instalación y servicio posterior?`, answer: 'La propuesta puede integrar suministro y, cuando corresponda, instalación, señalización, mantenimiento, recarga, refacciones o capacitación. El alcance se define según el tipo de producto y las condiciones reales del sitio.' },
+        { question: `¿Cómo se confirman disponibilidad y documentación de ${keyword}?`, answer: 'La cotización identifica la variante disponible y confirma marca, modelo, materiales, compatibilidad, documentación y fecha estimada antes de aceptar el suministro. No se presume stock ni certificación a partir del nombre comercial.' },
       ],
       internalLinks: [
         { label: seed.relatedLabel, url: seed.relatedUrl },

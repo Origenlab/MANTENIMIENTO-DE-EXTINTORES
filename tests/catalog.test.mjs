@@ -141,10 +141,12 @@ test('catalog uses one reusable FAQ and quote conversion module', async () => {
 
   assert.match(page, /import FaqQuoteModule from ['"]\.\.\/components\/catalog\/FaqQuoteModule\.astro['"]/);
   assert.match(page, /<FaqQuoteModule[\s\S]*faqs=\{faqs\}[\s\S]*products=\{products\}[\s\S]*sectors=\{sectorOptions\}[\s\S]*\/>/);
+  assert.match(page, /const faqs = getSiteFaqs\(['"]\/catalogo['"]\)/);
+  assert.match(page, /const faqSchema = JSON\.stringify\(buildFaqSchema\(faqs\)\)/);
   assert.doesNotMatch(page, /<section class="quote-section/);
   assert.doesNotMatch(page, /<section class="catalog-faq/);
   assert.ok(component.indexOf('faq-quote__faq') < component.indexOf('<QuoteForm'), 'FAQ must be rendered before the form');
-  assert.match(component, /open=\{index === 0\}/);
+  assert.match(component, /<FaqList\s+faqs=\{faqs\}/);
   assert.match(component, /<QuoteForm products=\{products\} sectors=\{sectors\}/);
 });
 

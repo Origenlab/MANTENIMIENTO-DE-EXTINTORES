@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const servicesSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,20 +26,8 @@ const servicesSchema = JSON.stringify({
   "areaServed": ["Ciudad de México", "Estado de México"]
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué servicios ofrece MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cinco servicios integrales: venta de extintores certificados NOM-154-SCFI, recarga anual a domicilio, mantenimiento preventivo con protocolo de 25 puntos, prueba hidrostática quinquenal con certificación 5 años, señalización fotoluminiscente NOM-026 y capacitación de brigadas con constancia DC-3 oficial. Todo bajo un solo proveedor con más de 80 años de experiencia." }},
-    { "@type": "Question", "name": "¿Cubren toda la CDMX y Estado de México?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cobertura completa en las 16 alcaldías de CDMX y zona metropolitana: Tlalnepantla, Naucalpan, Atizapán, Ecatepec, Cuautitlán Izcalli, Tultitlán, Nicolás Romero, Coacalco y municipios conurbados. Servicio de emergencia 24/7/365 incluyendo fines de semana y días festivos." }},
-    { "@type": "Question", "name": "¿Cómo es el proceso de cotización?", "acceptedAnswer": { "@type": "Answer", "text": "Tres pasos: 1) Contactas por WhatsApp, llamada o formulario web (respuesta en menos de 5 min en horario laboral). 2) Coordinamos visita técnica gratuita en sitio con ingeniero certificado para análisis de riesgo. 3) Recibes propuesta detallada con plano de distribución, precio total con instalación y opciones de financiamiento — sin compromiso de compra." }},
-    { "@type": "Question", "name": "¿MANEXT ofrece pólizas anuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Pólizas anuales con visitas trimestrales/semestrales programadas, recarga incluida, descuentos del 15-25% sobre tarifas individuales, equipo de préstamo durante servicio, dashboard digital con histórico y alertas automáticas previas a vencimientos. Ideales para corporativos con múltiples sucursales o auditorías ISO." }},
-    { "@type": "Question", "name": "¿Qué documentación entregan?", "acceptedAnswer": { "@type": "Answer", "text": "Todo lo que solicita Protección Civil, STPS, COFEPRIS y aseguradoras: certificados NOM-154-SCFI, etiquetas de fabricante con trazabilidad, tarjetas de inspección, planos de distribución, bitácoras oficiales firmadas por técnico avalado, reportes fotográficos, constancias DC-3 (capacitación) y facturas fiscales CFDI 4.0." }},
-    { "@type": "Question", "name": "¿Cuál es el tiempo de respuesta para emergencias?", "acceptedAnswer": { "@type": "Answer", "text": "Para emergencias o urgencias (inspección al día siguiente, descarga reciente, apertura de negocio inminente) coordinamos atención el mismo día en la mayoría de zonas. Para servicios estándar la entrega e instalación es en 24-48 horas. WhatsApp y línea telefónica con respuesta en menos de 5 minutos en horario laboral." }},
-    { "@type": "Question", "name": "¿Manejan financiamiento empresarial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Financiamiento sin intereses a 3, 6 o 12 meses con aprobación express en menos de 24 horas. Aplicable a venta, instalación y pólizas anuales. Aceptamos transferencia bancaria, tarjetas empresariales con MSI bancarios, cheque certificado y, para clientes con cuenta, crédito directo a 30 días previa aprobación." }},
-    { "@type": "Question", "name": "¿Por qué elegir MANEXT sobre otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Más de 80 años de operación continua desde 1943 (no somos nuevos), unidad de verificación autorizada NOM-154-SCFI, +15,000 clientes atendidos, servicio integral 360° (no necesitas múltiples proveedores), ejecutivo de cuenta asignado, garantía de aprobación en inspección y cobertura 24/7/365 en toda CDMX y Edomex." }}
-  ]
-});
+const faqs = getSiteFaqs('/servicios');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -330,89 +321,7 @@ const faqSchema = JSON.stringify({
       <!-- Left: FAQ -->
       <div class="faq-cot-left">
         <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre venta, recarga, mantenimiento y normativa de extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cada cuánto tiempo debo recargar mi extintor?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Según la <strong>NOM-154-SCFI</strong>, los extintores deben recargarse <strong>anualmente</strong> o inmediatamente después de ser utilizados, aunque sea parcialmente. Los extintores de polvo químico seco (PQS) requieren recarga cada 12 meses, mientras que los de CO2 también necesitan servicio anual. En MANEXT te enviamos recordatorios automáticos antes del vencimiento y ofrecemos planes de mantenimiento anual que incluyen recarga, revisión completa y documentación para Protección Civil.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto cuesta el servicio de mantenimiento de extintores?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El <strong>mantenimiento preventivo</strong> en MANEXT está disponible para todos los tipos y capacidades de equipos: PQS de 4.5kg, 6kg, 9kg, CO2 de 5lb, 10lb y más. <strong>Incluimos sin costo adicional:</strong> servicio a domicilio en toda la CDMX y zona metropolitana, préstamo de equipos durante el servicio, collares de garantía oficiales, certificación NOM-154-SCFI, bitácora digital de mantenimiento y reporte fotográfico completo. Ofrecemos descuentos especiales por volumen para empresas con más de 10 equipos. Cotiza sin compromiso al 56 1461 2594.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué tipo de extintor necesito para mi empresa o negocio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La selección depende de tu actividad: <strong>Oficinas y comercios:</strong> PQS tipo ABC. <strong>Restaurantes y cocinas comerciales:</strong> Extintor Tipo K obligatorio según NOM-002-STPS. <strong>Data centers y cuartos eléctricos:</strong> CO2 o agentes limpios. <strong>Plantas industriales:</strong> combinación de PQS ABC y espuma AFFF. En <strong>MANEXT</strong> realizamos análisis de riesgos SIN COSTO y diseñamos el sistema de protección ideal según la NOM-002-STPS para garantizar el cumplimiento normativo completo ante Protección Civil.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuáles son las multas por no cumplir con la normativa de extintores?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Protección Civil puede imponer <strong>sanciones económicas significativas</strong> por: no contar con extintores certificados NOM-154-SCFI, extintores vencidos sin mantenimiento documentado, falta de señalización fotoluminiscente, o incumplimiento de distancias según NOM-002-STPS. Además, pueden <strong>clausurar temporalmente tu establecimiento</strong>. Con nuestras <strong>pólizas anuales</strong> garantizamos el cumplimiento normativo al 100% con toda la documentación oficial necesaria.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Realizan servicio a domicilio o debo llevar los extintores?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, en <strong>MANEXT ofrecemos servicio a domicilio SIN COSTO ADICIONAL</strong> en toda CDMX y área metropolitana. Acudimos a tu empresa en menos de 24 horas, recolectamos tus extintores y te proporcionamos <strong>equipos de préstamo certificados sin costo</strong> para que nunca quedes desprotegido. Regresamos tus equipos con collares de garantía, etiquetas actualizadas y documentación oficial completa. Servicio disponible 24/7/365.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué diferencia hay entre recarga y prueba hidrostática?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p><strong>RECARGA:</strong> Reemplazo del agente extintor. Se realiza <strong>anualmente</strong> o después de cualquier uso. Tiempo: 24-48 horas. <strong>PRUEBA HIDROSTÁTICA:</strong> Verificación de la integridad estructural del cilindro mediante presión de agua controlada. Obligatoria <strong>cada 5 años</strong> según NOM-154-SCFI. Tiempo: 3-5 días. Ambos servicios son complementarios y obligatorios. En MANEXT verificamos ambas fechas de vencimiento y te notificamos oportunamente.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuántos extintores necesito para mi empresa según la NOM-002-STPS?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La <strong>NOM-002-STPS</strong> exige: <strong>Riesgo bajo (oficinas, escuelas):</strong> 1 extintor cada 300 m² o 23 m de recorrido máximo. <strong>Riesgo alto (industrias, almacenes):</strong> 1 extintor cada 200 m² o 15 m de recorrido. <strong>Cocinas comerciales:</strong> extintor Tipo K obligatorio por cada área de cocción. En <strong>MANEXT realizamos cálculo profesional GRATUITO</strong> con plano de ubicación y cotización detallada sin compromiso.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Proporcionan la documentación necesaria para Protección Civil?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, en <strong>MANEXT proporcionamos TODA la documentación oficial</strong> requerida: certificado de mantenimiento con firma y sello de técnico certificado, collares de garantía inviolables, bitácora de mantenimiento digital o física, reportes técnicos fotográficos, constancia de cumplimiento NOM-154-SCFI y NOM-002-STPS, y planos de ubicación de equipos. Toda la documentación está <strong>lista para presentar inmediatamente</strong> en cualquier inspección de Protección Civil.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Ofrecen planes de mantenimiento anual para empresas?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, en <strong>MANEXT ofrecemos pólizas anuales</strong> que incluyen: mantenimiento preventivo trimestral programado, recargas anuales de todos tus equipos, pruebas hidrostáticas cuando corresponda, reemplazo de refacciones menores sin costo adicional, equipos de préstamo durante servicios, atención prioritaria 24/7, y descuentos exclusivos de 15-25%. Bitácora digital accesible 24/7 con certificaciones oficiales después de cada servicio.</p>
-            </div>
-          </div>
-        </div><!-- /faq-grid -->
+        <FaqList faqs={faqs} firstOpen={true} /><!-- /faq-grid -->
       </div><!-- /faq-cot-left -->
 
       <!-- Right: Cotización -->
@@ -538,44 +447,6 @@ const faqSchema = JSON.stringify({
 </nav>
 
 <!-- FAQ Accordion Script -->
-<script is:inline>
-(function() {
-  'use strict';
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-
-      faqQuestions.forEach(function(otherQuestion) {
-        if (otherQuestion !== question) {
-          otherQuestion.setAttribute('aria-expanded', 'false');
-          var otherItem = otherQuestion.parentElement;
-          var otherAnswer = otherItem.querySelector('.faq-answer');
-          var otherIcon = otherQuestion.querySelector('.faq-icon');
-          if (otherAnswer) otherAnswer.style.display = 'none';
-          if (otherIcon) otherIcon.textContent = '+';
-          otherItem.classList.remove('active');
-        }
-      });
-
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        if (answer) answer.style.display = 'none';
-        if (icon) icon.textContent = '+';
-        faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        if (answer) answer.style.display = 'block';
-        if (icon) icon.textContent = '−';
-        faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <!-- WhatsApp Form Script -->
 <script is:inline>

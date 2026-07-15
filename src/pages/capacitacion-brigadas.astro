@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,20 +29,8 @@ const serviceSchema = JSON.stringify({
   "audience": ["Empresas", "Industria", "Restaurantes", "Hoteles", "Hospitales", "Comercios", "Dependencias gubernamentales"]
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Es obligatorio capacitar al personal en uso de extintores?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La NOM-002-STPS-2010 obliga a todo centro de trabajo, sin importar tamaño ni giro, a brindar capacitación en prevención y respuesta contra incendios al personal designado como brigada. El incumplimiento puede derivar en multas, observaciones en inspección STPS o clausura temporal por Protección Civil." }},
-    { "@type": "Question", "name": "¿Qué constancia se entrega al finalizar el curso?", "acceptedAnswer": { "@type": "Answer", "text": "Constancia DC-3 oficial registrada ante la Secretaría del Trabajo y Previsión Social (STPS) con vigencia de 2 años. Incluye folio único, fotografía, datos del participante, firma de instructor con cédula profesional y código QR verificable. Es la constancia que aceptan inspectores STPS, Protección Civil, ISO 45001 y ajustadores de aseguradoras." }},
-    { "@type": "Question", "name": "¿Cuál es la duración de cada curso?", "acceptedAnswer": { "@type": "Answer", "text": "Tres modalidades estándar: Curso Básico de Uso y Manejo (3 horas) para todo el personal, Curso de Prevención y Combate de Conatos (6 horas) para brigadistas y supervisores, y Formación Integral de Equipos de Respuesta (12 horas en 2 sesiones) para brigadas completas con primeros auxilios, evacuación y comando de incidentes." }},
-    { "@type": "Question", "name": "¿Pueden impartir el curso en mis instalaciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El 90% de las sesiones se realizan en sitio del cliente. Solo necesitamos un salón para teoría y un área exterior despejada de aproximadamente 5×5 m para la práctica con fuego controlado. Llevamos todo el equipo: proyector, manuales, simuladores, combustible certificado, extintores funcionales y constancias." }},
-    { "@type": "Question", "name": "¿La práctica con fuego real es segura?", "acceptedAnswer": { "@type": "Answer", "text": "Completamente segura. Usamos charolas con llama controlada de 40–60 cm, perímetro de 5 m, equipo de respaldo y supervisión directa por instructor con cédula DC-3. En 25 años de operación con más de 15,000 personas capacitadas no hemos tenido ni un solo accidente." }},
-    { "@type": "Question", "name": "¿Cuántas personas debe tener una brigada?", "acceptedAnswer": { "@type": "Answer", "text": "Debe alcanzar para cubrir todos los turnos. Como referencia: 3–5 brigadistas para 20–50 personas en planta, 6–10 para 51–100, y 1 brigadista por cada 15–20 personas en organizaciones mayores. La NOM no establece número fijo pero sí cobertura efectiva." }},
-    { "@type": "Question", "name": "¿Qué incluye el simulacro de evacuación?", "acceptedAnswer": { "@type": "Answer", "text": "Diseño del ejercicio con base en planos de tu instalación, cronometraje, observadores externos, evaluación de tiempos de evacuación y puntos de reunión, prueba de alarmas y señalización fotoluminiscente, y reporte ejecutivo con recomendaciones. La NOM-002-STPS exige al menos un simulacro al año documentado." }},
-    { "@type": "Question", "name": "¿Tienen programas anuales de capacitación corporativa?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Para corporativos con múltiples sucursales o renovación periódica de brigadas, ofrecemos programas anuales con calendario fijo, instructor asignado, descuentos por volumen, recordatorios automáticos previos al vencimiento de constancias y reporte consolidado de cumplimiento. Ideal para áreas de RH, EHS y Compliance." }}
-  ]
-});
+const faqs = getSiteFaqs('/capacitacion-brigadas');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -134,17 +125,7 @@ const faqSchema = JSON.stringify({
 
 <section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes sobre Cursos de Manejo de Extintores</h2><p class="section-subtitle">
 Dudas sobre formación, constancias y requisitos
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué organizaciones están obligadas a formar personal contra incendios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Qué organizaciones están obligadas a formar personal contra incendios?</h3><p>
-Todas. La NOM-002-STPS establece que cualquier centro de trabajo debe proporcionar formación en prevención y respuesta. Sin excepciones por tamaño ni giro. El incumplimiento deriva en multas o clausura.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Se puede impartir el programa en nuestra oficina?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Se puede impartir el programa en nuestra oficina?</h3><p>
-Sí. El 90% de las sesiones se realizan en instalaciones del cliente. Solo requerimos salón para teoría y área exterior de 5×5 m. Llevamos todo: proyector, dispositivos de entrenamiento, combustible y constancias.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿La sesión con fuego real es segura para los participantes?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿La sesión con fuego real es segura para los participantes?</h3><p>
-Completamente. Simuladores con llama controlada, perímetro de seguridad y supervisión directa. En 25 años y 15,000 participantes, cero accidentes.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuántas personas necesita un equipo de respuesta ante emergencias?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Cuántas personas necesita un equipo de respuesta ante emergencias?</h3><p>
-Personal suficiente para cubrir turnos. Referencia: 3-5 integrantes para 20-50 personas; 6-10 para 51-100; y 1 por cada 15-20 en organizaciones mayores.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Las constancias tienen validez ante la Secretaría de Protección Civil?</span><span class="faq-icon">+</span></button><div class="faq-answer"><h3>¿Las constancias tienen validez ante la Secretaría de Protección Civil?</h3><p>
-Sí. Nuestros instructores tienen registro DC-3 ante la STPS. Las constancias incluyen folio, firma, cédula y código QR verificable, aceptadas en inspecciones oficiales y auditorías.
-</p></div></div></div></div></section>
+</p></div><FaqList faqs={faqs} firstOpen={true} /></div></section>
 
 <section class="contact-form-section" id="contacto-capacitacion"><div class="container"><div class="contact-form-wrapper"><div class="contact-info"><h2>Solicita Información sobre Nuestros Cursos</h2><p class="contact-intro">
 Completa el formulario y nos pondremos en contacto contigo inmediatamente vía WhatsApp para diseñar el programa de capacitación ideal para tu empresa con instructores certificados.

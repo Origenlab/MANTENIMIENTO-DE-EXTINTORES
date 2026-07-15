@@ -2,8 +2,8 @@
 proyecto: MANEXT
 tipo: arquitectura-producto
 estado: vigente
-version: 1.0
-actualizado: 2026-07-14
+version: 1.1
+actualizado: 2026-07-15
 referencia: /catalogo/extintor-co2-portatil
 tags:
   - manext
@@ -25,6 +25,8 @@ tags:
 - Catálogo principal enlaza la card mediante `productPageUrl` y el texto **Ver ficha técnica**.
 - Cotización contextual por WhatsApp con el producto preseleccionado.
 - Módulo final unificado: FAQ izquierda + cotización derecha; se apila en móvil.
+- Cada bloque FAQ publica un mínimo de 8 preguntas visibles, únicas y contextuales.
+- El acordeón visible y `FAQPage` se generan desde el mismo arreglo para mantener paridad exacta.
 - SEO activo: title, description, canonical, Open Graph, BreadcrumbList, Product y FAQPage.
 - Sin precio público, `Offer`, rating ni stock estructurado inventado.
 - Sin animaciones o transiciones fuera de botones.
@@ -115,6 +117,7 @@ Cada producto debe incluir todos estos campos. No se deben introducir condiciona
     items: ['Criterio verificable']
   },
   faqs: [
+    // Mínimo 8 entradas únicas, específicas del producto y visibles en la página.
     { question: 'Pregunta visible', answer: 'Respuesta visible y coincidente con FAQPage.' }
   ],
   seo: {
@@ -160,6 +163,7 @@ Cada producto debe incluir todos estos campos. No se deben introducir condiciona
    - Columna derecha: introducción, beneficios, teléfono y formulario WhatsApp.
    - Escritorio: dos columnas `.92fr / 1.08fr`.
    - Tablet/móvil (`≤820px`): una columna.
+   - Mínimo 8 preguntas contextuales; la primera puede quedar abierta como orientación inicial.
 10. **Referencias técnicas**
     - Fuentes primarias visibles; abrir externas con `rel="noopener noreferrer"`.
 
@@ -175,6 +179,7 @@ Cada producto debe incluir todos estos campos. No se deben introducir condiciona
 - Enlaces internos a categoría, servicios y contenido relacionado.
 - `Product` JSON-LD sin `offers`, `price`, `aggregateRating`, `brand` o disponibilidad si no hay datos reales verificables.
 - `FAQPage` sólo para preguntas y respuestas visibles.
+- El contenido visible y `FAQPage` deben construirse desde el mismo arreglo; no duplicar copy dentro del template.
 - `BreadcrumbList` lo genera `Layout.astro`.
 - No publicar fechas falsas ni claims de stock/certificación no demostrados.
 
@@ -187,6 +192,18 @@ Cada producto debe incluir todos estos campos. No se deben introducir condiciona
 - Diferenciar capacidad nominal de cobertura/rating.
 - Explicar limitaciones, reignición, ventilación, incompatibilidades y riesgos del agente cuando corresponda.
 - No afirmar “certificado” sin documentación del modelo cotizado.
+- No inventar precios, stock, certificaciones, garantías, plazos de entrega ni resultados regulatorios.
+
+## Estándar FAQ global
+
+- Toda sección FAQ existente del sitio debe contener al menos 8 preguntas y respuestas visibles.
+- Cada bloque debe ser contextual a la ruta: producto, servicio, sector o página institucional.
+- Las preguntas deben ser únicas dentro de la página y responder dudas reales de selección, aplicación, servicio, seguridad o proceso comercial.
+- El componente compartido `src/components/FaqList.astro` es la superficie visible aprobada.
+- `src/lib/faq-utils.mjs` genera y valida el schema `FAQPage` desde el mismo arreglo que recibe el componente.
+- Las páginas generales consumen `src/data/site-faqs.mjs`.
+- Las 46 fichas dinámicas consumen el perfil editorial compartido del catálogo; no se crean ni editan páginas Astro individuales por producto.
+- Un cambio de FAQ debe conservar la paridad exacta entre preguntas visibles y entidades de `FAQPage`.
 
 ## Política comercial y de conversión
 
@@ -278,6 +295,8 @@ Después revisar en navegador:
 - [ ] No hay precio, Offer, rating, stock ni certificación inventados.
 - [ ] Formulario preselecciona el producto correcto.
 - [ ] FAQ y cotización comparten el módulo de dos columnas.
+- [ ] La sección FAQ contiene al menos 8 preguntas visibles, únicas y contextuales.
+- [ ] El contenido visible y `FAQPage` provienen del mismo arreglo y tienen la misma cantidad.
 - [ ] Responsive revisado en escritorio y móvil.
 - [ ] No existen animaciones fuera de botones.
 - [ ] `npm run build` termina con exit code 0.
@@ -320,3 +339,4 @@ Después revisar en navegador:
 |---|---|
 | 2026-07-14 | Se crea la plantilla dinámica con CO₂ como primera ficha; se conecta la card, se añade SEO/FAQ/Product schema y cotización contextual. |
 | 2026-07-14 | FAQ y formulario se consolidan en un único módulo responsive de dos columnas. |
+| 2026-07-15 | Se adopta el estándar global de mínimo 8 FAQs contextuales con paridad exacta entre contenido visible y `FAQPage`. |

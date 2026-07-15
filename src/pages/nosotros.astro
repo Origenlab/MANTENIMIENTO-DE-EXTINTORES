@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const aboutSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -28,20 +31,8 @@ const aboutSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cuándo se fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT se fundó en 1943 por Fernando Medina González en Ciudad de México. Hoy operamos bajo la tercera generación familiar, con más de 80 años de operación continua y más de 15,000 clientes atendidos en CDMX y Estado de México." }},
-    { "@type": "Question", "name": "¿Quién fundó MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "MANEXT fue fundada en 1943 por Fernando Medina González, pionero de la protección contra incendios en México. Comenzó importando y certificando equipos cuando los extintores eran prácticamente desconocidos en el país. Su visión y sus principios siguen guiando a la empresa, hoy dirigida por la tercera generación de la familia." }},
-    { "@type": "Question", "name": "¿Qué certificaciones respaldan a MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Somos unidad de verificación autorizada bajo NOM-154-SCFI-2005, cumplimos NOM-002-STPS-2010 sobre prevención de incendios en centros de trabajo y NOM-026-STPS sobre señalización. Nuestro personal técnico cuenta con certificaciones internacionales NFPA y formación continua trimestral." }},
-    { "@type": "Question", "name": "¿Qué hace diferente a MANEXT de otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Tres factores: 80 años de experiencia acumulada (no somos una empresa nueva), servicio integral 360° (venta, recarga, prueba hidrostática, capacitación, señalización en un solo lugar) y atención personalizada con ejecutivo de cuenta asignado. Cada cliente recibe seguimiento real, no un número de ticket." }},
-    { "@type": "Question", "name": "¿MANEXT atiende empresas grandes y pequeñas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Atendemos desde residenciales y comercios pequeños hasta corporativos multinacionales con múltiples sucursales, plantas industriales, hospitales, hoteles y dependencias gubernamentales. Para flotas amplias ofrecemos precios de mayoreo, financiamiento sin intereses 3/6/12 meses y pólizas anuales con visitas programadas." }},
-    { "@type": "Question", "name": "¿En qué zonas de CDMX y Estado de México atiende MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cobertura total en las 16 alcaldías de CDMX y zona metropolitana: Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán Izcalli, Atizapán, Huixquilucan y municipios conurbados. Servicio de emergencia 24/7/365 con tiempo de respuesta inmediato." }},
-    { "@type": "Question", "name": "¿MANEXT participa en iniciativas de responsabilidad social?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Como empresa 100% mexicana, ofrecemos programas de capacitación gratuita en escuelas públicas, apoyamos iniciativas de seguridad comunitaria y participamos en simulacros con Protección Civil. Nuestra trayectoria desde 1943 incluye colaboración activa en la reconstrucción post-sismo de 1985." }},
-    { "@type": "Question", "name": "¿Qué documentación oficial emite MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Emitimos toda la documentación que solicitan inspectores y auditores: certificados de venta NOM-154-SCFI, certificados de recarga, certificados de prueba hidrostática, bitácoras de mantenimiento firmadas y selladas, reportes fotográficos, planos de distribución NOM-002-STPS, constancias de capacitación DC-3 y facturas fiscales CFDI 4.0." }}
-  ]
-});
+const faqs = getSiteFaqs('/nosotros');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -162,19 +153,7 @@ Realizamos <strong>capacitación continua trimestral</strong> en nuevas tecnolog
 
 <section class="faq" style="background: white; padding: 4rem 0;"><div class="container"><div class="section-header"><h2>¿Por Qué Elegir MANEXT?</h2><p class="section-subtitle">
 Beneficios reales que marcan la diferencia
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Experiencia Comprobada de 80 Años</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-No somos una empresa nueva ni improvisada. Hemos enfrentado y resuelto miles de casos durante décadas. Esta experiencia acumulada se traduce en <strong>diagnósticos precisos, soluciones efectivas y asesoría confiable</strong> que solo la trayectoria puede brindar.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Servicio Integral 360</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-No necesitas buscar múltiples proveedores. En MANEXT ofrecemos <strong>venta, instalación, mantenimiento, recarga, prueba hidrostática, capacitación, señalización y asesoría normativa</strong>, todo en un solo lugar con un solo punto de contacto.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Atención Personalizada</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Cada cliente tiene un <strong>ejecutivo de cuenta asignado</strong> que conoce tu caso específico. No eres un número más, eres parte de la familia MANEXT. Respondemos llamadas, resolvemos dudas y damos seguimiento puntual.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Disponibilidad 24/7/365</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Las emergencias no esperan horarios de oficina. Nuestro <strong>servicio de emergencias está disponible las 24 horas, los 7 días de la semana, los 365 días del año</strong>, incluyendo fines de semana y días festivos.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Cobertura Total CDMX y Edomex</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Contamos con <strong>unidades de servicio estratégicamente ubicadas</strong> que nos permiten llegar a cualquier punto de Ciudad de México y área metropolitana en tiempo récord. Servicio a domicilio sin costo adicional en zonas seleccionadas.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">Precios Justos y Competitivos</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Nuestros precios son <strong>transparentes, competitivos y sin sorpresas</strong>. No cobramos visitas de diagnóstico, las cotizaciones son sin compromiso y los presupuestos se respetan. Calidad profesional a precio justo.
-</p></div></div></div></div></section>
+</p></div><FaqList faqs={faqs} firstOpen={true} /></div></section>
 
 <section class="cta-b2b"><div class="container"><div class="cta-b2b-content"><div class="cta-b2b-text"><span class="cta-b2b-badge">MANEXT - 80 Años de Experiencia</span><h2>Protección Contra Incendios que Miles de Empresas ya Confían en CDMX</h2><p class="cta-b2b-description">
 Desde <strong>1943, MANEXT</strong> ha sido la primera opción de <strong>más de 15,000 empresas</strong> en Ciudad de México para su protección contra incendios. Nuestra experiencia de <strong>8 décadas</strong> garantiza que cada extintor, cada inspección y cada servicio cumpla con las <strong>normativas NOM-154-SCFI y NOM-002-STPS</strong> más estrictas. Ofrecemos <strong>soluciones integrales certificadas</strong> con instalación profesional, mantenimiento preventivo y atención personalizada 24/7/365 en toda CDMX y área metropolitana.

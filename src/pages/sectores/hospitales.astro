@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import FaqList from '../../components/FaqList.astro';
+import { getSiteFaqs } from '../../data/site-faqs.mjs';
+import { buildFaqSchema } from '../../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,52 +26,8 @@ const serviceSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué extintores se usan en áreas de equipos médicos en un hospital?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En áreas con equipos médicos críticos (quirófanos, UCI, salas de diagnóstico por imagen, centros de cómputo hospitalarios) se utilizan Agentes Limpios —FM-200 (HFC-227ea) o Novec 1230— y CO₂. Ambos apagan sin residuo sólido ni líquido, lo que protege los equipos de daño secundario. El PQS está contraindicado en estas áreas porque el polvo contamina instrumental y equipos electrónicos de precisión. MANEXT suministra CO₂ 4.5 kg desde $1,200 MXN y Agente Limpio HFC-227ea 5 kg desde $3,900 MXN."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Los hospitales en México están obligados a tener extintores certificados NOM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Los hospitales están sujetos a la NOM-002-STPS (condiciones contra incendio en centros de trabajo) y a los requisitos de licencia sanitaria de COFEPRIS, que exigen evidencia de cumplimiento en protección civil. La Secretaría de Salud y Protección Civil del estado supervisan que cada área cuente con extintores vigentes, señalización NOM-003-SEGOB y constancias de capacitación. MANEXT entrega la documentación completa que COFEPRIS y Protección Civil solicitan en cada inspección."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Ofrecen capacitación de brigadas contra incendios para personal de salud?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. MANEXT imparte cursos de capacitación para brigadas contra incendios con constancias DC-3 válidas ante la STPS, específicamente adaptados para hospitales: manejo de extintores sin interferir con pacientes, evacuación de áreas críticas con personal no deambulante, rutas de evacuación hospitalaria y comunicación de emergencia. Grupos hasta 20 personas, 4 horas, a domicilio en las instalaciones del hospital. Constancias oficiales entregadas el mismo día."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué extintor se usa en la cocina de un hospital?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La cocina hospitalaria requiere extintor Tipo K (agente húmedo) en el área de cocción bajo NOM-002-STPS, igual que cualquier cocina comercial. Adicionalmente un PQS ABC en almacenes y pasillos adyacentes. MANEXT diagnostica las necesidades del área de nutrición y dietética hospitalaria con base en la superficie, equipos de cocción y riesgo específico, sin costo adicional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿MANEXT puede gestionar el mantenimiento de todos los extintores de un hospital o clínica?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Para instalaciones de salud ofrecemos pólizas anuales institucionales: inventario completo con número de serie y ubicación por área, mantenimiento preventivo según NOM-154-SCFI, recargas programadas con equipo de préstamo para mantener cobertura 100%, bitácora digital 24/7 por extintor, reportes fotográficos para auditorías, facturación CFDI consolidada y recordatorios automáticos de vencimiento. Atendemos hospitales públicos y privados, clínicas y consultorios en CDMX y Estado de México."
-      }
-    }
-  ]
-});
+const faqs = getSiteFaqs('/sectores/hospitales');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -151,22 +110,7 @@ const faqSchema = JSON.stringify({
       title="Preguntas frecuentes — Hospitales y clínicas"
     />
     <div style="max-width: 800px; margin: 2rem auto 0;">
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Qué extintores se usan en áreas de equipos médicos?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">FM-200 (HFC-227ea) o Novec 1230 en quirófanos, UCI y salas de imagen. CO₂ 4.5 kg para equipos de cómputo y cámaras. Ninguno deja residuo sólido ni daña el instrumental. El PQS está contraindicado en estas áreas.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Los hospitales están obligados a tener extintores certificados NOM?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. NOM-002-STPS y licencia sanitaria COFEPRIS exigen evidencia de cumplimiento en protección civil. Protección Civil y COFEPRIS verifican extintores vigentes, señalización NOM-003-SEGOB y constancias de capacitación. MANEXT entrega la documentación completa para cada inspección.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Ofrecen capacitación para brigadas de personal de salud?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. Cursos DC-3 STPS adaptados para hospitales: manejo de extintores sin interferir con pacientes, evacuación de áreas críticas con personal no deambulante, rutas de evacuación hospitalaria. Grupos hasta 20 personas, 4 horas, a domicilio. Constancias oficiales el mismo día.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿MANEXT maneja pólizas anuales para hospitales?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Sí. Inventario completo por área, mantenimiento NOM-154-SCFI, recargas con equipo de préstamo, bitácora digital 24/7, reportes fotográficos para auditorías, facturación CFDI consolidada y recordatorios automáticos de vencimiento. Para hospitales públicos y privados, clínicas y consultorios.</p>
-      </details>
+      <FaqList faqs={faqs} firstOpen={true} />
     </div>
   </div>
 </section>

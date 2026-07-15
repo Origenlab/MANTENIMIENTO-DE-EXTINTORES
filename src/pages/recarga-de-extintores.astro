@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,20 +29,8 @@ const serviceSchema = JSON.stringify({
   "offers": { "@type": "Offer", "description": "Recarga anual de extintores certificada NOM-154-SCFI con verificación por pesaje y certificado individual." }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o tras cualquier descarga, aunque sea parcial. Los agentes extintores se degradan o pierden presión con el tiempo: el polvo PQS se compacta por humedad, el CO₂ pierde carga por evaporación lenta y el agente AFFF pierde efectividad química. Sin recarga vigente el extintor puede fallar en una emergencia y la inspección lo observa." }},
-    { "@type": "Question", "name": "¿Cuánto cuesta la recarga de un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga PQS desde $300 MXN según capacidad (4.5 kg, 6 kg, 9 kg, 20 kg). Recarga CO₂ desde $450 MXN. Recarga AFFF desde $550 MXN. Tipo K desde $700 MXN. Agentes limpios FM-200/Novec bajo cotización por agente original. Pólizas anuales con descuentos por volumen del 15-25%. Cotización gratuita por WhatsApp." }},
-    { "@type": "Question", "name": "¿La recarga se hace en sitio o en taller?", "acceptedAnswer": { "@type": "Answer", "text": "Depende del agente. PQS y agua se pueden recargar en sitio con unidad móvil. CO₂, AFFF, Tipo K y agentes limpios requieren taller especializado por presión, agente original y trazabilidad. MANEXT recoge en tu sitio sin costo, recarga con verificación por pesaje calibrado y entrega en 24-48 horas con certificado individual y extintor de préstamo durante el proceso." }},
-    { "@type": "Question", "name": "¿Por qué la verificación se hace por pesaje y no por manómetro?", "acceptedAnswer": { "@type": "Answer", "text": "El manómetro indica presión instantánea, no carga real de agente. En CO₂, AFFF y agentes limpios el manómetro puede mostrar verde pero el cilindro estar parcialmente vacío por fuga lenta. Por eso la NOM exige verificación por pesaje contra el peso de tara grabado en la base del cilindro. MANEXT usa balanzas calibradas con trazabilidad y firma cada pesaje." }},
-    { "@type": "Question", "name": "¿Prestan extintores durante la recarga?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin costo adicional. Durante las 24-48 horas que tu extintor está en proceso, prestamos un equipo de respaldo del mismo tipo y capacidad para que tu sitio mantenga cobertura el 100% del tiempo — un requisito frecuente de aseguradoras y clientes corporativos con auditorías ISO 45001." }},
-    { "@type": "Question", "name": "¿Qué pasa si el extintor está dañado o vencido?", "acceptedAnswer": { "@type": "Answer", "text": "Si presenta corrosión profunda, deformación, válvula dañada o cilindro fuera de prueba hidrostática, lo evaluamos en taller. Casos menores: reparación con refacciones originales. Casos graves: damos de baja con acta formal y ofrecemos sustitución a precio preferencial. Para clientes con póliza activa el descuento de reposición sube hasta 25%." }},
-    { "@type": "Question", "name": "¿Qué documentación entregan tras la recarga?", "acceptedAnswer": { "@type": "Answer", "text": "Cada cilindro recargado se entrega con: certificado individual de recarga (folio, fecha, agente, peso verificado), nueva tarjeta de inspección, etiqueta de fabricante con trazabilidad, factura fiscal CFDI 4.0 y bitácora actualizada. Documentación válida ante Protección Civil, STPS, COFEPRIS y aseguradoras por 12 meses." }},
-    { "@type": "Question", "name": "¿Cómo agendo recarga sin interrumpir mi negocio?", "acceptedAnswer": { "@type": "Answer", "text": "Coordinamos visitas en horario de baja operación (mañanas tempranas, cierre o sábados sin recargo). Para corporativos con flotas amplias armamos calendario rotativo con extintores de préstamo para cubrir múltiples sucursales sin afectar operación. Tiempo total típico por cilindro: 24-48 horas; en sitio para PQS, en taller para resto." }}
-  ]
-});
+const faqs = getSiteFaqs('/recarga-de-extintores');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -304,99 +295,7 @@ const faqSchema = JSON.stringify({
 
         <div class="faq-cot-left">
           <p class="faq-cot-desc">Preguntas frecuentes sobre <strong>recarga de extintores</strong> en CDMX. ¿Tienes otra duda? <a href="https://wa.me/5215614612594" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos al instante.</p>
-          <div class="faq-grid">
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cuánto cuesta recargar un extintor en CDMX?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>El costo varía según tipo de agente y capacidad. Los equipos PQS van de $350 a $1,200; CO₂ de $800 a $2,500; espuma AFFF de $900 a $1,800; agentes limpios de $2,500 a $6,000; Tipo K de $1,200 a $2,000; agua presurizada de $250 a $500. Todos los precios incluyen agente nuevo avalado, limpieza interna, presurización, documentación y recolección a domicilio. Descuentos del 15-25% por volumen para flotillas de 10 o más unidades.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cada cuánto se debe recargar un extintor según la NOM-154?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>La normativa oficial establece la renovación del agente como obligatoria <strong>cada 12 meses</strong> para todos los equipos portátiles, independientemente de su estado aparente. También es obligatorio el rellenado inmediato después de cualquier uso, aunque la descarga haya sido parcial. El incumplimiento genera multas de $5,000 a $50,000 pesos y posible clausura temporal del inmueble según la gravedad de la falta.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cómo saber si mi extintor necesita recarga?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Hay señales claras: manómetro fuera de zona verde (amarillo o rojo), etiqueta con fecha superior a 12 meses, sello de garantía roto o faltante, cilindro con corrosión visible, manguera agrietada o endurecida, boquilla obstruida, o cualquier descarga previa aunque sea de un segundo. Un equipo puede mostrar presión aparentemente correcta pero tener el agente compactado o degradado internamente, por lo que la fecha de la etiqueta es el indicador definitivo.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué incluye el servicio de renovación avalada?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Nuestro proceso integral incluye: recolección a domicilio sin costo en CDMX, equipos de préstamo certificados durante las 24-48 horas, inspección inicial completa, vaciado controlado, limpieza profunda interna, sustitución de partes desgastadas sin costo adicional (mangueras, boquillas, pasadores, manómetros), rellenado con agente nuevo de fabricante autorizado, presurización con nitrógeno seco, pruebas de descarga, etiquetas actualizadas, collar de garantía inviolable y documentación oficial.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Es mejor recargar o comprar un extintor nuevo?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>La renovación es viable cuando el cilindro tiene menos de 15-20 años, sin corrosión profunda ni deformaciones, y ha aprobado su prueba hidrostática vigente. Es mejor adquirir equipo nuevo cuando el cilindro supera 20 años, tiene corrosión interna severa, abolladuras que comprometen la estructura, o falló la prueba de presión. En MANEXT evaluamos cada unidad honestamente antes de proceder.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Cuánto tiempo tarda el proceso de recarga?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>El proceso completo toma entre <strong>24 y 48 horas</strong> en nuestro taller. Durante ese tiempo te proporcionamos extintores de préstamo certificados sin costo para que tu empresa nunca quede desprotegida. Para flotillas grandes con más de 20 unidades, coordinamos la recolección por lotes para minimizar el tiempo sin cobertura total.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Ofrecen servicio a domicilio fuera de CDMX?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sí, atendemos toda la Zona Metropolitana del Valle de México: CDMX, Estado de México (Naucalpan, Tlalnepantla, Ecatepec, Tultitlán, Cuautitlán, Atizapán, Huixquilucan) y municipios aledaños. Para ubicaciones fuera del área metropolitana, consultamos disponibilidad y calculamos costo de traslado sin compromiso.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Qué documentación recibo después de la recarga?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Recibes documentación completa válida ante cualquier auditoría de Protección Civil: etiqueta de servicio con fecha, tipo de agente y vencimiento programado; collar de garantía inviolable numerado; constancia de mantenimiento con datos del técnico certificado; y reporte fotográfico del proceso. Toda la documentación queda registrada en nuestra bitácora digital accesible en línea las 24 horas.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span class="faq-question-text">¿Tienen descuentos para empresas con muchos extintores?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Sí. Ofrecemos descuentos corporativos del <strong>15 al 25%</strong> según el volumen de la flotilla. Para 10 o más unidades aplicamos tarifa preferencial; para más de 50 unidades negociamos precio fijo garantizado por 12 meses con renovación programada, inspección trimestral y sustitución de partes desgastadas incluida. También ofrecemos facturación electrónica inmediata y crédito a 30 días para empresas registradas.</p>
-              </div>
-            </div>
-
-          </div>
+          <FaqList faqs={faqs} firstOpen={true} />
         </div>
 
         <div class="faq-cot-right">
@@ -531,38 +430,6 @@ const faqSchema = JSON.stringify({
     </div>
   </nav>
 
-  <script is:inline>
-  (function() {
-    var faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(function(question) {
-      question.addEventListener('click', function() {
-        var faqItem = this.parentElement;
-        var answer = faqItem.querySelector('.faq-answer');
-        var icon = this.querySelector('.faq-icon');
-        var isOpen = this.getAttribute('aria-expanded') === 'true';
-        faqQuestions.forEach(function(other) {
-          if (other !== question) {
-            other.setAttribute('aria-expanded', 'false');
-            var a = other.parentElement.querySelector('.faq-answer');
-            var i = other.querySelector('.faq-icon');
-            if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-            if (i) i.textContent = '+';
-            other.parentElement.classList.remove('active');
-          }
-        });
-        if (isOpen) {
-          this.setAttribute('aria-expanded', 'false');
-          answer.style.maxHeight = '0'; answer.style.opacity = '0';
-          icon.textContent = '+'; faqItem.classList.remove('active');
-        } else {
-          this.setAttribute('aria-expanded', 'true');
-          answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-          icon.textContent = '×'; faqItem.classList.add('active');
-        }
-      });
-    });
-  })();
-  </script>
 
   <script is:inline>
   (function() {

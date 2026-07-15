@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,20 +19,8 @@ const productSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Por qué el extintor de CO₂ es ideal para data centers?", "acceptedAnswer": { "@type": "Answer", "text": "Porque el dióxido de carbono se evapora completamente sin dejar residuo, no conduce electricidad y no causa corrosión sobre placas, contactos ni medios de almacenamiento. Tras la descarga el equipo puede reactivarse en minutos, sin la limpieza especializada que sí requiere el polvo PQS." }},
-    { "@type": "Question", "name": "¿El CO₂ apaga fuegos de papel y madera (Clase A)?", "acceptedAnswer": { "@type": "Answer", "text": "No de forma confiable. El CO₂ está clasificado como agente Clase B y C. En materiales sólidos puede sofocar la llama superficial, pero al disiparse el oxígeno regresa y el material caliente puede re-igniciarse. Para Clase A se recomienda PQS o agentes limpios." }},
-    { "@type": "Question", "name": "¿Es seguro usar un extintor CO₂ en un cuarto pequeño?", "acceptedAnswer": { "@type": "Answer", "text": "El CO₂ desplaza oxígeno; concentraciones superiores a 17% son tóxicas. En cuartos pequeños y ocupados se debe aplicar y evacuar inmediatamente. Para protección automática 24/7 en espacios cerrados ocupados se prefieren agentes limpios FM-200 o Novec 1230, seguros bajo NOAEL." }},
-    { "@type": "Question", "name": "¿Por qué los extintores CO₂ se miden en libras y no en kilos?", "acceptedAnswer": { "@type": "Answer", "text": "Por convención técnica internacional. Los cilindros CO₂ se fabrican y certifican bajo estándares ASME/DOT en libras de agente. Los modelos más comunes son 5, 10, 15 y 20 lb. La conversión es aproximada: 10 lb ≈ 4.5 kg de CO₂." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar y verificar un extintor CO₂?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga. La verificación de carga se realiza por pesaje del cilindro (no por manómetro como en PQS). Adicionalmente, prueba hidrostática cada 5 años para validar la integridad del cilindro." }},
-    { "@type": "Question", "name": "¿El extintor CO₂ congela las manos del usuario?", "acceptedAnswer": { "@type": "Answer", "text": "El CO₂ se descarga a aproximadamente -78°C. Por eso el extintor incluye corneta difusora con mango aislante; nunca debe sujetarse el cilindro o la manga metálica directamente. Con el mango correcto la operación es totalmente segura." }},
-    { "@type": "Question", "name": "¿El CO₂ daña pantallas, discos duros o servidores?", "acceptedAnswer": { "@type": "Answer", "text": "No. El CO₂ es eléctricamente no conductor, no contiene partículas y no deja residuo químico. Es el agente que menos riesgo presenta para electrónica de alto valor. Sí puede causar choque térmico localizado si la corneta se mantiene sobre un mismo punto demasiado tiempo, por lo que se entrena al usuario para barrer la base del fuego." }},
-    { "@type": "Question", "name": "¿MANEXT instala gabinetes para extintores CO₂?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cotizamos extintor + gabinete metálico con cristal NOM-002 + señalización fotoluminiscente NOM-026 como un solo paquete instalado. Es la presentación que más solicitan oficinas corporativas, hospitales y centros comerciales para cumplir con su inspección al primer intento." }}
-  ]
-});
+const faqs = getSiteFaqs('/co2');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -354,99 +345,7 @@ const currentSlug = 'co2';
 
       <div class="faq-cot-left">
         <p class="faq-cot-desc">Resolvemos las dudas más frecuentes sobre extintores CO₂. ¿Necesitas respuesta inmediata? <a href="https://wa.me/5215614612594?text=Tengo+una+pregunta+sobre+extintores+CO2+para+equipos+electr%C3%B3nicos" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respondemos en menos de 5 minutos en horario laboral.</p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuál es la diferencia entre CO₂ y PQS?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El <strong>PQS</strong> cubre Clase A, B y C, es más económico y es el estándar para uso general. El <strong>CO₂</strong> solo cubre Clase B y C, pero no deja absolutamente ningún residuo tras la descarga. Cuando la continuidad del equipo electrónico es crítica, el CO₂ es el correcto: el equipo puede reactivarse en minutos sin limpieza. Para espacios mixtos, lo ideal es combinar ambos tipos.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Por qué el CO₂ se mide en libras y no en kilos?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Es una convención del sector de gases a presión adoptada internacionalmente. La <strong>libra (lb)</strong> es la unidad estándar para medir el agente contenido en extintores de CO₂ en México y en el mundo. Referencia rápida: 5 lb ≈ 2.3 kg · 10 lb ≈ 4.5 kg · 15 lb ≈ 6.8 kg · 20 lb ≈ 9 kg. Lo importante no es la unidad sino seleccionar la capacidad correcta para el volumen del espacio a proteger.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cómo se sabe si un extintor de CO₂ está cargado?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>A diferencia del PQS, los extintores de CO₂ <strong>no tienen manómetro</strong> — la única forma de verificar la carga es <strong>pesando el cilindro</strong>. El peso total del extintor cargado debe coincidir con el peso grabado en el cuerpo del cilindro. Si el peso es menor, el extintor ha perdido agente y debe recargarse aunque no se haya usado. Por eso el mantenimiento anual con pesaje certificado es obligatorio bajo NOM-154-SCFI.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El CO₂ es peligroso para las personas en un cuarto de servidores?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>En espacios pequeños y cerrados, la descarga de CO₂ desplaza el oxígeno y puede representar riesgo de asfixia si hay personas dentro. La <strong>norma de seguridad</strong> indica que antes de usar el extintor se debe asegurar que el espacio esté desocupado. Para cuartos de servidores completamente sellados con sistemas automáticos de CO₂, existen señalamientos y alarmas de evacuación obligatorios. Para protección de personas presentes, el extintor portátil se usa en espacios con ventilación adecuada.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El CO₂ necesita gabinete especial?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>No es obligatorio por norma, pero en muchos data centers, cuartos de servidores y oficinas corporativas se instala <strong>gabinete metálico con visibilidad</strong> por estética y seguridad (protege el extintor de golpes accidentales). MANEXT ofrece gabinetes metálicos con visor y cierre de seguridad incluidos en el paquete de instalación, a un costo adicional mínimo. Consulta disponibilidad al solicitar tu cotización.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cada cuánto se recarga un extintor de CO₂?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La <strong>NOM-154-SCFI exige verificación anual</strong> mediante pesaje del cilindro y recarga inmediata si el peso cayó más del 10% respecto al peso original cargado. Adicionalmente, el cilindro requiere <strong>prueba hidrostática cada 5 años</strong> para verificar su integridad estructural. MANEXT ofrece ambos servicios a domicilio con préstamo de equipo sustituto durante el proceso de recarga.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El CO₂ sirve para fuegos en cocinas o materiales sólidos?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>No. El CO₂ solo es eficaz en fuegos <strong>Clase B</strong> (líquidos inflamables) y <strong>Clase C</strong> (eléctricos). No combate materiales sólidos (madera, papel, telas — Clase A) ni aceites de cocina calientes (Clase K). Para una cocina comercial se requiere un extintor <a href="/tipo-k">Tipo K</a>. Para protección general de un espacio mixto, se recomienda combinar CO₂ para la electrónica con <a href="/polvo-quimico-seco">PQS Clase ABC</a> para el resto.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué extintor es mejor para un data center, CO₂ o agente limpio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Ambos son válidos y no dejan residuo. El CO₂ es <strong>más económico</strong> y es el estándar para la mayoría de data centers y cuartos de servidores. Los <a href="/agentes-limpios">agentes limpios</a> (HFC-236fa, Novec 1230) son preferibles cuando se requiere protección automática del espacio completo (sistemas fijos), mayor alcance de descarga o cuando la concentración de CO₂ representa un riesgo de asfixia en espacios pequeños con personal frecuente. Nuestros ingenieros te asesoran sin costo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Tienen entrega urgente de extintores CO₂ en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Para situaciones urgentes — inspección de Protección Civil al día siguiente, apertura de data center o reposición de equipo descargado — podemos coordinar entrega en el mismo día en la mayoría de las alcaldías de CDMX. La entrega <strong>estándar es en 48 horas</strong> con instalación incluida. Contáctanos por WhatsApp para verificar disponibilidad inmediata de la capacidad que necesitas.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -587,38 +486,6 @@ const currentSlug = 'co2';
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script is:inline>
-(function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <script is:inline>
 (function() {
