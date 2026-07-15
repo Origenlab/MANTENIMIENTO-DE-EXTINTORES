@@ -9,3 +9,7 @@ graphify-out/cache/stat-index.json
 
 # Isolated implementation workspaces
 .worktrees/
+
+# Generated spreadsheet QA artifacts
+outputs/**/previews/
+outputs/**/*.inspect.ndjson
