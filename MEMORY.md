@@ -29,7 +29,13 @@ Actualizada: 2026-07-15
 
 ## Próximo producto sugerido
 
-Extintor PQS ABC portátil. Investigar clases A/B/C, capacidades, aplicaciones, limitaciones, normativa y fuentes antes de duplicar conceptualmente el objeto CO₂.
+La expansión de 230 productos ya está investigada y validada como blueprint: cinco propuestas por cada una de las 46 familias públicas. No volver a inventar una lista paralela.
+
+Fuente de datos: `src/data/catalog-expansion/`. Excel maestro: `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`. Procedimiento: `docs/catalogo/EXPANSION-230-PRODUCTOS.md`. Estudio: `docs/research/2026-07-15-expansion-230-productos-manext.md`.
+
+Las propuestas todavía no se importan en el catálogo público. Deben publicarse en cinco lotes —portátiles, industriales, automáticos, accesorios y refacciones— después de confirmar disponibilidad, modelo, datos técnicos, contenido final, recursos visuales y aprobación.
+
+Cada propuesta ya contiene un objetivo SEO, diferenciación, selección, limitaciones, CTA y fuentes. Mantener IDs, slugs, canonical, H1 y keywords únicos; no rebajar el umbral de originalidad ni publicar contenido generado en masa sin revisión humana.
 
 ## Publicación y verificación live
 

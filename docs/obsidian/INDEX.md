@@ -3,7 +3,7 @@ proyecto: MANEXT
 sitio: https://mantenimientodeextintores.mx/
 repo: Origenlab/MANTENIMIENTO-DE-EXTINTORES
 stack: Astro v6 + GitHub Pages
-fecha_actualizacion: 2026-07-14
+fecha_actualizacion: 2026-07-15
 ---
 
 # 📁 MANEXT — Índice del proyecto
@@ -30,6 +30,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 
 ### Contenido
 - [[Productos — Catálogo y Plantilla]] — arquitectura dinámica `/catalogo/[slug]`, contrato de datos, SEO, conversión y checklist de publicación
+- [[Productos — Expansión 230]] — matriz de cinco propuestas por familia, fuentes, controles y orden de publicación
 - [[Blog — Sistema de Contenido]] — 41 archivos, layout, frontmatter, duplicados, stubs
 
 ### Operaciones
@@ -54,12 +55,13 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 
 ---
 
-## 🚧 Trabajo activo (al 2026-07-14)
+## 🚧 Trabajo activo (al 2026-07-15)
 
 - La ficha canónica aprobada es `/catalogo/extintor-co2-portatil`.
 - Los siguientes productos deben añadirse mediante datos, conservando `ProductDetailTemplate.astro` como plantilla compartida.
 - Antes de crear una ficha, consultar `MEMORY.md` y [[Productos — Catálogo y Plantilla]].
 - Mantener FAQ + cotización en un solo módulo de dos columnas y no añadir animaciones fuera de botones.
+- La expansión de 230 productos está validada como blueprint y aislada del catálogo público; publicar únicamente por lotes aprobados.
 
 ---
 
@@ -69,6 +71,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 |---|---|
 | `docs/catalogo/PLANTILLA-FICHAS-PRODUCTO.md` | [[Productos — Catálogo y Plantilla]] |
 | `graphify-out/PRODUCT-CATALOG-TEMPLATE.md` | [[Productos — Catálogo y Plantilla]] |
+| `graphify-out/CATALOG-EXPANSION-230.md` | [[Productos — Expansión 230]] |
 | `graphify-out/HERO-DESIGN-SYSTEM.md` | [[HERO-DESIGN-SYSTEM]] |
 | `graphify-out/GRAPH_REPORT.md` (design system L2) | [[SectionHeader y pf-strip — Reglas L2]] |
 | `AUDITORIA-MANEXT-2026-04-06.md` | [[Estado del Sitio — Hallazgos y Sprints]] |
