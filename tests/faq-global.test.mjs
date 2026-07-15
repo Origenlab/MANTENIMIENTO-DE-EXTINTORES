@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 import { buildFaqSchema, normalizeFaqQuestion, assertFaqCollection } from '../src/lib/faq-utils.mjs';
 
 const validFaqs = Array.from({ length: 8 }, (_, index) => ({
@@ -38,4 +39,18 @@ test('buildFaqSchema maps the visible collection without adding commercial data'
     acceptedAnswer: { '@type': 'Answer', text: validFaqs[0].answer },
   });
   assert.doesNotMatch(JSON.stringify(schema), /offers|price|aggregateRating|stock/i);
+});
+
+test('FaqList uses semantic details and escaped Astro interpolation', async () => {
+  const source = await readFile(new URL('../src/components/FaqList.astro', import.meta.url), 'utf8');
+  assert.match(source, /<details/);
+  assert.match(source, /<summary/);
+  assert.match(source, /\{faq\.question\}/);
+  assert.match(source, /\{faq\.answer\}/);
+  assert.doesNotMatch(source, /set:html|innerHTML|transition|animation/);
+});
+
+test('shared layout loads the FAQ stylesheet once', async () => {
+  const source = await readFile(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+  assert.equal((source.match(/\/css\/faq-system\.css\?v=1/g) || []).length, 1);
 });

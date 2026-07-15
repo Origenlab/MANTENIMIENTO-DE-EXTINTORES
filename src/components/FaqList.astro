@@ -1,0 +1,28 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  firstOpen?: boolean;
+  className?: string;
+}
+
+const { faqs, firstOpen = false, className = '' } = Astro.props;
+---
+
+<div class:list={['site-faq-list', className]}>
+  {faqs.map((faq, index) => (
+    <details class="site-faq-list__item" open={firstOpen && index === 0}>
+      <summary class="site-faq-list__question">
+        <span>{faq.question}</span>
+        <span class="site-faq-list__icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="site-faq-list__answer">
+        <p>{faq.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
