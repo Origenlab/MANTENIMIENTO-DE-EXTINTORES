@@ -144,3 +144,23 @@ test('commercial and service pages consume central FAQ data and component', asyn
     assert.doesNotMatch(source, /document\.querySelectorAll\(['"]\.faq-question/);
   }
 });
+
+const institutionalFaqPages = {
+  'index.astro': '/',
+  'contacto.astro': '/contacto',
+  'nosotros.astro': '/nosotros',
+  'sectores/data-centers.astro': '/sectores/data-centers',
+  'sectores/hospitales.astro': '/sectores/hospitales',
+  'sectores/restaurantes.astro': '/sectores/restaurantes',
+};
+
+test('institutional and sector pages consume central FAQ data and component', async () => {
+  for (const [file, route] of Object.entries(institutionalFaqPages)) {
+    const source = await readFile(new URL(`../src/pages/${file}`, import.meta.url), 'utf8');
+    assert.match(source, new RegExp(`getSiteFaqs\\(['"]${route.replaceAll('/', '\\/')}['"]\\)`));
+    assert.match(source, /JSON\.stringify\(buildFaqSchema\(faqs\)\)/);
+    assert.match(source, /<FaqList\s+faqs=\{faqs\}/);
+    assert.doesNotMatch(source, /const faqs\s*=\s*\[/);
+    assert.doesNotMatch(source, /document\.querySelectorAll\(['"]\.faq-question/);
+  }
+});

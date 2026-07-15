@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import FaqList from '../../components/FaqList.astro';
+import { getSiteFaqs } from '../../data/site-faqs.mjs';
+import { buildFaqSchema } from '../../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,60 +26,8 @@ const serviceSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Por qué no se debe usar extintor PQS en un data center?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El polvo químico seco (PQS) apaga el fuego pero genera una nube de polvo que se infiltra en discos duros, memorias, tarjetas de circuitos y conectores, causando daño permanente a los equipos. El costo de limpieza y reposición de servidores puede ser 100x mayor que el costo del incendio en sí. En data centers, cuartos de servidores y cualquier área con infraestructura electrónica crítica, los únicos extintores apropiados son los Agentes Limpios (FM-200, Novec 1230) o el CO₂."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es mejor para un data center: FM-200 o Novec 1230?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ambos son agentes limpios sin residuo que apagan fuegos Clase A, B y C sin dañar los equipos. Las diferencias clave: FM-200 (HFC-227ea) tiene menor potencial de calentamiento global que los halon que reemplazó pero es un gas de efecto invernadero F; Novec 1230 (FK-5-1-12) tiene potencial de calentamiento global prácticamente nulo (GWP=1) y se considera la solución más sustentable. En cuanto a costo: FM-200 desde $3,900 MXN por extintor de 5 kg; Novec 1230 tiene un costo mayor por kilogramo. Para instalaciones que buscan cumplimiento con políticas de sustentabilidad corporativa o requisitos ESG, Novec 1230 es la elección preferida."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuántos extintores necesita un data center?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende de la superficie y distribución de racks. NOM-002-STPS exige 1 extintor cada 200 m² en áreas de riesgo alto (data centers se clasifican como riesgo alto por la densidad de equipos electrónicos), con distancia máxima de recorrido de 15 m. Para cuartos de servidores pequeños (menos de 50 m²): 1 extintor Agente Limpio 5 kg más 1 CO₂ de respaldo. Para instalaciones medianas (50-200 m²): entre 2 y 4 extintores según distribución de pasillos. MANEXT realiza diagnóstico gratuito con plano de distribución de racks y cálculo exacto."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Los extintores portátiles son suficientes para un data center?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los extintores portátiles son el primer nivel de respuesta y son obligatorios bajo NOM-002-STPS. Para instalaciones críticas de mediana y gran escala se complementan con sistemas fijos de supresión (NFPA 2001 para agentes limpios, NFPA 72 para detección). MANEXT ofrece asesoría en sistemas fijos contra incendio bajo NFPA 13, NFPA 72 y NFPA 2001 para data centers que requieren protección integral. Los extintores portátiles quedan como respaldo y primera intervención en ambos casos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Con qué frecuencia se da mantenimiento a los extintores de agentes limpios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La NOM-154-SCFI exige inspección y mantenimiento anual, igual que cualquier extintor. Los extintores de CO₂ y Agentes Limpios requieren verificación por pesaje calibrado del cilindro (no solo por manómetro) para confirmar que el agente no se ha perdido por fugas lentas. Prueba hidrostática del cilindro cada 5 años. MANEXT ofrece pólizas anuales con verificación de pesaje, extintor de préstamo durante el proceso y documentación para auditorías ISO 27001 y SOC 2."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿MANEXT atiende data centers corporativos en Santa Fe, Pedregal y Reforma en CDMX?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. MANEXT atiende infraestructura tecnológica en todas las zonas corporativas de CDMX: Santa Fe, Paseo de la Reforma, Polanco, Insurgentes, Pedregal, Xoco, Doctores y zona industrial de Tlalnepantla y Naucalpan en Estado de México. Entrega en 48 horas, misma día para urgencias confirmadas antes de las 2 PM. Para instalaciones con más de 10 extintores ofrecemos esquemas corporativos con facturación CFDI consolidada y reportes para auditoría."
-      }
-    }
-  ]
-});
+const faqs = getSiteFaqs('/sectores/data-centers');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -189,22 +140,7 @@ const faqSchema = JSON.stringify({
       title="Preguntas frecuentes — Data Centers"
     />
     <div style="max-width: 800px; margin: 2rem auto 0;">
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Por qué no se debe usar PQS en un data center?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">El PQS genera una nube de polvo que se infiltra en discos, memorias y tarjetas de circuitos, causando daño permanente. El costo de limpieza y reposición de servidores puede ser 100x mayor que el del incendio en sí. Use Agentes Limpios (FM-200, Novec 1230) o CO₂.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Cuál es mejor: FM-200 o Novec 1230?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Ambos son efectivos y sin residuo. FM-200 es más económico (desde $3,900 MXN). Novec 1230 tiene GWP prácticamente nulo y es preferido por instalaciones con políticas de sustentabilidad o requisitos ESG. MANEXT cotiza ambos y recomienda según el perfil de la instalación.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Cuántos extintores necesita mi data center?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">NOM-002-STPS exige 1 extintor cada 200 m² en áreas de riesgo alto. Para cuartos menores a 50 m²: 1 Agente Limpio 5 kg + 1 CO₂ de respaldo. MANEXT hace el diagnóstico gratuito con plano de distribución de racks y cálculo exacto.</p>
-      </details>
-      <details style="background: white; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
-        <summary style="font-weight: 600; cursor: pointer; color: #212121;">¿Los extintores portátiles son suficientes o necesito sistema fijo?</summary>
-        <p style="margin-top: 1rem; color: #555; line-height: 1.7;">Los portátiles son obligatorios (NOM-002-STPS) y son el primer nivel de respuesta. Para instalaciones críticas medianas y grandes se complementan con sistemas fijos bajo NFPA 2001 (agentes limpios) y NFPA 72 (detección). MANEXT asesora en ambos niveles.</p>
-      </details>
+      <FaqList faqs={faqs} firstOpen={true} />
     </div>
   </div>
 </section>

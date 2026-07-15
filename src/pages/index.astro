@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -98,20 +101,8 @@ const localBusinessSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cuánto cuesta un extintor certificado en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende del tipo de agente y capacidad. PQS ABC 4.5 kg desde $450 MXN con certificado NOM-154-SCFI incluido. CO₂ 4.5 kg entre $1,200 y $1,500 MXN. Tipo K 6 L para cocinas comerciales entre $1,800 y $2,400 MXN. Agente Limpio HFC-227ea 5 kg (data centers y áreas críticas) desde $3,900 MXN. Todos incluyen instalación profesional, soporte metálico, señalización fotoluminiscente NOM-026 y documentación oficial para Protección Civil." }},
-    { "@type": "Question", "name": "¿Qué tipos de extintores existen y para qué sirve cada uno?", "acceptedAnswer": { "@type": "Answer", "text": "Existen seis tipos principales: PQS para Clase ABC (uso general), CO₂ para Clase BC en electrónica sin residuo, Agua a Presión para Clase A en sólidos combustibles, Espuma AFFF para Clase AB en hidrocarburos, Tipo K para Clase K en cocinas con aceites calientes, y Agentes Limpios FM-200/Novec 1230 para áreas críticas como data centers y archivos." }},
-    { "@type": "Question", "name": "¿Cuántos extintores requiere mi negocio según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige mínimo 1 extintor por cada 300 m² en riesgo ordinario, con distancia máxima de recorrido de 23 m al equipo más cercano. En riesgo alto se reduce a 200 m² y 15 m. MANEXT realiza análisis de riesgo gratuito para determinar el número exacto, capacidades y distribución óptima en tu instalación." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o inmediatamente después de cualquier descarga, aunque sea parcial. Adicionalmente, prueba hidrostática del cilindro cada 5 años. MANEXT ofrece recarga a domicilio con préstamo de equipo sin costo durante el proceso para mantener tu cobertura siempre vigente." }},
-    { "@type": "Question", "name": "¿Cuánto tarda la entrega e instalación en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Entrega estándar en 48 horas con instalación profesional incluida en toda la CDMX y zona metropolitana. Para emergencias o inspección al día siguiente, coordinamos entrega el mismo día en la mayoría de las alcaldías. Sin costos extra de envío ni instalación." }},
-    { "@type": "Question", "name": "¿Qué documentación entrega MANEXT con cada extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Cada equipo se entrega con certificación NOM-154-SCFI vigente, etiqueta de fabricante con trazabilidad, tarjeta de inspección inicial, comprobante de instalación, factura fiscal CFDI 4.0 y bitácora oficial — la documentación que solicitan inspectores de Protección Civil, STPS, COFEPRIS y aseguradoras." }},
-    { "@type": "Question", "name": "¿MANEXT atiende empresas, comercios y particulares?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Atendemos desde residenciales y comercios pequeños hasta corporativos con múltiples sucursales, plantas industriales, hospitales, hoteles, restaurantes y dependencias gubernamentales. Para flotas amplias ofrecemos precios de mayoreo, financiamiento sin intereses 3/6/12 meses y pólizas anuales con descuentos." }},
-    { "@type": "Question", "name": "¿Por qué elegir MANEXT sobre otros proveedores?", "acceptedAnswer": { "@type": "Answer", "text": "Más de 80 años de operación continua en CDMX desde 1943, asesoría técnica certificada sin costo, instalación incluida, recarga por pesaje calibrado (no por manómetro), programa anual con visitas a domicilio y la documentación lista para auditorías. No vendemos extintores: vendemos cumplimiento normativo y tranquilidad real, año con año." }}
-  ]
-});
+const faqs = getSiteFaqs('/');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -538,89 +529,7 @@ const faqSchema = JSON.stringify({
       <!-- Left: FAQ -->
       <div class="faq-cot-left">
         <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre precios, certificaciones, tiempos de entrega y servicios. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
-        <div class="faq-grid">
-      <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto cuesta un extintor certificado NOM-154 en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Depende del agente y la capacidad. Un extintor de polvo seco ABC de 4.5 kg —el más común para oficinas, comercios y bodegas— arranca en $450 MXN con certificado NOM-154-SCFI incluido. Un CO₂ de 4.5 kg para tableros y equipo electrónico ronda los $1,200–$1,500 MXN; un Tipo K de 6 L para cocina industrial, entre $1,800 y $2,400 MXN; y un Agente Limpio HFC-227ea de 5 kg para centros de datos, desde $3,900 MXN. Mándanos por WhatsApp tipo y cantidad y cotizamos con precio real ese mismo día.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto tiempo dura cargado un extintor y cada cuánto se recarga?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La carga de un extintor dura entre 5 y 12 años según el agente, pero la NOM-154-SCFI exige servicio de mantenimiento y recarga anual, y prueba hidrostática cada 5 años para cilindros de alta presión (CO₂, agua, AFFF) y cada 12 años para PQS. Si un extintor se disparó, aunque haya sido poco, se recarga completo. Hacemos recarga en sitio o en nuestro taller en CDMX con collar de garantía, etiqueta de inspección vigente y reporte para tu expediente.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuál es la diferencia entre un extintor de PQS y uno de CO₂?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El PQS (polvo químico seco ABC) sofoca fuegos de clase A (sólidos), B (líquidos) y C (energizados) — es el más versátil, el más económico y el que pide Protección Civil para oficinas y comercios comunes. Pero deja residuo que daña electrónica. El CO₂ no deja residuo y desplaza oxígeno, ideal para tableros eléctricos, servidores y archivos delicados; no sirve para sólidos ardientes (clase A). Regla simple: si hay equipo eléctrico sensible, CO₂ o agente limpio; para todo lo demás, PQS ABC.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué equipos exige Protección Civil para una empresa en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La NOM-002-STPS-2010 exige mínimo un extintor por cada 300 m² y uno por piso, ubicado a menos de 15 m del personal. La NOM-003-SEGOB-2011 y la NOM-026-STPS-2008 piden señalización fotoluminiscente para rutas de evacuación, salidas de emergencia, ubicación de extintores e hidrantes y punto de reunión. Para plantas industriales se suma la NOM-005-STPS, y si hay más de 3,000 m² o más de 2 niveles, Protección Civil puede solicitar detección y alarma NFPA 72. Hacemos diagnóstico técnico sin costo con el listado exacto que aplica a tu giro.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Los extintores vienen con certificados para auditoría?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Todos los extintores cumplen NOM-154-SCFI y se entregan con ficha técnica, certificado de conformidad, garantía y etiqueta de inspección. Los sistemas contra incendio se entregan con memoria de cálculo NFPA y reporte de puesta en marcha. La señalización lleva constancia NOM-003-SEGOB. Si tu aseguradora, DRO o auditor de Protección Civil pide documentación específica —planos, bitácora, certificado de instalador— te la preparamos sin costo extra.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Hacen entrega el mismo día en CDMX y Estado de México?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Pedidos confirmados antes de las 2 PM entran a ruta y se entregan el mismo día dentro de la zona metropolitana (CDMX y municipios del Edomex conurbados). Para volúmenes grandes o rutas fuera de la ZMVM coordinamos entrega al siguiente día hábil. Enviamos también a Querétaro, Puebla, Aguascalientes y Baja California con paqueterías certificadas.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué señalamientos de emergencia son obligatorios por ley?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La NOM-003-SEGOB-2011 y la NOM-026-STPS-2008 exigen señales fotoluminiscentes de: rutas de evacuación, salidas de emergencia, no correr / no gritar / no empujar, ubicación de extintores e hidrantes, punto de reunión exterior y señales de prohibición en áreas con riesgo. El material debe ser fotoluminiscente certificado (visible durante un corte de energía). Entregamos levantamiento del inmueble, plano de señalización y colocación en sitio — todo listo para inspección de Protección Civil.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Manejan precios por volumen y facturación corporativa?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Operamos esquemas corporativos: precios escalonados por volumen, facturación electrónica CFDI, crédito a 30 días previa validación, entregas programadas a múltiples sucursales y contratos anuales de suministro y recarga. Emitimos factura timbrada al momento y armamos expedientes por sitio para clientes con varias plantas u oficinas. Pídenos un esquema a tu medida.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuánto tarda la instalación de un sistema contra incendio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Un sistema de detección y alarma NFPA 72 en oficina mediana se instala en 1 a 3 días. Un sistema de rociadores NFPA 13 en bodega o planta industrial toma 1 a 4 semanas según metros cuadrados, zonificación y trazo de tubería. Una red hidráulica NFPA 20 con bomba y tablero puede tomar 4 a 8 semanas. Hacemos visita técnica sin costo, memoria de cálculo y presupuesto exacto antes de arrancar — también nos coordinamos con tu DRO o proyectista.</p>
-            </div>
-          </div>
-        </div><!-- /faq-grid -->
+        <FaqList faqs={faqs} firstOpen={true} /><!-- /faq-grid -->
       </div><!-- /faq-cot-left -->
 
       <!-- Right: Cotización -->
@@ -749,46 +658,6 @@ const faqSchema = JSON.stringify({
 </nav>
 
 <!-- FAQ Accordion Script -->
-<script is:inline>
-(function() {
-  'use strict';
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-
-      // Close all other FAQ items
-      faqQuestions.forEach(function(otherQuestion) {
-        if (otherQuestion !== question) {
-          otherQuestion.setAttribute('aria-expanded', 'false');
-          var otherItem = otherQuestion.parentElement;
-          var otherAnswer = otherItem.querySelector('.faq-answer');
-          var otherIcon = otherQuestion.querySelector('.faq-icon');
-          if (otherAnswer) otherAnswer.style.display = 'none';
-          if (otherIcon) otherIcon.textContent = '+';
-          otherItem.classList.remove('active');
-        }
-      });
-
-      // Toggle current FAQ item
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        if (answer) answer.style.display = 'none';
-        if (icon) icon.textContent = '+';
-        faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        if (answer) answer.style.display = 'block';
-        if (icon) icon.textContent = '−';
-        faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <!-- WhatsApp Form Script -->
 <script is:inline>
