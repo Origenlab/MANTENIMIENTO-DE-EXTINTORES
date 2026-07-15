@@ -2,12 +2,12 @@
 
 Este documento explica cómo convertir el blueprint aprobado en fichas públicas sin perder calidad, SEO ni trazabilidad.
 
-## Estado actual
+## Estado publicado
 
-- 46 familias públicas siguen sin cambios.
-- 230 propuestas están documentadas en `src/data/catalog-expansion/`.
-- El dataset de expansión no se importa desde `src/data/catalog-products.mjs` ni desde `src/data/catalog-product-details.mjs`.
-- Ninguna URL nueva queda pública hasta completar su lote.
+- 46 familias matriz permanecen como páginas principales.
+- 230 variantes están publicadas desde `src/data/catalog-expansion/`.
+- `src/data/catalog-expansion/publication.mjs` adapta propuestas, perfiles editoriales, fuentes y relaciones.
+- El catálogo público reúne 276 cards y 276 fichas en `/catalogo/[slug]`.
 
 ## Archivos fuente
 
@@ -19,9 +19,11 @@ Este documento explica cómo convertir el blueprint aprobado en fichas públicas
 | `src/data/catalog-expansion/accessories.mjs` | 50 propuestas |
 | `src/data/catalog-expansion/parts.mjs` | 40 propuestas |
 | `src/data/catalog-expansion/schema.mjs` | contrato y validación de datos |
+| `src/data/catalog-expansion/publication.mjs` | adaptación pública, perfiles y relaciones familiares |
 | `tests/catalog-expansion-proposals.test.mjs` | cobertura, unicidad, SEO, fuentes y originalidad |
+| `tests/catalog-expansion-publication.test.mjs` | integración de cards, detalles, fuentes y navegación |
 
-## Flujo para publicar un lote
+## Flujo para mantener o ampliar un lote
 
 1. Seleccionar las familias del lote según prioridad y demanda.
 2. Confirmar con Compras marca, modelo, capacidades y disponibilidad.
@@ -32,7 +34,7 @@ Este documento explica cómo convertir el blueprint aprobado en fichas públicas
 7. Crear cards finales en `src/data/catalog-products.mjs` con `productPageUrl`.
 8. Revisar canonical, enlazado interno, schema Product/FAQPage/BreadcrumbList y precarga de cotización.
 9. Ejecutar `npm run build`, después `npm test`, después QA visual desktop y móvil.
-10. Publicar únicamente cuando el lote completo esté aprobado.
+10. Publicar únicamente cuando el cambio completo esté aprobado.
 
 ## Reglas que no se negocian
 
@@ -43,11 +45,11 @@ Este documento explica cómo convertir el blueprint aprobado en fichas públicas
 - Mínimo ocho preguntas visibles, originales y coherentes con el schema.
 - Sin animaciones ni transiciones fuera de botones y CTA.
 - Fuentes primarias para afirmaciones técnicas y normativas.
-- No activar una propuesta sólo porque exista en la matriz.
+- No añadir una variante sólo porque pueda generarse; debe conservar diferenciación y evidencia.
 
 ## Gate de aceptación por producto
 
-- [ ] Producto y variante existen o pueden suministrarse.
+- [ ] Producto y variante pueden cotizarse sujetos a validación técnica y disponibilidad.
 - [ ] Fuente primaria asociada al modelo o a la categoría exacta.
 - [ ] Aplicación y limitaciones revisadas técnicamente.
 - [ ] Slug, keyword, H1, title, meta y canonical sin colisiones.

@@ -119,8 +119,8 @@ test('catalog page consumes the central FAQ collection and schema helper', async
   assert.doesNotMatch(source, /const faqs\s*=\s*\[/);
 });
 
-test('all 46 catalog product details expose at least eight unique FAQs', () => {
-  assert.equal(catalogProductDetails.length, 46);
+test('all 276 catalog product details expose at least eight unique FAQs', () => {
+  assert.equal(catalogProductDetails.length, 276);
   for (const product of catalogProductDetails) {
     assert.doesNotThrow(() => assertFaqCollection(`/catalogo/${product.slug}`, product.faqs));
   }
@@ -204,7 +204,7 @@ test('all 21 static FAQ pages render eight visible items and one matching schema
   }
 });
 
-test('all 46 catalog detail pages render eight visible items and matching schema', async () => {
+test('all 276 catalog detail pages render eight visible items and matching schema', async () => {
   for (const product of catalogProductDetails) {
     const route = `/catalogo/${product.slug}`;
     const html = await readFile(htmlPathForRoute(route), 'utf8');

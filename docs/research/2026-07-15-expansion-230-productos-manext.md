@@ -1,11 +1,11 @@
 # Estudio de mercado y arquitectura SEO — expansión de 230 productos MANEXT
 
 Fecha de revisión: 2026-07-15
-Estado: blueprint validado; productos todavía no publicados
+Estado: investigación validada e integrada al catálogo público
 
 ## Resultado ejecutivo
 
-El catálogo actual contiene 46 familias. La expansión propone cinco productos comercialmente distinguibles por cada familia, para un total de 230 fichas futuras:
+El catálogo contiene 46 familias matriz y cinco productos comercialmente distinguibles por cada familia, para un total de 230 variantes y 276 fichas públicas:
 
 | Grupo | Familias | Propuestas |
 |---|---:|---:|
@@ -16,7 +16,7 @@ El catálogo actual contiene 46 familias. La expansión propone cinco productos 
 | Refacciones y consumibles | 8 | 40 |
 | **Total** | **46** | **230** |
 
-La matriz completa vive en `src/data/catalog-expansion/` y en `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`. No está importada por el catálogo público.
+La matriz completa vive en `src/data/catalog-expansion/` y en `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`. Su publicación se controla mediante `src/data/catalog-expansion/publication.mjs`.
 
 ## Qué se encontró en el mercado
 
@@ -75,9 +75,9 @@ El inventario URL por URL y su cobertura de propuestas está en la hoja **Fuente
 - Ratings, listados, capacidades y compatibilidad deben verificarse contra el modelo exacto antes de publicar.
 - Clase D y baterías de ion-litio requieren selección por peligro específico; no deben comunicarse como equivalentes.
 - La NOM-154 regula mantenimiento, recarga y servicio; no debe utilizarse para atribuir certificaciones inexistentes a un producto.
-- La publicación masiva sin revisión editorial generaría thin content. Debe ejecutarse por lotes.
+- Las futuras modificaciones deben mantener la revisión editorial automatizada y humana para evitar thin content.
 
-## Recomendación de publicación
+## Distribución publicada
 
 1. Portátiles: 75 propuestas.
 2. Industriales: 40 propuestas.
@@ -85,4 +85,4 @@ El inventario URL por URL y su cobertura de propuestas está en la hoja **Fuente
 4. Accesorios: 50 propuestas.
 5. Refacciones: 40 propuestas.
 
-Cada lote debe pasar validación técnica, editorial, disponibilidad, recursos visuales, build, pruebas, QA visual, revisión de enlaces internos y aprobación antes de entrar a producción.
+Cada modificación debe pasar validación técnica y editorial, build, pruebas, QA visual y revisión de enlaces internos antes de entrar a producción. La disponibilidad, el modelo exacto y la documentación se confirman durante la cotización.

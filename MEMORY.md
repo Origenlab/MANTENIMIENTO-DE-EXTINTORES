@@ -16,7 +16,7 @@ Actualizada: 2026-07-15
 - FAQ y cotización son un solo módulo: FAQ izquierda, WhatsApp derecha; una columna en móvil.
 - Toda sección FAQ existente debe publicar al menos 8 preguntas visibles, únicas y contextuales.
 - El contenido visible y el schema `FAQPage` deben provenir del mismo arreglo de datos.
-- Las 46 fichas del catálogo obtienen sus FAQs desde el perfil editorial compartido; no se editan páginas Astro individuales.
+- Las 276 fichas del catálogo obtienen sus FAQs desde el perfil editorial compartido; no se editan páginas Astro individuales.
 - Comercial: **Cotización personalizada**, sin precios públicos.
 - SEO: Product + FAQPage + BreadcrumbList; no inventar Offer, price, rating, brand, stock, certificaciones, garantías, plazos ni resultados regulatorios.
 - Normativa: usar fuentes primarias y describir con exactitud el alcance de NOM-002-STPS-2010 y NOM-154-SCFI-2005.
@@ -27,15 +27,15 @@ Actualizada: 2026-07-15
 - Espejo Graphify: `graphify-out/PRODUCT-CATALOG-TEMPLATE.md`.
 - Espejo Obsidian: `MANEXT/Productos — Catálogo y Plantilla.md`.
 
-## Próximo producto sugerido
+## Expansión publicada
 
-La expansión de 230 productos ya está investigada y validada como blueprint: cinco propuestas por cada una de las 46 familias públicas. No volver a inventar una lista paralela.
+La expansión de 230 productos está integrada al catálogo: cinco variantes por cada una de las 46 familias matriz, para 276 fichas públicas. No volver a inventar una lista paralela.
 
 Fuente de datos: `src/data/catalog-expansion/`. Excel maestro: `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`. Procedimiento: `docs/catalogo/EXPANSION-230-PRODUCTOS.md`. Estudio: `docs/research/2026-07-15-expansion-230-productos-manext.md`.
 
-Las propuestas todavía no se importan en el catálogo público. Deben publicarse en cinco lotes —portátiles, industriales, automáticos, accesorios y refacciones— después de confirmar disponibilidad, modelo, datos técnicos, contenido final, recursos visuales y aprobación.
+La publicación se compone en `src/data/catalog-expansion/publication.mjs`, se integra en `catalog-products.mjs` y genera los detalles desde `catalog-product-details.mjs`. Las relaciones padre, hermanos y variantes deben conservarse en futuras modificaciones.
 
-Cada propuesta ya contiene un objetivo SEO, diferenciación, selección, limitaciones, CTA y fuentes. Mantener IDs, slugs, canonical, H1 y keywords únicos; no rebajar el umbral de originalidad ni publicar contenido generado en masa sin revisión humana.
+Cada producto contiene objetivo SEO, diferenciación, selección, limitaciones, CTA y fuentes. Mantener IDs, slugs, canonical, H1 y keywords únicos; no rebajar el umbral de originalidad ni sustituir el contenido individual por boilerplate.
 
 ## Publicación y verificación live
 

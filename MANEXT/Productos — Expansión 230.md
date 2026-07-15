@@ -1,9 +1,10 @@
 ---
 proyecto: MANEXT
 tipo: catalogo
-estado: blueprint-validado
+estado: publicado
 fecha_actualizacion: 2026-07-15
 productos_propuestos: 230
+productos_publicos: 276
 familias_actuales: 46
 ---
 
@@ -11,7 +12,7 @@ familias_actuales: 46
 
 ## Resumen
 
-Se aprobaron cinco propuestas relacionadas por cada una de las 46 familias del catálogo: **230 productos futuros**. Son conceptos investigados y validados; todavía no son páginas públicas.
+Se publicaron cinco variantes relacionadas por cada una de las 46 familias del catálogo: **230 productos adicionales** y **276 fichas públicas** en total.
 
 | Grupo | Propuestas |
 |---|---:|
@@ -24,6 +25,7 @@ Se aprobaron cinco propuestas relacionadas por cada una de las 46 familias del c
 ## Fuente de verdad
 
 - Datos: `src/data/catalog-expansion/`
+- Adaptador público: `src/data/catalog-expansion/publication.mjs`
 - Excel maestro: `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`
 - Operación: `docs/catalogo/EXPANSION-230-PRODUCTOS.md`
 - Estudio: `docs/research/2026-07-15-expansion-230-productos-manext.md`
@@ -35,9 +37,9 @@ Nombre, slug, canonical, diferenciación, agente/material, clases, variante, apl
 
 ## Regla editorial
 
-La matriz es un punto de partida, no texto final para publicar sin revisión. Cada ficha debe ser humana, útil y sustancialmente distinta; debe confirmar disponibilidad y datos técnicos, conservar cotización personalizada y respetar el template compartido.
+Cada ficha conserva contenido individual, intención SEO, fuentes y relaciones familiares. Disponibilidad y datos del modelo exacto se confirman en la cotización; el catálogo no publica precios, stock ni certificaciones no verificadas.
 
-## Orden de publicación
+## Distribución publicada
 
 1. Portátiles.
 2. Industriales.
@@ -45,7 +47,7 @@ La matriz es un punto de partida, no texto final para publicar sin revisión. Ca
 4. Accesorios.
 5. Refacciones.
 
-Cada lote se publica sólo después de revisión técnica, editorial, visual, build y tests.
+Las cinco categorías se integran mediante el mismo template dinámico y deben seguir pasando revisión técnica, editorial, visual, build y tests.
 
 ## Enlaces relacionados
 

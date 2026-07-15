@@ -20,7 +20,7 @@ async function loadEditorialModule() {
   }
 }
 
-test('all 46 products have a complete, human and individual editorial profile', async () => {
+test('all 276 products have a complete, human and individual editorial profile', async () => {
   const { catalogProductEditorial } = await loadEditorialModule();
   const productIds = catalogProducts.map(({ id }) => id).sort();
 

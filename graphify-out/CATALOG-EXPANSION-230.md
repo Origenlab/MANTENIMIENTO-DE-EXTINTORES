@@ -2,13 +2,15 @@
 
 ## Nodo raíz
 
-`catalogo-expansion-230` representa un blueprint editorial y comercial, no un conjunto de rutas públicas.
+`catalogo-expansion-230` representa las 230 variantes públicas vinculadas a 46 familias matriz.
 
 ## Relaciones
 
 ```text
-catalogProducts (46 familias públicas)
-└── catalogExpansionByParent
+catalogProducts (276 fichas públicas)
+├── catalogMatrixProducts (46 familias)
+└── buildPublishedExpansionProducts (230 variantes)
+    └── catalogExpansionByParent
     ├── portables.mjs    → 15 familias × 5 = 75
     ├── industrial.mjs   →  8 familias × 5 = 40
     ├── automatic.mjs    →  5 familias × 5 = 25
@@ -30,11 +32,11 @@ Cada propuesta enlaza conceptualmente con:
 
 ```text
 research → validated → approved → published
-              ↑           ↑
-        matriz actual   revisión humana futura
+                                      ↑
+                       estado vigente del catálogo
 ```
 
-Las 230 propuestas están en `validated` como conceptos. `editorialValidation` permanece en `false`; por tanto, no deben incorporarse automáticamente a las páginas públicas.
+Las 230 propuestas aprobadas se adaptan mediante `publication.mjs`; el resultado añade perfiles editoriales, fuentes y navegación padre/hermanos sin duplicar páginas Astro.
 
 ## Invariantes
 
@@ -52,3 +54,4 @@ Las 230 propuestas están en `validated` como conceptos. `editorialValidation` p
 - `docs/research/2026-07-15-expansion-230-productos-manext.md`
 - `outputs/catalogo-expansion-230/matriz-expansion-230-productos-manext.xlsx`
 - `tests/catalog-expansion-proposals.test.mjs`
+- `tests/catalog-expansion-publication.test.mjs`

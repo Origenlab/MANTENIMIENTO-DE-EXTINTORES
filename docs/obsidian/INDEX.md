@@ -30,7 +30,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 
 ### Contenido
 - [[Productos — Catálogo y Plantilla]] — arquitectura dinámica `/catalogo/[slug]`, contrato de datos, SEO, conversión y checklist de publicación
-- [[Productos — Expansión 230]] — matriz de cinco propuestas por familia, fuentes, controles y orden de publicación
+- [[Productos — Expansión 230]] — 230 variantes públicas, fuentes, relaciones familiares y controles
 - [[Blog — Sistema de Contenido]] — 41 archivos, layout, frontmatter, duplicados, stubs
 
 ### Operaciones
@@ -61,7 +61,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 - Los siguientes productos deben añadirse mediante datos, conservando `ProductDetailTemplate.astro` como plantilla compartida.
 - Antes de crear una ficha, consultar `MEMORY.md` y [[Productos — Catálogo y Plantilla]].
 - Mantener FAQ + cotización en un solo módulo de dos columnas y no añadir animaciones fuera de botones.
-- La expansión de 230 productos está validada como blueprint y aislada del catálogo público; publicar únicamente por lotes aprobados.
+- El catálogo integra 46 familias matriz y 230 variantes: 276 fichas públicas generadas con el template compartido.
 
 ---
 
