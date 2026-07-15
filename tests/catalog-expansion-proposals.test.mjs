@@ -7,6 +7,7 @@ import {
 } from '../src/data/catalog-expansion/index.mjs';
 import { portableExpansionProposals } from '../src/data/catalog-expansion/portables.mjs';
 import { industrialExpansionProposals } from '../src/data/catalog-expansion/industrial.mjs';
+import { automaticExpansionProposals } from '../src/data/catalog-expansion/automatic.mjs';
 
 const requiredStrings = [
   'id', 'parentId', 'group', 'name', 'shortName', 'slug',
@@ -81,6 +82,22 @@ test('industrial expansion covers five products for every industrial family', ()
       industrialExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
       5,
       `expected five industrial proposals for ${parentId}`,
+    );
+  }
+});
+
+test('automatic expansion covers five products for every automatic family', () => {
+  const automaticParents = [
+    'automatico-techo-pqs', 'automatico-agente-limpio', 'detextintor',
+    'compartimiento-motor', 'sistema-campana-cocina',
+  ];
+
+  assert.equal(automaticExpansionProposals.length, 25);
+  for (const parentId of automaticParents) {
+    assert.equal(
+      automaticExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
+      5,
+      `expected five automatic proposals for ${parentId}`,
     );
   }
 });
