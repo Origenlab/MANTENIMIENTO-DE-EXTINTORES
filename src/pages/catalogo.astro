@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import CatalogCard from '../components/catalog/CatalogCard.astro';
 import CatalogFilters from '../components/catalog/CatalogFilters.astro';
-import QuoteForm from '../components/catalog/QuoteForm.astro';
+import FaqQuoteModule from '../components/catalog/FaqQuoteModule.astro';
 import {
   availabilityLabels,
   catalogGroups,
@@ -65,7 +65,7 @@ const catalogSchema = buildCatalogSchema(products);
   ogImage="https://mantenimientodeextintores.mx/img/img-servicios/venta-de-extintores.avif"
   breadcrumbs={[{ name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo/' }]}
   schemas={[JSON.stringify(catalogSchema), JSON.stringify(faqSchema)]}
-  extraCss={['/css/catalog-system.css?v=9']}
+  extraCss={['/css/catalog-system.css?v=10']}
 >
   <Hero
     title="Catálogo profesional de extintores y equipos relacionados"
@@ -246,31 +246,7 @@ const catalogSchema = buildCatalogSchema(products);
       </div>
     </section>
 
-    <section class="quote-section section-pad" aria-labelledby="quote-section-title">
-      <div class="container">
-        <h2 class="visually-hidden" id="quote-section-title">Solicitar cotización</h2>
-        <QuoteForm products={products} sectors={sectorOptions} />
-      </div>
-    </section>
-
-    <section class="catalog-faq section-pad" aria-labelledby="catalog-faq-title">
-      <div class="container">
-        <SectionHeader
-          id="catalog-faq-title"
-          eyebrow="Antes de cotizar"
-          title="Preguntas frecuentes del catálogo"
-          subtitle="Respuestas claras sobre selección, disponibilidad y servicios."
-        />
-        <div class="catalog-faq__list">
-          {faqs.map((faq) => (
-            <details>
-              <summary>{faq.question}<span aria-hidden="true">+</span></summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+    <FaqQuoteModule faqs={faqs} products={products} sectors={sectorOptions} />
   </div>
 
   <script is:inline src="/js/catalog-system.js?v=7" defer></script>
