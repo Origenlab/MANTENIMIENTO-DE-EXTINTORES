@@ -1,5 +1,6 @@
 ---
 import QuoteForm from './QuoteForm.astro';
+import FaqList from '../FaqList.astro';
 
 interface FAQ {
   question: string;
@@ -49,14 +50,7 @@ const {
           <span>{intro}</span>
         </header>
 
-        <div class="faq-quote__list">
-          {faqs.map((faq, index) => (
-            <details open={index === 0}>
-              <summary>{faq.question}<span aria-hidden="true">+</span></summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} className="faq-quote__list" />
       </div>
 
       <div class="faq-quote__form" aria-label={formLabel}>

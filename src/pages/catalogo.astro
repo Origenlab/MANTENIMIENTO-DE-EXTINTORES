@@ -14,44 +14,16 @@ import {
   sectorOptions,
 } from '../data/catalog-products.mjs';
 import { buildCatalogSchema } from '../lib/catalog-utils.mjs';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const products = [...catalogProducts].sort((a, b) => a.priority - b.priority || a.name.localeCompare(b.name, 'es'));
 const groupMap = new Map(catalogGroups.map((group) => [group.id, group.name]));
 const agents = [...new Set(products.map((product) => product.agent))].sort((a, b) => a.localeCompare(b, 'es'));
 const availabilityLabelMap: Record<string, string> = availabilityLabels;
 
-const faqs = [
-  {
-    question: '¿Cómo sé qué extintor necesito?',
-    answer: 'La selección depende de los combustibles presentes, la clase de fuego, el tamaño del riesgo, la distancia de recorrido y las condiciones del inmueble. MANEXT puede revisar estos datos antes de preparar la cotización.',
-  },
-  {
-    question: '¿El catálogo muestra precios?',
-    answer: 'No. Las capacidades, marcas, cantidades, instalación y documentación cambian en cada proyecto. Por eso cada familia permite solicitar una cotización contextual sin publicar un precio genérico.',
-  },
-  {
-    question: '¿Todo el catálogo está disponible para entrega inmediata?',
-    answer: 'No. Cada familia indica si normalmente se maneja como entrega rápida, bajo pedido, proyecto especial o validación técnica. La disponibilidad real se confirma en la cotización.',
-  },
-  {
-    question: '¿Un extintor clase D sirve para baterías de ion-litio?',
-    answer: 'No necesariamente. Clase D corresponde a metales combustibles. Los riesgos con baterías de ion-litio requieren revisar la química, energía, posibilidad de reignición y ensayos del agente propuesto.',
-  },
-  {
-    question: '¿Puedo incluir instalación, señalización y mantenimiento?',
-    answer: 'Sí. La solicitud permite agregar instalación, señalización, mantenimiento y capacitación para recibir una propuesta integral.',
-  },
-];
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
-};
+const faqs = getSiteFaqs('/catalogo');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 
 const catalogSchema = buildCatalogSchema(products);
 ---
@@ -64,7 +36,7 @@ const catalogSchema = buildCatalogSchema(products);
   ogDescription="Explora equipos portátiles, industriales y especializados. Solicita cotización con instalación, señalización y mantenimiento en CDMX y área metropolitana."
   ogImage="https://mantenimientodeextintores.mx/img/img-servicios/venta-de-extintores.avif"
   breadcrumbs={[{ name: 'Catálogo', url: 'https://mantenimientodeextintores.mx/catalogo/' }]}
-  schemas={[JSON.stringify(catalogSchema), JSON.stringify(faqSchema)]}
+  schemas={[JSON.stringify(catalogSchema), faqSchema]}
   extraCss={['/css/catalog-system.css?v=10']}
 >
   <Hero

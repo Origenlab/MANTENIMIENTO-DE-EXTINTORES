@@ -94,3 +94,10 @@ test('every static FAQ route has at least eight complete unique questions', () =
 test('unknown site FAQ routes fail loudly', () => {
   assert.throws(() => getSiteFaqs('/ruta-inexistente'), /Missing FAQ collection/);
 });
+
+test('catalog page consumes the central FAQ collection and schema helper', async () => {
+  const source = await readFile(new URL('../src/pages/catalogo.astro', import.meta.url), 'utf8');
+  assert.match(source, /getSiteFaqs\(['"]\/catalogo['"]\)/);
+  assert.match(source, /JSON\.stringify\(buildFaqSchema\(faqs\)\)/);
+  assert.doesNotMatch(source, /const faqs\s*=\s*\[/);
+});
