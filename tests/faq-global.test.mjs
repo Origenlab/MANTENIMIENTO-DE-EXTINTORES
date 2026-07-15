@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFile } from 'node:fs/promises';
 import { buildFaqSchema, normalizeFaqQuestion, assertFaqCollection } from '../src/lib/faq-utils.mjs';
+import { siteFaqRoutes, siteFaqs, getSiteFaqs } from '../src/data/site-faqs.mjs';
 
 const validFaqs = Array.from({ length: 8 }, (_, index) => ({
   question: `¿Pregunta contextual número ${index + 1}?`,
@@ -53,4 +54,43 @@ test('FaqList uses semantic details and escaped Astro interpolation', async () =
 test('shared layout loads the FAQ stylesheet once', async () => {
   const source = await readFile(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
   assert.equal((source.match(/\/css\/faq-system\.css\?v=1/g) || []).length, 1);
+});
+
+const expectedSiteFaqRoutes = [
+  '/',
+  '/agentes-limpios',
+  '/agua-presion',
+  '/capacitacion-brigadas',
+  '/catalogo',
+  '/co2',
+  '/contacto',
+  '/espuma-afff',
+  '/extintores',
+  '/mantenimiento-preventivo',
+  '/nosotros',
+  '/polvo-quimico-seco',
+  '/prueba-hidrostatica',
+  '/recarga-de-extintores',
+  '/sectores/data-centers',
+  '/sectores/hospitales',
+  '/sectores/restaurantes',
+  '/senalizacion',
+  '/servicios',
+  '/tipo-k',
+  '/venta-de-extintores',
+];
+
+test('site FAQ registry covers every existing static FAQ route', () => {
+  assert.deepEqual([...siteFaqRoutes].sort(), expectedSiteFaqRoutes.sort());
+});
+
+test('every static FAQ route has at least eight complete unique questions', () => {
+  for (const route of siteFaqRoutes) {
+    assert.equal(getSiteFaqs(route), siteFaqs[route]);
+    assert.doesNotThrow(() => assertFaqCollection(route, siteFaqs[route]));
+  }
+});
+
+test('unknown site FAQ routes fail loudly', () => {
+  assert.throws(() => getSiteFaqs('/ruta-inexistente'), /Missing FAQ collection/);
 });
