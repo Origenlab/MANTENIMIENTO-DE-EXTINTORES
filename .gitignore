@@ -2,3 +2,7 @@ node_modules/
 dist/
 .astro/
 *.cfbak
+
+# Graphify generated analysis cache
+graphify-out/cache/ast/
+graphify-out/cache/stat-index.json
