@@ -123,11 +123,25 @@ test('shared header exposes the catalog as a direct primary navigation link', as
   assert.match(layout, /<li role="none"><a href="\/catalogo" class="nav-link"[^>]*>Catálogo<\/a><\/li>/);
 });
 
-test('built catalog exposes products and quote CTAs in HTML', async () => {
+test('catalog cards use one keyword-specific product CTA and no quote button', async () => {
+  const component = await readFile(new URL('../src/components/catalog/CatalogCard.astro', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(component, /catalog-card__quote/);
+  assert.doesNotMatch(component, />\s*Solicitar cotización\s*</);
+  assert.match(component, /const detailUrl = product\.productPageUrl \|\| product\.detailUrl \|\| '#guia-seleccion';/);
+  assert.match(component, /const detailLabel = product\.name;/);
+  assert.match(component, /aria-label=\{`Ver información técnica: \$\{product\.name\}`\}/);
+});
+
+test('built catalog exposes one keyword-specific CTA per product card', async () => {
   const html = await readFile(new URL('../dist/catalogo/index.html', import.meta.url), 'utf8');
 
   assert.match(html, /data-catalog-card/);
-  assert.match(html, /Solicitar cotización/);
+  assert.equal((html.match(/catalog-card__details-link/g) || []).length, catalogProducts.length);
+  assert.equal((html.match(/catalog-card__quote/g) || []).length, 0);
+  assert.match(html, />Extintor CO₂ portátil<\/span>/);
+  assert.match(html, />Extintor PQS ABC portátil<\/span>/);
+  assert.doesNotMatch(html, />Ver extintor /);
   for (const contract of [
     'class="catalog-layout"',
     'id="catalog-filter-panel"',

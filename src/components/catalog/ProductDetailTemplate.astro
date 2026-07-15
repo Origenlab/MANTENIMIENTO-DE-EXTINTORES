@@ -3,7 +3,63 @@ import Layout from '../../layouts/Layout.astro';
 import QuoteForm from './QuoteForm.astro';
 import { catalogProducts, sectorOptions } from '../../data/catalog-products.mjs';
 
-type CatalogProductDetail = (typeof import('../../data/catalog-product-details.mjs').catalogProductDetails)[number];
+interface CatalogProductDetail {
+  id: string;
+  slug: string;
+  name: string;
+  h1: string;
+  eyebrow: string;
+  category: string;
+  agent: string;
+  fireClasses: string[];
+  availability: string;
+  lead: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  galleryImage: string;
+  galleryImageAlt: string;
+  variants: string[];
+  detailCopy: {
+    availabilityBadge: string;
+    heroSuffix: string;
+    agentBadge: string;
+    quickUse: string;
+    variantLabel: string;
+    trustItems: string[];
+    benefitsTitle: string;
+    benefitsIntro: string;
+    specsTitle: string;
+    specsIntro: string;
+    specsCaption: string;
+    capacityTitle: string;
+    capacityIntro: string;
+    applicationsTitle: string;
+    applicationsIntro: string;
+    faqTitle: string;
+    faqIntro: string;
+    guideUrl: string;
+    guideLabel: string;
+    formLabel: string;
+  };
+  benefits: Array<{ title: string; text: string }>;
+  technicalSpecs: Array<[string, string]>;
+  capacityGuide: Array<{ capacity: string; profile: string; use: string; note: string }>;
+  recommendedUses: Array<{ title: string; text: string }>;
+  limitations: string[];
+  quoteIncludes: Array<{ number: string; title: string; text: string }>;
+  compliance: { title: string; text: string; items: string[] };
+  faqs: Array<{ question: string; answer: string }>;
+  internalLinks: Array<{ label: string; url: string }>;
+  seo: {
+    title: string;
+    description: string;
+    canonical: string;
+    ogTitle: string;
+    ogDescription: string;
+  };
+  sources: Array<{ label: string; url: string }>;
+}
 
 interface Props {
   product: CatalogProductDetail;
@@ -22,8 +78,10 @@ const productSchema = {
   url: product.seo.canonical,
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Agente extinguidor', value: product.agent },
-    { '@type': 'PropertyValue', name: 'Clases de fuego', value: product.fireClasses.join(', ') },
-    { '@type': 'PropertyValue', name: 'Capacidades habituales', value: product.variants.join(', ') },
+    ...(product.fireClasses.length
+      ? [{ '@type': 'PropertyValue', name: 'Clases de fuego', value: product.fireClasses.join(', ') }]
+      : []),
+    { '@type': 'PropertyValue', name: product.detailCopy.variantLabel, value: product.variants.join(', ') },
     { '@type': 'PropertyValue', name: 'Modalidad comercial', value: product.availability },
   ],
 };
@@ -58,7 +116,7 @@ const faqSchema = {
       <div class="container product-detail__hero-grid">
         <div class="product-detail__gallery">
           <div class="product-detail__image-frame">
-            <span class="product-detail__availability">Entrega sujeta a confirmación</span>
+            <span class="product-detail__availability">{product.detailCopy.availabilityBadge}</span>
             <img
               src={product.image}
               alt={product.imageAlt}
@@ -76,24 +134,27 @@ const faqSchema = {
 
         <div class="product-detail__summary">
           <p class="product-detail__eyebrow">{product.eyebrow}</p>
-          <h1 id="product-title">{product.name} <span>para riesgos clase B y C</span></h1>
+          <h1 id="product-title">{product.h1}</h1>
           <p class="product-detail__lead">{product.lead}</p>
 
-          <div class="product-detail__class-row" aria-label={`Clases de fuego ${product.fireClasses.join(' y ')}`}>
-            {product.fireClasses.map((fireClass) => (
+          <div
+            class="product-detail__class-row"
+            aria-label={product.fireClasses.length ? `Clases de fuego ${product.fireClasses.join(' y ')}` : 'Compatibilidad y aplicación del producto'}
+          >
+            {product.fireClasses.map((fireClass: string) => (
               <span class={`product-detail__class product-detail__class--${fireClass.toLowerCase()}`}>Clase {fireClass}</span>
             ))}
-            <span class="product-detail__clean-agent">Agente sin residuo</span>
+            <span class="product-detail__clean-agent">{product.detailCopy.agentBadge}</span>
           </div>
 
           <dl class="product-detail__quick-specs">
             <div>
-              <dt>Capacidades</dt>
+              <dt>{product.detailCopy.variantLabel}</dt>
               <dd>{product.variants.join(' · ')}</dd>
             </div>
             <div>
               <dt>Uso recomendado</dt>
-              <dd>Tableros eléctricos · Servidores</dd>
+              <dd>{product.detailCopy.quickUse}</dd>
             </div>
             <div>
               <dt>Modalidad</dt>
@@ -119,9 +180,7 @@ const faqSchema = {
           </div>
 
           <ul class="product-detail__trust-list">
-            <li>Selección según el riesgo y el inmueble</li>
-            <li>Instalación y señalización opcionales</li>
-            <li>Atención en CDMX y área metropolitana</li>
+            {product.detailCopy.trustItems.map((item: string) => <li>{item}</li>)}
           </ul>
         </div>
       </div>
@@ -131,7 +190,7 @@ const faqSchema = {
       <div class="container">
         <a href="#beneficios">Beneficios</a>
         <a href="#ficha-tecnica">Ficha técnica</a>
-        <a href="#capacidades">Capacidades</a>
+        <a href="#capacidades">{product.detailCopy.variantLabel}</a>
         <a href="#aplicaciones">Aplicaciones</a>
         <a href="#consideraciones">Seguridad</a>
         <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
@@ -142,8 +201,8 @@ const faqSchema = {
       <div class="container">
         <header class="product-detail__section-heading">
           <p>Protección especializada</p>
-          <h2 id="benefits-title">Por qué elegir un extintor de dióxido de carbono</h2>
-          <span>El CO₂ destaca cuando importa controlar un fuego incipiente sin dejar polvo sobre equipo sensible. La selección final debe equilibrar protección, ventilación, portabilidad y posibilidad de reignición.</span>
+          <h2 id="benefits-title">{product.detailCopy.benefitsTitle}</h2>
+          <span>{product.detailCopy.benefitsIntro}</span>
         </header>
 
         <div class="product-detail__benefit-grid">
@@ -163,13 +222,13 @@ const faqSchema = {
         <div>
           <header class="product-detail__section-heading product-detail__section-heading--left">
             <p>Información de producto</p>
-            <h2 id="spec-title">Ficha técnica del extintor CO₂ portátil</h2>
-            <span>Datos comerciales para orientar la compra. Las especificaciones definitivas dependen de marca, modelo, rating, capacidad nominal y documentación del equipo cotizado.</span>
+            <h2 id="spec-title">{product.detailCopy.specsTitle}</h2>
+            <span>{product.detailCopy.specsIntro}</span>
           </header>
 
           <div class="product-detail__table-wrap">
             <table>
-              <caption class="sr-only">Especificaciones del extintor CO₂ portátil</caption>
+              <caption class="sr-only">{product.detailCopy.specsCaption}</caption>
               <tbody>
                 {product.technicalSpecs.map(([label, value]) => (
                   <tr>
@@ -198,12 +257,12 @@ const faqSchema = {
       <div class="container">
         <header class="product-detail__section-heading">
           <p>Guía de compra</p>
-          <h2 id="capacity-title">Capacidades habituales: 5, 10, 15 y 20 lb</h2>
-          <span>La capacidad por sí sola no define la cobertura. MANEXT confirma el rating del modelo, el escenario de fuego, la distancia de recorrido y la facilidad de manejo antes de recomendar una configuración.</span>
+          <h2 id="capacity-title">{product.detailCopy.capacityTitle}</h2>
+          <span>{product.detailCopy.capacityIntro}</span>
         </header>
 
         <div class="product-detail__capacity-grid">
-          {product.capacityGuide.map((item) => (
+          {product.capacityGuide.map((item: { capacity: string; profile: string; use: string; note: string }) => (
             <article class="product-detail__capacity-card">
               <span>{item.profile}</span>
               <h3>{item.capacity}</h3>
@@ -224,8 +283,8 @@ const faqSchema = {
       <div class="container product-detail__applications-layout">
         <div class="product-detail__applications-copy">
           <p class="product-detail__dark-kicker">Aplicaciones recomendadas</p>
-          <h2 id="applications-title">Protección para infraestructura eléctrica y equipo sensible</h2>
-          <p>Su ventaja comercial es clara: controla riesgos compatibles sin contaminar el área con polvo. Aun así, cada aplicación necesita revisar el combustible real y las condiciones del recinto.</p>
+          <h2 id="applications-title">{product.detailCopy.applicationsTitle}</h2>
+          <p>{product.detailCopy.applicationsIntro}</p>
           <div class="product-detail__application-list">
             {product.recommendedUses.map((use) => (
               <article>
@@ -282,9 +341,9 @@ const faqSchema = {
           <div class="product-detail__conversion-faq">
             <header class="product-detail__section-heading product-detail__section-heading--left">
               <p>Preguntas frecuentes</p>
-              <h2 id="faq-title">Lo esencial antes de cotizar un extintor CO₂</h2>
-              <span>Respuestas breves para comparar opciones y preparar una solicitud más precisa.</span>
-              <a class="product-detail__text-cta" href="/co2/">Ver la guía completa sobre CO₂</a>
+              <h2 id="faq-title">{product.detailCopy.faqTitle}</h2>
+              <span>{product.detailCopy.faqIntro}</span>
+              <a class="product-detail__text-cta" href={product.detailCopy.guideUrl}>{product.detailCopy.guideLabel}</a>
             </header>
             <div class="product-detail__faqs">
               {product.faqs.map((faq, index) => (
@@ -296,10 +355,27 @@ const faqSchema = {
             </div>
           </div>
 
-          <div class="product-detail__conversion-form" aria-label="Formulario de cotización del extintor CO2">
+          <div class="product-detail__conversion-form" aria-label={product.detailCopy.formLabel}>
             <QuoteForm products={catalogProducts} sectors={sectorOptions} selectedProduct={product.name} />
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="product-detail__related-links" aria-labelledby="related-links-title">
+      <div class="container product-detail__related-links-inner">
+        <div>
+          <p>Contenido relacionado</p>
+          <h2 id="related-links-title">Recursos para tomar una mejor decisión</h2>
+          <span>Amplía la comparación del producto con guías de selección, aplicaciones y servicios MANEXT.</span>
+        </div>
+        <nav aria-label={`Recursos relacionados con ${product.name}`}>
+          <ul>
+            {product.internalLinks.map((link: { label: string; url: string }) => (
+              <li><a href={link.url}>{link.label}<span aria-hidden="true">→</span></a></li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </section>
 

@@ -33,7 +33,7 @@ const images = {
   support: '/img/img/productos-y-servicios-de-senalizacion/soportes-y-bases-para-extintores-certificados.avif',
 };
 
-export const catalogProducts = [
+const catalogProductDefinitions = [
   {
     id: 'pqs-abc-portatil',
     name: 'Extintor PQS ABC portátil',
@@ -227,6 +227,7 @@ export const catalogProducts = [
     description: 'Agente sin residuo para áreas donde la limpieza posterior y la protección de equipos son determinantes.',
     technicalValidation: true,
     detailUrl: '/agentes-limpios',
+    productPageUrl: '/catalogo/extintor-agente-limpio-hfc-236fa',
   },
   {
     id: 'halotron-portatil',
@@ -825,6 +826,11 @@ export const catalogProducts = [
     technicalValidation: true,
   },
 ];
+
+export const catalogProducts = catalogProductDefinitions.map((product) => ({
+  ...product,
+  productPageUrl: product.productPageUrl || `/catalogo/${product.id}`,
+}));
 
 export const catalogPackages = [
   { id: 'vehiculo', name: 'Vehículo y flotilla', risk: 'Incidentes incipientes en transporte', solution: 'PQS compacto + soporte vehicular + identificación', icon: 'truck' },
