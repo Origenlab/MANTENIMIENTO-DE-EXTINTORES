@@ -5,6 +5,7 @@ import {
   catalogExpansionByParent,
   catalogExpansionProposals,
 } from '../src/data/catalog-expansion/index.mjs';
+import { portableExpansionProposals } from '../src/data/catalog-expansion/portables.mjs';
 
 const requiredStrings = [
   'id', 'parentId', 'group', 'name', 'shortName', 'slug',
@@ -45,6 +46,24 @@ test('every existing catalog family receives exactly five proposals', () => {
       catalogExpansionByParent.get(parent.id)?.length,
       5,
       `expected five children for ${parent.id}`,
+    );
+  }
+});
+
+test('portable expansion covers five products for every portable family', () => {
+  const portableParents = [
+    'pqs-abc-portatil', 'pqs-bc-portatil', 'purple-k-portatil', 'co2-portatil',
+    'agua-presion-portatil', 'agua-nebulizada', 'espuma-afff-portatil', 'espuma-ar-afff',
+    'espuma-f3', 'tipo-k-portatil', 'hfc-236fa-portatil', 'halotron-portatil',
+    'clase-d-cloruro-sodio', 'clase-d-grafito-cobre', 'ion-litio-avd',
+  ];
+
+  assert.equal(portableExpansionProposals.length, 75);
+  for (const parentId of portableParents) {
+    assert.equal(
+      portableExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
+      5,
+      `expected five portable proposals for ${parentId}`,
     );
   }
 });

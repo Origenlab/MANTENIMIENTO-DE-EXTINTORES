@@ -73,3 +73,83 @@ export function validateExpansionProposal(proposal) {
   return proposal;
 }
 
+const defaultNormativeSources = [
+  'https://dof.gob.mx/normasOficiales/4228/stps/stps.htm',
+  'https://www.dof.gob.mx/normasOficiales/791/NOM-154-SCFI-2005/NOM-154-SCFI-2005.htm',
+];
+
+function buildMetaDescription(shortName, selection) {
+  const compactName = shortName.replace(/^Extintor(?: de)?\s+/i, '').toLocaleLowerCase('es-MX');
+  const compactSelection = selection.length <= 48 ? selection : 'capacidad, compatibilidad y aplicación';
+  let description = `Cotiza ${compactName} con MANEXT. Validamos ${compactSelection.toLocaleLowerCase('es-MX')} para preparar una propuesta técnica empresarial en CDMX.`;
+
+  if (description.length > 160) {
+    description = `Cotiza ${compactName} con MANEXT. Confirmamos capacidad y aplicación para integrar una propuesta técnica con suministro y servicio en CDMX.`;
+  }
+  if (description.length > 160) {
+    description = `Cotiza ${compactName} con MANEXT. Confirmamos capacidad y aplicación para integrar una propuesta técnica con servicio en CDMX.`;
+  }
+  if (description.length < 120) {
+    description += ' Atención especializada.';
+  }
+
+  return description;
+}
+
+export function createProposalSeries({
+  parentId,
+  group,
+  agentOrMaterial = '',
+  fireClasses = [],
+  source,
+  priority = 'media',
+  items,
+}) {
+  if (!Array.isArray(items) || items.length !== 5) {
+    throw new RangeError(`exactly five proposal items are required for ${parentId}`);
+  }
+
+  return items.map((item) => {
+    const shortName = item.shortName || item.name;
+    const primaryKeyword = item.keyword || item.name;
+    const selection = item.selection || 'capacidad, compatibilidad y aplicación';
+    const seoTitle = item.seoTitle || `${primaryKeyword} | MANEXT`;
+
+    return Object.freeze({
+      id: `${parentId}-${item.key}`,
+      parentId,
+      group,
+      name: item.name,
+      shortName,
+      slug: item.slug,
+      canonical: `https://mantenimientodeextintores.mx/catalogo/${item.slug}`,
+      differentiationType: item.type,
+      agentOrMaterial: item.agentOrMaterial || agentOrMaterial,
+      fireClasses: item.fireClasses || fireClasses,
+      variants: [item.variant],
+      applications: [item.application],
+      sectors: [item.sector],
+      need: item.need,
+      valueProposition: item.value,
+      selection,
+      limitations: [item.limitation],
+      primaryKeyword,
+      secondaryKeywords: item.secondaryKeywords || [],
+      searchIntent: item.intent || `El comprador busca ${primaryKeyword.toLocaleLowerCase('es-MX')} porque ${item.need.toLocaleLowerCase('es-MX')} Necesita comparar ${selection.toLocaleLowerCase('es-MX')} antes de solicitar una cotización.`,
+      h1: item.h1 || item.name,
+      seoTitle,
+      metaDescription: item.metaDescription || buildMetaDescription(shortName, selection),
+      cardAnchor: item.cardAnchor || item.name,
+      quoteProduct: item.name,
+      quoteVariant: item.quoteVariant || item.variant,
+      primarySources: item.primarySources || [source],
+      normativeSources: item.normativeSources || defaultNormativeSources,
+      sourceReviewedAt: '2026-07-15',
+      status: item.status || 'validated',
+      priority: item.priority || priority,
+      technicalValidation: item.technicalValidation ?? true,
+      editorialValidation: false,
+      notes: item.notes || 'Propuesta validada como concepto comercial; disponibilidad, marca y modelo se confirman antes de publicar.',
+    });
+  });
+}
