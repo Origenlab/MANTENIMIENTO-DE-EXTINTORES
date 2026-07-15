@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,20 +19,8 @@ const productSchema = JSON.stringify({
   }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué es la espuma AFFF y por qué es diferente al PQS?", "acceptedAnswer": { "@type": "Answer", "text": "AFFF significa Aqueous Film Forming Foam: una solución acuosa con surfactantes fluorados que forma una película hermética sobre la superficie del combustible. A diferencia del polvo PQS — que sofoca y se disipa — la película AFFF permanece sobre el líquido inflamable e impide la re-ignición incluso con vapores aún presentes. Por eso es el único agente portátil verdaderamente eficaz para derrames extensos de hidrocarburos." }},
-    { "@type": "Question", "name": "¿En qué tipo de negocios es obligatorio el extintor AFFF?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-002-STPS exige extintores adecuados a la clase de fuego presente. En talleres mecánicos, autolavados, gasolineras, plantas industriales con solventes, bodegas de pinturas o adhesivos, hangares y áreas de transferencia de combustible, la presencia de AFFF se considera el estándar técnico aceptado para riesgo Clase B amplio. Su ausencia es uno de los hallazgos más frecuentes de Protección Civil." }},
-    { "@type": "Question", "name": "¿El extintor AFFF se puede usar sobre equipos eléctricos?", "acceptedAnswer": { "@type": "Answer", "text": "No se recomienda. Aunque los AFFF actuales son menos conductivos que el agua pura, contienen una fracción acuosa importante. Sobre tableros o maquinaria energizada se debe priorizar CO₂ o agentes limpios. Cuando coexisten ambos riesgos, MANEXT instala AFFF en zona de derrame y CO₂ junto al tablero." }},
-    { "@type": "Question", "name": "¿Cada cuánto se recarga un extintor AFFF?", "acceptedAnswer": { "@type": "Answer", "text": "Recarga obligatoria cada 12 meses por NOM-154-SCFI o tras cualquier descarga, incluso parcial. La solución espumante puede degradarse por temperatura o contaminación; por eso la verificación incluye análisis del concentrado. Adicionalmente, prueba hidrostática del cilindro cada 5 años." }},
-    { "@type": "Question", "name": "¿Qué capacidad de extintor AFFF necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Para talleres pequeños y puntos de riesgo puntual, 6 L es suficiente. El AFFF-9 es el de mayor demanda en talleres automotrices y gasolineras: cubre el área típica de derrame con tiempo de descarga adecuado. Para plantas industriales y bodegas amplias se usa AFFF-20, y para gasolineras grandes, refinerías o pistas de aviación el carrito AFFF-C50 sobre ruedas." }},
-    { "@type": "Question", "name": "¿La espuma AFFF deja residuo difícil de limpiar?", "acceptedAnswer": { "@type": "Answer", "text": "Sí deja residuo, pero es soluble en agua y se retira con manguera o aspirado en frío. No genera corrosión sobre concreto ni metal pintado, y los fabricantes actuales producen formulaciones con biodegradabilidad aceptable. No es apto para contacto prolongado con suelo natural ni cuerpos de agua: por eso la normativa exige bordes de contención en estaciones de servicio." }},
-    { "@type": "Question", "name": "¿MANEXT instala el extintor AFFF y entrega documentación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada equipo se entrega con instalación profesional con soporte metálico, señalización fotoluminiscente NOM-026, etiqueta de fabricante con trazabilidad, tarjeta de inspección y certificado NOM-154-SCFI. Es la documentación que pide Protección Civil y la STPS sin excepción." }},
-    { "@type": "Question", "name": "¿Tienen modelos AFFF en carrito para zonas industriales amplias?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El AFFF-C50 (50 L) viene sobre ruedas con manguera larga y boquilla de chorro/niebla, ideal para gasolineras, refinerías, hangares y plantas con almacenes amplios de inflamables. Cubre superficies considerables con descarga continua y permite operación a distancia segura." }}
-  ]
-});
+const faqs = getSiteFaqs('/espuma-afff');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
   { slug: 'co2', title: 'Dióxido de Carbono (CO₂)', classes: ['B','C'], img: '/img/img-tipos-de-extintores/dioxido-de-carbono-co2.avif', alt: 'Extintor CO₂ para data centers y equipos electrónicos', desc: 'Sin residuos ni daño a equipos. Para servidores, data centers, telecomunicaciones y laboratorios.' },
@@ -346,99 +337,7 @@ const currentSlug = 'espuma-afff';
           Respondemos las dudas más frecuentes sobre extintores AFFF. ¿Prefieres hablar directamente con un especialista?
           <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20AFFF%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué es la espuma AFFF y en qué se diferencia del polvo químico seco?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>AFFF (Aqueous Film Forming Foam) es un agente extintor a base de agua y surfactantes fluorados que forma una película sobre el combustible, sellando los vapores e impidiendo la re-ignición. El polvo químico seco (PQS) interrumpe la reacción química del fuego pero no sella la superficie — un derrame de gasolina puede re-encenderse minutos después. El AFFF es la única opción para derrames estables de clase B.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué tipos de fuego apaga el extintor AFFF?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El extintor AFFF combate fuegos <strong>Clase A</strong> (sólidos como madera, papel, plástico, telas) y <strong>Clase B</strong> (líquidos inflamables como gasolina, diesel, aceites, solventes, barnices y alcoholes). No debe usarse en fuegos clase C (equipos energizados) porque la fracción acuosa conduce electricidad, ni en fuegos clase K (aceites de cocina), para los que existe el extintor Tipo K.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Mi taller automotriz necesita extintor AFFF por ley?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La <strong>NOM-002-STPS</strong> establece que los centros de trabajo deben contar con extintores adecuados para la clase de fuego del área. En un taller automotriz, la presencia de gasolina, aceites y solventes constituye riesgo clase B, por lo que Protección Civil y la STPS pueden exigir extintores AFFF durante inspecciones. El incumplimiento puede resultar en multas o clausura temporal.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El extintor AFFF daña los equipos o superficies donde se usa?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>El AFFF deja residuo de espuma que debe limpiarse después de la descarga — no es tan limpio como el CO₂, pero el residuo es fácilmente lavable con agua. No es tóxico en las concentraciones de uso normal. En equipos electrónicos <strong>no debe usarse</strong> porque la base acuosa puede generar cortocircuitos — para esos casos se recomienda CO₂ o agentes limpios. El AFFF es ideal para pisos, superficies industriales y exteriores.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿En qué capacidades vienen los extintores AFFF?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Disponemos de cuatro modelos: <strong>6 litros</strong> (talleres pequeños y puntos de riesgo puntual), <strong>9 litros</strong> (el más solicitado para talleres y estaciones de servicio), <strong>20 litros</strong> (plantas industriales y bodegas), y <strong>carrito de 50 litros</strong> para estaciones de gasolina, hangares y zonas de alto riesgo con derrames de gran superficie. Te ayudamos a elegir el modelo correcto según el área y el tipo de combustible.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Con qué frecuencia se recarga el extintor AFFF?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La recarga se realiza <strong>anualmente</strong> o inmediatamente después de cualquier descarga, parcial o total. La NOM-154-SCFI también establece la prueba hidrostática del cilindro cada 5 años. En MANEXT ofrecemos el servicio de recarga AFFF con certificado de recarga incluido, válido ante Protección Civil.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿El extintor AFFF de MANEXT está certificado bajo NOM?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. Todos nuestros extintores AFFF cuentan con certificación <strong>NOM-154-SCFI</strong> vigente, la norma oficial mexicana que regula los extintores portátiles. Cada equipo incluye la etiqueta de certificación, la documentación de fábrica y la bitácora de servicio — documentos necesarios para cualquier verificación de Protección Civil o STPS.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Puedo usar el extintor AFFF en una estación de gasolina?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí — de hecho, es uno de los usos <strong>más recomendados y requeridos</strong>. Las estaciones de servicio deben contar con extintores apropiados para fuegos clase B (gasolina, diesel) en la zona de despacho y en la bodega de lubricantes. El modelo AFFF-9 cubre la zona de despacho; el carrito AFFF-C50 es ideal para zonas de almacenamiento de combustible de mayor volumen.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuántos extintores AFFF necesito para mi instalación?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La NOM-002-STPS establece criterios de cobertura basados en el área del espacio y la clase de riesgo. Como referencia, un extintor de 9 litros cubre hasta 200 m² en riesgo ordinario. En zonas de alto riesgo (derrames frecuentes, almacenamiento de solventes) la cobertura se reduce. Nuestro equipo puede realizar un <strong>diagnóstico gratuito</strong> de tu instalación y recomendarte el número y distribución óptima de extintores.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -581,38 +480,6 @@ const currentSlug = 'espuma-afff';
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script is:inline>
-(function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-      faqQuestions.forEach(function(other) {
-        if (other !== question) {
-          other.setAttribute('aria-expanded', 'false');
-          var a = other.parentElement.querySelector('.faq-answer');
-          var i = other.querySelector('.faq-icon');
-          if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; }
-          if (i) i.textContent = '+';
-          other.parentElement.classList.remove('active');
-        }
-      });
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0'; answer.style.opacity = '0';
-        icon.textContent = '+'; faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px'; answer.style.opacity = '1';
-        icon.textContent = '×'; faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <script is:inline>
 (function() {

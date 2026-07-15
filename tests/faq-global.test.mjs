@@ -116,3 +116,31 @@ test('product detail template uses the shared FAQ renderer and schema helper', a
   assert.match(source, /buildFaqSchema\(product\.faqs\)/);
   assert.doesNotMatch(source, /product\.faqs\.map/);
 });
+
+const commercialFaqPages = {
+  'agentes-limpios.astro': '/agentes-limpios',
+  'agua-presion.astro': '/agua-presion',
+  'capacitacion-brigadas.astro': '/capacitacion-brigadas',
+  'co2.astro': '/co2',
+  'espuma-afff.astro': '/espuma-afff',
+  'extintores.astro': '/extintores',
+  'mantenimiento-preventivo.astro': '/mantenimiento-preventivo',
+  'polvo-quimico-seco.astro': '/polvo-quimico-seco',
+  'prueba-hidrostatica.astro': '/prueba-hidrostatica',
+  'recarga-de-extintores.astro': '/recarga-de-extintores',
+  'senalizacion.astro': '/senalizacion',
+  'servicios.astro': '/servicios',
+  'tipo-k.astro': '/tipo-k',
+  'venta-de-extintores.astro': '/venta-de-extintores',
+};
+
+test('commercial and service pages consume central FAQ data and component', async () => {
+  for (const [file, route] of Object.entries(commercialFaqPages)) {
+    const source = await readFile(new URL(`../src/pages/${file}`, import.meta.url), 'utf8');
+    assert.match(source, new RegExp(`getSiteFaqs\\(['"]${route.replaceAll('/', '\\/')}['"]\\)`));
+    assert.match(source, /JSON\.stringify\(buildFaqSchema\(faqs\)\)/);
+    assert.match(source, /<FaqList\s+faqs=\{faqs\}/);
+    assert.doesNotMatch(source, /const faqs\s*=\s*\[/);
+    assert.doesNotMatch(source, /document\.querySelectorAll\(['"]\.faq-question/);
+  }
+});

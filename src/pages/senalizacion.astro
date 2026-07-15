@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -24,20 +27,8 @@ const serviceSchema = JSON.stringify({
   "areaServed": ["Ciudad de México", "Estado de México"]
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué normas regulan la señalización de seguridad en México?", "acceptedAnswer": { "@type": "Answer", "text": "Tres normas principales: NOM-026-STPS-2008 (colores y señales de seguridad e higiene), NOM-003-SEGOB-2011 (señales y avisos de protección civil) y NOM-002-STPS-2010 (condiciones de seguridad contra incendios). Cumplir las tres es requisito para inspecciones de STPS, Protección Civil y aseguradoras." }},
-    { "@type": "Question", "name": "¿Cuánto duran las señales fotoluminiscentes?", "acceptedAnswer": { "@type": "Answer", "text": "Las señales fotoluminiscentes MANEXT tienen vida útil de 25 años en condiciones normales de iluminación. El material fotoluminiscente carga con luz natural o artificial y emite luminiscencia en oscuridad total durante 60–90 minutos, suficiente para evacuación segura ante corte de energía. Material certificado bajo estándares DIN 67510." }},
-    { "@type": "Question", "name": "¿Los gabinetes para extintores son obligatorios?", "acceptedAnswer": { "@type": "Answer", "text": "No son obligatorios por NOM, pero sí son altamente recomendados en oficinas, hospitales, hoteles, centros comerciales y espacios con tránsito de personas — protegen el extintor contra golpes, robo y manipulación, y son requeridos en muchas auditorías ISO 45001 e inspecciones de aseguradora. Usamos gabinetes metálicos con cristal NOM-002 o acrílico de alta resistencia." }},
-    { "@type": "Question", "name": "¿Cuántas señales necesita mi empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de superficie, distribución y rutas de evacuación. Como referencia: una señal de extintor por cada equipo, una de salida de emergencia por cada salida, una de ruta de evacuación cada 15–20 m de pasillo, además de prohibición/obligación según giro. MANEXT realiza análisis de señalización gratuito y entrega plano oficial firmado por técnico avalado." }},
-    { "@type": "Question", "name": "¿Las señales incluyen certificación válida para Protección Civil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada señal fotoluminiscente lleva etiqueta del fabricante con número de lote, fecha de producción y declaración de cumplimiento NOM-026-STPS y NOM-003-SEGOB. Adicionalmente, la instalación se entrega con plano oficial de señalización firmado por técnico avalado MANEXT, aceptado en inspecciones de Protección Civil CDMX y Edomex." }},
-    { "@type": "Question", "name": "¿Pueden personalizar señalización con el logo de mi empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Diseñamos e imprimimos señalización corporativa personalizada con logo, colores institucionales y nomenclatura interna, manteniendo cumplimiento con NOM-026 y NOM-003. Ideal para corporativos, hoteles, museos y dependencias gubernamentales que requieren coherencia visual sin sacrificar cumplimiento normativo." }},
-    { "@type": "Question", "name": "¿Cuál es el costo de la señalización fotoluminiscente?", "acceptedAnswer": { "@type": "Answer", "text": "Señales individuales fotoluminiscentes desde $180 MXN según tamaño (15×15, 20×30, 30×40, 40×60 cm). Gabinetes metálicos para extintores desde $850 MXN. Paquetes completos para empresas pequeñas (10–15 señales + instalación) desde $3,500 MXN. Cotización gratuita con análisis de señalización en sitio sin compromiso." }},
-    { "@type": "Question", "name": "¿La instalación viene incluida en el precio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Instalación profesional incluida sin cargo adicional: marcado de ubicaciones según plano normativo, fijación con tornillería de alta resistencia (no doble cara industrial sola), nivelación, prueba de visibilidad y entrega de plano firmado. Coordinamos visitas en horario de baja operación para no interrumpir tu negocio." }}
-  ]
-});
+const faqs = getSiteFaqs('/senalizacion');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -262,57 +253,7 @@ según volumen. Disponible en toda CDMX y área metropolitana.
 
 </div></section><section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes sobre Señalización y Equipamiento</h2><p class="section-subtitle">
 Resolvemos las dudas más comunes sobre señales, gabinetes, normativas y requisitos
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué normativas regulan la señalización de seguridad en México?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Las principales normativas son: <strong>NOM-026-STPS-2008</strong> que regula colores, formas, símbolos y dimensiones
-de señales de seguridad e higiene; <strong>NOM-002-STPS-2010</strong> que establece requisitos de señalización para
-prevención y protección contra incendios (ubicación de extintores, rutas de evacuación, salidas de emergencia);
-<strong>NOM-003-SEGOB-2011</strong> que especifica señales y avisos para protección civil; y <strong>NOM-025-STPS-2008</strong>
-sobre iluminación de emergencia. Todas son obligatorias para centros de trabajo y su incumplimiento puede resultar
-en multas significativas, clausura parcial o total, y responsabilidad legal en caso de accidente.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuánto cuestan las señales fotoluminiscentes y cuánto duran?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Ofrecemos señales en diferentes tamaños y cantidades: <strong>señales estándar 20x30cm</strong> (ubicación
-de extintores), señales 30x15cm (salidas de emergencia), señales grandes 60x40cm (mapas de
-evacuación), flechas direccionales 15x40cm. Descuentos por volumen disponibles. En cuanto a durabilidad: la luminiscencia está garantizada mínimo 5 años (certificado con
-pruebas de fotómetro), la adherencia del material 8-10 años en interiores, y 5-7 años en exteriores. Las señales
-de calidad inferior (clase B/A) pierden luminiscencia en 1-2 años. <strong>Incluyen instalación profesional y
-certificado de cumplimiento NOM</strong>.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Los gabinetes para extintores son obligatorios?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-No son obligatorios en todos los casos, pero son <strong>altamente recomendados</strong> y en ciertos casos exigidos
-por Protección Civil. Son obligatorios cuando: el extintor está en exterior expuesto a intemperie (lluvia, sol directo,
-contaminación), en áreas de alto tránsito donde puede recibir golpes, en zonas de acceso público donde existe riesgo
-de vandalismo o robo, y cuando la autoridad local lo especifica en dictamen de inspección. Los beneficios son evidentes:
-protegen el extintor manteniendo su vida útil completa (extintores expuestos pierden 30-40% efectividad por corrosión/suciedad),
-mejoran estética profesional del lugar, facilitan identificación rápida en emergencia, y cumplen imagen corporativa de
-empresas certificadas ISO. Disponibles en versiones metálicas y acrílicas, con instalación incluida.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuántas señales necesito para mi empresa y cómo lo calculan?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-El cálculo se basa en normativas específicas: <strong>señales de ubicación de extintores</strong>: 1 señal por cada
-extintor instalado colocada en la pared inmediatamente arriba a 1.70-1.80m altura, más flechas direccionales si el
-extintor no está visible desde todos los ángulos; <strong>señales de evacuación</strong>: 1 señal cada 20 metros
-lineales de pasillo/corredor como máximo, señales en cada cambio de dirección de ruta, señales en todas las puertas
-que dan al exterior, señales "SALIDA" en puertas finales; <strong>mapas de evacuación</strong>: mínimo 1 por nivel/piso,
-1 adicional por cada 500m² de área, ubicados en accesos principales y áreas de concentración. Por ejemplo: oficina de
-300m² con 8 extintores y 2 salidas necesita aproximadamente: 8 señales de extintor + 12 señales de ruta + 2 señales de
-salida + 1 mapa = 23 señales total. <strong>Hacemos levantamiento sin costo y entregamos cotización exacta</strong>.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Entregan certificados válidos para inspecciones de Protección Civil?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Sí, absolutamente. Todos nuestros servicios incluyen <strong>certificado oficial de cumplimiento normativo</strong>
-firmado por responsable autorizado con cédula profesional de ingeniero en protección civil. El certificado incluye:
-datos completos de la empresa (razón social, RFC, domicilio), inventario detallado de productos instalados (tipo,
-cantidad, ubicaciones exactas con croquis), fotografías de instalación completa como evidencia, especificación de
-normativas cumplidas (NOM-026-STPS, NOM-002-STPS, NOM-003-SEGOB según aplique), vigencia del certificado (anual,
-debe renovarse cada año con inspección), firma autógrafa y sello del responsable, y número de folio único consecutivo.
-Este certificado es 100% válido y aceptado en inspecciones de Protección Civil, auditorías ISO 9001/14001/45001,
-verificaciones de Salubridad, y revisiones de compañías aseguradoras. <strong>Incluido sin costo adicional</strong>
-en todos nuestros servicios de instalación.
-</p></div></div><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Pueden diseñar e instalar señalización personalizada con mi logo?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>
-Sí, fabricamos <strong>señalización personalizada corporativa</strong> siempre y cuando cumpla con especificaciones
-normativas obligatorias. Podemos personalizar: grabado de razón social o logo en señales de evacuación (siempre que
-no obstruya pictogramas oficiales), colores corporativos en gabinetes metálicos (manteniendo color rojo o blanco base
-según normativa pero con franjas en colores de tu empresa), mapas de evacuación con diseño gráfico profesional
-incluyendo logo, colores corporativos e información adicional de tu empresa, señalización interna personalizada para
-áreas específicas (almacenes, laboratorios, zonas restringidas con tus códigos internos), y placas de identificación
-de equipos con código de barras o QR. La personalización tiene costo adicional. <strong>Entregamos muestras digitales para
-aprobación antes de fabricación</strong>. Tiempo de fabricación personalizada: 5-7 días hábiles adicionales.
-</p></div></div></div></div></section><section class="cta-premium"><div class="container"><div class="cta-premium-wrapper"><div class="cta-premium-content"><div class="cta-premium-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>Señalización Certificada NOM</span></div><h2>¿Necesitas Señalización y Equipamiento para Cumplir con Protección Civil?</h2><p class="cta-premium-description">
+</p></div><FaqList faqs={faqs} firstOpen={true} /></div></section><section class="cta-premium"><div class="container"><div class="cta-premium-wrapper"><div class="cta-premium-content"><div class="cta-premium-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>Señalización Certificada NOM</span></div><h2>¿Necesitas Señalización y Equipamiento para Cumplir con Protección Civil?</h2><p class="cta-premium-description">
 No arriesgues multas por señalización inadecuada o inexistente. En <strong>MANEXT</strong> te ofrecemos señales fotoluminiscentes certificadas NOM-026-STPS, gabinetes de calidad superior y equipamiento completo con instalación profesional. Más de <strong>80 años de experiencia</strong> suministrando productos certificados. ¡Agenda tu levantamiento sin costo!
 </p><div class="cta-premium-features"><div class="cta-premium-feature"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Señales con instalación incluida</span></div><div class="cta-premium-feature"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Levantamiento y cotización sin costo</span></div><div class="cta-premium-feature"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Certificados oficiales para Protección Civil</span></div></div></div><div class="cta-premium-card"><div class="cta-premium-card-header"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><h3>Solicita tu Cotización Ahora</h3></div><div class="cta-premium-buttons"><a href="tel:5614612594" class="cta-premium-btn cta-premium-btn-phone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><div class="cta-premium-btn-content"><span class="cta-premium-btn-label">Llámanos ahora</span><span class="cta-premium-btn-number">56 1461 2594</span></div></a><a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20señalización%20y%20equipamiento%20contra%20incendios%20certificado" class="cta-premium-btn cta-premium-btn-whatsapp" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><div class="cta-premium-btn-content"><span class="cta-premium-btn-label">Escríbenos por</span><span class="cta-premium-btn-number">WhatsApp</span></div></a></div><div class="cta-premium-guarantee"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span>Levantamiento sin costo - Atención 24/7</span></div></div></div></div></section><section class="contact-form-section" id="contacto-senalizacion"><div class="container"><div class="contact-form-wrapper"><div class="contact-info"><h2>Solicita Cotización de Señalización y Equipamiento</h2><p class="contact-intro">
 Completa el formulario y nos pondremos en contacto contigo inmediatamente vía WhatsApp para agendar levantamiento sin costo y entregarte cotización detallada.

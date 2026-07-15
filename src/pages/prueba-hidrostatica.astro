@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,20 +28,8 @@ const serviceSchema = JSON.stringify({
   "offers": { "@type": "Offer", "description": "Prueba hidrostática quinquenal por extintor con recogida y reposición de agente incluida post-aprobación." }
 });
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Qué es la prueba hidrostática y por qué es obligatoria?", "acceptedAnswer": { "@type": "Answer", "text": "Es un ensayo bajo carga que somete el cilindro del extintor a presión hidráulica controlada, normalmente entre 1.5 y 3 veces la presión de trabajo, para verificar integridad estructural. Detecta deformaciones, fisuras o pérdida de espesor por corrosión interna que podrían causar falla catastrófica del cilindro durante una emergencia. Es obligatoria por NOM-154-SCFI y NFPA 10 cada 5 años." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe realizar la prueba hidrostática?", "acceptedAnswer": { "@type": "Answer", "text": "Cada 5 años desde la fecha de fabricación o de la última prueba aprobada, según NOM-154-SCFI. La fecha exacta está grabada en el cuello del cilindro. Si tu extintor cumple 5 años en los próximos meses, conviene programar el ensayo antes de la próxima inspección de Protección Civil — un cilindro vencido es observación inmediata." }},
-    { "@type": "Question", "name": "¿Qué pasa si el extintor no aprueba la prueba?", "acceptedAnswer": { "@type": "Answer", "text": "Si el cilindro presenta deformación permanente, fugas o pérdida significativa de espesor por corrosión interna, queda dado de baja por seguridad. MANEXT emite acta de baja, retira el equipo y ofrece reemplazo con extintor nuevo certificado NOM-154-SCFI a precio preferencial. El equipo dado de baja se procesa para destrucción ambientalmente responsable." }},
-    { "@type": "Question", "name": "¿Cuánto cuesta la prueba hidrostática?", "acceptedAnswer": { "@type": "Answer", "text": "Costo individual desde $400 MXN para PQS pequeños hasta $800 MXN para CO₂ y unidades grandes. Para flotas con múltiples extintores ofrecemos descuento por volumen. La cotización exacta depende del tipo y capacidad. La recogida en sitio y entrega tras aprobación con recarga de agente nuevo viene incluida sin costo extra." }},
-    { "@type": "Question", "name": "¿La prueba se hace en sitio o en taller?", "acceptedAnswer": { "@type": "Answer", "text": "El ensayo bajo carga requiere infraestructura de presión y blindaje de seguridad, por lo que se realiza en nuestro taller especializado en Tlalnepantla. MANEXT recoge los extintores en tu sitio sin costo, ejecuta la prueba con instrumental calibrado y trazabilidad a patrones nacionales, y devuelve los equipos aprobados con recarga nueva y documentación. Tiempo total: 5–7 días hábiles." }},
-    { "@type": "Question", "name": "¿Prestan extintores durante el proceso?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, sin costo. Durante los días que tu extintor está fuera para prueba hidrostática y recarga, prestamos un extintor de respaldo del mismo tipo y capacidad para que tu sitio mantenga cobertura el 100% del tiempo — un requisito frecuente de aseguradoras y clientes corporativos con auditorías ISO." }},
-    { "@type": "Question", "name": "¿Qué documentación entrega MANEXT con la prueba?", "acceptedAnswer": { "@type": "Answer", "text": "Cada cilindro aprobado se entrega con certificado individual de prueba hidrostática (folio, fecha, presión aplicada, resultado), etiqueta permanente grabada en el cilindro, factura fiscal CFDI 4.0 y bitácora actualizada — documentación con vigencia de 5 años aceptada por Protección Civil CDMX y Edomex, STPS y aseguradoras." }},
-    { "@type": "Question", "name": "¿Por qué elegir MANEXT y no otro proveedor?", "acceptedAnswer": { "@type": "Answer", "text": "Más de 80 años de experiencia, instrumental hidráulico con calibración certificada y trazabilidad a patrones nacionales (CENAM), técnicos avalados, instalaciones blindadas para ensayos de presión segura, y proceso integrado: prueba + recarga + documentación en un solo servicio. Para flotas grandes coordinamos calendario unificado para minimizar disrupción operativa." }}
-  ]
-});
+const faqs = getSiteFaqs('/prueba-hidrostatica');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
@@ -462,49 +453,5 @@ Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privac
      ═══════════════════════════════════════════ -->
 <section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes</h2><p class="section-subtitle">
 Respuestas a las consultas más comunes sobre el ensayo quinquenal bajo carga
-</p></div><div class="faq-grid"><div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué sucede si un dispositivo no aprueba el ensayo bajo carga?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Si el recipiente presenta <strong>deformación permanente, fugas o corrosión profunda</strong>
-durante la evaluación, debe retirarse definitivamente de operación. No existe reparación posible
-para fallas estructurales de un contenedor presurizado. En MANEXT <strong>no cobramos el
-procedimiento fallido</strong>, perforamos el recipiente para inutilizarlo de forma definitiva, entregamos
-evidencia fotográfica de la falla detectada y ofrecemos <strong>descuento preferencial de 15-20%
-en unidades nuevas</strong> de reemplazo. Aproximadamente 5-8% de los dispositivos evaluados no
-aprueban, porcentaje que aumenta en unidades con más de 15 años de antigüedad.
-Las razones más frecuentes de rechazo son: deformación permanente del recipiente (no regresa
-a dimensiones originales tras liberar la carga), fugas visibles en costuras soldadas, y
-corrosión profunda interna que adelgaza las paredes metálicas por debajo del espesor mínimo
-especificado por el fabricante.</p></div></div>
-
-<div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿La verificación quinquenal incluye reposición de la sustancia?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Sí, nuestro servicio integral incluye <strong>reposición completa sin costo adicional</strong> tras
-aprobar el ensayo. El procedimiento requiere vaciar por completo la sustancia anterior para llenar
-el recipiente con agua, por lo que la reposición posterior es parte natural del proceso. Incluye
-sustancia certificada nueva (PQS, CO2, AFFF, compuesto limpio, acetato de potasio o agua tratada según
-corresponda), instalación de componentes verificados, presurización y collar de garantía. El dispositivo se entrega completamente operativo, con collar de garantía nuevo,
-etiquetas actualizadas, manómetro verificado y documentación completa para archivo.</p></div></div>
-
-<div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Cuál es la diferencia entre la verificación quinquenal y la reposición anual?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Son procedimientos complementarios con objetivos distintos. La <strong>reposición anual</strong>
-reemplaza la sustancia que pierde efectividad con el tiempo; se realiza cada 12 meses y no evalúa
-la integridad del recipiente. La <strong>verificación quinquenal</strong> somete el contenedor
-metálico a carga controlada con agua para detectar debilitamiento estructural; se realiza cada
-5 años e incluye la reposición post-aprobación. En el año que coinciden ambos vencimientos, solo es necesario realizar el ensayo bajo carga, que satisface ambos requisitos. Es importante
-que tu bitácora refleje claramente cuál procedimiento se realizó cada año para demostrar
-cumplimiento continuo ante cualquier auditoría o verificación de Protección Civil.</p></div></div>
-
-<div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Qué documentación se entrega tras aprobar la evaluación?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>Entregamos un <strong>paquete documental completo</strong>: constancia oficial firmada con
-número de serie, clase de recipiente, carga aplicada, resultado y fecha de próximo vencimiento
-(válida 5 años); registro fotográfico del proceso completo; copia del certificado de calibración
-vigente de nuestro instrumental; constancia de reposición con especificación de la sustancia utilizado;
-etiquetas adheridas al dispositivo con fechas actualizadas; y collar de garantía inviolable.
-Toda la documentación es válida ante <strong>Protección Civil, auditorías ISO y aseguradoras</strong>.</p></div></div>
-
-<div class="faq-item"><button class="faq-question" aria-expanded="false"><span class="faq-question-text">¿Es posible realizar el ensayo en las instalaciones de mi negocio?</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>No, el ensayo <strong>debe realizarse en taller especializado</strong> por razones técnicas y de
-protección. El procedimiento requiere instrumental de gran formato (bomba, cámara de contención,
-sistema de tubería para agua destilada), área controlada para secado prolongado y acceso inmediato
-a componentes de reemplazo. Además, un recipiente debilitado puede fracturarse durante la
-evaluación, por lo que se requieren cámaras de contención. Sin embargo, ofrecemos
-<strong>recolección y entrega a domicilio sin costo</strong> con unidades de préstamo durante todo
-el proceso. Atendemos CDMX, Naucalpan, Tlalnepantla, Ecatepec, Coacalco, Cuautitlán y toda la zona
-metropolitana. Coordinamos la logística completa para que tu operación no se interrumpa
-en ningún momento durante el proceso.</p></div></div>
-
-</div></div></section>
+</p></div><FaqList faqs={faqs} firstOpen={true} /></div></section>
 </Layout>

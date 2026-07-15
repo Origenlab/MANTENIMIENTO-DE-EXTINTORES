@@ -2,23 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import FaqList from '../components/FaqList.astro';
+import { getSiteFaqs } from '../data/site-faqs.mjs';
+import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"}});
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "¿Cuántos tipos de extintores existen y cuál necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Seis tipos principales: PQS Clase ABC para uso general, CO₂ Clase BC para electrónica, Agua a Presión Clase A para sólidos combustibles, Espuma AFFF Clase AB para hidrocarburos, Tipo K para cocinas comerciales y Agentes Limpios FM-200/Novec 1230 para áreas críticas. La elección depende de la clase de fuego presente en tu espacio." }},
-    { "@type": "Question", "name": "¿Qué clase de fuego cubre cada extintor?", "acceptedAnswer": { "@type": "Answer", "text": "Clase A (sólidos: madera, papel, textiles), Clase B (líquidos inflamables: gasolina, aceites), Clase C (eléctricos energizados), Clase K (aceites y grasas de cocina). PQS cubre ABC, CO₂ cubre BC, AFFF cubre AB, Tipo K solo K, agentes limpios ABC, agua solo A. Usar el agente equivocado puede agravar el incendio." }},
-    { "@type": "Question", "name": "¿Cuántos extintores requiere mi negocio según NOM-002-STPS?", "acceptedAnswer": { "@type": "Answer", "text": "Mínimo 1 extintor por cada 300 m² en riesgo ordinario con distancia máxima de recorrido de 23 m, o cada 200 m² con 15 m en riesgo alto. La selección debe considerar clases de fuego presentes y características del giro. MANEXT realiza análisis de riesgo gratuito y entrega plano de distribución oficial." }},
-    { "@type": "Question", "name": "¿Cuál es el extintor más vendido en México?", "acceptedAnswer": { "@type": "Answer", "text": "El PQS Clase ABC de 4.5 kg es el más vendido por una razón clara: cubre los tres riesgos más comunes (sólidos, líquidos, eléctricos) con un solo equipo y cumple NOM-002-STPS para la mayoría de comercios y oficinas de hasta 300 m². Para cocinas se complementa con Tipo K, para data centers con CO₂ o agentes limpios." }},
-    { "@type": "Question", "name": "¿Todos los extintores MANEXT cumplen NOM-154-SCFI?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todo el catálogo está certificado NOM-154-SCFI vigente y se entrega con etiqueta de fabricante con trazabilidad, tarjeta de inspección, certificado oficial, factura fiscal CFDI 4.0 y bitácora oficial — la documentación que solicita Protección Civil, STPS, COFEPRIS y aseguradoras." }},
-    { "@type": "Question", "name": "¿Qué incluye la venta de extintores con MANEXT?", "acceptedAnswer": { "@type": "Answer", "text": "Cada equipo incluye sin costo adicional: instalación profesional con soporte metálico anclado, señalización fotoluminiscente NOM-026, etiqueta y documentación oficial, factura fiscal, plano de ubicación y acceso al programa anual de mantenimiento. Para flotas amplias ofrecemos descuentos por volumen y financiamiento empresarial sin intereses." }},
-    { "@type": "Question", "name": "¿Cada cuánto se debe recargar un extintor?", "acceptedAnswer": { "@type": "Answer", "text": "La NOM-154-SCFI exige recarga cada 12 meses o tras cualquier descarga, aunque sea parcial. Adicionalmente, prueba hidrostática del cilindro cada 5 años. MANEXT ofrece recarga a domicilio con préstamo de equipo durante el proceso para mantener cobertura continua." }},
-    { "@type": "Question", "name": "¿En qué tiempo entregan los extintores en CDMX?", "acceptedAnswer": { "@type": "Answer", "text": "Entrega estándar en 48 horas con instalación incluida en CDMX y zona metropolitana. Para urgencias o inspección al día siguiente coordinamos entrega el mismo día con recargo del 25%. Cobertura en las 16 alcaldías de CDMX, Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán Izcalli y municipios conurbados." }}
-  ]
-});
+const faqs = getSiteFaqs('/extintores');
+const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 
 const extTipos = [
   { slug: 'polvo-quimico-seco', title: 'Polvo Químico Seco (PQS)', classes: ['A','B','C'], img: '/img/img-tipos-de-extintores/polvo-quimico-seco.avif', alt: 'Extintor de Polvo Químico Seco PQS Clase ABC', desc: 'El más versátil. Combate fuegos sólidos, líquidos y eléctricos. Ideal para la mayoría de espacios comerciales e industriales.' },
@@ -403,99 +394,7 @@ const currentSlug = '';
 
       <div class="faq-cot-left">
         <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
-        <div class="faq-grid">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuál es el precio de extintores en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Varía según tipo y capacidad. Un dispositivo PQS de 4.5 kg incluye colocación, señalamiento y aval oficial. Los modelos CO2 y clase K tienen valores distintos por la tecnología del agente. Cotiza al 56 1461 2594 para recibir precios exactos según tu necesidad. Descuentos por volumen disponibles para compras al mayoreo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Dónde conviene comprar extintores en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Con un distribuidor autorizado que ofrezca aval NOM-154, colocación profesional y servicio posterior de recarga. Evita unidades sin respaldo normativo — un proveedor confiable garantiza cumplimiento y seguridad real.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Es obligatorio tener extintores en mi establecimiento?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí. La NOM-002-STPS exige que todo centro de trabajo cuente con dispositivos contra incendio adecuados al nivel de riesgo, colocados a distancias reglamentarias y con mantenimiento vigente. Protección Civil puede sancionar establecimientos que incumplan esta normativa.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cómo elijo el extintor adecuado para mi negocio?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Depende del riesgo: PQS clase ABC para uso general, CO2 para aparatos electrónicos, clase K para cocinas. Realizamos análisis de riesgos gratuito para recomendar la solución correcta a cada cliente.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cada cuándo se recargan los extintores?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Cada 12 meses según la norma. También tras cualquier uso parcial. Cada 5 años requieren prueba hidrostática del cilindro. Ofrecemos recarga de extintores programada con recordatorios automáticos.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Cuántos extintores necesito según la NOM-002-STPS?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>La <strong>NOM-002-STPS</strong> exige: <strong>Riesgo bajo</strong> (oficinas, escuelas): 1 extintor cada 300 m² o 23 m de recorrido. <strong>Riesgo alto</strong> (industrias, almacenes): 1 extintor cada 200 m² o 15 m de recorrido. <strong>Cocinas comerciales:</strong> extintor Tipo K obligatorio por cada área de cocción. En MANEXT realizamos cálculo profesional gratuito con plano de ubicación.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Qué diferencia hay entre recarga y prueba hidrostática?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p><strong>Recarga:</strong> reemplazo del agente extintor, obligatoria cada 12 meses o tras cualquier uso. <strong>Prueba hidrostática:</strong> verificación de la integridad estructural del cilindro mediante presión de agua controlada, obligatoria cada 5 años según NOM-154-SCFI. Ambos servicios son complementarios — en MANEXT verificamos ambas fechas y te notificamos oportunamente.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Realizan servicio a domicilio en CDMX?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, ofrecemos <strong>servicio a domicilio sin costo adicional</strong> en toda CDMX y área metropolitana. Acudimos en menos de 24 horas, recolectamos tus extintores y proporcionamos <strong>equipos de préstamo certificados</strong> para que nunca quedes desprotegido. Regresamos tus equipos con collares de garantía y documentación oficial completa.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">¿Proporcionan documentación para Protección Civil?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, entregamos <strong>toda la documentación oficial</strong> requerida: certificado de mantenimiento firmado por técnico certificado, collares de garantía inviolables, bitácora de mantenimiento, reporte fotográfico y constancia de cumplimiento NOM-154-SCFI y NOM-002-STPS. Lista para presentar inmediatamente en cualquier inspección.</p>
-            </div>
-          </div>
-
-        </div>
+        <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
       <div class="faq-cot-right">
@@ -621,46 +520,6 @@ const currentSlug = '';
 </nav>
 
 <!-- FAQ Accordion Script -->
-<script is:inline>
-(function() {
-  'use strict';
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var faqItem = this.parentElement;
-      var answer = faqItem.querySelector('.faq-answer');
-      var icon = this.querySelector('.faq-icon');
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-
-      faqQuestions.forEach(function(otherQuestion) {
-        if (otherQuestion !== question) {
-          otherQuestion.setAttribute('aria-expanded', 'false');
-          var otherAnswer = otherQuestion.parentElement.querySelector('.faq-answer');
-          var otherIcon = otherQuestion.querySelector('.faq-icon');
-          if (otherAnswer) otherAnswer.style.maxHeight = '0';
-          if (otherAnswer) otherAnswer.style.opacity = '0';
-          if (otherIcon) otherIcon.textContent = '+';
-          otherQuestion.parentElement.classList.remove('active');
-        }
-      });
-
-      if (isOpen) {
-        this.setAttribute('aria-expanded', 'false');
-        answer.style.maxHeight = '0';
-        answer.style.opacity = '0';
-        icon.textContent = '+';
-        faqItem.classList.remove('active');
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        answer.style.opacity = '1';
-        icon.textContent = '×';
-        faqItem.classList.add('active');
-      }
-    });
-  });
-})();
-</script>
 
 <!-- WhatsApp Form Script -->
 <script is:inline>
