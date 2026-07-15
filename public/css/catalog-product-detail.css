@@ -166,6 +166,12 @@
   border-radius: 8px;
 }
 
+.product-detail__class--a {
+  color: #7a2929;
+  background: #fff0f0;
+  border: 1px solid #efcaca;
+}
+
 .product-detail__class--b {
   color: #8b3e00;
   background: #fff1df;
@@ -176,6 +182,18 @@
   color: #284b89;
   background: #eaf1ff;
   border: 1px solid #cddafb;
+}
+
+.product-detail__class--d {
+  color: #643b12;
+  background: #fff5dc;
+  border: 1px solid #ead5a4;
+}
+
+.product-detail__class--k {
+  color: #584012;
+  background: #fff9d9;
+  border: 1px solid #e5d99b;
 }
 
 .product-detail__clean-agent {
@@ -519,7 +537,7 @@
 
 .product-detail__capacity-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
@@ -1028,6 +1046,75 @@
   background: #fff8f8;
 }
 
+.product-detail__related-links {
+  padding: 3.4rem 0;
+  color: #f7f8fa;
+  background: #171a20;
+  border-top: 1px solid #2c3038;
+}
+
+.product-detail__related-links-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(420px, 1.15fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.product-detail__related-links p {
+  margin: 0 0 .55rem;
+  color: #e54a4f;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.product-detail__related-links h2 {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.product-detail__related-links-inner > div > span {
+  display: block;
+  max-width: 570px;
+  margin-top: .85rem;
+  color: #aeb3bd;
+  font-size: .9rem;
+  line-height: 1.65;
+}
+
+.product-detail__related-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #343842;
+}
+
+.product-detail__related-links li {
+  border-bottom: 1px solid #343842;
+}
+
+.product-detail__related-links a {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem .2rem;
+  color: #f4f5f7;
+  font-size: .9rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.product-detail__related-links a:hover,
+.product-detail__related-links a:focus-visible {
+  color: #ff6469;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .product-detail__sources {
   padding: 2.2rem 0;
   background: #e9eaed;
@@ -1108,6 +1195,7 @@
   .product-detail__applications-layout,
   .product-detail__safety-layout,
   .product-detail__conversion-grid,
+  .product-detail__related-links-inner,
   .quote-panel {
     grid-template-columns: 1fr;
   }
