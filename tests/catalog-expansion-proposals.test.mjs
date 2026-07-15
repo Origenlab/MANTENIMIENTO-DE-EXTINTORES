@@ -18,6 +18,24 @@ const requiredStrings = [
   'quoteProduct', 'status', 'priority', 'sourceReviewedAt',
 ];
 
+const normalizeWords = (value) => new Set(
+  value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('es-MX')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter((word) => word.length > 3),
+);
+
+const jaccardSimilarity = (left, right) => {
+  const leftWords = normalizeWords(left);
+  const rightWords = normalizeWords(right);
+  const intersection = [...leftWords].filter((word) => rightWords.has(word)).length;
+  const union = new Set([...leftWords, ...rightWords]).size;
+  return union === 0 ? 0 : intersection / union;
+};
+
 test('expansion blueprint contains 230 complete product proposals', () => {
   assert.equal(catalogExpansionProposals.length, 230);
 
@@ -42,6 +60,54 @@ test('proposal identifiers and SEO targets are globally unique', () => {
   assert.equal(new Set(slugs).size, 230, 'proposal slugs must be unique');
   assert.equal(new Set(keywords).size, 230, 'primary keywords must be unique');
   assert.equal(new Set(seoTitles).size, 230, 'SEO titles must be unique');
+});
+
+test('proposals do not collide with the current public catalog', () => {
+  const publicIds = new Set(catalogProducts.map(({ id }) => id));
+  const publicSlugs = new Set(catalogProducts.map(({ productPageUrl }) => productPageUrl.split('/').filter(Boolean).at(-1)));
+  const publicNames = new Set(catalogProducts.map(({ name }) => name.toLocaleLowerCase('es-MX')));
+
+  for (const proposal of catalogExpansionProposals) {
+    assert.ok(!publicIds.has(proposal.id), `id collides with public catalog: ${proposal.id}`);
+    assert.ok(!publicSlugs.has(proposal.slug), `slug collides with public catalog: ${proposal.slug}`);
+    assert.ok(!publicNames.has(proposal.name.toLocaleLowerCase('es-MX')), `name collides with public catalog: ${proposal.name}`);
+  }
+});
+
+test('SEO fields and source reviews are publication-ready', () => {
+  const canonicals = new Set();
+  const h1s = new Set();
+
+  for (const proposal of catalogExpansionProposals) {
+    assert.match(proposal.canonical, /^https:\/\/mantenimientodeextintores\.mx\/catalogo\/[a-z0-9-]+$/);
+    assert.ok(!canonicals.has(proposal.canonical), `duplicate canonical: ${proposal.canonical}`);
+    assert.ok(!h1s.has(proposal.h1), `duplicate H1: ${proposal.h1}`);
+    assert.ok(Date.parse(proposal.sourceReviewedAt) >= Date.parse('2026-07-15'), `stale source review in ${proposal.id}`);
+
+    for (const source of proposal.primarySources) {
+      assert.match(source, /^https?:\/\//, `invalid primary source in ${proposal.id}`);
+    }
+
+    canonicals.add(proposal.canonical);
+    h1s.add(proposal.h1);
+  }
+});
+
+test('proposal copy remains sufficiently distinct for future product pages', () => {
+  const copy = catalogExpansionProposals.map((proposal) => ({
+    id: proposal.id,
+    text: `${proposal.need} ${proposal.valueProposition} ${proposal.searchIntent}`,
+  }));
+
+  for (let leftIndex = 0; leftIndex < copy.length; leftIndex += 1) {
+    for (let rightIndex = leftIndex + 1; rightIndex < copy.length; rightIndex += 1) {
+      const similarity = jaccardSimilarity(copy[leftIndex].text, copy[rightIndex].text);
+      assert.ok(
+        similarity < 0.72,
+        `${copy[leftIndex].id} and ${copy[rightIndex].id} are too similar (${similarity.toFixed(2)})`,
+      );
+    }
+  }
 });
 
 test('every existing catalog family receives exactly five proposals', () => {
