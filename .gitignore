@@ -6,3 +6,6 @@ dist/
 # Graphify generated analysis cache
 graphify-out/cache/ast/
 graphify-out/cache/stat-index.json
+
+# Isolated implementation workspaces
+.worktrees/
