@@ -164,3 +164,38 @@ test('institutional and sector pages consume central FAQ data and component', as
     assert.doesNotMatch(source, /document\.querySelectorAll\(['"]\.faq-question/);
   }
 });
+
+function htmlPathForRoute(route) {
+  return route === '/'
+    ? new URL('../dist/index.html', import.meta.url)
+    : new URL(`../dist${route}/index.html`, import.meta.url);
+}
+
+function faqSchemasFromHtml(html) {
+  return [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((match) => JSON.parse(match[1]))
+    .filter((schema) => schema['@type'] === 'FAQPage');
+}
+
+test('all 21 static FAQ pages render eight visible items and one matching schema', async () => {
+  for (const route of siteFaqRoutes) {
+    const html = await readFile(htmlPathForRoute(route), 'utf8');
+    const visibleCount = (html.match(/class="site-faq-list__item"/g) || []).length;
+    const schemas = faqSchemasFromHtml(html);
+    assert.ok(visibleCount >= 8, `${route} renders ${visibleCount} visible FAQs`);
+    assert.equal(schemas.length, 1, `${route} must render one FAQPage schema`);
+    assert.equal(schemas[0].mainEntity.length, visibleCount, `${route} schema and visible FAQ counts differ`);
+  }
+});
+
+test('all 46 catalog detail pages render eight visible items and matching schema', async () => {
+  for (const product of catalogProductDetails) {
+    const route = `/catalogo/${product.slug}`;
+    const html = await readFile(htmlPathForRoute(route), 'utf8');
+    const visibleCount = (html.match(/class="site-faq-list__item"/g) || []).length;
+    const schemas = faqSchemasFromHtml(html);
+    assert.ok(visibleCount >= 8, `${route} renders ${visibleCount} visible FAQs`);
+    assert.equal(schemas.length, 1, `${route} must render one FAQPage schema`);
+    assert.equal(schemas[0].mainEntity.length, visibleCount, `${route} schema and visible FAQ counts differ`);
+  }
+});
