@@ -32,17 +32,25 @@ function createEditorialProfile(proposal) {
   const sector = proposal.sectors[0];
   const limitation = proposal.limitations[0];
   const agent = proposal.agentOrMaterial || 'la configuración indicada';
+  const buyerScenario = `${proposal.need} El responsable de compra necesita documentar la aplicación, el entorno y la cantidad antes de comparar opciones.`;
+  const valuePromise = `${proposal.valueProposition} La propuesta se ajusta al riesgo y al alcance confirmado con el cliente.`;
+  const selectionFocus = `${proposal.selection} MANEXT contrasta estos criterios con la aplicación, el inmueble y la documentación disponible.`;
 
   return Object.freeze({
     primaryKeyword: proposal.primaryKeyword,
     h1: proposal.h1,
     seoTitle: proposal.seoTitle,
     metaDescription: proposal.metaDescription,
-    secondaryKeywords: proposal.secondaryKeywords,
+    secondaryKeywords: [...new Set([
+      ...proposal.secondaryKeywords,
+      `${keyword} ${variant}`,
+      `${keyword} para ${application.toLocaleLowerCase('es-MX')}`,
+      `${keyword} para ${sector.toLocaleLowerCase('es-MX')}`,
+    ])].slice(0, 3),
     searchIntent: proposal.searchIntent,
-    buyerScenario: proposal.need,
-    valuePromise: proposal.valueProposition,
-    selectionFocus: proposal.selection,
+    buyerScenario,
+    valuePromise,
+    selectionFocus,
     differentiator: `${proposal.valueProposition} La diferencia debe confirmarse contra la ficha y el modelo disponible antes de aceptar el suministro.`,
     notFor: `${limitation} Si el escenario cambia, MANEXT compara otra variante o tecnología antes de cotizar.`,
     humanLead: `${proposal.h1} responde a una necesidad concreta: ${proposal.need} ${proposal.valueProposition}`,
@@ -102,6 +110,7 @@ function createEditorialProfile(proposal) {
     internalLinks: [
       groupResourceLinks[proposal.group],
       { label: 'Programa de mantenimiento y recarga', url: '/mantenimiento-preventivo/' },
+      { label: 'Catálogo profesional de extintores', url: '/catalogo/' },
     ],
   });
 }

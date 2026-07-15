@@ -1,5 +1,6 @@
 import { availabilityLabels, catalogGroups, catalogProducts } from './catalog-products.mjs';
 import { getCatalogProductEditorial } from './catalog-product-editorial.mjs';
+import { getExpansionRelationshipLinks } from './catalog-expansion/publication.mjs';
 
 const authoredCatalogProductDetails = [
   {
@@ -402,6 +403,7 @@ function createGeneratedProductDetail(product) {
 
   return {
     id: product.id,
+    parentProductId: product.parentProductId,
     slug,
     name: product.name,
     eyebrow: `${group.name} · ${product.agent}`,
@@ -490,7 +492,7 @@ function createGeneratedProductDetail(product) {
       ogTitle: `${product.name}: ficha técnica y cotización`,
       ogDescription: `${product.description} Consulta variantes, aplicaciones y criterios de selección con asesoría MANEXT.`,
     },
-    sources: officialSources,
+    sources: product.sources?.length ? product.sources : officialSources,
   };
 }
 
@@ -500,6 +502,13 @@ function applyEditorialProfile(detail, editorial) {
   if (!editorial) {
     throw new Error(`Missing editorial profile for catalog product ${detail.id}`);
   }
+
+  const internalLinks = [
+    ...editorial.internalLinks,
+    ...getExpansionRelationshipLinks(detail.id, catalogProducts),
+  ].filter((link, index, links) => (
+    link?.url && links.findIndex((candidate) => candidate?.url === link.url) === index
+  ));
 
   return {
     ...detail,
@@ -517,7 +526,7 @@ function applyEditorialProfile(detail, editorial) {
     benefits: editorial.benefitAngles,
     limitations: [editorial.notFor, ...detail.limitations.slice(0, 3)],
     faqs: editorial.faqs,
-    internalLinks: editorial.internalLinks,
+    internalLinks,
     detailCopy: {
       ...detail.detailCopy,
       benefitsTitle: `Por qué considerar ${editorial.primaryKeyword.toLocaleLowerCase('es-MX')}`,

@@ -3,6 +3,7 @@ import test from 'node:test';
 
 import { catalogProducts } from '../src/data/catalog-products.mjs';
 import { catalogProductEditorial } from '../src/data/catalog-product-editorial.mjs';
+import { catalogProductDetails } from '../src/data/catalog-product-details.mjs';
 import { catalogExpansionProposals } from '../src/data/catalog-expansion/index.mjs';
 import { paginateCatalog } from '../src/lib/catalog-utils.mjs';
 import {
@@ -82,4 +83,46 @@ test('public catalog integrates 46 matrices and 230 derivatives', () => {
   assert.equal(new Set(catalogProducts.map(({ id }) => id)).size, 276);
   assert.equal(new Set(catalogProducts.map(({ productPageUrl }) => productPageUrl)).size, 276);
   assert.equal(pagination.pageCount, 23);
+});
+
+test('all derivatives expose complete details, primary sources and family navigation', () => {
+  const derivatives = catalogProducts.filter(({ parentProductId }) => parentProductId);
+
+  assert.equal(catalogProductDetails.length, 276);
+  assert.equal(derivatives.length, 230);
+
+  for (const product of derivatives) {
+    const detail = catalogProductDetails.find(({ id }) => id === product.id);
+    const expectedLinks = getExpansionRelationshipLinks(product.id, catalogProducts);
+
+    assert.ok(detail, `missing detail for ${product.id}`);
+    assert.equal(detail.parentProductId, product.parentProductId);
+    assert.equal(detail.faqs.length, 8);
+    assert.equal(detail.benefits.length, 4);
+    assert.ok(detail.recommendedUses.length >= 3);
+    assert.ok(detail.limitations.length >= 3);
+    assert.equal(detail.seo.canonical, `https://mantenimientodeextintores.mx${product.productPageUrl}`);
+
+    for (const source of product.sources) {
+      assert.ok(detail.sources.some(({ url }) => url === source.url), `source ${source.url} missing in ${product.id}`);
+    }
+    for (const link of expectedLinks) {
+      assert.ok(detail.internalLinks.some(({ url }) => url === link.url), `family link ${link.url} missing in ${product.id}`);
+    }
+  }
+});
+
+test('all 46 matrix pages link to their five published derivatives', () => {
+  const matrices = catalogProducts.filter(({ parentProductId }) => !parentProductId);
+
+  assert.equal(matrices.length, 46);
+  for (const product of matrices) {
+    const detail = catalogProductDetails.find(({ id }) => id === product.id);
+    const childLinks = getExpansionRelationshipLinks(product.id, catalogProducts);
+
+    assert.equal(childLinks.length, 5);
+    for (const link of childLinks) {
+      assert.ok(detail.internalLinks.some(({ url }) => url === link.url), `child link ${link.url} missing in ${product.id}`);
+    }
+  }
 });

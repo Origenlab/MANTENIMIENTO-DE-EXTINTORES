@@ -112,7 +112,12 @@ test('every built detail record consumes its individual editorial profile', asyn
     assert.equal(detail.description, editorial.humanDescription, `description not integrated for ${product.id}`);
     assert.deepEqual(detail.benefits, editorial.benefitAngles, `benefits not integrated for ${product.id}`);
     assert.deepEqual(detail.faqs, editorial.faqs, `FAQs not integrated for ${product.id}`);
-    assert.deepEqual(detail.internalLinks, editorial.internalLinks, `internal links not integrated for ${product.id}`);
+    for (const link of editorial.internalLinks) {
+      assert.ok(
+        detail.internalLinks.some(({ url }) => url === link.url),
+        `editorial internal link ${link.url} not integrated for ${product.id}`,
+      );
+    }
     assert.equal(detail.seo.title, editorial.seoTitle, `SEO title not integrated for ${product.id}`);
     assert.equal(detail.seo.description, editorial.metaDescription, `meta description not integrated for ${product.id}`);
   }
