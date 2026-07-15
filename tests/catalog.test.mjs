@@ -269,7 +269,18 @@ test('catalog client script progressively enhances server-rendered cards', async
     'catalog-range',
     'data-catalog-preset',
     '.hidden',
+    "document.readyState === 'loading'",
   ]) {
     assert.ok(script.includes(contract), `client script missing ${contract}`);
   }
+});
+
+test('catalog and product pages share a cache-busted client script', async () => {
+  const [catalogPage, detailTemplate] = await Promise.all([
+    readFile(new URL('../src/pages/catalogo.astro', import.meta.url), 'utf8'),
+    readFile(new URL('../src/components/catalog/ProductDetailTemplate.astro', import.meta.url), 'utf8'),
+  ]);
+
+  assert.match(catalogPage, /catalog-system\.js\?v=8/);
+  assert.match(detailTemplate, /catalog-system\.js\?v=8/);
 });

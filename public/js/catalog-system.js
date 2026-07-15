@@ -404,8 +404,14 @@
     return lines.join('\n');
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function initialisePage() {
     initialiseCatalog();
     initialiseQuoteForm();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialisePage, { once: true });
+  } else {
+    initialisePage();
+  }
 })();
