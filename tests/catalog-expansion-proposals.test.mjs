@@ -8,6 +8,7 @@ import {
 import { portableExpansionProposals } from '../src/data/catalog-expansion/portables.mjs';
 import { industrialExpansionProposals } from '../src/data/catalog-expansion/industrial.mjs';
 import { automaticExpansionProposals } from '../src/data/catalog-expansion/automatic.mjs';
+import { accessoryExpansionProposals } from '../src/data/catalog-expansion/accessories.mjs';
 
 const requiredStrings = [
   'id', 'parentId', 'group', 'name', 'shortName', 'slug',
@@ -98,6 +99,23 @@ test('automatic expansion covers five products for every automatic family', () =
       automaticExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
       5,
       `expected five automatic proposals for ${parentId}`,
+    );
+  }
+});
+
+test('accessory expansion covers five products for every accessory family', () => {
+  const accessoryParents = [
+    'gabinete-metalico', 'gabinete-fibra-inoxidable', 'soporte-pared', 'soporte-vehicular',
+    'portaextintor-piso', 'funda-extintor', 'carro-portaextintor', 'senalizacion-extintor',
+    'manta-contra-incendio', 'alarma-gabinete',
+  ];
+
+  assert.equal(accessoryExpansionProposals.length, 50);
+  for (const parentId of accessoryParents) {
+    assert.equal(
+      accessoryExpansionProposals.filter((proposal) => proposal.parentId === parentId).length,
+      5,
+      `expected five accessory proposals for ${parentId}`,
     );
   }
 });
