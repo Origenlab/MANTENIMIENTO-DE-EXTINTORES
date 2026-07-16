@@ -2,6 +2,7 @@ import {
   catalogExpansionByParent,
   catalogExpansionProposals,
 } from './index.mjs';
+import { continuation, inline, sentence } from '../../lib/text-utils.mjs';
 
 const proposalById = new Map(catalogExpansionProposals.map((proposal) => [proposal.id, proposal]));
 
@@ -26,15 +27,15 @@ function uniqueSourceRecords(proposal) {
 }
 
 function createEditorialProfile(proposal) {
-  const keyword = proposal.primaryKeyword.toLocaleLowerCase('es-MX');
+  const keyword = inline(proposal.primaryKeyword);
   const variant = proposal.variants[0];
   const application = proposal.applications[0];
   const sector = proposal.sectors[0];
   const limitation = proposal.limitations[0];
   const agent = proposal.agentOrMaterial || 'la configuración indicada';
-  const buyerScenario = `${proposal.need} El responsable de compra necesita documentar la aplicación, el entorno y la cantidad antes de comparar opciones.`;
-  const valuePromise = `${proposal.valueProposition} La propuesta se ajusta al riesgo y al alcance confirmado con el cliente.`;
-  const selectionFocus = `${proposal.selection} MANEXT contrasta estos criterios con la aplicación, el inmueble y la documentación disponible.`;
+  const buyerScenario = `${sentence(proposal.need)} El responsable de compra necesita documentar la aplicación, el entorno y la cantidad antes de comparar opciones.`;
+  const valuePromise = `${sentence(proposal.valueProposition)} La propuesta se ajusta al riesgo y al alcance confirmado con el cliente.`;
+  const selectionFocus = `${sentence(proposal.selection)} MANEXT contrasta estos criterios con la aplicación, el inmueble y la documentación disponible.`;
 
   return Object.freeze({
     primaryKeyword: proposal.primaryKeyword,
@@ -44,17 +45,17 @@ function createEditorialProfile(proposal) {
     secondaryKeywords: [...new Set([
       ...proposal.secondaryKeywords,
       `${keyword} ${variant}`,
-      `${keyword} para ${application.toLocaleLowerCase('es-MX')}`,
-      `${keyword} para ${sector.toLocaleLowerCase('es-MX')}`,
+      `${keyword} para ${inline(application)}`,
+      `${keyword} para ${inline(sector)}`,
     ])].slice(0, 3),
     searchIntent: proposal.searchIntent,
     buyerScenario,
     valuePromise,
     selectionFocus,
-    differentiator: `${proposal.valueProposition} La diferencia debe confirmarse contra la ficha y el modelo disponible antes de aceptar el suministro.`,
-    notFor: `${limitation} Si el escenario cambia, MANEXT compara otra variante o tecnología antes de cotizar.`,
-    humanLead: `${proposal.h1} responde a una necesidad concreta: ${proposal.need} ${proposal.valueProposition}`,
-    humanDescription: `${proposal.need} ${proposal.valueProposition} Para preparar una propuesta responsable, MANEXT confirma ${proposal.selection.toLocaleLowerCase('es-MX')}, la compatibilidad del producto y las condiciones reales de ${application.toLocaleLowerCase('es-MX')}.`,
+    differentiator: `${sentence(proposal.valueProposition)} La diferencia debe confirmarse contra la ficha y el modelo disponible antes de aceptar el suministro.`,
+    notFor: `${sentence(limitation)} Si el escenario cambia, MANEXT compara otra variante o tecnología antes de cotizar.`,
+    humanLead: `${proposal.h1} responde a una necesidad concreta: ${continuation(proposal.need)} ${sentence(proposal.valueProposition)}`,
+    humanDescription: `${sentence(proposal.need)} ${sentence(proposal.valueProposition)} Para preparar una propuesta responsable, MANEXT confirma ${inline(proposal.selection)}, la compatibilidad del producto y las condiciones reales de ${inline(application)}.`,
     benefitAngles: [
       {
         title: `Valor operativo de ${proposal.shortName}`,
@@ -62,21 +63,21 @@ function createEditorialProfile(proposal) {
       },
       {
         title: `Selección basada en ${proposal.selection.split(',')[0].trim()}`,
-        text: `${proposal.selection} Revisar estos datos evita pedir una capacidad, pieza o agente que no corresponda a la operación real.`,
+        text: `${sentence(proposal.selection)} Revisar estos datos evita pedir una capacidad, pieza o agente que no corresponda a la operación real.`,
       },
       {
         title: `Aplicación en ${application}`,
-        text: `${proposal.name} puede considerarse para ${application.toLocaleLowerCase('es-MX')} cuando ${agent.toLocaleLowerCase('es-MX')} y la variante ${variant} coinciden con el requerimiento documentado.`,
+        text: `${proposal.name} puede considerarse para ${inline(application)} cuando ${inline(agent)} y la variante ${variant} coinciden con el requerimiento documentado.`,
       },
       {
         title: 'Límite técnico que conviene conocer',
-        text: `${limitation} Explicarlo desde la cotización permite comparar alternativas con mayor claridad.`,
+        text: `${sentence(limitation)} Explicarlo desde la cotización permite comparar alternativas con mayor claridad.`,
       },
     ],
     faqs: [
       {
         question: `¿Cuándo conviene cotizar ${keyword}?`,
-        answer: `${proposal.need} En ese escenario, ${proposal.valueProposition.toLocaleLowerCase('es-MX')} La recomendación final requiere revisar el riesgo y el producto disponible.`,
+        answer: `${sentence(proposal.need)} En ese escenario, ${continuation(proposal.valueProposition)} La recomendación final requiere revisar el riesgo y el producto disponible.`,
       },
       {
         question: `¿Qué variante se considera para ${keyword}?`,
@@ -84,19 +85,19 @@ function createEditorialProfile(proposal) {
       },
       {
         question: `¿Cuál es el uso recomendado de ${keyword}?`,
-        answer: `Se estudia principalmente para ${application.toLocaleLowerCase('es-MX')} en sectores como ${sector.toLocaleLowerCase('es-MX')}. La aplicación final depende del riesgo, el entorno y la operación.`,
+        answer: `Se estudia principalmente para ${inline(application)} en sectores como ${inline(sector)}. La aplicación final depende del riesgo, el entorno y la operación.`,
       },
       {
         question: `¿Qué criterio cambia la selección de ${keyword}?`,
-        answer: `${proposal.selection} No basta con comparar el nombre o una fotografía; esos datos deben coincidir con el modelo y el escenario real.`,
+        answer: `${sentence(proposal.selection)} No basta con comparar el nombre o una fotografía; esos datos deben coincidir con el modelo y el escenario real.`,
       },
       {
         question: `¿Qué limitación tiene ${keyword}?`,
-        answer: `${limitation} MANEXT contrasta este límite con el combustible, el ambiente y la respuesta prevista antes de recomendar una configuración.`,
+        answer: `${sentence(limitation)} MANEXT contrasta este límite con el combustible, el ambiente y la respuesta prevista antes de recomendar una configuración.`,
       },
       {
         question: `¿Qué información necesita MANEXT para cotizar ${keyword}?`,
-        answer: `Necesitamos aplicación, cantidad, ubicación, fecha requerida y cualquier dato disponible sobre ${proposal.selection.toLocaleLowerCase('es-MX')}. Así se prepara una propuesta comparable y técnicamente responsable.`,
+        answer: `Necesitamos aplicación, cantidad, ubicación, fecha requerida y cualquier dato disponible sobre ${inline(proposal.selection)}. Así se prepara una propuesta comparable y técnicamente responsable.`,
       },
       {
         question: `¿La propuesta de ${keyword} puede incluir instalación y servicio?`,

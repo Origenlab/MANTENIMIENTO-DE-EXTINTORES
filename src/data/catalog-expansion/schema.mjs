@@ -1,3 +1,5 @@
+import { capitalize, endSentence, inline } from '../../lib/text-utils.mjs';
+
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const allowedStatuses = new Set(['research', 'validated', 'approved', 'rejected']);
 const allowedPriorities = new Set(['alta', 'media', 'especialidad']);
@@ -42,6 +44,13 @@ export function validateExpansionProposal(proposal) {
     if (!Array.isArray(proposal[field])) {
       throw new TypeError(`${field} must be an array in ${proposal.id}`);
     }
+    // Validar sólo la longitud dejaba pasar `[undefined]`, que llegó a
+    // imprimirse como la cadena "undefined" en el HTML y el JSON-LD de
+    // /catalogo/carro-para-extintor-clase-d (auditoría 2026-07-16).
+    const hollow = proposal[field].findIndex((item) => item === undefined || item === null || String(item).trim().length === 0);
+    if (hollow !== -1) {
+      throw new TypeError(`${field}[${hollow}] is empty in ${proposal.id}`);
+    }
   }
 
   if (!slugPattern.test(proposal.id) || !slugPattern.test(proposal.slug)) {
@@ -79,9 +88,9 @@ const defaultNormativeSources = [
 ];
 
 function buildMetaDescription(shortName, selection) {
-  const compactName = shortName.replace(/^Extintor(?: de)?\s+/i, '').toLocaleLowerCase('es-MX');
+  const compactName = inline(shortName.replace(/^Extintor(?: de)?\s+/i, ''));
   const compactSelection = selection.length <= 48 ? selection : 'capacidad, compatibilidad y aplicación';
-  let description = `Cotiza ${compactName} con MANEXT. Validamos ${compactSelection.toLocaleLowerCase('es-MX')} para preparar una propuesta técnica empresarial en CDMX.`;
+  let description = `Cotiza ${compactName} con MANEXT. Validamos ${inline(compactSelection)} para preparar una propuesta técnica empresarial en CDMX.`;
 
   if (description.length > 160) {
     description = `Cotiza ${compactName} con MANEXT. Confirmamos capacidad y aplicación para integrar una propuesta técnica con suministro y servicio en CDMX.`;
@@ -113,7 +122,7 @@ export function createProposalSeries({
     const shortName = item.shortName || item.name;
     const primaryKeyword = item.keyword || item.name;
     const selection = item.selection || 'capacidad, compatibilidad y aplicación';
-    const seoTitle = item.seoTitle || `${primaryKeyword} | MANEXT`;
+    const seoTitle = item.seoTitle || `${capitalize(primaryKeyword)} | MANEXT`;
 
     return Object.freeze({
       id: `${parentId}-${item.key}`,
@@ -135,7 +144,7 @@ export function createProposalSeries({
       limitations: [item.limitation],
       primaryKeyword,
       secondaryKeywords: item.secondaryKeywords || [],
-      searchIntent: item.intent || `El comprador busca ${primaryKeyword.toLocaleLowerCase('es-MX')} porque ${item.need.toLocaleLowerCase('es-MX')} Necesita comparar ${selection.toLocaleLowerCase('es-MX')} antes de solicitar una cotización.`,
+      searchIntent: item.intent || `El comprador busca ${inline(primaryKeyword)} porque ${endSentence(inline(item.need))} Necesita comparar ${inline(selection)} antes de solicitar una cotización.`,
       h1: item.h1 || item.name,
       seoTitle,
       metaDescription: item.metaDescription || buildMetaDescription(shortName, selection),

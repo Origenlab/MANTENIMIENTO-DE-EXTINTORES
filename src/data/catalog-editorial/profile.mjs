@@ -1,11 +1,11 @@
-const capitalize = (value) => value.charAt(0).toLocaleUpperCase('es-MX') + value.slice(1);
+import { capitalize, inline } from '../../lib/text-utils.mjs';
 
 function buildMetaDescription(seed) {
-  const firstCriterion = seed.selection.split(',')[0].trim().toLocaleLowerCase('es-MX');
-  let description = `Cotiza ${seed.keyword.toLocaleLowerCase('es-MX')} en CDMX. MANEXT confirma ${firstCriterion}, compatibilidad y configuración antes de preparar tu propuesta técnica.`;
+  const firstCriterion = inline(seed.selection.split(',')[0].trim());
+  let description = `Cotiza ${inline(seed.keyword)} en CDMX. MANEXT confirma ${firstCriterion}, compatibilidad y configuración antes de preparar tu propuesta técnica.`;
 
   if (description.length > 160) {
-    description = `Cotiza ${seed.keyword.toLocaleLowerCase('es-MX')} en CDMX. MANEXT confirma compatibilidad y configuración antes de preparar tu propuesta técnica.`;
+    description = `Cotiza ${inline(seed.keyword)} en CDMX. MANEXT confirma compatibilidad y configuración antes de preparar tu propuesta técnica.`;
   }
   if (description.length < 120) {
     description += ' Solicita asesoría especializada.';
@@ -31,7 +31,7 @@ export function buildEditorialProfiles(seeds) {
     return [seed.id, Object.freeze({
       primaryKeyword: seed.keyword,
       h1: capitalize(seed.keyword),
-      seoTitle: `${seed.keyword}${seed.keyword.length <= 51 ? ' | MANEXT' : ''}`,
+      seoTitle: `${capitalize(seed.keyword)}${seed.keyword.length <= 51 ? ' | MANEXT' : ''}`,
       metaDescription: buildMetaDescription(seed),
       secondaryKeywords: seed.secondary,
       searchIntent: `La intención de búsqueda es ${seed.intent} La ficha debe permitir comparar la opción con riesgos y alternativas cercanas antes de solicitar una cotización.`,

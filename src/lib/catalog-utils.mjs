@@ -83,13 +83,27 @@ export function buildQuoteMessage(fields = {}) {
   return lines.join('\n');
 }
 
+/**
+ * URL canónica de un producto dentro del ItemList.
+ *
+ * `productPageUrl` apunta a la ficha propia (/catalogo/<slug>), que existe para
+ * los 276 productos. `detailUrl` apunta a la landing de servicio, que sólo
+ * cubre 7 productos y cuyo canonical no coincide con el de la ficha: usarlo
+ * aquí emitía una señal contradictoria. El ancla queda como último recurso
+ * defensivo; en el catálogo actual es inalcanzable.
+ */
+function resolveProductUrl(product, baseUrl) {
+  const path = product.productPageUrl || product.detailUrl;
+  return path ? `${baseUrl}${path}` : `${baseUrl}/catalogo#${product.id}`;
+}
+
 export function buildCatalogSchema(products, baseUrl = DEFAULT_BASE_URL) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Catálogo profesional de extintores MANEXT',
     description: 'Extintores portátiles, industriales, automáticos, accesorios y refacciones disponibles mediante cotización.',
-    url: `${baseUrl}/catalogo/`,
+    url: `${baseUrl}/catalogo`,
     numberOfItems: products.length,
     itemListElement: products.map((product, index) => ({
       '@type': 'ListItem',
@@ -100,7 +114,7 @@ export function buildCatalogSchema(products, baseUrl = DEFAULT_BASE_URL) {
         description: product.description,
         image: `${baseUrl}${product.image}`,
         category: product.group,
-        url: product.detailUrl ? `${baseUrl}${product.detailUrl}` : `${baseUrl}/catalogo/#${product.id}`,
+        url: resolveProductUrl(product, baseUrl),
       },
     })),
   };
