@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 import { catalogProducts } from '../src/data/catalog-products.mjs';
 import { catalogProductDetails } from '../src/data/catalog-product-details.mjs';
@@ -205,6 +206,44 @@ test('seoTitle respeta el límite de 60 caracteres tras capitalizar', () => {
     .map((detail) => `${detail.slug}: ${detail.seo.title.length} chars`);
 
   assert.deepEqual(offenders, [], `títulos largos:\n${offenders.join('\n')}`);
+});
+
+// ---------------------------------------------------------------------------
+// Fase 2 — /productos/* retirado: no debe reaparecer
+// ---------------------------------------------------------------------------
+
+test('la colección productos no existe y nadie la referencia', async () => {
+  const config = await readFile(new URL('../src/content.config.ts', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(config, /productosCollection/, 'la colección productos debe seguir retirada');
+  assert.match(config, /export const collections = \{\s*blog: blogCollection,\s*\}/, 'sólo debe quedar la colección blog');
+});
+
+test('cada URL retirada de /productos/ tiene un 301 a un destino que existe', async () => {
+  const redirects = await readFile(new URL('../public/_redirects', import.meta.url), 'utf8');
+
+  const rules = redirects
+    .split('\n')
+    .filter((line) => line.startsWith('/productos/'))
+    .map((line) => line.trim().split(/\s+/));
+
+  assert.equal(rules.length, 42, 'deben existir los 42 redirects de las URLs indexadas');
+
+  const catalogUrls = new Set(catalogProducts.map((product) => product.productPageUrl));
+  const landings = new Set(['/polvo-quimico-seco', '/tipo-k', '/co2', '/agua-presion', '/espuma-afff', '/agentes-limpios']);
+
+  const broken = rules
+    .filter(([, target]) => !catalogUrls.has(target) && !landings.has(target))
+    .map(([from, target]) => `${from} -> ${target}`);
+
+  assert.deepEqual(broken, [], `301 apuntando a un destino inexistente:\n${broken.join('\n')}`);
+
+  const wrongCode = rules.filter(([, , code]) => code !== '301').map(([from]) => from);
+  assert.deepEqual(wrongCode, [], 'todas las reglas deben ser 301 permanentes');
+
+  // githubSlug() minusculiza: un 301 con mayúsculas nunca haría match.
+  const uppercase = rules.filter(([from]) => /[A-Z]/.test(from)).map(([from]) => from);
+  assert.deepEqual(uppercase, [], 'las URLs de origen deben ir en minúscula');
 });
 
 // ---------------------------------------------------------------------------

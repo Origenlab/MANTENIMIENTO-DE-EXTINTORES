@@ -1,2 +1,51 @@
 https://www.mantenimientodeextintores.mx/* https://mantenimientodeextintores.mx/:splat 301
 /sitemap.xml /sitemap-index.xml 301
+
+# --- /productos/* retirado (auditoría 2026-07-16, fase 2) ---
+# Las 42 páginas eran huérfanas: 0 enlaces entrantes, 22 eran stubs vacíos,
+# y duplicaban el catálogo de 276 URLs vivas. Se conservan estos 301 porque
+# estuvieron indexadas. Donde no existe equivalente exacto de capacidad, el
+# destino es la ficha de familia.
+# Nota: las URLs van en minúscula — githubSlug() minusculiza "12L" -> "12l".
+/productos/polvo-quimico-seco  /polvo-quimico-seco  301
+/productos/tipo-k  /tipo-k  301
+/productos/producto-extintor-pqs-1kg  /catalogo/extintor-pqs-abc-1-kg-vehicular  301
+/productos/producto-extintor-pqs-2-5kg  /catalogo/extintor-pqs-abc-2-5-kg-comercio  301
+/productos/producto-extintor-pqs-4-5kg  /catalogo/extintor-pqs-abc-4-5-kg-oficina  301
+/productos/producto-extintor-pqs-6kg  /catalogo/extintor-pqs-abc-6-kg-negocio  301
+/productos/producto-extintor-pqs-9kg  /catalogo/extintor-pqs-abc-9-kg-industrial  301
+/productos/producto-extintor-pqs-13kg  /catalogo/pqs-abc-portatil  301
+/productos/producto-extintor-pqs-50kg-rodante  /catalogo/extintor-movil-pqs-abc-50-kg  301
+/productos/producto-extintor-pqs-68kg-rodante  /catalogo/extintor-movil-pqs-abc-70-kg  301
+/productos/producto-extintor-co2-2-27kg  /catalogo/extintor-co2-5-lb-tableros  301
+/productos/producto-extintor-co2-4-54kg  /catalogo/extintor-co2-10-lb-cuarto-electrico  301
+/productos/producto-extintor-co2-6-81kg  /catalogo/extintor-co2-15-lb-laboratorio  301
+/productos/producto-extintor-co2-9kg  /catalogo/extintor-co2-20-lb-industrial  301
+/productos/producto-extintor-co2-9-08kg  /catalogo/extintor-co2-20-lb-industrial  301
+/productos/producto-extintor-co2-11-3kg  /catalogo/extintor-co2-portatil  301
+/productos/producto-extintor-co2-13-62kg  /catalogo/extintor-co2-portatil  301
+/productos/producto-extintor-agua-6l  /catalogo/agua-presion-portatil  301
+/productos/producto-extintor-agua-9l  /catalogo/extintor-agua-presion-9-l-papel  301
+/productos/producto-extintor-agua-12l  /catalogo/agua-presion-portatil  301
+/productos/producto-extintor-agua-15l  /catalogo/agua-presion-portatil  301
+/productos/producto-extintor-agua-18l  /catalogo/agua-presion-portatil  301
+/productos/producto-extintor-agua-20l  /catalogo/agua-presion-portatil  301
+/productos/producto-extintor-espuma-afff-6l  /catalogo/extintor-espuma-afff-6-l  301
+/productos/producto-extintor-espuma-afff-9l  /catalogo/extintor-espuma-afff-9-l  301
+/productos/producto-extintor-espuma-afff-11l  /catalogo/espuma-afff-portatil  301
+/productos/producto-extintor-espuma-afff-15l  /catalogo/espuma-afff-portatil  301
+/productos/producto-extintor-espuma-afff-18l  /catalogo/espuma-afff-portatil  301
+/productos/producto-extintor-espuma-afff-20l  /catalogo/espuma-afff-portatil  301
+/productos/producto-extintor-agente-limpio-2-7kg  /catalogo/extintor-hfc-236fa-2-5-kg  301
+/productos/producto-extintor-agente-limpio-4-5kg  /catalogo/extintor-hfc-236fa-4-5-kg  301
+/productos/producto-extintor-agente-limpio-5-4kg  /catalogo/extintor-agente-limpio-hfc-236fa  301
+/productos/producto-extintor-agente-limpio-6-8kg  /catalogo/extintor-hfc-236fa-6-kg  301
+/productos/producto-extintor-agente-limpio-9kg  /catalogo/extintor-agente-limpio-hfc-236fa  301
+/productos/producto-extintor-agente-limpio-11kg  /catalogo/extintor-agente-limpio-hfc-236fa  301
+/productos/producto-extintor-tipo-k-1-6gal  /catalogo/extintor-tipo-k-6-l-restaurante  301
+/productos/producto-extintor-tipo-k-2-5l  /catalogo/extintor-tipo-k-2-5-l-compacto  301
+/productos/producto-extintor-tipo-k-4l  /catalogo/extintor-tipo-k-4-l-cocina  301
+/productos/producto-extintor-tipo-k-6l  /catalogo/extintor-tipo-k-6-l-restaurante  301
+/productos/producto-extintor-tipo-k-9l  /catalogo/extintor-tipo-k-9-l-industrial  301
+/productos/producto-extintor-tipo-k-12l  /catalogo/tipo-k-portatil  301
+/productos/producto-extintor-tipo-k-15l  /catalogo/tipo-k-portatil  301
