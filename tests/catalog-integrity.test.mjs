@@ -334,6 +334,30 @@ test('la NOM-002-STPS no se presenta como atributo del extintor', async () => {
   assert.deepEqual(offenders, [], `NOM-002 como atributo del equipo:\n${offenders.join('\n')}`);
 });
 
+test('MANEXT no se presenta como unidad de verificación acreditada', async () => {
+  // Confirmado por el dueño (2026-07-16): MANEXT NO tiene la acreditación de
+  // unidad de verificación. Es figura acreditada por la EMA y aprobada por la
+  // Secretaría de Economía para verificar a terceros — distinta de ser
+  // prestador del servicio de mantenimiento y recarga, que es lo que MANEXT sí
+  // es. El sitio lo afirmaba en 6 lugares. Vigilancia: Economía vía PROFECO.
+  const { readdir } = await import('node:fs/promises');
+  const dir = new URL('../src/pages/', import.meta.url);
+  const files = (await readdir(dir, { recursive: true })).filter((f) => f.endsWith('.astro'));
+
+  const offenders = [];
+  for (const file of files) {
+    // Hay que quitar las etiquetas antes de evaluar: el claim real venía
+    // partido por <strong>, así que un patrón que no cruce '<' no lo ve.
+    const text = (await readFile(new URL(file, dir), 'utf8')).replace(/<[^>]+>/g, '');
+    // Sólo el claim propio: el blog sí puede explicar qué es una unidad de
+    // verificación o recomendar al lector que corrobore la de su proveedor.
+    const match = /(somos|estamos|empresa familiar,?|continua,?|1943\.)[^.]{0,70}unidad(es)? de verificaci[oó]n|unidad de verificaci[oó]n autorizada/i.exec(text);
+    if (match) offenders.push(`${file}: "${match[0].trim().slice(0, 70)}"`);
+  }
+
+  assert.deepEqual(offenders, [], `MANEXT como unidad de verificación:\n${offenders.join('\n')}`);
+});
+
 test('no se atribuye a NFPA una certificación de empresa', async () => {
   // NFPA publica estándares y certifica *personas* (CFPS, CFPE); no certifica
   // empresas ni ofrece membresía corporativa. "NFPA Certified" como credencial
