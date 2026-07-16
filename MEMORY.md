@@ -37,6 +37,20 @@ La publicación se compone en `src/data/catalog-expansion/publication.mjs`, se i
 
 Cada producto contiene objetivo SEO, diferenciación, selección, limitaciones, CTA y fuentes. Mantener IDs, slugs, canonical, H1 y keywords únicos; no rebajar el umbral de originalidad ni sustituir el contenido individual por boilerplate.
 
+## Auditoría integral del catálogo — 2026-07-15
+
+La auditoría completa está en `docs/audits/2026-07-15-auditoria-integral-catalogo-276.md`, con espejos en `graphify-out/CATALOG-AUDIT-276-2026-07-15.md` y `MANEXT/Auditoría — Catálogo 276 e Interlinking.md`.
+
+Pendientes prioritarios antes de otra expansión masiva:
+
+- corregir `buildCatalogSchema()` para usar `productPageUrl`; el `ItemList` actual genera 269 anclas y siete destinos de servicio;
+- actualizar Astro 6.0.4 a 6.4.8 y volver a ejecutar la auditoría de dependencias;
+- conectar las 46 familias mediante relaciones tipadas, hubs y enlaces desde guías, sectores y servicios;
+- sustituir la paginación solo-cliente: el catálogo inicial contiene las 276 cards y pesa aproximadamente 1.25 MB;
+- ampliar el banco visual: existen nueve imágenes únicas para 276 fichas.
+
+No generar relaciones cruzadas por coincidencia automática de keywords. Usar IDs verificados para productos relacionados, accesorios compatibles, sectores, guías y servicios, y cubrir esas relaciones con pruebas de grafo.
+
 ## Publicación y verificación live
 
 - Cuando Frank indique **“commit y push”**, el resultado esperado no termina en subir una rama: incluye integrar los cambios aprobados en `main`, esperar el workflow de producción y comprobar el dominio live.

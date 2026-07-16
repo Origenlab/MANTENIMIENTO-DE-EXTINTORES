@@ -40,6 +40,7 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 
 ### Estado del proyecto
 - [[Estado del Sitio — Hallazgos y Sprints]] — hallazgos, score actual y plan de trabajo
+- [[Auditoría — Catálogo 276 e Interlinking]] — integridad, SEO, grafo, seguridad y prioridades del catálogo expandido
 
 ---
 
@@ -72,6 +73,8 @@ Empresa de venta y mantenimiento de extintores en CDMX y Estado de México. **+8
 | `docs/catalogo/PLANTILLA-FICHAS-PRODUCTO.md` | [[Productos — Catálogo y Plantilla]] |
 | `graphify-out/PRODUCT-CATALOG-TEMPLATE.md` | [[Productos — Catálogo y Plantilla]] |
 | `graphify-out/CATALOG-EXPANSION-230.md` | [[Productos — Expansión 230]] |
+| `docs/audits/2026-07-15-auditoria-integral-catalogo-276.md` | [[Auditoría — Catálogo 276 e Interlinking]] |
+| `graphify-out/CATALOG-AUDIT-276-2026-07-15.md` | [[Auditoría — Catálogo 276 e Interlinking]] |
 | `graphify-out/HERO-DESIGN-SYSTEM.md` | [[HERO-DESIGN-SYSTEM]] |
 | `graphify-out/GRAPH_REPORT.md` (design system L2) | [[SectionHeader y pf-strip — Reglas L2]] |
 | `AUDITORIA-MANEXT-2026-04-06.md` | [[Estado del Sitio — Hallazgos y Sprints]] |
