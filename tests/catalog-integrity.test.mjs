@@ -294,6 +294,55 @@ test('ninguna página declara stock ni oferta agregada sin precio', async () => 
   assert.deepEqual(offenders, [], `claims de oferta sin sustento:\n${offenders.join('\n')}`);
 });
 
+/**
+ * La regla no es "nunca declarar ofertas": es **declarar una oferta sólo si hay
+ * un precio real, y entonces hacerla legible por máquina**. Las landings de
+ * agente no publican precio → sin `offers`. Las 3 páginas de sector sí publican
+ * precios de entrada en el copy → `AggregateOffer` con `lowPrice`.
+ */
+const SECTOR_PAGES_WITH_PRICES = ['hospitales', 'restaurantes', 'data-centers'];
+
+test('las ofertas de sector declaran precio legible por máquina', async () => {
+  const offenders = [];
+
+  for (const page of SECTOR_PAGES_WITH_PRICES) {
+    const source = await readFile(new URL(`../src/pages/sectores/${page}.astro`, import.meta.url), 'utf8');
+    const offer = /"offers"\s*:\s*\{[\s\S]*?\n  \}/.exec(source);
+    if (!offer) continue;
+
+    if (!/"lowPrice"\s*:\s*"?\d/.test(offer[0])) offenders.push(`${page}: offers sin lowPrice`);
+    if (!/"priceCurrency"\s*:\s*"MXN"/.test(offer[0])) offenders.push(`${page}: offers sin priceCurrency`);
+  }
+
+  assert.deepEqual(offenders, [], `ofertas sin precio estructurado:\n${offenders.join('\n')}`);
+});
+
+test('la NOM-002-STPS no se presenta como atributo del extintor', async () => {
+  // NOM-002-STPS-2010 obliga al centro de trabajo/patrón, no al equipo:
+  // un extintor no "cumple" ni se "certifica" bajo ella.
+  const { readdir } = await import('node:fs/promises');
+  const dir = new URL('../src/pages/', import.meta.url);
+  const files = (await readdir(dir, { recursive: true })).filter((f) => f.endsWith('.astro'));
+
+  const offenders = [];
+  for (const file of files) {
+    const source = await readFile(new URL(file, dir), 'utf8');
+    const match = /(?:^|>)\s*Cumple\s+NOM-002|extintor\w*[^.<]{0,40}cumple[^.<]{0,15}NOM-002/i.exec(source);
+    if (match) offenders.push(`${file}: "${match[0].trim().slice(0, 60)}"`);
+  }
+
+  assert.deepEqual(offenders, [], `NOM-002 como atributo del equipo:\n${offenders.join('\n')}`);
+});
+
+test('no se atribuye a NFPA una certificación de empresa', async () => {
+  // NFPA publica estándares y certifica *personas* (CFPS, CFPE); no certifica
+  // empresas ni ofrece membresía corporativa. "NFPA Certified" como credencial
+  // de MANEXT era falso; "personal con certificaciones NFPA" sí es correcto.
+  const source = await readFile(new URL('../src/pages/nosotros.astro', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(source, /NFPA\s+Certified/i, 'NFPA no certifica empresas');
+});
+
 // ---------------------------------------------------------------------------
 // Citas normativas — verificadas contra fuente primaria (auditoría 2026-07-16)
 // ---------------------------------------------------------------------------

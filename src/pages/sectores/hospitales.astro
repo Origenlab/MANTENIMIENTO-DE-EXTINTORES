@@ -20,8 +20,12 @@ const serviceSchema = JSON.stringify({
     "foundingDate": "1943"
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
+  // Ver nota en restaurantes.astro: aquí sí hay precio público en el copy, así
+  // que se declara con `lowPrice` en vez de dejar un Offer sin precio.
   "offers": {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "lowPrice": "1200",
     "description": "CO₂ 4.5 kg para equipos médicos desde $1,200 MXN. Agente Limpio FM-200/Novec 1230 para áreas críticas desde $3,900 MXN. Extintor Tipo K para cocina hospitalaria desde $1,800 MXN."
   }
 });

@@ -20,8 +20,12 @@ const serviceSchema = JSON.stringify({
     "foundingDate": "1943"
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
+  // Ver nota en restaurantes.astro: aquí sí hay precio público en el copy, así
+  // que se declara con `lowPrice` en vez de dejar un Offer sin precio.
   "offers": {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "lowPrice": "1200",
     "description": "Extintor Agente Limpio HFC-227ea (FM-200) 5 kg desde $3,900 MXN. CO₂ 4.5 kg desde $1,200 MXN. Sin residuo sólido ni líquido. Instalación, constancia de servicio NOM-154-SCFI y documentación incluidos."
   }
 });

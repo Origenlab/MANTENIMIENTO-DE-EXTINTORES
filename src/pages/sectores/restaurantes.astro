@@ -20,8 +20,15 @@ const serviceSchema = JSON.stringify({
     "foundingDate": "1943"
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
+  // A diferencia de las landings de agente —donde no hay precio público y por
+  // eso se retiró el AggregateOffer sin `lowPrice`, que era inválido— aquí sí
+  // se publican precios de entrada en el copy visible. Se declaran de forma
+  // legible por máquina: `lowPrice` es el más bajo de los mostrados en página.
+  // Si cambian los precios del copy, actualizar también este bloque.
   "offers": {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
+    "priceCurrency": "MXN",
+    "lowPrice": "450",
     "description": "Extintor Tipo K 6 L para cocinas comerciales desde $1,800 MXN. Extintor PQS ABC para área de comensales desde $450 MXN. Instalación, señalamiento NOM-003-SEGOB y documentación incluidos."
   }
 });
