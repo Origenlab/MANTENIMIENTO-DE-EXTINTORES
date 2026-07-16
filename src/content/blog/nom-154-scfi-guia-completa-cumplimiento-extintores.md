@@ -1,8 +1,8 @@
 ---
 title: "NOM-154-SCFI: Guía Completa de Cumplimiento para Extintores"
-description: "Guía completa NOM-154-SCFI-2005: especificaciones técnicas de extintores, requisitos de etiquetado, proceso de certificación, mantenimiento y recarga conforme a norma, y sanciones por incumplimiento."
+description: "Guía completa NOM-154-SCFI-2005: qué regula realmente la norma, requisitos del servicio de mantenimiento y recarga, etiquetado, quién debe estar certificado y cómo verificar a tu proveedor."
 heroRight:
-  - "La <strong>NOM-154-SCFI-2005</strong> regula fabricación, comercialización y mantenimiento de todos los extintores portátiles en México. No es burocracia: es la norma que determina si tu extintor funcionará o fallará en una emergencia real. Incumplirla expone tu empresa a multas de hasta <strong>$2,000,000 MXN</strong>, decomiso de productos y responsabilidad penal."
+  - "La <strong>NOM-154-SCFI-2005</strong> regula el <strong>servicio de mantenimiento y recarga</strong> de extintores portátiles y móviles en México. Su campo de aplicación es explícito: obliga a las personas físicas y morales que <em>prestan</em> ese servicio — no certifica al extintor. Es la norma que determina si quien recarga tu equipo lo hace con procedimiento, personal e instrumentos verificados, o si tu extintor va a fallar en una emergencia real."
   - "En <strong>MANEXT</strong> llevamos más de 80 años operando bajo los estándares de la NOM-154-SCFI. Somos prestadores de servicio certificados con técnicos acreditados, instalaciones auditadas y agentes extintores con certificado de análisis de lote. <strong>Garantizamos cumplimiento total ante cualquier verificación.</strong>"
 ---
 <p class="article-lead">

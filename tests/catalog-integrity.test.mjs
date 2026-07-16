@@ -295,6 +295,71 @@ test('ninguna página declara stock ni oferta agregada sin precio', async () => 
 });
 
 // ---------------------------------------------------------------------------
+// Citas normativas — verificadas contra fuente primaria (auditoría 2026-07-16)
+// ---------------------------------------------------------------------------
+
+/**
+ * NOM-154-SCFI-2005, "Equipos contra incendio-Extintores-Servicio de
+ * mantenimiento y recarga". Campo de aplicación textual (DOF): «aplica a las
+ * personas físicas y morales que presten servicio de mantenimiento y recarga a
+ * extintores portátiles y móviles». Certifica al PRESTADOR — a MANEXT —, no al
+ * extintor. El sitio la presentaba como certificación de producto en ~120
+ * strings; el contenido retirado en /productos/* llegó a decir que normaba la
+ * fabricación.
+ */
+test('ninguna página presenta la NOM-154 como certificación del extintor', async () => {
+  const { readdir } = await import('node:fs/promises');
+  const dir = new URL('../src/pages/', import.meta.url);
+  const files = (await readdir(dir, { recursive: true })).filter((f) => f.endsWith('.astro'));
+
+  // La concordancia de género y número desambigua en español: en "Recarga de
+  // Extintores Certificada NOM-154" el participio es femenino y concuerda con
+  // "Recarga" (el servicio) — es correcto. El error sólo existe cuando el
+  // participio concuerda con "extintor/extintores".
+  const wrong = [
+    /extintores\s+(<[^>]+>)?\s*certificados\s*(<[^>]+>)?\s*(bajo\s+|norma\s+)?NOM-154/i,
+    /extintor\s+(<[^>]+>)?\s*certificado\s*(<[^>]+>)?\s*(bajo\s+|norma\s+)?NOM-154/i,
+    /extintores\s+avalados\s+(norma\s+)?NOM-154/i,
+    /fabricaci[oó]n\s+certificada\s*(<[^>]+>)?\s*NOM-154/i,
+    /fabricantes?\s+aprobad\w*\s*(<[^>]+>)?\s*NOM-154/i,
+    /extintores\s+MANEXT\s+cumplen[^.<]{0,20}(<[^>]+>)?\s*NOM-154/i,
+    /NOM-154[^.<]{0,40}(especificaciones|requisitos)\s+de\s+fabricaci[oó]n/i,
+    /NOM-154[^.<]{0,30}regula[^.<]{0,30}fabricaci[oó]n/i,
+  ];
+
+  const offenders = [];
+  for (const file of files) {
+    const source = await readFile(new URL(file, dir), 'utf8');
+    for (const pattern of wrong) {
+      const match = pattern.exec(source);
+      if (match) offenders.push(`${file}: "${match[0].replace(/<[^>]+>/g, '').slice(0, 70)}"`);
+    }
+  }
+
+  assert.deepEqual(offenders, [], `NOM-154 como certificación de producto:\n${offenders.join('\n')}`);
+});
+
+test('las cifras de la NOM-002-STPS-2010 en las FAQs son las verificadas', async () => {
+  const { getSiteFaqs } = await import('../src/data/site-faqs.mjs');
+  const faq = getSiteFaqs('/polvo-quimico-seco').find((f) => f.question.includes('¿Cuántos extintores necesito'));
+
+  assert.ok(faq, 'la FAQ de conteo debe existir');
+  // Riesgo ordinario: 1 por cada 300 m²; recorrido 23 m (A/C/D) y 15 m (B).
+  // El contenido retirado publicaba "200 m²" y "15 m" para todas las clases.
+  assert.match(faq.answer, /300\s*m²/, 'debe decir 300 m², no 200');
+  assert.match(faq.answer, /23\s*m/, 'debe incluir el recorrido de 23 m para clases A, C y D');
+  assert.doesNotMatch(faq.answer, /200\s*m²/, 'la cifra de 200 m² es incorrecta');
+});
+
+test('la FAQ de distancia clase K cita la distancia verificada de NFPA 10', async () => {
+  const { getSiteFaqs } = await import('../src/data/site-faqs.mjs');
+  const faq = getSiteFaqs('/tipo-k').find((f) => f.question.includes('distancia'));
+
+  assert.ok(faq, 'la FAQ de distancia debe existir');
+  assert.match(faq.answer, /9\.15\s*m/, 'NFPA 10: 30 pies = 9.15 m para clase K');
+});
+
+// ---------------------------------------------------------------------------
 // text-utils — contrato del helper
 // ---------------------------------------------------------------------------
 

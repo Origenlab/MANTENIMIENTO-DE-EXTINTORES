@@ -8,7 +8,7 @@ import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
 // Sin `brand` ni `offers` — ver nota en co2.astro: producto de reventa, sin
 // precio público, y el AggregateOffer sin `lowPrice` era inválido.
-const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","category": "Extintores portátiles e industriales"});
+const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores en CDMX con servicio de recarga y mantenimiento NOM-154-SCFI. PQS, CO2, clase K, espuma y agentes limpios","category": "Extintores portátiles e industriales"});
 
 const faqs = getSiteFaqs('/extintores');
 const faqSchema = JSON.stringify(buildFaqSchema(faqs));
@@ -42,7 +42,7 @@ const currentSlug = '';
 <Hero
   title="Venta de Extintores en CDMX | Equipos Avalados NOM con Asesoría"
   subtitle="Empresa dedicada a la venta de equipo contra incendio en Ciudad de México"
-  description="Distribuidor mexicano confiable de extintores avalados norma NOM-154. Venta al menudeo y mayoreo con servicios de alta calidad para cada cliente — comercio, industria y sector habitacional."
+  description="Distribuidor mexicano confiable de extintores, con servicio de recarga y mantenimiento bajo la norma NOM-154. Venta al menudeo y mayoreo con servicios de alta calidad para cada cliente — comercio, industria y sector habitacional."
   eyebrow="Catálogo · Todos los extintores"
   services={[
     { href: '/polvo-quimico-seco', title: 'Polvo Químico Seco', description: 'Clase A, B y C — el más versátil', icon: 'fire' },
@@ -51,7 +51,7 @@ const currentSlug = '';
     { href: '/contacto', title: 'Cotización Gratuita', description: 'Respuesta en menos de 24 h', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    'En <strong>MANEXT</strong> distribuimos extintores de todas las clases y capacidades certificados bajo <strong>NOM-154-SCFI</strong>: polvo químico seco PQS, dióxido de carbono CO2, espuma AFFF, agentes limpios y tipo K para cocinas comerciales. Cada equipo incluye documentación oficial completa, señalamiento fotoluminiscente y montaje profesional sin costo adicional.',
+    'En <strong>MANEXT</strong> distribuimos extintores de todas las clases y capacidades, con servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong>: polvo químico seco PQS, dióxido de carbono CO2, espuma AFFF, agentes limpios y tipo K para cocinas comerciales. Cada equipo incluye documentación oficial completa, señalamiento fotoluminiscente y montaje profesional sin costo adicional.',
     'Con más de 80 años como distribuidores autorizados en CDMX y Estado de México, garantizamos <strong>asesoría técnica especializada</strong> para determinar el equipo correcto según tu giro y normativa aplicable. Stock permanente con <strong>entrega en 48 horas</strong> y financiamiento empresarial sin intereses disponible.'
   ]}
   variant="page"
@@ -65,7 +65,7 @@ const currentSlug = '';
       title="Tipos de Extintores Certificados NOM que Vendemos en CDMX"
       subtitle="PQS, CO2, Espuma AFFF, Tipo K, Agentes Limpios y Agua a Presión"
       paragraphs={[
-        'En <strong>MANEXT</strong> distribuimos el catálogo completo de extintores certificados bajo <strong>NOM-154-SCFI</strong>: desde el versátil polvo químico seco PQS para uso general, hasta agentes especializados para cocinas comerciales, data centers, industria química y materiales sólidos. Cada equipo incluye instalación, señalamiento y documentación oficial.',
+        'En <strong>MANEXT</strong> distribuimos el catálogo completo de extintores, con servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong>: desde el versátil polvo químico seco PQS para uso general, hasta agentes especializados para cocinas comerciales, data centers, industria química y materiales sólidos. Cada equipo incluye instalación, señalamiento y documentación oficial.',
         'Seleccionar el extintor correcto es crítico para el cumplimiento de la <strong>NOM-002-STPS</strong>. Nuestros ingenieros certificados realizan <strong>análisis de riesgo gratuito</strong> para determinar el tipo, capacidad y cantidad exacta que requiere tu espacio antes de cualquier cotización.'
       ]}
     />
@@ -75,7 +75,7 @@ const currentSlug = '';
       <div class="service-card">
         <div class="service-image">
           <a href="/polvo-quimico-seco">
-            <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor de Polvo Químico Seco PQS clase ABC certificado NOM-154-SCFI — el más versátil para oficinas y comercios" width="640" height="380" loading="lazy" />
+            <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif" alt="Extintor de Polvo Químico Seco PQS clase ABC con servicio de recarga NOM-154-SCFI — el más versátil para oficinas y comercios" width="640" height="380" loading="lazy" />
           </a>
         </div>
         <div class="service-content">
@@ -83,7 +83,7 @@ const currentSlug = '';
           <p>El extintor más versátil: combate fuegos de sólidos (A), líquidos inflamables (B) y eléctricos (C). Ideal para oficinas, comercios, bodegas y cualquier giro de negocio. Disponible en capacidades de 4.5 a 20 kg.</p>
           <ul class="service-nav-links">
             <li><a href="/polvo-quimico-seco#capacidades">Capacidades: 4.5 kg a 20 kg</a></li>
-            <li><a href="/polvo-quimico-seco#que-es">Certificado NOM-154-SCFI</a></li>
+            <li><a href="/polvo-quimico-seco#que-es">Servicio de recarga NOM-154-SCFI</a></li>
             <li><a href="/polvo-quimico-seco#usos">Usos: Oficinas, Comercios, Bodegas</a></li>
           </ul>
           <a href="/polvo-quimico-seco" class="service-link">Ver extintores PQS</a>
@@ -188,19 +188,19 @@ const currentSlug = '';
       subtitle="Todo lo que necesitas saber para elegir el extintor correcto para tu negocio"
       paragraphs={[
         'Cada tipo de extintor está diseñado para combatir una clase específica de fuego. Elegir el equipo incorrecto puede ser ineficaz o incluso peligroso. En <strong>MANEXT</strong> te asesoramos sin costo para determinar el tipo, capacidad y cantidad exacta según tu giro y la <strong>NOM-002-STPS</strong>.',
-        'Todos nuestros extintores están certificados bajo <strong>NOM-154-SCFI</strong> e incluyen instalación profesional, señalamiento fotoluminiscente reglamentario, collares de garantía y documentación oficial válida ante Protección Civil. Stock permanente con entrega en 48 horas en toda la CDMX.'
+        'Todos nuestros extintores cuentan con servicio de mantenimiento y recarga <strong>NOM-154-SCFI</strong> e incluyen instalación profesional, señalamiento fotoluminiscente reglamentario, collares de garantía y documentación oficial válida ante Protección Civil. Stock permanente con entrega en 48 horas en toda la CDMX.'
       ]}
     />
 
     <div class="service-detail-item" id="pqs">
       <div class="service-detail-image">
         <img src="/img/img-tipos-de-extintores/polvo-quimico-seco.avif"
-          alt="Extintor de Polvo Químico Seco PQS clase ABC certificado NOM-154-SCFI — el más versátil para oficinas, comercios y bodegas en CDMX"
+          alt="Extintor de Polvo Químico Seco PQS clase ABC con servicio de recarga NOM-154-SCFI — el más versátil para oficinas, comercios y bodegas en CDMX"
           width="600" height="400" loading="lazy" />
       </div>
       <div class="service-detail-content">
         <h2>Extintor de Polvo Químico Seco (PQS) — Clase ABC</h2>
-        <p>El <strong>extintor PQS</strong> es el más versátil y el más utilizado en México: combate fuegos clase A (sólidos como madera, papel y plásticos), clase B (líquidos inflamables como gasolina y aceites) y clase C (equipos eléctricos energizados). Certificado bajo <strong>NOM-154-SCFI</strong>, es ideal para oficinas, comercios, bodegas, talleres y cualquier giro de negocio que requiera protección general. Disponible en capacidades de 4.5 kg, 6 kg, 9 kg y 20 kg con instalación, señalamiento reglamentario y documentación oficial incluidos.</p>
+        <p>El <strong>extintor PQS</strong> es el más versátil y el más utilizado en México: combate fuegos clase A (sólidos como madera, papel y plásticos), clase B (líquidos inflamables como gasolina y aceites) y clase C (equipos eléctricos energizados). Con nuestro servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong>, es ideal para oficinas, comercios, bodegas, talleres y cualquier giro de negocio que requiera protección general. Disponible en capacidades de 4.5 kg, 6 kg, 9 kg y 20 kg con instalación, señalamiento reglamentario y documentación oficial incluidos.</p>
         <p>En <strong>MANEXT</strong> contamos con stock permanente de extintores PQS para entrega e instalación en <strong>menos de 48 horas</strong> en toda la CDMX y zona metropolitana. Cada equipo incluye análisis de riesgos gratuito, herrajes de pared, collar de garantía inviolable, etiquetado NOM completo y capacitación básica de uso para tu personal. Con más de 80 años como distribuidores autorizados, ofrecemos los <strong>mejores precios del mercado</strong> con descuentos por volumen para empresas y condominios.</p>
         <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Polvo%20Qu%C3%ADmico%20Seco%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
@@ -215,7 +215,7 @@ const currentSlug = '';
       <div class="service-detail-content">
         <h2>Extintor de Dióxido de Carbono (CO2) — Equipos Electrónicos</h2>
         <p>El <strong>extintor de CO2</strong> es la solución ideal para proteger equipos electrónicos, servidores, data centers, telecomunicaciones y áreas donde los residuos del agente extintor causarían daños irreparables. Al ser un gas, el CO2 <strong>no conduce electricidad, no deja residuos y no daña los equipos</strong> tras la descarga, permitiendo reanudar operaciones de inmediato. Combate fuegos clase B y C con alta eficacia. Disponible en capacidades de 5 lb, 10 lb y 20 lb con gabinete metálico opcional incluido.</p>
-        <p>Nuestros extintores de CO2 están certificados bajo <strong>NOM-154-SCFI</strong> e incluyen programa de <strong>recarga anual obligatoria</strong> con servicio a domicilio en CDMX. En MANEXT realizamos análisis gratuito del área a proteger para determinar la capacidad y cantidad correcta. Entregamos con instalación profesional, señalamiento reglamentario y documentación oficial válida ante Protección Civil. Descuentos especiales para paquetes de 5 equipos o más.</p>
+        <p>Nuestros extintores de CO2 incluyen programa de <strong>recarga anual obligatoria</strong> bajo <strong>NOM-154-SCFI</strong> con servicio a domicilio en CDMX. En MANEXT realizamos análisis gratuito del área a proteger para determinar la capacidad y cantidad correcta. Entregamos con instalación profesional, señalamiento reglamentario y documentación oficial válida ante Protección Civil. Descuentos especiales para paquetes de 5 equipos o más.</p>
         <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20CO2%20para%20equipos%20electr%C3%B3nicos" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
@@ -229,7 +229,7 @@ const currentSlug = '';
       <div class="service-detail-content">
         <h2>Extintor de Espuma AFFF — Industria e Hidrocarburos</h2>
         <p>El <strong>extintor de espuma AFFF</strong> (Aqueous Film Forming Foam) es el equipo especializado para fuegos que involucran hidrocarburos, combustibles, gasolina, diesel y aceites industriales. Su mecanismo actúa en dos frentes: enfría la superficie con agua y forma una <strong>película filmogénica</strong> que sella el combustible e impide la re-ignición. Combate fuegos clase A y clase B con alta eficacia, siendo indispensable en talleres automotrices, plantas industriales, estaciones de servicio y bodegas de materiales inflamables.</p>
-        <p>En <strong>MANEXT</strong> distribuimos extintores AFFF certificados bajo <strong>NOM-154-SCFI</strong> en capacidades de 9 a 50 litros para instalaciones industriales de cualquier tamaño. El servicio incluye análisis de riesgo por ingeniero certificado, instalación con señalamiento NOM-026-STPS, capacitación específica para manejo de derrames y documentación oficial. Ofrecemos <strong>planes de mantenimiento anual</strong> con visitas programadas y equipos de préstamo durante el servicio.</p>
+        <p>En <strong>MANEXT</strong> distribuimos extintores AFFF con servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong> en capacidades de 9 a 50 litros para instalaciones industriales de cualquier tamaño. El servicio incluye análisis de riesgo por ingeniero certificado, instalación con señalamiento NOM-026-STPS, capacitación específica para manejo de derrames y documentación oficial. Ofrecemos <strong>planes de mantenimiento anual</strong> con visitas programadas y equipos de préstamo durante el servicio.</p>
         <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Espuma%20AFFF%20para%20industria" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
@@ -271,7 +271,7 @@ const currentSlug = '';
       <div class="service-detail-content">
         <h2>Extintor de Agua a Presión — Materiales Sólidos Clase A</h2>
         <p>El <strong>extintor de agua a presión</strong> es el equipo más efectivo para fuegos clase A que involucran materiales sólidos combustibles: madera, papel, cartón, telas, plásticos y fibras naturales. Su mecanismo de enfriamiento profundo penetra hasta el núcleo del material en combustión, eliminando el calor residual que podría causar re-ignición. Es el extintor indicado para bodegas, carpinterías, papeleras, fábricas textiles, librerías, archivos en papel y cualquier instalación con alta carga de materiales sólidos.</p>
-        <p>Los extintores de agua a presión de <strong>MANEXT</strong> están certificados bajo <strong>NOM-154-SCFI</strong> y disponibles en capacidades de 9 a 50 litros para protección proporcional al área y nivel de riesgo. <strong>Importante:</strong> nunca deben usarse en fuegos eléctricos o de líquidos inflamables. En MANEXT realizamos análisis de riesgo gratuito para determinar si el extintor de agua es la opción correcta para tu instalación, o si se requiere combinación con otros tipos. Incluye instalación, señalamiento y documentación completa para Protección Civil.</p>
+        <p>Los extintores de agua a presión de <strong>MANEXT</strong> cuentan con servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong> y están disponibles en capacidades de 9 a 50 litros para protección proporcional al área y nivel de riesgo. <strong>Importante:</strong> nunca deben usarse en fuegos eléctricos o de líquidos inflamables. En MANEXT realizamos análisis de riesgo gratuito para determinar si el extintor de agua es la opción correcta para tu instalación, o si se requiere combinación con otros tipos. Incluye instalación, señalamiento y documentación completa para Protección Civil.</p>
         <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20extintores%20de%20Agua%20a%20Presi%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
@@ -354,7 +354,7 @@ const currentSlug = '';
       subtitle="Selecciona el tipo para acceder a especificaciones, capacidades y normativa aplicable"
       paragraphs={[
         'Cada página de tipo de extintor contiene información técnica detallada: mecanismo de supresión, capacidades disponibles, sectores de aplicación, normativa aplicable y comparativa contra otros agentes. Esta información te permite llegar a una cotización con criterio técnico, no solo de precio.',
-        'Todos los equipos que distribuimos están <strong>certificados NOM-154-SCFI</strong> e incluyen análisis de riesgo gratuito, instalación profesional y documentación oficial completa. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana.'
+        'Todos los equipos que distribuimos cuentan con <strong>servicio de mantenimiento y recarga NOM-154-SCFI</strong> e incluyen análisis de riesgo gratuito, instalación profesional y documentación oficial completa. <strong>Entrega en 48 horas</strong> en CDMX y zona metropolitana.'
       ]}
     />
 

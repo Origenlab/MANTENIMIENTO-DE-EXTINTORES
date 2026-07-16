@@ -11,6 +11,10 @@ function buildSiteFaqSet(seed) {
     { question: `¿Qué servicios pueden incluirse con ${subject}?`, answer: seed.services },
     { question: `¿Cómo se da seguimiento a ${subject}?`, answer: seed.followUp },
     { question: `¿Qué documentación se confirma para ${subject}?`, answer: seed.documentation },
+    // `extra` permite preguntas autorales, redactadas para intención de búsqueda
+    // real en vez del esqueleto genérico de arriba. Cada dato normativo debe ir
+    // verificado contra fuente primaria antes de publicarse aquí.
+    ...(seed.extra ?? []),
   ];
 }
 
@@ -80,6 +84,24 @@ const siteFaqSeeds = {
     services: 'Puede incluir suministro, instalación, señalización y mantenimiento. Refacciones, pruebas o recarga se confirman según el modelo.',
     followUp: 'El servicio considera condición, componentes y verificación de carga por el método aplicable al modelo.',
     documentation: 'Se confirman marca, modelo, capacidad, rating declarado, conjunto de descarga, ficha, etiquetado y fecha estimada.',
+    extra: [
+      {
+        question: '¿Por qué el extintor de CO₂ no tiene manómetro?',
+        answer: 'Porque en un extintor de CO₂ la presión interna cambia con la temperatura ambiente, así que la lectura de un manómetro no diría si el equipo tiene el agente completo. La verificación correcta es por peso: se pesa el extintor y se compara contra la tara marcada en el propio cilindro. Si falta agente por encima de la tolerancia del fabricante, el equipo va a recarga. En MANEXT recargamos y verificamos cada CO₂ por pesaje, no por manómetro.',
+      },
+      {
+        question: '¿Puedo quemarme con la descarga de un extintor de CO₂?',
+        answer: 'Sí, por frío. El CO₂ sale a temperatura de hielo seco (alrededor de −78 °C) y puede provocar lesiones por congelación en piel expuesta. Nunca sujetes la corneta por la parte metálica si no tiene agarre aislado, y no dirijas la descarga hacia personas. Es una de las razones por las que la capacitación de uso importa tanto como el equipo.',
+      },
+      {
+        question: '¿Sirve el extintor de CO₂ contra fuegos de papel, madera o textiles?',
+        answer: 'No como solución principal. El CO₂ apaga desplazando oxígeno, pero enfría poco: en un fuego clase A con brasa profunda el material sigue caliente y se reenciende al dispersarse el gas. Por eso estos equipos se clasifican para clases B y C. Si en el área conviven electrónicos y carga combustible clase A, lo habitual es combinar agentes o revisar un agente limpio.',
+      },
+      {
+        question: '¿Es seguro usar CO₂ en un cuarto cerrado?',
+        answer: 'Requiere cuidado. El CO₂ apaga precisamente porque desplaza el oxígeno del área, y en un recinto confinado y ocupado eso es un riesgo para quien está dentro. Debe usarse con ventilación, ruta de salida despejada y personal capacitado. En espacios pequeños y ocupados conviene evaluar un agente limpio, que está formulado para usarse en áreas con gente.',
+      },
+    ],
   },
   '/contacto': {
     subject: 'la atención técnica de MANEXT',
@@ -146,6 +168,24 @@ const siteFaqSeeds = {
     services: 'Puede incluir suministro, instalación, señalización, mantenimiento y recarga. Refacciones y pruebas se confirman según el equipo.',
     followUp: 'Se revisan condición, presión o carga, agente y componentes. Después de uso o daño se atiende antes de reinstalarlo.',
     documentation: 'La propuesta confirma formulación, marca, modelo, capacidad, rating declarado, ficha y etiquetado.',
+    extra: [
+      {
+        question: '¿Cuántos extintores necesito según la NOM-002-STPS?',
+        answer: 'Para un centro de trabajo de riesgo ordinario, la NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² de superficie o fracción, y que la distancia máxima de recorrido hasta el extintor más cercano no rebase 23 m para fuegos clase A, C y D, o 15 m para clase B. Ojo: el grado de riesgo del inmueble cambia esos números, y el recorrido se mide caminando la ruta real, no en línea recta. Por eso el conteo definitivo sale de revisar el sitio, no de una fórmula por metro cuadrado.',
+      },
+      {
+        question: '¿Cómo verifico que mi extintor está en buen estado?',
+        answer: 'Revisa tres cosas de forma periódica y sin herramientas: que la aguja del manómetro esté en la zona verde —si cayó en rojo, el equipo necesita servicio—; que el pasador y el precinto numerado sigan intactos, porque un precinto roto sin haberlo usado indica manipulación; y que el cilindro, la manguera y la boquilla no tengan corrosión, golpes ni obstrucción. Revisa también la etiqueta de servicio: si la fecha ya venció, el equipo debe ir a mantenimiento.',
+      },
+      {
+        question: '¿Puedo usar un extintor PQS en una cocina con freidoras?',
+        answer: 'En el área de cocción, no. Los aceites y grasas de cocción son fuego clase K y necesitan un extintor tipo K: el polvo apaga la llama pero no enfría el aceite, que puede reencenderse, y la descarga puede proyectarlo. En el comedor, el almacén, la oficina y las áreas comunes del mismo restaurante, el PQS ABC sí es la opción correcta. Muchos negocios necesitan ambos.',
+      },
+      {
+        question: '¿Qué pasa si no recargué mi extintor a tiempo?',
+        answer: 'Dos cosas, y ninguna es buena. La primera es de cumplimiento: un equipo con la etiqueta de servicio vencida es observable en una inspección, porque el mantenimiento y la recarga deben realizarse conforme a la NOM-154-SCFI-2005 por una empresa prestadora del servicio. La segunda es física: el polvo químico seco puede compactarse con el tiempo y la vibración, y un equipo compactado descarga mal justo cuando lo necesitas. MANEXT recoge, recarga y devuelve a domicilio en CDMX y zona metropolitana.',
+      },
+    ],
   },
   '/prueba-hidrostatica': {
     subject: 'la prueba hidrostática de cilindros',
@@ -234,6 +274,24 @@ const siteFaqSeeds = {
     services: 'Puede incluir suministro, instalación, señalización y mantenimiento. Sistemas fijos o capacitación se cotizan por alcance.',
     followUp: 'Se revisan condición, carga, componentes y compatibilidad. Una descarga o cambio de cocina exige reevaluación.',
     documentation: 'La cotización confirma marca, modelo, capacidad, rating declarado, agente, ficha y compatibilidad indicada.',
+    extra: [
+      {
+        question: '¿Por qué no puedo usar un extintor PQS en la cocina?',
+        answer: 'Porque el polvo químico seco apaga la llama pero no enfría el aceite. Las grasas de cocción arden muy por encima de su temperatura de autoignición, así que al disiparse el polvo el aceite sigue lo bastante caliente para reencenderse, y la descarga puede proyectar aceite en llamas. El agente húmedo tipo K actúa distinto: reacciona químicamente con la grasa —saponificación— y forma una capa jabonosa que sella la superficie y la enfría. El PQS sí es adecuado para el comedor, el almacén y las áreas administrativas del mismo restaurante.',
+      },
+      {
+        question: '¿A qué distancia debe estar el extintor tipo K de la freidora?',
+        answer: 'La NFPA 10 fija una distancia máxima de recorrido de 9.15 m (30 pies) desde cualquier equipo de cocción hasta el extintor clase K — la más corta de todas las clases, porque un fuego de grasa avanza muy rápido. Se mide caminando la ruta real, no en línea recta: hay que rodear mesas, plancha y estaciones. La cantidad de unidades depende del número y disposición de los equipos de cocción, no del tamaño del local.',
+      },
+      {
+        question: '¿Cada cuánto se recarga un extintor tipo K?',
+        answer: 'El servicio de mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005, que obliga a la empresa prestadora del servicio a seguir procedimiento, personal e instrumentos verificados. En una cocina el equipo trabaja en un ambiente con grasa y variación térmica constante, así que conviene no estirar los plazos. MANEXT emite el certificado de servicio con folio para tu expediente de Protección Civil.',
+      },
+      {
+        question: '¿Es obligatorio el extintor tipo K en mi restaurante?',
+        answer: 'La NOM-002-STPS-2010 obliga al centro de trabajo a contar con extintores acordes con la clase de fuego presente. Si en tu cocina hay aceites o grasas de cocción, el fuego es clase K y ningún otro agente lo cubre. La autoridad puede observarlo en una inspección; el criterio y la sanción aplicable dependen de la autoridad y del caso, así que conviene resolverlo antes de la visita. MANEXT evalúa tu cocina sin costo.',
+      },
+    ],
   },
   '/venta-de-extintores': {
     subject: 'la compra de extintores',

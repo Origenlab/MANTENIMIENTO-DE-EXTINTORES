@@ -8,8 +8,8 @@ import { buildFaqSchema } from '../lib/faq-utils.mjs';
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Venta de Extintores Certificados NOM-154-SCFI en CDMX",
-  "description": "Extintores nuevos certificados NOM-154-SCFI de todas las capacidades y tipos: PQS, CO₂, AFFF, Tipo K, agentes limpios y agua a presión. Instalación incluida y entrega en 48 horas en CDMX y Estado de México.",
+  "name": "Venta de Extintores con Servicio NOM-154-SCFI en CDMX",
+  "description": "Extintores nuevos de todas las capacidades y tipos, con servicio de mantenimiento y recarga NOM-154-SCFI: PQS, CO₂, AFFF, Tipo K, agentes limpios y agua a presión. Instalación incluida y entrega en 48 horas en CDMX y Estado de México.",
   // Ver nota en co2.astro: producto de reventa, sin precio público. El
   // LocalBusiness que colgaba de `seller` se conserva en /contacto y /nosotros,
   // donde describe a la empresa y no a una oferta sin precio.
@@ -21,11 +21,11 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 ---
 
 <Layout
-  title="Venta de Extintores Certificados NOM-154-SCFI en CDMX | Entrega 48 h | MANEXT"
-  description="Distribuidor autorizado de extintores nuevos certificados NOM-154-SCFI: PQS, CO₂, AFFF, Tipo K, agentes limpios y agua a presión. Instalación incluida, financiamiento sin intereses y entrega en 48 h en CDMX y Estado de México. +80 años de experiencia."
+  title="Venta de Extintores con Servicio NOM-154-SCFI en CDMX | Entrega 48 h | MANEXT"
+  description="Distribuidor de extintores nuevos con servicio de recarga y mantenimiento NOM-154-SCFI: PQS, CO₂, AFFF, Tipo K, agentes limpios y agua a presión. Instalación incluida, financiamiento sin intereses y entrega en 48 h en CDMX y Estado de México. +80 años de experiencia."
   canonical="https://mantenimientodeextintores.mx/venta-de-extintores"
   ogTitle="Venta de Extintores Certificados NOM en CDMX | Instalación Incluida | MANEXT"
-  ogDescription="Extintores certificados NOM-154-SCFI con instalación, soporte, señalización y documentación incluida. Financiamiento empresarial sin intereses, entrega en 48 horas y +80 años de experiencia."
+  ogDescription="Extintores con servicio de mantenimiento y recarga NOM-154-SCFI, instalación, soporte, señalización y documentación incluida. Financiamiento empresarial sin intereses, entrega en 48 horas y +80 años de experiencia."
   ogImage="https://mantenimientodeextintores.mx/img/img-index/venta-de-extintores.avif"
   breadcrumbs={[
     { name: 'Servicios', url: 'https://mantenimientodeextintores.mx/servicios' },
@@ -34,10 +34,10 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
   schemas={[productSchema, faqSchema]}
   extraCss={['/css/section-redesign.css?v=4']}
 >
-<Hero title="Venta de Extintores Certificados NOM-154-SCFI en CDMX"
-  subtitle="Distribuidor autorizado con productos de fábrica, instalación profesional, documentación oficial y entrega en 48 horas"
+<Hero title="Venta de Extintores con Servicio NOM-154-SCFI en CDMX"
+  subtitle="Distribuidor con productos de fábrica, instalación profesional, documentación oficial y entrega en 48 horas"
   description="Más de 80 años como proveedor de empresas, comercios y particulares en CDMX y Estado de México. Catálogo completo PQS, CO₂, AFFF, Tipo K, agentes limpios y agua. Financiamiento empresarial sin intereses."
-  eyebrow="Servicio · Venta certificada NOM-154-SCFI"
+  eyebrow="Servicio · Venta con recarga y mantenimiento NOM-154-SCFI"
   services={[
     { href: '/catalogo', title: 'Ver catálogo completo', description: 'Todos los modelos y capacidades NOM', icon: 'grid' },
     { href: '/recarga-de-extintores', title: 'Recarga y mantenimiento', description: 'Servicio técnico avalado NOM-154', icon: 'wrench' },
@@ -45,11 +45,11 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     { href: '/contacto', title: 'Solicitar cotización', description: 'Entrega en 48 horas en CDMX', icon: 'phone', featured: true },
   ]}
   paragraphs={[
-    '<strong>MANEXT</strong> comercializa extintores de <strong>fabricación certificada NOM-154-SCFI</strong> de marcas con trayectoria comprobada — no productos económicos genéricos con certificaciones cuestionables. Cada equipo se entrega con factura fiscal CFDI 4.0, acreditación NOM original del fabricante con trazabilidad, ficha técnica, constancia de colocación firmada por técnico avalado y plano de ubicación válido ante <strong>Protección Civil</strong>. La instalación profesional, soporte metálico y señalización fotoluminiscente NOM-026 vienen <strong>incluidos sin cargo adicional</strong>.',
+    '<strong>MANEXT</strong> comercializa extintores de marcas con trayectoria comprobada, con <strong>servicio de mantenimiento y recarga NOM-154-SCFI</strong> — no productos económicos genéricos con certificaciones cuestionables. Cada equipo se entrega con factura fiscal CFDI 4.0, documentación original del fabricante con trazabilidad, ficha técnica, constancia de colocación firmada por técnico avalado y plano de ubicación válido ante <strong>Protección Civil</strong>. La instalación profesional, soporte metálico y señalización fotoluminiscente NOM-026 vienen <strong>incluidos sin cargo adicional</strong>.',
     'Contamos con el catálogo más completo de la zona metropolitana: <strong>PQS de 1 a 50 kg</strong>, <strong>CO₂ de 5 a 30 lb</strong>, espuma AFFF, agentes limpios FM-200 y Novec 1230, Tipo K para cocinas y agua a presión. Stock permanente de más de 500 unidades, <strong>financiamiento empresarial sin intereses</strong> a 3, 6 y 12 meses con aprobación express en 24 horas, descuentos por volumen y entrega en <strong>48 horas</strong> con garantía de aprobación en inspección de Protección Civil — o corregimos sin costo.'
   ]}
   variant="page" /><section class="services-detail"><div class="container"><div class="section-header"><h2 class="section-title">Catálogo de Productos contra Incendios — Todas las Categorías y Capacidades</h2><p class="section-subtitle">
-Productos aprobados NOM-154-SCFI de todas las capacidades con garantía de fábrica
+Productos de todas las capacidades con garantía de fábrica y servicio NOM-154-SCFI
 </p></div><div class="service-detail-item" id="venta-pqs"><div class="service-detail-image"><img
 src="/img/img-ventas-de-extintores/extintores-porque-s-polvo-quimico-seco-tipo-abc.avif"
 alt="Venta de Extintores PQS Polvo Químico Seco"
@@ -61,14 +61,14 @@ Los <strong>dispositivos de polvo químico seco (PQS) tipo ABC</strong> son los 
 para protección general en oficinas, comercios, industrias y almacenes. Combaten eficazmente fuegos
 clase A (sólidos como madera, papel, cartón, plásticos), clase B (líquidos inflamables como gasolina,
 aceite, solventes, pinturas) y clase C (aparatos eléctricos energizados). En MANEXT comercializamos
-<strong>unidades PQS de marcas líderes aprobadas NOM-154-SCFI</strong> fabricadas con
+<strong>unidades PQS de marcas líderes, con servicio de mantenimiento y recarga NOM-154-SCFI</strong>, fabricadas con
 cilindros de acero de alta resistencia, válvula de descarga de precisión, manómetro indicador de presión,
 manguera reforzada con boquilla difusora, y cargadas con monofosfato de amonio grado premium que garantiza
 máxima efectividad. Disponibles en todas las capacidades reglamentarias: 1kg portátil, 2kg, 4.5kg,
 6kg, 9kg, 12kg, 20kg rodante, y hasta 50kg para industria pesada.
 </p><p>
-Todos nuestros productos PQS incluyen: unidad sellada de fábrica, acreditación NOM-154-SCFI
-original del fabricante, garantía de 12 meses, entrega a domicilio sin costo en CDMX y zona
+Todos nuestros productos PQS incluyen: unidad sellada de fábrica, certificado de servicio NOM-154-SCFI,
+documentación original del fabricante, garantía de 12 meses, entrega a domicilio sin costo en CDMX y zona
 metropolitana, montaje profesional con soporte metálico homologado atornillado/soldado, señalamiento
 fotoluminiscente reglamentario con pictogramas de clases de fuego, y documentación
 oficial completa para Protección Civil. <strong>Disponibilidad inmediata en stock permanente de más de
@@ -93,8 +93,8 @@ térmicamente (el CO2 se descarga a -78°C causando congelamiento por contacto),
 contenido por peso. Disponibles en capacidades industriales: 5lb (2.3kg), 10lb (4.5kg), 15lb (6.8kg), 20lb (9kg).
 </p><p>
 Todos nuestros productos CO2 incluyen: unidad de fábrica, cilindro de acero especial de alta presión, válvula
-de seguridad acreditada, corneta difusora aislada, etiquetas de instrucciones en español, acreditación
-NOM-154-SCFI, garantía 24 meses, entrega y montaje profesional sin costo en CDMX, soporte
+de seguridad acreditada, corneta difusora aislada, etiquetas de instrucciones en español, certificado
+de servicio NOM-154-SCFI, garantía 24 meses, entrega y montaje profesional sin costo en CDMX, soporte
 metálico especial para cilindros CO2, señalamiento específico clase BC. <strong>Los cilindros CO2 NO son
 adecuados para uso en espacios pequeños cerrados</strong> (peligro de asfixia por desplazamiento de oxígeno)
 ni para fuegos clase A de sólidos profundos (el CO2 enfría pero no penetra materiales porosos). Recomendados
@@ -122,7 +122,7 @@ cargadas con concentrado AFFF 3% o 6% grado industrial importado. Capacidades: 9
 </p><p>
 Todos nuestros productos AFFF incluyen: unidad de fabricante especializado, tanque acero inoxidable anticorrosión, concentrado
 AFFF importado con menos de 90 días de fabricación para máxima efectividad, válvula con cámara de mezcla
-integrada, acreditación NOM-154-SCFI específica para AFFF, ficha técnica de seguridad (MSDS) del concentrado,
+integrada, certificado de servicio NOM-154-SCFI, ficha técnica de seguridad (MSDS) del concentrado,
 garantía 18 meses, entrega y montaje industrial, capacitación sin costo para brigadas sobre
 uso correcto en fuegos de hidrocarburos. <strong>Importante:</strong> Los cilindros AFFF requieren recarga
 anual obligatoria porque el concentrado se degrada químicamente perdiendo propiedades espumantes y filmantes
@@ -150,7 +150,7 @@ de acero especial, válvula de precisión con sello hermético, agente limpio gr
 ambientales EPA/UL. Capacidades: 1.4kg, 2.5kg, 4.5kg, 5.4kg.
 </p><p>
 Nuestros productos con agentes limpios están disponibles en diferentes variantes (Halotron, HFC-236fa, Novec 1230) según sus necesidades específicas. Todos incluyen: unidad de tecnología premium, agente limpio avalado con
-documentación ambiental, cilindro de precisión, válvula de descarga aprobada UL, acreditación NOM-154-SCFI,
+documentación ambiental, cilindro de precisión, válvula de descarga aprobada UL, certificado de servicio NOM-154-SCFI,
 ficha técnica de seguridad (MSDS) con propiedades del agente, validación ambiental EPA que acredita cumplimiento
 con protocolo de Montreal (no daña capa de ozono), garantía 24 meses, entrega y colocación
 especializada. <strong>Los agentes limpios son significativamente más costosos que PQS o CO2</strong> debido
@@ -178,8 +178,8 @@ que sella y enfría. Capacidades: 6 litros, 9 litros.
 </p><p>
 Nuestros productos clase K incluyen: unidad
 avalada UL/NOM específica clase K, tanque acero inoxidable profesional, acetato de potasio grado
-alimenticio, boquilla aspersora diseñada para neblina fina (evita salpicaduras de aceite caliente), acreditación
-NOM-154-SCFI, garantía 18 meses, entrega y colocación especializada en área de cocina según normativa,
+alimenticio, boquilla aspersora diseñada para neblina fina (evita salpicaduras de aceite caliente), certificado
+de servicio NOM-154-SCFI, garantía 18 meses, entrega y colocación especializada en área de cocina según normativa,
 capacitación obligatoria sin costo para chefs y personal de cocina sobre uso correcto (técnica de aplicación
 específica para evitar reignición), constancias de capacitación con validez oficial ante Protección Civil y
 Salubridad. <strong>La colocación de dispositivos clase K es verificación obligatoria</strong> en licencias de
@@ -208,8 +208,8 @@ y cargadas con agua destilada tratada con aditivos anticongelantes (evitan conge
 bajo cero) y anticorrosivos (protegen el cilindro). Capacidades: 9 litros, 20 litros rodante.
 </p><p>
 Nuestros productos de agua incluyen:
-unidad acreditada NOM, cilindro con recubrimiento anticorrosión, agua destilada tratada con aditivos,
-documentación NOM-154-SCFI, garantía 12 meses, entrega y montaje, señalamiento específico
+unidad de fábrica, cilindro con recubrimiento anticorrosión, agua destilada tratada con aditivos,
+certificado de servicio NOM-154-SCFI, garantía 12 meses, entrega y montaje, señalamiento específico
 clase A con advertencias de restricciones de uso. <strong>ADVERTENCIA CRÍTICA: Los cilindros de agua NUNCA
 deben usarse en fuegos eléctricos</strong> (peligro mortal de electrocución porque el agua conduce electricidad)
 ni en fuegos de aceites/grasas clase K (el agua causa explosión violenta por ebullición instantánea cuando
@@ -230,7 +230,7 @@ industrias de bajo peligro.
 <div class="rd-card">
 <div class="rd-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
 <h3>Productos Certificados de Marcas Reconocidas</h3>
-<p>Comercializamos exclusivamente <strong>productos de fabricantes aprobados NOM-154-SCFI</strong> con respaldo técnico nacional. Cada unidad incluye documentación original, número de serie rastreable, placa metálica con especificaciones técnicas y etiquetas en español.</p>
+<p>Comercializamos exclusivamente <strong>productos de fabricantes reconocidos, con servicio NOM-154-SCFI</strong> y respaldo técnico nacional. Cada unidad incluye documentación original, número de serie rastreable, placa metálica con especificaciones técnicas y etiquetas en español.</p>
 <ul class="rd-checklist">
 <li>Cilindros de acero con tratamiento anticorrosión</li>
 <li>Válvulas de bronce o acero inoxidable</li>
@@ -269,8 +269,8 @@ Solicitar Cotización por WhatsApp
 Al enviar este formulario, aceptas nuestro <a href="/privacidad">Aviso de Privacidad</a></p></form></div></div></div></section><section class="faq"><div class="container"><div class="section-header"><h2>Preguntas Frecuentes sobre Compra de Equipos contra Incendios</h2><p class="section-subtitle">
 Resolvemos las dudas más comunes sobre compra de extinguidores, precios, colocación y financiamiento
 </p></div><FaqList faqs={faqs} firstOpen={true} /></div></section><section class="cta-premium"><div class="container"><div class="cta-premium-wrapper"><div class="cta-premium-content"><div class="cta-premium-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>Productos Aprobados NOM</span></div><h2>¿Necesitas Equipos contra Incendios para tu Empresa? ¡Cotiza Hoy!</h2><p class="cta-premium-description">
-Cumple con las normativas de Protección Civil y protege tu inversión con <strong>productos aprobados
-NOM-154-SCFI</strong> de las mejores marcas. En <strong>MANEXT</strong> te ofrecemos dispositivos de calidad superior
+Cumple con las normativas de Protección Civil y protege tu inversión con <strong>productos de las mejores marcas
+y servicio de mantenimiento y recarga NOM-154-SCFI</strong>. En <strong>MANEXT</strong> te ofrecemos dispositivos de calidad superior
 con entrega y colocación profesional en 48 horas, financiamiento sin intereses disponible, y garantía de
 aprobación en inspecciones. Más de <strong>80 años de experiencia</strong> suministrando sistemas contra incendios.
 ¡Cotiza ahora sin compromiso!
@@ -332,7 +332,7 @@ Planes integrales anuales que incluyen recarga, mantenimiento preventivo, prueba
 hidrostáticas, documentación continua, y atención prioritaria con descuentos corporativos.
 </p><ul class="service-features"><li>Todos los servicios incluidos</li><li>Programación automática de servicios</li><li>Descuentos corporativos disponibles</li><li>Cumplimiento normativo garantizado</li></ul><a href="/contacto" class="service-link">Pólizas de Mantenimiento Anual</a></div></div></div></div></section><section class="blog-articles-section"><div class="container"><div class="section-header"><h2>Guías y Artículos sobre Protección contra Incendios</h2><p class="section-subtitle">
 Aprende a elegir el producto correcto, conoce las normativas y toma decisiones informadas
-</p></div><div class="blog-articles-grid"><article class="blog-article-card"><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-image"><img src="/img/img-index/extintor.avif" alt="Extintor rojo portátil colocado junto a una guía de selección por tipo de negocio" width="600" height="400" loading="lazy"><span class="blog-article-category">Guía de Compra</span></a><div class="blog-article-content"><h3><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx">Cómo Elegir el Extintor Correcto para tu Tipo de Negocio</a></h3><p>Guía completa para seleccionar el extintor adecuado según tu industria, riesgos y normativa aplicable en CDMX.</p><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-article-image"><img src="/img/img-index/polvo-quimico-seco-pqs.avif" alt="Extintor de polvo químico seco PQS tipo ABC en primer plano" width="600" height="400" loading="lazy"><span class="blog-article-category">Tipos</span></a><div class="blog-article-content"><h3><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas">Extintor PQS: Guía Completa de Usos y Ventajas</a></h3><p>Todo sobre el extintor más vendido: características, ventajas, precios y cuándo es la mejor opción para tu negocio.</p><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-image"><img src="/img/img-index/señalizaion-y-equipamiento.avif" alt="Señalización y equipamiento de seguridad conforme a la norma NOM-154-SCFI" width="600" height="400" loading="lazy"><span class="blog-article-category">Normativas</span></a><div class="blog-article-content"><h3><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores">NOM-154-SCFI: Guía Completa de Cumplimiento</a></h3><p>Conoce todos los requisitos de certificación obligatoria para comprar extintores que cumplan con la normativa mexicana.</p><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-image"><img src="/img/img-index/capacitacion-y-brigadas.avif" alt="Sistema integral de protección contra incendios con extintores y detectores" width="600" height="400" loading="lazy"><span class="blog-article-category">Sistemas</span></a><div class="blog-article-content"><h3><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025">Sistemas de Protección Integral para Empresas 2025</a></h3><p>Diseño completo de protección contra incendios: extintores, detectores, alarmas y sistemas automáticos con ROI calculado.</p><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-link">Leer guía →</a></div></article></div><div class="blog-articles-cta"><a href="/blog/" class="btn-view-all-articles">Ver Todos los Artículos →</a></div></div></section>
+</p></div><div class="blog-articles-grid"><article class="blog-article-card"><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-image"><img src="/img/img-index/extintor.avif" alt="Extintor rojo portátil colocado junto a una guía de selección por tipo de negocio" width="600" height="400" loading="lazy"><span class="blog-article-category">Guía de Compra</span></a><div class="blog-article-content"><h3><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx">Cómo Elegir el Extintor Correcto para tu Tipo de Negocio</a></h3><p>Guía completa para seleccionar el extintor adecuado según tu industria, riesgos y normativa aplicable en CDMX.</p><a href="/blog/como-elegir-extintor-correcto-negocio-cdmx" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-article-image"><img src="/img/img-index/polvo-quimico-seco-pqs.avif" alt="Extintor de polvo químico seco PQS tipo ABC en primer plano" width="600" height="400" loading="lazy"><span class="blog-article-category">Tipos</span></a><div class="blog-article-content"><h3><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas">Extintor PQS: Guía Completa de Usos y Ventajas</a></h3><p>Todo sobre el extintor más vendido: características, ventajas, precios y cuándo es la mejor opción para tu negocio.</p><a href="/blog/extintor-polvo-quimico-seco-pqs-usos-ventajas" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-image"><img src="/img/img-index/señalizaion-y-equipamiento.avif" alt="Señalización y equipamiento de seguridad conforme a la norma NOM-154-SCFI" width="600" height="400" loading="lazy"><span class="blog-article-category">Normativas</span></a><div class="blog-article-content"><h3><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores">NOM-154-SCFI: Guía Completa de Cumplimiento</a></h3><p>Conoce todos los requisitos de la norma que regula el servicio de mantenimiento y recarga de extintores en México.</p><a href="/blog/nom-154-scfi-guia-completa-cumplimiento-extintores" class="blog-article-link">Leer guía →</a></div></article><article class="blog-article-card"><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-image"><img src="/img/img-index/capacitacion-y-brigadas.avif" alt="Sistema integral de protección contra incendios con extintores y detectores" width="600" height="400" loading="lazy"><span class="blog-article-category">Sistemas</span></a><div class="blog-article-content"><h3><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025">Sistemas de Protección Integral para Empresas 2025</a></h3><p>Diseño completo de protección contra incendios: extintores, detectores, alarmas y sistemas automáticos con ROI calculado.</p><a href="/blog/sistemas-proteccion-integral-empresas-cdmx-2025" class="blog-article-link">Leer guía →</a></div></article></div><div class="blog-articles-cta"><a href="/blog/" class="btn-view-all-articles">Ver Todos los Artículos →</a></div></div></section>
 <style>.blog-articles-section{background:#f9f9f9;padding:4rem 0}.blog-articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}.blog-article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column}.blog-article-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.12)}.blog-article-image{position:relative;width:100%;height:200px;overflow:hidden;display:block}.blog-article-image img{width:100%;height:100%;object-fit:cover}.blog-article-card:hover .blog-article-image img{transform:scale(1.05)}.blog-article-category{position:absolute;top:1rem;left:1rem;background:#4caf50;color:white;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}.blog-article-content{padding:1.5rem;flex:1;display:flex;flex-direction:column}.blog-article-content h3{font-size:1.15rem;margin:0 0 0.75rem 0;line-height:1.4}.blog-article-content h3 a{color:#333;text-decoration:none}.blog-article-content h3 a:hover{color:#4caf50}.blog-article-content p{color:#666;font-size:0.9rem;line-height:1.6;margin:0 0 1rem 0;flex:1}.blog-article-link{color:#4caf50;text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block}.blog-article-link:hover{color:#388e3c;transform:translateX(5px)}.blog-articles-cta{text-align:center;margin-top:3rem}.btn-view-all-articles{display:inline-block;background:#4caf50;color:white;padding:1rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:1.05rem;box-shadow:0 4px 12px rgba(76,175,80,0.3)}.btn-view-all-articles:hover{background:#388e3c;transform:translateY(-2px);box-shadow:0 6px 16px rgba(76,175,80,0.4)}@media (max-width:768px){.blog-articles-grid{grid-template-columns:1fr;gap:1.5rem}.blog-article-image{height:180px}}</style>
 <section class="emergency-cta"><div class="container"><div class="emergency-cta-content"><div class="emergency-header"><h2>¿Necesitas Equipamiento contra Incendios Urgente?</h2><p>Atención inmediata para empresas en CDMX y Estado de México</p></div><div class="emergency-actions"><a href="tel:5614612594" class="emergency-action-card emergency-phone"><div class="emergency-action-info"><span class="emergency-label">Llamar Ahora</span><span class="emergency-contact">56 1461 2594</span><span class="emergency-desc">Respuesta inmediata</span></div></a><a href="https://wa.me/5215614612594?text=Necesito%20cotización%20para%20compra%20de%20extintores" class="emergency-action-card emergency-whatsapp" target="_blank" rel="noopener"><div class="emergency-action-info"><span class="emergency-label">WhatsApp</span><span class="emergency-contact">Cotización Express</span><span class="emergency-desc">Atención prioritaria 24/7</span></div></a></div></div></div>
 <style>
