@@ -11,12 +11,8 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Extintor de Polvo Químico Seco PQS Clase ABC",
   "description": "Extintores de polvo químico seco tipo ABC certificados NOM-154-SCFI. Combate fuegos clase A, B y C. Capacidades de 4.5 a 20 kg. Venta, instalación y servicio en CDMX.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock"
-  }
+  // Ver nota en co2.astro: producto de reventa, sin precio público.
+  "category": "Extintores de polvo químico seco"
 });
 
 const faqs = getSiteFaqs('/polvo-quimico-seco');

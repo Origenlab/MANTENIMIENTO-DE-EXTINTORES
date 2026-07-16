@@ -10,23 +10,10 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Venta de Extintores Certificados NOM-154-SCFI en CDMX",
   "description": "Extintores nuevos certificados NOM-154-SCFI de todas las capacidades y tipos: PQS, CO₂, AFFF, Tipo K, agentes limpios y agua a presión. Instalación incluida y entrega en 48 horas en CDMX y Estado de México.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "LocalBusiness",
-      "name": "MANEXT — Mantenimiento de Extintores",
-      "telephone": "+52-56-1461-2594",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tlalnepantla de Baz",
-        "addressRegion": "Estado de México",
-        "addressCountry": "MX"
-      }
-    }
-  }
+  // Ver nota en co2.astro: producto de reventa, sin precio público. El
+  // LocalBusiness que colgaba de `seller` se conserva en /contacto y /nosotros,
+  // donde describe a la empresa y no a una oferta sin precio.
+  "category": "Extintores portátiles e industriales"
 });
 
 const faqs = getSiteFaqs('/venta-de-extintores');

@@ -11,12 +11,8 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Extintor Tipo K de Agente Húmedo — Cocinas Comerciales Clase K",
   "description": "Extintores Tipo K certificados NOM-154-SCFI. Obligatorio en cocinas comerciales, restaurantes y hoteles por NOM-002-STPS. Agente húmedo de saponificación que previene re-ignición en aceites y grasas a altas temperaturas. CDMX.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock"
-  }
+  // Ver nota en co2.astro: producto de reventa, sin precio público.
+  "category": "Extintores de agente húmedo clase K"
 });
 
 const faqs = getSiteFaqs('/tipo-k');

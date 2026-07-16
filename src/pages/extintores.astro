@@ -6,7 +6,9 @@ import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
 
-const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","brand": {"@type": "Brand","name": "MANEXT"},"offers": {"@type": "AggregateOffer","priceCurrency": "MXN","availability": "https://schema.org/InStock"}});
+// Sin `brand` ni `offers` — ver nota en co2.astro: producto de reventa, sin
+// precio público, y el AggregateOffer sin `lowPrice` era inválido.
+const productSchema = JSON.stringify({"@context": "https://schema.org","@type": "Product","name": "Venta de Extintores en CDMX","description": "Venta de extintores avalados NOM-154-SCFI en CDMX. PQS, CO2, clase K, espuma y agentes limpios con recarga y mantenimiento","category": "Extintores portátiles e industriales"});
 
 const faqs = getSiteFaqs('/extintores');
 const faqSchema = JSON.stringify(buildFaqSchema(faqs));

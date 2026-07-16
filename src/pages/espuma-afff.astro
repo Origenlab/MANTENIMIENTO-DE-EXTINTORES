@@ -11,12 +11,8 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Extintor de Espuma AFFF Clase AB — Industria e Hidrocarburos",
   "description": "Extintores de espuma AFFF certificados NOM-154-SCFI. Clase A y B. Alta eficacia en derrames de combustibles, gasolina, aceites e hidrocarburos. Talleres automotrices, plantas industriales y estaciones de servicio en CDMX.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock"
-  }
+  // Ver nota en co2.astro: producto de reventa, sin precio público.
+  "category": "Extintores de espuma AFFF"
 });
 
 const faqs = getSiteFaqs('/espuma-afff');

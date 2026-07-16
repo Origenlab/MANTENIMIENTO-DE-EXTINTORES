@@ -11,12 +11,8 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Extintor de Agente Limpio FM-200 / Novec 1230 — Áreas Críticas",
   "description": "Extintores de agente limpio certificados NOM-154-SCFI. FM-200 y Novec 1230 para salas de cómputo, archivos, museos y centros de control. Cero residuo, no conduce electricidad, seguro en espacios ocupados. CDMX.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock"
-  }
+  // Ver nota en co2.astro: producto de reventa, sin precio público.
+  "category": "Extintores de agente limpio"
 });
 
 const faqs = getSiteFaqs('/agentes-limpios');

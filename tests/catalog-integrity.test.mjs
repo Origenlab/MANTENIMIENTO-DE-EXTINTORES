@@ -247,6 +247,54 @@ test('cada URL retirada de /productos/ tiene un 301 a un destino que existe', as
 });
 
 // ---------------------------------------------------------------------------
+// Postura editorial: producto de reventa, sin precio público
+// ---------------------------------------------------------------------------
+
+/**
+ * tests/catalog.test.mjs:118 ya blindaba el catálogo ("resold products must not
+ * be branded as MANEXT"), pero 8 landing pages hacían justo lo contrario:
+ * declaraban brand:MANEXT sobre producto que MANEXT distribuye y no fabrica, y
+ * un AggregateOffer con availability:InStock sin `lowPrice` — inválido para
+ * Google y presumiendo stock. Este test extiende la postura a todo src/pages.
+ */
+const PAGES_WITH_PRODUCT_SCHEMA = [
+  'agentes-limpios', 'agua-presion', 'co2', 'espuma-afff',
+  'extintores', 'polvo-quimico-seco', 'tipo-k', 'venta-de-extintores',
+];
+
+/** Lee el .astro descartando comentarios: sólo interesa el código que se emite. */
+async function readPageCode(page) {
+  const source = await readFile(new URL(`../src/pages/${page}.astro`, import.meta.url), 'utf8');
+  return source
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .split('\n')
+    .filter((line) => !line.trimStart().startsWith('//'))
+    .join('\n');
+}
+
+test('ninguna página declara MANEXT como marca de un producto de reventa', async () => {
+  const offenders = [];
+
+  for (const page of PAGES_WITH_PRODUCT_SCHEMA) {
+    if (/"brand"\s*:/.test(await readPageCode(page))) offenders.push(page);
+  }
+
+  assert.deepEqual(offenders, [], `páginas que marcan producto de reventa como MANEXT: ${offenders.join(', ')}`);
+});
+
+test('ninguna página declara stock ni oferta agregada sin precio', async () => {
+  const offenders = [];
+
+  for (const page of PAGES_WITH_PRODUCT_SCHEMA) {
+    const code = await readPageCode(page);
+    if (/AggregateOffer/.test(code)) offenders.push(`${page}: AggregateOffer`);
+    if (/schema\.org\/InStock/.test(code)) offenders.push(`${page}: InStock`);
+  }
+
+  assert.deepEqual(offenders, [], `claims de oferta sin sustento:\n${offenders.join('\n')}`);
+});
+
+// ---------------------------------------------------------------------------
 // text-utils — contrato del helper
 // ---------------------------------------------------------------------------
 

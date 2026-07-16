@@ -11,12 +11,12 @@ const productSchema = JSON.stringify({
   "@type": "Product",
   "name": "Extintor de Dióxido de Carbono CO2 Clase BC",
   "description": "Extintores de CO2 certificados NOM-154-SCFI. Sin residuos, no conduce electricidad, no daña equipos electrónicos. Capacidades de 5 a 20 lb. Data centers, servidores y telecomunicaciones en CDMX.",
-  "brand": { "@type": "Brand", "name": "MANEXT" },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock"
-  }
+  // Sin `brand` ni `offers`: MANEXT distribuye y da servicio, no fabrica los
+  // equipos, y no publica precio. Declarar brand:MANEXT atribuía a la marca un
+  // producto de reventa, y el AggregateOffer sin `lowPrice` es inválido para
+  // Google además de presumir stock. Misma postura que el catálogo, blindada
+  // en tests/catalog.test.mjs:118. Auditoría 2026-07-16.
+  "category": "Extintores de dióxido de carbono"
 });
 
 const faqs = getSiteFaqs('/co2');
