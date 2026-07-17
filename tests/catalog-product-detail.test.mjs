@@ -151,7 +151,13 @@ test('every catalog product has one unique, complete and indexable detail page',
     assert.ok(detail.description.length >= 140, `product description too short for ${product.id}`);
     assert.ok(detail.technicalSpecs.length >= 6, `insufficient technical specs for ${product.id}`);
     assert.ok(detail.capacityGuide.length >= 1, `missing variant guide for ${product.id}`);
-    assert.ok(detail.recommendedUses.length >= 3, `insufficient applications for ${product.id}`);
+    // Antes se exigía `>= 3`, y como los 230 derivados sólo tienen 2
+    // aplicaciones reales, el generador rellenaba con "Aplicación técnica 3".
+    // El test obligaba al relleno. Ahora se exige que existan y que sean reales.
+    assert.ok(detail.recommendedUses.length >= 2, `insufficient applications for ${product.id}`);
+    for (const use of detail.recommendedUses) {
+      assert.doesNotMatch(use.title, /^Aplicación técnica \d+$/, `filler application in ${product.id}`);
+    }
     assert.ok(detail.limitations.length >= 3, `insufficient safety guidance for ${product.id}`);
     assert.ok(detail.faqs.length >= 8, `insufficient FAQs for ${product.id}`);
     assert.ok(detail.sources.length >= 2, `insufficient technical sources for ${product.id}`);

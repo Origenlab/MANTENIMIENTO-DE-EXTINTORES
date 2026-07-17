@@ -99,7 +99,9 @@ test('all derivatives expose complete details, primary sources and family naviga
     assert.equal(detail.parentProductId, product.parentProductId);
     assert.equal(detail.faqs.length, 8);
     assert.equal(detail.benefits.length, 4);
-    assert.ok(detail.recommendedUses.length >= 3);
+    // Los derivados tienen 2 aplicaciones reales; exigir 3 obligaba al relleno.
+    assert.ok(detail.recommendedUses.length >= 2);
+    assert.ok(detail.recommendedUses.every((use) => !/^Aplicación técnica \d+$/.test(use.title)));
     assert.ok(detail.limitations.length >= 3);
     assert.equal(detail.seo.canonical, `https://mantenimientodeextintores.mx${product.productPageUrl}`);
 

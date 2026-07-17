@@ -372,12 +372,16 @@ function createGeneratedProductDetail(product) {
       title: item,
       text: `${product.name} puede integrarse en proyectos de ${item.toLowerCase()} cuando sus especificaciones, ubicación y condiciones de uso corresponden al riesgo evaluado.`,
     }));
-  while (useItems.length < 3) {
-    useItems.push({
-      title: `Aplicación técnica ${useItems.length + 1}`,
-      text: `La aplicación de ${product.name.toLowerCase()} se determina mediante una revisión del riesgo, la operación y la compatibilidad del equipo.`,
-    });
-  }
+  // Aquí había un `while (useItems.length < 3)` que rellenaba con encabezados
+  // vacíos: "Aplicación técnica 3". Los 230 productos derivados tienen
+  // exactamente 2 aplicaciones+sectores reales, así que los 230 publicaban ese
+  // relleno — un titular que no dice nada, y una de las señales que hacen que
+  // la ficha se lea como autogenerada.
+  //
+  // El relleno existía porque dos tests exigían `recommendedUses.length >= 3`.
+  // Ahora exigen que las aplicaciones sean reales, que es lo que importa.
+  // Mejor dos aplicaciones ciertas que tres con una inventada.
+  // Auditoría 2026-07-16, fase 6.
 
   const classLimitation = product.fireClasses.length
     ? `La clasificación ${classText} debe verificarse en la etiqueta, el rating y la documentación del modelo cotizado; no se determina únicamente por el nombre comercial.`
