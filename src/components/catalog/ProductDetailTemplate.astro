@@ -4,6 +4,7 @@ import QuoteForm from './QuoteForm.astro';
 import FaqList from '../FaqList.astro';
 import { catalogProducts, sectorOptions } from '../../data/catalog-products.mjs';
 import { buildFaqSchema } from '../../lib/faq-utils.mjs';
+import { buildQuoteProductOptions } from '../../lib/catalog-utils.mjs';
 
 interface CatalogProductDetail {
   id: string;
@@ -242,7 +243,7 @@ const faqSchema = buildFaqSchema(product.faqs);
           <ul>
             {product.compliance.items.map((item) => <li>{item}</li>)}
           </ul>
-          <a href="/mantenimiento-preventivo/">Conocer el programa de mantenimiento</a>
+          <a href="/mantenimiento-preventivo">Conocer el programa de mantenimiento</a>
         </aside>
       </div>
     </section>
@@ -343,7 +344,7 @@ const faqSchema = buildFaqSchema(product.faqs);
           </div>
 
           <div class="product-detail__conversion-form" aria-label={product.detailCopy.formLabel}>
-            <QuoteForm products={catalogProducts} sectors={sectorOptions} selectedProduct={product.name} />
+            <QuoteForm products={buildQuoteProductOptions(catalogProducts, product.id)} sectors={sectorOptions} selectedProduct={product.name} />
           </div>
         </div>
       </div>

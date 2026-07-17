@@ -15,11 +15,11 @@ function buildMetaDescription(seed) {
 }
 
 const sharedLinks = {
-  portatiles: { label: 'Comparar extintores disponibles', url: '/venta-de-extintores/' },
-  industriales: { label: 'Soluciones para protección industrial', url: '/servicios/' },
-  automaticos: { label: 'Evaluación de sistemas contra incendio', url: '/servicios/' },
-  accesorios: { label: 'Señalización y equipamiento complementario', url: '/senalizacion/' },
-  refacciones: { label: 'Servicio profesional para extintores', url: '/mantenimiento-preventivo/' },
+  portatiles: { label: 'Comparar extintores disponibles', url: '/venta-de-extintores' },
+  industriales: { label: 'Soluciones para protección industrial', url: '/servicios' },
+  automaticos: { label: 'Evaluación de sistemas contra incendio', url: '/servicios' },
+  accesorios: { label: 'Señalización y equipamiento complementario', url: '/senalizacion' },
+  refacciones: { label: 'Servicio profesional para extintores', url: '/mantenimiento-preventivo' },
 };
 
 export function buildEditorialProfiles(seeds) {
@@ -61,7 +61,7 @@ export function buildEditorialProfiles(seeds) {
       internalLinks: [
         { label: seed.relatedLabel, url: seed.relatedUrl },
         sharedLinks[seed.group],
-        { label: 'Programa de mantenimiento y recarga', url: '/mantenimiento-preventivo/' },
+        { label: 'Programa de mantenimiento y recarga', url: '/mantenimiento-preventivo' },
       ],
     })];
   }));

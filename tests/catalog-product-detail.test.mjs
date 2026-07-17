@@ -136,7 +136,14 @@ test('every catalog product has one unique, complete and indexable detail page',
     assert.ok(detail, `missing detail record for ${product.id}`);
     assert.equal(product.productPageUrl, `/catalogo/${detail.slug}`);
     assert.equal(detail.name, product.name);
-    assert.equal(detail.seo.canonical, `https://mantenimientodeextintores.mx${product.productPageUrl}`);
+    // Los 7 productos con landing de servicio (`detailUrl`) canonizan a ella:
+    // la landing y la ficha de familia atacan la misma búsqueda y antes cada
+    // una se declaraba canónica. Ver catalog-product-details.mjs. El resto se
+    // canoniza a su propia ficha.
+    assert.equal(
+      detail.seo.canonical,
+      `https://mantenimientodeextintores.mx${product.detailUrl || product.productPageUrl}`,
+    );
     assert.ok(detail.seo.title.length <= 60, `SEO title too long for ${product.id}`);
     assert.ok(detail.seo.description.length >= 120, `meta description too short for ${product.id}`);
     assert.ok(detail.seo.description.length <= 160, `meta description too long for ${product.id}`);
@@ -271,7 +278,9 @@ test('product pages expose contextual internal links without adding card motion'
 test('built CO2 detail page exposes SEO, schema and conversion contracts', async () => {
   const html = await readOrEmpty('../dist/catalogo/extintor-co2-portatil/index.html');
 
-  assert.match(html, /<link rel="canonical" href="https:\/\/mantenimientodeextintores\.mx\/catalogo\/extintor-co2-portatil"/);
+  // Canoniza a su landing de servicio, no a sí misma: /co2 y esta ficha
+  // atacaban la misma búsqueda declarándose canónicas las dos.
+  assert.match(html, /<link rel="canonical" href="https:\/\/mantenimientodeextintores\.mx\/co2"/);
   assert.match(html, /<h1[^>]*>[^<]*Extintor CO₂ portátil/);
   assert.match(html, /"@type":"Product"/);
   assert.match(html, /"@type":"FAQPage"/);
@@ -284,7 +293,8 @@ test('built CO2 detail page exposes SEO, schema and conversion contracts', async
 test('built HFC-236fa page exposes unique SEO, schema and conversion contracts', async () => {
   const html = await readOrEmpty('../dist/catalogo/extintor-agente-limpio-hfc-236fa/index.html');
 
-  assert.match(html, /<link rel="canonical" href="https:\/\/mantenimientodeextintores\.mx\/catalogo\/extintor-agente-limpio-hfc-236fa"/);
+  // Canoniza a /agentes-limpios, su landing de servicio. Ver nota en el test de CO₂.
+  assert.match(html, /<link rel="canonical" href="https:\/\/mantenimientodeextintores\.mx\/agentes-limpios"/);
   assert.match(html, /<h1[^>]*>[^<]*Extintor de agente limpio HFC-236fa/);
   assert.match(html, /Clase A/);
   assert.match(html, /Clase B/);

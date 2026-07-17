@@ -23,7 +23,7 @@ const accessoryPartSeeds = [
     selection: 'la exposición química, humedad, radiación UV, temperatura, impacto, grado de cierre, herrajes, drenaje y dimensiones interiores',
     difference: 'Ofrece materiales resistentes para ambientes donde un gabinete metálico convencional puede oxidarse o perder funcionalidad.',
     avoid: 'No debe asumirse hermético sin grado documentado ni permitir condensación, agua atrapada o corrosión oculta sobre el propio extintor.',
-    relatedLabel: 'Equipamiento para ambientes industriales', relatedUrl: '/senalizacion/',
+    relatedLabel: 'Equipamiento para ambientes industriales', relatedUrl: '/senalizacion',
   },
   {
     id: 'soporte-pared', label: 'soporte de pared', group: 'accesorios', keyword: 'soporte de pared para extintor',
@@ -35,7 +35,7 @@ const accessoryPartSeeds = [
     selection: 'el peso cargado, diámetro, geometría del cilindro, tipo de soporte, anclaje, muro, altura de montaje y exposición a golpes',
     difference: 'Mantiene el equipo fuera del piso con una solución compacta y facilita inspección visual cuando el entorno permite fijación mural.',
     avoid: 'No debe improvisarse con ganchos genéricos, tornillos sin capacidad o una geometría que presione la válvula o libere el cilindro.',
-    relatedLabel: 'Criterios de instalación de extintores', relatedUrl: '/senalizacion/',
+    relatedLabel: 'Criterios de instalación de extintores', relatedUrl: '/senalizacion',
   },
   {
     id: 'soporte-vehicular', label: 'soporte vehicular', group: 'accesorios', keyword: 'soporte vehicular para extintor',
@@ -59,7 +59,7 @@ const accessoryPartSeeds = [
     selection: 'el número y peso de equipos, la base, el centro de gravedad, la circulación, la señalización, el piso y la posibilidad de reubicación',
     difference: 'Permite implantar una estación sin obra mural y resulta útil en espacios arrendados, eventos o zonas con distribución cambiante.',
     avoid: 'No debe crear tropiezos, reducir el ancho de paso ni convertirse en una ubicación móvil que nadie controla después de cada cambio.',
-    relatedLabel: 'Soluciones de señalización para extintores', relatedUrl: '/senalizacion/',
+    relatedLabel: 'Soluciones de señalización para extintores', relatedUrl: '/senalizacion',
   },
   {
     id: 'funda-extintor', label: 'funda protectora', group: 'accesorios', keyword: 'funda protectora para extintor',
@@ -95,7 +95,7 @@ const accessoryPartSeeds = [
     selection: 'la distancia, ángulo de aproximación, iluminación, obstáculos, altura, fotoluminiscencia, contraste y necesidad de señal direccional',
     difference: 'Convierte la ubicación física del extintor en información visual legible para personas que no conocen el inmueble.',
     avoid: 'No debe colocarse una señal que apunte a una ubicación distinta, quede oculta o pretenda compensar un extintor inaccesible.',
-    relatedLabel: 'Guía de señalización contra incendio', relatedUrl: '/senalizacion/',
+    relatedLabel: 'Guía de señalización contra incendio', relatedUrl: '/senalizacion',
   },
   {
     id: 'manta-contra-incendio', label: 'manta contra incendio', group: 'accesorios', keyword: 'manta contra incendio',
@@ -131,7 +131,7 @@ const accessoryPartSeeds = [
     selection: 'la marca, modelo, cuello, rosca, agente, presión, capacidad, mecanismo, sellos y aprobación de la pieza',
     difference: 'Es un componente de presión y accionamiento cuya compatibilidad afecta estanqueidad, caudal y seguridad del conjunto completo.',
     avoid: 'No debe adaptarse por fuerza, mecanizarse sin autorización ni instalarse fuera de un servicio con despresurización y pruebas adecuadas.',
-    relatedLabel: 'Proceso de mantenimiento de extintores', relatedUrl: '/mantenimiento-preventivo/',
+    relatedLabel: 'Proceso de mantenimiento de extintores', relatedUrl: '/mantenimiento-preventivo',
   },
   {
     id: 'manometros-extintor', label: 'manómetro de extintor', group: 'refacciones', keyword: 'manómetros para extintor',
@@ -155,7 +155,7 @@ const accessoryPartSeeds = [
     selection: 'el agente, presión, rosca, diámetro interno, longitud, refuerzo, boquilla, abrazadera y caudal del fabricante',
     difference: 'Forma el trayecto final del agente y controla su patrón, por lo que una restricción o material incorrecto cambia la descarga.',
     avoid: 'No debe repararse con abrazaderas improvisadas ni sustituirse por manguera comercial sin presión, material y conexión documentados.',
-    relatedLabel: 'Servicio y recarga profesional', relatedUrl: '/recarga-de-extintores/',
+    relatedLabel: 'Servicio y recarga profesional', relatedUrl: '/recarga-de-extintores',
   },
   {
     id: 'trompeta-co2', label: 'trompeta de CO₂', group: 'refacciones', keyword: 'trompeta y difusor para extintor CO₂',
@@ -167,7 +167,7 @@ const accessoryPartSeeds = [
     selection: 'la capacidad, marca, modelo, conexión, manguera, diámetro, material, aislamiento y geometría del difusor',
     difference: 'Está diseñada para expansión de CO₂ y temperaturas muy bajas, condiciones que una boquilla genérica no maneja de igual manera.',
     avoid: 'No debe utilizarse una corneta agrietada, sin aislamiento o de conexión forzada porque puede alterar la descarga y causar lesión por frío.',
-    relatedLabel: 'Mantenimiento de extintores CO₂', relatedUrl: '/co2/',
+    relatedLabel: 'Mantenimiento de extintores CO₂', relatedUrl: '/co2',
   },
   {
     id: 'sellos-empaques', label: 'sellos y empaques', group: 'refacciones', keyword: 'sellos y empaques para extintores',
@@ -179,7 +179,7 @@ const accessoryPartSeeds = [
     selection: 'la válvula, dimensiones, material, dureza, agente, lubricante, presión, temperatura y procedimiento de armado',
     difference: 'Reúne consumibles pequeños pero críticos para estanqueidad, accionamiento y control visual después del mantenimiento.',
     avoid: 'No deben reutilizarse piezas deformadas ni sustituirse por empaques automotrices o genéricos sin compatibilidad química y dimensional.',
-    relatedLabel: 'Qué incluye el mantenimiento profesional', relatedUrl: '/mantenimiento-preventivo/',
+    relatedLabel: 'Qué incluye el mantenimiento profesional', relatedUrl: '/mantenimiento-preventivo',
   },
   {
     id: 'ruedas-ejes', label: 'ruedas y ejes', group: 'refacciones', keyword: 'ruedas y ejes para extintor móvil',
@@ -203,7 +203,7 @@ const accessoryPartSeeds = [
     selection: 'la clasificación, formulación, fabricante, lote, granulometría, fluidez, compatibilidad, equipo, almacenamiento y documentación',
     difference: 'Permite seleccionar desde multipropósito ABC hasta agentes BC y clase D específicos dentro de un proceso de recarga controlado.',
     avoid: 'No debe venderse para recarga informal ni mezclarse con remanentes desconocidos, humedad o formulaciones que el fabricante no declara compatibles.',
-    relatedLabel: 'Proceso técnico de recarga de extintores', relatedUrl: '/recarga-de-extintores/',
+    relatedLabel: 'Proceso técnico de recarga de extintores', relatedUrl: '/recarga-de-extintores',
   },
   {
     id: 'concentrados-soluciones', label: 'concentrados de espuma', group: 'refacciones', keyword: 'concentrados de espuma y soluciones húmedas',
@@ -215,7 +215,7 @@ const accessoryPartSeeds = [
     selection: 'la formulación, concentración, combustible, equipo, lote, agua, viscosidad, caducidad, almacenamiento y ficha del proveedor',
     difference: 'Agrupa líquidos técnicos cuya química se diseña para combustibles y mecanismos distintos, desde película de espuma hasta saponificación.',
     avoid: 'No deben mezclarse marcas, familias o concentraciones sin autorización ni sustituirse por volumen cuando el equipo exige una solución determinada.',
-    relatedLabel: 'Guía de espumas y químico húmedo', relatedUrl: '/espuma-afff/',
+    relatedLabel: 'Guía de espumas y químico húmedo', relatedUrl: '/espuma-afff',
   },
 ];
 

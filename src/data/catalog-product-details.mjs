@@ -39,7 +39,7 @@ const authoredCatalogProductDetails = [
       applicationsIntro: 'Su ventaja comercial es clara: controla riesgos compatibles sin contaminar el área con polvo. Aun así, cada aplicación necesita revisar el combustible real y las condiciones del recinto.',
       faqTitle: 'Lo esencial antes de cotizar un extintor CO₂',
       faqIntro: 'Respuestas breves para comparar opciones y preparar una solicitud más precisa.',
-      guideUrl: '/co2/',
+      guideUrl: '/co2',
       guideLabel: 'Ver la guía completa sobre CO₂',
       formLabel: 'Formulario de cotización del extintor CO₂',
     },
@@ -132,7 +132,9 @@ const authoredCatalogProductDetails = [
     seo: {
       title: 'Extintor CO₂ Portátil en CDMX | Cotiza con MANEXT',
       description: 'Cotiza un extintor CO₂ portátil de 5, 10, 15 o 20 lb para riesgos clase B y C. Asesoría, instalación y mantenimiento en CDMX y zona metropolitana.',
-      canonical: 'https://mantenimientodeextintores.mx/catalogo/extintor-co2-portatil',
+      // Canoniza a /co2, su landing de servicio: ambas atacan "extintor CO₂" y
+      // la landing tiene más contenido autoral. Ver nota en el generador.
+      canonical: 'https://mantenimientodeextintores.mx/co2',
       ogTitle: 'Extintor CO₂ portátil para riesgos clase B y C',
       ogDescription: 'Selecciona la capacidad correcta con asesoría técnica MANEXT. Cotización personalizada con instalación, señalización y servicio posterior.',
     },
@@ -178,7 +180,7 @@ const authoredCatalogProductDetails = [
       applicationsIntro: 'Su principal ventaja es reducir el daño colateral asociado con agentes que dejan residuos. Cada aplicación debe confirmar la clase de fuego, el alcance del equipo y las instrucciones del fabricante.',
       faqTitle: 'Lo esencial antes de cotizar un extintor HFC-236fa',
       faqIntro: 'Respuestas técnicas para comparar capacidades, aplicaciones y condiciones de suministro.',
-      guideUrl: '/agentes-limpios/',
+      guideUrl: '/agentes-limpios',
       guideLabel: 'Conocer la guía de agentes limpios',
       formLabel: 'Formulario de cotización del extintor HFC-236fa',
     },
@@ -270,7 +272,8 @@ const authoredCatalogProductDetails = [
     seo: {
       title: 'Extintor HFC-236fa en CDMX | Agente Limpio - MANEXT',
       description: 'Cotiza un extintor de agente limpio HFC-236fa de 2.5, 4.5 o 6 kg para electrónica y telecomunicaciones. Asesoría, instalación y servicio MANEXT en CDMX.',
-      canonical: 'https://mantenimientodeextintores.mx/catalogo/extintor-agente-limpio-hfc-236fa',
+      // Canoniza a /agentes-limpios, su landing de servicio. Ver nota en co2.
+      canonical: 'https://mantenimientodeextintores.mx/agentes-limpios',
       ogTitle: 'Extintor de agente limpio HFC-236fa para equipo sensible',
       ogDescription: 'Protección sin residuo para electrónica, telecomunicaciones e instrumentación, con selección técnica y cotización personalizada MANEXT.',
     },
@@ -488,7 +491,16 @@ function createGeneratedProductDetail(product) {
     seo: {
       title: `${product.name} | MANEXT`,
       description: buildMetaDescription(product),
-      canonical: `https://mantenimientodeextintores.mx${product.productPageUrl}`,
+      // Siete productos tienen además una landing de servicio (`detailUrl`):
+      // /polvo-quimico-seco, /co2, /agua-presion, /espuma-afff, /tipo-k,
+      // /agentes-limpios y /senalizacion. Esa landing y la ficha de familia
+      // atacan la misma búsqueda ("extintor PQS"), y cada una se declaraba
+      // canónica: señal contradictoria en los 7 productos de más volumen.
+      // Gana la landing — tiene ~3.800 palabras autorales frente a las ~2.900
+      // generadas por plantilla de la ficha, y está en la navegación. Las
+      // fichas derivadas ("PQS ABC de 6 kg para negocio") atacan long-tail y no
+      // compiten con ella, así que siguen siendo canónicas de sí mismas.
+      canonical: `https://mantenimientodeextintores.mx${product.detailUrl || product.productPageUrl}`,
       ogTitle: `${product.name}: ficha técnica y cotización`,
       ogDescription: `${product.description} Consulta variantes, aplicaciones y criterios de selección con asesoría MANEXT.`,
     },

@@ -57,6 +57,32 @@ export function paginateCatalog(items, requestedPage = 1, pageSize = 12) {
   };
 }
 
+/**
+ * Opciones del selector de producto en la ficha de detalle.
+ *
+ * Antes se serializaban los 276 productos en cada una de las 276 fichas: 25.3 KB
+ * de `<option>` por página, 6.8 MB en total — el 32% del HTML del catálogo — en
+ * un desplegable que casi nadie abre, porque la ficha ya llega con su producto
+ * preseleccionado.
+ *
+ * Se reduce a la familia: el producto de la ficha, su padre y sus hermanos. Es
+ * el único salto que tiene sentido desde aquí (de un PQS de 6 kg al de 9 kg);
+ * para cambiar de familia está el catálogo. Si el visitante llega con otro
+ * producto en mente, `ensureProductOption()` de catalog-system.js lo añade en
+ * cliente, así que no se pierde ninguna ruta.
+ */
+export function buildQuoteProductOptions(products, currentId) {
+  const current = products.find((product) => product.id === currentId);
+  if (!current) return products;
+
+  const familyId = current.parentProductId || current.id;
+  const family = products.filter(
+    (product) => product.id === familyId || product.parentProductId === familyId,
+  );
+
+  return family.length ? family : [current];
+}
+
 const quoteLabels = [
   ['product', 'Producto o familia'],
   ['variant', 'Capacidad o variante'],
@@ -86,14 +112,18 @@ export function buildQuoteMessage(fields = {}) {
 /**
  * URL canónica de un producto dentro del ItemList.
  *
- * `productPageUrl` apunta a la ficha propia (/catalogo/<slug>), que existe para
- * los 276 productos. `detailUrl` apunta a la landing de servicio, que sólo
- * cubre 7 productos y cuyo canonical no coincide con el de la ficha: usarlo
- * aquí emitía una señal contradictoria. El ancla queda como último recurso
- * defensivo; en el catálogo actual es inalcanzable.
+ * Debe coincidir con el `canonical` que declara la propia página del producto
+ * (catalog-product-details.mjs), o el ItemList vuelve a emitir una señal
+ * contradictoria. De ahí el mismo orden de preferencia: la landing de servicio
+ * cuando existe —los 7 productos con `detailUrl`— y la ficha en los demás.
+ *
+ * Antes esta función ignoraba `productPageUrl` y caía a `/catalogo/#id`: 269 de
+ * 276 productos declaraban un fragmento de la página índice en vez de su propia
+ * ficha, que existía. El ancla queda como último recurso defensivo; con
+ * `productPageUrl` presente en los 276, hoy es inalcanzable.
  */
 function resolveProductUrl(product, baseUrl) {
-  const path = product.productPageUrl || product.detailUrl;
+  const path = product.detailUrl || product.productPageUrl;
   return path ? `${baseUrl}${path}` : `${baseUrl}/catalogo#${product.id}`;
 }
 

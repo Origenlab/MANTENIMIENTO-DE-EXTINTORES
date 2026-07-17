@@ -6,7 +6,7 @@ import { catalogProducts } from '../src/data/catalog-products.mjs';
 import { catalogProductDetails } from '../src/data/catalog-product-details.mjs';
 import { catalogExpansionProposals } from '../src/data/catalog-expansion/index.mjs';
 import { expansionEditorialProfiles } from '../src/data/catalog-expansion/publication.mjs';
-import { buildCatalogSchema } from '../src/lib/catalog-utils.mjs';
+import { buildCatalogSchema, buildQuoteProductOptions } from '../src/lib/catalog-utils.mjs';
 import { capitalize, uncapitalize, endSentence, sentence, continuation } from '../src/lib/text-utils.mjs';
 
 /**
@@ -65,7 +65,7 @@ test('los sectores son etiquetas cortas, no frases de necesidad', () => {
 // 1.2 — El ItemList debe declarar la ficha real, no un ancla
 // ---------------------------------------------------------------------------
 
-test('el ItemList apunta a la ficha canónica de cada producto, nunca a un ancla', () => {
+test('el ItemList apunta a la URL canónica de cada producto, nunca a un ancla', () => {
   const schema = buildCatalogSchema(catalogProducts);
   const urls = schema.itemListElement.map((element) => element.item.url);
 
@@ -73,11 +73,51 @@ test('el ItemList apunta a la ficha canónica de cada producto, nunca a un ancla
   assert.equal(anchors.length, 0, `${anchors.length} URLs del ItemList son anclas: ${anchors.slice(0, 3).join(', ')}`);
 
   assert.equal(urls.length, catalogProducts.length);
-  assert.equal(new Set(urls).size, urls.length, 'las URLs del ItemList deben ser únicas');
 
-  const expected = new Set(catalogProducts.map((product) => `https://mantenimientodeextintores.mx${product.productPageUrl}`));
+  // La canónica es la landing de servicio cuando existe; la ficha en los demás.
+  const expected = new Set(
+    catalogProducts.map((product) => `https://mantenimientodeextintores.mx${product.detailUrl || product.productPageUrl}`),
+  );
   const stray = urls.filter((url) => !expected.has(url));
-  assert.deepEqual(stray, [], `URLs que no corresponden a una ficha: ${stray.join(', ')}`);
+  assert.deepEqual(stray, [], `URLs que no son la canónica del producto: ${stray.join(', ')}`);
+});
+
+test('cada producto tiene una sola URL canónica y el ItemList la declara', () => {
+  // Los 7 productos con landing declaraban una canónica en la ficha y otra en
+  // el ItemList: señal contradictoria justo en los de más volumen de búsqueda.
+  const schema = buildCatalogSchema(catalogProducts);
+  const listed = new Map(
+    schema.itemListElement.map((element) => [element.item.name, element.item.url]),
+  );
+
+  const offenders = [];
+  for (const detail of catalogProductDetails) {
+    const declared = listed.get(detail.name);
+    if (declared && declared !== detail.seo.canonical) {
+      offenders.push(`${detail.slug}: ItemList dice ${declared}, la ficha dice ${detail.seo.canonical}`);
+    }
+  }
+
+  assert.deepEqual(offenders, [], `canónicas contradictorias:\n${offenders.join('\n')}`);
+});
+
+test('las fichas de familia con landing canonizan a la landing', () => {
+  const withLanding = catalogProducts.filter((product) => product.detailUrl);
+  assert.equal(withLanding.length, 7, 'son 7 los productos con landing de servicio');
+
+  for (const product of withLanding) {
+    const detail = catalogProductDetails.find((item) => item.id === product.id);
+    assert.equal(
+      detail.seo.canonical,
+      `https://mantenimientodeextintores.mx${product.detailUrl}`,
+      `${product.id} debe canonizar a su landing`,
+    );
+  }
+
+  // Las derivadas atacan long-tail y no compiten: canónicas de sí mismas.
+  const derived = catalogProducts.find((product) => product.parentProductId === 'pqs-abc-portatil');
+  const derivedDetail = catalogProductDetails.find((item) => item.id === derived.id);
+  assert.match(derivedDetail.seo.canonical, /\/catalogo\//, 'las derivadas se canonizan a su propia ficha');
 });
 
 test('las URLs del catálogo respetan trailingSlash: never', () => {
@@ -430,6 +470,45 @@ test('la FAQ de distancia clase K cita la distancia verificada de NFPA 10', asyn
 
   assert.ok(faq, 'la FAQ de distancia debe existir');
   assert.match(faq.answer, /9\.15\s*m/, 'NFPA 10: 30 pies = 9.15 m para clase K');
+});
+
+// ---------------------------------------------------------------------------
+// Fase 4 — el selector de la ficha no serializa el catálogo entero
+// ---------------------------------------------------------------------------
+
+test('el selector de cotización de la ficha se limita a la familia', () => {
+  const offenders = [];
+
+  for (const product of catalogProducts) {
+    const options = buildQuoteProductOptions(catalogProducts, product.id);
+
+    // 1 padre + 5 hijos como máximo (schema.mjs:108 fuerza exactamente 5).
+    if (options.length > 6) offenders.push(`${product.id}: ${options.length} opciones`);
+    // El producto de la ficha siempre debe poder seleccionarse.
+    if (!options.some((option) => option.id === product.id)) offenders.push(`${product.id}: no se incluye a sí mismo`);
+  }
+
+  assert.deepEqual(offenders.slice(0, 5), [], `selectores demasiado grandes:\n${offenders.slice(0, 5).join('\n')}`);
+});
+
+test('la familia del selector reúne padre e hijos del mismo linaje', () => {
+  const derived = catalogProducts.find((product) => product.parentProductId);
+  const options = buildQuoteProductOptions(catalogProducts, derived.id);
+  const ids = options.map((option) => option.id);
+
+  assert.ok(ids.includes(derived.parentProductId), 'debe incluir al padre');
+  assert.ok(ids.includes(derived.id), 'debe incluir al producto actual');
+
+  const foreign = options.filter(
+    (option) => option.id !== derived.parentProductId && option.parentProductId !== derived.parentProductId,
+  );
+  assert.deepEqual(foreign, [], 'no debe colar productos de otra familia');
+});
+
+test('un id desconocido no rompe el selector', () => {
+  // Defensa: ante un id que no existe se devuelve el catálogo completo antes
+  // que un formulario sin opciones.
+  assert.equal(buildQuoteProductOptions(catalogProducts, 'no-existe').length, catalogProducts.length);
 });
 
 // ---------------------------------------------------------------------------

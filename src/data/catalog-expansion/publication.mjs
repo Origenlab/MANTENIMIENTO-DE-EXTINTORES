@@ -7,11 +7,11 @@ import { continuation, inline, sentence } from '../../lib/text-utils.mjs';
 const proposalById = new Map(catalogExpansionProposals.map((proposal) => [proposal.id, proposal]));
 
 const groupResourceLinks = {
-  portatiles: { label: 'Comparar extintores y agentes', url: '/venta-de-extintores/' },
-  industriales: { label: 'Soluciones para protección industrial', url: '/servicios/' },
-  automaticos: { label: 'Evaluación de sistemas contra incendio', url: '/servicios/' },
-  accesorios: { label: 'Señalización y equipamiento complementario', url: '/senalizacion/' },
-  refacciones: { label: 'Servicio profesional para extintores', url: '/mantenimiento-preventivo/' },
+  portatiles: { label: 'Comparar extintores y agentes', url: '/venta-de-extintores' },
+  industriales: { label: 'Soluciones para protección industrial', url: '/servicios' },
+  automaticos: { label: 'Evaluación de sistemas contra incendio', url: '/servicios' },
+  accesorios: { label: 'Señalización y equipamiento complementario', url: '/senalizacion' },
+  refacciones: { label: 'Servicio profesional para extintores', url: '/mantenimiento-preventivo' },
 };
 
 function uniqueSourceRecords(proposal) {
@@ -110,8 +110,8 @@ function createEditorialProfile(proposal) {
     ],
     internalLinks: [
       groupResourceLinks[proposal.group],
-      { label: 'Programa de mantenimiento y recarga', url: '/mantenimiento-preventivo/' },
-      { label: 'Catálogo profesional de extintores', url: '/catalogo/' },
+      { label: 'Programa de mantenimiento y recarga', url: '/mantenimiento-preventivo' },
+      { label: 'Catálogo profesional de extintores', url: '/catalogo' },
     ],
   });
 }

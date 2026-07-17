@@ -11,7 +11,7 @@ const portableSeeds = [
     selection: 'el rating, la carga combustible, la distancia de recorrido, el peso operativo y el impacto del residuo',
     difference: 'Su ventaja está en reunir cobertura A, B y C en una familia ampliamente disponible y mantenible.',
     avoid: 'No es la primera elección cuando el polvo puede comprometer electrónica sensible o cuando existe un riesgo especializado clase D o K.',
-    relatedLabel: 'Guía técnica de extintores PQS', relatedUrl: '/polvo-quimico-seco/',
+    relatedLabel: 'Guía técnica de extintores PQS', relatedUrl: '/polvo-quimico-seco',
   },
   {
     id: 'pqs-bc-portatil', label: 'PQS BC', group: 'portatiles', keyword: 'extintor PQS BC portátil',
@@ -23,7 +23,7 @@ const portableSeeds = [
     selection: 'el tipo de líquido o gas, la superficie expuesta, el rating BC, la presión de operación y la presencia de materiales clase A',
     difference: 'Su formulación se orienta a fuegos de líquidos o gases inflamables y riesgos eléctricos, con una aplicación más específica que el polvo ABC.',
     avoid: 'No debe elegirse para áreas donde sólidos combustibles clase A constituyen una parte relevante del riesgo sin otra cobertura prevista.',
-    relatedLabel: 'Diferencias entre agentes PQS', relatedUrl: '/polvo-quimico-seco/',
+    relatedLabel: 'Diferencias entre agentes PQS', relatedUrl: '/polvo-quimico-seco',
   },
   {
     id: 'purple-k-portatil', label: 'Purple-K portátil', group: 'portatiles', keyword: 'extintor Purple-K portátil',
@@ -35,7 +35,7 @@ const portableSeeds = [
     selection: 'el combustible exacto, la superficie, el rating BC, el alcance, la posibilidad de reignición y la limpieza posterior',
     difference: 'El bicarbonato de potasio ofrece una acción rápida sobre la reacción en cadena de fuegos B y se utiliza en riesgos de hidrocarburos exigentes.',
     avoid: 'No debe confundirse con un agente para clase K de cocina ni con polvo especial para metales combustibles; además deja residuo.',
-    relatedLabel: 'Comparativa de extintores industriales', relatedUrl: '/venta-de-extintores/',
+    relatedLabel: 'Comparativa de extintores industriales', relatedUrl: '/venta-de-extintores',
   },
   {
     id: 'co2-portatil', label: 'CO₂ portátil', group: 'portatiles', keyword: 'extintor CO₂ portátil',
@@ -47,7 +47,7 @@ const portableSeeds = [
     selection: 'el combustible, la ventilación, el volumen del recinto, la capacidad, el alcance y la posibilidad de reignición',
     difference: 'A diferencia del PQS, el CO₂ no deposita partículas sobre circuitos o superficies, aunque ofrece menos enfriamiento en materiales profundos.',
     avoid: 'No es una solución principal para fuegos clase A profundos ni para espacios confinados ocupados donde el desplazamiento de oxígeno genera peligro.',
-    relatedLabel: 'Guía completa de extintores CO₂', relatedUrl: '/co2/',
+    relatedLabel: 'Guía completa de extintores CO₂', relatedUrl: '/co2',
   },
   {
     id: 'agua-presion-portatil', label: 'agua a presión', group: 'portatiles', keyword: 'extintor de agua a presión portátil',
@@ -59,7 +59,7 @@ const portableSeeds = [
     selection: 'la naturaleza del sólido, la ausencia de electricidad energizada, la sensibilidad al agua, la capacidad y el alcance',
     difference: 'Su mecanismo principal es el enfriamiento, por lo que puede reducir la reignición en sólidos mejor que agentes con poca capacidad térmica.',
     avoid: 'No debe aplicarse sobre equipo eléctrico energizado, líquidos inflamables, aceites de cocina o metales reactivos sin una clasificación específica.',
-    relatedLabel: 'Información sobre extintores de agua', relatedUrl: '/agua-presion/',
+    relatedLabel: 'Información sobre extintores de agua', relatedUrl: '/agua-presion',
   },
   {
     id: 'agua-nebulizada', label: 'agua nebulizada', group: 'portatiles', keyword: 'extintor de agua nebulizada',
@@ -83,7 +83,7 @@ const portableSeeds = [
     selection: 'el tipo de combustible, la compatibilidad del concentrado, el rating, la proporción, la temperatura y las restricciones ambientales',
     difference: 'Combina el efecto de enfriamiento del agua con una película que ayuda a separar vapores inflamables del aire en combustibles compatibles.',
     avoid: 'No es universal para solventes polares, electricidad energizada, aceites de cocina o sustancias que reaccionan con agua.',
-    relatedLabel: 'Guía técnica de espuma AFFF', relatedUrl: '/espuma-afff/',
+    relatedLabel: 'Guía técnica de espuma AFFF', relatedUrl: '/espuma-afff',
   },
   {
     id: 'espuma-ar-afff', label: 'espuma AR-AFFF', group: 'portatiles', keyword: 'extintor de espuma AR-AFFF',
@@ -95,7 +95,7 @@ const portableSeeds = [
     selection: 'la ficha de seguridad del combustible, polaridad, concentración del agente, tasa de aplicación, compatibilidad y certificación',
     difference: 'Incorpora componentes diseñados para sostener la manta de espuma frente a solventes que descomponen formulaciones convencionales.',
     avoid: 'No debe seleccionarse sin identificar el combustible ni utilizarse como argumento para cubrir cualquier líquido, equipo eléctrico o riesgo de cocina.',
-    relatedLabel: 'Soluciones de espuma para industria', relatedUrl: '/espuma-afff/',
+    relatedLabel: 'Soluciones de espuma para industria', relatedUrl: '/espuma-afff',
   },
   {
     id: 'espuma-f3', label: 'espuma F3', group: 'portatiles', keyword: 'extintor de espuma sin flúor F3',
@@ -107,7 +107,7 @@ const portableSeeds = [
     selection: 'el combustible, los ensayos del producto, la tasa de aplicación, el equipo de descarga, la vida útil y el manejo del concentrado',
     difference: 'Elimina flúor añadido de la formulación y responde a objetivos ambientales que una AFFF fluorada puede no satisfacer.',
     avoid: 'No debe sustituirse litro por litro sin comprobar aprobación, concentración, equipo y desempeño sobre el combustible específico.',
-    relatedLabel: 'Comparar tecnologías de espuma', relatedUrl: '/espuma-afff/',
+    relatedLabel: 'Comparar tecnologías de espuma', relatedUrl: '/espuma-afff',
   },
   {
     id: 'tipo-k-portatil', label: 'químico húmedo K', group: 'portatiles', keyword: 'extintor tipo K para cocina',
@@ -119,7 +119,7 @@ const portableSeeds = [
     selection: 'el volumen de aceite, los equipos de cocción, la capacidad K, la distancia de aplicación, la campana y el sistema fijo existente',
     difference: 'Su reacción con grasas calientes favorece enfriamiento y saponificación, dos efectos que un polvo ABC no ofrece de la misma manera.',
     avoid: 'No reemplaza automáticamente un sistema fijo de campana ni debe utilizarse como extintor general para todos los riesgos del restaurante.',
-    relatedLabel: 'Guía completa de extintores tipo K', relatedUrl: '/tipo-k/',
+    relatedLabel: 'Guía completa de extintores tipo K', relatedUrl: '/tipo-k',
   },
   {
     id: 'hfc-236fa-portatil', label: 'HFC-236fa', group: 'portatiles', keyword: 'extintor de agente limpio HFC-236fa',
@@ -131,7 +131,7 @@ const portableSeeds = [
     selection: 'el rating A, B o C del modelo, la capacidad, el recinto, la ventilación, la disponibilidad del agente y su gestión ambiental',
     difference: 'Ofrece descarga limpia y portabilidad para áreas sensibles donde el polvo o el agua pueden añadir daño operativo.',
     avoid: 'No debe presentarse como ambientalmente neutro ni sustituir un sistema fijo cuando el volumen o continuidad del riesgo exige ingeniería.',
-    relatedLabel: 'Guía de agentes limpios', relatedUrl: '/agentes-limpios/',
+    relatedLabel: 'Guía de agentes limpios', relatedUrl: '/agentes-limpios',
   },
   {
     id: 'halotron-portatil', label: 'Halotron y alternativas', group: 'portatiles', keyword: 'extintor Halotron portátil',
@@ -143,7 +143,7 @@ const portableSeeds = [
     selection: 'la especificación original, el sector, el rating, las restricciones ambientales, la aprobación requerida y el soporte futuro',
     difference: 'La ficha abre la comparación entre Halotron y alternativas vigentes sin asumir que todas comparten composición o desempeño.',
     avoid: 'No conviene cerrar la compra por nombre comercial si el agente está restringido, carece de soporte o no coincide con la aprobación exigida.',
-    relatedLabel: 'Alternativas de agentes limpios', relatedUrl: '/agentes-limpios/',
+    relatedLabel: 'Alternativas de agentes limpios', relatedUrl: '/agentes-limpios',
   },
   {
     id: 'clase-d-cloruro-sodio', label: 'clase D de NaCl', group: 'portatiles', keyword: 'extintor clase D de cloruro de sodio',

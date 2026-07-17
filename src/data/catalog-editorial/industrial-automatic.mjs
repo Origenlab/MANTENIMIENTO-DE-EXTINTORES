@@ -47,7 +47,7 @@ const industrialAutomaticSeeds = [
     selection: 'el volumen, la ventilación, el combustible, la distancia de aproximación, la capacidad, la ruta de traslado y el riesgo para ocupantes',
     difference: 'Entrega una carga considerable de agente limpio en forma gaseosa sin contaminar tableros, motores o componentes con polvo.',
     avoid: 'No es adecuado para espacios confinados ocupados ni para sólidos profundos con alta probabilidad de reignición después de dispersarse el gas.',
-    relatedLabel: 'Aplicaciones industriales del CO₂', relatedUrl: '/co2/',
+    relatedLabel: 'Aplicaciones industriales del CO₂', relatedUrl: '/co2',
   },
   {
     id: 'espuma-rodante', label: 'espuma rodante', group: 'industriales', keyword: 'extintor móvil de espuma',
@@ -59,7 +59,7 @@ const industrialAutomaticSeeds = [
     selection: 'el combustible, la superficie, la formulación, la tasa de aplicación, el alcance, el drenaje y las restricciones ambientales',
     difference: 'Su mayor volumen de solución facilita formar y sostener una manta sobre superficies donde una unidad pequeña se agotaría pronto.',
     avoid: 'No debe comprarse sin confirmar formulación, proporción y combustible ni aplicarse sobre riesgos eléctricos energizados o reactivos al agua.',
-    relatedLabel: 'Ingeniería y selección de espumas', relatedUrl: '/espuma-afff/',
+    relatedLabel: 'Ingeniería y selección de espumas', relatedUrl: '/espuma-afff',
   },
   {
     id: 'clase-d-rodante', label: 'clase D rodante', group: 'industriales', keyword: 'extintor móvil clase D',
