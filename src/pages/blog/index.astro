@@ -240,7 +240,12 @@ const svgIcons: Record<string, string> = {
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   background: #fafafa;
-  cursor: default;
+  /* La tarjeta era un <div> decorativo y ahora es un <a> al pilar del tema.
+     Sin esto, el estilo de enlace se hereda a los tres textos de dentro y la
+     tarjeta sale subrayada entera. El color lo fija cada hijo. */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: border-color .2s, box-shadow .2s;
 }
 .bl-topic-card:hover {
@@ -250,6 +255,7 @@ const svgIcons: Record<string, string> = {
 .bl-topic-icon { color: #d32f2f; display: flex; }
 .bl-topic-label { font-size: .875rem; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
 .bl-topic-desc  { font-size: .76rem; color: #757575; line-height: 1.4; }
+.bl-topic-count { margin-top: auto; padding-top: .5rem; font-size: .74rem; font-weight: 600; color: #d32f2f; }
 
 /* ── Articles ── */
 .bl-articles { background: #f5f5f5; padding: 3rem 0 5rem; }
