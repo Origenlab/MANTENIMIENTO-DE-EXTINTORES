@@ -18,7 +18,8 @@ const authoredCatalogProductDetails = [
     imageAlt: 'Extintor CO₂ portátil de 5 libras para riesgos clase B y C',
     galleryImage: '/img/productos/co2/img-extintores-co2/Extintor-portátil-CO2-10lbs.avif',
     galleryImageAlt: 'Extintor portátil CO₂ de 10 libras con corneta de descarga',
-    variants: ['5 lb', '10 lb', '15 lb', '20 lb'],
+    // Sin `variants`: las fija catalog-products.mjs, fuente única. Ver la nota
+    // en la composición de catalogProductDetails al final del archivo.
     applications: ['Tableros eléctricos', 'Servidores y telecomunicaciones', 'Laboratorios', 'Líquidos inflamables compatibles'],
     sectors: ['Tecnología', 'Corporativos', 'Salud', 'Industria', 'Laboratorios'],
     detailCopy: {
@@ -159,7 +160,7 @@ const authoredCatalogProductDetails = [
     imageAlt: 'Extintor portátil de agente limpio HFC-236fa de 6 kg',
     galleryImage: '/img/productos/agentes-limpios/img-agente-limpio/extintores-agente-limpio-4-5kg-para-negocios.avif',
     galleryImageAlt: 'Extintor de agente limpio de 4.5 kg para electrónica y telecomunicaciones',
-    variants: ['2.5 kg', '4.5 kg', '6 kg'],
+    // Sin `variants`: las fija catalog-products.mjs. Ver nota en co2-portatil.
     applications: ['Electrónica', 'Telecomunicaciones', 'Instrumentación', 'Activos de alto valor'],
     sectors: ['Centros de datos', 'Telecomunicaciones', 'Laboratorios', 'Industria', 'Corporativos'],
     detailCopy: {
@@ -556,7 +557,18 @@ function applyEditorialProfile(detail, editorial) {
 }
 
 export const catalogProductDetails = catalogProducts.map((product) => {
-  const baseDetail = authoredDetailsById.get(product.id) || createGeneratedProductDetail(product);
+  const authored = authoredDetailsById.get(product.id);
+  // Las dos fichas autorales traían su propia lista de `variants`, copiada a
+  // mano de catalog-products.mjs. Era una segunda fuente de verdad y ya había
+  // divergido: al anexar las capacidades de products.json (2026-07-16), la
+  // ficha de CO₂ seguía ofreciendo 4 de las 7 del catálogo.
+  //
+  // `variants` sale ahora siempre del producto. `capacityGuide` no: es prosa
+  // autoral y puede explicar sólo las capacidades principales — que la guía
+  // cubra un subconjunto es intencional, no una divergencia.
+  const baseDetail = authored
+    ? { ...authored, variants: product.variants }
+    : createGeneratedProductDetail(product);
   return applyEditorialProfile(baseDetail, getCatalogProductEditorial(product.id));
 });
 

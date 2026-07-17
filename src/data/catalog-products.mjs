@@ -6,6 +6,35 @@ import { buildPublishedExpansionProducts } from './catalog-expansion/publication
 // importan desde este módulo.
 export { availabilityLabels, catalogGroups, fireClasses } from './catalog-taxonomy.mjs';
 
+/**
+ * ANEXIÓN de public/data/products.json — 2026-07-16
+ * ------------------------------------------------
+ * `public/data/products.json` es el catálogo de la arquitectura pre-Astro: 72
+ * productos que se pintaban en cliente vía `fetch`. Su lector desapareció en el
+ * commit 5100416 y desde entonces no lo lee nadie, pero conserva conocimiento
+ * de producto real. **El archivo NO se borra**: queda como fuente histórica.
+ *
+ * De sus 72 productos, 43 ya existían aquí como variantes (el desajuste era de
+ * unidades: 2.27 kg de CO₂ *es* 5 lb). Las capacidades restantes se anexaron a
+ * la familia que les corresponde, marcadas con un comentario en cada `variants`.
+ *
+ * Sólo se anexó la **capacidad**. Se descartó a propósito el resto de esa
+ * fuente:
+ *   · `badge: "NOM-154-SCFI"` en cada producto — presenta la norma como
+ *     certificación del equipo, que es el error corregido en la fase 3.
+ *   · `range: "1.5-3 metros"` — spec de modelo, que este catálogo no afirma
+ *     sobre producto de reventa.
+ *   · `features` y `excerpt` — copy sin acentos ("Proteccion", "mas compacto").
+ *
+ * PENDIENTE — capacidades sin familia donde anexarlas:
+ *   · Agua rodante 25 L y 50 L. No existe familia de agua móvil; el grupo
+ *     `industriales` tiene rodantes de PQS, CO₂, espuma y clase D, pero no de
+ *     agua. Crear la familia es una decisión de negocio, no de refactor.
+ *   · Novec 1230 de 4.5 y 9 kg. Novec es FK-5-1-12, un agente distinto del
+ *     HFC-236fa; anexarlo a esa familia sería incorrecto. Requiere familia
+ *     propia si MANEXT lo comercializa.
+ */
+
 const images = {
   pqs: '/img/productos/polvo-quimico-seco/Recarga-de-extintores-6kg.avif',
   co2: '/img/productos/co2/img-extintores-co2/Extintor-de-CO2-5lbs.avif',
@@ -26,7 +55,8 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Polvo químico seco ABC',
     fireClasses: ['A', 'B', 'C'],
-    variants: ['1 kg', '2.5 kg', '4.5 kg', '6 kg', '9 kg', '12 kg'],
+    // 3 kg anexado del catálogo de public/data/products.json (2026-07-16).
+    variants: ['1 kg', '2.5 kg', '3 kg', '4.5 kg', '6 kg', '9 kg', '12 kg'],
     applications: ['Oficinas', 'Comercios', 'Bodegas'],
     sectors: ['Corporativos', 'Comercio', 'Industria'],
     image: images.pqs,
@@ -78,7 +108,10 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Dióxido de carbono',
     fireClasses: ['B', 'C'],
-    variants: ['5 lb', '10 lb', '15 lb', '20 lb'],
+    // 7, 25 y 30 lb anexados de products.json, que los listaba en kg (3.2, 11.3
+    // y 13.62 kg). Se convierten a libras porque es la unidad de esta familia y
+    // la del mercado para CO₂: mezclar kg aquí confundiría la comparación.
+    variants: ['5 lb', '7 lb', '10 lb', '15 lb', '20 lb', '25 lb', '30 lb'],
     applications: ['Tableros eléctricos', 'Servidores', 'Laboratorios'],
     sectors: ['Tecnología', 'Salud', 'Corporativos'],
     image: images.co2,
@@ -97,7 +130,10 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Agua',
     fireClasses: ['A'],
-    variants: ['9 L', '10 L'],
+    // 6, 12, 15, 18 y 20 L anexados de products.json. Las de 25 y 50 L de esa
+    // fuente NO entran aquí: son unidades rodantes y esta familia es portátil.
+    // Ver nota al final del archivo.
+    variants: ['6 L', '9 L', '10 L', '12 L', '15 L', '18 L', '20 L'],
     applications: ['Papel', 'Madera', 'Textiles'],
     sectors: ['Escuelas', 'Archivos', 'Almacenes'],
     image: images.water,
@@ -132,7 +168,9 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Espuma formadora de película acuosa',
     fireClasses: ['A', 'B'],
-    variants: ['6 L', '9 L', '10 L'],
+    // 3, 11, 15, 18 y 20 L anexados de products.json. Las de 25, 50 y 100 L de
+    // esa fuente van a espuma-rodante, no aquí.
+    variants: ['3 L', '6 L', '9 L', '10 L', '11 L', '15 L', '18 L', '20 L'],
     applications: ['Hidrocarburos', 'Talleres', 'Almacenamiento'],
     sectors: ['Automotriz', 'Logística', 'Industria'],
     image: images.foam,
@@ -150,7 +188,8 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Espuma resistente a alcoholes',
     fireClasses: ['A', 'B'],
-    variants: ['6 L', '9 L'],
+    // 20 L anexado de products.json ("Extintor Espuma AR-AFFF 20 Litros").
+    variants: ['6 L', '9 L', '20 L'],
     applications: ['Solventes polares', 'Alcoholes', 'Químicos'],
     sectors: ['Química', 'Manufactura', 'Almacenamiento'],
     image: images.foam,
@@ -184,7 +223,12 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Químico húmedo',
     fireClasses: ['K'],
-    variants: ['2.5 L', '4 L', '6 L', '9 L', '10 L'],
+    // 7.5, 12 y 15 L anexados de products.json. La fuente mezclaba unidades en
+    // la misma familia: "2 gal" (7.5 L) y "3 gal" (11.4 L) junto a "12 L". Se
+    // normaliza a litros, la unidad de esta familia. "3 gal" no se anexa por
+    // separado: a 11.4 L es el mismo equipo que el de 12 L listado aparte.
+    // "1.6 gal" y "2.5 gal" ya estaban cubiertos por 6 L y 9 L.
+    variants: ['2.5 L', '4 L', '6 L', '7.5 L', '9 L', '10 L', '12 L', '15 L'],
     applications: ['Freidoras', 'Cocinas comerciales', 'Comedores'],
     sectors: ['Restaurantes', 'Hoteles', 'Hospitales'],
     image: images.k,
@@ -202,7 +246,13 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'HFC-236fa',
     fireClasses: ['A', 'B', 'C'],
-    variants: ['2.5 kg', '4.5 kg', '6 kg'],
+    // 2.3, 5.4, 6.8, 9 y 11 kg anexados de products.json. Entran aquí los de
+    // FE-36 (2.3 y 6 kg) porque FE-36 es el nombre comercial de DuPont para el
+    // HFC-236fa: mismo agente, no otra familia. Los de "Agente Limpio" sin
+    // marca se anexan a esta familia por ser la genérica de agente limpio del
+    // catálogo. Los de Novec 1230 NO entran: es FK-5-1-12, un agente distinto,
+    // y no existe familia propia. Ver nota al final del archivo.
+    variants: ['2.3 kg', '2.5 kg', '4.5 kg', '5.4 kg', '6 kg', '6.8 kg', '9 kg', '11 kg'],
     applications: ['Electrónica', 'Telecomunicaciones', 'Instrumentación'],
     sectors: ['Centros de datos', 'Laboratorios', 'Telecom'],
     image: images.clean,
@@ -221,7 +271,11 @@ const catalogProductDefinitions = [
     group: 'portatiles',
     agent: 'Agente limpio halocarbonado',
     fireClasses: ['A', 'B', 'C'],
-    variants: ['Capacidad según fabricante'],
+    // 1.8 y 4 kg anexados de products.json ("Halotron I 1.8 kg Compacto" y
+    // "Halotron I 4 kg"). Sustituyen un placeholder: la ficha sólo ofrecía
+    // "Capacidad según fabricante", que se conserva porque la familia abarca
+    // alternativas cuyas capacidades sí dependen del fabricante.
+    variants: ['1.8 kg', '4 kg', 'Capacidad según fabricante'],
     applications: ['Aviación', 'Electrónica', 'Bienes sensibles'],
     sectors: ['Aeronáutica', 'Salud', 'Laboratorios'],
     image: images.clean,
@@ -357,7 +411,10 @@ const catalogProductDefinitions = [
     group: 'industriales',
     agent: 'AFFF, AR-AFFF o formulación compatible',
     fireClasses: ['A', 'B'],
-    variants: ['Capacidad según ingeniería'],
+    // 25, 50 y 100 L anexados de products.json, que sí traía las capacidades
+    // rodantes de espuma. Sustituyen un placeholder: la ficha decía sólo
+    // "Capacidad según ingeniería" y ahora ofrece medidas concretas.
+    variants: ['25 L', '50 L', '100 L', 'Capacidad según ingeniería'],
     applications: ['Tanques', 'Patios de combustibles', 'Proceso químico'],
     sectors: ['Industria', 'Química', 'Petróleo y gas'],
     image: images.foam,

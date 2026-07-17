@@ -535,6 +535,93 @@ test('un id desconocido no rompe el selector', () => {
 });
 
 // ---------------------------------------------------------------------------
+// Anexión de public/data/products.json (2026-07-16)
+// ---------------------------------------------------------------------------
+
+/**
+ * `public/data/products.json` es el catálogo pre-Astro, sin lectores desde el
+ * commit 5100416 pero conservado como fuente histórica. Sus capacidades reales
+ * se anexaron a la familia correspondiente. Este test fija esa anexión: si
+ * alguien reescribe `variants`, las capacidades rescatadas no pueden perderse
+ * en silencio.
+ */
+const ANNEXED_VARIANTS = {
+  'pqs-abc-portatil': ['3 kg'],
+  'co2-portatil': ['7 lb', '25 lb', '30 lb'],
+  'agua-presion-portatil': ['6 L', '12 L', '15 L', '18 L', '20 L'],
+  'espuma-afff-portatil': ['3 L', '11 L', '15 L', '18 L', '20 L'],
+  'espuma-ar-afff': ['20 L'],
+  'espuma-rodante': ['25 L', '50 L', '100 L'],
+  'halotron-portatil': ['1.8 kg', '4 kg'],
+  'hfc-236fa-portatil': ['2.3 kg', '5.4 kg', '6.8 kg', '9 kg', '11 kg'],
+  'tipo-k-portatil': ['7.5 L', '12 L', '15 L'],
+};
+
+test('las capacidades anexadas de products.json siguen publicadas', () => {
+  const offenders = [];
+
+  for (const [id, expected] of Object.entries(ANNEXED_VARIANTS)) {
+    const product = catalogProducts.find((item) => item.id === id);
+    assert.ok(product, `falta la familia ${id}`);
+
+    for (const variant of expected) {
+      if (!product.variants.includes(variant)) offenders.push(`${id}: falta "${variant}"`);
+    }
+  }
+
+  assert.deepEqual(offenders, [], `capacidades anexadas perdidas:\n${offenders.join('\n')}`);
+});
+
+test('la anexión no dejó capacidades duplicadas ni unidades mezcladas', () => {
+  const offenders = [];
+
+  for (const id of Object.keys(ANNEXED_VARIANTS)) {
+    const product = catalogProducts.find((item) => item.id === id);
+
+    const unique = new Set(product.variants);
+    if (unique.size !== product.variants.length) offenders.push(`${id}: variantes duplicadas`);
+
+    // Una familia habla en una sola unidad de masa o de volumen. CO₂ en libras,
+    // agua en litros. Mezclar kg y lb en la misma lista impide comparar.
+    const units = new Set(
+      product.variants
+        .map((variant) => (/\d\s*(kg|lb|L|gal)\b/.exec(variant) || [])[1])
+        .filter(Boolean),
+    );
+    if (units.size > 1) offenders.push(`${id}: mezcla unidades ${[...units].join(' y ')}`);
+  }
+
+  assert.deepEqual(offenders, [], `problemas en la anexión:\n${offenders.join('\n')}`);
+});
+
+test('las fichas publican las mismas capacidades que declara el catálogo', () => {
+  // Las 2 fichas autorales copiaban `variants` a mano: era una segunda fuente
+  // de verdad y divergió en silencio (la de CO₂ ofrecía 4 de 7 capacidades).
+  const offenders = [];
+
+  for (const product of catalogProducts) {
+    const detail = catalogProductDetails.find((item) => item.id === product.id);
+    if (!detail) continue;
+
+    const missing = product.variants.filter((variant) => !detail.variants.includes(variant));
+    if (missing.length) offenders.push(`${product.id}: la ficha no publica ${missing.join(', ')}`);
+  }
+
+  assert.deepEqual(offenders, [], `fichas desincronizadas del catálogo:\n${offenders.join('\n')}`);
+});
+
+test('la anexión sólo trajo capacidades, no los claims de la fuente', () => {
+  // products.json marcaba cada producto con `badge: "NOM-154-SCFI"` (la norma
+  // como certificación del equipo, corregida en la fase 3) y con `range` de
+  // modelo. Nada de eso debe haber entrado al catálogo.
+  const serialised = JSON.stringify(catalogProducts);
+
+  assert.doesNotMatch(serialised, /"badge"/, 'el badge NOM-154 de la fuente no debe anexarse');
+  assert.doesNotMatch(serialised, /"range"/, 'el alcance de modelo de la fuente no debe anexarse');
+  assert.doesNotMatch(serialised, /"capacityValue"|"capacityType"/, 'campos de la fuente vieja');
+});
+
+// ---------------------------------------------------------------------------
 // text-utils — contrato del helper
 // ---------------------------------------------------------------------------
 
