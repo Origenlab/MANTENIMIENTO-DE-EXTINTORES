@@ -1,0 +1,47 @@
+# MANTENIMIENTODEEXTINTORES.MX — Venta, recarga y mantenimiento de extintores (MANEXT)
+
+> MANEXT vende, recarga y da mantenimiento a extintores en Ciudad de México y Estado de
+> México, con servicio regido por la NOM-154-SCFI, prueba hidrostática, capacitación de
+> brigadas y señalización de protección civil.
+
+Idioma: español (es-MX). País: México.
+
+## Acerca de
+El sitio cubre el ciclo completo del extintor: venta de equipo nuevo, recarga y
+mantenimiento preventivo conforme a la NOM-154-SCFI, prueba hidrostática de cilindros,
+señalización y capacitación de brigadas contra incendio. El catálogo se organiza en
+extintores portátiles, móviles e industriales, automáticos, accesorios y refacciones,
+cubriendo los agentes extintores de las clases de fuego A, B, C, D y K.
+
+## Servicios / Productos
+- Recarga de extintores (NOM-154-SCFI).
+- Mantenimiento preventivo de extintores.
+- Prueba hidrostática de cilindros.
+- Venta de extintores nuevos.
+- Capacitación de brigadas contra incendio.
+- Señalización de protección civil.
+- Agentes: polvo químico seco (ABC), CO2, tipo K para cocinas, espuma AFFF, agua a presión y agentes limpios para equipo electrónico.
+- Sectores atendidos con página propia: data centers, hospitales y restaurantes.
+
+## Páginas clave
+- [Inicio](https://mantenimientodeextintores.mx/): portada con servicios y catálogo.
+- [Servicios](https://mantenimientodeextintores.mx/servicios): índice de servicios de MANEXT.
+- [Recarga de extintores](https://mantenimientodeextintores.mx/recarga-de-extintores): servicio de recarga.
+- [Mantenimiento preventivo](https://mantenimientodeextintores.mx/mantenimiento-preventivo): programa de mantenimiento.
+- [Prueba hidrostática](https://mantenimientodeextintores.mx/prueba-hidrostatica): prueba de integridad de cilindros.
+- [Venta de extintores](https://mantenimientodeextintores.mx/venta-de-extintores): equipo nuevo por tipo de agente.
+- [Catálogo](https://mantenimientodeextintores.mx/catalogo): catálogo de productos con fichas por modelo.
+- [Extintores](https://mantenimientodeextintores.mx/extintores): guía general de extintores.
+- [CO2](https://mantenimientodeextintores.mx/co2): extintores de dióxido de carbono.
+- [Polvo químico seco](https://mantenimientodeextintores.mx/polvo-quimico-seco): extintores ABC.
+- [Tipo K](https://mantenimientodeextintores.mx/tipo-k): extintores para cocinas.
+- [Capacitación de brigadas](https://mantenimientodeextintores.mx/capacitacion-brigadas): formación de brigadas contra incendio.
+- [Señalización](https://mantenimientodeextintores.mx/senalizacion): señalización de protección civil.
+- [Blog](https://mantenimientodeextintores.mx/blog): artículos técnicos sobre extintores, normativa y brigadas.
+- [Contacto](https://mantenimientodeextintores.mx/contacto): cotización y datos de contacto.
+
+## Contacto
+- Sitio: https://mantenimientodeextintores.mx
+- Teléfono: 56 1461 2594
+- WhatsApp: https://wa.me/5215614612594
+- Cobertura: Ciudad de México y Estado de México
