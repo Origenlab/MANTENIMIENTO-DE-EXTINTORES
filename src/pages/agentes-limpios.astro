@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { WHATSAPP_NUMBER_INTL } from '../config/business.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -200,7 +201,7 @@ const currentSlug = 'agentes-limpios';
           </span>
         </div>
 
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20me%20interesa%20un%20extintor%20de%20agente%20limpio.%20¿Me%20pueden%20asesorar%20entre%20FM-200%20y%20Novec%201230%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría FM-200 vs Novec</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20me%20interesa%20un%20extintor%20de%20agente%20limpio.%20¿Me%20pueden%20asesorar%20entre%20FM-200%20y%20Novec%201230%3F`} class="btn btn-primary" target="_blank" rel="noopener">Asesoría FM-200 vs Novec</a>
       </div>
     </div>
 
@@ -213,7 +214,7 @@ const currentSlug = 'agentes-limpios';
         <h2>Agente Limpio vs CO₂: La Diferencia que Importa en Espacios con Personas</h2>
         <p>El CO₂ extingue reduciendo el oxígeno del ambiente por debajo del umbral de combustión (~12-15 %). Para una persona, ese nivel significa inconsciencia inmediata y muerte en minutos sin evacuación. El CO₂ exige que el espacio esté <strong>completamente desocupado</strong> antes o durante su descarga — en una sala de servidores con operadores de guardia convierte su uso en una decisión con consecuencias potencialmente fatales.</p>
         <p>El FM-200 actúa a una concentración de diseño del <strong>7 %</strong>, por debajo de su NOAEL del 9 %. Puede descargarse con personas presentes sin riesgo de asfixia. Para el Novec 1230, la concentración típica de diseño es del 5.6 %, con NOAEL del 10 %. Esta diferencia no es solo técnica — es operacional: <strong>permite actuar sin elegir entre salvar los equipos y proteger a las personas</strong>. Adicionalmente, ninguno de los dos deja residuo sobre los equipos protegidos — mientras que el CO₂, aunque limpio en teoría, puede generar condensación y choque térmico en componentes electrónicos calientes al momento de la descarga.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20CO2%20en%20mi%20sala%20de%20servidores%20y%20quiero%20evaluar%20si%20debería%20cambiar%20a%20agente%20limpio.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Evaluar el Cambio de CO₂ a Agente Limpio</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20tengo%20CO2%20en%20mi%20sala%20de%20servidores%20y%20quiero%20evaluar%20si%20debería%20cambiar%20a%20agente%20limpio.%20¿Pueden%20asesorarme%3F`} class="btn btn-primary" target="_blank" rel="noopener">Evaluar el Cambio de CO₂ a Agente Limpio</a>
       </div>
     </div>
 
@@ -226,7 +227,7 @@ const currentSlug = 'agentes-limpios';
         <h2>Dónde el Agente Limpio es la Única Opción Técnicamente Correcta</h2>
         <p><strong>Salas de servidores y data centers:</strong> hardware de alto valor con operadores presentes — FM-200 por su seguridad en espacios ocupados. <strong>Archivos notariales y registros civiles:</strong> documentos con valor legal irrecuperable — Novec 1230 por su perfil ambiental y cero residuo absoluto. <strong>Museos, galerías y bibliotecas históricas:</strong> obras únicas donde cualquier agente residual, por mínimo que sea, es inaceptable. <strong>Telecomunicaciones y sistemas SCADA:</strong> equipos activos 24/7 donde la interrupción post-siniestro debe ser cero. <strong>Laboratorios y salas limpias:</strong> instrumentos de precisión calibrados cuya recalibración post-exposición a residuos tiene costos que pueden superar su valor de reposición.</p>
         <p>En todos estos espacios hay un denominador común: el costo del daño secundario causado por el extintor inadecuado supera al del incendio original. El agente limpio elimina ese factor — actúa, se evapora y el espacio queda operativo sin limpieza, sin demora y sin daños sobre los activos protegidos.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20de%20agente%20limpio%20para%20mi%20instalación%20crítica.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar para Mi Instalación Crítica</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20extintores%20de%20agente%20limpio%20para%20mi%20instalación%20crítica.%20¿Pueden%20asesorarme%3F`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar para Mi Instalación Crítica</a>
       </div>
     </div>
 
@@ -239,7 +240,7 @@ const currentSlug = 'agentes-limpios';
         <h2>Por qué te conviene elegir MANEXT para tu extintor de agente limpio</h2>
         <p>El agente limpio requiere un nivel de asesoría que va mucho más allá de entregar un cilindro. Hablamos de elegir entre FM-200 y Novec 1230 según presupuesto, perfil ambiental y regulación sectorial; dimensionar la concentración de diseño según el volumen y selladura del recinto; verificar compatibilidad con sistemas fijos y de detección preexistentes; y emitir la documentación que pide tu auditoría ISO 27001, ISO 14001 o NFPA 75. Todo eso forma parte del servicio MANEXT desde hace <strong>más de 80 años</strong>.</p>
         <p>Cada extintor de agente limpio se entrega con: <strong>certificado de servicio NOM-154-SCFI</strong> vigente, ficha técnica del agente con NOAEL/GWP/ODP, declaración de cumplimiento <strong>NFPA 2001</strong>, etiqueta de fabricante con trazabilidad, señalización fotoluminiscente NOM-026, instalación profesional con soporte metálico y bitácora de servicio para auditorías de continuidad. Para clientes con múltiples instalaciones, ofrecemos <strong>programas de mantenimiento preventivo</strong> con visitas programadas, reporte fotográfico y dashboard de cumplimiento.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20extintores%20de%20agente%20limpio%20con%20MANEXT.%20¿Pueden%20darme%20una%20propuesta%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20quiero%20cotizar%20extintores%20de%20agente%20limpio%20con%20MANEXT.%20¿Pueden%20darme%20una%20propuesta%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
@@ -299,7 +300,7 @@ const currentSlug = 'agentes-limpios';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre agentes limpios. ¿Tienes una instalación específica que evaluar?
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20de%20agente%20limpio%20para%20mi%20instalación`} target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — asesoría técnica sin costo.
         </p>
         <FaqList faqs={faqs} firstOpen={true} />
       </div>
@@ -444,7 +445,7 @@ const currentSlug = 'agentes-limpios';
      SCRIPTS
 ═══════════════════════════════════════════════ -->
 
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   var form = document.getElementById('whatsappFormAgentesLimpios');
   if (!form) return;
@@ -465,7 +466,7 @@ const currentSlug = 'agentes-limpios';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

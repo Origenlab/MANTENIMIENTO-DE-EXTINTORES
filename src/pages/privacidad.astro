@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { PHONE_DISPLAY, PHONE_TEL } from '../config/business.mjs';
 ---
 
 <Layout
@@ -22,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
 <h2>1. Identidad y Domicilio del Responsable</h2><p><strong>MANEXT - Mantenimiento de Extintores</strong>, con domicilio en Av. Ayuntamiento No. 75, Col. Centro, Tlalnepantla de Baz, Estado de México, C.P. 54000, es el responsable del tratamiento de tus datos personales.
 </p><p>
 Para cualquier consulta relacionada con este Aviso de Privacidad, puedes contactarnos en:
-</p><ul><li><strong>Teléfono:</strong> 56 1461 2594 / 56 1461 2594</li><li><strong>Email:</strong> [email protected]</li><li><strong>Horario:</strong> Lunes a Domingo de 8:00 AM a 6:00 PM</li></ul>
+</p><ul><li><strong>Teléfono:</strong> {PHONE_DISPLAY} / {PHONE_DISPLAY}</li><li><strong>Email:</strong> [email protected]</li><li><strong>Horario:</strong> Lunes a Domingo de 8:00 AM a 6:00 PM</li></ul>
 
 <h2>2. Datos Personales que Recopilamos</h2><p>
 Para las finalidades descritas en este aviso de privacidad, podemos recopilar los siguientes tipos de datos personales:
@@ -78,6 +79,6 @@ Si consideras que tu derecho a la protección de datos personales ha sido vulner
 
 <div class="contact-box"><h3>¿Dudas sobre tu Privacidad?</h3><p style="margin-bottom: 1rem;">
 Si tienes preguntas sobre este Aviso de Privacidad o sobre el tratamiento de tus datos personales, contáctanos:
-</p><p style="font-size: 1.1rem; margin: 0.5rem 0;"><strong>Email:</strong> <a href="mailto:[email protected]">[email protected]</a></p><p style="font-size: 1.1rem; margin: 0.5rem 0;"><strong>Teléfono:</strong> <a href="tel:5614612594">56 1461 2594</a> | <a href="tel:5614612594">56 1461 2594</a></p></div></div></section>
+</p><p style="font-size: 1.1rem; margin: 0.5rem 0;"><strong>Email:</strong> <a href="mailto:[email protected]">[email protected]</a></p><p style="font-size: 1.1rem; margin: 0.5rem 0;"><strong>Teléfono:</strong> <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a> | <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></p></div></div></section>
 
 </Layout>

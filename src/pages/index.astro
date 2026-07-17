@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { PHONE_E164, PHONE_TEL, WHATSAPP_NUMBER_INTL, whatsappUrl } from '../config/business.mjs';
 
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -14,7 +15,7 @@ const localBusinessSchema = JSON.stringify({
   "alternateName": "MANEXT",
   "description": "MANEXT es la empresa con mayor trayectoria en venta y mantenimiento de extintores en CDMX desde 1943. Prestador del servicio de mantenimiento y recarga conforme a NOM-154-SCFI. Más de 80 años y 10,000 clientes activos en Ciudad de México y Estado de México.",
   "url": "https://mantenimientodeextintores.mx",
-  "telephone": "+52-56-1461-2594",
+  "telephone": PHONE_E164,
   "email": "contacto@mantenimientodeextintores.mx",
   "foundingDate": "1943",
   "slogan": "80 años protegiendo empresas, comercios y familias mexicanas",
@@ -122,8 +123,8 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
   title="Venta de Extintores Certificados en CDMX desde 1943"
   subtitle="80 años protegiendo empresas, comercios y familias mexicanas — con la documentación que tu inspección va a pedir"
   description="Distribuidor de extintores con servicio de recarga y mantenimiento NOM-154-SCFI. Asesoría técnica gratuita, instalación incluida, recarga y mantenimiento anual a domicilio. Entrega en 48 horas en toda la CDMX y zona metropolitana."
-  ctaPhone="5614612594"
-  ctaWhatsApp="5614612594"
+  ctaPhone={PHONE_TEL}
+  ctaWhatsApp={PHONE_TEL}
   paragraphs={[
     '<strong>MANEXT</strong> es la empresa con mayor trayectoria en venta y mantenimiento de extintores de la Ciudad de México: ocho décadas de operación continua desde <strong>1943</strong>, con cobertura en CDMX y Estado de México. Cada extintor que entregamos cuenta con nuestro servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong>, llega con instalación profesional, soporte metálico, señalización fotoluminiscente NOM-026 y la documentación oficial que solicita Protección Civil para tu cumplimiento de <strong>NOM-002-STPS</strong> — sin costos sorpresa ni cargos extra por instalación.',
     'Lo que nos distingue no es vender un cilindro: es <strong>resolver tu cumplimiento de extremo a extremo</strong>. Asesoría técnica sin costo, análisis de riesgo previo, recarga anual por pesaje certificado, prueba hidrostática quinquenal, capacitación de brigadas y bitácora actualizada. Cuando llegue la próxima visita de Protección Civil o de tu aseguradora, tu carpeta ya está lista. Eso es lo que vendemos: <strong>tranquilidad real, año con año</strong>.'
@@ -528,7 +529,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <div class="faq-cot-layout">
       <!-- Left: FAQ -->
       <div class="faq-cot-left">
-        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre precios, certificaciones, tiempos de entrega y servicios. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
+        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre precios, certificaciones, tiempos de entrega y servicios. Si no encuentras tu respuesta, <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
         <FaqList faqs={faqs} firstOpen={true} /><!-- /faq-grid -->
       </div><!-- /faq-cot-left -->
 
@@ -660,7 +661,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 <!-- FAQ Accordion Script -->
 
 <!-- WhatsApp Form Script -->
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   'use strict';
   var form = document.getElementById('whatsappForm');
@@ -687,7 +688,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     text += '*Necesito:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
 
-    var whatsappUrl = 'https://wa.me/5215614612594?text=' + encodeURIComponent(text);
+    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text);
     window.open(whatsappUrl, '_blank');
   });
 })();

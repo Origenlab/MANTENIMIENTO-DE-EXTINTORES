@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { WHATSAPP_NUMBER_INTL } from '../config/business.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -200,7 +201,7 @@ const currentSlug = 'espuma-afff';
           </span>
         </div>
 
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20me%20interesa%20el%20extintor%20de%20espuma%20AFFF.%20¿Pueden%20asesorarme%20sobre%20qué%20capacidad%20necesito%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20me%20interesa%20el%20extintor%20de%20espuma%20AFFF.%20¿Pueden%20asesorarme%20sobre%20qué%20capacidad%20necesito%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -245,7 +246,7 @@ const currentSlug = 'espuma-afff';
           </tbody>
         </table>
 
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20extintores%20AFFF.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20instalación%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20quiero%20cotizar%20extintores%20AFFF.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20instalación%3F`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
       </div>
     </div>
 
@@ -258,7 +259,7 @@ const currentSlug = 'espuma-afff';
         <h2>Aplicaciones industriales del extintor AFFF</h2>
         <p>El AFFF está diseñado para entornos donde los líquidos inflamables son parte de la operación diaria — no un evento raro. Es el agente que la normativa, las aseguradoras y los inspectores esperan ver instalado en estos giros:</p>
         <p><strong>Talleres automotrices y mecánicos:</strong> cambio de aceite, reparaciones con solventes, áreas de pintura y barnizado, zonas de hojalatería. <strong>Estaciones de servicio y autoconsumo:</strong> islas de despacho de gasolina y diésel, bodegas de lubricantes, áreas de fosa y respiración de tanques. <strong>Plantas industriales:</strong> líneas con líquidos hidráulicos, solventes de limpieza, aceites de proceso y maquinaria. <strong>Bodegas y almacenes Clase B:</strong> pinturas, adhesivos, barnices, resinas, alcoholes industriales y materias primas inflamables. <strong>Hangares y aeropuertos:</strong> combustible de aviación, lubricantes aeronáuticos y áreas de mantenimiento de aeronaves bajo regulación AFAC.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20AFFF%20para%20mi%20instalación.%20¿Pueden%20asesorarme%20sobre%20cuántos%20necesito%20y%20dónde%20colocarlos%3F" class="btn btn-primary" target="_blank" rel="noopener">Asesoría sin costo por WhatsApp</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20extintores%20AFFF%20para%20mi%20instalación.%20¿Pueden%20asesorarme%20sobre%20cuántos%20necesito%20y%20dónde%20colocarlos%3F`} class="btn btn-primary" target="_blank" rel="noopener">Asesoría sin costo por WhatsApp</a>
       </div>
     </div>
 
@@ -271,7 +272,7 @@ const currentSlug = 'espuma-afff';
         <h2>Por qué te conviene comprar tu extintor AFFF con MANEXT</h2>
         <p>Llevamos <strong>más de 80 años</strong> distribuyendo equipos de protección contra incendios en México y conocemos lo que pide cada inspector de Protección Civil, cada auditor STPS y cada ajustador de aseguradora. Cuando te asesoramos sobre AFFF no estamos colocando un producto: estamos resolviendo, en el mismo movimiento, el cumplimiento normativo y la <strong>protección real</strong> de tu equipo, tu inventario y tu personal.</p>
         <p>Cada AFFF de MANEXT se entrega con: <strong>certificado de servicio NOM-154-SCFI vigente</strong>, señalización fotoluminiscente NOM-026 instalada en sitio, soporte metálico anclado a muro, etiqueta de fabricante con trazabilidad, tarjeta de inspección, bitácora de servicio lista para auditorías y entrada al programa anual de mantenimiento con verificación del concentrado. <strong>Entrega en 48 horas</strong> en CDMX y área metropolitana, con coordinación de mismo día para emergencias.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20comprar%20extintores%20AFFF%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20quiero%20comprar%20extintores%20AFFF%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
@@ -331,7 +332,7 @@ const currentSlug = 'espuma-afff';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre extintores AFFF. ¿Prefieres hablar directamente con un especialista?
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20AFFF%20para%20mi%20instalación" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20AFFF%20para%20mi%20instalación`} target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
         <FaqList faqs={faqs} firstOpen={true} />
       </div>
@@ -477,7 +478,7 @@ const currentSlug = 'espuma-afff';
      SCRIPTS
 ═══════════════════════════════════════════════ -->
 
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   var form = document.getElementById('whatsappFormAFFF');
   if (!form) return;
@@ -498,7 +499,7 @@ const currentSlug = 'espuma-afff';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

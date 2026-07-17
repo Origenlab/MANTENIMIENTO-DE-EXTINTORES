@@ -1,16 +1,32 @@
+/**
+ * Interactividad del cat\u00e1logo: filtros, paginaci\u00f3n y formulario de cotizaci\u00f3n.
+ *
+ * Viv\u00eda en `public/js/`, fuera del build, con su propia copia de la l\u00f3gica de
+ * filtrado, paginaci\u00f3n y armado del mensaje. `src/lib/catalog-utils.mjs` ten\u00eda
+ * otra copia que s\u00f3lo ejecutaban los tests. Resultado: se testeaba una
+ * implementaci\u00f3n que no corr\u00eda y corr\u00eda una que nadie testeaba \u2014 la raz\u00f3n de
+ * fondo de que la suite pasara en verde con cuatro defectos en vivo
+ * (auditor\u00eda 2026-07-16).
+ *
+ * Ahora Astro lo empaqueta y la l\u00f3gica pura se importa de `catalog-filter.mjs`,
+ * que s\u00ed est\u00e1 cubierta por tests. Aqu\u00ed s\u00f3lo queda el DOM.
+ */
+import {
+  CATALOG_PAGE_SIZE,
+  buildPaginationItems,
+  matchesCatalogFilters,
+  normaliseSearch,
+  paginate,
+} from '../lib/catalog-filter.mjs';
+import { WHATSAPP_NUMBER_INTL } from '../config/business.mjs';
+import { buildQuoteMessage } from '../lib/catalog-utils.mjs';
+
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = '5215614612594';
-  var PAGE_SIZE = 12;
-
-  function normalise(value) {
-    return String(value || '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .trim();
-  }
+  var WHATSAPP_NUMBER = WHATSAPP_NUMBER_INTL;
+  var PAGE_SIZE = CATALOG_PAGE_SIZE;
+  var normalise = normaliseSearch;
 
   function initialiseCatalog() {
     var cards = Array.prototype.slice.call(document.querySelectorAll('[data-catalog-card]'));
@@ -87,24 +103,7 @@
       window.history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
     }
 
-    function getPaginationItems(page, pageCount) {
-      if (pageCount <= 7) {
-        return Array.from({ length: pageCount }, function (_, index) { return index + 1; });
-      }
-
-      var pages = [1, pageCount, page - 1, page, page + 1]
-        .filter(function (value) { return value >= 1 && value <= pageCount; })
-        .filter(function (value, index, values) { return values.indexOf(value) === index; })
-        .sort(function (a, b) { return a - b; });
-      var items = [];
-
-      pages.forEach(function (value, index) {
-        if (index > 0 && value - pages[index - 1] > 1) items.push('ellipsis-' + index);
-        items.push(value);
-      });
-
-      return items;
-    }
+    var getPaginationItems = buildPaginationItems;
 
     function scrollToResults() {
       if (!resultsContainer) return;
@@ -187,28 +186,30 @@
       if (options.resetPage) currentPage = 1;
 
       cards.forEach(function (card) {
-        var classes = (card.dataset.fireClasses || '').split(',').filter(Boolean);
-        var matches = true;
-
-        if (filters.group !== 'all' && card.dataset.group !== filters.group) matches = false;
-        if (filters.agent !== 'all' && normalise(card.dataset.agent) !== normalise(filters.agent)) matches = false;
-        if (filters.fireClass !== 'all' && classes.indexOf(filters.fireClass) === -1) matches = false;
-        if (filters.availability !== 'all' && card.dataset.availability !== filters.availability) matches = false;
-        if (filters.query && normalise(card.dataset.search).indexOf(filters.query) === -1) matches = false;
+        // La tarjeta se normaliza al mismo `record` que usa el catálogo en
+        // servidor, para que ambos pasen por el mismo predicado.
+        var matches = matchesCatalogFilters({
+          group: card.dataset.group,
+          agent: card.dataset.agent,
+          fireClasses: (card.dataset.fireClasses || '').split(',').filter(Boolean),
+          availability: card.dataset.availability,
+          search: card.dataset.search,
+        }, filters);
 
         card.hidden = true;
         if (matches) matchingCards.push(card);
       });
 
-      var total = matchingCards.length;
-      var pageCount = total ? Math.ceil(total / PAGE_SIZE) : 0;
-      currentPage = pageCount ? Math.min(Math.max(currentPage, 1), pageCount) : 1;
-      var startIndex = (currentPage - 1) * PAGE_SIZE;
-      var visibleCards = matchingCards.slice(startIndex, startIndex + PAGE_SIZE);
+      var page = paginate(matchingCards.length, currentPage, PAGE_SIZE);
+      var total = page.total;
+      var pageCount = page.pageCount;
+      currentPage = page.page;
+      var startIndex = page.startIndex;
+      var visibleCards = matchingCards.slice(startIndex, page.endIndex);
       visibleCards.forEach(function (card) { card.hidden = false; });
 
-      var rangeStart = total ? startIndex + 1 : 0;
-      var rangeEnd = total ? startIndex + visibleCards.length : 0;
+      var rangeStart = page.start;
+      var rangeEnd = page.end;
       if (resultCount) resultCount.textContent = String(total);
       if (resultRange) {
         resultRange.textContent = total
@@ -378,31 +379,8 @@
     });
   }
 
-  function buildQuoteMessage(fields) {
-    var labels = [
-      ['product', 'Producto o familia'],
-      ['variant', 'Capacidad o variante'],
-      ['quantity', 'Cantidad'],
-      ['sector', 'Sector o inmueble'],
-      ['location', 'Ubicación'],
-      ['services', 'Servicios adicionales'],
-      ['name', 'Nombre'],
-      ['company', 'Empresa'],
-      ['phone', 'Teléfono o WhatsApp'],
-      ['email', 'Correo'],
-      ['details', 'Detalle del riesgo'],
-    ];
-    var lines = ['Hola, solicito una cotización desde el catálogo MANEXT.', ''];
-
-    labels.forEach(function (entry) {
-      var value = fields[entry[0]];
-      if (Array.isArray(value)) value = value.filter(Boolean).join(', ');
-      if (String(value || '').trim()) lines.push(entry[1] + ': ' + String(value).trim());
-    });
-
-    lines.push('', 'Agradezco su asesoría técnica para confirmar la selección.');
-    return lines.join('\n');
-  }
+  // buildQuoteMessage se importa de catalog-utils.mjs: antes había una copia
+  // aquí y otra allí, y sólo la de allí tenía tests.
 
   function initialisePage() {
     initialiseCatalog();

@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { PHONE_E164, WHATSAPP_NUMBER_INTL, whatsappUrl } from '../config/business.mjs';
 
 const servicesSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -15,7 +16,7 @@ const servicesSchema = JSON.stringify({
   "provider": {
     "@type": "LocalBusiness",
     "name": "MANEXT",
-    "telephone": "+525614612594",
+    "telephone": PHONE_E164,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tlalnepantla de Baz",
@@ -195,7 +196,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2>Venta de Extintores Certificados</h2>
     <p>En <strong>MANEXT</strong> ofrecemos la más amplia gama de extintores, con servicio de mantenimiento y recarga bajo <strong>NOM-154-SCFI</strong>, para tu empresa, negocio u hogar. Contamos con stock permanente de todas las clases: polvo seco (PQS) ABC, CO2, agua a presión, espuma AFFF, agentes limpios y tipo K para cocinas comerciales. Cada producto incluye <strong>instalación, señalamiento reglamentario y garantía de fábrica</strong>, asegurando la conformidad con Protección Civil desde el primer día.</p>
     <p>Nuestra atención integral comienza con un <strong>análisis de necesidades sin costo</strong>, donde evaluamos las características específicas de tu inmueble para determinar el tipo, capacidad y cantidad exacta de extintores según la NOM-002-STPS. Realizamos la entrega e instalación en menos de 48 horas en toda la Ciudad de México, incluyendo herrajes, collares de garantía, etiquetado completo y capacitación básica de uso para tu personal. Con más de 80 años de experiencia, somos líderes en extintores en México con los mejores precios del mercado.</p>
-    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotizaci%C3%B3n%20para%20venta%20de%20extintores%20certificados" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href={whatsappUrl('Hola, necesito cotización para venta de extintores certificados')} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -209,7 +210,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2>Mantenimiento de Extintores Preventivo</h2>
     <p>La <strong>revisión preventiva anual</strong> es requerida según la NOM-154-SCFI para que tus extintores funcionen correctamente en caso de emergencia. En MANEXT ofrecemos <strong>pólizas anuales</strong> con inspecciones exhaustivas que incluyen: verificación de presión manométrica, revisión de mangueras y válvulas, limpieza completa, prueba de disparo, actualización de etiquetas y registro en bitácoras oficiales. Cada proceso se documenta con <strong>reportes técnicos fotográficos</strong> que te respaldan ante cualquier auditoría o inspección STPS.</p>
     <p>Nuestras pólizas para clientes empresariales brindan <strong>tranquilidad total y apego normativo al 100%</strong>. Incluyen visitas programadas según calendario, atención prioritaria 24/7, préstamo de extintores durante el proceso para que nunca quedes desprotegido, y recordatorios automáticos de vencimientos. Ideal para condominios, corporativos, industrias, comercios y todo tipo de negocios en CDMX que necesitan documentación impecable y atención constante.</p>
-    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20p%C3%B3lizas%20de%20mantenimiento%20preventivo%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href={whatsappUrl('Hola, necesito información sobre pólizas de mantenimiento preventivo para extintores')} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -237,7 +238,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2>Realización de Pruebas Hidrostáticas NOM-154</h2>
     <p>La <strong>prueba hidrostática</strong> es un proceso técnico necesario cada 5 años según la NOM-154-SCFI, diseñado para verificar la integridad estructural del cilindro y detectar posibles fallas, fisuras, corrosión interna o debilitamiento del metal. Este procedimiento consiste en someter el cilindro vacío a una presión de agua superior a su presión de trabajo normal, mientras se monitorea cualquier deformación permanente o fuga. Solo los cilindros que aprueban esta prueba pueden seguir operando.</p>
     <p>En MANEXT contamos con <strong>tecnología y técnicos capacitados</strong> para la realización de pruebas hidrostáticas conforme a la norma oficial mexicana. El proceso incluye: desmontaje completo, limpieza interna del cilindro, aplicación de la prueba con presión calibrada, inspección visual detallada, reporte fotográfico completo, y constancia oficial de aprobación. Después de aprobar la prueba, procedemos con la recarga del agente extintor, reemplazo de sellos y empaques, y entrega lista para operar. Tiempo: 3 a 5 días hábiles.</p>
-    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20prueba%20hidrost%C3%A1tica%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href={whatsappUrl('Hola, necesito información sobre prueba hidrostática para extintores')} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -251,7 +252,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2>Capacitación en Brigadas de Protección Civil</h2>
     <p>La <strong>capacitación en combate de incendios</strong> es necesaria según la NOM-002-STPS para todas las empresas en México. En MANEXT impartimos cursos con <strong>constancias DC-3 oficiales válidas ante la STPS</strong>, diseñados para formar brigadas efectivas. Nuestros cursos incluyen teoría sobre tipos de fuego (A, B, C, D, K), identificación de extintores según necesidad, técnica PASS (Jalar, Apuntar, Apretar, Barrer), y prácticas reales con fuego controlado donde cada participante utiliza un extintor en condiciones simuladas.</p>
     <p>Acudimos directamente a tus instalaciones en Ciudad de México con todo lo <strong>necesario para simulacros realistas</strong>: charolas de fuego, extintores de práctica, material didáctico impreso y dispositivos de seguridad industrial. La capacitación tiene una duración de 4 horas e incluye formación de brigadas internas, protocolos de evacuación y primeros auxilios básicos. Cada participante recibe su constancia DC-3 oficial con registro ante STPS. Cursos para grupos de hasta 20 personas.</p>
-    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20capacitaci%C3%B3n%20y%20formaci%C3%B3n%20de%20brigadas%20contra%20incendios" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href={whatsappUrl('Hola, necesito información sobre capacitación y formación de brigadas contra incendios')} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -265,7 +266,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2>Señalamiento, Detectores de Humo y Equipo Contra Incendio</h2>
     <p>El <strong>señalamiento de seguridad</strong> es necesario según las normas NOM-002-STPS y NOM-026-STPS para que empleados y visitantes puedan localizar rápidamente los extintores y equipos de protección, así como las rutas de evacuación en caso de emergencia. En MANEXT ofrecemos señalamiento reglamentario fotoluminiscente que incluye: indicadores de ubicación de extintores, señales de salidas de emergencia, flechas direccionales, señalética de prohibición y advertencia, y detectores de humo.</p>
     <p>Además, proveemos <strong>gabinetes metálicos y acrílicos</strong> para proteger tus extintores de la intemperie, vandalismo y manipulación no autorizada. Nuestros gabinetes están fabricados en lámina calibre 20 con acabado en pintura electrostática color rojo, incluyen vidrio o acrílico transparente, cerradura, y opción de martillo rompe-vidrios. El proceso incluye instalación con herrajes, nivelación perfecta, y colocación de toda la señalética requerida. Entregamos constancia de instalación y planos de ubicación para las autoridades. <strong>Solución integral para apego normativo al 100%.</strong></p>
-    <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20se%C3%B1alizaci%C3%B3n%20y%20gabinetes%20para%20extintores" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+    <a href={whatsappUrl('Hola, necesito información sobre señalización y gabinetes para extintores')} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
   </div>
 </div>
 
@@ -320,7 +321,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 
       <!-- Left: FAQ -->
       <div class="faq-cot-left">
-        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre venta, recarga, mantenimiento y normativa de extintores. Si no encuentras tu respuesta, <a href="https://wa.me/5215614612594" target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
+        <p class="faq-cot-desc">Las preguntas más comunes de nuestros clientes sobre venta, recarga, mantenimiento y normativa de extintores. Si no encuentras tu respuesta, <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">mándanos un WhatsApp</a> y te respondemos ese mismo día.</p>
         <FaqList faqs={faqs} firstOpen={true} /><!-- /faq-grid -->
       </div><!-- /faq-cot-left -->
 
@@ -449,7 +450,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
 <!-- FAQ Accordion Script -->
 
 <!-- WhatsApp Form Script -->
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   'use strict';
   var form = document.getElementById('whatsappFormServicios');
@@ -476,7 +477,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
 
-    var whatsappUrl = 'https://wa.me/5215614612594?text=' + encodeURIComponent(text);
+    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text);
     window.open(whatsappUrl, '_blank');
   });
 })();

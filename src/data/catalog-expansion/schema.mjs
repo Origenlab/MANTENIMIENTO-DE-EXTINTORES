@@ -1,4 +1,5 @@
 import { capitalize, endSentence, inline } from '../../lib/text-utils.mjs';
+import { CATALOG_GROUP_IDS, FIRE_CLASS_IDS } from '../catalog-taxonomy.mjs';
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const allowedStatuses = new Set(['research', 'validated', 'approved', 'rejected']);
@@ -55,6 +56,16 @@ export function validateExpansionProposal(proposal) {
 
   if (!slugPattern.test(proposal.id) || !slugPattern.test(proposal.slug)) {
     throw new TypeError(`id and slug must use lowercase ASCII kebab-case in ${proposal.id}`);
+  }
+  // `group` y `fireClasses` se exigían presentes pero nunca se cotejaban contra
+  // la taxonomía: `group: 'inventado'` o `fireClasses: ['Z']` pasaban y sólo se
+  // notaban en el catálogo ya publicado (auditoría 2026-07-16).
+  if (!CATALOG_GROUP_IDS.has(proposal.group)) {
+    throw new TypeError(`unknown group "${proposal.group}" in ${proposal.id}`);
+  }
+  const strayClass = proposal.fireClasses.find((fireClass) => !FIRE_CLASS_IDS.has(fireClass));
+  if (strayClass) {
+    throw new TypeError(`unknown fire class "${strayClass}" in ${proposal.id}`);
   }
   if (proposal.seoTitle.length > 60) {
     throw new RangeError(`seoTitle exceeds 60 characters in ${proposal.id}`);

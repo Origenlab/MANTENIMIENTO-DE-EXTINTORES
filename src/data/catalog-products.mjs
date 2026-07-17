@@ -1,27 +1,10 @@
 import { buildPublishedExpansionProducts } from './catalog-expansion/publication.mjs';
 
-export const catalogGroups = [
-  { id: 'portatiles', name: 'Extintores portátiles', description: 'Equipos manuales para protección general y riesgos especializados.' },
-  { id: 'industriales', name: 'Móviles e industriales', description: 'Mayor capacidad y caudal para plantas, patios, hangares y procesos.' },
-  { id: 'automaticos', name: 'Automáticos y aplicación local', description: 'Protección puntual que requiere validación de cobertura y activación.' },
-  { id: 'accesorios', name: 'Accesorios y protección', description: 'Gabinetes, soportes, señalización y elementos de resguardo.' },
-  { id: 'refacciones', name: 'Refacciones y consumibles', description: 'Componentes compatibles y agentes para servicio profesional.' },
-];
-
-export const availabilityLabels = {
-  'entrega-rapida': 'Entrega rápida',
-  'bajo-pedido': 'Bajo pedido',
-  'proyecto-especial': 'Proyecto especial',
-  'validacion-tecnica': 'Validación técnica requerida',
-};
-
-export const fireClasses = [
-  { id: 'A', name: 'Clase A', description: 'Sólidos combustibles como papel, madera y textiles.' },
-  { id: 'B', name: 'Clase B', description: 'Líquidos y gases inflamables.' },
-  { id: 'C', name: 'Clase C', description: 'Equipo eléctrico energizado.' },
-  { id: 'D', name: 'Clase D', description: 'Metales combustibles; el agente se selecciona según el metal.' },
-  { id: 'K', name: 'Clase K', description: 'Aceites y grasas de cocina a alta temperatura.' },
-];
+// La taxonomía vive en catalog-taxonomy.mjs, sin dependencias, para que la
+// validación de catalog-expansion/schema.mjs pueda cotejar contra ella sin
+// crear un import circular. Se re-exporta aquí porque las páginas ya la
+// importan desde este módulo.
+export { availabilityLabels, catalogGroups, fireClasses } from './catalog-taxonomy.mjs';
 
 const images = {
   pqs: '/img/productos/polvo-quimico-seco/Recarga-de-extintores-6kg.avif',

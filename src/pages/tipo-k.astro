@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { WHATSAPP_NUMBER_INTL, whatsappUrl } from '../config/business.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -194,7 +195,7 @@ const currentSlug = 'tipo-k';
           </span>
         </div>
 
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20un%20extintor%20Tipo%20K%20para%20mi%20cocina%20comercial.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20un%20extintor%20Tipo%20K%20para%20mi%20cocina%20comercial.%20¿Pueden%20asesorarme%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
       </div>
     </div>
 
@@ -236,7 +237,7 @@ const currentSlug = 'tipo-k';
 
         <p style="font-size:0.9rem;color:var(--clr-text-muted);margin-top:0.75rem;">La NOM-002-STPS establece que el extintor debe ubicarse a no más de 10 metros de la zona de cocción, a una altura accesible y fuera de la línea directa de calor de los quemadores.</p>
 
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20cotizar%20un%20extintor%20Tipo%20K.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20cocina%3F" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20quiero%20cotizar%20un%20extintor%20Tipo%20K.%20¿Qué%20capacidad%20me%20recomiendan%20para%20mi%20cocina%3F`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Mi Modelo</a>
       </div>
     </div>
 
@@ -249,7 +250,7 @@ const currentSlug = 'tipo-k';
         <h2>NOM-002-STPS, COFEPRIS y Aseguradoras — Lo Que Revisan en tu Cocina</h2>
         <p>Tres autoridades distintas tienen facultad para inspeccionar el cumplimiento de medidas contra incendio en tu cocina, y las tres revisan el extintor Tipo K. La <strong>STPS</strong> verifica condiciones de seguridad bajo NOM-002-STPS; <strong>Protección Civil</strong> municipal revisa la vigencia del extintor, la certificación NOM y el señalamiento; <strong>COFEPRIS</strong> incluye la protección contra incendio en sus verificaciones a establecimientos de alimentos y bebidas.</p>
         <p>Adicionalmente, las pólizas de seguro para inmuebles comerciales con cocinas normalmente exigen extintores adecuados para la clase de fuego del área como condición de cobertura. En caso de siniestro, el ajustador verificará si el extintor presente era del tipo correcto — un extintor PQS en una cocina clase K puede ser motivo de rechazo parcial o total de la reclamación. El extintor Tipo K de MANEXT incluye toda la <strong>documentación necesaria</strong>: certificado de servicio NOM-154-SCFI, bitácora de servicio y factura que acredita la adquisición.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20el%20extintor%20Tipo%20K%20con%20documentación%20válida%20para%20Protección%20Civil%20y%20COFEPRIS.%20¿Pueden%20asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar con Documentación Completa</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20el%20extintor%20Tipo%20K%20con%20documentación%20válida%20para%20Protección%20Civil%20y%20COFEPRIS.%20¿Pueden%20asesorarme%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar con Documentación Completa</a>
       </div>
     </div>
 
@@ -262,7 +263,7 @@ const currentSlug = 'tipo-k';
         <h2>Por qué te conviene elegir MANEXT para tu extintor Tipo K</h2>
         <p>Conocemos el sector restaurantero y hotelero desde adentro. Hemos equipado fondas familiares, cadenas de comida rápida, restaurantes de hotel cinco estrellas, comedores industriales y cocinas hospitalarias. En este giro el cumplimiento normativo no es opcional — una inspección con extintor incorrecto puede traducirse en clausura el mismo día. Por eso cada equipo MANEXT se entrega <strong>listo para cualquier verificación</strong>: PC, STPS, COFEPRIS o ajustador de aseguradora.</p>
         <p>El servicio incluye: extintor con certificado de servicio <strong>NOM-154-SCFI</strong>, señalización fotoluminiscente NOM-026, soporte metálico anclado a la distancia normativa de la zona de cocción, etiqueta de fabricante con trazabilidad, tarjeta de inspección, factura fiscal y bitácora lista para auditoría. Cada Tipo K entra automáticamente al programa de <strong>recarga anual a domicilio</strong> para que tu cocina nunca quede fuera de norma. Más de 80 años protegiendo cocinas comerciales en CDMX — eso es lo que respalda cada equipo.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C%20quiero%20comprar%20extintores%20Tipo%20K%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20quiero%20comprar%20extintores%20Tipo%20K%20con%20MANEXT.%20¿Me%20pueden%20dar%20un%20presupuesto%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
@@ -322,7 +323,7 @@ const currentSlug = 'tipo-k';
       <div class="faq-cot-left">
         <p class="faq-cot-desc">
           Respondemos las dudas más frecuentes sobre extintores Tipo K. ¿Prefieres hablar con un especialista?
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20tengo%20dudas%20sobre%20extintores%20Tipo%20K%20para%20mi%20cocina" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
+          <a href={whatsappUrl('Hola, tengo dudas sobre extintores Tipo K para mi cocina')} target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respuesta inmediata en horario de oficina.
         </p>
         <FaqList faqs={faqs} firstOpen={true} />
       </div>
@@ -469,7 +470,7 @@ const currentSlug = 'tipo-k';
      SCRIPTS
 ═══════════════════════════════════════════════ -->
 
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   var form = document.getElementById('whatsappFormTipoK');
   if (!form) return;
@@ -490,7 +491,7 @@ const currentSlug = 'tipo-k';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Servicio:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

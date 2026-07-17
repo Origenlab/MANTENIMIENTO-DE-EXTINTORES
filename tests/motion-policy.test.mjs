@@ -65,7 +65,8 @@ test('shared FAQ system remains static', async () => {
 
 test('catalog and blog navigation use immediate scrolling', async () => {
   const scripts = await Promise.all([
-    readFile(new URL('../public/js/catalog-system.js', import.meta.url), 'utf8'),
+    // catalog-system.js se movió a src/scripts para que Astro lo empaquete.
+    readFile(new URL('../src/scripts/catalog-system.js', import.meta.url), 'utf8'),
     readFile(new URL('../public/js/blog-system.js', import.meta.url), 'utf8'),
   ]);
 

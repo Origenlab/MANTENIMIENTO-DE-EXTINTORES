@@ -252,13 +252,14 @@ test('catalog cards expose a professional commercial hierarchy', async () => {
 });
 
 test('catalog client script progressively enhances server-rendered cards', async () => {
-  const script = await readFile(new URL('../public/js/catalog-system.js', import.meta.url), 'utf8');
+  // El script se movió de public/js a src/scripts para que Astro lo empaquete
+  // y pueda importar la lógica compartida y testeada de catalog-filter.mjs.
+  const script = await readFile(new URL('../src/scripts/catalog-system.js', import.meta.url), 'utf8');
 
   assert.doesNotMatch(script, /fetch\s*\(/);
   assert.doesNotMatch(script, /data\/products\.json/);
   for (const contract of [
     'URLSearchParams',
-    'PAGE_SIZE = 12',
     "params.get('pagina')",
     'aria-current',
     'data-catalog-card',
@@ -275,12 +276,35 @@ test('catalog client script progressively enhances server-rendered cards', async
   }
 });
 
-test('catalog and product pages share a cache-busted client script', async () => {
+test('el script de cliente no reimplementa la lógica compartida', async () => {
+  // Este es el contrato que faltaba: producción corría su propia copia de
+  // filtrado, paginación y armado del mensaje, y ninguna estaba testeada.
+  const script = await readFile(new URL('../src/scripts/catalog-system.js', import.meta.url), 'utf8');
+
+  for (const shared of ['matchesCatalogFilters', 'paginate', 'buildPaginationItems', 'normaliseSearch', 'buildQuoteMessage']) {
+    assert.match(script, new RegExp(`import[\\s\\S]{0,400}${shared}`), `${shared} debe importarse, no reimplementarse`);
+  }
+
+  // Ni el número ni el tamaño de página pueden volver a escribirse a mano.
+  assert.doesNotMatch(script, /['"]5215614612594['"]/, 'el número debe venir de config/business.mjs');
+  assert.doesNotMatch(script, /PAGE_SIZE\s*=\s*\d/, 'el tamaño de página debe venir de catalog-filter.mjs');
+  assert.doesNotMatch(script, /function buildQuoteMessage/, 'no debe existir una segunda implementación');
+  assert.doesNotMatch(script, /\.normalize\(['"]NFD['"]\)/, 'no debe existir un segundo normalizador');
+});
+
+test('catalog and product pages load the bundled client script', async () => {
   const [catalogPage, detailTemplate] = await Promise.all([
     readFile(new URL('../src/pages/catalogo.astro', import.meta.url), 'utf8'),
     readFile(new URL('../src/components/catalog/ProductDetailTemplate.astro', import.meta.url), 'utf8'),
   ]);
 
-  assert.match(catalogPage, /catalog-system\.js\?v=8/);
-  assert.match(detailTemplate, /catalog-system\.js\?v=8/);
+  // Ya no hace falta el cache-bust manual `?v=N`: Astro empaqueta el script y
+  // le pone un hash de contenido, así que la invalidación es automática. Lo que
+  // hay que sostener es que ambas plantillas carguen el mismo módulo y que
+  // ninguna vuelva a apuntar a public/js, fuera del build.
+  assert.match(catalogPage, /import\s+['"]\.\.\/scripts\/catalog-system\.js['"]/);
+  assert.match(detailTemplate, /import\s+['"]\.\.\/\.\.\/scripts\/catalog-system\.js['"]/);
+
+  assert.doesNotMatch(catalogPage, /\/js\/catalog-system\.js/, 'el script ya no vive en public/js');
+  assert.doesNotMatch(detailTemplate, /\/js\/catalog-system\.js/, 'el script ya no vive en public/js');
 });

@@ -5,6 +5,7 @@ import SectionHeader from '../../components/SectionHeader.astro';
 import FaqList from '../../components/FaqList.astro';
 import { getSiteFaqs } from '../../data/site-faqs.mjs';
 import { buildFaqSchema } from '../../lib/faq-utils.mjs';
+import { PHONE_DISPLAY, PHONE_E164, PHONE_TEL, whatsappUrl } from '../../config/business.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,7 +17,7 @@ const serviceSchema = JSON.stringify({
     "@type": "LocalBusiness",
     "@id": "https://mantenimientodeextintores.mx/#business",
     "name": "MANEXT — Mantenimiento de Extintores",
-    "telephone": "+52-56-1461-2594",
+    "telephone": PHONE_E164,
     "foundingDate": "1943"
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
@@ -55,8 +56,8 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
   subtitle="Extintor Tipo K obligatorio NOM-002-STPS — Entrega el mismo día en urgencias de inspección"
   description="Venta, instalación y mantenimiento de extintores con servicio NOM-154-SCFI para restaurantes, fondas, cafeterías y cocinas industriales en Ciudad de México y Estado de México."
   eyebrow="Sector · Restaurantes y Cocinas Comerciales"
-  ctaPhone="5614612594"
-  ctaWhatsApp="5614612594"
+  ctaPhone={PHONE_TEL}
+  ctaWhatsApp={PHONE_TEL}
   paragraphs={[
     'MANEXT provee extintores con servicio de recarga y mantenimiento <strong>NOM-154-SCFI</strong> para el sector restaurantero en CDMX desde <strong>1943</strong>. Toda cocina comercial con freidoras, hornillas o parrillas que usen aceites o grasas calientes requiere extintor de <strong>Agente Húmedo Tipo K</strong> bajo <strong>NOM-002-STPS</strong>. Es el único agente que actúa por saponificación —convierte la grasa ardiente en espuma jabonosa sellante— y el único conforme a la normativa vigente. Sin él, Protección Civil puede clausurar el establecimiento.',
     'Además del Tipo K obligatorio en cocina, el reglamento exige extintores <strong>PQS ABC</strong> en el área de comensales (1 cada 300 m², máx 23 m de recorrido) y <strong>CO₂ o PQS BC</strong> cerca de tableros eléctricos. MANEXT realiza el <strong>diagnóstico técnico gratuito</strong> con plano de distribución y cálculo exacto de equipos, sin compromiso de compra. Entregamos con instalación, señalamiento fotoluminiscente <strong>NOM-003-SEGOB</strong> y documentación lista para inspectores de Protección Civil y STPS.',
@@ -133,8 +134,8 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Tu restaurante pasa la próxima inspección de Protección Civil?</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Diagnóstico técnico gratuito · Entrega 48h (o mismo día en urgencias) · Documentación NOM lista para inspectores</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="tel:5614612594" style="background: white; color: #d32f2f; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">📞 56 1461 2594</a>
-      <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20para%20mi%20restaurante%20en%20CDMX" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">💬 WhatsApp</a>
+      <a href={`tel:${PHONE_TEL}`} style="background: white; color: #d32f2f; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">📞 {PHONE_DISPLAY}</a>
+      <a href={whatsappUrl('Hola, necesito extintores para mi restaurante en CDMX')} target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">💬 WhatsApp</a>
       <a href="/contacto" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">Solicitar cotización</a>
     </div>
   </div>

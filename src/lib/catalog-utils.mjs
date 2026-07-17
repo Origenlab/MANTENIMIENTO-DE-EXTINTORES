@@ -1,59 +1,38 @@
-const DEFAULT_BASE_URL = 'https://mantenimientodeextintores.mx';
+import { SITE_URL } from '../config/business.mjs';
+import {
+  CATALOG_PAGE_SIZE,
+  matchesCatalogFilters,
+  normaliseSearch,
+  paginate,
+  toFilterRecord,
+} from './catalog-filter.mjs';
 
-export function normaliseSearch(value = '') {
-  return String(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim();
-}
+const DEFAULT_BASE_URL = SITE_URL;
 
+export { normaliseSearch };
+
+/**
+ * Filtra productos con el mismo predicado que usa el cat\u00e1logo en cliente
+ * (`src/scripts/catalog-system.js`). Antes cada capa ten\u00eda el suyo y s\u00f3lo \u00e9sta
+ * estaba testeada; ver la nota de `catalog-filter.mjs`.
+ */
 export function filterCatalog(products, filters = {}) {
-  const query = normaliseSearch(filters.query);
-  const group = filters.group || 'all';
-  const agent = filters.agent || 'all';
-  const fireClass = filters.fireClass || 'all';
-  const availability = filters.availability || 'all';
-
-  return products.filter((product) => {
-    if (group !== 'all' && product.group !== group) return false;
-    if (agent !== 'all' && normaliseSearch(product.agent) !== normaliseSearch(agent)) return false;
-    if (fireClass !== 'all' && !product.fireClasses.includes(fireClass)) return false;
-    if (availability !== 'all' && product.availability !== availability) return false;
-    if (!query) return true;
-
-    const searchable = normaliseSearch([
-      product.name,
-      product.shortName,
-      product.agent,
-      product.description,
-      ...product.variants,
-      ...product.applications,
-      ...product.sectors,
-      ...product.fireClasses,
-    ].join(' '));
-
-    return searchable.includes(query);
-  });
+  return products.filter((product) => matchesCatalogFilters(toFilterRecord(product), filters));
 }
 
-export function paginateCatalog(items, requestedPage = 1, pageSize = 12) {
-  const total = Array.isArray(items) ? items.length : 0;
-  const safePageSize = Math.max(1, Number.parseInt(pageSize, 10) || 12);
-  const pageCount = total ? Math.ceil(total / safePageSize) : 0;
-  const parsedPage = Math.max(1, Number.parseInt(requestedPage, 10) || 1);
-  const page = pageCount ? Math.min(parsedPage, pageCount) : 1;
-  const offset = (page - 1) * safePageSize;
-  const pageItems = total ? items.slice(offset, offset + safePageSize) : [];
+/** Pagina un array con la misma aritm\u00e9tica que el cat\u00e1logo en cliente. */
+export function paginateCatalog(items, requestedPage = 1, pageSize = CATALOG_PAGE_SIZE) {
+  const list = Array.isArray(items) ? items : [];
+  const page = paginate(list.length, requestedPage, pageSize);
 
   return {
-    items: pageItems,
-    page,
-    pageSize: safePageSize,
-    pageCount,
-    total,
-    start: total ? offset + 1 : 0,
-    end: total ? offset + pageItems.length : 0,
+    items: list.slice(page.startIndex, page.endIndex),
+    page: page.page,
+    pageSize: page.pageSize,
+    pageCount: page.pageCount,
+    total: page.total,
+    start: page.start,
+    end: page.end,
   };
 }
 

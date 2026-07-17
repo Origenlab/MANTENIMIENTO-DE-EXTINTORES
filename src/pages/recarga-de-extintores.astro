@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { PHONE_E164, WHATSAPP_NUMBER_INTL, whatsappUrl } from '../config/business.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,7 +17,7 @@ const serviceSchema = JSON.stringify({
     "@type": "LocalBusiness",
     "name": "MANEXT — Mantenimiento de Extintores",
     "image": "https://mantenimientodeextintores.mx/img/img-index/venta-y-mantenimiento-de-extintores.avif",
-    "telephone": "+52-56-1461-2594",
+    "telephone": PHONE_E164,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Ayuntamiento 75",
@@ -210,7 +211,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores PQS — Polvo Químico Seco Tipo ABC</h2>
           <p>Los equipos de <strong>agente seco tipo ABC</strong> son los más utilizados en oficinas, comercios y centros de trabajo por su versatilidad para combatir fuegos clase A (sólidos), B (líquidos) y C (eléctricos). El rellenado incluye vaciado total del polvo anterior, limpieza profunda interna con solución desincrustante, secado completo con aire filtrado y llenado con agente monofosfato de amonio grado premium de fabricante autorizado.</p>
           <p>Disponibles en capacidades de 4.5 kg, 6 kg, 9 kg, 12 kg y 20 kg. Se verifica que el manómetro marque la presión operativa correcta y se instala collar de garantía inviolable. Constancia válida ante Protección Civil incluida en el servicio.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20PQS" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga PQS</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20PQS`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga PQS</a>
         </div>
       </div>
 
@@ -222,7 +223,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores CO₂ — Bióxido de Carbono</h2>
           <p>Los cilindros de <strong>bióxido de carbono</strong> clase BC son ideales para equipos electrónicos sensibles, data centers, cuartos de servidores y laboratorios. El gas no conduce electricidad y no deja residuos. El proceso incluye pesaje preciso del cilindro vacío, llenado con gas carbónico licuado de alta pureza (99.9%) y verificación de presión operativa (850-950 PSI a 21°C).</p>
           <p>Capacidades disponibles: 5 lb, 10 lb, 15 lb y 20 lb. Cada cilindro se documenta con número de serie, peso exacto y fecha de vencimiento para facilitar el control de inventarios de tu centro de trabajo.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20CO2" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga CO₂</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20CO2`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga CO₂</a>
         </div>
       </div>
 
@@ -234,7 +235,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores de Espuma AFFF</h2>
           <p>Equipos especializados clase AB para industrias con riesgo de fuegos de líquidos inflamables: gasolineras, plantas químicas, talleres mecánicos y almacenes de solventes. Utilizamos concentrado AFFF 3% o 6% grado industrial que crea película acuosa sellante. La espuma tiene vida útil limitada de 10-12 meses por degradación química, haciendo la reposición cada 12 meses crítica.</p>
           <p>Concentrado fresco con menos de 60 días de fabricación para máxima efectividad. Se realizan pruebas de porcentaje de concentración para garantizar la proporción correcta y se verifica el mecanismo de aspiración de aire que genera la expansión de la espuma al momento de la descarga.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20AFFF" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga AFFF</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20AFFF`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga AFFF</a>
         </div>
       </div>
 
@@ -246,7 +247,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores con Agentes Limpios (Halotron, HFC-236fa)</h2>
           <p>Dispositivos clase ABC con gases halogenados que no dejan residuos, no conducen electricidad y son seguros para equipos ultra sensibles. Ideales para centros de datos, salas de telecomunicaciones, museos y quirófanos. El proceso requiere equipamiento de recuperación de gases para evitar emisiones atmosféricas, vaciado controlado y verificación de válvulas de precisión con pruebas de hermeticidad.</p>
           <p>El agente recuperado se maneja conforme a protocolos ambientales para evitar emisión de gases de efecto invernadero. Ideal para empresas que requieren proteger activos de alto valor sin riesgo de daño colateral por residuos.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20con%20agentes%20limpios" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agentes Limpios</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20con%20agentes%20limpios`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agentes Limpios</a>
         </div>
       </div>
 
@@ -258,7 +259,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores Tipo K para Cocinas Comerciales</h2>
           <p>Obligatorios según regulación laboral vigente para restaurantes, hoteles, hospitales y cualquier instalación con freidoras y equipos de cocción con aceites. El acetato de potasio en solución acuosa crea reacción de saponificación al contacto con aceites calientes, sellando la superficie y previniendo reignición. El agente se degrada con humedad ambiental, requiriendo reposición cada 12 meses.</p>
           <p>Disponible 24/7 para establecimientos que no pueden interrumpir operaciones. Cada unidad tipo K procesada recibe verificación de la boquilla deflectora especial diseñada para aplicar el agente en forma de lluvia suave sobre la superficie del aceite, evitando salpicaduras peligrosas.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20Tipo%20K" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Tipo K</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20Tipo%20K`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Tipo K</a>
         </div>
       </div>
 
@@ -270,7 +271,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
           <h2>Extintores de Agua Presurizada</h2>
           <p>Unidades clase A económicas y efectivas para fuegos de materiales sólidos: madera, papel, textiles y cartón en almacenes y bodegas sin riesgo eléctrico. Utilizamos agua destilada tratada con aditivos anticongelantes y anticorrosivos. El rellenado incluye purga total del cilindro, tratamiento anticorrosivo interno y presurización con nitrógeno seco para asegurar expulsión uniforme.</p>
           <p>Aunque el agua no caduca, la reposición es necesaria porque el cilindro acumula contaminantes internos, la presión se reduce por micro fugas y pueden formarse depósitos minerales que obstruyen la boquilla. <strong>Importante:</strong> Nunca usar en fuegos eléctricos ni aceites.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20de%20agua" class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agua</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C%20necesito%20cotización%20para%20recarga%20de%20extintores%20de%20agua`} class="btn btn-primary" target="_blank" rel="noopener">Cotizar Recarga Agua</a>
         </div>
       </div>
 
@@ -294,7 +295,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
       <div class="faq-cot-layout">
 
         <div class="faq-cot-left">
-          <p class="faq-cot-desc">Preguntas frecuentes sobre <strong>recarga de extintores</strong> en CDMX. ¿Tienes otra duda? <a href="https://wa.me/5215614612594" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos al instante.</p>
+          <p class="faq-cot-desc">Preguntas frecuentes sobre <strong>recarga de extintores</strong> en CDMX. ¿Tienes otra duda? <a href={whatsappUrl()} target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos al instante.</p>
           <FaqList faqs={faqs} firstOpen={true} />
         </div>
 
@@ -431,7 +432,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
   </nav>
 
 
-  <script is:inline>
+  <script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
   (function() {
     var form = document.getElementById('whatsappFormRecarga');
     if (!form) return;
@@ -452,7 +453,7 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
       text += '*Teléfono:* ' + telefono + '\n';
       text += '*Tipo de extintor:* ' + servicio + '\n';
       if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-      window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
     });
   })();
   </script>

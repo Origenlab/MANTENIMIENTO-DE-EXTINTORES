@@ -380,5 +380,8 @@ const faqSchema = buildFaqSchema(product.faqs);
     </section>
   </div>
 
-  <script src="/js/catalog-system.js?v=8" defer></script>
+  <!-- Astro lo empaqueta y deduplica con el de /catalogo. Ver catalog-filter.mjs. -->
+  <script>
+    import '../../scripts/catalog-system.js';
+  </script>
 </Layout>

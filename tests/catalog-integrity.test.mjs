@@ -398,6 +398,29 @@ test('MANEXT no se presenta como unidad de verificación acreditada', async () =
   assert.deepEqual(offenders, [], `MANEXT como unidad de verificación:\n${offenders.join('\n')}`);
 });
 
+test('ninguna página deja etiquetas de énfasis sin cerrar', async () => {
+  // senalizacion.astro tenía 33 <strong> y 32 </strong>: el bold se derramaba a
+  // las secciones siguientes y la página emitía 129 <strong> en vez de 35.
+  // Astro no avisa de esto, así que hay que comprobarlo (auditoría 2026-07-16).
+  const { readdir } = await import('node:fs/promises');
+  const dir = new URL('../src/pages/', import.meta.url);
+  const files = (await readdir(dir, { recursive: true })).filter((f) => f.endsWith('.astro'));
+
+  const offenders = [];
+  for (const file of files) {
+    const source = await readFile(new URL(file, dir), 'utf8');
+    for (const tag of ['strong', 'em', 'b', 'i']) {
+      // La apertura puede llevar atributos (`<strong style="…">`): contarla sin
+      // ellos daba falsos positivos.
+      const open = (source.match(new RegExp(`<${tag}(\\s[^>]*)?>`, 'g')) || []).length;
+      const close = (source.match(new RegExp(`</${tag}>`, 'g')) || []).length;
+      if (open !== close) offenders.push(`${file}: ${open} <${tag}> vs ${close} </${tag}>`);
+    }
+  }
+
+  assert.deepEqual(offenders, [], `etiquetas desbalanceadas:\n${offenders.join('\n')}`);
+});
+
 test('no se atribuye a NFPA una certificación de empresa', async () => {
   // NFPA publica estándares y certifica *personas* (CFPS, CFPE); no certifica
   // empresas ni ofrece membresía corporativa. "NFPA Certified" como credencial

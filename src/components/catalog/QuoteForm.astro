@@ -1,4 +1,6 @@
 ---
+import { PHONE_DISPLAY, PHONE_TEL, whatsappUrl } from '../../config/business.mjs';
+
 interface Product {
   id: string;
   name: string;
@@ -28,7 +30,7 @@ const { products, sectors, selectedProduct = '' } = Astro.props;
 
     <div class="quote-panel__contact">
       <span>También puedes llamar</span>
-      <a href="tel:5614612594">56 1461 2594</a>
+      <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
     </div>
   </div>
 
@@ -115,6 +117,6 @@ const { products, sectors, selectedProduct = '' } = Astro.props;
     </button>
 
     <p class="quote-form__microcopy">Al enviar, se abrirá WhatsApp con la información capturada para que puedas revisarla antes de compartirla.</p>
-    <noscript><p class="quote-form__noscript">Para cotizar sin JavaScript, escríbenos directamente por <a href="https://wa.me/5215614612594">WhatsApp</a> o llama al <a href="tel:5614612594">56 1461 2594</a>.</p></noscript>
+    <noscript><p class="quote-form__noscript">Para cotizar sin JavaScript, escríbenos directamente por <a href={whatsappUrl()}>WhatsApp</a> o llama al <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p></noscript>
   </form>
 </div>

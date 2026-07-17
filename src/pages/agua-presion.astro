@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { WHATSAPP_NUMBER_INTL } from '../config/business.mjs';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -169,7 +170,7 @@ const currentSlug = 'agua-presion';
           <span class="rd-badge">Sólidos Combustibles</span>&nbsp;
           <span class="rd-badge">⚠ NO eléctrico · NO Clase B · NO Clase K</span>
           </p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+informaci%C3%B3n+t%C3%A9cnica+y+cotizaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+informaci%C3%B3n+t%C3%A9cnica+y+cotizaci%C3%B3n.`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Cotización</a>
         </div>
       </div>
 
@@ -198,7 +199,7 @@ const currentSlug = 'agua-presion';
             </tbody>
           </table>
           <p>Regla práctica: una bodega de 500 m² con riesgo ordinario requiere mínimo <strong>5 unidades de 9 litros</strong> distribuidas para que ningún punto supere 23 m de recorrido. En zonas de corte de madera con aserrín acumulado (riesgo alto) la distancia se reduce a 15 m y el cálculo puede requerir 8–10 unidades. En MANEXT realizamos el análisis de distribución sin costo como parte del servicio.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+cotizaci%C3%B3n+y+c%C3%A1lculo+de+distribuci%C3%B3n+NOM." class="btn btn-primary" target="_blank" rel="noopener">Calcular Distribución de mi Instalación</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+cotizaci%C3%B3n+y+c%C3%A1lculo+de+distribuci%C3%B3n+NOM.`} class="btn btn-primary" target="_blank" rel="noopener">Calcular Distribución de mi Instalación</a>
         </div>
       </div>
 
@@ -211,7 +212,7 @@ const currentSlug = 'agua-presion';
           <h2>Sectores de Aplicación: Cuándo el Agua es la Respuesta Correcta</h2>
           <p><strong>Carpinterías y madereras:</strong> el aserrín tiene una superficie de contacto enorme y se inflama a bajas temperaturas. Una vez iniciado el fuego, se introduce en la veta de los tablones. El PQS extingue la llama visible pero no enfría la madera; el fuego resurge al dispersarse el polvo. El agua penetra la veta y elimina el calor residual. En talleres con madera verde (alto contenido de humedad) el agua es aún más eficaz porque la humedad del material actúa como reserva térmica adicional.</p>
           <p><strong>Industria textil y papelera:</strong> las pacas de algodón comprimido son el material Clase A con mayor riesgo de re-ignición del mercado. La compresión crea un entorno sin oxígeno en el interior que preserva las brasas durante horas. Los modelos con agente humectante penetran incluso en pacas densas. Para rollos de papel en rotativas o almacenes editoriales, el extintor de 20 litros o el carrito de 50 litros es el equipo estándar. <strong>Lo que el agua NO cubre:</strong> si el área incluye transformadores, tableros eléctricos o equipos energizados, debe complementarse con <a href="/co2">extintores de CO₂</a>. Si hay solventes o líquidos inflamables, se requiere <a href="/espuma-afff">AFFF clase B</a>.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+asesor%C3%ADa+para+mi+instalaci%C3%B3n." class="btn btn-primary" target="_blank" rel="noopener">Solicitar Asesoría de Aplicación</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Necesito+asesor%C3%ADa+para+mi+instalaci%C3%B3n.`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar Asesoría de Aplicación</a>
         </div>
       </div>
 
@@ -224,7 +225,7 @@ const currentSlug = 'agua-presion';
           <h2>Por qué te conviene MANEXT para tus extintores de agua a presión</h2>
           <p>El extintor de agua es el equipo con <strong>menor costo de adquisición y de recarga</strong> del mercado. Su mantenimiento es sencillo: recarga anual con agua tratada (o con agente humectante en modelos especializados) y verificación del cilindro de nitrógeno. Sin químicos delicados, sin residuos que limpiar, sin daños colaterales a los materiales protegidos. En una bodega mediana o una carpintería, el costo operativo anual de una flota de extintores de agua es consistentemente <strong>el más bajo</strong> entre todas las opciones de supresión Clase A.</p>
           <p>Lo que MANEXT incluye en cada venta: <strong>análisis de riesgo por zona</strong> para identificar áreas mixtas donde el agua debe complementarse con CO₂ o AFFF, <strong>cálculo de distribución NOM-002-STPS</strong> (número de equipos, ubicaciones exactas, distancias de recorrido), instalación profesional con soporte de pared anclado, <strong>señalización fotoluminiscente NOM-026</strong> con indicación clara de restricciones (NO eléctrico, NO Clase B, NO Clase K), y documentación oficial para Protección Civil y la STPS. Recarga y mantenimiento anual a domicilio.</p>
-          <a href="https://wa.me/5215614612594?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Quiero+cotizaci%C3%B3n+completa+con+an%C3%A1lisis+de+riesgo." class="btn btn-primary" target="_blank" rel="noopener">Cotización con análisis de riesgo sin costo</a>
+          <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+me+comunico+desde+la+p%C3%A1gina+de+Agua+a+Presi%C3%B3n+de+MANEXT.+Quiero+cotizaci%C3%B3n+completa+con+an%C3%A1lisis+de+riesgo.`} class="btn btn-primary" target="_blank" rel="noopener">Cotización con análisis de riesgo sin costo</a>
         </div>
       </div>
 
@@ -280,7 +281,7 @@ const currentSlug = 'agua-presion';
       <div class="faq-cot-layout">
 
         <div class="faq-cot-left">
-          <p class="faq-cot-desc">Preguntas técnicas y operativas sobre extintores de agua a presión. Para casos específicos de tu instalación, <a href="https://wa.me/5215614612594?text=Hola%2C+tengo+una+consulta+sobre+extintores+de+agua+a+presi%C3%B3n." target="_blank" rel="noopener">escríbenos por WhatsApp</a> — respondemos en minutos.</p>
+          <p class="faq-cot-desc">Preguntas técnicas y operativas sobre extintores de agua a presión. Para casos específicos de tu instalación, <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+tengo+una+consulta+sobre+extintores+de+agua+a+presi%C3%B3n.`} target="_blank" rel="noopener">escríbenos por WhatsApp</a> — respondemos en minutos.</p>
           <FaqList faqs={faqs} firstOpen={true} />
         </div>
 
@@ -420,7 +421,7 @@ const currentSlug = 'agua-presion';
 
   <!-- 5. SCRIPTS -->
 
-  <script is:inline>
+  <script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
   (function() {
     var form = document.getElementById('whatsappFormAguaPresion');
     if (!form) return;
@@ -441,7 +442,7 @@ const currentSlug = 'agua-presion';
       text += '*Teléfono:* ' + telefono + '\n';
       text += '*Servicio:* ' + servicio + '\n';
       if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-      window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
     });
   })();
   </script>

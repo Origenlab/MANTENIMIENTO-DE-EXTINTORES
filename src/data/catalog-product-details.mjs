@@ -339,25 +339,11 @@ function sentenceList(items) {
   return new Intl.ListFormat('es-MX', { style: 'long', type: 'conjunction' }).format(items);
 }
 
-function buildMetaDescription(product) {
-  const createDescription = (subject, application) => (
-    `Cotiza ${subject}. Solución para ${application}, con asesoría técnica, suministro y servicio MANEXT en CDMX y zona metropolitana.`
-  );
-  const primaryApplications = sentenceList(product.applications.slice(0, 2));
-  let result = createDescription(product.name.toLowerCase(), primaryApplications);
-
-  if (result.length > 160) {
-    result = createDescription(product.shortName.toLowerCase(), primaryApplications);
-  }
-  if (result.length > 160) {
-    result = createDescription(product.shortName.toLowerCase(), product.applications[0]);
-  }
-  if (result.length < 120) {
-    result = `${result.slice(0, -1)} Cotización personalizada.`;
-  }
-
-  return result;
-}
+// Aquí vivía un tercer `buildMetaDescription`. Era inalcanzable:
+// `applyEditorialProfile` sobrescribe `seo.description` con la del perfil
+// editorial en los 276 productos, así que su resultado nunca se publicaba. Las
+// dos implementaciones vivas son `catalog-editorial/profile.mjs` (46 autorales)
+// y `catalog-expansion/schema.mjs` (230 derivados). Auditoría 2026-07-16.
 
 function createGeneratedProductDetail(product) {
   const group = catalogGroups.find((item) => item.id === product.group);
@@ -490,7 +476,10 @@ function createGeneratedProductDetail(product) {
     ],
     seo: {
       title: `${product.name} | MANEXT`,
-      description: buildMetaDescription(product),
+      // `description` la fija siempre applyEditorialProfile desde el perfil
+      // editorial; aquí sólo se deja el valor base para no publicar `undefined`
+      // si algún producto llegara sin perfil.
+      description: product.description,
       // Siete productos tienen además una landing de servicio (`detailUrl`):
       // /polvo-quimico-seco, /co2, /agua-presion, /espuma-afff, /tipo-k,
       // /agentes-limpios y /senalizacion. Esa landing y la ficha de familia
@@ -567,6 +556,6 @@ export const catalogProductDetails = catalogProducts.map((product) => {
   return applyEditorialProfile(baseDetail, getCatalogProductEditorial(product.id));
 });
 
-export function getCatalogProductDetail(slug) {
-  return catalogProductDetails.find((product) => product.slug === slug);
-}
+// `getCatalogProductDetail(slug)` se retiró: no tenía ningún consumidor.
+// `catalogo/[slug].astro` resuelve la ficha en `getStaticPaths` y la pasa por
+// props, así que nadie necesita buscarla por slug en tiempo de render.

@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import FaqList from '../components/FaqList.astro';
 import { getSiteFaqs } from '../data/site-faqs.mjs';
 import { buildFaqSchema } from '../lib/faq-utils.mjs';
+import { WHATSAPP_NUMBER_INTL } from '../config/business.mjs';
 
 const productSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -202,7 +203,7 @@ const currentSlug = 'polvo-quimico-seco';
         </div>
         <p>Un extintor PQS es, en términos simples, un cilindro presurizado con <strong>fosfato monoamónico</strong> impulsado por nitrógeno seco. Cuando lo accionas, el polvo se proyecta a 3–8 metros y ataca el incendio por tres mecanismos a la vez: sofoca al desplazar el oxígeno disponible, <strong>rompe la reacción química en cadena</strong> que mantiene viva la llama y forma una <strong>capa vítrea</strong> sobre los materiales sólidos que impide la re-ignición. Todo el proceso ocurre durante una descarga continua de <strong>8 a 15 segundos</strong>, dependiendo de la capacidad.</p>
         <p>Es el extintor portátil <strong>más vendido en México y en el mundo</strong> por una razón simple: cubre los tres riesgos que aparecen en casi cualquier negocio sin que tengas que adivinar cuál se presentará primero. El certificado de servicio <strong>NOM-154-SCFI</strong> que emitimos con cada recarga y mantenimiento es el que verifica Protección Civil en la mayoría de los giros — comercio, oficinas, industria ligera, servicios — y es la base sobre la que después se complementan otros agentes (CO₂ para electrónica, Tipo K para freidoras, AFFF para hidrocarburos) en planes de seguridad más completos.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C+me+interesa+cotizar+extintores+de+Polvo+Qu%C3%ADmico+Seco+PQS+para+mi+negocio.+%C2%BFPueden+asesorarme%3F" class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+me+interesa+cotizar+extintores+de+Polvo+Qu%C3%ADmico+Seco+PQS+para+mi+negocio.+%C2%BFPueden+asesorarme%3F`} class="btn btn-primary" target="_blank" rel="noopener">Solicitar cotización por WhatsApp</a>
       </div>
     </div>
 
@@ -276,7 +277,7 @@ const currentSlug = 'polvo-quimico-seco';
         <h2>¿Para qué tipo de negocio es el extintor PQS?</h2>
         <p>La respuesta corta: <strong>para la mayoría</strong>. El PQS Clase ABC es la base reglamentaria en oficinas corporativas y coworkings, locales y plazas comerciales, bodegas y centros de distribución, condominios y residenciales, talleres ligeros, restaurantes (área de salón), gimnasios, escuelas, clínicas y flotillas vehiculares. Si tu espacio tiene papelería, mobiliario combustible, instalación eléctrica o cualquier líquido inflamable a la mano, el PQS te cubre.</p>
         <p>Hay tres escenarios donde <strong>el polvo deja de ser la mejor opción</strong>: cuartos de servidores y data centers donde el residuo en circuitos es inaceptable, cocinas comerciales con freidoras (la NOM exige específicamente Tipo K), y áreas con derrame constante de hidrocarburos donde la película anti re-ignición de la espuma AFFF rinde más. Para esos casos recomendamos sumar <a href="/co2">CO₂</a>, <a href="/tipo-k">Tipo K</a> o <a href="/espuma-afff">espuma AFFF</a> según corresponda. Nuestros ingenieros visitan tu espacio y entregan el plan de protección sin costo.</p>
-        <a href="https://wa.me/5215614612594?text=Hola%2C+quiero+saber+qu%C3%A9+extintores+necesita+mi+negocio.+%C2%BFMe+pueden+asesorar%3F" class="btn btn-primary" target="_blank" rel="noopener">Análisis de riesgo sin costo</a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Hola%2C+quiero+saber+qu%C3%A9+extintores+necesita+mi+negocio.+%C2%BFMe+pueden+asesorar%3F`} class="btn btn-primary" target="_blank" rel="noopener">Análisis de riesgo sin costo</a>
       </div>
     </div>
 
@@ -347,7 +348,7 @@ const currentSlug = 'polvo-quimico-seco';
     <div class="faq-cot-layout">
 
       <div class="faq-cot-left">
-        <p class="faq-cot-desc">Resolvemos las dudas más frecuentes sobre extintores PQS. ¿Necesitas respuesta inmediata? <a href="https://wa.me/5215614612594?text=Tengo+una+pregunta+sobre+extintores+PQS+Clase+ABC" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respondemos en menos de 5 minutos en horario laboral.</p>
+        <p class="faq-cot-desc">Resolvemos las dudas más frecuentes sobre extintores PQS. ¿Necesitas respuesta inmediata? <a href={`https://wa.me/${WHATSAPP_NUMBER_INTL}?text=Tengo+una+pregunta+sobre+extintores+PQS+Clase+ABC`} target="_blank" rel="noopener">Escríbenos por WhatsApp</a> — respondemos en menos de 5 minutos en horario laboral.</p>
         <FaqList faqs={faqs} firstOpen={true} />
       </div>
 
@@ -489,7 +490,7 @@ const currentSlug = 'polvo-quimico-seco';
      SCRIPTS
 ═══════════════════════════════════════════════ -->
 
-<script is:inline>
+<script is:inline define:vars={{ WHATSAPP_NUMBER_INTL }}>
 (function() {
   var form = document.getElementById('whatsappFormPQS');
   if (!form) return;
@@ -510,7 +511,7 @@ const currentSlug = 'polvo-quimico-seco';
     text += '*Teléfono:* ' + telefono + '\n';
     text += '*Interés:* ' + servicio + '\n';
     if (mensaje) text += '*Detalle:* ' + mensaje + '\n';
-    window.open('https://wa.me/5215614612594?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/' + WHATSAPP_NUMBER_INTL + '?text=' + encodeURIComponent(text), '_blank');
   });
 })();
 </script>

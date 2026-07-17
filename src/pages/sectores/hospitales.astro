@@ -5,6 +5,7 @@ import SectionHeader from '../../components/SectionHeader.astro';
 import FaqList from '../../components/FaqList.astro';
 import { getSiteFaqs } from '../../data/site-faqs.mjs';
 import { buildFaqSchema } from '../../lib/faq-utils.mjs';
+import { PHONE_DISPLAY, PHONE_E164, PHONE_TEL, whatsappUrl } from '../../config/business.mjs';
 
 const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -16,7 +17,7 @@ const serviceSchema = JSON.stringify({
     "@type": "LocalBusiness",
     "@id": "https://mantenimientodeextintores.mx/#business",
     "name": "MANEXT — Mantenimiento de Extintores",
-    "telephone": "+52-56-1461-2594",
+    "telephone": PHONE_E164,
     "foundingDate": "1943"
   },
   "areaServed": ["Ciudad de México", "Estado de México"],
@@ -52,8 +53,8 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
   subtitle="Agentes limpios para áreas críticas · Tipo K para cocina · Capacitación DC-3 para brigadas de salud"
   description="Venta, instalación y mantenimiento de extintores con servicio NOM-154-SCFI para hospitales, clínicas, consultorios y centros de salud en Ciudad de México y Estado de México. Documentación completa para COFEPRIS y Protección Civil."
   eyebrow="Sector · Hospitales e Instituciones de Salud"
-  ctaPhone="5614612594"
-  ctaWhatsApp="5614612594"
+  ctaPhone={PHONE_TEL}
+  ctaWhatsApp={PHONE_TEL}
   paragraphs={[
     'Los hospitales y clínicas enfrentan un reto de protección contra incendios distinto al de otros sectores: deben proteger vidas vulnerables, equipos médicos de alta precisión y zonas de atención crítica —todo simultáneamente. El uso de extintores inadecuados puede apagar el fuego pero destruir el equipo médico o contaminar el área estéril. <strong>MANEXT</strong> lleva <strong>más de 80 años</strong> diseñando soluciones de protección para instalaciones de salud en <strong>Ciudad de México y Estado de México</strong>, con la documentación que solicitan <strong>COFEPRIS, STPS y Protección Civil</strong>.',
     'Para <strong>áreas de equipos médicos críticos</strong> (quirófanos, UCI, salas de imagen, cómputo hospitalario) recomendamos <strong>CO₂</strong> o <strong>Agentes Limpios FM-200/Novec 1230</strong>: apagan sin residuo sólido ni líquido, sin temperatura extrema y sin daño a instrumental de precisión. Para <strong>cocinas hospitalarias</strong> con freidoras: <strong>Tipo K</strong> obligatorio bajo <strong>NOM-002-STPS</strong>. Para pasillos, almacenes y áreas generales: <strong>PQS ABC</strong>. MANEXT hace el diagnóstico gratuito área por área y arma la solución completa con <strong>documentación lista para auditorías institucionales</strong>.',
@@ -124,8 +125,8 @@ const faqSchema = JSON.stringify(buildFaqSchema(faqs));
     <h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesitas extintores y capacitación para tu hospital o clínica?</h2>
     <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Diagnóstico técnico gratuito por área · Documentación para COFEPRIS y Protección Civil · Pólizas anuales institucionales</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="tel:5614612594" style="background: white; color: #d32f2f; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">📞 56 1461 2594</a>
-      <a href="https://wa.me/5215614612594?text=Hola%2C%20necesito%20extintores%20para%20mi%20hospital%20o%20cl%C3%ADnica%20en%20CDMX" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">💬 WhatsApp</a>
+      <a href={`tel:${PHONE_TEL}`} style="background: white; color: #d32f2f; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">📞 {PHONE_DISPLAY}</a>
+      <a href={whatsappUrl('Hola, necesito extintores para mi hospital o clínica en CDMX')} target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">💬 WhatsApp</a>
       <a href="/contacto" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none;">Solicitar cotización</a>
     </div>
   </div>
