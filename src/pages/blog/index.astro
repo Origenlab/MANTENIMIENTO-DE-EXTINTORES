@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import { blogTopics, groupPostsByTopic } from '../../data/blog-topics.mjs';
 import { whatsappUrl } from '../../config/business.mjs';
 
 const CATEGORY_SLUGS = [
@@ -28,14 +29,19 @@ const posts = allPosts
   .filter(p => !CATEGORY_SLUGS.includes(p.id.replace(/\.md$/, '')))
   .sort((a, b) => a.data.title.localeCompare(b.data.title, 'es'));
 
-const topics = [
-  { label: 'Tipos de Extintor',   icon: 'fire',     desc: 'PQS, CO₂, Tipo K, AFFF y más' },
-  { label: 'Normativas NOM',      icon: 'shield',   desc: 'NOM-154, NOM-002, Protección Civil' },
-  { label: 'Mantenimiento',       icon: 'wrench',   desc: 'Recarga, pólizas e inspección' },
-  { label: 'Prueba Hidrostática', icon: 'flask',    desc: 'Certificación de presión NOM' },
-  { label: 'Capacitación',        icon: 'people',   desc: 'Brigadas y constancias DC-3' },
-  { label: 'Empresas',            icon: 'building', desc: 'Restaurantes, industria, oficinas' },
-];
+const postsByTopic = groupPostsByTopic(allPosts);
+
+// Estas tarjetas eran <div> decorativos: no enlazaban a ninguna parte, y los
+// diez artículos pilar quedaban huérfanos, sin un solo enlace entrante. Ahora
+// salen de blog-topics.mjs y llevan a su pilar, que reúne los artículos del
+// tema (auditoría 2026-07-16).
+const topics = blogTopics.map(topic => ({
+  label: topic.label,
+  icon: topic.icon,
+  desc: topic.desc,
+  href: `/blog/${topic.slug}`,
+  count: (postsByTopic.get(topic.slug) ?? []).length,
+}));
 
 const svgIcons: Record<string, string> = {
   fire:     `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
@@ -77,11 +83,12 @@ const svgIcons: Record<string, string> = {
       />
       <div class="bl-topics-grid">
         {topics.map(t => (
-          <div class="bl-topic-card">
+          <a class="bl-topic-card" href={t.href}>
             <span class="bl-topic-icon" set:html={svgIcons[t.icon]} />
             <strong class="bl-topic-label">{t.label}</strong>
             <span class="bl-topic-desc">{t.desc}</span>
-          </div>
+            <span class="bl-topic-count">{t.count === 1 ? '1 artículo' : `${t.count} artículos`}</span>
+          </a>
         ))}
       </div>
     </div>

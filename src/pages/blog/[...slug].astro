@@ -3,20 +3,32 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_NUMBER_INTL } from '../../config/business.mjs';
+import { classifyPost, getTopicForPillar, groupPostsByTopic } from '../../data/blog-topics.mjs';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
+  const byTopic = groupPostsByTopic(blogEntries);
+
   return blogEntries.map(entry => ({
     params: { slug: entry.id },
-    props: { entry },
+    // El agrupado se calcula una vez, no por página.
+    props: { entry, byTopic },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, byTopic } = Astro.props;
 const { Content } = await render(entry);
 
+// Un pilar reúne su tema: lista sus artículos en vez de un texto genérico.
+// Antes los diez publicaban "Contenido principal no detectado automáticamente".
+const pillarTopic = getTopicForPillar(entry.id);
+const pillarPosts = pillarTopic ? byTopic.get(pillarTopic.slug) ?? [] : [];
 
-const relatedArticles = [
+// Tema del artículo, para enlazar a sus hermanos y a su pilar.
+const topic = pillarTopic ?? classifyPost(entry.id, entry.data.title);
+
+
+const fallbackArticles = [
   { title: 'Multas por No Tener Extintores', slug: 'multas-no-tener-extintores-montos-evitarlas' },
   { title: 'Prueba Hidrostática de Extintores', slug: 'prueba-hidrostatica-extintores-2026' },
   { title: 'Señalización de Evacuación NOM-026-STPS', slug: 'senalizacion-evacuacion-empresas-nom-026-stps' },
@@ -32,6 +44,19 @@ const relatedArticles = [
   { title: 'Gabinetes para Extintores: Normativa', slug: 'gabinetes-extintores-tipos-normativa-instalacion' },
   { title: 'Extintores Certificados NOM: Qué Verificar', slug: 'extintores-certificados-nom-que-verificar-antes-comprar' },
   { title: 'Brigadas Contra Incendio: Cómo Organizarlas', slug: 'brigadas-contra-incendio-como-organizarlas-empresa-nom' },
+];
+
+// Los 119 artículos mostraban esta misma lista fija: enlaces internos sin
+// señal temática. Ahora se enlazan primero los hermanos de tema, que es lo que
+// de verdad interesa a quien está leyendo, y la lista fija sólo completa si el
+// tema tiene pocos artículos (auditoría 2026-07-16).
+const siblings = (byTopic.get(topic.slug) ?? [])
+  .filter(post => post.id !== entry.id)
+  .map(post => ({ title: post.data.title, slug: post.id }));
+
+const relatedArticles = [
+  ...siblings,
+  ...fallbackArticles.filter(item => !siblings.some(sibling => sibling.slug === item.slug)),
 ].filter(r => r.slug !== entry.id);
 
 const waMsg = encodeURIComponent(`Hola, leí el artículo "${entry.data.title}" y me interesa más información`);
@@ -87,6 +112,30 @@ const waMsg = encodeURIComponent(`Hola, leí el artículo "${entry.data.title}" 
 
         <div class="article-content" itemprop="articleBody">
           <Content />
+
+          {/* Un pilar reúne su tema: lista sus artículos, que es para lo que
+              existe. Ver la nota en blog-topics.mjs.
+              Ojo: aquí va un comentario JSX y no uno HTML — Astro emite los
+              `<!-- -->` al output, así que un comentario explicativo acabaría
+              publicado en las diez páginas. */}
+          {pillarTopic && (
+            <section class="pillar-index" aria-labelledby="pillar-index-title">
+              <p class="pillar-intro">{pillarTopic.intro}</p>
+              <h2 id="pillar-index-title">
+                {pillarPosts.length === 1
+                  ? 'Artículo sobre este tema'
+                  : `Los ${pillarPosts.length} artículos sobre este tema`}
+              </h2>
+              <ul class="pillar-list">
+                {pillarPosts.map(post => (
+                  <li>
+                    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                    {post.data.description && <p>{post.data.description}</p>}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
         <!-- COMPARTIR -->
