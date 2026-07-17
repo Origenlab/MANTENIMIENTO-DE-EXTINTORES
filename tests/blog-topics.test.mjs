@@ -96,6 +96,78 @@ test('los artículos relacionados salen del tema, no de una lista fija', async (
   assert.match(source, /fallbackArticles/, 'la lista fija sólo debe completar');
 });
 
+// ---------------------------------------------------------------------------
+// Canibalización: varios artículos atacando la misma búsqueda
+// ---------------------------------------------------------------------------
+
+/** Lee el frontmatter mínimo que necesitan estos tests. */
+async function readFrontmatter(file) {
+  const source = await readFile(new URL(file, BLOG_DIR), 'utf8');
+  const block = source.split('---')[1] ?? '';
+  return {
+    title: (block.match(/title:\s*"([^"]*)"/) ?? [])[1] ?? '',
+    canonicalTo: (block.match(/canonicalTo:\s*"([^"]*)"/) ?? [])[1] ?? null,
+  };
+}
+
+test('todo canonicalTo apunta a un artículo que existe y no a sí mismo', async () => {
+  const files = (await readdir(BLOG_DIR)).filter((file) => file.endsWith('.md'));
+  const slugs = new Set(files.map((file) => file.replace(/\.md$/, '')));
+  const offenders = [];
+
+  for (const file of files) {
+    const { canonicalTo } = await readFrontmatter(file);
+    if (!canonicalTo) continue;
+
+    const slug = file.replace(/\.md$/, '');
+    const target = canonicalTo.replace(/^\/blog\//, '');
+
+    if (!canonicalTo.startsWith('/blog/')) offenders.push(`${slug}: "${canonicalTo}" no es una ruta de /blog/`);
+    if (!slugs.has(target)) offenders.push(`${slug}: canoniza a "${target}", que no existe`);
+    if (target === slug) offenders.push(`${slug}: se canoniza a sí mismo`);
+  }
+
+  assert.deepEqual(offenders, [], `canónicos rotos:\n${offenders.join('\n')}`);
+});
+
+test('un canónico no canoniza a su vez a otro: nada de cadenas', async () => {
+  // Una cadena A→B→C hace que Google descarte la señal. El destino de un
+  // canonicalTo debe ser siempre un artículo que se indexa a sí mismo.
+  const files = (await readdir(BLOG_DIR)).filter((file) => file.endsWith('.md'));
+  const offenders = [];
+
+  for (const file of files) {
+    const { canonicalTo } = await readFrontmatter(file);
+    if (!canonicalTo) continue;
+
+    const target = `${canonicalTo.replace(/^\/blog\//, '')}.md`;
+    const targetData = await readFrontmatter(target).catch(() => null);
+    if (targetData?.canonicalTo) {
+      offenders.push(`${file}: canoniza a ${target}, que a su vez canoniza a ${targetData.canonicalTo}`);
+    }
+  }
+
+  assert.deepEqual(offenders, [], `cadenas de canónicos:\n${offenders.join('\n')}`);
+});
+
+test('ningún título se repite entre artículos que se indexan', async () => {
+  // Dos artículos publicaban el mismo <title> palabra por palabra. Los que
+  // canonizan a otro pueden repetirlo: ya no compiten.
+  const files = (await readdir(BLOG_DIR)).filter((file) => file.endsWith('.md'));
+  const seen = new Map();
+  const offenders = [];
+
+  for (const file of files) {
+    const { title, canonicalTo } = await readFrontmatter(file);
+    if (canonicalTo || !title) continue;
+
+    if (seen.has(title)) offenders.push(`"${title}": ${seen.get(title)} y ${file}`);
+    seen.set(title, file);
+  }
+
+  assert.deepEqual(offenders, [], `títulos duplicados entre artículos indexables:\n${offenders.join('\n')}`);
+});
+
 test('la plantilla no usa comentarios HTML para notas internas', async () => {
   // Astro emite los `<!-- -->` al output: un comentario explicativo acabó
   // publicado en las diez páginas pilar, con el mismo texto de error que

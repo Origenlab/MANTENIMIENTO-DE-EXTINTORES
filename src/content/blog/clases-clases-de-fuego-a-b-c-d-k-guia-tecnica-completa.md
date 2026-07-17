@@ -4,6 +4,7 @@ description: "Clases de fuego A B C D K explicadas por expertos. Identifica tipo
 heroRight:
   - "No todos los extintores apagan todos los fuegos: el <strong>tipo de extintor correcto depende de la clase de fuego</strong>. Usar agua en aceite ardiendo provoca una bola de fuego; usar CO2 en un incendio de magnesio puede empeorar la situación. La normativa mexicana <strong>NOM-002-STPS</strong> clasifica los fuegos en 5 categorías (A, B, C, D y K) y exige que cada espacio cuente con el extintor adecuado al riesgo específico."
   - "MANEXT asesora a empresas, restaurantes e industrias en la <strong>selección técnica del extintor correcto</strong> para cada clase de fuego, con más de 80 años de experiencia y técnicos certificados NOM-154-SCFI. Evita multas de Protección Civil y protege tu instalación con los equipos correctos. Solicita asesoría sin costo por WhatsApp."
+canonicalTo: "/blog/clases-de-fuego-a-b-c-d-k-guia-completa-extintor"
 ---
 <div class="article-intro">
   <p class="article-lead"><strong>Clases de fuego A B C D K</strong> representan la clasificación técnica que determina qué tipo de extintor utilizar para combatir cada siniestro específico. El 78% de los incendios en México se agravan por usar el agente extintor incorrecto. Dominar esta clasificación puede salvar vidas y prevenir pérdidas millonarias.</p>

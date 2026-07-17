@@ -8,6 +8,16 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
     heroImage: z.string().optional(),
     heroRight: z.array(z.string()).optional(),
+    /**
+     * Ruta del artículo que debe indexarse en lugar de éste, p. ej.
+     * `/blog/clases-de-fuego-a-b-c-d-k-guia-completa-extintor`.
+     *
+     * Cinco artículos atacaban "clases de fuego A B C D K" —dos con el `<title>`
+     * idéntico— y dos atacaban "recarga certificada NOM-154". Competían entre
+     * sí por la misma búsqueda. El artículo sigue publicado y accesible; sólo
+     * consolida su señal en el canónico (auditoría 2026-07-17).
+     */
+    canonicalTo: z.string().optional(),
   }),
 });
 

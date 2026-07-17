@@ -27,6 +27,11 @@ const pillarPosts = pillarTopic ? byTopic.get(pillarTopic.slug) ?? [] : [];
 // Tema del artículo, para enlazar a sus hermanos y a su pilar.
 const topic = pillarTopic ?? classifyPost(entry.id, entry.data.title);
 
+// Cuando varios artículos atacan la misma búsqueda, `canonicalTo` consolida la
+// señal en uno. El artículo sigue publicado y accesible; sólo deja de competir
+// contra su propio hermano (auditoría 2026-07-17).
+const canonicalPath = entry.data.canonicalTo ?? `/blog/${entry.id}`;
+
 
 const fallbackArticles = [
   { title: 'Multas por No Tener Extintores', slug: 'multas-no-tener-extintores-montos-evitarlas' },
@@ -65,7 +70,7 @@ const waMsg = encodeURIComponent(`Hola, leí el artículo "${entry.data.title}" 
 <Layout
   title={`${entry.data.title} | MANEXT`}
   description={entry.data.description || entry.data.title}
-  canonical={`https://mantenimientodeextintores.mx/blog/${entry.id}`}
+  canonical={`https://mantenimientodeextintores.mx${canonicalPath}`}
   ogImage={entry.data.heroImage ? `https://mantenimientodeextintores.mx/${entry.data.heroImage}` : 'https://mantenimientodeextintores.mx/img/og-image.avif'}
   extraCss={['/css/blog-system.css?v=8', '/css/blog-article.css?v=7']}
   breadcrumbs={[{name: 'Blog', url: '/blog'}, {name: entry.data.title, url: `/blog/${entry.id}`}]}

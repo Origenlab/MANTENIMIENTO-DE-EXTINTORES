@@ -4,6 +4,7 @@ description: "Guía completa sobre las 5 clases de fuego: materiales que involuc
 heroRight:
   - "Usar el extintor equivocado no solo puede ser inútil — puede <strong>empeorar el incendio</strong>. El agua en fuego eléctrico conduce la corriente hacia quien lo opera. El PQS en aceite hirviendo provoca una explosión. Conocer las 5 clases de fuego es el conocimiento más básico e importante en seguridad contra incendios."
   - "En <strong>MANEXT</strong> llevamos más de 80 años asesorando a más de 15,000 empresas en CDMX. Te ayudamos a identificar qué clases de fuego están presentes en tu espacio y qué extintores NOM-154-SCFI necesitas exactamente. Evaluación gratuita en tu local."
+canonicalTo: "/blog/clases-de-fuego-a-b-c-d-k-guia-completa-extintor"
 ---
 
 <p class="article-lead">

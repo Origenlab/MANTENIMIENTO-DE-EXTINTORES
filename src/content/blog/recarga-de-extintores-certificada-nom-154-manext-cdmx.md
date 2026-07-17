@@ -4,6 +4,7 @@ description: "Servicio profesional de recarga de extintores certificada NOM-154-
 heroRight:
   - "La <strong>NOM-154-SCFI</strong> obliga a que todos los extintores sean recargados por técnicos certificados. Un extintor vencido o con baja presión equivale a no tener protección: falla exactamente cuando más se necesita. La recarga certificada restaura el agente extintor, verifica la integridad del cilindro y garantiza que el equipo estará operativo al 100% ante cualquier emergencia."
   - "MANEXT realiza recargas certificadas NOM-154-SCFI con <strong>más de 80 años de experiencia</strong> en CDMX y Estado de México. Nuestros técnicos se desplazan a tu instalación, dejamos extintores de reemplazo mientras los tuyos están en servicio y entregamos certificados individuales válidos ante Protección Civil. Solicita cotización sin costo por WhatsApp."
+canonicalTo: "/blog/recarga-de-extintores-certificada-nom-154-cdmx-manext"
 ---
 <div class="article-intro">
   <p>Los extintores descargados o vencidos representan un riesgo crítico para la seguridad de cualquier establecimiento. El <strong>servicio de recarga de extintores certificada</strong> garantiza que tus equipos contra incendio mantengan su efectividad al 100% según las normativas mexicanas vigentes. En México, el 73% de los incendios industriales podrían haberse controlado con extintores en óptimas condiciones.</p>
