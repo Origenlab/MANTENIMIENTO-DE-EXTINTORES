@@ -13,7 +13,7 @@ heroRight:
 
 <div class="article-intro">
   <p class="article-lead">Comprar <strong>equipo de protección personal bomberil</strong> en México tiene una característica que lo distingue de cualquier otra compra industrial: el comprador está pagando por una promesa de funcionamiento bajo condiciones extremas que, idealmente, nunca se pondrán a prueba — y que cuando se ponen a prueba no admiten rectificación. No hay segundas oportunidades dentro de una estructura incendiada.</p>
-  <p>Esta guía SEO-orientada explica los siete criterios técnicos que deben usarse para evaluar a cualquier proveedor de EPP bomberil — desde trajes estructurales NFPA 1971 hasta SCBA, cascos, botas y herramientas — con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> como uno de los referentes a comparar dentro del mercado nacional.</p>
+  <p>Esta guía SEO-orientada explica los siete criterios técnicos que deben usarse para evaluar a cualquier proveedor de EPP bomberil — desde trajes estructurales NFPA 1970 hasta SCBA, cascos, botas y herramientas — con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> como uno de los referentes a comparar dentro del mercado nacional.</p>
   <p>Es una guía complementaria al programa de protección que ofrece <a href="/">MANEXT</a> en CDMX y Estado de México. Para evaluar proveedores de extintores certificados, recarga, mantenimiento y capacitación NOM-002-STPS, consulta nuestra <a href="/blog/comprar-extintores-cdmx-guia-completa-empresas-2026">guía completa de compra de extintores</a>.</p>
 </div>
 
@@ -74,7 +74,7 @@ heroRight:
     <li><strong>Fecha de fabricación</strong> en formato mes/año.</li>
     <li><strong>Número de lote</strong> único y rastreable.</li>
     <li><strong>Entidad certificadora</strong>: UL, SEI, FM, o equivalente reconocido.</li>
-    <li><strong>Edición específica de la NFPA</strong>: por ejemplo "NFPA 1971, edition 2018".</li>
+    <li><strong>Edición específica de la NFPA</strong>: por ejemplo "NFPA 1970, edition 2018".</li>
     <li><strong>Configuración de capas</strong> para trajes (capa externa, barrera humedad, aislante).</li>
     <li><strong>Tallas y rangos de uso</strong> claros.</li>
   </ul>
@@ -90,7 +90,7 @@ heroRight:
   <h3>Banderas rojas en certificaciones</h3>
   <ul>
     <li>Etiqueta solo en español sin texto inglés (los fabricantes USA siempre etiquetan en inglés primario).</li>
-    <li>Edición de NFPA omitida o vaga ("NFPA 1971" sin año).</li>
+    <li>Edición de NFPA omitida o vaga ("NFPA 1970" sin año).</li>
     <li>Marca desconocida con etiqueta que dice "compliant with NFPA standards".</li>
     <li>Sin número de lote.</li>
     <li>Etiqueta cosida con hilo distinto o de calidad inferior al resto del traje (señal de retiquetado).</li>
@@ -144,7 +144,7 @@ heroRight:
   </ul>
 
   <h3>Servicio de mantenimiento</h3>
-  <p>Identifica al momento de comprar: ¿quién va a hacer el mantenimiento anual del SCBA? ¿quién va a hacer el lavado profesional NFPA 1851 del traje? ¿quién certificará la prueba hidrostática quinquenal del cilindro? Si la respuesta es "ya veremos", el proveedor te está dejando huérfano. Servicios análogos al de <a href="/recarga-de-extintores">recarga de extintores</a> y <a href="/prueba-hidrostatica">prueba hidrostática</a> que MANEXT realiza para extintores deben tener equivalente para EPP bomberil.</p>
+  <p>Identifica al momento de comprar: ¿quién va a hacer el mantenimiento anual del SCBA? ¿quién va a hacer el lavado profesional NFPA 1850 del traje? ¿quién certificará la prueba hidrostática quinquenal del cilindro? Si la respuesta es "ya veremos", el proveedor te está dejando huérfano. Servicios análogos al de <a href="/recarga-de-extintores">recarga de extintores</a> y <a href="/prueba-hidrostatica">prueba hidrostática</a> que MANEXT realiza para extintores deben tener equivalente para EPP bomberil.</p>
 </section>
 
 <section id="asesoria" class="content-section">
@@ -165,9 +165,9 @@ heroRight:
   <h3>Banderas rojas en asesoría</h3>
   <ul>
     <li>Mostrar el producto más caro como "el bueno" sin justificar técnicamente.</li>
-    <li>No diferenciar entre NFPA 1971 (estructural), 1977 (forestal) y 1991 (HAZMAT) — todas son NFPA pero para distintos perfiles.</li>
+    <li>No diferenciar entre NFPA 1970 (estructural), NFPA 1950 (forestal) y NFPA 1991 (HAZMAT) — todas son NFPA pero para distintos perfiles.</li>
     <li>Vender SCBA sin discutir compresor de aire respirable o convenio de recarga.</li>
-    <li>Vender traje sin discutir lavado NFPA 1851.</li>
+    <li>Vender traje sin discutir lavado NFPA 1850.</li>
     <li>"Te lo dejo al costo" — los descuentos drásticos en EPP suelen significar producto descontinuado, importación gris o equipo con vida útil avanzada.</li>
   </ul>
 </section>
@@ -238,28 +238,28 @@ heroRight:
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Una brigada de oficina o comercio necesita estos niveles de EPP?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>No. Brigadas de riesgo bajo y medio (oficinas, escuelas, hospitales, comercios) operan con extintores portátiles, capacitación NOM-002-STPS y plan de evacuación. No requieren NFPA 1971 ni SCBA. Para esos perfiles consulta <a href="/blog/extintores-oficinas-corporativos-mexico">guía de extintores en oficinas</a> o <a href="/blog/brigadas-contra-incendio-como-organizarlas-empresa-nom">cómo organizar brigada NOM</a>.</p>
+      <p>No. Brigadas de riesgo bajo y medio (oficinas, escuelas, hospitales, comercios) operan con extintores portátiles, capacitación NOM-002-STPS y plan de evacuación. No requieren NFPA 1970 ni SCBA. Para esos perfiles consulta <a href="/blog/extintores-oficinas-corporativos-mexico">guía de extintores en oficinas</a> o <a href="/blog/brigadas-contra-incendio-como-organizarlas-empresa-nom">cómo organizar brigada NOM</a>.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Es válido reciclar EPP de un cuerpo a otro?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>En general no. Sin historial completo de exposiciones, lavados y reparaciones según NFPA 1851, no hay forma de validar la integridad protectiva. Equipos de menos de 2 años con bitácora detallada de un cuerpo serio pueden considerarse, con inspección avanzada documentada antes de transferir. Lo prudente es presupuestar nuevo.</p>
+      <p>En general no. Sin historial completo de exposiciones, lavados y reparaciones según NFPA 1850, no hay forma de validar la integridad protectiva. Equipos de menos de 2 años con bitácora detallada de un cuerpo serio pueden considerarse, con inspección avanzada documentada antes de transferir. Lo prudente es presupuestar nuevo.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Cómo combina la oferta de Firefighter México con la de MANEXT?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Complementaria, no superpuesta. MANEXT cubre la capa preventiva: <a href="/venta-de-extintores">venta de extintores</a> certificados, <a href="/recarga-de-extintores">recarga</a>, <a href="/mantenimiento-preventivo">mantenimiento</a>, <a href="/senalizacion">señalización</a>, <a href="/capacitacion-brigadas">capacitación NOM-002</a>. Firefighter México cubre la capa ofensiva: trajes NFPA 1971, SCBA, monitores multigas, herramientas. Un programa serio combina ambos proveedores.</p>
+      <p>Complementaria, no superpuesta. MANEXT cubre la capa preventiva: <a href="/venta-de-extintores">venta de extintores</a> certificados, <a href="/recarga-de-extintores">recarga</a>, <a href="/mantenimiento-preventivo">mantenimiento</a>, <a href="/senalizacion">señalización</a>, <a href="/capacitacion-brigadas">capacitación NOM-002</a>. Firefighter México cubre la capa ofensiva: trajes NFPA 1970, SCBA, monitores multigas, herramientas. Un programa serio combina ambos proveedores.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Qué normativa mexicana respalda la elección de NFPA en EPP bomberil?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>NOM-017-STPS-2008 establece EPP general industrial pero no detalla EPP bomberil estructural. La NOM-002-STPS-2010 menciona equipo de respuesta a emergencias sin profundizar. En ausencia de NOM mexicana específica, NFPA estadounidense es el estándar técnico aceptado por aseguradoras, corporativos multinacionales y compradores serios. La <a href="/blog/nom-002-stps-seguridad-incendios-trabajo">guía NOM-002-STPS</a> de MANEXT amplía el contexto.</p>
+      <p>NOM-017-STPS-2024 establece EPP general industrial pero no detalla EPP bomberil estructural. La NOM-002-STPS-2010 menciona equipo de respuesta a emergencias sin profundizar. En ausencia de NOM mexicana específica, NFPA estadounidense es el estándar técnico aceptado por aseguradoras, corporativos multinacionales y compradores serios. La <a href="/blog/nom-002-stps-seguridad-incendios-trabajo">guía NOM-002-STPS</a> de MANEXT amplía el contexto.</p>
     </div>
   </div>
 </section>

@@ -1,38 +1,38 @@
 ---
-title: "Trajes estructurales NFPA 1971: guía técnica con Firefighter México"
-description: "Capa externa, barrera de humedad, aislante térmico: cómo elegir traje estructural NFPA 1971 con Firefighter México como referente de importación en México."
+title: "Trajes estructurales NFPA 1970: guía técnica con Firefighter México"
+description: "Capa externa, barrera de humedad, aislante térmico: cómo elegir traje estructural NFPA 1970 con Firefighter México como referente de importación en México."
 heroImage: "img/img-blog/clases-fuego-a-b-c-d-k-guia-completa-hero-1765865903727.avif"
 heroRight:
-  - "El <strong>traje estructural NFPA 1971</strong> es la pieza más cara y más crítica del EPP de un bombero. Tres capas técnicas, certificación internacional, ajuste personalizado y mantenimiento NFPA 1851 lo separan de cualquier overol industrial."
+  - "El <strong>traje estructural NFPA 1970</strong> es la pieza más cara y más crítica del EPP de un bombero. Tres capas técnicas, certificación internacional, ajuste personalizado y mantenimiento NFPA 1850 lo separan de cualquier overol industrial."
   - "<strong>Firefighter México</strong> es uno de los pocos importadores especializados en trajes estructurales certificados en territorio nacional. Aquí <strong>MANEXT</strong> te explica el criterio técnico para elegir bien."
 ---
 
 <aside class="article-disclaimer">
-  <p><em>Artículo del programa editorial de MANEXT donde reseñamos aliados estratégicos del sector. Firefighter México es referente nacional en EPP estructural y MANEXT lo recomienda como proveedor de confianza para trajes NFPA 1971.</em></p>
+  <p><em>Artículo del programa editorial de MANEXT donde reseñamos aliados estratégicos del sector. Firefighter México es referente nacional en EPP estructural y MANEXT lo recomienda como proveedor de confianza para trajes NFPA 1970.</em></p>
 </aside>
 
 <div class="article-intro">
-  <p class="article-lead">Comprar un <strong>traje estructural certificado NFPA 1971</strong> no es comprar un uniforme. Es comprar un sistema de protección térmica de tres capas, certificado bajo pruebas internacionales, ajustado al cuerpo del bombero y mantenido bajo un protocolo NFPA 1851 que extiende su vida útil hasta 10 años. La diferencia entre un traje correctamente especificado y uno mal elegido es la diferencia entre regresar a casa y no regresar.</p>
-  <p>En esta guía técnica analizamos qué exige la norma NFPA 1971, cómo se compone realmente un traje estructural, qué marcas reconocidas existen en el mercado y por qué <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> es uno de los caminos más profesionales para adquirirlo en territorio mexicano sin tener que importar como persona física.</p>
-  <p>Esta es una guía complementaria al programa de protección integral que <a href="/">MANEXT</a> arma para empresas en CDMX y Estado de México. Para nosotros un traje NFPA 1971 representa el siguiente nivel después de tener resuelta la capa de extintores certificados, brigadas DC-3 y señalización en norma.</p>
+  <p class="article-lead">Comprar un <strong>traje estructural certificado NFPA 1970</strong> no es comprar un uniforme. Es comprar un sistema de protección térmica de tres capas, certificado bajo pruebas internacionales, ajustado al cuerpo del bombero y mantenido bajo un protocolo NFPA 1850 que extiende su vida útil hasta 10 años. La diferencia entre un traje correctamente especificado y uno mal elegido es la diferencia entre regresar a casa y no regresar.</p>
+  <p>En esta guía técnica analizamos qué exige la norma NFPA 1970, cómo se compone realmente un traje estructural, qué marcas reconocidas existen en el mercado y por qué <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> es uno de los caminos más profesionales para adquirirlo en territorio mexicano sin tener que importar como persona física.</p>
+  <p>Esta es una guía complementaria al programa de protección integral que <a href="/">MANEXT</a> arma para empresas en CDMX y Estado de México. Para nosotros un traje NFPA 1970 representa el siguiente nivel después de tener resuelta la capa de extintores certificados, brigadas DC-3 y señalización en norma.</p>
 </div>
 
 <nav class="toc">
   <p class="toc-title">Contenido del artículo</p>
   <ul>
-    <li><a href="#que-es-nfpa-1971">1. Qué es NFPA 1971 y por qué importa</a></li>
+    <li><a href="#que-es-nfpa-1971">1. Qué es NFPA 1970 y por qué importa</a></li>
     <li><a href="#composicion">2. Composición de tres capas</a></li>
     <li><a href="#marcas">3. Marcas reconocidas y diferencias</a></li>
     <li><a href="#ajuste">4. Ajuste y proceso de medición</a></li>
-    <li><a href="#mantenimiento">5. Mantenimiento NFPA 1851</a></li>
+    <li><a href="#mantenimiento">5. Mantenimiento NFPA 1850</a></li>
     <li><a href="#errores">6. Errores frecuentes al comprar</a></li>
     <li><a href="#faq">Preguntas frecuentes</a></li>
   </ul>
 </nav>
 
 <section id="que-es-nfpa-1971" class="content-section">
-  <h2>1. Qué es NFPA 1971 y por qué importa</h2>
-  <p>NFPA 1971 es la norma de la <strong>National Fire Protection Association</strong> que establece los requisitos mínimos de diseño, desempeño, prueba y certificación de los conjuntos de protección estructural para bomberos. Cubre traje (chaquetón y pantalón), casco, capucha, guantes y botas. La edición vigente al momento de esta publicación es 2018, con revisión periódica.</p>
+  <h2>1. Qué es NFPA 1970 y por qué importa</h2>
+  <p>NFPA 1970 es la norma de la <strong>National Fire Protection Association</strong> que establece los requisitos mínimos de diseño, desempeño, prueba y certificación de los conjuntos de protección estructural para bomberos. Cubre traje (chaquetón y pantalón), casco, capucha, guantes y botas. La edición vigente al momento de esta publicación es 2018, con revisión periódica.</p>
 
   <h3>Qué evalúa la norma</h3>
   <ul>
@@ -44,13 +44,13 @@ heroRight:
     <li><strong>Pruebas de costura</strong>, cremalleras, cierres velcro y herrajes.</li>
   </ul>
 
-  <h3>Por qué la NFPA 1971 sí aplica en México</h3>
-  <p>México no tiene NOM equivalente específica para traje estructural bomberil. La NOM-017-STPS aplica a EPP general industrial pero no profundiza en bombero estructural. En ausencia de norma mexicana específica, NFPA 1971 es la referencia técnica universalmente aceptada por aseguradoras, corporativos multinacionales, refinerías de PEMEX y cuerpos de bomberos profesionales. Comprar fuera de esta norma es comprar a ciegas.</p>
+  <h3>Por qué la NFPA 1970 sí aplica en México</h3>
+  <p>México no tiene NOM equivalente específica para traje estructural bomberil. La NOM-017-STPS aplica a EPP general industrial pero no profundiza en bombero estructural. En ausencia de norma mexicana específica, NFPA 1970 es la referencia técnica universalmente aceptada por aseguradoras, corporativos multinacionales, refinerías de PEMEX y cuerpos de bomberos profesionales. Comprar fuera de esta norma es comprar a ciegas.</p>
 </section>
 
 <section id="composicion" class="content-section">
   <h2>2. Composición de tres capas del traje estructural</h2>
-  <p>Un traje NFPA 1971 no es una prenda — es un <strong>laminado de tres capas</strong> que trabajan juntas. Cada capa cumple una función específica y la falla de una compromete el conjunto.</p>
+  <p>Un traje NFPA 1970 no es una prenda — es un <strong>laminado de tres capas</strong> que trabajan juntas. Cada capa cumple una función específica y la falla de una compromete el conjunto.</p>
 
   <h3>Capa externa (Outer Shell)</h3>
   <p>La cara visible del traje. Resiste llama directa, abrasión, calor radiante y desgarro. Materiales típicos:</p>
@@ -121,7 +121,7 @@ heroRight:
 
 <section id="ajuste" class="content-section">
   <h2>4. Ajuste y proceso de medición</h2>
-  <p>Un traje estructural mal medido es un traje peligroso. Holgura excesiva genera enganches; ajuste excesivo limita movilidad y aumenta stress térmico. NFPA 1971 exige movilidad mínima en flexión, extensión y abducción, lo que solo se logra con medición correcta.</p>
+  <p>Un traje estructural mal medido es un traje peligroso. Holgura excesiva genera enganches; ajuste excesivo limita movilidad y aumenta stress térmico. NFPA 1970 exige movilidad mínima en flexión, extensión y abducción, lo que solo se logra con medición correcta.</p>
 
   <h3>Mediciones requeridas para chaquetón</h3>
   <ul>
@@ -155,8 +155,8 @@ heroRight:
 </section>
 
 <section id="mantenimiento" class="content-section">
-  <h2>5. Mantenimiento NFPA 1851 — ciclo de vida del traje</h2>
-  <p>NFPA 1971 fabrica el traje; <strong>NFPA 1851</strong> lo mantiene en condiciones operativas. Esta segunda norma define inspección, limpieza, reparación, retiro y disposición. Ignorarla acorta la vida útil del traje a menos de 3 años.</p>
+  <h2>5. Mantenimiento NFPA 1850 — ciclo de vida del traje</h2>
+  <p>NFPA 1970 fabrica el traje; <strong>NFPA 1850</strong> lo mantiene en condiciones operativas. Esta segunda norma define inspección, limpieza, reparación, retiro y disposición. Ignorarla acorta la vida útil del traje a menos de 3 años.</p>
 
   <h3>Inspecciones rutinarias</h3>
   <p>Después de cada uso operativo, inspección rápida visual: rasgaduras, contaminación química, costuras flojas, reflectivos despegados. Documentar en bitácora.</p>
@@ -168,7 +168,7 @@ heroRight:
   <p>Revisión técnica detallada con desensamblado parcial, prueba de integridad de barrera de humedad (light test), revisión de costuras críticas y herrajes.</p>
 
   <h3>Vida útil y retiro</h3>
-  <p>NFPA 1851 establece vida útil máxima de <strong>10 años</strong> a partir de la fecha de fabricación impresa en la etiqueta interior, sin importar nivel de uso. Después de 10 años, retiro obligatorio. Trajes con desgaste acelerado o daño estructural se retiran antes.</p>
+  <p>NFPA 1850 establece vida útil máxima de <strong>10 años</strong> a partir de la fecha de fabricación impresa en la etiqueta interior, sin importar nivel de uso. Después de 10 años, retiro obligatorio. Trajes con desgaste acelerado o daño estructural se retiran antes.</p>
 
   <h3>Calendario sugerido</h3>
   <table>
@@ -196,25 +196,25 @@ heroRight:
   <p>La barrera es la capa que más impacta el costo. Ahorrar aquí significa menor transpirabilidad, golpes de calor en operativos largos y degradación acelerada por contacto con químicos.</p>
 
   <h3>Error 3: no incluir capucha y reflectivos compatibles</h3>
-  <p>NFPA 1971 evalúa el conjunto. Comprar traje sin capucha estructural NFPA 1971 deja una zona crítica desprotegida (cuello, orejas, frente bajo casco).</p>
+  <p>NFPA 1970 evalúa el conjunto. Comprar traje sin capucha estructural NFPA 1970 deja una zona crítica desprotegida (cuello, orejas, frente bajo casco).</p>
 
   <h3>Error 4: lavar en lavadora doméstica</h3>
   <p>La barrera Crosstech / Stedair tiene una vida útil que se acorta brutalmente con detergentes ricos en cloro o suavizantes. Resultado: traje "limpio" sin protección impermeable.</p>
 
   <h3>Error 5: usar más de 10 años "porque se ve bien"</h3>
-  <p>El TPP del aislante térmico se degrada con cada exposición y con el simple paso del tiempo. Un traje de 12 años con apariencia decente puede tener 30% del TPP original. NFPA 1851 establece retiro a 10 años por algo.</p>
+  <p>El TPP del aislante térmico se degrada con cada exposición y con el simple paso del tiempo. Un traje de 12 años con apariencia decente puede tener 30% del TPP original. NFPA 1850 establece retiro a 10 años por algo.</p>
 
   <h3>Error 6: no documentar en bitácora</h3>
   <p>Un traje sin bitácora es un traje sin historial. Si llega una auditoría de aseguradora o ocurre un evento, la falta de bitácora desmonta toda la defensa de cumplimiento. Lleva registro de cada inspección, lavado y reparación.</p>
 </section>
 
 <section id="faq" class="content-section">
-  <h2>Preguntas frecuentes sobre trajes NFPA 1971</h2>
+  <h2>Preguntas frecuentes sobre trajes NFPA 1970</h2>
 
   <div class="faq-item">
-    <button class="faq-question"><span class="faq-question-text">¿Un traje NFPA 1971 sirve para combate de incendios forestales?</span><span class="faq-icon"></span></button>
+    <button class="faq-question"><span class="faq-question-text">¿Un traje NFPA 1970 sirve para combate de incendios forestales?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>No es óptimo. Para wildland fire la norma aplicable es NFPA 1977, que exige menor masa y mejor disipación de calor metabólico (THL alto). Un traje estructural en operación forestal causa golpes de calor por sobrecarga térmica. Cuerpos que combaten ambos tipos de fuego suelen tener dos sets distintos.</p>
+      <p>No es óptimo. Para wildland fire la norma aplicable es NFPA 1950, que exige menor masa y mejor disipación de calor metabólico (THL alto). Un traje estructural en operación forestal causa golpes de calor por sobrecarga térmica. Cuerpos que combaten ambos tipos de fuego suelen tener dos sets distintos.</p>
     </div>
   </div>
 
@@ -226,9 +226,9 @@ heroRight:
   </div>
 
   <div class="faq-item">
-    <button class="faq-question"><span class="faq-question-text">¿Cómo verifico que un traje sea genuino NFPA 1971?</span><span class="faq-icon"></span></button>
+    <button class="faq-question"><span class="faq-question-text">¿Cómo verifico que un traje sea genuino NFPA 1970?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Etiqueta interna permanente con número de modelo, fabricante, fecha de fabricación, lote, configuración de capas, entidad certificadora (UL, SEI), y leyenda "Compliant with NFPA 1971, edición XXXX". Sin esa etiqueta el traje NO es certificado, sin importar lo que diga el vendedor. Verifica también número de lote contra base de datos del fabricante.</p>
+      <p>Etiqueta interna permanente con número de modelo, fabricante, fecha de fabricación, lote, configuración de capas, entidad certificadora (UL, SEI), y leyenda "Compliant with NFPA 1970, edición XXXX". Sin esa etiqueta el traje NO es certificado, sin importar lo que diga el vendedor. Verifica también número de lote contra base de datos del fabricante.</p>
     </div>
   </div>
 
@@ -240,7 +240,7 @@ heroRight:
   </div>
 
   <div class="faq-item">
-    <button class="faq-question"><span class="faq-question-text">¿MANEXT vende trajes NFPA 1971?</span><span class="faq-icon"></span></button>
+    <button class="faq-question"><span class="faq-question-text">¿MANEXT vende trajes NFPA 1970?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
       <p>No. MANEXT se especializa en <a href="/venta-de-extintores">venta</a> y <a href="/recarga-de-extintores">recarga de extintores</a> certificados, <a href="/mantenimiento-preventivo">mantenimiento preventivo</a>, <a href="/prueba-hidrostatica">prueba hidrostática</a>, <a href="/senalizacion">señalización</a> y <a href="/capacitacion-brigadas">capacitación de brigadas</a>. Para EPP estructural recomendamos a Firefighter México como aliado especializado. Si quieres una visión integral del programa lee también <a href="/blog/equipamiento-para-bomberos-profesionales-guia-completa-2026">la guía de equipamiento bomberil profesional</a>.</p>
     </div>
@@ -249,6 +249,6 @@ heroRight:
 
 <section class="content-section">
   <h2>Recomendación editorial</h2>
-  <p>El traje estructural NFPA 1971 es probablemente la inversión técnica más importante que hace una brigada profesional. Hacerla mal cuesta vidas; hacerla bien extiende la operación y ahorra dinero a 10 años. Si tu organización está en esa decisión, te recomendamos cotizar con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> y exigir documentación técnica completa.</p>
+  <p>El traje estructural NFPA 1970 es probablemente la inversión técnica más importante que hace una brigada profesional. Hacerla mal cuesta vidas; hacerla bien extiende la operación y ahorra dinero a 10 años. Si tu organización está en esa decisión, te recomendamos cotizar con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> y exigir documentación técnica completa.</p>
   <p>Si todavía estás en la fase previa — cumplimiento NOM básico, extintores, brigada DC-3 — habla con el equipo de <a href="/contacto">MANEXT</a>. Antes de invertir en EPP avanzado conviene tener la base sólida. Te puede ayudar también <a href="/blog/nom-002-stps-seguridad-incendios-trabajo">nuestra guía sobre NOM-002-STPS</a>.</p>
 </section>

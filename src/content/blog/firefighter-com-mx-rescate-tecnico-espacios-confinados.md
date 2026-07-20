@@ -108,7 +108,7 @@ heroRight:
     <li><strong>Trípode o quad-pod</strong> con malacate y retracted lifeline.</li>
     <li><strong>Arnés de cuerpo entero</strong> NFPA 1983 con anclaje dorsal y torácico.</li>
     <li><strong>Líneas de vida</strong> de 9 a 11 mm en aramida o nylon.</li>
-    <li><strong>SCBA</strong> NFPA 1981 o equipo de aire suplementario en línea (SAR).</li>
+    <li><strong>SCBA</strong> NFPA 1970 o equipo de aire suplementario en línea (SAR).</li>
     <li><strong>Monitor multigas</strong> con bomba de muestreo (no solo difusión).</li>
     <li><strong>Comunicación intrínsecamente segura</strong> con cable o radio en áreas no ATEX.</li>
     <li><strong>Iluminación intrínsecamente segura</strong>.</li>
@@ -226,7 +226,7 @@ heroRight:
       <tr><td>Arneses cuerpo entero</td><td>1 por brigadista activo</td><td>NFPA 1983</td></tr>
       <tr><td>Frenos mecánicos / descenders</td><td>4 a 6 unidades</td><td>NFPA 1983</td></tr>
       <tr><td>Camilla de rescate</td><td>1 a 2 unidades</td><td>NFPA 1983</td></tr>
-      <tr><td>SCBA con conexión SAR</td><td>1 por brigadista activo</td><td>NFPA 1981</td></tr>
+      <tr><td>SCBA con conexión SAR</td><td>1 por brigadista activo</td><td>NFPA 1970</td></tr>
       <tr><td>Monitor multigas con bomba</td><td>2 unidades</td><td>OSHA / ANSI</td></tr>
       <tr><td>Paneles de entibado</td><td>Set para 3m</td><td>OSHA 1926.652</td></tr>
     </tbody>

@@ -1,9 +1,9 @@
 ---
 title: "ERA SCBA: equipos de respiración autónoma con Firefighter México"
-description: "Equipos SCBA NFPA 1981, presión positiva, cilindros 30/45 min, prueba hidrostática quinquenal. Firefighter México como referente en ERA para brigadas industriales."
+description: "Equipos SCBA NFPA 1970, presión positiva, cilindros 30/45 min, prueba hidrostática quinquenal. Firefighter México como referente en ERA para brigadas industriales."
 heroImage: "img/img-blog/proteccion-civil-cdmx-requisitos-extintores-hero-1765875702538.avif"
 heroRight:
-  - "El <strong>ERA SCBA</strong> (Equipo de Respiración Autónoma de presión positiva) es el equipo que separa una brigada de evacuación de una brigada que entra a estructuras incendiadas. Cilindros composite, máscara facial, regulador de demanda, alarma PASS y cumplimiento NFPA 1981."
+  - "El <strong>ERA SCBA</strong> (Equipo de Respiración Autónoma de presión positiva) es el equipo que separa una brigada de evacuación de una brigada que entra a estructuras incendiadas. Cilindros composite, máscara facial, regulador de demanda, alarma PASS y cumplimiento NFPA 1970."
   - "<strong>Firefighter México</strong> distribuye marcas líderes como MSA, Scott Safety y Drager. Aquí <strong>MANEXT</strong> te explica cómo elegir el SCBA correcto para tu brigada industrial."
 ---
 
@@ -12,8 +12,8 @@ heroRight:
 </aside>
 
 <div class="article-intro">
-  <p class="article-lead">Un humo a 600 °C contiene monóxido de carbono, cianuro de hidrógeno, dióxido de carbono y partículas que reducen la visibilidad a centímetros. Sin <strong>ERA SCBA de presión positiva</strong> certificado NFPA 1981, ningún brigadista debe ingresar a esa atmósfera. El ERA es la diferencia entre rescate posible y víctima adicional.</p>
-  <p>Esta guía técnica explica qué exige NFPA 1981, cómo se compone un equipo SCBA, qué marcas son referentes mundiales y por qué <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> es uno de los caminos más seguros para adquirir SCBA en territorio mexicano con respaldo técnico y refacciones disponibles.</p>
+  <p class="article-lead">Un humo a 600 °C contiene monóxido de carbono, cianuro de hidrógeno, dióxido de carbono y partículas que reducen la visibilidad a centímetros. Sin <strong>ERA SCBA de presión positiva</strong> certificado NFPA 1970, ningún brigadista debe ingresar a esa atmósfera. El ERA es la diferencia entre rescate posible y víctima adicional.</p>
+  <p>Esta guía técnica explica qué exige NFPA 1970, cómo se compone un equipo SCBA, qué marcas son referentes mundiales y por qué <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> es uno de los caminos más seguros para adquirir SCBA en territorio mexicano con respaldo técnico y refacciones disponibles.</p>
   <p>Es una guía complementaria al programa de protección que ofrece <a href="/">MANEXT</a> a empresas en CDMX y zona metropolitana. Para nosotros, el SCBA representa el escalón superior después de extintores, brigadas DC-3 y EPP estructural básico.</p>
 </div>
 
@@ -38,7 +38,7 @@ heroRight:
   <p>Un respirador purificador (mascarilla con cartucho) filtra contaminantes específicos de aire que respiras. Un SCBA <strong>te da aire limpio independiente del aire ambiente</strong>. En atmósfera con bajo oxígeno o sin caracterizar, solo el SCBA protege.</p>
 
   <h3>Presión positiva: el detalle que importa</h3>
-  <p>Los SCBA modernos NFPA 1981 son de <strong>presión positiva</strong>: el regulador entrega aire a presión ligeramente superior a la atmosférica. Si la mascarilla tiene fuga, el aire sale hacia afuera, no entra contaminante. Equipos de presión negativa (más antiguos, no NFPA 1981) son inseguros y están descontinuados en operación seria.</p>
+  <p>Los SCBA modernos NFPA 1970 son de <strong>presión positiva</strong>: el regulador entrega aire a presión ligeramente superior a la atmosférica. Si la mascarilla tiene fuga, el aire sale hacia afuera, no entra contaminante. Equipos de presión negativa (más antiguos, no NFPA 1970) son inseguros y están descontinuados en operación seria.</p>
 
   <h3>Cuándo es obligatorio</h3>
   <ul>
@@ -75,7 +75,7 @@ heroRight:
   <p>Visor amplio en policarbonato anti-rayadura. Sello facial en silicona o caucho EPDM. Banda de cinco puntos. Conexión bayoneta o roscada al regulador.</p>
 
   <h3>Alarma PASS (Personal Alert Safety System)</h3>
-  <p>Detector de inmovilidad. Si el usuario no se mueve en 30 segundos suena prealarma; en 60 segundos suena alarma completa de 95+ dB. NFPA 1981 lo exige integrado.</p>
+  <p>Detector de inmovilidad. Si el usuario no se mueve en 30 segundos suena prealarma; en 60 segundos suena alarma completa de 95+ dB. NFPA 1970 lo exige integrado.</p>
 
   <h3>Manómetro y HUD</h3>
   <p>Indicador de presión visible al usuario. Modelos premium incluyen HUD (Heads-Up Display) en la mascarilla con LEDs que muestran nivel de aire restante.</p>
@@ -203,7 +203,7 @@ heroRight:
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Cuánto cuesta un SCBA completo?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Como referencia de mercado un SCBA completo NFPA 1981 con cilindro de 30 min en aluminio-fibra carbono ronda entre 80,000 y 130,000 MXN. Modelos premium con HUD y telemetría completa pueden superar los 180,000 MXN. Cilindros adicionales entre 25,000 y 45,000 MXN. Para precios vigentes consulta directa con Firefighter México.</p>
+      <p>Como referencia de mercado un SCBA completo NFPA 1970 con cilindro de 30 min en aluminio-fibra carbono ronda entre 80,000 y 130,000 MXN. Modelos premium con HUD y telemetría completa pueden superar los 180,000 MXN. Cilindros adicionales entre 25,000 y 45,000 MXN. Para precios vigentes consulta directa con Firefighter México.</p>
     </div>
   </div>
 
@@ -238,6 +238,6 @@ heroRight:
 
 <section class="content-section">
   <h2>Cierre y siguiente paso</h2>
-  <p>Un SCBA correctamente especificado, mantenido y operado por brigadistas capacitados es de las inversiones de mayor impacto en una operación industrial seria. Si tu organización está evaluando equipar una brigada profesional, cotiza con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> y exige documentación NFPA 1981 completa.</p>
+  <p>Un SCBA correctamente especificado, mantenido y operado por brigadistas capacitados es de las inversiones de mayor impacto en una operación industrial seria. Si tu organización está evaluando equipar una brigada profesional, cotiza con <a href="https://firefighter.mx/" target="_blank" rel="noopener noreferrer">Firefighter México</a> y exige documentación NFPA 1970 completa.</p>
   <p>Antes y después de invertir en SCBA, verifica que la base preventiva esté bien: extintores en norma, brigada DC-3, señalización fotoluminiscente, simulacros documentados. Para esa base habla con el equipo de <a href="/contacto">MANEXT</a>. Te puede ayudar leer también <a href="/blog/capacitacion-brigadas-contra-incendio-formacion-cdmx">nuestra guía de capacitación de brigadas en CDMX</a>.</p>
 </section>

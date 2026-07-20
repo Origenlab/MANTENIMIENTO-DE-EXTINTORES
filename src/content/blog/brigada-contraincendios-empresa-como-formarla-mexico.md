@@ -248,7 +248,7 @@ heroRight:
           <td>EPP de brigadistas</td>
           <td>Casco básico, guantes, botas de seguridad, chaleco identificador</td>
           <td>Traje Nomex o similar, casco, guantes térmicos, botas de combate</td>
-          <td>Traje NFPA 1971 completo, ERA, casco certificado, guantes y calzado NFPA</td>
+          <td>Traje NFPA 1970 completo, ERA, casco certificado, guantes y calzado NFPA</td>
         </tr>
         <tr>
           <td>Comunicaciones</td>

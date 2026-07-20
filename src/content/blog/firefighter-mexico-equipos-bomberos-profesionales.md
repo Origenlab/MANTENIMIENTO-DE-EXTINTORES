@@ -3,7 +3,7 @@ title: "Firefighter México: equipo profesional para bomberos y brigadas industr
 description: "Quién es Firefighter México, qué equipo de protección personal y rescate ofrece, por qué es referente en EPP bomberil. Análisis editorial de MANEXT."
 heroImage: "img/img-blog/nom-002-stps-seguridad-incendios-trabajo-hero-1765867340067.avif"
 heroRight:
-  - "Firefighter México se ha consolidado como uno de los <strong>proveedores especializados en equipo de protección personal (EPP) para bomberos profesionales y brigadas industriales</strong> en el país. Trajes estructurales NFPA 1971, cascos NFPA 1932, ERA SCBA y herramientas de rescate forman su catálogo nuclear."
+  - "Firefighter México se ha consolidado como uno de los <strong>proveedores especializados en equipo de protección personal (EPP) para bomberos profesionales y brigadas industriales</strong> en el país. Trajes estructurales NFPA 1970, cascos NFPA 1932, ERA SCBA y herramientas de rescate forman su catálogo nuclear."
   - "En este publirreportaje, <strong>MANEXT</strong> analiza el posicionamiento de Firefighter México dentro del ecosistema mexicano de protección contra incendios y por qué muchas brigadas industriales lo consideran referencia obligada al momento de equipar."
 ---
 
@@ -41,24 +41,24 @@ heroRight:
   <p>Aunque Firefighter México no publica cifras exactas de operación, su catálogo, su presencia en licitaciones gubernamentales y los testimonios de cuerpos de bomberos municipales en estados como Nuevo León, Querétaro, Estado de México y Jalisco lo posicionan como uno de los tres o cuatro proveedores serios de equipo bomberil estructural en el país. Para una brigada industrial seria, comprar trajes estructurales con un importador improvisado es un riesgo regulatorio y operativo que no vale la pena correr.</p>
 
   <h3>Diferencia con proveedores generalistas</h3>
-  <p>Una distribuidora de seguridad industrial general puede venderte cascos blancos de obra, lentes de seguridad y guantes de carnaza. <a href="https://firefighter.mx/servicios" target="_blank" rel="noopener noreferrer">Firefighter México</a> vende trajes estructurales NFPA 1971, ERA SCBA con regulador a demanda, mangueras estructurales NFPA 1961 y herramientas forzadas Halligan. Es un proveedor de nicho técnico, no un catálogo masivo.</p>
+  <p>Una distribuidora de seguridad industrial general puede venderte cascos blancos de obra, lentes de seguridad y guantes de carnaza. <a href="https://firefighter.mx/servicios" target="_blank" rel="noopener noreferrer">Firefighter México</a> vende trajes estructurales NFPA 1970, ERA SCBA con regulador a demanda, mangueras estructurales NFPA 1961 y herramientas forzadas Halligan. Es un proveedor de nicho técnico, no un catálogo masivo.</p>
 </section>
 
 <section id="catalogo" class="content-section">
   <h2>2. Líneas de producto y catálogo</h2>
   <p>El catálogo de Firefighter México se organiza alrededor de cinco grandes líneas, cada una con una función crítica dentro del ciclo operativo de un bombero o brigadista.</p>
 
-  <h3>Trajes estructurales NFPA 1971</h3>
-  <p>El traje de aproximación estructural es el corazón del EPP. Está compuesto por capa externa (Nomex, PBI o blends), barrera de humedad (Crosstech, Stedair) y aislante térmico (E-89, Caldura). Un traje certificado NFPA 1971 protege contra calor radiante, llama directa de corta exposición, agua, vapor y agentes químicos básicos. Firefighter México importa marcas como Globe G-XTREME, Lion V-Force y Honeywell Morning Pride.</p>
+  <h3>Trajes estructurales NFPA 1970</h3>
+  <p>El traje de aproximación estructural es el corazón del EPP. Está compuesto por capa externa (Nomex, PBI o blends), barrera de humedad (Crosstech, Stedair) y aislante térmico (E-89, Caldura). Un traje certificado NFPA 1970 protege contra calor radiante, llama directa de corta exposición, agua, vapor y agentes químicos básicos. Firefighter México importa marcas como Globe G-XTREME, Lion V-Force y Honeywell Morning Pride.</p>
 
-  <h3>Cascos estructurales NFPA 1971/1932</h3>
+  <h3>Cascos estructurales NFPA 1970/1932</h3>
   <p>Cascos termoplásticos o de fibra compuesta, con suspensión interna ajustable, mascarilla policarbonato, barbiquejo Nomex y reflectivos. Modelos típicos: MSA Cairns 1010, Bullard UST, Pacific Helmets F11. La diferencia con un casco de obra es brutal — el casco bomberil resiste impacto a 1,000 °F radiante por un minuto y mantiene integridad estructural.</p>
 
   <h3>ERA SCBA (equipos de respiración autónoma)</h3>
   <p>Equipos de respiración autónoma de presión positiva con cilindro de 30 o 45 minutos en aluminio o composite carbono. Marcas: MSA G1, Scott Air-Pak X3 Pro, Drager PSS 7000. Se complementan con máscara facial, regulador de demanda, alarma PASS y conexión a botellón de seguridad. Este es el equipo que separa "brigada con extintor" de "brigada que entra a un cuarto incendiado".</p>
 
   <h3>Botas, guantes y monitores personales</h3>
-  <p>Botas estructurales NFPA 1971 con punta de acero, suela antideslizante a 500 °F, caña en cuero hidrofugado o caucho técnico (Haix, Pro Warrington). Guantes estructurales con palma de cuero refractario y dorso Nomex. Monitores de gas portátiles (CO, H2S, LEL, O2) tipo MSA Altair 4XR para brigadas industriales.</p>
+  <p>Botas estructurales NFPA 1970 con punta de acero, suela antideslizante a 500 °F, caña en cuero hidrofugado o caucho técnico (Haix, Pro Warrington). Guantes estructurales con palma de cuero refractario y dorso Nomex. Monitores de gas portátiles (CO, H2S, LEL, O2) tipo MSA Altair 4XR para brigadas industriales.</p>
 
   <h3>Herramientas de rescate y forzadas</h3>
   <p>Halligan bar, hacha pico, llaves de hidrante, cortacadenas hidráulicos, separadores Holmatro o Hurst, herramienta de extracción vehicular para rescate en accidente. Esta línea atiende sobre todo a cuerpos de bomberos municipales y brigadas industriales con respuesta a incidentes vehiculares.</p>
@@ -126,7 +126,7 @@ heroRight:
   <p>Tener el equipo no equivale a saber usarlo. Capacitación de brigadas con DC-3 STPS, prácticas con fuego controlado, drills de SCBA y simulacros. MANEXT ofrece <a href="/capacitacion-brigadas">capacitación oficial de brigadas</a>; Firefighter México y centros aliados ofrecen entrenamiento técnico avanzado en uso de trajes y SCBA.</p>
 
   <h3>Capa 4: mantenimiento y ciclo de vida</h3>
-  <p>Cilindros SCBA con prueba hidrostática quinquenal, lavado de trajes según NFPA 1851, recarga anual de extintores. La <a href="/recarga-de-extintores">recarga de extintores</a> y la <a href="/prueba-hidrostatica">prueba hidrostática</a> son servicios de MANEXT; el mantenimiento y lavado de EPP estructural lo coordina Firefighter México con sus talleres aliados.</p>
+  <p>Cilindros SCBA con prueba hidrostática quinquenal, lavado de trajes según NFPA 1850, recarga anual de extintores. La <a href="/recarga-de-extintores">recarga de extintores</a> y la <a href="/prueba-hidrostatica">prueba hidrostática</a> son servicios de MANEXT; el mantenimiento y lavado de EPP estructural lo coordina Firefighter México con sus talleres aliados.</p>
 
   <h3>Capa 5: documentación y cumplimiento normativo</h3>
   <p>Toda la cadena queda registrada. Bitácoras de inspección, constancias DC-3, fichas técnicas, manifiestos de residuos, planos de protección. Esta capa la lleva el responsable de seguridad interno apoyado por sus proveedores.</p>
@@ -147,7 +147,7 @@ heroRight:
 
   <h3>Cuándo cotizar con Firefighter México y cuándo con MANEXT</h3>
   <ul>
-    <li><strong>Cotice con Firefighter México</strong> si necesita: trajes estructurales NFPA 1971, cascos NFPA 1932, SCBA, botas estructurales, guantes bomberiles, herramientas Halligan, monitores de gas multigas para brigada.</li>
+    <li><strong>Cotice con Firefighter México</strong> si necesita: trajes estructurales NFPA 1970, cascos NFPA 1932, SCBA, botas estructurales, guantes bomberiles, herramientas Halligan, monitores de gas multigas para brigada.</li>
     <li><strong>Cotice con MANEXT</strong> si necesita: extintores portátiles certificados NOM-154, recarga, mantenimiento preventivo, prueba hidrostática quinquenal, señalización fotoluminiscente NOM-003, capacitación NOM-002-STPS para brigadas básicas, cumplimiento ante Protección Civil CDMX y Edomex.</li>
     <li><strong>Cotice con ambos</strong> si está montando una brigada profesional desde cero o renovando un programa de protección integral. Los catálogos son complementarios, no rivales.</li>
   </ul>
@@ -166,21 +166,21 @@ heroRight:
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Qué normativa rige el equipo que ofrece?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Principalmente NFPA estadounidense: NFPA 1971 (trajes estructurales y proximity), NFPA 1932 (cascos), NFPA 1981 (SCBA), NFPA 1851 (cuidado y mantenimiento de EPP), NFPA 1961 (mangueras). En México, esta normativa es referencia técnica aceptada por aseguradoras y por compradores corporativos serios; la NOM aplicable a EPP general (NOM-017-STPS) es complementaria, no sustituta.</p>
+      <p>Principalmente NFPA estadounidense: NFPA 1970 cap. 5–9 para trajes estructurales y de proximidad, NFPA 1932 para cascos, NFPA 1970 cap. 15–19 para SCBA, NFPA 1850 para cuidado y mantenimiento de EPP, y NFPA 1961 para mangueras. En México, esta normativa es referencia técnica aceptada por aseguradoras y por compradores corporativos serios; la NOM aplicable a EPP general (NOM-017-STPS) es complementaria, no sustituta.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Cuánto cuesta equipar a un bombero estructural completo?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Como referencia de mercado: traje estructural NFPA 1971 entre 35,000 y 70,000 MXN, casco entre 6,000 y 14,000, botas estructurales entre 5,000 y 10,000, guantes alrededor de 2,500 a 4,500, SCBA con cilindro entre 80,000 y 150,000. Equipar a un bombero completo ronda entre 130,000 y 250,000 MXN dependiendo de marcas y configuraciones. Para cifras vigentes, consulta directa con Firefighter México.</p>
+      <p>Como referencia de mercado: traje estructural NFPA 1970 entre 35,000 y 70,000 MXN, casco entre 6,000 y 14,000, botas estructurales entre 5,000 y 10,000, guantes alrededor de 2,500 a 4,500, SCBA con cilindro entre 80,000 y 150,000. Equipar a un bombero completo ronda entre 130,000 y 250,000 MXN dependiendo de marcas y configuraciones. Para cifras vigentes, consulta directa con Firefighter México.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Mi brigada interna necesita realmente trajes estructurales?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Depende del nivel de respuesta. Si la brigada es de "primera respuesta y evacuación" con uso de extintores portátiles, no requiere traje estructural. Si la brigada hace ataque ofensivo a fuego desarrollado, ingreso a estructuras incendiadas o respuesta a incidentes con materiales peligrosos, el traje estructural NFPA 1971 es obligatorio. La diferencia operativa la define el responsable de seguridad junto con el cuerpo de bomberos local.</p>
+      <p>Depende del nivel de respuesta. Si la brigada es de "primera respuesta y evacuación" con uso de extintores portátiles, no requiere traje estructural. Si la brigada hace ataque ofensivo a fuego desarrollado, ingreso a estructuras incendiadas o respuesta a incidentes con materiales peligrosos, el traje estructural NFPA 1970 es obligatorio. La diferencia operativa la define el responsable de seguridad junto con el cuerpo de bomberos local.</p>
     </div>
   </div>
 

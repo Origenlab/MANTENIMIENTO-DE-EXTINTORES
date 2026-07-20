@@ -1,14 +1,14 @@
 ---
-title: "Traje de Bombero Estructural en México: Guía Técnica NFPA 1971 y Cómo Elegir Sin Errores"
-description: "Todo sobre el traje de bombero estructural en México: materiales, capas funcionales, norma NFPA 1971, parámetros técnicos que no se negocian, vida útil, mantenimiento y los mejores proveedores certificados."
+title: "Traje de Bombero Estructural en México: Guía Técnica NFPA 1970 y Cómo Elegir Sin Errores"
+description: "Todo sobre el traje de bombero estructural en México: materiales, capas funcionales, norma NFPA 1970, parámetros técnicos que no se negocian, vida útil, mantenimiento y los mejores proveedores certificados."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
   - "El traje de bombero estructural es la primera línea de defensa entre el operador y un entorno que puede superar los <strong>1,000 °C en condiciones de flashover</strong>. No es ropa de trabajo — es un sistema de protección de cuatro capas diseñado bajo criterios de ingeniería que ningún ojo entrenado puede evaluar a simple vista. Comprarlo mal no genera una incomodidad: genera un bombero que entra a un incendio con menos protección de la que cree tener."
-  - "Esta guía documenta los parámetros técnicos reales de la <strong>norma NFPA 1971</strong>, los materiales que separan un traje de entrada de uno profesional, el ciclo de vida que la norma exige y los criterios objetivos para elegir al proveedor correcto en México — sin lenguaje de catálogo."
+  - "Esta guía documenta los parámetros técnicos reales de la <strong>norma NFPA 1970</strong>, los materiales que separan un traje de entrada de uno profesional, el ciclo de vida que la norma exige y los criterios objetivos para elegir al proveedor correcto en México — sin lenguaje de catálogo."
 ---
 
 <div class="article-intro">
-  <p class="article-lead">El <strong>traje de bombero estructural</strong> es, después del equipo de respiración autónoma, el componente más crítico del equipamiento personal de un bombero. Es el sistema que determina cuánto tiempo puede permanecer en una zona de combate activo, qué temperatura puede resistir su piel antes de sufrir quemaduras y si puede salir caminando cuando la intervención termina. En México, el mercado ofrece un rango de opciones que van desde trajes de entrada sin certificación internacional hasta equipos de nivel profesional certificados bajo NFPA 1971 — y la diferencia de precio entre ambos extremos es significativamente menor que la diferencia de protección real.</p>
+  <p class="article-lead">El <strong>traje de bombero estructural</strong> es, después del equipo de respiración autónoma, el componente más crítico del equipamiento personal de un bombero. Es el sistema que determina cuánto tiempo puede permanecer en una zona de combate activo, qué temperatura puede resistir su piel antes de sufrir quemaduras y si puede salir caminando cuando la intervención termina. En México, el mercado ofrece un rango de opciones que van desde trajes de entrada sin certificación internacional hasta equipos de nivel profesional certificados bajo NFPA 1970 — y la diferencia de precio entre ambos extremos es significativamente menor que la diferencia de protección real.</p>
   <p>Esta guía técnica cubre los materiales, las capas funcionales, los parámetros de prueba, el ciclo de vida normativo y los criterios de compra que todo responsable de brigada o director de seguridad industrial debe conocer antes de decidir. Porque el traje de bombero no se evalúa en la tienda — se evalúa en el siniestro, y para entonces no hay segunda oportunidad de elegir mejor.</p>
 </div>
 
@@ -17,7 +17,7 @@ heroRight:
   <ul>
     <li><a href="#sistema-cuatro-capas">1. El sistema de cuatro capas: cómo funciona el traje estructural</a></li>
     <li><a href="#materiales">2. Materiales técnicos: aramida, PBI, Carbon X y sus diferencias reales</a></li>
-    <li><a href="#nfpa-1971">3. NFPA 1971: los parámetros que determinan la certificación</a></li>
+    <li><a href="#nfpa-1971">3. NFPA 1970: los parámetros que determinan la certificación</a></li>
     <li><a href="#parametros-criticos">4. Los parámetros técnicos que los vendedores no mencionan</a></li>
     <li><a href="#tipos-traje">5. Tipos de traje: estructural, proximidad, forestal e interfaz</a></li>
     <li><a href="#vida-util">6. Vida útil, mantenimiento e inspección obligatoria</a></li>
@@ -151,14 +151,14 @@ heroRight:
 </section>
 
 <section id="nfpa-1971" class="content-section">
-  <h2>3. NFPA 1971: los parámetros que determinan la certificación del traje de bombero</h2>
-  <p>La <strong>NFPA 1971, Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting</strong>, es el estándar de referencia internacional para trajes de bombero. La edición 2018 (actualmente vigente, con actualizaciones en proceso para 2023) establece los requisitos mínimos de rendimiento que cualquier traje debe superar para ser certificado.</p>
+  <h2>3. NFPA 1970: los parámetros que determinan la certificación del traje de bombero</h2>
+  <p>La <strong>NFPA 1970 (cap. 5–9)</strong>, que absorbió a la antigua <strong>NFPA 1971, Standard on Protective Ensembles for Structural Fire Fighting and Proximity Fire Fighting</strong>, es el estándar de referencia internacional para trajes de bombero. Su edición 2025 —vigente desde el 29 de septiembre de 2024, con transición cerrada en septiembre de 2025— establece los requisitos mínimos de rendimiento que cualquier traje debe superar para ser certificado.</p>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th>Parámetro NFPA 1971</th>
+          <th>Parámetro NFPA 1970</th>
           <th>Valor mínimo requerido</th>
           <th>Nivel profesional recomendado</th>
           <th>Método de prueba</th>
@@ -219,7 +219,7 @@ heroRight:
           <td>Vida útil certificada</td>
           <td>10 años desde fabricación</td>
           <td>10 años con inspección anual documentada</td>
-          <td>NFPA 1971 §6.2</td>
+          <td>NFPA 1970 §6.2</td>
           <td>Límite temporal máximo de uso operativo</td>
         </tr>
       </tbody>
@@ -234,7 +234,7 @@ heroRight:
 
 <section id="parametros-criticos" class="content-section">
   <h2>4. Los parámetros técnicos que los vendedores no mencionan — y que debes exigir</h2>
-  <p>Más allá de los parámetros de certificación NFPA 1971, existen características de construcción y especificación que determinan la calidad real del traje en operación y que rara vez aparecen en las propuestas comerciales del mercado mexicano.</p>
+  <p>Más allá de los parámetros de certificación NFPA 1970, existen características de construcción y especificación que determinan la calidad real del traje en operación y que rara vez aparecen en las propuestas comerciales del mercado mexicano.</p>
 
   <div class="solution-box">
     <h4>Checklist técnico para evaluar cualquier traje de bombero en México</h4>
@@ -242,7 +242,7 @@ heroRight:
       <li><strong>Costuras de refuerzo Triple-stitched:</strong> Las costuras de un traje de bombero son el punto de mayor vulnerabilidad mecánica. Las costuras simples o dobles ceden antes que el tejido. Exige costuras de triple costura con hilo de aramida certificada — no hilo de poliéster que se funde a temperatura de trabajo.</li>
       <li><strong>Cierres retardantes de llama:</strong> Los zippers y velcros estándar son de nylon o poliéster — materiales que funden y ceden al calor. Un traje profesional usa cierres metálicos o de aramida con solapa de protección exterior de material certificado.</li>
       <li><strong>Protección de rodillas y codos:</strong> Los refuerzos en rodillas y codos duplican el grosor en las zonas de mayor contacto con superficies calientes. Su ausencia en un traje no es una omisión estética — es un punto de fallo documentado en análisis post-incidente.</li>
-      <li><strong>Bandas reflectantes certificadas NFPA 1971:</strong> Las bandas reflectantes de un traje de bombero deben cumplir los requisitos de retroreflectividad y resistencia al calor de NFPA 1971 — no son las mismas bandas de seguridad vial. Un traje con bandas no certificadas no cumple NFPA 1971 completo, aunque el tejido sí lo haga.</li>
+      <li><strong>Bandas reflectantes certificadas NFPA 1970:</strong> Las bandas reflectantes de un traje de bombero deben cumplir los requisitos de retroreflectividad y resistencia al calor de NFPA 1970 — no son las mismas bandas de seguridad vial. Un traje con bandas no certificadas no cumple NFPA 1970 completo, aunque el tejido sí lo haga.</li>
       <li><strong>Integración collar-capucha:</strong> La capucha de aramida que cubre cuello y parte del casco debe integrarse al cuello del traje sin dejar brechas de exposición. Esta zona es históricamente la primera en sufrir quemaduras en intervenciones reales.</li>
       <li><strong>Número de certificado NFPA con organismo emisor:</strong> El certificado debe identificar el modelo exacto del traje y el organismo de tercera parte que realizó las pruebas. Ningún certificado emitido por el propio fabricante vale como certificación de terceros.</li>
     </ul>
@@ -268,28 +268,28 @@ heroRight:
         <tr>
           <td><strong>Estructural</strong></td>
           <td>Combate interior en edificios, combate estructural</td>
-          <td>NFPA 1971 / EN 469 Nivel 2</td>
+          <td>NFPA 1970 / EN 469:2020 Nivel 2</td>
           <td>Sistema completo de 4 capas; máxima protección térmica y mecánica</td>
           <td>Incendios forestales; operaciones de proximidad a llama líquida</td>
         </tr>
         <tr>
           <td><strong>Proximidad</strong></td>
           <td>Proximidad a llamas líquidas, aviación, industria petroquímica</td>
-          <td>NFPA 1971 (Proximity) / EN 1486</td>
+          <td>NFPA 1970 (Proximity) / EN 1486</td>
           <td>Capa aluminizada exterior; TPP ≥500 cal/cm² en zona de rad. total</td>
           <td>Combate estructural interior (rigidez limita movilidad)</td>
         </tr>
         <tr>
           <td><strong>Forestal</strong></td>
           <td>Incendios de vegetación; wildland firefighting</td>
-          <td>NFPA 1977 / EN 15614</td>
+          <td>NFPA 1950 / EN ISO 15384:2020+A1:2021</td>
           <td>Ligero; alta transpiración; sin barrera de vapor completa</td>
-          <td>Combate estructural interior (no tiene barrera de vapor NFPA 1971)</td>
+          <td>Combate estructural interior (no tiene barrera de vapor NFPA 1970)</td>
         </tr>
         <tr>
           <td><strong>Interfaz / Wildland-Urban</strong></td>
           <td>Zonas de transición forestal-urbano</td>
-          <td>NFPA 1971 (UI)</td>
+          <td>NFPA 1970 (UI)</td>
           <td>Combina características de estructural y forestal; mayor movilidad que estructural</td>
           <td>Combate estructural interior de alta intensidad</td>
         </tr>
@@ -305,7 +305,7 @@ heroRight:
 
 <section id="vida-util" class="content-section">
   <h2>6. Vida útil, mantenimiento e inspección obligatoria del traje de bombero</h2>
-  <p>La NFPA 1971 establece una vida útil máxima del traje de <strong>10 años desde la fecha de fabricación</strong>, independientemente de su estado visual o frecuencia de uso. Este límite existe porque los materiales de aramida y los componentes de barrera de vapor se degradan con el tiempo por exposición a luz UV, lavados, calor acumulado y contaminantes de siniestro — degradación que no siempre es visible y que reduce las prestaciones de protección del traje antes de que el operador lo note.</p>
+  <p>La NFPA 1970 establece una vida útil máxima del traje de <strong>10 años desde la fecha de fabricación</strong>, independientemente de su estado visual o frecuencia de uso. Este límite existe porque los materiales de aramida y los componentes de barrera de vapor se degradan con el tiempo por exposición a luz UV, lavados, calor acumulado y contaminantes de siniestro — degradación que no siempre es visible y que reduce las prestaciones de protección del traje antes de que el operador lo note.</p>
 
   <div class="table-responsive">
     <table>
@@ -363,17 +363,17 @@ heroRight:
 
   <div class="tips-box">
     <h4>Error 1 — Comprar por precio sin verificar certificación de terceros</h4>
-    <p>El traje de bombero tiene un piso de precio determinado por el costo real de los materiales certificados. Un traje que cotiza un 40% por debajo del mercado no usa PBI ni Gore-Tex Fireblocker — usa materiales similares en apariencia pero con prestaciones significativamente inferiores. Exige siempre el número de certificado NFPA 1971 emitido por un organismo acreditado, no la declaración del proveedor.</p>
+    <p>El traje de bombero tiene un piso de precio determinado por el costo real de los materiales certificados. Un traje que cotiza un 40% por debajo del mercado no usa PBI ni Gore-Tex Fireblocker — usa materiales similares en apariencia pero con prestaciones significativamente inferiores. Exige siempre el número de certificado NFPA 1970 emitido por un organismo acreditado, no la declaración del proveedor.</p>
   </div>
 
   <div class="tips-box">
     <h4>Error 2 — Confundir traje forestal con traje estructural</h4>
-    <p>Los trajes Nomex de una capa o dos capas ligeras que se ofrecen como "traje para bomberos" en el mercado mexicano son trajes forestales o de brigada básica — no trajes estructurales NFPA 1971. Son útiles para brigadas de primer auxilio en riesgo ordinario, pero insuficientes para cualquier intervención en incendio estructural real.</p>
+    <p>Los trajes Nomex de una capa o dos capas ligeras que se ofrecen como "traje para bomberos" en el mercado mexicano son trajes forestales o de brigada básica — no trajes estructurales NFPA 1970. Son útiles para brigadas de primer auxilio en riesgo ordinario, pero insuficientes para cualquier intervención en incendio estructural real.</p>
   </div>
 
   <div class="tips-box">
     <h4>Error 3 — No incluir capucha de aramida en el sistema</h4>
-    <p>El traje estructural sin capucha de aramida certificada deja expuesta la zona de cuello y cara inferior — históricamente la zona con mayor frecuencia de quemaduras en incidentes reales. La capucha no es accesorio opcional del sistema NFPA 1971: es parte del conjunto certificado y debe adquirirse del mismo fabricante del traje para garantizar compatibilidad de materiales y cobertura sin brechas.</p>
+    <p>El traje estructural sin capucha de aramida certificada deja expuesta la zona de cuello y cara inferior — históricamente la zona con mayor frecuencia de quemaduras en incidentes reales. La capucha no es accesorio opcional del sistema NFPA 1970: es parte del conjunto certificado y debe adquirirse del mismo fabricante del traje para garantizar compatibilidad de materiales y cobertura sin brechas.</p>
   </div>
 
   <div class="tips-box">
@@ -389,15 +389,15 @@ heroRight:
 
 <section id="proveedores" class="content-section">
   <h2>8. Proveedores de trajes de bombero estructural en México</h2>
-  <p>El mercado mexicano de trajes de bombero estructural certificados NFPA 1971 está concentrado en un número reducido de distribuidores con acceso real a las marcas de referencia internacional. La mayoría del volumen de ventas lo capturan proveedores generalistas de EPP que incluyen trajes de bombero en su catálogo sin especialización técnica en el segmento — con los riesgos que eso implica para el comprador.</p>
+  <p>El mercado mexicano de trajes de bombero estructural certificados NFPA 1970 está concentrado en un número reducido de distribuidores con acceso real a las marcas de referencia internacional. La mayoría del volumen de ventas lo capturan proveedores generalistas de EPP que incluyen trajes de bombero en su catálogo sin especialización técnica en el segmento — con los riesgos que eso implica para el comprador.</p>
 
   <h3>Firefighter.mx — Distribución especializada de EPP para bomberos con soporte técnico certificado</h3>
-  <p><strong>Firefighter.mx</strong> ha construido su posicionamiento en el mercado de trajes estructurales sobre un diferencial técnico concreto: sus asesores conocen en profundidad los materiales, los parámetros de certificación y las diferencias de rendimiento entre ediciones de NFPA 1971 — y pueden orientar la decisión de compra con datos objetivos, no con argumentos comerciales.</p>
+  <p><strong>Firefighter.mx</strong> ha construido su posicionamiento en el mercado de trajes estructurales sobre un diferencial técnico concreto: sus asesores conocen en profundidad los materiales, los parámetros de certificación y las diferencias de rendimiento entre ediciones de NFPA 1970 — y pueden orientar la decisión de compra con datos objetivos, no con argumentos comerciales.</p>
   <p>Su portafolio de trajes cubre el rango completo de necesidades: desde trajes de brigada interna corporativa hasta equipos de nivel profesional para cuerpos de bomberos con certificación completa en PBI y materiales de última generación. Lo que los diferencia de distribuidores generalistas es que pueden justificar técnicamente cada recomendación con hojas de especificación del fabricante, certificados de norma originales y comparativas de rendimiento por parámetro — el tipo de información que un responsable de seguridad necesita para tomar una decisión documentada.</p>
 
   <h3>Firefighter.com.mx — Proceso de adquisición corporativo con documentación normativa completa</h3>
   <p><strong>Firefighter.com.mx</strong> atiende específicamente a organizaciones con procesos de adquisición formales donde la decisión de compra de trajes debe estar justificada ante comités internos, auditores externos o autoridades regulatorias. Facilitan la evaluación comparativa técnica de modelos antes de la compra, con acceso a muestras de tejido, fichas técnicas completas y certificados de conformidad originales para cada componente del traje.</p>
-  <p>Cada traje que suministran se entrega con su certificado de conformidad NFPA 1971, fecha de fabricación documentada, protocolo de mantenimiento y garantía escrita — la documentación que hace la diferencia cuando Protección Civil o STPS audita el inventario de EPP de la brigada.</p>
+  <p>Cada traje que suministran se entrega con su certificado de conformidad NFPA 1970, fecha de fabricación documentada, protocolo de mantenimiento y garantía escrita — la documentación que hace la diferencia cuando Protección Civil o STPS audita el inventario de EPP de la brigada.</p>
 
   <h3>El complemento del sistema: extintores certificados para la brigada</h3>
   <p>El traje protege al bombero que porta el extintor. Los extintores portátiles de la brigada deben ser tan confiables como el EPP que los acompaña. Desde <a href="/">MANEXT</a>, con más de 80 años de experiencia en CDMX y Zona Metropolitana, suministramos y mantenemos <strong>extintores certificados bajo NOM-154-SCFI-2005</strong> para brigadas industriales y corporativas, con toda la documentación normativa que exige Protección Civil — para que el equipo de extinción de tu brigada esté tan en regla como el traje que lo porta.</p>
@@ -408,11 +408,11 @@ heroRight:
 
   <div class="faq-item">
     <button class="faq-question" aria-expanded="false">
-      <span class="faq-question-text">¿Cuánto cuesta un traje de bombero estructural certificado NFPA 1971 en México?</span>
+      <span class="faq-question-text">¿Cuánto cuesta un traje de bombero estructural certificado NFPA 1970 en México?</span>
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>El rango de precio en México para un traje estructural con certificación NFPA 1971 real va de <strong>$18,000 a $65,000 MXN</strong> por traje completo (chaqueta + pantalón), dependiendo del material de la capa exterior, el fabricante y las características adicionales. Los trajes de entrada con Nomex IIIA y certificación básica están en el rango bajo; los trajes profesionales con PBI Gold o Veridian y sistema de capas de alto rendimiento están en el rango alto. Los trajes que se ofrecen por debajo de $15,000 MXN como "certificados NFPA 1971" deben recibir escrutinio adicional sobre el organismo certificador y la fecha de la certificación — es el rango donde más frecuentemente se encuentran certificaciones vencidas o de modelos discontinuados.</p>
+      <p>El rango de precio en México para un traje estructural con certificación NFPA 1970 real va de <strong>$18,000 a $65,000 MXN</strong> por traje completo (chaqueta + pantalón), dependiendo del material de la capa exterior, el fabricante y las características adicionales. Los trajes de entrada con Nomex IIIA y certificación básica están en el rango bajo; los trajes profesionales con PBI Gold o Veridian y sistema de capas de alto rendimiento están en el rango alto. Los trajes que se ofrecen por debajo de $15,000 MXN como "certificados NFPA 1970" deben recibir escrutinio adicional sobre el organismo certificador y la fecha de la certificación — es el rango donde más frecuentemente se encuentran certificaciones vencidas o de modelos discontinuados.</p>
     </div>
   </div>
 
@@ -432,7 +432,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>No — y este es un malentendido peligroso frecuente. El traje estructural NFPA 1971 no proporciona aislamiento eléctrico. El hecho de que el tejido sea retardante de llama no lo hace dieléctrico. Para trabajos en zonas con riesgo eléctrico, se requiere EPP de protección eléctrica específico (guantes dieléctricos, ropa de protección de arco eléctrico bajo norma NFPA 70E). En incendios donde existe riesgo eléctrico activo, el protocolo es solicitar a la compañía eléctrica el corte de suministro antes de que la brigada ingrese — no entrar confiando en que el traje estructural proporciona protección eléctrica.</p>
+      <p>No — y este es un malentendido peligroso frecuente. El traje estructural NFPA 1970 no proporciona aislamiento eléctrico. El hecho de que el tejido sea retardante de llama no lo hace dieléctrico. Para trabajos en zonas con riesgo eléctrico, se requiere EPP de protección eléctrica específico (guantes dieléctricos, ropa de protección de arco eléctrico bajo norma NFPA 70E). En incendios donde existe riesgo eléctrico activo, el protocolo es solicitar a la compañía eléctrica el corte de suministro antes de que la brigada ingrese — no entrar confiando en que el traje estructural proporciona protección eléctrica.</p>
     </div>
   </div>
 
@@ -452,7 +452,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>México no tiene una NOM específica equivalente a NFPA 1971 para trajes de bombero estructural. La <strong>NOM-002-STPS-2010</strong> establece que el EPP de brigadas debe ser "adecuado al riesgo" sin especificar los parámetros técnicos concretos. En la práctica, los ingenieros de Protección Civil y los peritos en accidentes laborales utilizan NFPA 1971 como referencia técnica de facto. Para brigadas en sectores de alto riesgo (petroquímica, manufactura de plásticos, industria química), algunos protocolos internos exigen expresamente certificación NFPA 1971 como condición contractual con clientes o aseguradoras. La recomendación práctica: especificar NFPA 1971 en la compra de trajes para brigadas cualquiera que sea el sector — es la única forma de garantizar un nivel de protección cuantificable y defendible ante cualquier investigación de accidente.</p>
+      <p>México no tiene una NOM específica equivalente a NFPA 1970 para trajes de bombero estructural. La <strong>NOM-002-STPS-2010</strong> establece que el EPP de brigadas debe ser "adecuado al riesgo" sin especificar los parámetros técnicos concretos. En la práctica, los ingenieros de Protección Civil y los peritos en accidentes laborales utilizan NFPA 1970 como referencia técnica de facto. Para brigadas en sectores de alto riesgo (petroquímica, manufactura de plásticos, industria química), algunos protocolos internos exigen expresamente certificación NFPA 1970 como condición contractual con clientes o aseguradoras. La recomendación práctica: especificar NFPA 1970 en la compra de trajes para brigadas cualquiera que sea el sector — es la única forma de garantizar un nivel de protección cuantificable y defendible ante cualquier investigación de accidente.</p>
     </div>
   </div>
 </section>

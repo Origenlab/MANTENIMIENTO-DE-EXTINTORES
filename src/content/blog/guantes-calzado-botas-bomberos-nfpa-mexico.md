@@ -1,10 +1,10 @@
 ---
 title: "Guantes y Calzado para Bomberos en México: Especificaciones NFPA y Guía de Compra"
-description: "Guía técnica de guantes y calzado para bomberos en México: norma NFPA 1971, materiales, niveles de protección térmica y mecánica, destreza operativa y criterios para elegir el equipo correcto según el tipo de intervención."
+description: "Guía técnica de guantes y calzado para bomberos en México: norma NFPA 1970, materiales, niveles de protección térmica y mecánica, destreza operativa y criterios para elegir el equipo correcto según el tipo de intervención."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
   - "Los guantes y el calzado son el EPP que más frecuentemente se selecciona mal en brigadas mexicanas — por precio, por apariencia o por confundirlos con guantes industriales y botas de seguridad convencionales. Un guante de bombero que reduce la destreza manual al 40% hace que el brigadista no pueda operar la válvula del extintor bajo presión. Unas botas sin aislamiento térmico en planta transfieren calor de superficies a más de 300 °C directamente al pie del operador."
-  - "Esta guía documenta los <strong>parámetros reales de la norma NFPA 1971</strong> para guantes y calzado de bombero, los materiales que realmente protegen en condiciones de siniestro y los criterios técnicos para no cometer el error más frecuente del mercado mexicano: comprar EPP de apariencia sin certificación real."
+  - "Esta guía documenta los <strong>parámetros reales de la norma NFPA 1970</strong> para guantes y calzado de bombero, los materiales que realmente protegen en condiciones de siniestro y los criterios técnicos para no cometer el error más frecuente del mercado mexicano: comprar EPP de apariencia sin certificación real."
 ---
 
 <div class="article-intro">
@@ -15,12 +15,12 @@ heroRight:
   <p class="toc-title">Contenido del artículo</p>
   <ul>
     <li><a href="#guantes-funciones">1. Guantes para bomberos: las cinco amenazas que deben cubrir</a></li>
-    <li><a href="#nfpa-guantes">2. NFPA 1971 para guantes: parámetros técnicos de certificación</a></li>
+    <li><a href="#nfpa-guantes">2. NFPA 1970 para guantes: parámetros técnicos de certificación</a></li>
     <li><a href="#materiales-guantes">3. Materiales de guantes: cuero, aramida, silicona y composites</a></li>
     <li><a href="#destreza">4. Destreza operativa: el parámetro que los vendedores omiten</a></li>
     <li><a href="#tipos-guante">5. Tipos de guante por uso: estructural, rescate, HAZMAT y proximidad</a></li>
     <li><a href="#calzado-funciones">6. Calzado para bomberos: lo que debe proteger que las botas industriales no hacen</a></li>
-    <li><a href="#nfpa-calzado">7. NFPA 1971 para calzado: especificaciones que determinan la protección real</a></li>
+    <li><a href="#nfpa-calzado">7. NFPA 1970 para calzado: especificaciones que determinan la protección real</a></li>
     <li><a href="#seleccion-calzado">8. Criterios de selección del calzado de bombero correcto</a></li>
     <li><a href="#vida-util-epp">9. Vida útil y mantenimiento de guantes y calzado</a></li>
     <li><a href="#proveedores-epp">10. Proveedores de guantes y calzado para bomberos en México</a></li>
@@ -84,14 +84,14 @@ heroRight:
 </section>
 
 <section id="nfpa-guantes" class="content-section">
-  <h2>2. NFPA 1971 para guantes: los parámetros de certificación que importan</h2>
-  <p>La sección de guantes de la NFPA 1971 establece requisitos mínimos de rendimiento en seis dimensiones de protección. Un guante que certifica NFPA 1971 ha superado todas estas pruebas ante un organismo de certificación de tercera parte — no solo las que el fabricante seleccionó para su catálogo.</p>
+  <h2>2. NFPA 1970 para guantes: los parámetros de certificación que importan</h2>
+  <p>La sección de guantes de la NFPA 1970 establece requisitos mínimos de rendimiento en seis dimensiones de protección. Un guante que certifica NFPA 1970 ha superado todas estas pruebas ante un organismo de certificación de tercera parte — no solo las que el fabricante seleccionó para su catálogo.</p>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th>Parámetro NFPA 1971</th>
+          <th>Parámetro NFPA 1970</th>
           <th>Valor mínimo requerido</th>
           <th>Método de prueba</th>
           <th>Qué evalúa</th>
@@ -113,7 +113,7 @@ heroRight:
         <tr>
           <td>Destreza mínima (pick-up test)</td>
           <td>Capacidad de recoger 14 de 20 objetos de prueba estandarizados</td>
-          <td>NFPA 1971 §6.14</td>
+          <td>NFPA 1970 §6.14</td>
           <td>Capacidad operativa del bombero con guantes puestos</td>
         </tr>
         <tr>
@@ -187,7 +187,7 @@ heroRight:
           <td>Excelente — diseño multicapa con barrera de vapor integrada</td>
           <td>Excelente — aramida + refuerzo anticorte + exterior técnico</td>
           <td>Media — el grosor de capas reduce sensibilidad táctil</td>
-          <td>Guantes estructurales de nivel profesional certificado NFPA 1971</td>
+          <td>Guantes estructurales de nivel profesional certificado NFPA 1970</td>
         </tr>
       </tbody>
     </table>
@@ -233,19 +233,19 @@ heroRight:
         <tr>
           <td><strong>Estructural</strong></td>
           <td>Combate de incendios estructurales; manejo de mangueras; apertura de accesos</td>
-          <td>NFPA 1971 (structural)</td>
+          <td>NFPA 1970 (structural)</td>
           <td>Operaciones HAZMAT que requieren guante químico específico</td>
         </tr>
         <tr>
           <td><strong>Rescate / Excarcelación</strong></td>
           <td>Manejo de herramientas de corte; rescate vehicular; espacios confinados</td>
-          <td>NFPA 1971 / EN 659</td>
+          <td>NFPA 1970 / EN 659:2003+A1:2008</td>
           <td>Combate directo de incendio estructural de alta intensidad</td>
         </tr>
         <tr>
           <td><strong>Proximidad</strong></td>
           <td>Operaciones cerca de llamas de combustibles líquidos; hangar de aviación</td>
-          <td>NFPA 1971 (proximity) / EN 407</td>
+          <td>NFPA 1970 (proximity) / EN 407</td>
           <td>Combate estructural (rigidez aluminizada limita destreza)</td>
         </tr>
         <tr>
@@ -257,7 +257,7 @@ heroRight:
         <tr>
           <td><strong>Wildland / Forestal</strong></td>
           <td>Incendios de vegetación; manejo de motosierra y herramienta de rastrilleo</td>
-          <td>NFPA 1977</td>
+          <td>NFPA 1950</td>
           <td>Combate estructural (sin barrera de vapor ni protección de nivel estructural)</td>
         </tr>
       </tbody>
@@ -275,7 +275,7 @@ heroRight:
         <tr>
           <th>Función de protección</th>
           <th>Bota de seguridad industrial (EN ISO 20345)</th>
-          <th>Bota de bombero (NFPA 1971)</th>
+          <th>Bota de bombero (NFPA 1970)</th>
           <th>Diferencia crítica</th>
         </tr>
       </thead>
@@ -322,14 +322,14 @@ heroRight:
 </section>
 
 <section id="nfpa-calzado" class="content-section">
-  <h2>7. NFPA 1971 para calzado: especificaciones que determinan la protección real</h2>
+  <h2>7. NFPA 1970 para calzado: especificaciones que determinan la protección real</h2>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
           <th>Parámetro</th>
-          <th>Requisito mínimo NFPA 1971</th>
+          <th>Requisito mínimo NFPA 1970</th>
           <th>Nivel profesional recomendado</th>
           <th>Método de prueba</th>
         </tr>
@@ -339,19 +339,19 @@ heroRight:
           <td>Resistencia térmica de la suela (HRO)</td>
           <td>300 °C durante 1 min sin filtración de calor &gt;42 °C</td>
           <td>350 °C / 2 min sin filtración</td>
-          <td>ISO 13287 / EN 15090</td>
+          <td>ISO 13287 / EN 15090:2012</td>
         </tr>
         <tr>
           <td>Impermeabilidad</td>
           <td>Sin penetración de agua a 50 mm de columna durante 30 min</td>
           <td>Gore-Tex Fireblocker full-boot — impermeabilidad total</td>
-          <td>ASTM F1671 / EN 15090</td>
+          <td>ASTM F1671 / EN 15090:2012</td>
         </tr>
         <tr>
           <td>Resistencia al calor del upper</td>
           <td>Sin deformación o ignición a 260 °C durante 5 min</td>
           <td>260 °C / 5 min con margen de seguridad documentado</td>
-          <td>NFPA 1971 §6.27</td>
+          <td>NFPA 1970 §6.27</td>
         </tr>
         <tr>
           <td>Resistencia al corte del upper</td>
@@ -410,7 +410,7 @@ heroRight:
       <tbody>
         <tr>
           <td>Guantes estructurales</td>
-          <td>3–5 años de uso activo (sin límite fijo en NFPA 1971, retiro por condición)</td>
+          <td>3–5 años de uso activo; retiro obligatorio a los 10 años desde la fecha de fabricación (NFPA 1850) o antes por condición</td>
           <td>Costuras separadas, cuero seco y agrietado, deformación de la palma, impermeabilidad perdida</td>
           <td>Limpieza post-uso con agua fría; acondicionador de cuero para bomberos; inspección semestral</td>
         </tr>
@@ -438,10 +438,10 @@ heroRight:
 
 <section id="proveedores-epp" class="content-section">
   <h2>10. Proveedores de guantes y calzado para bomberos en México</h2>
-  <p>El mercado mexicano de guantes y calzado de bombero certificados NFPA 1971 depende casi en su totalidad de importación de fabricantes de EEUU y Europa. Los distribuidores con acceso real a las marcas de referencia y con respaldo técnico para asesorar la selección son escasos.</p>
+  <p>El mercado mexicano de guantes y calzado de bombero certificados NFPA 1970 depende casi en su totalidad de importación de fabricantes de EEUU y Europa. Los distribuidores con acceso real a las marcas de referencia y con respaldo técnico para asesorar la selección son escasos.</p>
 
   <h3>Firefighter.mx — EPP de bombero certificado con asesoría técnica en México</h3>
-  <p><strong>Firefighter.mx</strong> distribuye guantes y calzado de bombero de las marcas de referencia internacional disponibles en México — Globe, Lion, Morning Pride, Haix, Rosenbauer — con la capacidad de asesorar la selección según el perfil de operación de la brigada, el nivel de riesgo de la instalación y el sistema de EPP existente. Entregan cada componente con su certificado de conformidad NFPA 1971, ficha técnica completa y protocolo de mantenimiento — la documentación que hace al inventario de EPP auditable.</p>
+  <p><strong>Firefighter.mx</strong> distribuye guantes y calzado de bombero de las marcas de referencia internacional disponibles en México — Globe, Lion, Morning Pride, Haix, Rosenbauer — con la capacidad de asesorar la selección según el perfil de operación de la brigada, el nivel de riesgo de la instalación y el sistema de EPP existente. Entregan cada componente con su certificado de conformidad NFPA 1970, ficha técnica completa y protocolo de mantenimiento — la documentación que hace al inventario de EPP auditable.</p>
 
   <h3>Firefighter.com.mx — Adquisición corporativa de EPP con proceso documentado</h3>
   <p><strong>Firefighter.com.mx</strong> facilita la adquisición de guantes y calzado en organizaciones con procesos formales de compra — donde la selección debe estar justificada ante comités de seguridad o departamentos de compras con comparativas técnicas objetivas y certificados originales de los organismos certificadores.</p>

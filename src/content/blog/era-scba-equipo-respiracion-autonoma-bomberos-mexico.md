@@ -1,6 +1,6 @@
 ---
 title: "ERA y SCBA para Bomberos en México: Guía Técnica Definitiva de Selección, Compra y Mantenimiento"
-description: "Todo lo que debes saber sobre ERA y SCBA para bomberos en México: norma NFPA 1981, autonomía real vs. nominal, tipos de cilindro, sistemas PASS, mantenimiento obligatorio y cómo identificar al proveedor correcto."
+description: "Todo lo que debes saber sobre ERA y SCBA para bomberos en México: norma NFPA 1970, autonomía real vs. nominal, tipos de cilindro, sistemas PASS, mantenimiento obligatorio y cómo identificar al proveedor correcto."
 heroImage: "img/img-index/prevencion-de-incendios.avif"
 heroRight:
   - "Un bombero sin ERA funcional en un incendio estructural tiene entre <strong>2 y 5 minutos antes de perder la conciencia</strong>. No hay margen para descubrir en campo que el equipo tiene el cilindro vencido, el regulador sin mantenimiento anual o el PASS desactivado. El ERA no es el componente más caro del inventario de una brigada — es el más crítico, y es donde más errores de compra y mantenimiento se cometen en México."
@@ -16,7 +16,7 @@ heroRight:
   <p class="toc-title">Contenido del artículo</p>
   <ul>
     <li><a href="#como-funciona">1. Cómo funciona un ERA: principios técnicos fundamentales</a></li>
-    <li><a href="#nfpa-1981">2. NFPA 1981: la norma que define el nivel profesional</a></li>
+    <li><a href="#nfpa-1981">2. NFPA 1970: la norma que define el nivel profesional</a></li>
     <li><a href="#cilindros">3. Tipos de cilindro: acero, aluminio y fibra de carbono</a></li>
     <li><a href="#mascaras-reguladores">4. Máscaras y reguladores: el sistema que salva vidas</a></li>
     <li><a href="#autonomia-real">5. Autonomía real vs. autonomía nominal: el dato crítico</a></li>
@@ -39,7 +39,7 @@ heroRight:
 
   <h3>Presión positiva: el principio que hace seguro al ERA</h3>
   <p>El concepto más importante en la seguridad del ERA es la <strong>presión positiva</strong>. A diferencia de equipos más antiguos que entregaban aire solo cuando el usuario inhalaba (demanda simple), los ERA profesionales modernos mantienen una presión ligeramente superior a la atmosférica dentro de la máscara en todo momento. Esto significa que cualquier fuga de sello en la máscara deja salir aire del interior hacia el exterior — no contamina hacia el interior. El sistema falla en la dirección segura.</p>
-  <p>La NFPA 1981 exige que todos los ERA certificados operen en modo de presión positiva. Un ERA que no cumple esto no cumple la norma, independientemente de cualquier otro parámetro que declare.</p>
+  <p>La NFPA 1970 exige que todos los ERA certificados operen en modo de presión positiva. Un ERA que no cumple esto no cumple la norma, independientemente de cualquier otro parámetro que declare.</p>
 
   <div class="table-responsive">
     <table>
@@ -47,7 +47,7 @@ heroRight:
         <tr>
           <th>Parámetro del sistema</th>
           <th>Demanda simple (obsoleto)</th>
-          <th>Presión positiva (NFPA 1981)</th>
+          <th>Presión positiva (NFPA 1970)</th>
           <th>Impacto operativo</th>
         </tr>
       </thead>
@@ -77,7 +77,7 @@ heroRight:
           <td>Protección real en condiciones de siniestro</td>
         </tr>
         <tr>
-          <td>Cumplimiento NFPA 1981</td>
+          <td>Cumplimiento NFPA 1970</td>
           <td>❌ No cumple</td>
           <td>✅ Requerido</td>
           <td>Determinante para uso profesional</td>
@@ -88,11 +88,11 @@ heroRight:
 </section>
 
 <section id="nfpa-1981" class="content-section">
-  <h2>2. NFPA 1981: la norma que define el nivel profesional</h2>
-  <p>La <strong>NFPA 1981, Standard on Open-Circuit Self-Contained Breathing Apparatus (SCBA) for Emergency Services</strong>, es el estándar internacional de referencia para ERA de bomberos. La edición vigente — NFPA 1981:2019 — establece requisitos de rendimiento, pruebas de certificación y criterios de mantenimiento que ningún ERA profesional puede ignorar.</p>
+  <h2>2. NFPA 1970: la norma que define el nivel profesional</h2>
+  <p>La <strong>NFPA 1970 (cap. 15–19)</strong>, que desde la edición 2025 absorbió a la antigua <strong>NFPA 1981, Standard on Open-Circuit Self-Contained Breathing Apparatus (SCBA) for Emergency Services</strong>, es el estándar internacional de referencia para ERA de bomberos. Establece requisitos de rendimiento, pruebas de certificación y criterios de mantenimiento que ningún ERA profesional puede ignorar.</p>
 
   <div class="solution-box">
-    <h4>Requisitos críticos de NFPA 1981:2019 que todo comprador debe verificar</h4>
+    <h4>Requisitos críticos del capítulo de SCBA (antes NFPA 1981:2019) que todo comprador debe verificar</h4>
     <ul>
       <li><strong>Operación en modo de presión positiva:</strong> presión mínima de +0.5 in. H₂O (+0.124 kPa) dentro de la máscara en todo momento del ciclo respiratorio</li>
       <li><strong>Capacidad mínima de suministro:</strong> 40 lpm sostenidos a cualquier nivel de presión del cilindro, hasta presión de reserva</li>
@@ -105,11 +105,11 @@ heroRight:
   </div>
 
   <h3>Marco normativo complementario en México</h3>
-  <p>En México, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos de seguridad para brigadas contraincendios en centros de trabajo. Estas normas no especifican parámetros técnicos del ERA con el detalle de la NFPA 1981, sino que establecen que el equipamiento de protección respiratoria debe ser "adecuado al riesgo" y debe mantenerse en condiciones operativas. En la práctica, los ingenieros de Protección Civil y STPS utilizan las normas NFPA como referencia técnica en auditorías e investigaciones de accidentes.</p>
+  <p>En México, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos de seguridad para brigadas contraincendios en centros de trabajo. Estas normas no especifican parámetros técnicos del ERA con el detalle de la NFPA 1970, sino que establecen que el equipamiento de protección respiratoria debe ser "adecuado al riesgo" y debe mantenerse en condiciones operativas. En la práctica, los ingenieros de Protección Civil y STPS utilizan las normas NFPA como referencia técnica en auditorías e investigaciones de accidentes.</p>
 
   <div class="highlight-box">
-    <h4>Lo que significa "certificado NFPA 1981" en la práctica</h4>
-    <p>Un ERA "certificado NFPA 1981" debe haber superado las pruebas definidas en la norma ante un organismo de certificación de tercera parte acreditado — en México generalmente ICONTEC, Bureau Veritas o laboratorios NRTL reconocidos por OSHA. No basta que el fabricante declare cumplimiento: el certificado debe estar emitido por el organismo certificador e identificar específicamente el modelo y número de serie. Exige a cualquier proveedor el número de certificado y el organismo emisor antes de firmar cualquier contrato.</p>
+    <h4>Lo que significa "certificado NFPA 1970" en la práctica</h4>
+    <p>Un ERA "certificado NFPA 1970" debe haber superado las pruebas definidas en la norma ante un organismo de certificación de tercera parte acreditado — en México generalmente ICONTEC, Bureau Veritas o laboratorios NRTL reconocidos por OSHA. No basta que el fabricante declare cumplimiento: el certificado debe estar emitido por el organismo certificador e identificar específicamente el modelo y número de serie. Exige a cualquier proveedor el número de certificado y el organismo emisor antes de firmar cualquier contrato.</p>
   </div>
 </section>
 
@@ -203,25 +203,25 @@ heroRight:
           <td>Material del cuerpo facial</td>
           <td>Silicona estándar</td>
           <td>Silicona médica o EPDM termoplástico</td>
-          <td>NFPA 1981 §7.1</td>
+          <td>NFPA 1970 §7.1</td>
         </tr>
         <tr>
           <td>Material del visor</td>
           <td>Policarbonato simple</td>
           <td>Policarbonato recubierto anti-reflejo + resistente a rayado</td>
-          <td>NFPA 1981 §7.7</td>
+          <td>NFPA 1970 §7.7</td>
         </tr>
         <tr>
           <td>Campo visual</td>
           <td>&gt;70% del campo normal</td>
           <td>&gt;85% (visor panorámico o wide-view)</td>
-          <td>NFPA 1981 §6.22</td>
+          <td>NFPA 1970 §6.22</td>
         </tr>
         <tr>
           <td>Resistencia térmica del visor</td>
           <td>200 °C / 30 s</td>
           <td>270 °C / 30 s</td>
-          <td>NFPA 1981 §6.20</td>
+          <td>NFPA 1970 §6.20</td>
         </tr>
         <tr>
           <td>Fuerza de sello en prueba de ajuste</td>
@@ -233,7 +233,7 @@ heroRight:
           <td>Compatibilidad de comunicación</td>
           <td>Ninguna o amplificador básico</td>
           <td>Puerto integrado para radio + amplificador de voz</td>
-          <td>NFPA 1981 §6.33</td>
+          <td>NFPA 1970 §6.33</td>
         </tr>
       </tbody>
     </table>
@@ -260,7 +260,7 @@ heroRight:
         <tr>
           <td>Modo de presión positiva</td>
           <td>Protección mantenida ante fuga de sello</td>
-          <td>Certificado NFPA 1981 del fabricante</td>
+          <td>Certificado NFPA 1970 del fabricante</td>
         </tr>
         <tr>
           <td>Flujo máximo soportado</td>
@@ -364,7 +364,7 @@ heroRight:
   <p>El <strong>dispositivo PASS (Personal Alert Safety System)</strong> es el componente del ERA que más directamente salva la vida del bombero cuando la intervención sale mal. Es el sistema que detecta que el operador ha dejado de moverse y activa una alarma de localización para que sus compañeros puedan encontrarlo.</p>
 
   <h3>Cómo funciona el PASS integrado</h3>
-  <p>Los ERA modernos integran el PASS en el regulador o en el panel de instrumentos del equipo, eliminando la necesidad de un dispositivo separado. El ciclo de operación estándar conforme a NFPA 1981 es:</p>
+  <p>Los ERA modernos integran el PASS en el regulador o en el panel de instrumentos del equipo, eliminando la necesidad de un dispositivo separado. El ciclo de operación estándar conforme a NFPA 1970 es:</p>
 
   <div class="table-responsive">
     <table>
@@ -521,28 +521,28 @@ heroRight:
           <td>Después de cada uso</td>
           <td>El propio operador (entrenado)</td>
           <td>Limpieza exterior, verificación visual de sello, revisión de PASS, nivel de presión de cilindro</td>
-          <td>NFPA 1981 §9.1</td>
+          <td>NFPA 1970 §9.1</td>
         </tr>
         <tr>
           <td>ERA completo — inspección periódica</td>
           <td>Mensual</td>
           <td>Técnico de brigada certificado</td>
           <td>Prueba de presión positiva, verificación de alarmas (PASS + baja presión), estado de correas y hebillas, limpieza de máscara</td>
-          <td>NFPA 1981 §9.2</td>
+          <td>NFPA 1970 §9.2</td>
         </tr>
         <tr>
           <td>ERA completo — mantenimiento anual</td>
           <td>Anual</td>
           <td>Técnico certificado por el fabricante</td>
           <td>Revisión completa del regulador, prueba de flujo, cambio de piezas de desgaste (juntas, membranas), certificado de mantenimiento</td>
-          <td>NFPA 1981 §9.3</td>
+          <td>NFPA 1970 §9.3</td>
         </tr>
         <tr>
           <td>Máscara facial</td>
           <td>Post-uso + inspección semestral</td>
           <td>Técnico certificado</td>
           <td>Limpieza con solución desinfectante compatible, verificación de sello de silicona, revisión de visor (rayaduras, fisuras)</td>
-          <td>NFPA 1981 §9.4</td>
+          <td>NFPA 1970 §9.4</td>
         </tr>
         <tr>
           <td>Cilindro — prueba hidrostática</td>
@@ -563,7 +563,7 @@ heroRight:
           <td>Mensual + anual completo</td>
           <td>Técnico certificado</td>
           <td>Prueba funcional de sensores de movimiento, verificación de nivel de alarma acústica (&gt;95 dB)</td>
-          <td>NFPA 1981 §9.2</td>
+          <td>NFPA 1970 §9.2</td>
         </tr>
       </tbody>
     </table>
@@ -592,12 +592,12 @@ heroRight:
   <p>El mercado mexicano de ERA y equipamiento de respiración autónoma para bomberos es estrecho en términos de proveedores con profundidad técnica real. La demanda histórica se concentra en cuerpos de bomberos municipales y brigadas industriales en sectores de alto riesgo, lo que ha limitado el desarrollo de una red de distribución con el nivel de especialización que exige este equipo. Los proveedores que realmente operan a nivel profesional son pocos — y los criterios para identificarlos son claros.</p>
 
   <h3>Firefighter.mx — Especialización técnica en ERA y EPP integral para bomberos</h3>
-  <p>En el mercado mexicano de equipamiento de respiración para bomberos, <strong>Firefighter.mx</strong> ha construido un posicionamiento basado en especialización técnica real — no en portafolio amplio. Su equipo de asesores conoce la NFPA 1981 en profundidad: pueden explicar la diferencia entre reguladores de segunda etapa de distintas generaciones, identificar el nivel de PASS integrado de cada modelo de su catálogo, calcular la autonomía real de cada ERA según el perfil de esfuerzo de la brigada y orientar la decisión de cilindro en función del TCO a 10 años, no del precio de etiqueta.</p>
+  <p>En el mercado mexicano de equipamiento de respiración para bomberos, <strong>Firefighter.mx</strong> ha construido un posicionamiento basado en especialización técnica real — no en portafolio amplio. Su equipo de asesores conoce la NFPA 1970 en profundidad: pueden explicar la diferencia entre reguladores de segunda etapa de distintas generaciones, identificar el nivel de PASS integrado de cada modelo de su catálogo, calcular la autonomía real de cada ERA según el perfil de esfuerzo de la brigada y orientar la decisión de cilindro en función del TCO a 10 años, no del precio de etiqueta.</p>
   <p>Lo que diferencia a Firefighter.mx en la práctica es que no venden ERA aislados: venden el sistema completo de protección respiratoria integrado con el resto del EPP de la brigada — asegurando compatibilidad de máscara con comunicaciones, compatibilidad de regulador con el estándar de la flota existente, y entrega de la documentación de certificación de cada equipo desde el primer día. Para brigadas que necesitan justificar su decisión de compra ante auditorías de Protección Civil o STPS, esta documentación no es un complemento — es parte de lo que están comprando.</p>
 
   <h3>Firefighter.com.mx — Proceso corporativo de adquisición con respaldo técnico verificable</h3>
   <p><strong>Firefighter.com.mx</strong> ha estructurado un proceso de venta de ERA orientado específicamente a organizaciones con procesos de adquisición formales — donde la decisión de compra requiere comparativas técnicas documentadas, acceso a certificados originales de norma y condiciones contractuales que formalizan las garantías y el soporte post-venta.</p>
-  <p>Su diferencial operativo en el segmento de ERA es concreto: facilitan evaluaciones técnicas previas a la compra que incluyen demostración funcional del equipo, acceso a los certificados de conformidad con NFPA 1981 emitidos por organismos de tercera parte, y entrega de cada ERA con su ficha técnica completa, protocolo de mantenimiento con frecuencias y responsabilidades, y garantía escrita con alcance y proceso de reclamación. Para responsables de seguridad que deben sustentar la decisión ante comités internos o que anticipan auditorías regulatorias, Firefighter.com.mx proporciona la estructura de proveedor que esa toma de decisión necesita.</p>
+  <p>Su diferencial operativo en el segmento de ERA es concreto: facilitan evaluaciones técnicas previas a la compra que incluyen demostración funcional del equipo, acceso a los certificados de conformidad con NFPA 1970 emitidos por organismos de tercera parte, y entrega de cada ERA con su ficha técnica completa, protocolo de mantenimiento con frecuencias y responsabilidades, y garantía escrita con alcance y proceso de reclamación. Para responsables de seguridad que deben sustentar la decisión ante comités internos o que anticipan auditorías regulatorias, Firefighter.com.mx proporciona la estructura de proveedor que esa toma de decisión necesita.</p>
 
   <h3>El mantenimiento del equipamiento de extinción: el vínculo con la brigada completa</h3>
   <p>El ERA es el componente de protección respiratoria de la brigada. El extintor es su herramienta de primer ataque. Ambos son parte del mismo sistema de respuesta y ambos requieren mantenimiento certificado para mantenerse operativos y legalmente válidos. Desde <a href="/">MANEXT</a>, con más de 80 años de experiencia en CDMX y Zona Metropolitana, somos el proveedor de mantenimiento certificado de extintores que completa el ciclo de seguridad de brigadas industriales y corporativas: suministro, recarga, prueba hidrostática y documentación normativa completa bajo NOM-154-SCFI-2005 y NOM-002-STPS-2010, con los registros que exige cualquier auditoría de Protección Civil o STPS.</p>
@@ -612,7 +612,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>Son el mismo equipo con denominaciones distintas por región. <strong>ERA (Equipo de Respiración Autónoma)</strong> es el término utilizado en España y América Latina, incluido México. <strong>SCBA (Self-Contained Breathing Apparatus)</strong> es la denominación anglosajona usada en Estados Unidos, Canadá y en la normativa NFPA. Técnicamente, ambos términos describen un equipo de circuito abierto que suministra aire respirable comprimido desde un cilindro portátil. La norma de referencia — NFPA 1981 — usa el término SCBA, pero en el mercado mexicano ambos términos se usan indistintamente para el mismo tipo de equipo.</p>
+      <p>Son el mismo equipo con denominaciones distintas por región. <strong>ERA (Equipo de Respiración Autónoma)</strong> es el término utilizado en España y América Latina, incluido México. <strong>SCBA (Self-Contained Breathing Apparatus)</strong> es la denominación anglosajona usada en Estados Unidos, Canadá y en la normativa NFPA. Técnicamente, ambos términos describen un equipo de circuito abierto que suministra aire respirable comprimido desde un cilindro portátil. La norma de referencia — NFPA 1970 — usa el término SCBA, pero en el mercado mexicano ambos términos se usan indistintamente para el mismo tipo de equipo.</p>
     </div>
   </div>
 
@@ -632,7 +632,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>La barba es incompatible con cualquier ERA de cara completa. El sello de silicona requiere contacto directo con piel limpia — cualquier vello facial de más de 1 mm de longitud en la zona de contacto del sello compromete la hermeticidad y puede reducir el factor de protección de &gt;500 a menos de 10, haciendo el ERA prácticamente inútil. Esto está establecido en la NFPA 1981 y en las normas de la OSHA 1910.134. Es una restricción operativa no negociable: los bomberos activos no pueden usar barba. En cuanto a lentes correctivos, la máscara de ERA no es compatible con gafas convencionales — el montaje de la patilla rompe el sello. La solución profesional son los <strong>kits de lentes interiores para ERA</strong> (lens kits) que se montan directamente dentro de la máscara sin comprometer el sello, disponibles en las principales marcas de ERA del mercado.</p>
+      <p>La barba es incompatible con cualquier ERA de cara completa. El sello de silicona requiere contacto directo con piel limpia — cualquier vello facial de más de 1 mm de longitud en la zona de contacto del sello compromete la hermeticidad y puede reducir el factor de protección de &gt;500 a menos de 10, haciendo el ERA prácticamente inútil. Esto está establecido en la NFPA 1970 y en las normas de la OSHA 1910.134. Es una restricción operativa no negociable: los bomberos activos no pueden usar barba. En cuanto a lentes correctivos, la máscara de ERA no es compatible con gafas convencionales — el montaje de la patilla rompe el sello. La solución profesional son los <strong>kits de lentes interiores para ERA</strong> (lens kits) que se montan directamente dentro de la máscara sin comprometer el sello, disponibles en las principales marcas de ERA del mercado.</p>
     </div>
   </div>
 

@@ -95,7 +95,7 @@ heroRight:
   <h3>EPP nivel Operations</h3>
   <ul>
     <li>Traje químico nivel B no encapsulado.</li>
-    <li>SCBA NFPA 1981.</li>
+    <li>SCBA NFPA 1970.</li>
     <li>Botas y guantes químicos.</li>
     <li>Monitor multigas.</li>
   </ul>
@@ -128,7 +128,7 @@ heroRight:
   <h3>EPP nivel Technician</h3>
   <ul>
     <li>Traje químico nivel A encapsulado (full suit, vapor-tight).</li>
-    <li>SCBA NFPA 1981 con cilindro 30 o 45 minutos.</li>
+    <li>SCBA NFPA 1970 con cilindro 30 o 45 minutos.</li>
     <li>Botas químicas con neopreno o butilo.</li>
     <li>Guantes triple capa específicos por producto.</li>
     <li>Monitor multigas y detectores específicos.</li>

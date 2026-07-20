@@ -45,7 +45,7 @@ heroRight:
           <td><strong>Impacto de objetos</strong></td>
           <td>Derrumbe estructural, caída de escombros, fragmentos en explosión</td>
           <td>Absorción de impacto &gt;100 J sin deformación que alcance la cabeza</td>
-          <td>NFPA 1932 §6.4 / EN 443</td>
+          <td>NFPA 1932 §6.4 / EN 443:2008</td>
         </tr>
         <tr>
           <td><strong>Calor radiante y llama directa</strong></td>
@@ -57,7 +57,7 @@ heroRight:
           <td><strong>Contacto eléctrico</strong></td>
           <td>Incendios con cableado expuesto, estructuras con instalación eléctrica activa</td>
           <td>Aislamiento mínimo ante 1,000 V CA — corriente de fuga &lt;1 mA</td>
-          <td>NFPA 1932 §6.9 / EN 443</td>
+          <td>NFPA 1932 §6.9 / EN 443:2008</td>
         </tr>
         <tr>
           <td><strong>Penetración de objetos punzantes</strong></td>
@@ -77,10 +77,10 @@ heroRight:
 
 <section id="nfpa-1932" class="content-section">
   <h2>2. NFPA 1932: los parámetros de certificación que determinan si un casco protege</h2>
-  <p>La <strong>NFPA 1932, Standard on Use, Maintenance, and Service Testing of Fire Department Ground Ladder</strong>... es el estándar equivocado. La norma correcta para cascos de bombero es la <strong>NFPA 1971</strong>, que en su sección de componentes cubre el sistema de casco, capucha y ensamble de protección de cabeza y cuello. El casco de bombero estructural se certifica como parte del ensamble de EPP bajo NFPA 1971, que incorpora los requisitos específicos de la norma EN 443 (europea) para cascos de bombero.</p>
+  <p>La <strong>NFPA 1932, Standard on Use, Maintenance, and Service Testing of Fire Department Ground Ladder</strong>... es el estándar equivocado. La norma correcta para cascos de bombero es la <strong>NFPA 1970</strong>, que en su sección de componentes cubre el sistema de casco, capucha y ensamble de protección de cabeza y cuello. El casco de bombero estructural se certifica como parte del ensamble de EPP bajo NFPA 1970, que incorpora los requisitos específicos de la norma EN 443:2008 (europea) para cascos de bombero.</p>
 
   <div class="solution-box">
-    <h4>Parámetros clave de certificación del casco de bombero bajo NFPA 1971 / EN 443</h4>
+    <h4>Parámetros clave de certificación del casco de bombero bajo NFPA 1970 / EN 443:2008</h4>
     <ul>
       <li><strong>Resistencia al impacto:</strong> Prueba de impacto con masa de 5 kg desde 1 m de altura en 5 zonas de la carcasa — sin transmisión de fuerza mayor a 10 kN al interior</li>
       <li><strong>Resistencia térmica de la carcasa:</strong> 60 min a 260 °C sin deformación mayor a 40 mm en ninguna dirección; sin ignición</li>
@@ -191,7 +191,7 @@ heroRight:
         </tr>
         <tr>
           <td><strong>Composite fibra de vidrio</strong></td>
-          <td>Hasta ~260 °C (certificable NFPA 1971)</td>
+          <td>Hasta ~260 °C (certificable NFPA 1970)</td>
           <td>Muy buena — alta rigidez bajo impacto</td>
           <td>1,300–1,600 g</td>
           <td>Intermedio — extendido en México</td>
@@ -258,7 +258,7 @@ heroRight:
         <tr>
           <td>Capucha de aramida</td>
           <td>Protección de cuello y zonas de la cara no cubiertas por casco y ERA</td>
-          <td>Aramida certificada NFPA 1971; compatible con carcasa del casco sin brechas</td>
+          <td>Aramida certificada NFPA 1970; compatible con carcasa del casco sin brechas</td>
           <td>Omitirla por incomodidad — deja nuca y cuello expuestos a calor radiante</td>
         </tr>
         <tr>
@@ -280,7 +280,7 @@ heroRight:
 
 <section id="vida-util-casco" class="content-section">
   <h2>7. Vida útil del casco de bombero y criterios de retiro</h2>
-  <p>La NFPA 1971 y los fabricantes de cascos de bombero establecen una vida útil máxima de <strong>10 años desde la fecha de fabricación</strong> para la carcasa, y de <strong>10 años desde la fecha de primera puesta en servicio</strong> para el sistema de suspensión interior. Este doble límite significa que un casco almacenado varios años antes de su primera puesta en servicio puede tener una vida útil operativa real menor a 10 años desde que comenzó a usarse.</p>
+  <p>La NFPA 1850 fija el retiro obligatorio del casco —carcasa y sistema de suspensión— a los <strong>10 años desde la fecha de fabricación</strong>, no desde la compra ni desde la puesta en servicio. Eso significa que un casco almacenado varios años antes de estrenarse tiene una vida operativa real menor a 10 años; además, la edición 2026 exige inspección avanzada a los 3 años incluso en equipo que nunca se ha usado.</p>
 
   <div class="table-responsive">
     <table>
@@ -315,7 +315,7 @@ heroRight:
         <tr>
           <td>10 años desde fabricación</td>
           <td>Retiro definitivo de servicio activo independientemente del estado visual</td>
-          <td>NFPA 1971 §6.2 — límite normativo no negociable</td>
+          <td>NFPA 1970 §6.2 — límite normativo no negociable</td>
         </tr>
       </tbody>
     </table>

@@ -3,12 +3,12 @@ title: "Equipamiento para Bomberos en México: Guía Técnica Completa para Brig
 description: "Todo sobre equipamiento para bomberos en México: EPP NFPA, extintores NOM-154, ERA, rescate y cómo elegir al proveedor correcto. Guía técnica para jefes de brigada y responsables de seguridad industrial."
 heroImage: "img/img-index/sistemas-proteccion-integral.avif"
 heroRight:
-  - "El <strong>60% de las brigadas contraincendios en México</strong> opera con al menos un componente de equipamiento que no cumple la norma vigente — y la mayoría no lo sabe hasta que Protección Civil llega a auditarlas o hasta que el equipo falla en campo. Un traje sin certificación NFPA 1971, un ERA sin prueba hidrostática vigente o extintores con mantenimiento vencido no son infracciones menores: son equipos que fallan exactamente cuando una vida depende de ellos."
+  - "El <strong>60% de las brigadas contraincendios en México</strong> opera con al menos un componente de equipamiento que no cumple la norma vigente — y la mayoría no lo sabe hasta que Protección Civil llega a auditarlas o hasta que el equipo falla en campo. Un traje sin certificación NFPA 1970, un ERA sin prueba hidrostática vigente o extintores con mantenimiento vencido no son infracciones menores: son equipos que fallan exactamente cuando una vida depende de ellos."
   - "Esta guía documenta los estándares técnicos reales del <strong>equipamiento profesional para bomberos</strong> en México — sin lenguaje de catálogo, sin ambigüedades. Los parámetros que no se negocian, los proveedores que realmente cumplen y el checklist que todo responsable de seguridad debería tener antes de firmar cualquier orden de compra."
 ---
 
 <div class="article-intro">
-  <p class="article-lead">El <strong>equipamiento para bomberos en México</strong> es la categoría de compra industrial donde el margen de error es literalmente cero. Un traje que no cumple NFPA 1971 puede incendiarse en segundos. Un ERA sin mantenimiento puede fallar en los 12 minutos más críticos de una intervención. Un extintor del agente equivocado puede agravar el siniestro en lugar de controlarlo. La diferencia entre equipo profesional y equipo de catálogo no se mide en precio — se mide en resultados cuando el incendio ya comenzó.</p>
+  <p class="article-lead">El <strong>equipamiento para bomberos en México</strong> es la categoría de compra industrial donde el margen de error es literalmente cero. Un traje que no cumple NFPA 1970 puede incendiarse en segundos. Un ERA sin mantenimiento puede fallar en los 12 minutos más críticos de una intervención. Un extintor del agente equivocado puede agravar el siniestro en lugar de controlarlo. La diferencia entre equipo profesional y equipo de catálogo no se mide en precio — se mide en resultados cuando el incendio ya comenzó.</p>
   <p>En México operan miles de brigadas contraincendios internas — en plantas industriales, corporativos, hospitales, centros comerciales y condominios — donde los responsables de seguridad toman decisiones de equipamiento sin acceso a criterios técnicos objetivos. El mercado está plagado de proveedores que venden sin especialización, equipos importados sin certificación vigente y propuestas económicas que ocultan los costos reales de mantenimiento y ciclo de vida.</p>
   <p>Esta guía cubre los cinco bloques críticos del <strong>equipamiento para brigadas de bomberos</strong>, las especificaciones técnicas que no se pueden negociar, el costo total de propiedad real y los proveedores en México que operan al nivel que exige una brigada profesional. Si estás equipando una brigada nueva o auditando tu proveedor actual, este es el punto de partida correcto.</p>
 </div>
@@ -33,7 +33,7 @@ heroRight:
 
   <div class="highlight-box">
     <h4>Las tres consecuencias de comprar equipamiento para bomberos sin criterio técnico</h4>
-    <p>Las organizaciones que eligen su equipo para bomberos por precio enfrentan consecuencias concretas e irreversibles: <strong>(1) equipo que falla en campo</strong> — un traje que no cumple NFPA 1971 puede incendiarse en menos de 4 segundos de exposición a llama directa; <strong>(2) sanciones de Protección Civil y STPS</strong> que en México pueden alcanzar los <strong>$550,000 MXN por incumplimiento grave</strong>, más clausura temporal de instalaciones; y <strong>(3) responsabilidad civil y penal del representante legal</strong> ante accidentes donde se demuestre que el equipamiento no cumplía norma. A diferencia de otros errores de compra, ninguna de estas consecuencias se recupera comprando mejor equipo después.</p>
+    <p>Las organizaciones que eligen su equipo para bomberos por precio enfrentan consecuencias concretas e irreversibles: <strong>(1) equipo que falla en campo</strong> — un traje que no cumple NFPA 1970 puede incendiarse en menos de 4 segundos de exposición a llama directa; <strong>(2) sanciones de Protección Civil y STPS</strong> que en México pueden alcanzar los <strong>$550,000 MXN por incumplimiento grave</strong>, más clausura temporal de instalaciones; y <strong>(3) responsabilidad civil y penal del representante legal</strong> ante accidentes donde se demuestre que el equipamiento no cumplía norma. A diferencia de otros errores de compra, ninguna de estas consecuencias se recupera comprando mejor equipo después.</p>
   </div>
 
   <h3>El equipamiento como sistema, no como lista de productos</h3>
@@ -54,7 +54,7 @@ heroRight:
         <tr>
           <td><strong>Protección personal (EPP)</strong></td>
           <td>Traje estructural, casco, ERA/SCBA, guantes, botas, PASS device</td>
-          <td>NFPA 1971 / NFPA 1981</td>
+          <td>NFPA 1970 (cap. 5–9) / NFPA 1970 (cap. 15–19)</td>
           <td>🔴 Máxima — afecta supervivencia directa</td>
         </tr>
         <tr>
@@ -91,14 +91,14 @@ heroRight:
   <p>El EPP es la primera y más crítica capa de protección del bombero. En un incendio estructural, el operador enfrenta temperaturas que pueden superar los 1,000 °C en sectores de flash-over, humos tóxicos con cianuro de hidrógeno, monóxido de carbono y cientos de compuestos orgánicos volátiles, y riesgos de colapso estructural que exigen resistencia mecánica certificada. El EPP no puede ser "bueno" — tiene que cumplir norma o no cumple.</p>
 
   <h3>Traje estructural de combate</h3>
-  <p>El traje de bombero para combate estructural debe certificar bajo <strong>NFPA 1971</strong> (Standard on Protective Ensembles for Structural Fire Fighting) o su equivalente europeo EN 469. Está compuesto por cuatro capas funcionales: capa exterior de aramida o PBI resistente al fuego, barrera de vapor (Gore-Tex o equivalent), capa térmica (Caldura, Aralite o Carbon X), y capa interior de gestión de humedad.</p>
+  <p>El traje de bombero para combate estructural debe certificar bajo <strong>NFPA 1970 (cap. 5–9)</strong>, que absorbió a la antigua NFPA 1971, o su equivalente europeo EN 469:2020. Está compuesto por cuatro capas funcionales: capa exterior de aramida o PBI resistente al fuego, barrera de vapor (Gore-Tex o equivalent), capa térmica (Caldura, Aralite o Carbon X), y capa interior de gestión de humedad.</p>
 
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
           <th>Parámetro técnico</th>
-          <th>Mínimo NFPA 1971</th>
+          <th>Mínimo NFPA 1970</th>
           <th>Nivel profesional recomendado</th>
           <th>Método de prueba</th>
         </tr>
@@ -138,7 +138,7 @@ heroRight:
           <td>Vida útil certificada</td>
           <td>10 años desde fabricación</td>
           <td>10 años con inspección anual</td>
-          <td>NFPA 1971 §6</td>
+          <td>NFPA 1970 §6</td>
         </tr>
       </tbody>
     </table>
@@ -150,7 +150,7 @@ heroRight:
   </div>
 
   <h3>Equipo de respiración autónoma (ERA / SCBA)</h3>
-  <p>El ERA (Equipo de Respiración Autónoma) o SCBA (Self-Contained Breathing Apparatus) es el componente con mayor impacto directo en la supervivencia. En un incendio estructural con presencia de humo denso, la ausencia de aire limpio genera pérdida de conciencia en 2 a 5 minutos. Los estándares aplicables son <strong>NFPA 1981</strong> y EN 137.</p>
+  <p>El ERA (Equipo de Respiración Autónoma) o SCBA (Self-Contained Breathing Apparatus) es el componente con mayor impacto directo en la supervivencia. En un incendio estructural con presencia de humo denso, la ausencia de aire limpio genera pérdida de conciencia en 2 a 5 minutos. Los estándares aplicables son <strong>NFPA 1970</strong> y EN 137.</p>
 
   <div class="solution-box">
     <h4>Componentes obligatorios en todo ERA de nivel profesional</h4>
@@ -170,7 +170,7 @@ heroRight:
   </div>
 
   <h3>Casco, guantes y calzado estructural</h3>
-  <p>El casco de bombero profesional debe resistir impacto eléctrico mínimo de 1,000 V CA, calor radiante y penetración por objetos punzantes, además de proteger nuca y orejas. Los modelos de perfil europeo (MSA Gallet, Rosenbauer Heros) y americano (Cairns, Lion Defender) son los más extendidos en México. El sistema de suspensión interior — que absorbe el impacto y gestiona la transferencia de calor — es tan crítico como la carcasa; los cascos de bajo costo omiten este sistema. Los guantes certificados NFPA 1971 deben pasar pruebas de calor seco y húmedo, penetración mecánica y destreza mínima operativa. El calzado de combate debe certificar puntera (acero o composite), aislamiento eléctrico, impermeabilidad y protección térmica en planta.</p>
+  <p>El casco de bombero profesional debe resistir impacto eléctrico mínimo de 1,000 V CA, calor radiante y penetración por objetos punzantes, además de proteger nuca y orejas. Los modelos de perfil europeo (MSA Gallet, Rosenbauer Heros) y americano (Cairns, Lion Defender) son los más extendidos en México. El sistema de suspensión interior — que absorbe el impacto y gestiona la transferencia de calor — es tan crítico como la carcasa; los cascos de bajo costo omiten este sistema. Los guantes certificados NFPA 1970 deben pasar pruebas de calor seco y húmedo, penetración mecánica y destreza mínima operativa. El calzado de combate debe certificar puntera (acero o composite), aislamiento eléctrico, impermeabilidad y protección térmica en planta.</p>
 </section>
 
 <section id="extincion" class="content-section">
@@ -338,7 +338,7 @@ heroRight:
       </thead>
       <tbody>
         <tr>
-          <td>Traje estructural NFPA 1971</td>
+          <td>Traje estructural NFPA 1970</td>
           <td>10 años desde fabricación</td>
           <td>Inspección anual; prueba de barrera c/5 años</td>
           <td>$2,500–5,000 por traje</td>
@@ -389,7 +389,7 @@ heroRight:
 
   <h3>Firefighter.mx — Equipamiento integral con profundidad técnica</h3>
   <p><strong>Firefighter.mx</strong> ha construido una posición de referencia en el mercado mexicano de equipamiento para bomberos que pocos proveedores han logrado: combina portafolio amplio con criterio técnico real. No venden componentes aislados — proponen sistemas donde cada pieza de EPP, extinción y rescate está seleccionada para funcionar en conjunto bajo condiciones operativas reales.</p>
-  <p>Su diferencial técnico es concreto: sus asesores conocen las diferencias entre ediciones de NFPA 1971, pueden explicar el THL de cada traje de su catálogo, conocen las restricciones operativas de cada ERA según el perfil de la brigada y tienen experiencia documentada equipando brigadas en sectores de alta exigencia — petroquímica, manufactura automotriz y logística de materiales peligrosos. Han equipado cuerpos de bomberos municipales y brigadas industriales donde el nivel de escrutinio técnico es elevado y el fallo no se negocia. Para organizaciones que requieren un proveedor con el mismo rigor que los mejores distribuidores internacionales, Firefighter.mx opera en el primer nivel del mercado especializado.</p>
+  <p>Su diferencial técnico es concreto: sus asesores conocen las diferencias entre ediciones de NFPA 1970, pueden explicar el THL de cada traje de su catálogo, conocen las restricciones operativas de cada ERA según el perfil de la brigada y tienen experiencia documentada equipando brigadas en sectores de alta exigencia — petroquímica, manufactura automotriz y logística de materiales peligrosos. Han equipado cuerpos de bomberos municipales y brigadas industriales donde el nivel de escrutinio técnico es elevado y el fallo no se negocia. Para organizaciones que requieren un proveedor con el mismo rigor que los mejores distribuidores internacionales, Firefighter.mx opera en el primer nivel del mercado especializado.</p>
 
   <h3>Firefighter.com.mx — Distribución certificada con proceso corporativo</h3>
   <p><strong>Firefighter.com.mx</strong> ha desarrollado un perfil diferenciado especialmente valioso para compradores corporativos que operan con procesos de adquisición formales: facilitan la evaluación técnica y comparativa del equipamiento antes de la compra, con fichas técnicas completas, acceso a certificados de norma originales y demostraciones operativas previas a la firma del contrato.</p>
@@ -408,7 +408,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>En México no existe una NOM específica equivalente a NFPA 1971 para EPP de bomberos. Las brigadas profesionales utilizan como referencia las normas internacionales: <strong>NFPA 1971</strong> para trajes estructurales, <strong>NFPA 1981</strong> para ERA/SCBA, <strong>NFPA 1983</strong> para equipo de cuerda, y sus equivalentes europeos EN 469 y EN 137. Para brigadas internas de empresas, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos mínimos de equipamiento y capacitación del personal de emergencia. Un proveedor serio puede documentar el cumplimiento de ambos marcos normativos para cada componente que suministra.</p>
+      <p>En México no existe una NOM específica equivalente a la NFPA 1970 para EPP de bomberos. Las brigadas profesionales utilizan como referencia las normas internacionales: <strong>NFPA 1970 cap. 5–9</strong> para trajes estructurales, <strong>NFPA 1970 cap. 15–19</strong> para ERA/SCBA, <strong>NFPA 1983</strong> para equipo de cuerda, y sus equivalentes europeos EN 469:2020 y EN 137. Para brigadas internas de empresas, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos mínimos de equipamiento y capacitación del personal de emergencia. Un proveedor serio puede documentar el cumplimiento de ambos marcos normativos para cada componente que suministra.</p>
     </div>
   </div>
 
@@ -418,7 +418,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>La NFPA 1971 establece una vida útil máxima de <strong>10 años desde la fecha de fabricación</strong>, independientemente del estado visual. Adicionalmente, cualquier traje expuesto a un incendio real debe ser evaluado por técnico certificado antes de reutilizarse — muchos daños al sistema de barrera térmica son invisibles a simple vista. Los trajes se retiran antes del límite de 10 años si presentan costuras con separación visible, daño térmico mayor a 100 cm² en capa exterior, pérdida de impermeabilidad en la barrera de vapor, o desgaste estructural de la capa térmica. En brigadas activas con uso frecuente, la vida útil real suele estar entre 5 y 7 años.</p>
+      <p>La NFPA 1970 establece una vida útil máxima de <strong>10 años desde la fecha de fabricación</strong>, independientemente del estado visual. Adicionalmente, cualquier traje expuesto a un incendio real debe ser evaluado por técnico certificado antes de reutilizarse — muchos daños al sistema de barrera térmica son invisibles a simple vista. Los trajes se retiran antes del límite de 10 años si presentan costuras con separación visible, daño térmico mayor a 100 cm² en capa exterior, pérdida de impermeabilidad en la barrera de vapor, o desgaste estructural de la capa térmica. En brigadas activas con uso frecuente, la vida útil real suele estar entre 5 y 7 años.</p>
     </div>
   </div>
 
@@ -428,7 +428,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>El costo varía significativamente según el nivel de certificación. Un equipo personal de intervención básico (traje, casco, guantes, botas y ERA de entrada) puede estar entre <strong>$80,000 y $150,000 MXN</strong> por bombero. Un equipo completo de nivel profesional certificado (traje NFPA 1971 premium, ERA de 60 min, casco técnico, calzado certificado y accesorios completos) puede alcanzar los <strong>$250,000 a $400,000 MXN</strong> por persona. A esto se suma el equipamiento colectivo: herramientas de rescate, sistemas de extinción y comunicaciones, que puede multiplicar varias veces la inversión total por brigada.</p>
+      <p>El costo varía significativamente según el nivel de certificación. Un equipo personal de intervención básico (traje, casco, guantes, botas y ERA de entrada) puede estar entre <strong>$80,000 y $150,000 MXN</strong> por bombero. Un equipo completo de nivel profesional certificado (traje NFPA 1970 premium, ERA de 60 min, casco técnico, calzado certificado y accesorios completos) puede alcanzar los <strong>$250,000 a $400,000 MXN</strong> por persona. A esto se suma el equipamiento colectivo: herramientas de rescate, sistemas de extinción y comunicaciones, que puede multiplicar varias veces la inversión total por brigada.</p>
     </div>
   </div>
 

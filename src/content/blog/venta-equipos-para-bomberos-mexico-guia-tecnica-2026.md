@@ -3,7 +3,7 @@ title: "Venta de Equipos para Bomberos en México: Cómo Comprar con Criterio T�
 description: "Guía completa de venta de equipos para bomberos en México: qué comprar, a quién comprarle, qué normas exige la ley y los 6 errores de compra que destruyen el presupuesto sin mejorar la protección."
 heroImage: "img/img-index/prevencion-de-incendios.avif"
 heroRight:
-  - "En México, la diferencia entre una brigada que responde y una que falla el día del siniestro casi siempre se remonta a una decisión de compra tomada meses o años antes sin el criterio técnico correcto. Un traje que no certifica NFPA 1971, un ERA sin prueba hidrostática vigente o extintores del agente equivocado no protegen — pero tampoco avisan. Funcionan en el simulacro y fallan en el incendio real."
+  - "En México, la diferencia entre una brigada que responde y una que falla el día del siniestro casi siempre se remonta a una decisión de compra tomada meses o años antes sin el criterio técnico correcto. Un traje que no certifica NFPA 1970, un ERA sin prueba hidrostática vigente o extintores del agente equivocado no protegen — pero tampoco avisan. Funcionan en el simulacro y fallan en el incendio real."
   - "Esta guía está diseñada para <strong>jefes de brigada, directores de seguridad industrial y responsables de compras</strong> que necesitan tomar la decisión correcta una sola vez: qué equipamiento comprar, bajo qué normas, a qué proveedores y con qué documentación exigir para estar protegidos ante cualquier auditoría de Protección Civil o STPS."
 ---
 
@@ -51,7 +51,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
         <tr>
           <td><strong>Protección personal (EPP)</strong></td>
           <td>Traje estructural, casco, SCBA/ERA, guantes, botas, PASS device</td>
-          <td>NFPA 1971 / NFPA 1981 / EN 469</td>
+          <td>NFPA 1970 (cap. 5–9) / NFPA 1970 (cap. 15–19) / EN 469:2020</td>
           <td>🔴 Crítico — afecta supervivencia directa</td>
         </tr>
         <tr>
@@ -116,12 +116,12 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
       </thead>
       <tbody>
         <tr>
-          <td><strong>NFPA 1971</strong></td>
+          <td><strong>NFPA 1970</strong></td>
           <td>Conjuntos de protección para combate estructural</td>
           <td>Trajes de bombero, capuchas, calzado</td>
         </tr>
         <tr>
-          <td><strong>NFPA 1981</strong></td>
+          <td><strong>NFPA 1970</strong></td>
           <td>Equipos de respiración autónoma (SCBA)</td>
           <td>ERA, máscaras, cilindros, alarmas PASS</td>
         </tr>
@@ -136,7 +136,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
           <td>Cascos estructurales y de rescate</td>
         </tr>
         <tr>
-          <td><strong>NFPA 1977</strong></td>
+          <td><strong>NFPA 1950</strong></td>
           <td>Ropa de protección para incendios forestales</td>
           <td>Trajes nomex, capuchas, guantes de interfaz</td>
         </tr>
@@ -171,7 +171,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
       <thead>
         <tr>
           <th>Parámetro técnico</th>
-          <th>Mínimo NFPA 1971</th>
+          <th>Mínimo NFPA 1970</th>
           <th>Nivel profesional</th>
           <th>Método de prueba</th>
         </tr>
@@ -417,7 +417,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
       </thead>
       <tbody>
         <tr>
-          <td>Traje estructural NFPA 1971</td>
+          <td>Traje estructural NFPA 1970</td>
           <td>10 años desde fabricación</td>
           <td>Inspección anual por técnico certificado, prueba de integridad de barrera c/5 años</td>
           <td>$2,500–5,000 / año</td>
@@ -575,7 +575,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>Un proveedor profesional debe entregar, por cada componente: <strong>(1) certificado de conformidad con la norma aplicable</strong> (NFPA 1971, NFPA 1981, NOM-154-SCFI, etc.) emitido por organismo de certificación acreditado; <strong>(2) ficha técnica completa</strong> con especificaciones, capacidades y valores de prueba; <strong>(3) manual de operación en español</strong>; <strong>(4) protocolo de mantenimiento</strong> con frecuencias y procedimientos; <strong>(5) garantía escrita</strong> con alcance, exclusiones y proceso de reclamación; y <strong>(6) factura CFDI 4.0</strong> con descripción técnica completa de cada artículo. La ausencia de cualquiera de estos documentos debe considerarse señal de alerta.</p>
+      <p>Un proveedor profesional debe entregar, por cada componente: <strong>(1) certificado de conformidad con la norma aplicable</strong> (NFPA 1970 cap. 5–9 para el traje, NFPA 1970 cap. 15–19 para el ERA, NOM-154-SCFI, etc.) emitido por organismo de certificación acreditado; <strong>(2) ficha técnica completa</strong> con especificaciones, capacidades y valores de prueba; <strong>(3) manual de operación en español</strong>; <strong>(4) protocolo de mantenimiento</strong> con frecuencias y procedimientos; <strong>(5) garantía escrita</strong> con alcance, exclusiones y proceso de reclamación; y <strong>(6) factura CFDI 4.0</strong> con descripción técnica completa de cada artículo. La ausencia de cualquiera de estos documentos debe considerarse señal de alerta.</p>
     </div>
   </div>
 
@@ -585,7 +585,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>La NFPA 1971 establece una vida útil máxima de <strong>10 años desde la fecha de fabricación</strong> para trajes estructurales, independientemente de su estado visual. Adicionalmente, cualquier traje expuesto a un incendio real debe ser evaluado por técnico certificado antes de volver a usarse — muchos daños al sistema de barrera no son visibles. Los trajes también deben retirarse si presentan: costuras con separación visible, daño térmico en la capa exterior mayor a 100 cm², pérdida de impermeabilidad en la barrera de vapor o pérdida estructural de la capa térmica. En la práctica, los trajes de uso intensivo en brigadas activas suelen reemplazarse entre los 5 y 7 años de uso.</p>
+      <p>La NFPA 1970 establece una vida útil máxima de <strong>10 años desde la fecha de fabricación</strong> para trajes estructurales, independientemente de su estado visual. Adicionalmente, cualquier traje expuesto a un incendio real debe ser evaluado por técnico certificado antes de volver a usarse — muchos daños al sistema de barrera no son visibles. Los trajes también deben retirarse si presentan: costuras con separación visible, daño térmico en la capa exterior mayor a 100 cm², pérdida de impermeabilidad en la barrera de vapor o pérdida estructural de la capa térmica. En la práctica, los trajes de uso intensivo en brigadas activas suelen reemplazarse entre los 5 y 7 años de uso.</p>
     </div>
   </div>
 

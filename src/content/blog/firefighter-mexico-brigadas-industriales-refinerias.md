@@ -4,7 +4,7 @@ description: "Equipamiento para brigadas industriales de refinerías y petroquí
 heroImage: "img/img-blog/multas-no-tener-extintores-montos-evitarlas-hero-1765931694721.avif"
 heroRight:
   - "Las <strong>brigadas industriales en refinerías y plantas petroquímicas</strong> mexicanas operan con perfil de riesgo equivalente al de un cuerpo de bomberos profesional. Hidrocarburos volátiles, atmósferas explosivas, productos químicos: el EPP genérico no alcanza."
-  - "<strong>Firefighter México</strong> equipa este tipo de brigadas con NFPA 1971, NFPA 1981 y herramientas técnicas. <strong>MANEXT</strong> analiza cómo se estructura el equipamiento."
+  - "<strong>Firefighter México</strong> equipa este tipo de brigadas con trajes y ERA bajo NFPA 1970 y herramientas técnicas. <strong>MANEXT</strong> analiza cómo se estructura el equipamiento."
 ---
 
 <aside class="article-disclaimer">
@@ -45,7 +45,7 @@ heroRight:
   </ul>
 
   <h3>Por qué el EPP estructural estándar no alcanza</h3>
-  <p>Un traje NFPA 1971 protege contra fuego estructural urbano (madera, plásticos, mobiliario). En refinería se enfrenta a calor radiante de hidrocarburos a 1,000+ °C, productos químicos agresivos a la barrera de humedad, vapores que requieren mascarilla con cartucho específico o SCBA, y atmósferas explosivas clasificadas que prohíben equipos eléctricos no ATEX. La brigada industrial necesita un kit ampliado.</p>
+  <p>Un traje NFPA 1970 protege contra fuego estructural urbano (madera, plásticos, mobiliario). En refinería se enfrenta a calor radiante de hidrocarburos a 1,000+ °C, productos químicos agresivos a la barrera de humedad, vapores que requieren mascarilla con cartucho específico o SCBA, y atmósferas explosivas clasificadas que prohíben equipos eléctricos no ATEX. La brigada industrial necesita un kit ampliado.</p>
 </section>
 
 <section id="normativa" class="content-section">
@@ -55,7 +55,7 @@ heroRight:
   <ul>
     <li><strong>NOM-002-STPS-2010:</strong> condiciones de seguridad y prevención contra incendios. Establece obligación de brigada y equipo en función de superficie y nivel de riesgo. Es la base de cumplimiento ante STPS.</li>
     <li><strong>NOM-005-STPS-1998:</strong> manejo, transporte y almacenamiento de sustancias químicas peligrosas — aplicable a equipamiento para respuesta a HAZMAT.</li>
-    <li><strong>NOM-017-STPS-2008:</strong> EPP general, base mínima.</li>
+    <li><strong>NOM-017-STPS-2024:</strong> EPP general, base mínima.</li>
     <li><strong>NOM-026-STPS-2008:</strong> colores y señales de seguridad e identificación de tuberías.</li>
     <li><strong>NOM-028-STPS-2012:</strong> seguridad en procesos y equipos críticos con sustancias químicas peligrosas — referencia para brigadas en refinería y petroquímica.</li>
     <li><strong>NOM-154-SCFI-2005:</strong> certificación de extintores. MANEXT cubre cumplimiento de esta norma con su <a href="/venta-de-extintores">venta de extintores certificados</a>.</li>
@@ -65,7 +65,7 @@ heroRight:
   <ul>
     <li><strong>NFPA 600:</strong> standard for industrial fire brigades — la referencia base del entrenamiento, equipamiento y operación de brigadas industriales.</li>
     <li><strong>NFPA 1081:</strong> profesional qualifications for industrial fire brigade members.</li>
-    <li><strong>NFPA 1971/1981/1851:</strong> trajes, SCBA y mantenimiento.</li>
+    <li><strong>NFPA 1970 y NFPA 1850:</strong> trajes, SCBA y mantenimiento.</li>
     <li><strong>NFPA 11:</strong> espumas para hidrocarburos.</li>
     <li><strong>NFPA 472/470:</strong> respuesta a HAZMAT.</li>
   </ul>
@@ -87,16 +87,16 @@ heroRight:
     <li><a href="/senalizacion">Señalización</a> fotoluminiscente NOM-003-SEGOB.</li>
   </ul>
 
-  <h3>Bloque 2: EPP estructural NFPA 1971</h3>
+  <h3>Bloque 2: EPP estructural NFPA 1970</h3>
   <ul>
     <li>Traje estructural (chaquetón + pantalón).</li>
     <li>Casco bomberil NFPA 1932.</li>
     <li>Capucha estructural Nomex / PBI.</li>
-    <li>Botas estructurales NFPA 1971.</li>
+    <li>Botas estructurales NFPA 1970.</li>
     <li>Guantes estructurales.</li>
   </ul>
 
-  <h3>Bloque 3: SCBA NFPA 1981</h3>
+  <h3>Bloque 3: SCBA NFPA 1970</h3>
   <ul>
     <li>SCBA con cilindro 30 o 45 minutos.</li>
     <li>Cilindro adicional de respaldo por brigadista activo (mínimo).</li>
@@ -141,13 +141,13 @@ heroRight:
       <tr><th>Pieza</th><th>Cantidad</th><th>Norma de referencia</th></tr>
     </thead>
     <tbody>
-      <tr><td>Traje estructural</td><td>1 + 0.5 reposición</td><td>NFPA 1971</td></tr>
+      <tr><td>Traje estructural</td><td>1 + 0.5 reposición</td><td>NFPA 1970</td></tr>
       <tr><td>Casco bomberil</td><td>1</td><td>NFPA 1932</td></tr>
-      <tr><td>Botas estructurales</td><td>1 + 0.5 reposición</td><td>NFPA 1971</td></tr>
-      <tr><td>Capucha estructural</td><td>2</td><td>NFPA 1971</td></tr>
-      <tr><td>Guantes estructurales</td><td>2</td><td>NFPA 1971</td></tr>
-      <tr><td>SCBA con cilindro 30 min</td><td>1</td><td>NFPA 1981</td></tr>
-      <tr><td>Cilindros adicionales</td><td>2 a 3 por SCBA</td><td>NFPA 1981</td></tr>
+      <tr><td>Botas estructurales</td><td>1 + 0.5 reposición</td><td>NFPA 1970</td></tr>
+      <tr><td>Capucha estructural</td><td>2</td><td>NFPA 1970</td></tr>
+      <tr><td>Guantes estructurales</td><td>2</td><td>NFPA 1970</td></tr>
+      <tr><td>SCBA con cilindro 30 min</td><td>1</td><td>NFPA 1970</td></tr>
+      <tr><td>Cilindros adicionales</td><td>2 a 3 por SCBA</td><td>NFPA 1970</td></tr>
       <tr><td>Monitor multigas portátil</td><td>1</td><td>OSHA / ANSI</td></tr>
       <tr><td>Radio intrínsecamente seguro</td><td>1</td><td>ATEX / IECEx</td></tr>
     </tbody>
@@ -187,7 +187,7 @@ heroRight:
 
   <h3>Costo recurrente anual</h3>
   <ul>
-    <li>Lavado profesional de trajes NFPA 1851: 1,500 a 3,000 MXN por traje por año.</li>
+    <li>Lavado profesional de trajes NFPA 1850: 1,500 a 3,000 MXN por traje por año.</li>
     <li>Mantenimiento anual SCBA: 3,000 a 6,000 MXN por equipo.</li>
     <li>Recarga de cilindros: variable, baja con compresor in-house.</li>
     <li>Calibración de monitores multigas: 1,200 a 2,500 MXN por equipo por año.</li>
@@ -269,7 +269,7 @@ heroRight:
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Una brigada de hospital o centro comercial necesita el mismo nivel de equipamiento?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>No. Hospitales y centros comerciales tienen riesgo medio en NOM-002-STPS. Su brigada típica responde con extintores portátiles, evacuación, primeros auxilios y RCP. No requieren SCBA estructural ni traje NFPA 1971. Para más detalle ver <a href="/blog/extintores-hospitales-clinicas-mexico">guía de extintores en hospitales</a> y <a href="/blog/extintores-centros-comerciales-plazas-mexico">guía de extintores en plazas comerciales</a>.</p>
+      <p>No. Hospitales y centros comerciales tienen riesgo medio en NOM-002-STPS. Su brigada típica responde con extintores portátiles, evacuación, primeros auxilios y RCP. No requieren SCBA estructural ni traje NFPA 1970. Para más detalle ver <a href="/blog/extintores-hospitales-clinicas-mexico">guía de extintores en hospitales</a> y <a href="/blog/extintores-centros-comerciales-plazas-mexico">guía de extintores en plazas comerciales</a>.</p>
     </div>
   </div>
 </section>

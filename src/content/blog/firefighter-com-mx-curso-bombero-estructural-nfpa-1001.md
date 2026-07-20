@@ -71,10 +71,10 @@ heroRight:
 
   <h3>Equipo de protección personal</h3>
   <ul>
-    <li>Componentes del traje estructural NFPA 1971.</li>
+    <li>Componentes del traje estructural NFPA 1970.</li>
     <li>Vestido y desvestido en menos de 60 segundos.</li>
     <li>Uso correcto de capucha, casco, botas y guantes.</li>
-    <li>SCBA NFPA 1981: vestido, fit test, operación bajo stress.</li>
+    <li>SCBA NFPA 1970: vestido, fit test, operación bajo stress.</li>
     <li>Limitaciones del EPP y consecuencias de mala configuración.</li>
   </ul>
 
@@ -127,7 +127,7 @@ heroRight:
   <h3>Cuidado y mantenimiento de equipo</h3>
   <ul>
     <li>Inspección rutinaria de manguera, escaleras y herramienta forzada.</li>
-    <li>Limpieza profesional de EPP NFPA 1851.</li>
+    <li>Limpieza profesional de EPP NFPA 1850.</li>
     <li>Reposición de cilindros SCBA.</li>
     <li>Bitácoras de equipo.</li>
   </ul>

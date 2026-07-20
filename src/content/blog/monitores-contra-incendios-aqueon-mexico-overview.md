@@ -191,8 +191,8 @@ heroRight:
 
   <h3>Capa 3: respuesta humana especializada</h3>
   <ul>
-    <li>EPP estructural NFPA 1971 (trajes, cascos, capuchas, botas, guantes).</li>
-    <li>SCBA NFPA 1981 con cilindros adicionales.</li>
+    <li>EPP estructural NFPA 1970 (trajes, cascos, capuchas, botas, guantes).</li>
+    <li>SCBA NFPA 1970 con cilindros adicionales.</li>
     <li>Trajes encapsulados nivel A y B para HAZMAT.</li>
     <li>Monitores multigas portátiles.</li>
     <li>Herramientas de rescate.</li>

@@ -145,8 +145,8 @@ heroRight:
   <h3>Brigada industrial profesional</h3>
   <ul>
     <li>NFPA 600 para conformación operativa.</li>
-    <li>EPP estructural NFPA 1971 (territorio Firefighter México).</li>
-    <li>SCBA NFPA 1981.</li>
+    <li>EPP estructural NFPA 1970 (territorio Firefighter México).</li>
+    <li>SCBA NFPA 1970.</li>
     <li>Trajes encapsulados nivel A y B para HAZMAT.</li>
     <li>Capacitación NOM-002 base (territorio MANEXT) más NFPA 1001 / 472 / 1006 (territorio Firefighter.com.mx).</li>
   </ul>

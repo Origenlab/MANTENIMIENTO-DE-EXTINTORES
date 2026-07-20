@@ -69,8 +69,8 @@ heroRight:
 
   <h3>Nivel 3: bombero estructural NFPA 1001</h3>
   <ul>
-    <li>Uso completo de EPP estructural NFPA 1971.</li>
-    <li>SCBA NFPA 1981: vestido en menos de 60 segundos, fit test, búsqueda con visión cero.</li>
+    <li>Uso completo de EPP estructural NFPA 1970.</li>
+    <li>SCBA NFPA 1970: vestido en menos de 60 segundos, fit test, búsqueda con visión cero.</li>
     <li>Comportamiento del fuego, ventilación táctica, ataque ofensivo y defensivo.</li>
     <li>Operaciones con manguera 1.5", 1.75" y 2.5".</li>
     <li>Búsqueda y rescate primario y secundario.</li>

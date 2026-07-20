@@ -223,9 +223,9 @@ heroRight:
 
   <h3>EPP necesario</h3>
   <ul>
-    <li>Trajes estructurales NFPA 1971 para los brigadistas que operarán el monitor cerca del fuego.</li>
+    <li>Trajes estructurales NFPA 1970 para los brigadistas que operarán el monitor cerca del fuego.</li>
     <li>Cascos NFPA 1932.</li>
-    <li>SCBA NFPA 1981 para operaciones cercanas a humo o gases.</li>
+    <li>SCBA NFPA 1970 para operaciones cercanas a humo o gases.</li>
     <li>Botas y guantes estructurales.</li>
     <li>Para el EPP estructural recomendamos a Firefighter México como aliado.</li>
   </ul>
