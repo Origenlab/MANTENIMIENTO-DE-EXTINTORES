@@ -72,7 +72,7 @@ heroRight:
         <tr>
           <td><strong>Rescate</strong></td>
           <td>Herramientas hidráulicas, sistemas de cuerda, trípodes, detectores de gas</td>
-          <td>NFPA 1983 / EN 1891</td>
+          <td>NFPA 2500 / EN 1891</td>
           <td>🟠 Alta — rescate de víctimas</td>
         </tr>
         <tr>
@@ -272,7 +272,7 @@ heroRight:
         <tr>
           <td>Cuerda de salvamento</td>
           <td>Kernmantle estática ø11 mm, rotura &gt;30 kN</td>
-          <td>NFPA 1983 / EN 1891 tipo A</td>
+          <td>NFPA 2500 / EN 1891 tipo A</td>
         </tr>
         <tr>
           <td>Arnés de cuerpo completo</td>
@@ -287,7 +287,7 @@ heroRight:
         <tr>
           <td>Trípode de rescate</td>
           <td>Altura 1.8–3.5 m, carga &gt;2,000 kg, acero galvanizado</td>
-          <td>NFPA 1983</td>
+          <td>NFPA 2500</td>
         </tr>
         <tr>
           <td>Detector de 4 gases</td>
@@ -408,7 +408,7 @@ heroRight:
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer" style="display:none">
-      <p>En México no existe una NOM específica equivalente a la NFPA 1970 para EPP de bomberos. Las brigadas profesionales utilizan como referencia las normas internacionales: <strong>NFPA 1970 cap. 5–9</strong> para trajes estructurales, <strong>NFPA 1970 cap. 15–19</strong> para ERA/SCBA, <strong>NFPA 1983</strong> para equipo de cuerda, y sus equivalentes europeos EN 469:2020 y EN 137. Para brigadas internas de empresas, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos mínimos de equipamiento y capacitación del personal de emergencia. Un proveedor serio puede documentar el cumplimiento de ambos marcos normativos para cada componente que suministra.</p>
+      <p>En México no existe una NOM específica equivalente a la NFPA 1970 para EPP de bomberos. Las brigadas profesionales utilizan como referencia las normas internacionales: <strong>NFPA 1970 cap. 5–9</strong> para trajes estructurales, <strong>NFPA 1970 cap. 15–19</strong> para ERA/SCBA, <strong>NFPA 2500</strong> para equipo de cuerda, y sus equivalentes europeos EN 469:2020 y EN 137. Para brigadas internas de empresas, la NOM-002-STPS-2010 y la NOM-006-STPS-2014 establecen los requisitos mínimos de equipamiento y capacitación del personal de emergencia. Un proveedor serio puede documentar el cumplimiento de ambos marcos normativos para cada componente que suministra.</p>
     </div>
   </div>
 

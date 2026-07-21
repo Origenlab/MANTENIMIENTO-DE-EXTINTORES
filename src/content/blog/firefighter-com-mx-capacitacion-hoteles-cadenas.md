@@ -117,7 +117,7 @@ heroRight:
     <li><strong>NFPA 600 — Industrial fire brigades:</strong> base operativa de brigada interna profesional para hoteles grandes.</li>
     <li><strong>HAZMAT awareness NFPA 472/470:</strong> personal de mantenimiento, lavandería, cocinas.</li>
     <li><strong>HAZMAT operations:</strong> brigada activa.</li>
-    <li><strong>NFPA 1670 confined space awareness:</strong> personal que ingresa a cuartos de máquinas, sótanos técnicos.</li>
+    <li><strong>NFPA 2500 confined space awareness:</strong> personal que ingresa a cuartos de máquinas, sótanos técnicos.</li>
     <li><strong>NFPA 101 awareness:</strong> Life Safety Code para responsable de seguridad.</li>
     <li><strong>Primeros respondientes (BLS):</strong> capacitación en RCP y primeros auxilios para personal seleccionado.</li>
     <li><strong>Curso de evacuación de hoteles:</strong> técnicas específicas para evacuar habitaciones, atender huéspedes con movilidad reducida, gestionar pánico.</li>

@@ -69,7 +69,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
         <tr>
           <td><strong>Rescate</strong></td>
           <td>Herramientas hidráulicas, sistema de cuerdas, trípodes, equipos de confinado</td>
-          <td>NFPA 1983 / EN 1891</td>
+          <td>NFPA 2500 / EN 1891</td>
           <td>🟠 Alto — rescate de víctimas</td>
         </tr>
         <tr>
@@ -126,7 +126,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
           <td>ERA, máscaras, cilindros, alarmas PASS</td>
         </tr>
         <tr>
-          <td><strong>NFPA 1983</strong></td>
+          <td><strong>NFPA 2500</strong></td>
           <td>Equipos de rescate con cuerdas</td>
           <td>Cuerdas, arneses, bloqueadores, poleas</td>
         </tr>
@@ -374,7 +374,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
         <tr>
           <td>Cuerda de salvamento</td>
           <td>Kernmantle estática ø11 mm, rotura &gt;30 kN</td>
-          <td>NFPA 1983 / EN 1891 tipo A</td>
+          <td>NFPA 2500 / EN 1891 tipo A</td>
         </tr>
         <tr>
           <td>Arnés de cuerpo completo</td>
@@ -389,7 +389,7 @@ La <strong>venta de equipos para bomberos en México</strong> concentra uno de l
         <tr>
           <td>Trípode de rescate</td>
           <td>Altura 1.8–3.5 m, carga &gt;2,000 kg, acero galvanizado</td>
-          <td>NFPA 1983</td>
+          <td>NFPA 2500</td>
         </tr>
         <tr>
           <td>Detector de gases (4 en 1)</td>

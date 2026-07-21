@@ -255,14 +255,14 @@ heroRight:
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Qué normativa rige la herramienta de rescate?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>NFPA 1936 cubre herramientas hidráulicas de rescate; NFPA 1006 cubre profesional qualifications para rescue technician; NFPA 1670 cubre operations and training para technical search and rescue. Para herramienta forzada como Halligan no hay norma específica de fabricación, pero la rule de mercado es marcas establecidas con clientes municipales identificables.</p>
+      <p>NFPA 1936 cubre herramientas hidráulicas de rescate; NFPA 1006 cubre profesional qualifications para rescue technician; NFPA 2500 cubre operations and training para technical search and rescue. Para herramienta forzada como Halligan no hay norma específica de fabricación, pero la rule de mercado es marcas establecidas con clientes municipales identificables.</p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question"><span class="faq-question-text">¿Mi cuerpo voluntario puede operar herramienta hidráulica?</span><span class="faq-icon"></span></button>
     <div class="faq-answer">
-      <p>Solo con capacitación documentada NFPA 1006 / 1670 y prácticas regulares en chatarra controlada. La extricación vehicular es una operación con alto potencial de daño a víctima si se ejecuta mal. Sin capacitación, el cuerpo voluntario debe perimetrar y esperar al equipo profesional.</p>
+      <p>Solo con capacitación documentada NFPA 1006 / 2500 y prácticas regulares en chatarra controlada. La extricación vehicular es una operación con alto potencial de daño a víctima si se ejecuta mal. Sin capacitación, el cuerpo voluntario debe perimetrar y esperar al equipo profesional.</p>
     </div>
   </div>
 

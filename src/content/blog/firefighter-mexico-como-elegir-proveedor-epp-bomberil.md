@@ -165,7 +165,7 @@ heroRight:
   <h3>Banderas rojas en asesoría</h3>
   <ul>
     <li>Mostrar el producto más caro como "el bueno" sin justificar técnicamente.</li>
-    <li>No diferenciar entre NFPA 1970 (estructural), NFPA 1950 (forestal) y NFPA 1991 (HAZMAT) — todas son NFPA pero para distintos perfiles.</li>
+    <li>No diferenciar entre NFPA 1970 (estructural), NFPA 1950 (forestal) y NFPA 1990 (HAZMAT) — todas son NFPA pero para distintos perfiles.</li>
     <li>Vender SCBA sin discutir compresor de aire respirable o convenio de recarga.</li>
     <li>Vender traje sin discutir lavado NFPA 1850.</li>
     <li>"Te lo dejo al costo" — los descuentos drásticos en EPP suelen significar producto descontinuado, importación gris o equipo con vida útil avanzada.</li>

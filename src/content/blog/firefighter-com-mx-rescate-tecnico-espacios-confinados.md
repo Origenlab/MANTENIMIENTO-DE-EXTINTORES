@@ -1,9 +1,9 @@
 ---
 title: "Rescate técnico y espacios confinados: cursos con Firefighter.com.mx"
-description: "Cursos NFPA 1006 / 1670 de rescate técnico, espacios confinados, altura y profundidad. Firefighter.com.mx como referente formativo en rescate especializado."
+description: "Cursos NFPA 1006 / 2500 de rescate técnico, espacios confinados, altura y profundidad. Firefighter.com.mx como referente formativo en rescate especializado."
 heroImage: "img/img-blog/extintores-restaurantes-requisitos-normativa-cdmx-hero-1765932951476.avif"
 heroRight:
-  - "El <strong>rescate en espacios confinados, alturas y estructuras colapsadas</strong> es un área técnica con margen de error mínimo. NFPA 1006 y NFPA 1670 definen las competencias del rescatista profesional."
+  - "El <strong>rescate en espacios confinados, alturas y estructuras colapsadas</strong> es un área técnica con margen de error mínimo. NFPA 1006 y NFPA 2500 definen las competencias del rescatista profesional."
   - "<strong>Firefighter.com.mx</strong> imparte cursos especializados de rescate técnico. <strong>MANEXT</strong> analiza por qué este vertical es crítico en industria pesada mexicana."
 ---
 
@@ -13,7 +13,7 @@ heroRight:
 
 <div class="article-intro">
   <p class="article-lead">Una víctima inconsciente al fondo de una cisterna, un trabajador suspendido en una torre de 30 metros, un operador atrapado tras el colapso de una estiba, un brigadista perdido en estructura incendiada en humo cero. <strong>El rescate técnico</strong> cubre escenarios que el rescate convencional no resuelve. Sin formación específica, todo intento de rescate se convierte en segunda víctima.</p>
-  <p>Las normas NFPA 1006 (Standard for Technical Rescue Personnel Professional Qualifications) y NFPA 1670 (Standard on Operations and Training for Technical Search and Rescue Incidents) son el marco internacional de referencia. <a href="https://firefighter.com.mx/" target="_blank" rel="noopener noreferrer">Firefighter.com.mx</a> imparte cursos alineados a estas normas en territorio mexicano.</p>
+  <p>Las normas NFPA 1006 (Standard for Technical Rescue Personnel Professional Qualifications) y NFPA 2500 (operaciones y capacitación en incidentes de búsqueda y rescate técnico) son el marco internacional de referencia. <a href="https://firefighter.com.mx/" target="_blank" rel="noopener noreferrer">Firefighter.com.mx</a> imparte cursos alineados a estas normas en territorio mexicano.</p>
   <p>Esta guía técnica detalla los seis dominios del rescate técnico, los niveles de competencia, qué dotaciones requiere cada operación y cómo se integra el rescate técnico al programa de protección integral que <a href="/">MANEXT</a> recomienda para industria pesada en CDMX, Estado de México y resto del país.</p>
 </div>
 
@@ -53,7 +53,7 @@ heroRight:
 
 <section id="niveles" class="content-section">
   <h2>2. Niveles de competencia: Awareness, Operations, Technician</h2>
-  <p>Como en HAZMAT, el rescate técnico se organiza por nivel. NFPA 1670 define la operación; NFPA 1006 define las competencias del personal.</p>
+  <p>Como en HAZMAT, el rescate técnico se organiza por nivel. NFPA 2500 define la operación; NFPA 1006 define las competencias del personal.</p>
 
   <h3>Nivel Awareness</h3>
   <ul>
@@ -101,12 +101,12 @@ heroRight:
   <p>Espacio confinado es definido como un espacio con entrada/salida limitada, no diseñado para ocupación continua, donde puede acumularse atmósfera peligrosa. En industria mexicana cisternas, tanques, calderas, alcantarillas, fosas de bomba y silos son los ejemplos típicos.</p>
 
   <h3>Estadística que sustenta la urgencia</h3>
-  <p>Mundialmente, una proporción significativa de fatalidades en espacio confinado son rescatadores que entran a salvar a la víctima inicial sin EPP ni procedimiento adecuado. Por eso NFPA 1670 prohíbe explícitamente el ingreso sin equipo y protocolo. La regla operativa: <strong>nadie ingresa sin que la atmósfera esté caracterizada y controlada</strong>.</p>
+  <p>Mundialmente, una proporción significativa de fatalidades en espacio confinado son rescatadores que entran a salvar a la víctima inicial sin EPP ni procedimiento adecuado. Por eso NFPA 2500 prohíbe explícitamente el ingreso sin equipo y protocolo. La regla operativa: <strong>nadie ingresa sin que la atmósfera esté caracterizada y controlada</strong>.</p>
 
   <h3>Equipamiento mínimo de rescate en espacio confinado</h3>
   <ul>
     <li><strong>Trípode o quad-pod</strong> con malacate y retracted lifeline.</li>
-    <li><strong>Arnés de cuerpo entero</strong> NFPA 1983 con anclaje dorsal y torácico.</li>
+    <li><strong>Arnés de cuerpo entero</strong> NFPA 2500 con anclaje dorsal y torácico.</li>
     <li><strong>Líneas de vida</strong> de 9 a 11 mm en aramida o nylon.</li>
     <li><strong>SCBA</strong> NFPA 1970 o equipo de aire suplementario en línea (SAR).</li>
     <li><strong>Monitor multigas</strong> con bomba de muestreo (no solo difusión).</li>
@@ -145,8 +145,8 @@ heroRight:
 
   <h3>Equipamiento de rope rescue</h3>
   <ul>
-    <li>Cuerdas estáticas de rescate NFPA 1983 (10.5 a 12.5 mm, kernmantle).</li>
-    <li>Arneses de cuerpo entero NFPA 1983.</li>
+    <li>Cuerdas estáticas de rescate NFPA 2500 (10.5 a 12.5 mm, kernmantle).</li>
+    <li>Arneses de cuerpo entero NFPA 2500.</li>
     <li>Frenos mecánicos: ID, MPD, descenders mecánicos.</li>
     <li>Poleas con freno integrado para sistemas de ventaja.</li>
     <li>Mosquetones triangle, oval y D, todos NFPA.</li>
@@ -222,10 +222,10 @@ heroRight:
     <tbody>
       <tr><td>Trípode rescate confined space</td><td>1 a 2 sets</td><td>OSHA 1910.146 / ANSI Z359</td></tr>
       <tr><td>Retracted lifeline</td><td>2 a 4 unidades</td><td>ANSI Z359</td></tr>
-      <tr><td>Cuerdas estáticas rope rescue</td><td>200-400 m total</td><td>NFPA 1983</td></tr>
-      <tr><td>Arneses cuerpo entero</td><td>1 por brigadista activo</td><td>NFPA 1983</td></tr>
-      <tr><td>Frenos mecánicos / descenders</td><td>4 a 6 unidades</td><td>NFPA 1983</td></tr>
-      <tr><td>Camilla de rescate</td><td>1 a 2 unidades</td><td>NFPA 1983</td></tr>
+      <tr><td>Cuerdas estáticas rope rescue</td><td>200-400 m total</td><td>NFPA 2500</td></tr>
+      <tr><td>Arneses cuerpo entero</td><td>1 por brigadista activo</td><td>NFPA 2500</td></tr>
+      <tr><td>Frenos mecánicos / descenders</td><td>4 a 6 unidades</td><td>NFPA 2500</td></tr>
+      <tr><td>Camilla de rescate</td><td>1 a 2 unidades</td><td>NFPA 2500</td></tr>
       <tr><td>SCBA con conexión SAR</td><td>1 por brigadista activo</td><td>NFPA 1970</td></tr>
       <tr><td>Monitor multigas con bomba</td><td>2 unidades</td><td>OSHA / ANSI</td></tr>
       <tr><td>Paneles de entibado</td><td>Set para 3m</td><td>OSHA 1926.652</td></tr>
@@ -234,7 +234,7 @@ heroRight:
 
   <h3>Proveedores complementarios</h3>
   <ul>
-    <li><strong>Capacitación NFPA 1006 / 1670:</strong> Firefighter.com.mx u otro proveedor especializado.</li>
+    <li><strong>Capacitación NFPA 1006 / 2500:</strong> Firefighter.com.mx u otro proveedor especializado.</li>
     <li><strong>Equipamiento de rescate técnico:</strong> distribuidores especializados (MSA, DBI-Sala, CMC, Petzl Pro).</li>
     <li><strong>Cumplimiento NOM-033-STPS y extintores:</strong> MANEXT.</li>
   </ul>
@@ -281,6 +281,6 @@ heroRight:
 
 <section class="content-section">
   <h2>Cierre</h2>
-  <p>El rescate técnico es área especializada con margen de error reducido. Si tu industria opera con espacios confinados, trabajos en altura, estructuras complejas o riesgo de colapso, la capacitación profesional es no negociable. Para los cursos NFPA 1006 / 1670 específicos cotiza con <a href="https://firefighter.com.mx/" target="_blank" rel="noopener noreferrer">Firefighter.com.mx</a> y exige programa con prácticas documentadas en escenarios reales.</p>
+  <p>El rescate técnico es área especializada con margen de error reducido. Si tu industria opera con espacios confinados, trabajos en altura, estructuras complejas o riesgo de colapso, la capacitación profesional es no negociable. Para los cursos NFPA 1006 / 2500 específicos cotiza con <a href="https://firefighter.com.mx/" target="_blank" rel="noopener noreferrer">Firefighter.com.mx</a> y exige programa con prácticas documentadas en escenarios reales.</p>
   <p>Para la base preventiva de tu programa de protección habla con el equipo de <a href="/contacto">MANEXT</a>. Te puede ayudar también <a href="/blog/extintores-naves-industriales-capacidades-distribucion">la guía de extintores en naves industriales</a> y <a href="/blog/extintores-brigadas-industriales-hazmat-mexico">el análisis de brigadas industriales HAZMAT</a>.</p>
 </section>

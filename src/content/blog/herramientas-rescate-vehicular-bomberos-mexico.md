@@ -349,13 +349,13 @@ heroRight:
         <tr>
           <td>Trípode de rescate</td>
           <td>Altura 1.8–3.5 m, carga ≥2,000 kg, base regulable</td>
-          <td>NFPA 1983</td>
+          <td>NFPA 2500</td>
           <td>Punto de anclaje de línea de vida sin el cual el rescate en espacio confinado es inviable</td>
         </tr>
         <tr>
           <td>Cuerda de salvamento</td>
           <td>Kernmantle estática ø11–12.5 mm, rotura ≥30 kN, longitud ≥50 m</td>
-          <td>NFPA 1983 / EN 1891 tipo A</td>
+          <td>NFPA 2500 / EN 1891 tipo A</td>
           <td>Línea principal de ascenso/descenso y recuperación de víctima o rescatador</td>
         </tr>
         <tr>
@@ -418,7 +418,7 @@ heroRight:
           <td>Cuerdas de salvamento</td>
           <td>Inspección visual post-uso; prueba de carga periódica</td>
           <td>Post-uso real; prueba de carga c/2 años</td>
-          <td>Técnico certificado NFPA 1983</td>
+          <td>Técnico certificado NFPA 2500</td>
         </tr>
       </tbody>
     </table>

@@ -251,7 +251,7 @@ heroRight:
         <tr>
           <td><strong>HAZMAT Nivel A</strong></td>
           <td>Materiales peligrosos con riesgo de absorción dérmica o exposición química</td>
-          <td>NFPA 1991 / EN 374</td>
+          <td>NFPA 1990 / EN 374</td>
           <td>Cualquier operación con fuego activo (sin protección térmica)</td>
         </tr>
         <tr>

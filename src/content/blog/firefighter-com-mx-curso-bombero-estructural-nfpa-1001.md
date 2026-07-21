@@ -224,7 +224,7 @@ heroRight:
   <h3>No aplica (sobredimensionado)</h3>
   <ul>
     <li><strong>Brigadas de oficina, escuela, comercio:</strong> les basta capacitación NOM-002-STPS más prácticas mensuales.</li>
-    <li><strong>Brigadas de evacuación y primeros auxilios sin combate:</strong> sus competencias son distintas (NFPA 1670, primeros auxilios).</li>
+    <li><strong>Brigadas de evacuación y primeros auxilios sin combate:</strong> sus competencias son distintas (NFPA 2500, primeros auxilios).</li>
     <li><strong>Personal administrativo no operativo:</strong> capacitación de sensibilización es suficiente.</li>
   </ul>
 
