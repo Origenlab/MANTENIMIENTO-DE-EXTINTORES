@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
   const byTopic = groupPostsByTopic(blogEntries);
 
-  return blogEntries.map(entry => ({
+  return blogEntries.filter((entry) => entry.id !== 'index').map(entry => ({
     params: { slug: entry.id },
     // El agrupado se calcula una vez, no por página.
     props: { entry, byTopic },
